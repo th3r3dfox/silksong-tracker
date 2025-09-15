@@ -892,18 +892,28 @@ function applyVisibilityFilters(){
       if (hide) hidden++;
     });
 
-    const allDone = total > 0 && doneCount === total;
+  const allDone = total > 0 && doneCount === total;
 
-    
-    // Se col filtro scompaiono tutti gli item (sezione non al 100%)
- if (SHOW_ONLY_MISSING && total > 0 && hidden === total && !allDone){
-  const msg = document.createElement('li');
-  msg.className = 'empty-msg';
-  msg.style.opacity = '.8';
-  msg.style.fontStyle = 'italic';
-  msg.textContent = ui('noneIncomplete') || 'No incomplete items in this section.';
-  ul.appendChild(msg);
-}
+  // >>> Nascondi l'intera sezione se è completa e il filtro "solo incompleti" è attivo
+  const block = ul.closest('.section-block');
+  if (SHOW_ONLY_MISSING && allDone) {
+    if (block) block.style.display = 'none';
+  } else {
+    if (block) block.style.display = '';
+  }
+
+  // NIENTE banner "COMPLETED" qui
+
+  // Se col filtro scompaiono tutti gli item ma la sezione NON è al 100%,
+  // mostriamo un messaggio "nessun elemento incompleto".
+  if (SHOW_ONLY_MISSING && total > 0 && hidden === total && !allDone){
+    const msg = document.createElement('li');
+    msg.className = 'empty-msg';
+    msg.style.opacity = '.8';
+    msg.style.fontStyle = 'italic';
+    msg.textContent = ui('noneIncomplete') || 'No incomplete items in this section.';
+    ul.appendChild(msg);
+  }
   });
 }
 
