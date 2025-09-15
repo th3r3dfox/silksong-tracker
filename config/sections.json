@@ -5,28 +5,15 @@
       "label": { "en": "Main 100%", "it": "Principale 100%" },
       "sections": [
         {
-          "id": "spool",
-          "label": { "en": "Spool Fragment", "it": "Frammenti di Seta" },
-          "desc":  { "en": "Collect all spool fragments.", "it": "Raccogli tutti i frammenti di seta." },
+          "id": "needle_upgrades",
+          "label": { "en": "Needle Upgrades", "it": "Potenziamenti dell'Ago" },
+          "desc":  { "en": "Upgrades to Hornet's main weapon damage.", "it": "Potenziamenti ai danni dell'arma principale di Hornet." },
           "items": [
-            { "label": { "en": "Spool Fragment #1",  "it": "Frammento di seta #1" },  "keys": ["pilgrimQuestSpoolCollected"],         "equals": true, "location": "pilgrimQuestSpoolCollected", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #2",  "it": "Frammento di seta #2" },  "keys": ["tookGreymoor17Spool"],                 "equals": true, "location": "tookGreymoor17Spool", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #3",  "it": "Frammento di seta #3" },  "keys": ["PurchasedBelltownSpoolSegment"],       "equals": true, "location": "PurchasedBelltownSpoolSegment", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #4",  "it": "Frammento di seta #4" },  "keys": ["purchasedGrindleSpoolPiece"],          "equals": true, "location": "purchasedGrindleSpoolPiece", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #5",  "it": "Frammento di seta #5" },  "keys": ["MerchantEnclaveSpoolPiece"],           "equals": true, "location": "MerchantEnclaveSpoolPiece", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #6",  "it": "Frammento di seta #6" },  "keys": ["__flags.Bone_11b.Silk_Spool"],         "equals": true, "location": "Bone_11b", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #7",  "it": "Frammento di seta #7" },  "keys": ["__flags.Bone_East_13.Silk_Spool"],     "equals": true, "location": "Bone_East_13", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #8",  "it": "Frammento di seta #8" },  "keys": ["__flags.Greymoor_02.Silk_Spool"],      "equals": true, "location": "Greymoor_02", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #9",  "it": "Frammento di seta #9" },  "keys": ["__flags.Weave_11.Silk_Spool"],         "equals": true, "location": "Weave_11", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #10", "it": "Frammento di seta #10" }, "keys": ["__flags.Song_19_entrance.Silk_Spool"], "equals": true, "location": "Song_19_entrance", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #11", "it": "Frammento di seta #11" }, "keys": ["__flags.Under_10.Silk_Spool"],         "equals": true, "location": "Under_10", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #12", "it": "Frammento di seta #12" }, "keys": ["__flags.Ward_01.Silk_Spool"],          "equals": true, "location": "Ward_01", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #13", "it": "Frammento di seta #13" }, "keys": ["__flags.Peak_01.Silk_Spool"],          "equals": true, "location": "Peak_01", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #14", "it": "Frammento di seta #14" }, "keys": ["__flags.Cog_07.Silk_Spool"],           "equals": true, "location": "Cog_07", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #15", "it": "Frammento di seta #15" }, "keys": ["__flags.Library_11b.Silk_Spool"],      "equals": true, "location": "Library_11b", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #16", "it": "Frammento di seta #16" }, "keys": ["__flags.Dock_03c.Silk_Spool"],         "equals": true, "location": "Dock_03c", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #17", "it": "Frammento di seta #17" }, "keys": ["__flags.Arborium_09.Silk_Spool"],      "equals": true, "location": "Arborium_09", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #18", "it": "Frammento di seta #18" }, "keys": ["__flags.Hang_03_top.Silk_Spool"],      "equals": true, "location": "Hang_03_top", "wikiSlug": "aa" }
+            { "label": { "en": "#0 Needle",            "it": "#0 Ago" },               "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Base Needle",            "it": "Arma Base" },"wikiSlug": "Needle" },
+            { "label": { "en": "#1 Sharpened Needle",  "it": "#1 Ago Affilato" },      "keys": ["IsUnlocked"], "equals": true, "location": "Sconfiggi la Vedova",                "wikiSlug": "Needle" },
+            { "label": { "en": "#2 Shining Needle",    "it": "#2 Ago Lucente" },       "keys": ["IsUnlocked"], "equals": true, "location": "1x Olio Pallido",                    "wikiSlug": "Needle" },
+            { "label": { "en": "#3 Hivesteel Needle",  "it": "#3 Ago Alveacciaio" },   "keys": ["IsUnlocked"], "equals": true, "location": "500 Rosari + 1x Olio Pallido",       "wikiSlug": "Needle" },
+            { "label": { "en": "#4 Pale Steel Needle", "it": "#4 Ago d'Acciaio Pallido" }, "keys": ["IsUnlocked"], "equals": true, "location": "900 Rosari + 1x Olio Pallido", "wikiSlug": "Needle" }
           ]
         },
         {
@@ -57,6 +44,31 @@
           ]
         },
         {
+          "id": "spool",
+          "label": { "en": "Spool Fragment", "it": "Frammenti di Seta" },
+          "desc":  { "en": "Collect all spool fragments.", "it": "Raccogli tutti i frammenti di seta." },
+          "items": [
+            { "label": { "en": "Spool Fragment #1",  "it": "Frammento di seta #1" },  "keys": ["pilgrimQuestSpoolCollected"],         "equals": true, "location": "pilgrimQuestSpoolCollected", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #2",  "it": "Frammento di seta #2" },  "keys": ["tookGreymoor17Spool"],                 "equals": true, "location": "tookGreymoor17Spool", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #3",  "it": "Frammento di seta #3" },  "keys": ["PurchasedBelltownSpoolSegment"],       "equals": true, "location": "PurchasedBelltownSpoolSegment", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #4",  "it": "Frammento di seta #4" },  "keys": ["purchasedGrindleSpoolPiece"],          "equals": true, "location": "purchasedGrindleSpoolPiece", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #5",  "it": "Frammento di seta #5" },  "keys": ["MerchantEnclaveSpoolPiece"],           "equals": true, "location": "MerchantEnclaveSpoolPiece", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #6",  "it": "Frammento di seta #6" },  "keys": ["__flags.Bone_11b.Silk_Spool"],         "equals": true, "location": "Bone_11b", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #7",  "it": "Frammento di seta #7" },  "keys": ["__flags.Bone_East_13.Silk_Spool"],     "equals": true, "location": "Bone_East_13", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #8",  "it": "Frammento di seta #8" },  "keys": ["__flags.Greymoor_02.Silk_Spool"],      "equals": true, "location": "Greymoor_02", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #9",  "it": "Frammento di seta #9" },  "keys": ["__flags.Weave_11.Silk_Spool"],         "equals": true, "location": "Weave_11", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #10", "it": "Frammento di seta #10" }, "keys": ["__flags.Song_19_entrance.Silk_Spool"], "equals": true, "location": "Song_19_entrance", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #11", "it": "Frammento di seta #11" }, "keys": ["__flags.Under_10.Silk_Spool"],         "equals": true, "location": "Under_10", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #12", "it": "Frammento di seta #12" }, "keys": ["__flags.Ward_01.Silk_Spool"],          "equals": true, "location": "Ward_01", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #13", "it": "Frammento di seta #13" }, "keys": ["__flags.Peak_01.Silk_Spool"],          "equals": true, "location": "Peak_01", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #14", "it": "Frammento di seta #14" }, "keys": ["__flags.Cog_07.Silk_Spool"],           "equals": true, "location": "Cog_07", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #15", "it": "Frammento di seta #15" }, "keys": ["__flags.Library_11b.Silk_Spool"],      "equals": true, "location": "Library_11b", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #16", "it": "Frammento di seta #16" }, "keys": ["__flags.Dock_03c.Silk_Spool"],         "equals": true, "location": "Dock_03c", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #17", "it": "Frammento di seta #17" }, "keys": ["__flags.Arborium_09.Silk_Spool"],      "equals": true, "location": "Arborium_09", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #18", "it": "Frammento di seta #18" }, "keys": ["__flags.Hang_03_top.Silk_Spool"],      "equals": true, "location": "Hang_03_top", "wikiSlug": "aa" }
+          ]
+        },
+        {
           "id": "silk_hearts",
           "label": { "en": "Silk Hearts", "it": "Cuori di seta" },
           "desc":  { "en": "Upgrades to the Knight's main regen skill.", "it": "Potenziamenti dell'abilità principale di rigenerazione." },
@@ -67,18 +79,26 @@
           ]
         },
         {
-          "id": "abilities",
-          "label": { "en": "Abilities", "it": "Abilità" },
+          "id": "miscellaneous",
+          "label": { "en": "Miscellaneous", "it": "Varie" },
           "desc":  { "en": "...", "it": "..." },
           "items": [
-            { "label": { "en": "Swift Step",        "it": "Swift Step" },        "keys": ["hasDash"],        "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Drifter's Cloak",   "it": "Drifter's Cloak" },   "keys": ["hasBrolly"],      "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Cling Grip",        "it": "Cling Grip" },        "keys": ["hasWalljump"],    "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Needolin",          "it": "Needolin" },          "keys": ["hasNeedolin"],    "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Faydown Cloak",     "it": "Faydown Cloak" },     "keys": ["hasDoubleJump"],  "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Clawline",          "it": "Clawline" },          "keys": ["hasQuill"],       "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Needle Strike",     "it": "Needle Strike" },     "keys": ["hasChargeSlash"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Silk Soar",         "it": "Silk Soar" },         "keys": ["hasSuperJump"],   "equals": true, "location": "???", "wikiSlug": "aa" }
+            { "label": { "en": "White Flower", "it": "White Flower" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Bind Eva", "it": "Bind Eva" }, "keys": ["HasBoundCrestUpgrader"], "equals": true, "location": "serve 15 memorie bloccate", "wikiSlug": "aa" }
+          ]
+        },
+        {
+          "id": "crests",
+          "label": { "en": "Crests", "it": "Stemmi" },
+          "desc":  { "en": "Crests are Equipment that allows Hornet to change their Moveset.", "it": "Gli stemmi sono equipaggiamenti che permettono a Hornet di cambiare le mosse." },
+          "items": [
+            { "label": { "en": "Hunter Crest",    "it": "Hunter Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Reaper Crest",    "it": "Reaper Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Wanderer Crest",  "it": "Wanderer Crest" },  "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Beast Crest",     "it": "Beast Crest" },     "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Witch Crest",     "it": "Witch Crest" },     "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Architect Crest", "it": "Architect Crest" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Shaman Crest",    "it": "Shaman Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" }
           ]
         },
         {
@@ -94,6 +114,33 @@
             { "label": { "en": "Pale Nails",       "it": "Pale Nails" },       "query": { "name": "Silk Boss Needle","path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" }
           ]
         },
+
+        {
+  "id": "tool_pouch_upgrades",
+  "label": { "en": "Tool Pouch Upgrades", "it": "Upgrade Tool Pouch" },
+  "desc":  { "en": "Capacity upgrades for the tool pouch.", "it": "Migliorie di capienza della borsa attrezzi." },
+  "items": [
+    { "label": { "en": "#0 Base Pouch",   "it": "#0 Borsa base" } },
+    { "label": { "en": "#1 Expanded",     "it": "#1 Espansa" } },
+    { "label": { "en": "#2 Large",        "it": "#2 Grande" } },
+    { "label": { "en": "#3 Huge",         "it": "#3 Enorme" } },
+    { "label": { "en": "#4 Max Pouch",    "it": "#4 Borsa massima" } }
+  ]
+},
+{
+  "id": "crafting_kit_upgrades",
+  "label": { "en": "Crafting Kit Expansions", "it": "Espansioni Crafting Kit" },
+  "desc":  { "en": "Capacity upgrades for the crafting kit.", "it": "Espansioni di capienza del kit da creazione." },
+  "items": [
+    { "label": { "en": "#0 Base Kit",     "it": "#0 Kit base" } },
+    { "label": { "en": "#1 Expanded",     "it": "#1 Espanso" } },
+    { "label": { "en": "#2 Large",        "it": "#2 Grande" } },
+    { "label": { "en": "#3 Huge",         "it": "#3 Enorme" } },
+    { "label": { "en": "#4 Max Kit",      "it": "#4 Kit massimo" } }
+  ]
+}
+
+
         {
           "id": "red_tools",
           "label": { "en": "Red Tools", "it": "Strumenti rossi" },
@@ -166,48 +213,6 @@
             { "label": { "en": "Silkspeed Anklets", "it": "Silkspeed Anklets" }, "query": { "name": "Sprintmaster",    "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
             { "label": { "en": "Thief's Mark",      "it": "Thief's Mark" },      "query": { "name": "Thief Charm",     "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" }
           ]
-        },
-        {
-          "id": "needle_upgrades",
-          "label": { "en": "Needle Upgrades", "it": "Potenziamenti dell'Ago" },
-          "desc":  { "en": "Upgrades to Hornet's main weapon damage.", "it": "Potenziamenti ai danni dell'arma principale di Hornet." },
-          "items": [
-            { "label": { "en": "#0 Needle",            "it": "#0 Ago" },               "keys": ["IsUnlocked"], "equals": true, "location": "Arma base",                          "wikiSlug": "Needle" },
-            { "label": { "en": "#1 Sharpened Needle",  "it": "#1 Ago Affilato" },      "keys": ["IsUnlocked"], "equals": true, "location": "Sconfiggi la Vedova",                "wikiSlug": "Needle" },
-            { "label": { "en": "#2 Shining Needle",    "it": "#2 Ago Lucente" },       "keys": ["IsUnlocked"], "equals": true, "location": "1x Olio Pallido",                    "wikiSlug": "Needle" },
-            { "label": { "en": "#3 Hivesteel Needle",  "it": "#3 Ago Alveacciaio" },   "keys": ["IsUnlocked"], "equals": true, "location": "500 Rosari + 1x Olio Pallido",       "wikiSlug": "Needle" },
-            { "label": { "en": "#4 Pale Steel Needle", "it": "#4 Ago d'Acciaio Pallido" }, "keys": ["IsUnlocked"], "equals": true, "location": "900 Rosari + 1x Olio Pallido", "wikiSlug": "Needle" }
-          ]
-        },
-        {
-          "id": "crests",
-          "label": { "en": "Crests", "it": "Stemmi" },
-          "desc":  { "en": "Crests are Equipment that allows Hornet to change their Moveset.", "it": "Gli stemmi sono equipaggiamenti che permettono a Hornet di cambiare le mosse." },
-          "items": [
-            { "label": { "en": "Hunter Crest",    "it": "Hunter Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Reaper Crest",    "it": "Reaper Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Wanderer Crest",  "it": "Wanderer Crest" },  "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Beast Crest",     "it": "Beast Crest" },     "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Witch Crest",     "it": "Witch Crest" },     "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Architect Crest", "it": "Architect Crest" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Shaman Crest",    "it": "Shaman Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" }
-          ]
-        },
-        {
-          "id": "everbloom",
-          "label": { "en": "Everbloom", "it": "Everbloom" },
-          "desc":  { "en": "...", "it": "..." },
-          "items": [
-            { "label": { "en": "White Flower", "it": "White Flower" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" }
-          ]
-        },
-        {
-          "id": "bind_eva",
-          "label": { "en": "Bind Eva", "it": "Bind Eva" },
-          "desc":  { "en": "...", "it": "..." },
-          "items": [
-            { "label": { "en": "Bind Eva", "it": "Bind Eva" }, "keys": ["HasBoundCrestUpgrader"], "equals": true, "location": "serve 15 memorie bloccate", "wikiSlug": "aa" }
-          ]
         }
       ]
     },
@@ -268,7 +273,21 @@
         }
       ]
     },
-
+    {
+          "id": "abilities",
+          "label": { "en": "Abilities", "it": "Abilità" },
+          "desc":  { "en": "...", "it": "..." },
+          "items": [
+            { "label": { "en": "Swift Step",        "it": "Swift Step" },        "keys": ["hasDash"],        "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Drifter's Cloak",   "it": "Drifter's Cloak" },   "keys": ["hasBrolly"],      "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Cling Grip",        "it": "Cling Grip" },        "keys": ["hasWalljump"],    "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Needolin",          "it": "Needolin" },          "keys": ["hasNeedolin"],    "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Faydown Cloak",     "it": "Faydown Cloak" },     "keys": ["hasDoubleJump"],  "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Clawline",          "it": "Clawline" },          "keys": ["hasQuill"],       "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Needle Strike",     "it": "Needle Strike" },     "keys": ["hasChargeSlash"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Silk Soar",         "it": "Silk Soar" },         "keys": ["hasSuperJump"],   "equals": true, "location": "???", "wikiSlug": "aa" }
+          ]
+        },
     { "id": "essentials", "label": { "en": "Essentials %", "it": "Essenziali %" }, "sections": [] },
     { "id": "journal",    "label": { "en": "Journal", "it": "Diario" }, "sections": [
       { "id": "journal-basic", "label": { "en": "Journal", "it": "Diario" }, "items": [

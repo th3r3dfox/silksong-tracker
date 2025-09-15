@@ -498,7 +498,7 @@ function renderGroups(){
     (section.items || []).forEach((item, idx) => {
       let ok = false; // default: nulla spunta senza save
 
-      // Special counters: nail upgrades & silk regen
+      // Special counters
       if (section.id === 'nail_upgrades') {
         if (lastSaveObj) {
           const lvlRaw = deepFindAny(lastSaveObj, [
@@ -507,10 +507,9 @@ function renderGroups(){
             'weaponLevel','WeaponLevel','Data.nailUpgrades','PlayerData.nailUpgrades'
           ]);
           const lvl = Math.max(0, Math.min(4, Number(lvlRaw) || 0));
-          ok = idx <= lvl; // #0..#lvl verdi
-        } else {
-          ok = false; // senza file: niente verde
-        }
+          ok = idx <= lvl;
+        } else { ok = false; }
+
       } else if (section.id === 'silk_regen') {
         if (lastSaveObj) {
           const lvlRaw = deepFindAny(lastSaveObj, [
@@ -520,9 +519,26 @@ function renderGroups(){
           const upper = Math.max(0, (section.items?.length || 1) - 1);
           const lvl = Math.max(0, Math.min(upper, Number(lvlRaw) || 0));
           ok = idx <= lvl;
-        } else {
-          ok = false;
-        }
+        } else { ok = false; }
+
+      // NEW: Tool Pouch upgrades (intero nel save)
+      } else if (section.id === 'tool_pouch_upgrades') {
+        if (lastSaveObj) {
+          const lvlRaw = deepFindAny(lastSaveObj, ['ToolPouchUpgrades','PlayerData.ToolPouchUpgrades','Data.ToolPouchUpgrades']);
+          const upper  = Math.max(0, (section.items?.length || 1) - 1);
+          const lvl    = Math.max(0, Math.min(upper, Number(lvlRaw) || 0));
+          ok = idx <= lvl;
+        } else { ok = false; }
+
+      // NEW: Crafting Kit expansions (intero nel save)
+      } else if (section.id === 'crafting_kit_upgrades') {
+        if (lastSaveObj) {
+          const lvlRaw = deepFindAny(lastSaveObj, ['ToolKitUpgrades','PlayerData.ToolKitUpgrades','Data.ToolKitUpgrades']);
+          const upper  = Math.max(0, (section.items?.length || 1) - 1);
+          const lvl    = Math.max(0, Math.min(upper, Number(lvlRaw) || 0));
+          ok = idx <= lvl;
+        } else { ok = false; }
+
       } else {
         const rawVal = lastSaveObj ? resolveItemValue(lastSaveObj, item) : undefined;
         ok = isDoneFromRule(rawVal, item);
@@ -545,6 +561,7 @@ function renderGroups(){
 
   applyVisibilityFilters();
 }
+
 
 
 /* Crea DOM per una sezione (titolo + pill + descrizione + lista) */
