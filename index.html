@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Save Completion Analyzer — Silksong</title>
+
+  <!-- Favicon (file presente in img/favicon.png) -->
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+
+  <!-- Stili -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- CryptoJS (necessario al decoder) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" defer></script>
+
+  <!-- App -->
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Titolo principale -->
+    <h1 class="site-title compact" aria-label="Save Completion Analyzer for Silksong">
+      <span class="title-main">Save Completion Analyzer</span>
+      <span class="title-sub">for Silksong</span>
+    </h1>
+
+    <!-- Barra superiore: percorso + selezione file -->
+    <header class="topbar" aria-label="Caricamento salvataggio">
+      <div class="save-path">
+        <div id="savePathDisplay" class="save-display" title="Clicca per copiare">
+          %userprofile%\appdata\LocalLow\Team Cherry\Hollow Knight Silksong
+        </div>
+      </div>
+
+      <div class="file-chooser">
+        <button id="browseBtn" type="button" class="choose-btn">📂 Choose Save File...</button>
+        <input type="file" id="fileInput" accept=".dat,.sav,.bin" hidden />
+        <span id="fileInfo" class="pill" style="margin-left:10px;">Nessun file</span>
+        <button id="showJsonBtn" type="button" class="btn-ghost small" disabled>Mostra JSON</button>
+      </div>
+    </header>
+
+    <!-- Hero: stato di gioco + metadati -->
+    <section class="hero" aria-label="Stato di gioco">
+      <h2 class="hk-title">
+        Game Status <span id="gameStatusPct" class="pill">0%</span>
+      </h2>
+
+      <ul class="meta">
+        <li>⏺ Time Played: <span id="timePlayedText">—</span></li>
+        <li>Save Version: <span id="saveVersionText">—</span></li>
+      </ul>
+
+      <hr class="ornament" />
+
+      <div class="stats-row" role="group" aria-label="Statistiche principali">
+        <div class="stat">
+          <div class="label">Health:</div>
+          <div class="value" id="healthValue">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">Max Silk:</div>
+          <div class="value" id="maxsetaValue">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">Silk Hearts:</div>
+          <div class="value" id="setaValue">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">Rosaries:</div>
+          <div class="value" id="rosariValue">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">Sheel Shards:</div>
+          <div class="value" id="scheggeValue">—</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs dei gruppi -->
+    <nav id="tabs" class="tabs" aria-label="Categorie"></nav>
+
+    <!-- Sezioni (empilate) che il JS popola -->
+    <section id="sectionsStack" class="sections-stack" aria-label="Sezioni"></section>
+
+    <noscript>Abilita JavaScript per utilizzare il decoder.</noscript>
+  
+    <!-- Modal JSON decifrato -->
+    <div id="jsonModal" class="modal" aria-hidden="true" role="dialog" aria-label="Salvataggio decifrato">
+      <div class="modal__backdrop" data-close="1"></div>
+      <div class="modal__dialog" role="document">
+        <header class="modal__head">
+          <h3 class="modal__title">Json Log</h3>
+          <div class="modal__actions">
+            <button id="copyJsonBtn" class="btn-ghost tiny" title="Copia">Copy</button>
+            <button id="downloadJsonBtn" class="btn-ghost tiny" title="Scarica">Download</button>
+            <button id="closeJsonBtn" class="btn-ghost tiny" aria-label="Chiudi">✕</button>
+          </div>
+        </header>
+        <pre id="rawModalOutput" class="modal__code">—</pre>
+      </div>
+    </div>
+
+  </div>
+  <footer id="offtopic" role="contentinfo" aria-labelledby="ftTitle">
+  <div class="footer-wrap">
+    <!-- 1) Stato progetto -->
+    <section class="foot-block">
+      <h3 class="foot-title" id="ftTitle">Off Topic</h3>
+      <p class="pill" id="ftPill">Work in Progress • v1.0.0</p>
+      <p class="foot-text" id="ftWipDesc">
+        Questo progetto è in sviluppo attivo. Alcune sezioni potrebbero cambiare o ampliarsi con i prossimi aggiornamenti.
+      </p>
+    </section>
+
+    <!-- 2) Crediti -->
+    <section class="foot-block">
+      <h4 class="foot-subtitle" id="ftCreditsTitle">Crediti</h4>
+      <p class="foot-text">
+        <span id="ftCreditsPrefix">Sito realizzato da</span>
+        <a href="#" id="creditLink" target="_blank" rel="noopener">
+          <strong id="creditName">[IL_TUO_NICK]</strong>
+        </a>.
+      </p>
+    </section>
+
+    <!-- 3) In memoria -->
+    <section class="foot-block">
+      <h4 class="foot-subtitle" id="ftMemTitle">In memoria</h4>
+      <p class="foot-text" id="ftMemText">
+        Un pensiero a chi ha dato il via alla tradizione degli analyzer per Hollow Knight. Il primo creatore dell’Analyzer originale ci ha lasciati, ma la sua passione vive in ogni strumento che aiuta la community a esplorare, capire e condividere. <em>Grazie per l’ispirazione.</em>
+      </p>
+    </section>
+  </div>
+
+  <div class="foot-fine">
+    <small id="ftLegal">
+      Progetto non ufficiale, senza affiliazione con Team Cherry. Tutti i marchi appartengono ai rispettivi proprietari.
+    </small>
+  </div>
+</footer>
+
+</footer>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,279 @@
+{
+  "groups": [
+    {
+      "id": "main",
+      "label": { "en": "Main 100%", "it": "Principale 100%" },
+      "sections": [
+        {
+          "id": "spool",
+          "label": { "en": "Spool Fragment", "it": "Frammenti di Seta" },
+          "desc":  { "en": "Collect all spool fragments.", "it": "Raccogli tutti i frammenti di seta." },
+          "items": [
+            { "label": { "en": "Spool Fragment #1",  "it": "Frammento di seta #1" },  "keys": ["pilgrimQuestSpoolCollected"],         "equals": true, "location": "pilgrimQuestSpoolCollected", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #2",  "it": "Frammento di seta #2" },  "keys": ["tookGreymoor17Spool"],                 "equals": true, "location": "tookGreymoor17Spool", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #3",  "it": "Frammento di seta #3" },  "keys": ["PurchasedBelltownSpoolSegment"],       "equals": true, "location": "PurchasedBelltownSpoolSegment", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #4",  "it": "Frammento di seta #4" },  "keys": ["purchasedGrindleSpoolPiece"],          "equals": true, "location": "purchasedGrindleSpoolPiece", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #5",  "it": "Frammento di seta #5" },  "keys": ["MerchantEnclaveSpoolPiece"],           "equals": true, "location": "MerchantEnclaveSpoolPiece", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #6",  "it": "Frammento di seta #6" },  "keys": ["__flags.Bone_11b.Silk_Spool"],         "equals": true, "location": "Bone_11b", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #7",  "it": "Frammento di seta #7" },  "keys": ["__flags.Bone_East_13.Silk_Spool"],     "equals": true, "location": "Bone_East_13", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #8",  "it": "Frammento di seta #8" },  "keys": ["__flags.Greymoor_02.Silk_Spool"],      "equals": true, "location": "Greymoor_02", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #9",  "it": "Frammento di seta #9" },  "keys": ["__flags.Weave_11.Silk_Spool"],         "equals": true, "location": "Weave_11", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #10", "it": "Frammento di seta #10" }, "keys": ["__flags.Song_19_entrance.Silk_Spool"], "equals": true, "location": "Song_19_entrance", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #11", "it": "Frammento di seta #11" }, "keys": ["__flags.Under_10.Silk_Spool"],         "equals": true, "location": "Under_10", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #12", "it": "Frammento di seta #12" }, "keys": ["__flags.Ward_01.Silk_Spool"],          "equals": true, "location": "Ward_01", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #13", "it": "Frammento di seta #13" }, "keys": ["__flags.Peak_01.Silk_Spool"],          "equals": true, "location": "Peak_01", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #14", "it": "Frammento di seta #14" }, "keys": ["__flags.Cog_07.Silk_Spool"],           "equals": true, "location": "Cog_07", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #15", "it": "Frammento di seta #15" }, "keys": ["__flags.Library_11b.Silk_Spool"],      "equals": true, "location": "Library_11b", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #16", "it": "Frammento di seta #16" }, "keys": ["__flags.Dock_03c.Silk_Spool"],         "equals": true, "location": "Dock_03c", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #17", "it": "Frammento di seta #17" }, "keys": ["__flags.Arborium_09.Silk_Spool"],      "equals": true, "location": "Arborium_09", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #18", "it": "Frammento di seta #18" }, "keys": ["__flags.Hang_03_top.Silk_Spool"],      "equals": true, "location": "Hang_03_top", "wikiSlug": "aa" }
+          ]
+        },
+        {
+          "id": "mask",
+          "label": { "en": "Mask Shards", "it": "Frammenti di Maschera" },
+          "desc":  { "en": "Collect all mask shards.", "it": "Raccogli tutti i frammenti di maschera." },
+          "items": [
+            { "label": { "en": "Mask Shard #1",  "it": "Frammento di maschera #1" },  "keys": ["__flags.Dock_08.Heart_Piece"],                         "equals": true, "location": "Dock_08", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #2",  "it": "Frammento di maschera #2" },  "keys": ["__flags.Bone_East_20.Heart_Piece"],                   "equals": true, "location": "Bone_East_20", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #3",  "it": "Frammento di maschera #3" },  "keys": ["__flags.Shellwood_14.Heart_Piece"],                   "equals": true, "location": "Shellwood_14", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #4",  "it": "Frammento di maschera #4" },  "keys": ["__flags.Crawl_02.Heart_Piece"],                       "equals": true, "location": "Crawl_02", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #5",  "it": "Frammento di maschera #5" },  "keys": ["__flags.Weave_05b.Heart_Piece"],                      "equals": true, "location": "Weave_05b", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #6",  "it": "Frammento di maschera #6" },  "keys": ["__flags.Song_09.Heart_Piece"],                        "equals": true, "location": "Song_09", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #7",  "it": "Frammento di maschera #7" },  "keys": ["__flags.Library_05.Heart_Piece"],                     "equals": true, "location": "Library_05", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #8",  "it": "Frammento di maschera #8" },  "keys": ["__flags.Bone_East_LavaChallenge.Heart_Piece__1_"],    "equals": true, "location": "Bone_East_LavaChallenge", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #9",  "it": "Frammento di maschera #9" },  "keys": ["__flags.Peak_04c.Heart_Piece"],                       "equals": true, "location": "Peak_04c", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #10", "it": "Frammento di maschera #10" }, "keys": ["__flags.Shadow_13.Heart_Piece"],                      "equals": true, "location": "Shadow_13", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #11", "it": "Frammento di maschera #11" }, "keys": ["__flags.Slab_17.Heart_Piece"],                        "equals": true, "location": "Slab_17", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #12", "it": "Frammento di maschera #12" }, "keys": ["__flags.Peak_06.Heart_Piece"],                        "equals": true, "location": "Peak_06", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #13", "it": "Frammento di maschera #13" }, "keys": ["__flags.Wisp_07.Heart_Piece"],                        "equals": true, "location": "Wisp_07", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #14", "it": "Frammento di maschera #14" }, "keys": ["__flags.Coral_19b.Heart_Piece"],                      "equals": true, "location": "Coral_19b", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #15", "it": "Frammento di maschera #15" }, "keys": ["PurchasedBonebottomHeartPiece"],                      "equals": true, "location": "PurchasedBonebottomHeartPiece", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #16", "it": "Frammento di maschera #16" }, "query": { "name": "Sprintmaster Race","path": "Data.IsCompleted" }, "equals": true, "location": "Sprintmaster Race", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #17", "it": "Frammento di maschera #17" }, "query": { "name": "Destroy Thread Cores","path": "Data.IsCompleted" }, "equals": true, "location": "Destroy Thread Cores", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard ??? #18", "it": "Frammento di maschera ??? #18" }, "query": { "name": "Huntress Quest","path": "Data.IsCompleted" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #19", "it": "Frammento di maschera #19" }, "query": { "name": "Broodmother Hunt","path": "Data.IsCompleted" }, "equals": true, "location": "Broodmother Hunt", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard ??? #20", "it": "Frammento di maschera ??? #20" }, "keys": [""], "equals": true, "location": "???", "wikiSlug": "aa" }
+          ]
+        },
+        {
+          "id": "silk_hearts",
+          "label": { "en": "Silk Hearts", "it": "Cuori di seta" },
+          "desc":  { "en": "Upgrades to the Knight's main regen skill.", "it": "Potenziamenti dell'abilità principale di rigenerazione." },
+          "items": [
+            { "label": { "en": "#1 Silk Heart", "it": "Cuore di seta #1" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "#2 Silk Heart", "it": "Cuore di seta #2" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "#3 Silk Heart", "it": "Cuore di seta #3" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" }
+          ]
+        },
+        {
+          "id": "abilities",
+          "label": { "en": "Abilities", "it": "Abilità" },
+          "desc":  { "en": "...", "it": "..." },
+          "items": [
+            { "label": { "en": "Swift Step",        "it": "Swift Step" },        "keys": ["hasDash"],        "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Drifter's Cloak",   "it": "Drifter's Cloak" },   "keys": ["hasBrolly"],      "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Cling Grip",        "it": "Cling Grip" },        "keys": ["hasWalljump"],    "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Needolin",          "it": "Needolin" },          "keys": ["hasNeedolin"],    "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Faydown Cloak",     "it": "Faydown Cloak" },     "keys": ["hasDoubleJump"],  "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Clawline",          "it": "Clawline" },          "keys": ["hasQuill"],       "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Needle Strike",     "it": "Needle Strike" },     "keys": ["hasChargeSlash"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Silk Soar",         "it": "Silk Soar" },         "keys": ["hasSuperJump"],   "equals": true, "location": "???", "wikiSlug": "aa" }
+          ]
+        },
+        {
+          "id": "silk_skills",
+          "label": { "en": "Silk Skills", "it": "Tecniche di seta" },
+          "desc":  { "en": "These are not tools, rather they are techniques like the ones granted to the Knight in Hollow Knight.", "it": "Non sono strumenti, ma tecniche, simili a quelle del Cavaliere in Hollow Knight." },
+          "items": [
+            { "label": { "en": "Silkspear",        "it": "Silkspear" },        "query": { "name": "Silk Spear",      "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Thread Striem",    "it": "Thread Striem" },    "query": { "name": "Thread Sphere",   "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Cross Stitch",     "it": "Cross Stitch" },     "query": { "name": "Parry",           "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Sharpdart",        "it": "Sharpdart" },        "query": { "name": "Silk Charge",     "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Rune Rage",        "it": "Rune Rage" },        "query": { "name": "Silk Bomb",       "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Pale Nails",       "it": "Pale Nails" },       "query": { "name": "Silk Boss Needle","path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" }
+          ]
+        },
+        {
+          "id": "red_tools",
+          "label": { "en": "Red Tools", "it": "Strumenti rossi" },
+          "desc":  { "en": "Limited use consumable tools that require Shell Shards to be replenished at Benches.", "it": "Strumenti consumabili a uso limitato che richiedono Schegge per essere ricaricati alle panchine." },
+          "items": [
+            { "label": { "en": "Straight Pin",     "it": "Straight Pin" },     "query": { "name": "Straight Pin", "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Threefold Pin",    "it": "Threefold Pin" },    "query": { "name": "Tri Pin",      "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Sting Shard",      "it": "Sting Shard" },      "query": { "name": "sting shard",  "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Tacks",            "it": "Tacks" },            "query": { "name": "Tack",         "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Throwing Ring",    "it": "Throwing Ring" },    "query": { "name": "Shakra Ring",  "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Longpin",          "it": "Longpin" },          "query": { "name": "Harpoon",      "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Curveclaw",        "it": "Curveclaw" },        "query": { "name": "Curve Claws",  "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Pimpillo",         "it": "Pimpillo" },         "query": { "name": "Pimpilo",      "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Silkshot",         "it": "Silkshot" },         "query": { "name": "WebShot Forge","path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Conchcutter",      "it": "Conchcutter" },      "query": { "name": "Conch Drill",  "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Delver's Drill",   "it": "Delver's Drill" },   "query": { "name": "Screw Attack", "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Cogwork Wheel",    "it": "Cogwork Wheel" },    "query": { "name": "Cogwork Saw",  "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Voltvessels",      "it": "Voltvessels" },      "query": { "name": "Lightning Rod","path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "CogFly",           "it": "CogFly" },           "query": { "name": "Cogwork Flier","path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Rosary Cannon",    "it": "Rosary Cannon" },    "query": { "name": "Rosary Cannon","path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Flintslate",       "it": "Flintslate" },       "query": { "name": "Flintstone",   "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Plasmium Phial",   "it": "Plasmium Phial" },   "query": { "name": "Lifeblood Syringe","path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Flea Brew",        "it": "Flea Brew" },        "query": { "name": "Flea Brew",    "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" }
+          ]
+        },
+        {
+          "id": "blue_tools",
+          "label": { "en": "Blue Tools", "it": "Strumenti blu" },
+          "desc":  { "en": "The properties of blue tools aren't known.", "it": "Le proprietà degli strumenti blu non sono note." },
+          "items": [
+            { "label": { "en": "Druid's Eye",        "it": "Druid's Eye" },        "query": { "name": "Mosscreep Tool 1",   "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Magma Bell",         "it": "Magma Bell" },         "query": { "name": "Lava Charm",         "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Warding Bell",       "it": "Warding Bell" },       "query": { "name": "Bell Bind",          "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Pollip Pouch",       "it": "Pollip Pouch" },       "query": { "name": "Poison Pouch",       "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Fractured Mask",     "it": "Fractured Mask" },     "query": { "name": "Fractured Mask",     "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Multibinder",        "it": "Multibinder" },        "query": { "name": "Multibind",          "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Weavelight",         "it": "Weavelight" },         "query": { "name": "White Ring",         "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Sawtooth Circlet",   "it": "Sawtooth Circlet" },   "query": { "name": "Brolly Spike",       "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Injector Band",      "it": "Injector Band" },      "query": { "name": "Quickbind",          "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Extender",     "it": "Spool Extender" },     "query": { "name": "Spool Extender",     "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Reserve Bind",       "it": "Reserve Bind" },       "query": { "name": "Reserve Bind",       "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Claw Mirror",        "it": "Claw Mirror" },        "query": { "name": "Dazzle Bind",        "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Claw Mirrors",       "it": "Claw Mirrors" },       "query": { "name": "Dazzle Bind Upgraded","path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Memory Crystal",     "it": "Memory Crystal" },     "query": { "name": "Revenge Crystal",    "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Snitch Pick",        "it": "Snitch Pick" },        "query": { "name": "Thief Claw",        "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Volt Filament",      "it": "Volt Filament" },      "query": { "name": "Zap Imbuement",     "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Quick Sling",        "it": "Quick Sling" },        "query": { "name": "Quick Sling",       "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Wreath of Purity",   "it": "Wreath of Purity" },   "query": { "name": "Maggot Charm",      "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Longclaw",           "it": "Longclaw" },           "query": { "name": "Longneedle",        "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Wispfire Lantern",   "it": "Wispfire Lantern" },   "query": { "name": "Wisp Lantern",      "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Egg of Flealia",     "it": "Egg of Flealia" },     "query": { "name": "Flea Charm",        "path": "Data.IsUnlocked" }, "equals": true, "location": "???" , "wikiSlug": "aa"},
+            { "label": { "en": "Pin Badge",          "it": "Pin Badge" },          "query": { "name": "Pinstress Tool",    "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" }
+          ]
+        },
+        {
+          "id": "yellow_tools",
+          "label": { "en": "Yellow Tools", "it": "Strumenti gialli" },
+          "desc":  { "en": "Intricate tracking device, carved from shell. When equipped, the bearer's location will be marked on their map.", "it": "Dispositivo di tracciamento elaborato, scolpito nel guscio. Quando equipaggiato, la posizione del portatore viene segnata sulla mappa." },
+          "items": [
+            { "label": { "en": "Compass",           "it": "Compass" },           "query": { "name": "Compass",         "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Shard Pendant",     "it": "Shard Pendant" },     "query": { "name": "Bone Necklace",   "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Magnetite Brooch",  "it": "Magnetite Brooch" },  "query": { "name": "Rosary Magnet",   "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Weighted Belt",     "it": "Weighted Belt" },     "query": { "name": "Weighted Anklet", "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Barbed Bracelet",   "it": "Barbed Bracelet" },   "query": { "name": "Barbed Wire",     "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Dead Bug's Purse",  "it": "Dead Bug's Purse" },  "query": { "name": "Dead Mans Purse", "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Magnetite Dice",    "it": "Magnetite Dice" },    "query": { "name": "Magnetite Dice",  "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Scuttlebrace",      "it": "Scuttlebrace" },      "query": { "name": "Scuttlebrace",    "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Ascendant's Grip",  "it": "Ascendant's Grip" },  "query": { "name": "Wallcling",       "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Spider Strings",    "it": "Spider Strings" },    "query": { "name": "Musician Charm",  "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Silkspeed Anklets", "it": "Silkspeed Anklets" }, "query": { "name": "Sprintmaster",    "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Thief's Mark",      "it": "Thief's Mark" },      "query": { "name": "Thief Charm",     "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" }
+          ]
+        },
+        {
+          "id": "needle_upgrades",
+          "label": { "en": "Needle Upgrades", "it": "Potenziamenti dell'Ago" },
+          "desc":  { "en": "Upgrades to Hornet's main weapon damage.", "it": "Potenziamenti ai danni dell'arma principale di Hornet." },
+          "items": [
+            { "label": { "en": "#0 Needle",            "it": "#0 Ago" },               "keys": ["IsUnlocked"], "equals": true, "location": "Arma base",                          "wikiSlug": "Needle" },
+            { "label": { "en": "#1 Sharpened Needle",  "it": "#1 Ago Affilato" },      "keys": ["IsUnlocked"], "equals": true, "location": "Sconfiggi la Vedova",                "wikiSlug": "Needle" },
+            { "label": { "en": "#2 Shining Needle",    "it": "#2 Ago Lucente" },       "keys": ["IsUnlocked"], "equals": true, "location": "1x Olio Pallido",                    "wikiSlug": "Needle" },
+            { "label": { "en": "#3 Hivesteel Needle",  "it": "#3 Ago Alveacciaio" },   "keys": ["IsUnlocked"], "equals": true, "location": "500 Rosari + 1x Olio Pallido",       "wikiSlug": "Needle" },
+            { "label": { "en": "#4 Pale Steel Needle", "it": "#4 Ago d'Acciaio Pallido" }, "keys": ["IsUnlocked"], "equals": true, "location": "900 Rosari + 1x Olio Pallido", "wikiSlug": "Needle" }
+          ]
+        },
+        {
+          "id": "crests",
+          "label": { "en": "Crests", "it": "Stemmi" },
+          "desc":  { "en": "Crests are Equipment that allows Hornet to change their Moveset.", "it": "Gli stemmi sono equipaggiamenti che permettono a Hornet di cambiare le mosse." },
+          "items": [
+            { "label": { "en": "Hunter Crest",    "it": "Hunter Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Reaper Crest",    "it": "Reaper Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Wanderer Crest",  "it": "Wanderer Crest" },  "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Beast Crest",     "it": "Beast Crest" },     "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Witch Crest",     "it": "Witch Crest" },     "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Architect Crest", "it": "Architect Crest" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Shaman Crest",    "it": "Shaman Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" }
+          ]
+        },
+        {
+          "id": "everbloom",
+          "label": { "en": "Everbloom", "it": "Everbloom" },
+          "desc":  { "en": "...", "it": "..." },
+          "items": [
+            { "label": { "en": "White Flower", "it": "White Flower" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" }
+          ]
+        },
+        {
+          "id": "bind_eva",
+          "label": { "en": "Bind Eva", "it": "Bind Eva" },
+          "desc":  { "en": "...", "it": "..." },
+          "items": [
+            { "label": { "en": "Bind Eva", "it": "Bind Eva" }, "keys": ["HasBoundCrestUpgrader"], "equals": true, "location": "serve 15 memorie bloccate", "wikiSlug": "aa" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "boss",
+      "label": { "en": "Boss %", "it": "Boss %" },
+      "sections": [
+        {
+          "id": "boss-list",
+          "label": { "en": "Boss", "it": "Boss" },
+          "desc":  { "en": "Destroy all Bosses", "it": "Sconfiggi tutti i boss" },
+          "items": [
+            { "label": { "en": "Act 1 Moss Mother",        "it": "Atto 1 Moss Mother" },        "keys": ["defeatedMossMother"],            "equals": true, "wikiSlug": "Moss_Mother" },
+            { "label": { "en": "Act 1 Bell Beast",         "it": "Atto 1 Bell Beast" },         "keys": ["defeatedBellBeast"],             "equals": true, "wikiSlug": "Bell_Beast" },
+            { "label": { "en": "Act 1 Lace",               "it": "Atto 1 Lace" },               "keys": ["defeatedLace1"],                 "equals": true, "wikiSlug": "Lace" },
+            { "label": { "en": "Act 1 Fourth Chorus",      "it": "Atto 1 Fourth Chorus" },      "keys": ["defeatedSongGolem"],             "equals": true, "wikiSlug": "Fourth_Chorus" },
+            { "label": { "en": "Act 1 Moorwing",           "it": "Atto 1 Moorwing" },           "keys": ["???"],                           "equals": true, "wikiSlug": "Moorwing" },
+            { "label": { "en": "Act 1 Sister Splinter",    "it": "Atto 1 Sister Splinter" },    "keys": ["defeatedSplinterQueen"],         "equals": true, "wikiSlug": "Sister_Splinter" },
+            { "label": { "en": "Act 1 Widow",              "it": "Atto 1 Widow" },              "keys": ["???"],                           "equals": true, "wikiSlug": "Widow" },
+            { "label": { "en": "Act 1 Last Judge",         "it": "Atto 1 Last Judge" },         "keys": ["defeatedLastJudge"],             "equals": true, "wikiSlug": "Last_Judge" },
+            { "label": { "en": "Act 2 Cogwork Dancers",    "it": "Atto 2 Cogwork Dancers" },    "keys": ["defeatedCogworkDancers"],        "equals": true, "wikiSlug": "Cogwork Dancers" },
+            { "label": { "en": "Act 2 Trobbio",            "it": "Atto 2 Trobbio" },            "keys": ["defeatedTrobbio"],               "equals": true, "wikiSlug": "Trobbio" },
+            { "label": { "en": "Act 2 Lost Lace",          "it": "Atto 2 Lost Lace" },          "keys": ["defeatedLostLace"],              "equals": true, "wikiSlug": "Lost Lace" },
+            { "label": { "en": "Act 2 Grand Mother Silk",  "it": "Atto 2 Grand Mother Silk" },  "keys": ["defeatedGrandMotherSilk"],       "equals": true, "wikiSlug": "Grand Mother Silk" },
+
+            { "label": { "en": "Phantom",                  "it": "Phantom" },                   "keys": ["defeatedPhantom"],               "equals": true, "wikiSlug": "Phantom" },
+            { "label": { "en": "Great Conchflies",         "it": "Great Conchflies" },          "keys": ["???"],                           "equals": true, "wikiSlug": "Great_Conchflies" },
+            { "label": { "en": "Signis and Gron",          "it": "Signis and Gron" },           "keys": ["defeatedSignisAndGron"],         "equals": true, "wikiSlug": "Signis and Gron" },
+            { "label": { "en": "Groal the Great",          "it": "Groal the Great" },           "keys": ["defeatedGroalTheGreat"],         "equals": true, "wikiSlug": "Groal the Great" },
+            { "label": { "en": "The Unraveled",            "it": "The Unraveled" },             "keys": ["defeatedTheUnraveled"],          "equals": true, "wikiSlug": "The Unraveled" },
+            { "label": { "en": "Disgraced Chef Lugoli",    "it": "Disgraced Chef Lugoli" },     "keys": ["defeatedDisgracedChefLugoli"],   "equals": true, "wikiSlug": "Disgraced Chef Lugoli" },
+            { "label": { "en": "First Sinner",             "it": "First Sinner" },              "keys": ["defeatedFirstSinner"],           "equals": true, "wikiSlug": "First Sinner" },
+            { "label": { "en": "Craggler",                 "it": "Craggler" },                  "keys": ["defeatedCraggler"],              "equals": true, "wikiSlug": "Craggler" },
+            { "label": { "en": "Father of the Flame",      "it": "Father of the Flame" },       "keys": ["defeatedFatherOfTheFlame"],      "equals": true, "wikiSlug": "Father of the Flame" },
+            { "label": { "en": "Carmelita",                "it": "Carmelita" },                 "keys": ["defeatedAntQueen"],              "equals": true, "wikiSlug": "Carmelita" },
+            { "label": { "en": "Voltvyrm",                 "it": "Voltvyrm" },                  "keys": ["defeatedVoltvyrm"],              "equals": true, "wikiSlug": "Voltvyrm" },
+            { "label": { "en": "Raging Conchfly",          "it": "Raging Conchfly" },           "keys": ["defeatedRagingConchfly"],        "equals": true, "wikiSlug": "Raging Conchfly" },
+            { "label": { "en": "Second Sentinel",          "it": "Second Sentinel" },           "keys": ["defeatedSecondSentinel"],        "equals": true, "wikiSlug": "Second Sentinel" },
+            { "label": { "en": "Broodmother",              "it": "Broodmother" },               "keys": ["defeatedBroodmother"],           "equals": true, "wikiSlug": "Broodmother" },
+            { "label": { "en": "Bell Eater",               "it": "Bell Eater" },                "keys": ["defeatedBellEater"],             "equals": true, "wikiSlug": "Bell Eater" },
+            { "label": { "en": "Plasmified Zango",         "it": "Plasmified Zango" },          "keys": ["defeatedPlasmifiedZango"],       "equals": true, "wikiSlug": "Plasmified Zango" },
+            { "label": { "en": "Tormented Trobbio",        "it": "Tormented Trobbio" },         "keys": ["defeatedTormentedTrobbio"],      "equals": true, "wikiSlug": "Tormented Trobbio" },
+            { "label": { "en": "Crust King Khann",         "it": "Crust King Khann" },          "keys": ["defeatedCoralKing"],             "equals": true, "wikiSlug": "Crust King Khann" },
+            { "label": { "en": "Shrine Guardian Seth",     "it": "Shrine Guardian Seth" },      "keys": ["defeatedSeth"],                  "equals": true, "wikiSlug": "Shrine Guardian Seth" },
+            { "label": { "en": "Nyleth",                   "it": "Nyleth" },                    "keys": ["defeatedNyleth"],                "equals": true, "wikiSlug": "Nyleth" },
+            { "label": { "en": "Palestag",                 "it": "Palestag" },                  "keys": ["defeatedPalestag"],              "equals": true, "wikiSlug": "Palestag" },
+            { "label": { "en": "Clover Dancers",           "it": "Clover Dancers" },            "keys": ["defeatedCloverDancers"],         "equals": true, "wikiSlug": "Clover Dancers" },
+            { "label": { "en": "Lost Garmond",             "it": "Lost Garmond" },              "keys": ["defeatedLostGarmond"],           "equals": true, "wikiSlug": "Lost Garmond" },
+            { "label": { "en": "Pinstress",                "it": "Pinstress" },                 "keys": ["defeatedPinstress"],             "equals": true, "wikiSlug": "Pinstress" },
+            { "label": { "en": "Gurr the Outcas",          "it": "Gurr the Outcas" },           "keys": ["defeatedGurrTheOutcas"],         "equals": true, "wikiSlug": "Gurr the Outcas" },
+            { "label": { "en": "Watcher at the Edge",      "it": "Watcher at the Edge" },       "keys": ["defeatedWatcherAtTheEdge"],      "equals": true, "wikiSlug": "Watcher at the Edge" },
+            { "label": { "en": "Crawfather",               "it": "Crawfather" },                "keys": ["defeatedCrawfather"],            "equals": true, "wikiSlug": "Crawfather" },
+            { "label": { "en": "Summoned Saviour",         "it": "Summoned Saviour" },          "keys": ["defeatedSummonedSaviour"],       "equals": true, "wikiSlug": "Summoned Saviour" },
+            { "label": { "en": "Shakra",                   "it": "Shakra" },                    "keys": ["defeatedShakra"],                "equals": true, "wikiSlug": "Shakra" },
+            { "label": { "en": "Garmond and Zaza",         "it": "Garmond and Zaza" },          "keys": ["defeatedGarmondAndZaza"],        "equals": true, "wikiSlug": "Garmond and Zaza" }
+          ]
+        }
+      ]
+    },
+
+    { "id": "essentials", "label": { "en": "Essentials %", "it": "Essenziali %" }, "sections": [] },
+    { "id": "journal",    "label": { "en": "Journal", "it": "Diario" }, "sections": [
+      { "id": "journal-basic", "label": { "en": "Journal", "it": "Diario" }, "items": [
+        { "label": { "en": "Base bestiary", "it": "Bestiario base" }, "keys": ["journal.started"], "equals": true }
+      ] }
+    ] }
+  ]
+}

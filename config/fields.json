@@ -1,0 +1,13 @@
+{
+  "fields": [
+    { "label":  { "en": "Game Status %", "it": "Completamento %" }, "keys": ["completionPercentage"], "format": "percent", "target": "gameStatusPct" },
+    { "label": { "en": "Time Played", "it": "Tempo di Gioco" },   "keys": ["playTime"], "format": "duration", "assume_ms_if_large": true, "target": "timePlayedText" },
+    { "label": { "en": "Save Version", "it": "Versione Salvataggio" },  "keys": ["version"], "format": "text",   "target": "saveVersionText" },
+
+    { "label": { "en": "Health", "it": "Salute" },        "keys": ["maxHealth"], "format": "number", "target": "healthValue" },
+    { "label": { "en": "Max Silk", "it": "Seta max" },        "keys": ["silkMax"], "format": "number", "target": "maxsetaValue" },
+    { "label": { "en": "Silk Hearts", "it": "Cuori di seta" },    "keys": ["silkRegenMax"],       "format": "number", "target": "setaValue" },
+    { "label": { "en": "Rosaries", "it": "Rosari" },        "keys": ["geo"],           "format": "number", "target": "rosariValue" },
+    { "label": { "en": "Shell Shards", "it": "Schegge" },       "keys": ["ShellShards"],           "format": "number", "target": "scheggeValue" }   
+  ]
+}
