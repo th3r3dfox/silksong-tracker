@@ -363,3 +363,5 @@ body::before{
   font-size: var(--checklist-font, 0.90rem);
 }
 
+.section-block { transition: opacity .15s ease; }
+.section-block[style*="display: none"] { opacity: 0; }

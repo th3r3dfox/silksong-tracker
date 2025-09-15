@@ -892,15 +892,13 @@ function applyVisibilityFilters(){
       if (hide) hidden++;
     });
 
-  const allDone = total > 0 && doneCount === total;
-
-  // >>> Nascondi l'intera sezione se è completa e il filtro "solo incompleti" è attivo
-  const block = ul.closest('.section-block');
-  if (SHOW_ONLY_MISSING && allDone) {
-    if (block) block.style.display = 'none';
-  } else {
-    if (block) block.style.display = '';
-  }
+const allDone = total > 0 && doneCount === total;
+const block = ul.closest('.section-block');
+if (SHOW_ONLY_MISSING && (allDone || total === 0)) {
+  if (block) block.style.display = 'none';
+} else {
+  if (block) block.style.display = '';
+}
 
   // NIENTE banner "COMPLETED" qui
 
