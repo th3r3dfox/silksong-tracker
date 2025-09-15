@@ -8,6 +8,7 @@
           "id": "needle_upgrades",
           "label": { "en": "Needle Upgrades", "it": "Potenziamenti dell'Ago" },
           "desc":  { "en": "Upgrades to Hornet's main weapon damage.", "it": "Potenziamenti ai danni dell'arma principale di Hornet." },
+          "contrib": 4, 
           "items": [
             { "label": { "en": "#0 Needle",            "it": "#0 Ago" },               "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Base Needle",            "it": "Arma Base" },"wikiSlug": "Needle" },
             { "label": { "en": "#1 Sharpened Needle",  "it": "#1 Ago Affilato" },      "keys": ["IsUnlocked"], "equals": true, "location": "Sconfiggi la Vedova",                "wikiSlug": "Needle" },
@@ -20,6 +21,7 @@
           "id": "mask",
           "label": { "en": "Mask Shards", "it": "Frammenti di Maschera" },
           "desc":  { "en": "Collect all mask shards.", "it": "Raccogli tutti i frammenti di maschera." },
+          "contrib": 5, 
           "items": [
             { "label": { "en": "Mask Shard #1",  "it": "Frammento di maschera #1" },  "keys": ["__flags.Dock_08.Heart_Piece"],                         "equals": true, "location": "Dock_08", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #2",  "it": "Frammento di maschera #2" },  "keys": ["__flags.Bone_East_20.Heart_Piece"],                   "equals": true, "location": "Bone_East_20", "wikiSlug": "aa" },
@@ -47,6 +49,7 @@
           "id": "spool",
           "label": { "en": "Spool Fragment", "it": "Frammenti di Seta" },
           "desc":  { "en": "Collect all spool fragments.", "it": "Raccogli tutti i frammenti di seta." },
+          "contrib": 9, 
           "items": [
             { "label": { "en": "Spool Fragment #1",  "it": "Frammento di seta #1" },  "keys": ["pilgrimQuestSpoolCollected"],         "equals": true, "location": "pilgrimQuestSpoolCollected", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #2",  "it": "Frammento di seta #2" },  "keys": ["tookGreymoor17Spool"],                 "equals": true, "location": "tookGreymoor17Spool", "wikiSlug": "aa" },
@@ -72,6 +75,7 @@
           "id": "silk_hearts",
           "label": { "en": "Silk Hearts", "it": "Cuori di seta" },
           "desc":  { "en": "Upgrades to the Knight's main regen skill.", "it": "Potenziamenti dell'abilità principale di rigenerazione." },
+          "contrib": 3, 
           "items": [
             { "label": { "en": "#1 Silk Heart", "it": "Cuore di seta #1" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
             { "label": { "en": "#2 Silk Heart", "it": "Cuore di seta #2" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
@@ -82,6 +86,7 @@
           "id": "miscellaneous",
           "label": { "en": "Miscellaneous", "it": "Varie" },
           "desc":  { "en": "...", "it": "..." },
+          "contrib": 2, 
           "items": [
             { "label": { "en": "White Flower", "it": "White Flower" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
             { "label": { "en": "Bind Eva", "it": "Bind Eva" }, "keys": ["HasBoundCrestUpgrader"], "equals": true, "location": "serve 15 memorie bloccate", "wikiSlug": "aa" }
@@ -91,6 +96,7 @@
           "id": "crests",
           "label": { "en": "Crests", "it": "Stemmi" },
           "desc":  { "en": "Crests are Equipment that allows Hornet to change their Moveset.", "it": "Gli stemmi sono equipaggiamenti che permettono a Hornet di cambiare le mosse." },
+          "contrib": 6, 
           "items": [
             { "label": { "en": "Hunter Crest",    "it": "Hunter Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
             { "label": { "en": "Reaper Crest",    "it": "Reaper Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
@@ -105,6 +111,7 @@
           "id": "silk_skills",
           "label": { "en": "Silk Skills", "it": "Tecniche di seta" },
           "desc":  { "en": "These are not tools, rather they are techniques like the ones granted to the Knight in Hollow Knight.", "it": "Non sono strumenti, ma tecniche, simili a quelle del Cavaliere in Hollow Knight." },
+          "contrib": 6, 
           "items": [
             { "label": { "en": "Silkspear",        "it": "Silkspear" },        "query": { "name": "Silk Spear",      "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
             { "label": { "en": "Thread Striem",    "it": "Thread Striem" },    "query": { "name": "Thread Sphere",   "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
@@ -119,6 +126,7 @@
   "id": "tool_pouch_upgrades",
   "label": { "en": "Tool Pouch Upgrades", "it": "Upgrade Tool Pouch" },
   "desc":  { "en": "Capacity upgrades for the tool pouch.", "it": "Migliorie di capienza della borsa attrezzi." },
+  "contrib": 4, 
   "items": [
     { "label": { "en": "#0 Base Pouch",   "it": "#0 Borsa base" } },
     { "label": { "en": "#1 Expanded",     "it": "#1 Espansa" } },
@@ -131,6 +139,7 @@
   "id": "crafting_kit_upgrades",
   "label": { "en": "Crafting Kit Expansions", "it": "Espansioni Crafting Kit" },
   "desc":  { "en": "Capacity upgrades for the crafting kit.", "it": "Espansioni di capienza del kit da creazione." },
+  "contrib": 4, 
   "items": [
     { "label": { "en": "#0 Base Kit",     "it": "#0 Kit base" } },
     { "label": { "en": "#1 Expanded",     "it": "#1 Espanso" } },
@@ -145,6 +154,7 @@
           "id": "red_tools",
           "label": { "en": "Red Tools", "it": "Strumenti rossi" },
           "desc":  { "en": "Limited use consumable tools that require Shell Shards to be replenished at Benches.", "it": "Strumenti consumabili a uso limitato che richiedono Schegge per essere ricaricati alle panchine." },
+          "contrib": 18, 
           "items": [
             { "label": { "en": "Straight Pin",     "it": "Straight Pin" },     "query": { "name": "Straight Pin", "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
             { "label": { "en": "Threefold Pin",    "it": "Threefold Pin" },    "query": { "name": "Tri Pin",      "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
@@ -170,6 +180,7 @@
           "id": "blue_tools",
           "label": { "en": "Blue Tools", "it": "Strumenti blu" },
           "desc":  { "en": "The properties of blue tools aren't known.", "it": "Le proprietà degli strumenti blu non sono note." },
+          "contrib": 21, 
           "items": [
             { "label": { "en": "Druid's Eye",        "it": "Druid's Eye" },        "query": { "name": "Mosscreep Tool 1",   "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
             { "label": { "en": "Magma Bell",         "it": "Magma Bell" },         "query": { "name": "Lava Charm",         "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
@@ -199,6 +210,7 @@
           "id": "yellow_tools",
           "label": { "en": "Yellow Tools", "it": "Strumenti gialli" },
           "desc":  { "en": "Intricate tracking device, carved from shell. When equipped, the bearer's location will be marked on their map.", "it": "Dispositivo di tracciamento elaborato, scolpito nel guscio. Quando equipaggiato, la posizione del portatore viene segnata sulla mappa." },
+          "contrib": 12, 
           "items": [
             { "label": { "en": "Compass",           "it": "Compass" },           "query": { "name": "Compass",         "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
             { "label": { "en": "Shard Pendant",     "it": "Shard Pendant" },     "query": { "name": "Bone Necklace",   "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },

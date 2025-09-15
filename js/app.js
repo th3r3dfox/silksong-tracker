@@ -508,7 +508,7 @@ function renderGroups(){
           ]);
           const lvl = Math.max(0, Math.min(4, Number(lvlRaw) || 0));
           ok = idx <= lvl;
-        } else { ok = false; }
+        }
 
       } else if (section.id === 'silk_regen') {
         if (lastSaveObj) {
@@ -519,25 +519,27 @@ function renderGroups(){
           const upper = Math.max(0, (section.items?.length || 1) - 1);
           const lvl = Math.max(0, Math.min(upper, Number(lvlRaw) || 0));
           ok = idx <= lvl;
-        } else { ok = false; }
+        }
 
-      // NEW: Tool Pouch upgrades (intero nel save)
       } else if (section.id === 'tool_pouch_upgrades') {
         if (lastSaveObj) {
-          const lvlRaw = deepFindAny(lastSaveObj, ['ToolPouchUpgrades','PlayerData.ToolPouchUpgrades','Data.ToolPouchUpgrades']);
+          const lvlRaw = deepFindAny(lastSaveObj, [
+            'ToolPouchUpgrades','PlayerData.ToolPouchUpgrades','Data.ToolPouchUpgrades'
+          ]);
           const upper  = Math.max(0, (section.items?.length || 1) - 1);
           const lvl    = Math.max(0, Math.min(upper, Number(lvlRaw) || 0));
           ok = idx <= lvl;
-        } else { ok = false; }
+        }
 
-      // NEW: Crafting Kit expansions (intero nel save)
       } else if (section.id === 'crafting_kit_upgrades') {
         if (lastSaveObj) {
-          const lvlRaw = deepFindAny(lastSaveObj, ['ToolKitUpgrades','PlayerData.ToolKitUpgrades','Data.ToolKitUpgrades']);
+          const lvlRaw = deepFindAny(lastSaveObj, [
+            'ToolKitUpgrades','PlayerData.ToolKitUpgrades','Data.ToolKitUpgrades'
+          ]);
           const upper  = Math.max(0, (section.items?.length || 1) - 1);
           const lvl    = Math.max(0, Math.min(upper, Number(lvlRaw) || 0));
           ok = idx <= lvl;
-        } else { ok = false; }
+        }
 
       } else {
         const rawVal = lastSaveObj ? resolveItemValue(lastSaveObj, item) : undefined;
@@ -554,13 +556,21 @@ function renderGroups(){
     });
 
     const pct = total ? Math.round((done / total) * 100) : 0;
-    pillEl.textContent = `${pct}%`;
+
+    // Mostra contributo fisso se presente
+    const displayPct = (section.contrib != null) ? section.contrib : pct;
+    pillEl.textContent = `${displayPct}%`;
+
+    // Colora di verde la pill se la sezione è completa al 100%
+    if (pct === 100) pillEl.classList.add('complete');
+    else pillEl.classList.remove('complete');
 
     sectionsStack.appendChild(block);
   });
 
   applyVisibilityFilters();
 }
+
 
 
 
@@ -579,7 +589,8 @@ function makeSectionBlock(section){
 
   const pill = document.createElement('span');
   pill.className = 'pill';
-  pill.textContent = '0%';
+  // se la sezione ha un contributo definito lo mostriamo subito
+  pill.textContent = (section.contrib != null) ? `${section.contrib}%` : '0%';
 
   head.appendChild(title);
   head.appendChild(pill);
@@ -598,6 +609,7 @@ function makeSectionBlock(section){
 
   return { block, ul, pillEl: pill };
 }
+
 
 /* ---------- Upload & decode ---------- */
 browseBtn?.addEventListener('click', () => fileInput?.click());
