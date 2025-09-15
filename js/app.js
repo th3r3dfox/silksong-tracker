@@ -894,45 +894,16 @@ function applyVisibilityFilters(){
 
     const allDone = total > 0 && doneCount === total;
 
-    // Banner "COMPLETATO" sempre quando la sezione è finita
-    if (allDone){
-      const banner = document.createElement('li');
-      banner.className = 'section-complete-banner no-marker';
-      banner.innerHTML = `✅ <strong>${ui('completed')}</strong> (100%)`;
-      banner.style.opacity = '.95';
-      banner.style.fontWeight = '600';
-      banner.style.padding = '6px 10px';
-      banner.style.borderRadius = '8px';
-      banner.style.border = '1px solid rgba(0,0,0,.25)';
-      banner.style.background = 'rgba(0,128,0,.12)';
-      banner.style.marginBottom = '6px';
-
-      // inietta la regola CSS una volta sola per togliere la X del ::before
-      if (!document.getElementById('noMarkerStyle')) {
-        const st = document.createElement('style');
-        st.id = 'noMarkerStyle';
-        st.textContent = `
-          #sectionsStack ul.checklist > li.no-marker::before,
-          #sectionsStack ul.item-list > li.no-marker::before{
-            display: none !important;
-            content: '' !important;
-          }
-        `;
-        document.head.appendChild(st);
-      }
-
-      ul.prepend(banner);
-    }
-
+    
     // Se col filtro scompaiono tutti gli item (sezione non al 100%)
-    if (SHOW_ONLY_MISSING && total > 0 && hidden === total && !allDone){
-      const msg = document.createElement('li');
-      msg.className = 'empty-msg';
-      msg.style.opacity = '.8';
-      msg.style.fontStyle = 'italic';
-      msg.textContent = ui('noneIncomplete');
-      ul.appendChild(msg);
-    }
+ if (SHOW_ONLY_MISSING && total > 0 && hidden === total && !allDone){
+  const msg = document.createElement('li');
+  msg.className = 'empty-msg';
+  msg.style.opacity = '.8';
+  msg.style.fontStyle = 'italic';
+  msg.textContent = ui('noneIncomplete') || 'No incomplete items in this section.';
+  ul.appendChild(msg);
+}
   });
 }
 
