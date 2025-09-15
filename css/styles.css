@@ -365,3 +365,16 @@ body::before{
 
 .section-block { transition: opacity .15s ease; }
 .section-block[style*="display: none"] { opacity: 0; }
+
+.upload-hint{
+  margin: 6px 0;
+  font-size: .95rem;
+  opacity: .85;
+}
+.upload-hint code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+}

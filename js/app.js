@@ -51,7 +51,9 @@ const I18N_UI = {
     noneIncomplete: 'No incomplete items in this section.',
     chooseFile: 'Choose Save File…',
     showJson: 'Show JSON',
-    noFile: 'No file'
+    noFile: 'No file',
+    chooseSaveNote: 'Choose the correct save file: <code>user*.json</code> (e.g. <code>user1.json</code>).'
+
   },
   it: {
     spoilers: 'Spoiler',
@@ -60,8 +62,9 @@ const I18N_UI = {
     noneIncomplete: 'Nessun elemento incompleto in questa sezione.',
     chooseFile: 'Scegli salvataggio…',
     showJson: 'Mostra JSON',
-    noFile: 'Nessun file'
-  }
+    noFile: 'Nessun file',
+    chooseSaveNote: 'Scegli il file di salvataggio corretto: <code>user*.json</code> (es. <code>user1.json</code>).'
+  },
 };
 
 // testi statici nella hero
@@ -948,6 +951,7 @@ sel.addEventListener('change', ()=>{
   buildTabs();
   updateTabsUI();
   renderGroups();
+  applyChooseSaveNote();
 });
 
     // CSS minimale per il dock (compatto, leggibile)
@@ -979,6 +983,13 @@ sel.addEventListener('change', ()=>{
   }
 }
 
+function applyChooseSaveNote(){
+  const el = document.getElementById('chooseSaveNote');
+  if (!el) return;
+  el.innerHTML = (I18N_UI[LANG]?.chooseSaveNote || I18N_UI.en.chooseSaveNote);
+}
+
+
 /* ---------- BOOTSTRAP: crea selettore lingua e render ---------- */
 (function bootLangSelectorSafely(){
   function boot(){
@@ -987,6 +998,7 @@ sel.addEventListener('change', ()=>{
     applyHeroFieldLabels();
     applyFooterTranslations();
     renderGroups();            // render nella lingua attiva
+    applyChooseSaveNote();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot, { once: true });
