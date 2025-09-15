@@ -48,19 +48,24 @@
 
     <!-- Barra superiore: percorso + selezione file -->
     <header class="topbar" aria-label="Caricamento salvataggio">
-      <div class="save-path">
-        <div id="savePathDisplay" class="save-display" title="Clicca per copiare">
-          %userprofile%\appdata\LocalLow\Team Cherry\Hollow Knight Silksong
-        </div>
-      </div>
-    <p id="chooseSaveNote" class="upload-hint"></p>
-      <div class="file-chooser">
-        <button id="browseBtn" type="button" class="choose-btn">📂 Choose Save File...</button>
-        <input type="file" id="fileInput" accept=".dat,.sav,.bin" hidden />
-        <span id="fileInfo" class="pill" style="margin-left:10px;">Nessun file</span>
-        <button id="showJsonBtn" type="button" class="btn-ghost small" disabled>Mostra JSON</button>
-      </div>
-    </header>
+  <div class="save-path">
+    <div id="savePathDisplay" class="save-display" title="Clicca per copiare">
+      %userprofile%\appdata\LocalLow\Team Cherry\Hollow Knight Silksong
+    </div>
+  </div>
+
+  <!-- testo tra percorso e file chooser -->
+  <p id="chooseSaveNote" class="upload-hint">
+    Choose the correct save file: <code>user*.json</code> (e.g. <code>user1.json</code>).
+  </p>
+
+  <div class="file-chooser">
+    <button id="browseBtn" type="button" class="choose-btn">📂 Choose Save File...</button>
+    <input type="file" id="fileInput" accept=".json,.dat,.sav,.bin" hidden />
+    <span id="fileInfo" class="pill" style="margin-left:10px;">Nessun file</span>
+    <button id="showJsonBtn" type="button" class="btn-ghost small" disabled>Mostra JSON</button>
+  </div>
+</header>
 
     <!-- Hero: stato di gioco + metadati -->
     <section class="hero" aria-label="Stato di gioco">
