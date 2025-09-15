@@ -80,7 +80,7 @@ function ui(key){
 // —— Footer i18n ——
 const APP_VERSION = ' 0.1.0';
 const CREDIT_NAME = 'Fox';
-const CREDIT_URL  = 'https://discord.gg/eGVaUWvrTb';
+const CREDIT_URL  = 'https://steamcommunity.com/sharedfiles/filedetails/?id=3568819705';
 const MEMORIAL_URL = 'https://reznormichael.github.io/hollow-knight-completion-check/'; // <-- metti qui il link reale
 const MEMORIAL_NAME = 'ReznoRMichael';
 const TEAM_CHERRY_URL = 'https://www.teamcherry.com.au/';                // sito ufficiale
