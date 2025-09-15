@@ -152,6 +152,7 @@
           "id": "abilities",
           "label": { "en": "Abilities", "it": "Abilità" },
           "desc":  { "en": "...", "it": "..." },
+          "contrib": 6,
           "items": [
             { "label": { "en": "Swift Step",        "it": "Swift Step" },        "keys": ["hasDash"],        "equals": true, "location": "???", "wikiSlug": "aa" },
             { "label": { "en": "Drifter's Cloak",   "it": "Drifter's Cloak" },   "keys": ["hasBrolly"],      "equals": true, "location": "???", "wikiSlug": "aa" },
