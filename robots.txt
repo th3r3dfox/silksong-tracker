@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://th3r3dfox.github.io/silksong-tracker/sitemap.xml
