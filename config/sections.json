@@ -148,6 +148,21 @@
     { "label": { "en": "#4 Max Kit",      "it": "#4 Kit massimo" } }
   ]
 },
+{
+          "id": "abilities",
+          "label": { "en": "Abilities", "it": "Abilità" },
+          "desc":  { "en": "...", "it": "..." },
+          "items": [
+            { "label": { "en": "Swift Step",        "it": "Swift Step" },        "keys": ["hasDash"],        "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Drifter's Cloak",   "it": "Drifter's Cloak" },   "keys": ["hasBrolly"],      "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Cling Grip",        "it": "Cling Grip" },        "keys": ["hasWalljump"],    "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Needolin",          "it": "Needolin" },          "keys": ["hasNeedolin"],    "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Faydown Cloak",     "it": "Faydown Cloak" },     "keys": ["hasDoubleJump"],  "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Clawline",          "it": "Clawline" },          "keys": ["hasQuill"],       "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Needle Strike",     "it": "Needle Strike" },     "keys": ["hasChargeSlash"], "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Silk Soar",         "it": "Silk Soar" },         "keys": ["hasSuperJump"],   "equals": true, "location": "???", "wikiSlug": "aa" }
+          ]
+        },
 
 
         {
@@ -285,21 +300,6 @@
         }
       ]
     },
-    {
-          "id": "abilities",
-          "label": { "en": "Abilities", "it": "Abilità" },
-          "desc":  { "en": "...", "it": "..." },
-          "items": [
-            { "label": { "en": "Swift Step",        "it": "Swift Step" },        "keys": ["hasDash"],        "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Drifter's Cloak",   "it": "Drifter's Cloak" },   "keys": ["hasBrolly"],      "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Cling Grip",        "it": "Cling Grip" },        "keys": ["hasWalljump"],    "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Needolin",          "it": "Needolin" },          "keys": ["hasNeedolin"],    "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Faydown Cloak",     "it": "Faydown Cloak" },     "keys": ["hasDoubleJump"],  "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Clawline",          "it": "Clawline" },          "keys": ["hasQuill"],       "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Needle Strike",     "it": "Needle Strike" },     "keys": ["hasChargeSlash"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Silk Soar",         "it": "Silk Soar" },         "keys": ["hasSuperJump"],   "equals": true, "location": "???", "wikiSlug": "aa" }
-          ]
-        },
     { "id": "essentials", "label": { "en": "Essentials %", "it": "Essenziali %" }, "sections": [] },
     { "id": "journal",    "label": { "en": "Journal", "it": "Diario" }, "sections": [
       { "id": "journal-basic", "label": { "en": "Journal", "it": "Diario" }, "items": [
