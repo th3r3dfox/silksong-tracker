@@ -24,8 +24,8 @@
           "contrib": 5, 
           "items": [
             { "label": { "en": "Mask Shard #1",  "it": "Frammento di maschera #1" },  "keys": ["__flags.Dock_08.Heart_Piece"],                         "equals": true, "location": "In the Deep Docks, accessed through The Marrow.", "wikiSlug": "aa" },
-            { "label": { "en": "Mask Shard #2",  "it": "Frammento di maschera #2" },  "keys": ["__flags.Bone_East_20.Heart_Piece"],                   "equals": true, "location": "Bone_East_20", "wikiSlug": "aa" },
-            { "label": { "en": "Mask Shard #3",  "it": "Frammento di maschera #3" },  "keys": ["__flags.Shellwood_14.Heart_Piece"],                   "equals": true, "location": "Shellwood_14", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #2",  "it": "Frammento di maschera #2" },  "keys": ["__flags.Bone_East_20.Heart_Piece"],                   "equals": true, "location": "Far Fields", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #3",  "it": "Frammento di maschera #3" },  "keys": ["__flags.Shellwood_14.Heart_Piece"],                   "equals": true, "location": "Shellwood", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #4",  "it": "Frammento di maschera #4" },  "keys": ["__flags.Crawl_02.Heart_Piece"],                       "equals": true, "location": "Behind a breakable wall at the water's edge.", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #5",  "it": "Frammento di maschera #5" },  "keys": ["__flags.Weave_05b.Heart_Piece"],                      "equals": true, "location": "Weave_05b", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #6",  "it": "Frammento di maschera #6" },  "keys": ["__flags.Song_09.Heart_Piece"],                        "equals": true, "location": "Song_09", "wikiSlug": "aa" },
@@ -44,7 +44,7 @@
             { "label": { "en": "Mask Shard #19", "it": "Frammento di maschera #19" }, "query": { "name": "Broodmother Hunt","path": "Data.IsCompleted" }, "equals": true, "location": "Broodmother Hunt", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard ??? #20", "it": "Frammento di maschera ??? #20" }, "query": { "name": "Shaman Help","path": "Data.IsCompleted" }, "equals": true, "location": "???", "wikiSlug": "aa" }
           ]
-        },
+        }, 
         {
           "id": "spool",
           "label": { "en": "Spool Fragment", "it": "Frammenti di Seta" },
