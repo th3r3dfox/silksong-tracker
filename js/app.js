@@ -514,15 +514,19 @@ function renderGroups(){
         }
 
       } else if (section.id === 'silk_regen') {
-        if (lastSaveObj) {
-          const lvlRaw = deepFindAny(lastSaveObj, [
-            'silkRegenMax','SilkRegenMax','silkRegen','silkLevel',
-            'PlayerData.silkRegenMax','Data.silkRegenMax'
-          ]);
-          const upper = Math.max(0, (section.items?.length || 1) - 1);
-          const lvl = Math.max(0, Math.min(upper, Number(lvlRaw) || 0));
-          ok = idx <= lvl;
-        }
+  if (lastSaveObj) {
+    const lvlRaw = deepFindAny(lastSaveObj, [
+      'silkRegenMax','SilkRegenMax','silkRegen','silkLevel',
+      'PlayerData.silkRegenMax','Data.silkRegenMax'
+    ]);
+
+    // lvl = numero di cuori effettivamente ottenuti (non indice)
+    const total = section.items?.length || 0;
+    const lvl   = Math.max(0, Math.min(total, Number(lvlRaw) || 0));
+
+    // mostra preso solo se l'indice è minore del conteggio
+    ok = idx < lvl;   // <-- prima era idx <= lvl (causava il #1 “gratis”)
+  }
 
       } else if (section.id === 'tool_pouch_upgrades') {
         if (lastSaveObj) {

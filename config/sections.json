@@ -5,7 +5,7 @@
       "label": { "en": "Main 100%", "it": "Principale 100%" },
       "sections": [
         {
-          "id": "needle_upgrades",
+          "id": "nail_upgrades",
           "label": { "en": "Needle Upgrades", "it": "Potenziamenti dell'Ago" },
           "desc":  { "en": "Upgrades to Hornet's main weapon damage.", "it": "Potenziamenti ai danni dell'arma principale di Hornet." },
           "contrib": 4, 
@@ -72,7 +72,7 @@
           ]
         },
         {
-          "id": "silk_hearts",
+          "id": "silk_regen",
           "label": { "en": "Silk Hearts", "it": "Cuori di seta" },
           "desc":  { "en": "Upgrades to the Knight's main regen skill.", "it": "Potenziamenti dell'abilità principale di rigenerazione." },
           "contrib": 3, 
@@ -88,7 +88,7 @@
           "desc":  { "en": "...", "it": "..." },
           "contrib": 2, 
           "items": [
-            { "label": { "en": "Everbloom ", "it": "Everbloom " }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Return to the Snail Shamans and complete the memory sequence",            "it": "Arma Base" }, "wikiSlug": "aa" },
+            { "label": { "en": "Everbloom ", "it": "Everbloom " }, "query": { "name": "White Flower", "path": "Data.Amount" }, "equals": 1, "location": { "en": "Return to the Snail Shamans and complete the memory sequence",            "it": "Arma Base" }, "wikiSlug": "aa" },
             { "label": { "en": "Bind Eva", "it": "Bind Eva" }, "keys": ["HasBoundCrestUpgrader"], "equals": true, "location": { "en": "6 Crests and use 15 Memory Lockets on them",            "it": "Arma Base" }, "wikiSlug": "aa" }
           ]
         },
@@ -98,13 +98,13 @@
           "desc":  { "en": "Crests are Equipment that allows Hornet to change their Moveset.", "it": "Gli stemmi sono equipaggiamenti che permettono a Hornet di cambiare le mosse." },
           "contrib": 6, 
           "items": [
-            { "label": { "en": "Hunter Crest",    "it": "Hunter Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Reaper Crest",    "it": "Reaper Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Wanderer Crest",  "it": "Wanderer Crest" },  "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Beast Crest",     "it": "Beast Crest" },     "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Witch Crest",     "it": "Witch Crest" },     "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Architect Crest", "it": "Architect Crest" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Shaman Crest",    "it": "Shaman Crest" },    "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" }
+            { "label": { "en": "Hunter Crest",   "it": "Hunter Crest" },"query": { "name": "Hunter",   "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Reaper Crest",   "it": "Reaper Crest" },"query": { "name": "Reaper",   "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Wanderer Crest", "it": "Wanderer Crest" },"query": { "name": "Wanderer", "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Beast Crest",    "it": "Beast Crest" },"query": { "name": "Warrior",    "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Witch Crest",    "it": "Witch Crest" },"query": { "name": "Witch",    "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Architect Crest","it": "Architect Crest" },"query": { "name": "Toolmaster","path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" },
+            { "label": { "en": "Shaman Crest",   "it": "Shaman Crest" },"query": { "name": "Spell",   "path": "Data.IsUnlocked" }, "equals": true, "location": "???", "wikiSlug": "aa" }
           ]
         },
         {
