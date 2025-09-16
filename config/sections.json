@@ -11,10 +11,10 @@
           "contrib": 4, 
           "items": [
             { "label": { "en": "#0 Needle",            "it": "#0 Ago" },               "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Base Needle",            "it": "Arma Base" },"wikiSlug": "Needle" },
-            { "label": { "en": "#1 Sharpened Needle",  "it": "#1 Ago Affilato" },      "keys": ["IsUnlocked"], "equals": true, "location": "Sconfiggi la Vedova",                "wikiSlug": "Needle" },
-            { "label": { "en": "#2 Shining Needle",    "it": "#2 Ago Lucente" },       "keys": ["IsUnlocked"], "equals": true, "location": "1x Olio Pallido",                    "wikiSlug": "Needle" },
-            { "label": { "en": "#3 Hivesteel Needle",  "it": "#3 Ago Alveacciaio" },   "keys": ["IsUnlocked"], "equals": true, "location": "500 Rosari + 1x Olio Pallido",       "wikiSlug": "Needle" },
-            { "label": { "en": "#4 Pale Steel Needle", "it": "#4 Ago d'Acciaio Pallido" }, "keys": ["IsUnlocked"], "equals": true, "location": "900 Rosari + 1x Olio Pallido", "wikiSlug": "Needle" }
+            { "label": { "en": "#1 Sharpened Needle",  "it": "#1 Ago Affilato" },      "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Defeat the Widow",            "it": "Sconfiggi la Vedova" },                "wikiSlug": "Needle" },
+            { "label": { "en": "#2 Shining Needle",    "it": "#2 Ago Lucente" },       "keys": ["IsUnlocked"], "equals": true, "location": { "en": "1x Pale Oil",            "it": "1x Olio Pallido" },                    "wikiSlug": "Needle" },
+            { "label": { "en": "#3 Hivesteel Needle",  "it": "#3 Ago Alveacciaio" },   "keys": ["IsUnlocked"], "equals": true, "location": { "en": "500 Rosaries + 1x Pale Oil",            "it": "500 Rosari + 1x Olio Pallido" },       "wikiSlug": "Needle" },
+            { "label": { "en": "#4 Pale Steel Needle", "it": "#4 Ago d'Acciaio Pallido" }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "900 Rosaries + 1x Pale Oil",            "it": "900 Rosari + 1x Olio Pallido" }, "wikiSlug": "Needle" }
           ]
         },
         {
@@ -77,9 +77,9 @@
           "desc":  { "en": "Upgrades to the Knight's main regen skill.", "it": "Potenziamenti dell'abilità principale di rigenerazione." },
           "contrib": 3, 
           "items": [
-            { "label": { "en": "#1 Silk Heart", "it": "Cuore di seta #1" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "#2 Silk Heart", "it": "Cuore di seta #2" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "#3 Silk Heart", "it": "Cuore di seta #3" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" }
+            { "label": { "en": "#1 Silk Heart", "it": "Cuore di seta #1" }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Defeating the Bell Beast in The Marrow area",            "it": "Arma Base" }, "wikiSlug": "aa" },
+            { "label": { "en": "#2 Silk Heart", "it": "Cuore di seta #2" }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Defeating the Unravelled in The Whiteward",            "it": "Arma Base" }, "wikiSlug": "aa" },
+            { "label": { "en": "#3 Silk Heart", "it": "Cuore di seta #3" }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Defeating Lace in The Act Two",            "it": "Arma Base" }, "wikiSlug": "aa" }
           ]
         },
         {
@@ -88,8 +88,8 @@
           "desc":  { "en": "...", "it": "..." },
           "contrib": 2, 
           "items": [
-            { "label": { "en": "White Flower", "it": "White Flower" }, "keys": ["IsUnlocked"], "equals": true, "location": "???", "wikiSlug": "aa" },
-            { "label": { "en": "Bind Eva", "it": "Bind Eva" }, "keys": ["HasBoundCrestUpgrader"], "equals": true, "location": "serve 15 memorie bloccate", "wikiSlug": "aa" }
+            { "label": { "en": "Everbloom ", "it": "Everbloom " }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Return to the Snail Shamans and complete the memory sequence",            "it": "Arma Base" }, "wikiSlug": "aa" },
+            { "label": { "en": "Bind Eva", "it": "Bind Eva" }, "keys": ["HasBoundCrestUpgrader"], "equals": true, "location": { "en": "6 Crests and use 15 Memory Lockets on them",            "it": "Arma Base" }, "wikiSlug": "aa" }
           ]
         },
         {
