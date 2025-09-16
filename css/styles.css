@@ -380,12 +380,10 @@ body::before{
 }
 
 
-/* cursore globale */
 html, body {
-  cursor: url('/img/Cursor_32px.png') 0 0, auto;
+  cursor: url('../img/Cursor_32px.png') 0 0, auto;
+}
+a, button, [role="button"], input[type="submit"] {
+  cursor: url('../img/Cursor_32px.png') 0 0, pointer;
 }
 
-/* esempio: cursore “link” sui tag cliccabili */
-a, button, [role="button"], input[type="submit"] {
-  cursor: url('/img/Cursor_32px.png') 0 0, pointer;
-}
