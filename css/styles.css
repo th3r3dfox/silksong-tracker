@@ -378,3 +378,14 @@ body::before{
   background: rgba(255,255,255,.08);
   border: 1px solid rgba(255,255,255,.15);
 }
+
+
+/* cursore globale */
+html, body {
+  cursor: url('/img/Cursor_32px.png') 0 0, auto;
+}
+
+/* esempio: cursore “link” sui tag cliccabili */
+a, button, [role="button"], input[type="submit"] {
+  cursor: url('/img/Cursor_32px.png') 0 0, pointer;
+}
