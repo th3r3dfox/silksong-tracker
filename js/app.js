@@ -52,7 +52,7 @@ const I18N_UI = {
     chooseFile: 'Choose Save File…',
     showJson: 'Show JSON',
     noFile: 'No file',
-    chooseSaveNote: 'Choose the correct save file: <code>user*.json</code> (e.g. <code>user1.json</code>).'
+    chooseSaveNote: 'Choose the correct save file: <code>user*.dat</code> (e.g. <code>user1.dat</code>).'
 
   },
   it: {
@@ -63,7 +63,7 @@ const I18N_UI = {
     chooseFile: 'Scegli salvataggio…',
     showJson: 'Mostra JSON',
     noFile: 'Nessun file',
-    chooseSaveNote: 'Scegli il file di salvataggio corretto: <code>user*.json</code> (es. <code>user1.json</code>).'
+    chooseSaveNote: 'Scegli il file di salvataggio corretto: <code>user*.dat</code> (es. <code>user1.dat</code>).'
   },
 };
 
