@@ -311,7 +311,7 @@
           "desc":  { "en": "Complete all quest", "it": "Completa tutte le quest" },
           "items": [
             { "label": { "en": "the great citadel","it": "the great citadel" },"query": { "name": "Citadel Seeker","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "","it": "" },"wikiSlug": "aa" },
-            { "label": { "en": "the great citadel","it": "the great citadel" },"query": { "name": "Citadel Seeker","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "","it": "" },"wikiSlug": "aa" }
+            { "label": { "en": "the threadspun town","it": "the threadspun town" },"query": { "name": "The Threadspun Town","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "break the silken curse ensnaring the town of bellhart","it": "break the silken curse ensnaring the town of bellhart" },"wikiSlug": "aa" }
           ]
         },
         {
@@ -324,6 +324,9 @@
             { "label": { "en": "berry picking #1","it": "berry picking #1" },"query": { "name": "Mossberry Collection Pre","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "speak to the druid in mosshome","it": "speak to the druid in mosshome" },"wikiSlug": "aa" },
             { "label": { "en": "berry picking #2","it": "berry picking #2" },"query": { "name": "Mossberry Collection 1","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "collect 3 mossberries","it": "collect 3 mossberries" },"wikiSlug": "aa" },
             { "label": { "en": "bone bottom repairs","it": "bone bottom repairs" },"query": { "name": "Building Materials","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "donate 200 sheel shard","it": "donate 200 sheel shard" },"wikiSlug": "aa" }
+            { "label": { "en": "garb of the pilgrims","it": "garb of the pilgrims" },"query": { "name": "Pilgrim Rags","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "hunt haunted pilgrims of pharloom and collect pilgrim shawls from their bodies","it": "hunt haunted pilgrims of pharloom and collect pilgrim shawls from their bodies" },"wikiSlug": "aa" },
+            { "label": { "en": "flexile spines","it": "flexile spines" },"query": { "name": "Brolly Get","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "hunt hokers in the far dields and collect spine cores","it": "hunt hokers in the far dields and collect spine cores" },"wikiSlug": "aa" },
+            { "label": { "en": "bugs of pharloom","it": "bugs of pharloom" },"query": { "name": "Journal","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "defeat the many creatures of pharloom and fill out the hunter's journal","it": "defeat the many creatures of pharloom and fill out the hunter's journal" },"wikiSlug": "aa" }
             
           ]
         }
