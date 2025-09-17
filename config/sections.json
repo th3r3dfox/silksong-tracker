@@ -310,7 +310,8 @@
           "label": { "en": "Main Quest", "it": "Quest Principali" },
           "desc":  { "en": "Complete all quest", "it": "Completa tutte le quest" },
           "items": [
-            { "label": { "en": "Act 1 Moss Mother",        "it": "Atto 1 Moss Mother" },       "query": { "name": "Thief Charm",     "path": "Data.IsCompleted" }, "equals": true, "location": { "en": "Base Needle",            "it": "Arma Base" },"wikiSlug": "Moss_Mother" }
+            { "label": { "en": "the great citadel","it": "the great citadel" },"query": { "name": "Citadel Seeker","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "","it": "" },"wikiSlug": "aa" },
+            { "label": { "en": "the great citadel","it": "the great citadel" },"query": { "name": "Citadel Seeker","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "","it": "" },"wikiSlug": "aa" },
           ]
         },
         {
@@ -318,7 +319,12 @@
           "label": { "en": "Side Quest", "it": "Quest Secondarie" },
           "desc":  { "en": "Complete all quest", "it": "Completa tutte le quest" },
           "items": [
-            { "label": { "en": "Act 1 Moss Mother",        "it": "Atto 1 Moss Mother" },       "query": { "name": "Thief Charm",     "path": "Data.IsCompleted" }, "equals": true, "location": { "en": "Base Needle",            "it": "Arma Base" },"wikiSlug": "Moss_Mother" }
+            { "label": { "en": "the lost fleas #1","it": "the lost fleas #1" },"query": { "name": "Save the Fleas Pre","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "","it": "" },"wikiSlug": "aa" },
+            { "label": { "en": "the lost fleas #2","it": "the lost fleas #2" },"query": { "name": "Save the Fleas","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "find 5 fleas","it": "find 5 fleas" },"wikiSlug": "aa" },
+            { "label": { "en": "berry picking #1","it": "berry picking #1" },"query": { "name": "Mossberry Collection Pre","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "speak to the druid in mosshome","it": "speak to the druid in mosshome" },"wikiSlug": "aa" },
+            { "label": { "en": "berry picking #2","it": "berry picking #2" },"query": { "name": "Mossberry Collection 1","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "collect 3 mossberries","it": "collect 3 mossberries" },"wikiSlug": "aa" },
+            { "label": { "en": "bone bottom repairs","it": "bone bottom repairs" },"query": { "name": "Building Materials","path": "Data.IsCompleted" }, "equals": true, "location": { "en": "donate 200 sheel shard","it": "donate 200 sheel shard" },"wikiSlug": "aa" },
+            
           ]
         }
       ]
