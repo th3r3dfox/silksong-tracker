@@ -301,7 +301,28 @@
         }
       ]
     },
-    { "id": "essentials", "label": { "en": "Essentials %", "it": "Essenziali %" }, "sections": [] },
+    {
+      "id": "quest",
+      "label": { "en": "Quest %", "it": "Quest %" },
+      "sections": [
+        {
+          "id": "quests-listPrincp",
+          "label": { "en": "Main Quest", "it": "Quest Principali" },
+          "desc":  { "en": "Complete all quest", "it": "Completa tutte le quest" },
+          "items": [
+            { "label": { "en": "Act 1 Moss Mother",        "it": "Atto 1 Moss Mother" },       "query": { "name": "Thief Charm",     "path": "Data.IsCompleted" }, "equals": true, "location": { "en": "Base Needle",            "it": "Arma Base" },"wikiSlug": "Moss_Mother" }
+          ]
+        },
+        {
+          "id": "quests-listsec",
+          "label": { "en": "Side Quest", "it": "Quest Secondarie" },
+          "desc":  { "en": "Complete all quest", "it": "Completa tutte le quest" },
+          "items": [
+            { "label": { "en": "Act 1 Moss Mother",        "it": "Atto 1 Moss Mother" },       "query": { "name": "Thief Charm",     "path": "Data.IsCompleted" }, "equals": true, "location": { "en": "Base Needle",            "it": "Arma Base" },"wikiSlug": "Moss_Mother" }
+          ]
+        }
+      ]
+    },
     { "id": "journal",    "label": { "en": "Journal", "it": "Diario" }, "sections": [
       { "id": "journal-basic", "label": { "en": "Journal", "it": "Diario" }, "items": [
         { "label": { "en": "Base bestiary", "it": "Bestiario base" }, "keys": ["journal.started"], "equals": true }
