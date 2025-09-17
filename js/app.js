@@ -53,7 +53,6 @@ const I18N_UI = {
     showJson: 'Show JSON',
     noFile: 'No file',
     chooseSaveNote: 'Choose the correct save file: <code>user*.dat</code> (e.g. <code>user1.dat</code>).'
-
   },
   it: {
     spoilers: 'Spoiler',
@@ -84,12 +83,10 @@ function ui(key){
 const APP_VERSION = ' 0.1.0';
 const CREDIT_NAME = 'Fox';
 const CREDIT_URL  = 'https://steamcommunity.com/sharedfiles/filedetails/?id=3568819705';
-const MEMORIAL_URL = 'https://reznormichael.github.io/hollow-knight-completion-check/'; // <-- metti qui il link reale
+const MEMORIAL_URL = 'https://reznormichael.github.io/hollow-knight-completion-check/';
 const MEMORIAL_NAME = 'ReznoRMichael';
-const TEAM_CHERRY_URL = 'https://www.teamcherry.com.au/';                // sito ufficiale
-const SILKSONG_URL    = 'https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/'; // pagina Silksong
-
-
+const TEAM_CHERRY_URL = 'https://www.teamcherry.com.au/';
+const SILKSONG_URL    = 'https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/';
 
 const I18N_FOOTER = {
   en: {
@@ -99,7 +96,6 @@ const I18N_FOOTER = {
     creditsTitle: 'Credits',
     creditsPrefix: 'Site made by',
     memTitle: 'In memory',
-    // funzione che costruisce l'HTML con il link
     memText: (url, name) =>
       `In memory of <strong>${name}</strong>, creator of the first game’s <a href="${url}" target="_blank" rel="noopener">Analyzer</a>, which accompanied me through my 112% adventures.`,
     legal: (tc, ss) =>
@@ -119,7 +115,6 @@ const I18N_FOOTER = {
   }
 };
 
-
 function applyFooterTranslations(){
   const d = I18N_FOOTER[LANG] || I18N_FOOTER.en;
 
@@ -129,39 +124,30 @@ function applyFooterTranslations(){
     if (isHTML) el.innerHTML = html; else el.textContent = html;
   };
 
-  // Titoli e descrizioni
   setTxt('ftTitle', d.title);
-  // usa la pill “Alpha • v0.1.0” se hai definito versionPillText(), altrimenti fallback
   setTxt('ftPill', typeof versionPillText === 'function' ? versionPillText() : `${d.wip} • v${APP_VERSION}`);
   setTxt('ftWipDesc', d.wipDesc);
   setTxt('ftCreditsTitle', d.creditsTitle);
   setTxt('ftCreditsPrefix', d.creditsPrefix);
   setTxt('ftMemTitle', d.memTitle);
 
-  // Testo commemorativo (funzione o stringa) con link
   const memHtml = typeof d.memText === 'function'
     ? d.memText(MEMORIAL_URL, MEMORIAL_NAME)
     : d.memText;
   setTxt('ftMemText', memHtml, true);
 
-  // Riga legale: supporta funzione (con link) o stringa semplice
   const legalHtml = typeof d.legal === 'function'
     ? d.legal(TEAM_CHERRY_URL, SILKSONG_URL)
     : d.legal;
   setTxt('ftLegal', legalHtml, true);
 
-  // Crediti autore/link
   const link = document.getElementById('creditLink');
   const name = document.getElementById('creditName');
   if (link) link.href = CREDIT_URL;
   if (name) name.textContent = CREDIT_NAME;
 }
 
-
-
-
-// traduce titoli/etichette/desc dal JSON:
-// stringa -> così com’è; oggetto {it,en,...} -> lingua, fallback en/primo valore
+// traduce titoli/etichette/desc dal JSON
 function tr(value){
   if (value && typeof value === 'object' && !Array.isArray(value)) {
     return value[LANG] ?? value.en ?? Object.values(value)[0] ?? '';
@@ -171,7 +157,6 @@ function tr(value){
 
 // applica traduzioni ai testi statici della hero e ai bottoni
 function applyHeroTranslations(){
-  // Titolo "GAME STATUS": prova vari selettori comuni (adatta se servi)
   const heroTitle =
     document.querySelector('#gameStatusTitle') ||
     document.querySelector('.hero-title') ||
@@ -179,11 +164,9 @@ function applyHeroTranslations(){
     document.querySelector('#gameStatus .section-head h2');
   if (heroTitle) heroTitle.textContent = tr(I18N_STATIC.gameStatusTitle);
 
-  // "Time Played" e "Save Version" vicino ai relativi span di valore
   setHeroLabel('#timePlayedText', I18N_STATIC.timePlayed);
   setHeroLabel('#saveVersionText', I18N_STATIC.saveVersion);
 
-  // Bottoni
   if (browseBtn)    browseBtn.textContent = ui('chooseFile');
   if (showJsonBtn)  showJsonBtn.textContent = ui('showJson');
   const noFileEl = document.getElementById('noFileLabel');
@@ -192,17 +175,14 @@ function applyHeroTranslations(){
   function setHeroLabel(valueSel, labelObj){
     const el = document.querySelector(valueSel);
     if (!el || !el.parentNode) return;
-    // se il nodo prima è un testo, lo sostituisco
     if (el.previousSibling && el.previousSibling.nodeType === Node.TEXT_NODE){
       el.previousSibling.textContent = tr(labelObj) + ': ';
       return;
     }
-    // se c'è un elemento .label prima, aggiorno
     if (el.previousElementSibling && el.previousElementSibling.classList?.contains('label')){
       el.previousElementSibling.textContent = tr(labelObj) + ':';
       return;
     }
-    // altrimenti aggiungo io una label davanti
     const span = document.createElement('span');
     span.className = 'label';
     span.textContent = tr(labelObj) + ': ';
@@ -210,7 +190,7 @@ function applyHeroTranslations(){
   }
 }
 
-// Traduce/sovrascrive le etichette dei campi hero senza creare duplicati
+// Traduce/sovrascrive le etichette dei campi hero senza duplicati
 function applyHeroFieldLabels(){
   (fieldConfig.fields || []).forEach(field => {
     if (!field.target) return;
@@ -227,10 +207,8 @@ function applyHeroFieldLabels(){
 
     if (!container) return;
 
-    // Evita duplicati: se l'abbiamo già toccato in passato, aggiorna e basta
     container.dataset.i18nLabeled = '1';
 
-    // 1) Se esiste un elemento label nel contenitore, aggiorna quello
     let labelEl =
       container.querySelector(':scope > .label') ||
       container.querySelector('.field-label, .stat-label, label');
@@ -240,13 +218,11 @@ function applyHeroFieldLabels(){
       return;
     }
 
-    // 2) Se il primo nodo del contenitore è un testo tipo "HEALTH: "
     if (container.firstChild && container.firstChild.nodeType === Node.TEXT_NODE) {
       container.firstChild.textContent = `${labelText}: `;
       return;
     }
 
-    // 3) Se c'è un elemento prima del valore che è chiaramente la label, aggiornalo
     if (valueEl.previousElementSibling &&
         !valueEl.previousElementSibling.contains(valueEl) &&
         valueEl.previousElementSibling !== valueEl) {
@@ -258,15 +234,12 @@ function applyHeroFieldLabels(){
       }
     }
 
-    // 4) Nessuna label trovata: la creo io UNA VOLTA
     const span = document.createElement('span');
     span.className = 'label';
     span.textContent = `${labelText}: `;
     container.insertBefore(span, valueEl);
   });
 }
-
-
 
 /* ───────────────── Utils locali ───────────────── */
 function escapeHtml(str){
@@ -326,8 +299,8 @@ function indexFlags(root){
     if (!sceneRaw || !idRaw) return;
     const scene = String(sceneRaw).trim().replace(/\s+/g,'_');
     const idKey = String(idRaw).trim()
-      .replace(/\s+/g,'_')           // spazi -> underscore
-      .replace(/[^\w.]/g,'_');       // caratteri strani
+      .replace(/\s+/g,'_')
+      .replace(/[^\w.]/g,'_');
     if (!flags[scene]) flags[scene] = {};
     flags[scene][idKey] = Boolean(value);
   };
@@ -338,7 +311,6 @@ function indexFlags(root){
       return;
     }
     if (node && typeof node === 'object'){
-      // pattern tipico: { SceneName, ID, Value }
       const hasScene = ('SceneName' in node) || ('sceneName' in node);
       const hasId    = ('ID' in node)        || ('Id' in node) || ('id' in node);
       const hasVal   = ('Value' in node)     || ('value' in node);
@@ -349,13 +321,11 @@ function indexFlags(root){
         const val   = node.Value ?? node.value;
         mark(scene, id, val);
       }
-      // continua la ricorsione
       for (const k in node) walk(node[k]);
     }
   }
 
   walk(root);
-  // salva nella root per poter usare "__flags.Scene.ID" nei JSON di config
   root.__flags = flags;
   return root;
 }
@@ -370,10 +340,7 @@ function pickCollectionByNamespace(saveObj, ns){
   return saveObj?.playerData?.QuestCompletionData?.savedData || [];
 }
 
-
-/* ---------- Risoluzione valore item (keys | query) ---------- */
-
-/* --- Resolve by name/path within a given namespace --- */
+/* --- Resolve by name/path within a given namespace (utile per futuro) --- */
 function resolveByNamePathNS(saveObj, name, ns, path){
   const coll = pickCollectionByNamespace(saveObj, ns);
   const key  = String(name || '').toLowerCase();
@@ -383,6 +350,7 @@ function resolveByNamePathNS(saveObj, name, ns, path){
   return hit ? getAtPath(hit, path) : undefined;
 }
 
+/* ---------- Risoluzione valore item (keys | query) ---------- */
 function resolveItemValue(saveObj, item){
   // 1) query: { name, path }
   if (item && item.query && lastSaveObj){
@@ -448,9 +416,7 @@ function resolveItemValue(saveObj, item){
     }
   }
   return undefined;
-
 }
-
 
 /* ---------- Carica config ---------- */
 fetch('config/fields.json')
@@ -471,12 +437,12 @@ fetch('config/sections.json')
   })
   .catch(() => { groupsCfg = { groups: [] }; });
 
-/* ---------- Lista info opzionale (se hai #infoFields in pagina) ---------- */
+/* ---------- Lista info opzionale ---------- */
 function renderEmptyFields() {
   if (!listEl) return;
   listEl.innerHTML = '';
   (fieldConfig.fields || []).forEach((field, idx) => {
-    if (field.target) return; // evito duplicati dei target nella hero
+    if (field.target) return;
     const li = document.createElement('li');
     li.innerHTML = `<strong>${escapeHtml(tr(field.label))}:</strong> <span id="field-${idx}">—</span>`;
     listEl.appendChild(li);
@@ -494,7 +460,7 @@ function renderFields(saveObj){
   });
 }
 
-/* ---------- Hero targets (Game Status, ecc.) ---------- */
+/* ---------- Hero targets ---------- */
 function renderTargets(saveObj){
   (fieldConfig.fields || []).forEach(field => {
     if (!field.target) return;
@@ -513,7 +479,7 @@ function buildTabs(){
   (groupsCfg.groups || []).forEach(grp => {
     const btn = document.createElement('button');
     btn.className = 'tab' + (activeGroupId === grp.id ? ' active' : '');
-    btn.textContent = tr(grp.label || grp.id); // localizzato
+    btn.textContent = tr(grp.label || grp.id);
     btn.addEventListener('click', () => {
       activeGroupId = grp.id;
       updateTabsUI();
@@ -529,28 +495,8 @@ function updateTabsUI(){
   if (idx >= 0) tabsEl.children[idx]?.classList.add('active');
 }
 
-/* ---------- Render delle sezioni del gruppo attivo ---------- */
+/* ---------- Render sezioni (senza stato giallo) ---------- */
 function renderGroups(){
-
-/* ---------- Tri-state styles injection (accepted state) ---------- */
-function ensureTriStateStyles(){
-  if (document.getElementById('triStateStyle')) return;
-  const st = document.createElement('style');
-  st.id = 'triStateStyle';
-  st.textContent = `
-    #sectionsStack ul.checklist > li.accepted::before,
-    #sectionsStack ul.item-list > li.accepted::before{
-      content: '•';
-      margin-right: 8px;
-      font-weight: bold;
-      color: #f3c623;
-    }
-    #sectionsStack ul.checklist > li.accepted{ list-style: none; }
-  `;
-  document.head.appendChild(st);
-}
-
-  ensureTriStateStyles();
   if (!sectionsStack) return;
   sectionsStack.innerHTML = '';
   ensureSpoilerCheckbox();
@@ -562,12 +508,10 @@ function ensureTriStateStyles(){
   (grp.sections || []).forEach(section => {
     const { block, ul, pillEl } = makeSectionBlock(section);
 
-    // riempi lista items
     let done = 0, total = (section.items || []).length;
 
     (section.items || []).forEach((item, idx) => {
       let ok = false; // default: nulla spunta senza save
-      let isAcceptedButNotDone = false;
 
       // Special counters
       if (section.id === 'nail_upgrades') {
@@ -580,22 +524,16 @@ function ensureTriStateStyles(){
           const lvl = Math.max(0, Math.min(4, Number(lvlRaw) || 0));
           ok = idx <= lvl;
         }
-
       } else if (section.id === 'silk_regen') {
-  if (lastSaveObj) {
-    const lvlRaw = deepFindAny(lastSaveObj, [
-      'silkRegenMax','SilkRegenMax','silkRegen','silkLevel',
-      'PlayerData.silkRegenMax','Data.silkRegenMax'
-    ]);
-
-    // lvl = numero di cuori effettivamente ottenuti (non indice)
-    const total = section.items?.length || 0;
-    const lvl   = Math.max(0, Math.min(total, Number(lvlRaw) || 0));
-
-    // mostra preso solo se l'indice è minore del conteggio
-    ok = idx < lvl;   // <-- prima era idx <= lvl (causava il #1 “gratis”)
-  }
-
+        if (lastSaveObj) {
+          const lvlRaw = deepFindAny(lastSaveObj, [
+            'silkRegenMax','SilkRegenMax','silkRegen','silkLevel',
+            'PlayerData.silkRegenMax','Data.silkRegenMax'
+          ]);
+          const totalHearts = section.items?.length || 0;
+          const lvl   = Math.max(0, Math.min(totalHearts, Number(lvlRaw) || 0));
+          ok = idx < lvl; // fix: indice < cuori ottenuti
+        }
       } else if (section.id === 'tool_pouch_upgrades') {
         if (lastSaveObj) {
           const lvlRaw = deepFindAny(lastSaveObj, [
@@ -605,7 +543,6 @@ function ensureTriStateStyles(){
           const lvl    = Math.max(0, Math.min(upper, Number(lvlRaw) || 0));
           ok = idx <= lvl;
         }
-
       } else if (section.id === 'crafting_kit_upgrades') {
         if (lastSaveObj) {
           const lvlRaw = deepFindAny(lastSaveObj, [
@@ -615,49 +552,23 @@ function ensureTriStateStyles(){
           const lvl    = Math.max(0, Math.min(upper, Number(lvlRaw) || 0));
           ok = idx <= lvl;
         }
-
       } else {
         const rawVal = lastSaveObj ? resolveItemValue(lastSaveObj, item) : undefined;
         ok = isDoneFromRule(rawVal, item);
-        // Stato intermedio: quest accettata ma non completata
-        if (!ok && item && item.query && lastSaveObj){
-          let ns = 'quest';
-          let p  = String(item.query.path || 'Data.IsCompleted');
-          const p0 = p.split('.')[0].toLowerCase();
-          if (p0 === 'quest' || p0 === 'journal') ns = p0;
-          else if (p.startsWith('Record.')) ns = 'journal';
-          if (ns === 'quest'){
-            let acc;
-            try {
-              acc = resolveByNamePathNS(lastSaveObj, item.query.name, 'quest', 'Data.IsAccepted');
-            } catch(e){
-              const coll = pickCollectionByNamespace(lastSaveObj, 'quest');
-              const key  = String(item.query.name || '').toLowerCase();
-              const hit  = Array.isArray(coll) ? coll.find(n => String(n?.Name ?? n?.name ?? '').toLowerCase() === key) : null;
-              acc = hit ? getAtPath(hit, 'Data.IsAccepted') : undefined;
-            }
-            isAcceptedButNotDone = (acc === true);
-          }
-        }
-
       }
 
       if (ok) done++;
 
       const li = document.createElement('li');
-      li.className = ok ? 'done' : (isAcceptedButNotDone ? 'accepted' : '');
+      li.className = ok ? 'done' : '';
       li.innerHTML = `${labelToHtml({ ...item, label: tr(item.label || item.name || item.title || item) })}`;
       appendInlineMeta(li, item, ok);
       ul.appendChild(li);
     });
 
     const pct = total ? Math.round((done / total) * 100) : 0;
-
-    // Mostra contributo fisso se presente
     const displayPct = (section.contrib != null) ? section.contrib : pct;
     pillEl.textContent = `${displayPct}%`;
-
-    // Colora di verde la pill se la sezione è completa al 100%
     if (pct === 100) pillEl.classList.add('complete');
     else pillEl.classList.remove('complete');
 
@@ -667,25 +578,20 @@ function ensureTriStateStyles(){
   applyVisibilityFilters();
 }
 
-
-
-
 /* Crea DOM per una sezione (titolo + pill + descrizione + lista) */
 function makeSectionBlock(section){
   const block = document.createElement('section');
   block.className = 'section-block';
 
-  // header
   const head = document.createElement('div');
   head.className = 'section-head';
 
   const title = document.createElement('h3');
   title.className = 'section-title';
-  title.textContent = tr(section.label || section.id || 'Section'); // localizzato
+  title.textContent = tr(section.label || section.id || 'Section');
 
   const pill = document.createElement('span');
   pill.className = 'pill';
-  // se la sezione ha un contributo definito lo mostriamo subito
   pill.textContent = (section.contrib != null) ? `${section.contrib}%` : '0%';
 
   head.appendChild(title);
@@ -695,7 +601,7 @@ function makeSectionBlock(section){
   if (section.desc){
     const desc = document.createElement('p');
     desc.className = 'section-desc';
-    desc.textContent = tr(section.desc); // localizzato
+    desc.textContent = tr(section.desc);
     block.appendChild(desc);
   }
 
@@ -705,7 +611,6 @@ function makeSectionBlock(section){
 
   return { block, ul, pillEl: pill };
 }
-
 
 /* ---------- Upload & decode ---------- */
 browseBtn?.addEventListener('click', () => fileInput?.click());
@@ -727,18 +632,13 @@ function processFile(file) {
       const jsonStr = decodeSave(new Uint8Array(buffer));
       let obj = JSON.parse(jsonStr);
 
-      // costruisco l'indice __flags.*.* a partire dalle liste {SceneName, ID, Value}
       obj = indexFlags(obj);
       lastSaveObj = obj;
 
-      // hero + eventuale lista info
       renderTargets(obj);
       renderFields(obj);
-
-      // sezioni/gruppi
       renderGroups();
 
-      // JSON raw
       const rawOut = document.getElementById('rawOutput');
       if (rawOut) rawOut.textContent = JSON.stringify(obj, null, 2);
       if (showJsonBtn) showJsonBtn.disabled = false;
@@ -759,45 +659,6 @@ savePathDisplay?.addEventListener('click', () => {
     })
     .catch(console.error);
 });
-
-/* ---------- Toggle JSON grezzo ---------- */
-// (già gestito sopra nel modal)
-
-
-
-// --- Back to top ---
-(function initBackToTop() {
-  // crea il bottone se non esiste
-  let btn = document.getElementById('toTop');
-  if (!btn) {
-    btn = document.createElement('button');
-    btn.id = 'toTop';
-    btn.setAttribute('aria-label', 'Torna in cima');
-    btn.title = 'Torna in cima';
-    btn.textContent = '▲';
-    document.body.appendChild(btn);
-  }
-
-  const THRESHOLD = 300; // px di scroll prima che appaia
-
-  function toggleBtn() {
-    if (window.scrollY > THRESHOLD) btn.classList.add('show');
-    else btn.classList.remove('show');
-  }
-  window.addEventListener('scroll', toggleBtn, { passive: true });
-  window.addEventListener('load', toggleBtn);
-
-  // click & tastiera
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-  btn.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  });
-})();
 
 /* ---------- Modal JSON ---------- */
 (function initJsonModal(){
@@ -829,13 +690,11 @@ savePathDisplay?.addEventListener('click', () => {
   });
 })();
 
-
-
-/* === Spoiler UI state (single source of truth) === */
+/* === Spoiler UI state === */
 let SPOILERS_ON = JSON.parse(localStorage.getItem('spoilersOn') || 'false');
 let SHOW_ONLY_MISSING = JSON.parse(localStorage.getItem('onlyMissing') || 'false');
 
-// Inject minimal CSS for inline censorship (matches site look)
+// CSS minimo per censura inline (spoiler)
 (function ensureSpoilerStyles(){
   const id = 'spoiler-inline-css';
   if (document.getElementById(id)) return;
@@ -849,10 +708,8 @@ let SHOW_ONLY_MISSING = JSON.parse(localStorage.getItem('onlyMissing') || 'false
   .inline-meta{position:relative;display:inline-block;margin-left:.4rem;white-space:nowrap;line-height:1.1}
   .inline-meta.censored{color:transparent}
   .inline-meta.censored::after{content:"";position:absolute;inset:0;border-radius:.25rem;background:rgba(255,255,255,.16);transition:background .12s ease,color .12s ease}
-
-/* DOPO: reveal SOLO quando si passa sopra lo span dei meta */
-.spoilers-off #sectionsStack .inline-meta.censored:hover{ color:inherit; }
-.spoilers-off #sectionsStack .inline-meta.censored:hover::after{ background:transparent; }
+  .spoilers-off #sectionsStack .inline-meta.censored:hover{ color:inherit; }
+  .spoilers-off #sectionsStack .inline-meta.censored:hover::after{ background:transparent; }
 `;
   document.head.appendChild(style);
 })();
@@ -861,14 +718,12 @@ function ensureSpoilerCheckbox(){
   const stack = document.getElementById('sectionsStack');
   if (!stack) return;
 
-  // evita duplicati
   document.querySelectorAll('.spoiler-toolbar').forEach((el,i)=>{ if(i>0) el.remove(); });
   let bar = document.querySelector('.spoiler-toolbar');
   if (!bar){
     bar = document.createElement('div');
     bar.className = 'spoiler-toolbar';
 
-    // Spoilers
     const cbx = document.createElement('input');
     cbx.id = 'spoilerCbx';
     cbx.type = 'checkbox';
@@ -877,10 +732,9 @@ function ensureSpoilerCheckbox(){
     const lbl = document.createElement('label');
     lbl.className = 'spoiler-label';
     lbl.htmlFor = 'spoilerCbx';
-    lbl.textContent = ui('spoilers');   // localizzato
+    lbl.textContent = ui('spoilers');
     bar.appendChild(cbx); bar.appendChild(lbl);
 
-    // Solo incompleti
     const miss = document.createElement('input');
     miss.id = 'missingCbx';
     miss.type = 'checkbox';
@@ -889,7 +743,7 @@ function ensureSpoilerCheckbox(){
     const missLbl = document.createElement('label');
     missLbl.className = 'spoiler-label';
     missLbl.htmlFor = 'missingCbx';
-    missLbl.textContent = ui('onlyMissing'); // localizzato
+    missLbl.textContent = ui('onlyMissing');
     bar.appendChild(miss); bar.appendChild(missLbl);
 
     stack.parentElement?.insertBefore(bar, stack);
@@ -897,8 +751,8 @@ function ensureSpoilerCheckbox(){
     cbx.addEventListener('change', () => {
       SPOILERS_ON = cbx.checked;
       localStorage.setItem('spoilersOn', JSON.stringify(SPOILERS_ON));
-      updateSpoilerRootClass();    // <— aggiorna classe root per l’hover
-      applyVisibilityFilters();    // <— ricensura/decensura le righe
+      updateSpoilerRootClass();
+      applyVisibilityFilters();
     });
     miss.addEventListener('change', () => {
       SHOW_ONLY_MISSING = miss.checked;
@@ -906,8 +760,7 @@ function ensureSpoilerCheckbox(){
       applyVisibilityFilters();
     });
 
-    // stato iniziale
-    updateSpoilerRootClass();      // <— imposta la classe iniziale
+    updateSpoilerRootClass();
   } else {
     const lbl = bar.querySelector('label[for="spoilerCbx"]');
     const missLbl = bar.querySelector('label[for="missingCbx"]');
@@ -916,10 +769,9 @@ function ensureSpoilerCheckbox(){
     const cbx = document.getElementById('spoilerCbx'); if (cbx) cbx.checked = !!SPOILERS_ON;
     const miss = document.getElementById('missingCbx'); if (miss) miss.checked = !!SHOW_ONLY_MISSING;
 
-    updateSpoilerRootClass();      // <— sincronizza anche qui
+    updateSpoilerRootClass();
   }
 }
-
 
 function updateSpoilerRootClass(){
   const root = document.documentElement;
@@ -927,10 +779,9 @@ function updateSpoilerRootClass(){
   root.classList.toggle('spoilers-off', !SPOILERS_ON);
 }
 
-
 function buildInlineMetaText(item){
   const parts = [];
-  if (item.location) parts.push(tr(item.location)); // traduci se oggetto
+  if (item.location) parts.push(tr(item.location));
   if (item.notes)    parts.push(tr(item.notes));
   return parts.length ? ' — ' + parts.join(' — ') : '';
 }
@@ -964,54 +815,46 @@ function applyVisibilityFilters(){
   uls.forEach(ul => {
     let hidden = 0, total = 0, doneCount = 0;
 
-    // pulizia messaggi precedenti
     ul.querySelectorAll(':scope > li.section-complete-banner, :scope > li.empty-msg')
       .forEach(n => n.remove());
 
-    // ciclo elementi
     ul.querySelectorAll(':scope > li').forEach(li => {
-      if (li.classList.contains('section-complete-banner')) return; // safety
+      if (li.classList.contains('section-complete-banner')) return;
       total++;
       const isDone = li.classList.contains('done');
       if (isDone) doneCount++;
 
-      // SPOILER
       const meta = li.querySelector('.inline-meta');
       if (meta){
         const hasText = (meta.textContent || '').trim().length > 0;
         meta.classList.toggle('censored', hasText && !isDone && !SPOILERS_ON);
       }
 
-      // SOLO INCOMPLETI
       const hide = SHOW_ONLY_MISSING && isDone;
       li.style.display = hide ? 'none' : '';
       if (hide) hidden++;
     });
 
-const allDone = total > 0 && doneCount === total;
-const block = ul.closest('.section-block');
-if (SHOW_ONLY_MISSING && (allDone || total === 0)) {
-  if (block) block.style.display = 'none';
-} else {
-  if (block) block.style.display = '';
-}
+    const allDone = total > 0 && doneCount === total;
+    const block = ul.closest('.section-block');
+    if (SHOW_ONLY_MISSING && (allDone || total === 0)) {
+      if (block) block.style.display = 'none';
+    } else {
+      if (block) block.style.display = '';
+    }
 
-  // NIENTE banner "COMPLETED" qui
-
-  // Se col filtro scompaiono tutti gli item ma la sezione NON è al 100%,
-  // mostriamo un messaggio "nessun elemento incompleto".
-  if (SHOW_ONLY_MISSING && total > 0 && hidden === total && !allDone){
-    const msg = document.createElement('li');
-    msg.className = 'empty-msg';
-    msg.style.opacity = '.8';
-    msg.style.fontStyle = 'italic';
-    msg.textContent = ui('noneIncomplete') || 'No incomplete items in this section.';
-    ul.appendChild(msg);
-  }
+    if (SHOW_ONLY_MISSING && total > 0 && hidden === total && !allDone){
+      const msg = document.createElement('li');
+      msg.className = 'empty-msg';
+      msg.style.opacity = '.8';
+      msg.style.fontStyle = 'italic';
+      msg.textContent = ui('noneIncomplete') || 'No incomplete items in this section.';
+      ul.appendChild(msg);
+    }
   });
 }
 
-/* ---------- Language selector (alto a destra) ---------- */
+/* ---------- Language selector ---------- */
 const FLAG = { it:'🇮🇹', en:'🇬🇧', es:'🇪🇸' };
 
 function ensureLangSelector(){
@@ -1032,22 +875,21 @@ function ensureLangSelector(){
     });
     sel.value = LANG;
 
-sel.addEventListener('change', ()=>{
-  LANG = sel.value.toLowerCase();
-  localStorage.setItem('lang', LANG);
+    sel.addEventListener('change', ()=>{
+      LANG = sel.value.toLowerCase();
+      localStorage.setItem('lang', LANG);
 
-  applyHeroTranslations();
-  applyHeroFieldLabels();
-  applyFooterTranslations();   // <—
-  ensureSpoilerCheckbox();
+      applyHeroTranslations();
+      applyHeroFieldLabels();
+      applyFooterTranslations();
+      ensureSpoilerCheckbox();
 
-  buildTabs();
-  updateTabsUI();
-  renderGroups();
-  applyChooseSaveNote();
-});
+      buildTabs();
+      updateTabsUI();
+      renderGroups();
+      applyChooseSaveNote();
+    });
 
-    // CSS minimale per il dock (compatto, leggibile)
     if (!document.getElementById('langDockStyle')) {
       const st = document.createElement('style');
       st.id = 'langDockStyle';
@@ -1082,15 +924,14 @@ function applyChooseSaveNote(){
   el.innerHTML = (I18N_UI[LANG]?.chooseSaveNote || I18N_UI.en.chooseSaveNote);
 }
 
-
-/* ---------- BOOTSTRAP: crea selettore lingua e render ---------- */
+/* ---------- BOOTSTRAP ---------- */
 (function bootLangSelectorSafely(){
   function boot(){
-    ensureLangSelector();      // crea/aggiorna il selettore (no duplicati)
-    applyHeroTranslations();   // traduce titolo/etichette hero + bottoni
+    ensureLangSelector();
+    applyHeroTranslations();
     applyHeroFieldLabels();
     applyFooterTranslations();
-    renderGroups();            // render nella lingua attiva
+    renderGroups();
     applyChooseSaveNote();
   }
   if (document.readyState === 'loading') {
