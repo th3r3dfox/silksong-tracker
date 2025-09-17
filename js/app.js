@@ -372,25 +372,36 @@ function pickCollectionByNamespace(saveObj, ns){
 
 
 /* ---------- Risoluzione valore item (keys | query) ---------- */
+
+/* --- Resolve by name/path within a given namespace --- */
+function resolveByNamePathNS(saveObj, name, ns, path){
+  const coll = pickCollectionByNamespace(saveObj, ns);
+  const key  = String(name || '').toLowerCase();
+  const hit  = Array.isArray(coll)
+    ? coll.find(n => String(n?.Name ?? n?.name ?? '').toLowerCase() === key)
+    : null;
+  return hit ? getAtPath(hit, path) : undefined;
+}
+
 function resolveItemValue(saveObj, item){
   // 1) query: { name, path }
   if (item && item.query && lastSaveObj){
     const qName = String(item.query.name || '').toLowerCase();
     let qPath  = String(item.query.path || 'Data.IsCompleted');
 
-    // namespace nel path? (es. quest.Data.IsCompleted / journal.Record.HasBeenSeen)
+    // namespace nel path? (quest.* / journal.*)
     let ns = null;
     const partsNS = qPath.split('.');
     if (partsNS.length > 1 &&
-        (partsNS[0].toLowerCase() === 'quest' || partsNS[0].toLowerCase() === 'journal')) {
+        (partsNS[0].toLowerCase() === 'quest' || partsNS[0].toLowerCase() === 'journal')){
       ns   = partsNS.shift().toLowerCase();
       qPath = partsNS.join('.');
     } else {
-      // compat: se non c'è prefisso, deduci: Record.* => journal, altrimenti quest
+      // compat legacy: Record.* => journal, altrimenti quest
       ns = qPath.startsWith('Record.') ? 'journal' : 'quest';
     }
 
-    // cerca PRIMA nella collezione giusta in base al namespace
+    // 1a) lookup nella collezione giusta (evita collisioni)
     const coll = pickCollectionByNamespace(saveObj, ns);
     if (Array.isArray(coll) && coll.length){
       const hitScoped = coll.find(n => String(n?.Name ?? n?.name ?? '').toLowerCase() === qName);
@@ -400,21 +411,20 @@ function resolveItemValue(saveObj, item){
       }
     }
 
-    // fallback: ricerca generica (compat con vecchi config)
+    // 1b) fallback: ricerca generica (retrocompat)
     let hit = null;
     (function walk(node){
       if (hit) return;
       if (Array.isArray(node)){ for (const n of node) walk(n); return; }
       if (node && typeof node === 'object'){
-        const n = (node.Name ?? node.name ?? node.displayName ?? node.id ?? '')
-                    .toString().toLowerCase();
+        const n = (node.Name ?? node.name ?? node.displayName ?? node.id ?? '').toString().toLowerCase();
         if (n && n === qName) { hit = node; return; }
         for (const k in node) walk(node[k]);
       }
     })(saveObj);
 
     if (hit){
-      const v = getAtPath(hit, qPath);
+      const v = getAtPath(hit, qPath); // qPath è già senza prefisso
       if (v !== undefined) return v;
     }
     // se non trovato, prosegue su keys
@@ -425,7 +435,7 @@ function resolveItemValue(saveObj, item){
   let val = deepFindAny(saveObj, keys);
   if (val !== undefined) return val;
 
-  // 3) flags speciali (es. __flags.Scene.ID) – tua logica originale
+  // 3) flags speciali (es. __flags.Scene.ID)
   for (const k of keys){
     if (k.startsWith('__flags.')){
       const parts = k.split('.');
@@ -438,6 +448,7 @@ function resolveItemValue(saveObj, item){
     }
   }
   return undefined;
+
 }
 
 
@@ -520,6 +531,26 @@ function updateTabsUI(){
 
 /* ---------- Render delle sezioni del gruppo attivo ---------- */
 function renderGroups(){
+
+/* ---------- Tri-state styles injection (accepted state) ---------- */
+function ensureTriStateStyles(){
+  if (document.getElementById('triStateStyle')) return;
+  const st = document.createElement('style');
+  st.id = 'triStateStyle';
+  st.textContent = `
+    #sectionsStack ul.checklist > li.accepted::before,
+    #sectionsStack ul.item-list > li.accepted::before{
+      content: '•';
+      margin-right: 8px;
+      font-weight: bold;
+      color: #f3c623;
+    }
+    #sectionsStack ul.checklist > li.accepted{ list-style: none; }
+  `;
+  document.head.appendChild(st);
+}
+
+  ensureTriStateStyles();
   if (!sectionsStack) return;
   sectionsStack.innerHTML = '';
   ensureSpoilerCheckbox();
@@ -536,6 +567,7 @@ function renderGroups(){
 
     (section.items || []).forEach((item, idx) => {
       let ok = false; // default: nulla spunta senza save
+      let isAcceptedButNotDone = false;
 
       // Special counters
       if (section.id === 'nail_upgrades') {
@@ -587,12 +619,33 @@ function renderGroups(){
       } else {
         const rawVal = lastSaveObj ? resolveItemValue(lastSaveObj, item) : undefined;
         ok = isDoneFromRule(rawVal, item);
+        // Stato intermedio: quest accettata ma non completata
+        if (!ok && item && item.query && lastSaveObj){
+          let ns = 'quest';
+          let p  = String(item.query.path || 'Data.IsCompleted');
+          const p0 = p.split('.')[0].toLowerCase();
+          if (p0 === 'quest' || p0 === 'journal') ns = p0;
+          else if (p.startsWith('Record.')) ns = 'journal';
+          if (ns === 'quest'){
+            let acc;
+            try {
+              acc = resolveByNamePathNS(lastSaveObj, item.query.name, 'quest', 'Data.IsAccepted');
+            } catch(e){
+              const coll = pickCollectionByNamespace(lastSaveObj, 'quest');
+              const key  = String(item.query.name || '').toLowerCase();
+              const hit  = Array.isArray(coll) ? coll.find(n => String(n?.Name ?? n?.name ?? '').toLowerCase() === key) : null;
+              acc = hit ? getAtPath(hit, 'Data.IsAccepted') : undefined;
+            }
+            isAcceptedButNotDone = (acc === true);
+          }
+        }
+
       }
 
       if (ok) done++;
 
       const li = document.createElement('li');
-      li.className = ok ? 'done' : '';
+      li.className = ok ? 'done' : (isAcceptedButNotDone ? 'accepted' : '');
       li.innerHTML = `${labelToHtml({ ...item, label: tr(item.label || item.name || item.title || item) })}`;
       appendInlineMeta(li, item, ok);
       ul.appendChild(li);
