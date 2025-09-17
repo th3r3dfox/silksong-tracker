@@ -360,26 +360,61 @@ function indexFlags(root){
   return root;
 }
 
+/* --- Namespace-aware collection picker --- */
+function pickCollectionByNamespace(saveObj, ns){
+  ns = (ns || '').toLowerCase();
+  if (ns === 'journal') {
+    return saveObj?.playerData?.EnemyJournalKillData?.list || [];
+  }
+  // default: quest
+  return saveObj?.playerData?.QuestCompletionData?.savedData || [];
+}
+
+
 /* ---------- Risoluzione valore item (keys | query) ---------- */
 function resolveItemValue(saveObj, item){
   // 1) query: { name, path }
   if (item && item.query && lastSaveObj){
     const qName = String(item.query.name || '').toLowerCase();
-    let hit = null;
+    let qPath  = String(item.query.path || 'Data.IsCompleted');
 
-    // ricerca generica nel tree per proprietà Name/name/displayName ecc.
+    // namespace nel path? (es. quest.Data.IsCompleted / journal.Record.HasBeenSeen)
+    let ns = null;
+    const partsNS = qPath.split('.');
+    if (partsNS.length > 1 &&
+        (partsNS[0].toLowerCase() === 'quest' || partsNS[0].toLowerCase() === 'journal')) {
+      ns   = partsNS.shift().toLowerCase();
+      qPath = partsNS.join('.');
+    } else {
+      // compat: se non c'è prefisso, deduci: Record.* => journal, altrimenti quest
+      ns = qPath.startsWith('Record.') ? 'journal' : 'quest';
+    }
+
+    // cerca PRIMA nella collezione giusta in base al namespace
+    const coll = pickCollectionByNamespace(saveObj, ns);
+    if (Array.isArray(coll) && coll.length){
+      const hitScoped = coll.find(n => String(n?.Name ?? n?.name ?? '').toLowerCase() === qName);
+      if (hitScoped){
+        const v = getAtPath(hitScoped, qPath);
+        if (v !== undefined) return v;
+      }
+    }
+
+    // fallback: ricerca generica (compat con vecchi config)
+    let hit = null;
     (function walk(node){
       if (hit) return;
       if (Array.isArray(node)){ for (const n of node) walk(n); return; }
       if (node && typeof node === 'object'){
-        const n = (node.Name ?? node.name ?? node.displayName ?? node.id ?? '').toString().toLowerCase();
+        const n = (node.Name ?? node.name ?? node.displayName ?? node.id ?? '')
+                    .toString().toLowerCase();
         if (n && n === qName) { hit = node; return; }
         for (const k in node) walk(node[k]);
       }
     })(saveObj);
 
     if (hit){
-      const v = getAtPath(hit, item.query.path);
+      const v = getAtPath(hit, qPath);
       if (v !== undefined) return v;
     }
     // se non trovato, prosegue su keys
@@ -390,9 +425,9 @@ function resolveItemValue(saveObj, item){
   let val = deepFindAny(saveObj, keys);
   if (val !== undefined) return val;
 
-  // 3) fallback speciale per __flags.Scene.ID (nel caso deepFindAny non legga)
+  // 3) flags speciali (es. __flags.Scene.ID) – tua logica originale
   for (const k of keys){
-    if (typeof k === 'string' && k.startsWith('__flags.')){
+    if (k.startsWith('__flags.')){
       const parts = k.split('.');
       if (parts.length === 3){
         const scene = parts[1];
@@ -404,6 +439,7 @@ function resolveItemValue(saveObj, item){
   }
   return undefined;
 }
+
 
 /* ---------- Carica config ---------- */
 fetch('config/fields.json')
