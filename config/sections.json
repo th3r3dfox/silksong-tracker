@@ -26,10 +26,10 @@
             { "label": { "en": "Mask Shard #1",  "it": "Frammento di maschera #1" },  "keys": ["__flags.Dock_08.Heart_Piece"],                         "equals": true, "location": "In the Deep Docks, accessed through The Marrow.", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #2",  "it": "Frammento di maschera #2" },  "keys": ["__flags.Bone_East_20.Heart_Piece"],                   "equals": true, "location": "Far Fields", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #3",  "it": "Frammento di maschera #3" },  "keys": ["__flags.Shellwood_14.Heart_Piece"],                   "equals": true, "location": "Shellwood", "wikiSlug": "aa" },
-            { "label": { "en": "Mask Shard #4",  "it": "Frammento di maschera #4" },  "keys": ["__flags.Crawl_02.Heart_Piece"],                       "equals": true, "location": "Behind a breakable wall at the water's edge.", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #4",  "it": "Frammento di maschera #4" },  "keys": ["__flags.Crawl_02.Heart_Piece"],                       "equals": true, "location": "Mosshome/Wormways", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #5",  "it": "Frammento di maschera #5" },  "keys": ["__flags.Weave_05b.Heart_Piece"],                      "equals": true, "location": "Weave_05b WIP", "wikiSlug": "aa" },
-            { "label": { "en": "Mask Shard #6",  "it": "Frammento di maschera #6" },  "keys": ["__flags.Song_09.Heart_Piece"],                        "equals": true, "location": "Song_09 WIP", "wikiSlug": "aa" },
-            { "label": { "en": "Mask Shard #7",  "it": "Frammento di maschera #7" },  "keys": ["__flags.Library_05.Heart_Piece"],                     "equals": true, "location": "Library_05 WIP", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #6",  "it": "Frammento di maschera #6" },  "keys": ["__flags.Song_09.Heart_Piece"],                        "equals": true, "location": "Choral Chambers/Cogwork Core", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #7",  "it": "Frammento di maschera #7" },  "keys": ["__flags.Library_05.Heart_Piece"],                     "equals": true, "location": "The Citadel - Whispering Vaults", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #8",  "it": "Frammento di maschera #8" },  "keys": ["__flags.Bone_East_LavaChallenge.Heart_Piece__1_"],    "equals": true, "location": "Bone_East_LavaChallenge WIP", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #9",  "it": "Frammento di maschera #9" },  "keys": ["__flags.Peak_04c.Heart_Piece"],                       "equals": true, "location": "Peak_04c WIP", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #10", "it": "Frammento di maschera #10" }, "keys": ["__flags.Shadow_13.Heart_Piece"],                      "equals": true, "location": "Shadow_13 WIP", "wikiSlug": "aa" },
@@ -38,11 +38,11 @@
             { "label": { "en": "Mask Shard #13", "it": "Frammento di maschera #13" }, "keys": ["__flags.Wisp_07.Heart_Piece"],                        "equals": true, "location": "Wisp_07 WIP", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #14", "it": "Frammento di maschera #14" }, "keys": ["__flags.Coral_19b.Heart_Piece"],                      "equals": true, "location": "Coral_19b WIP", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #15", "it": "Frammento di maschera #15" }, "keys": ["PurchasedBonebottomHeartPiece"],                      "equals": true, "location": "Can be bought from Pebb for 300 rosaries", "wikiSlug": "aa" },
-            { "label": { "en": "Mask Shard #16", "it": "Frammento di maschera #16" }, "query": { "name": "Sprintmaster Race","path": "Data.IsCompleted" }, "equals": true, "location": "Sprintmaster Race", "wikiSlug": "aa" },
-            { "label": { "en": "Mask Shard #17", "it": "Frammento di maschera #17" }, "query": { "name": "Destroy Thread Cores","path": "Data.IsCompleted" }, "equals": true, "location": "Destroy Thread Cores", "wikiSlug": "aa" },
-            { "label": { "en": "Mask Shard #18", "it": "Frammento di maschera #18" }, "query": { "name": "Ant Trapper","path": "Data.IsCompleted" }, "equals": true, "location": "The Hidden Hunter", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #16", "it": "Frammento di maschera #16" }, "query": { "name": "Sprintmaster Race","path": "Data.IsCompleted" }, "equals": true, "location": "Sprintmaster Race wish", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #17", "it": "Frammento di maschera #17" }, "query": { "name": "Destroy Thread Cores","path": "Data.IsCompleted" }, "equals": true, "location": "Destroy Thread Cores wish", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #18", "it": "Frammento di maschera #18" }, "query": { "name": "Ant Trapper","path": "Data.IsCompleted" }, "equals": true, "location": "The Hidden Hunter wish", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #19", "it": "Frammento di maschera #19" }, "query": { "name": "Beastfly Hunt","path": "Data.IsCompleted" }, "equals": true, "location": "Savage Beastfly wish", "wikiSlug": "aa" },
-            { "label": { "en": "Mask Shard ??? #20", "it": "Frammento di maschera ??? #20" }, "query": { "name": "Shaman Help","path": "Data.IsCompleted" }, "equals": true, "location": "??? WIP", "wikiSlug": "aa" }
+            { "label": { "en": "Mask Shard #20", "it": "Frammento di maschera #20" }, "keys": ["playerData.MerchantEnclaveShellFragment"], "equals": true, "location": "Mask Shard from Jubilana in Songclave for 750 rosaries", "wikiSlug": "aa" }  
           ]
         }, 
         {

@@ -170,5 +170,32 @@
 </footer>
 
 </footer>
+<button id="toTop" aria-label="Torna all'inizio"></button>
+<script>
+  (function(){
+    const btn = document.getElementById("toTop");
+    const SHOW_AFTER = 200; // pixel di scroll prima che appaia
+
+    function onScroll(){
+      if(window.scrollY > SHOW_AFTER){
+        btn.classList.add("show");
+      } else {
+        btn.classList.remove("show");
+      }
+    }
+
+    function scrollToTop(){
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    btn.addEventListener("click", scrollToTop);
+
+    // inizializza stato corretto
+    onScroll();
+  })();
+</script>
+
 </body>
 </html>
