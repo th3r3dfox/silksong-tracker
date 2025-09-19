@@ -77,9 +77,9 @@
           "desc":  { "en": "Upgrades to the Knight's main regen skill.", "it": "Potenziamenti dell'abilità principale di rigenerazione." },
           "contrib": 3, 
           "items": [
-            { "label": { "en": "#1 Silk Heart", "it": "Cuore di seta #1" }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Defeating the Bell Beast in The Marrow area",            "it": "Arma Base" }, "wikiSlug": "aa" },
-            { "label": { "en": "#2 Silk Heart", "it": "Cuore di seta #2" }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Defeating the Unravelled in The Whiteward",            "it": "Arma Base" }, "wikiSlug": "aa" },
-            { "label": { "en": "#3 Silk Heart", "it": "Cuore di seta #3" }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Defeating Lace in The Act Two",            "it": "Arma Base" }, "wikiSlug": "aa" }
+            { "label": { "en": "#1 Silk Heart", "it": "Cuore di seta #1" }, "includes": { "key": "scenesVisited", "value": "Memory_Silk_Heart_BellBeast" }, "equals": true, "location": { "en": "Defeating the Bell Beast in The Marrow area",            "it": "Arma Base" }, "wikiSlug": "aa" },
+            { "label": { "en": "#2 Silk Heart", "it": "Cuore di seta #2" }, "includes": { "key": "scenesVisited", "value": "Memory_Silk_Heart_Unraveled" }, "equals": true, "location": { "en": "Defeating the Unravelled in The Whiteward",            "it": "Arma Base" }, "wikiSlug": "aa" },
+            { "label": { "en": "#3 Silk Heart", "it": "Cuore di seta #3" }, "includes": { "key": "scenesVisited", "value": "Memory_Silk_Heart_Lace" }, "equals": true, "location": { "en": "Defeating Lace in The Act Two",            "it": "Arma Base" }, "wikiSlug": "aa" }
           ]
         },
         {
