@@ -57,7 +57,7 @@
             { "label": { "en": "Spool Fragment #4",  "it": "Frammento di seta #4" },  "keys": ["purchasedGrindleSpoolPiece"],          "equals": true, "location": "purchasedGrindleSpoolPiece", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #5",  "it": "Frammento di seta #5" },  "keys": ["MerchantEnclaveSpoolPiece"],           "equals": true, "location": "MerchantEnclaveSpoolPiece", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #6",  "it": "Frammento di seta #6" },  "keys": ["__flags.Bone_11b.Silk_Spool"],         "equals": true, "location": "Bone_11b WIP", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #7",  "it": "Frammento di seta #7" },  "keys": ["__flags.Bone_East_13.Silk_Spool"],     "equals": true, "location": "Bone_East_13 WIP", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #7",  "it": "Frammento di seta #7" },  "keys": ["__flags.Bone_East_13.Silk_Spool"],     "equals": true, "location": "Deep rocks", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #8",  "it": "Frammento di seta #8" },  "keys": ["__flags.Greymoor_02.Silk_Spool"],      "equals": true, "location": "Greymoor_02 WIP", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #9",  "it": "Frammento di seta #9" },  "keys": ["__flags.Weave_11.Silk_Spool"],         "equals": true, "location": "Weave_11 WIP", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #10", "it": "Frammento di seta #10" }, "keys": ["__flags.Song_19_entrance.Silk_Spool"], "equals": true, "location": "Song_19_entrance WIP", "wikiSlug": "aa" },
@@ -68,7 +68,7 @@
             { "label": { "en": "Spool Fragment #15", "it": "Frammento di seta #15" }, "keys": ["__flags.Library_11b.Silk_Spool"],      "equals": true, "location": "Library_11b WIP", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #16", "it": "Frammento di seta #16" }, "keys": ["__flags.Dock_03c.Silk_Spool"],         "equals": true, "location": "Dock_03c WIP", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #17", "it": "Frammento di seta #17" }, "keys": ["__flags.Arborium_09.Silk_Spool"],      "equals": true, "location": "Arborium_09 WIP", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #18", "it": "Frammento di seta #18" }, "keys": ["__flags.Hang_03_top.Silk_Spool"],      "equals": true, "location": "Hang_03_top WIP", "wikiSlug": "aa" }
+            { "label": { "en": "Spool Fragment #18", "it": "Frammento di seta #18" }, "keys": ["__flags.Hang_03_top.Silk_Spool"],      "equals": true, "location": "In the top of high halls", "wikiSlug": "aa" }
           ]
         },
         {
