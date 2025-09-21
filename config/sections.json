@@ -36,7 +36,7 @@
             { "label": { "en": "Mask Shard #11", "it": "Frammento di maschera #11" }, "keys": ["__flags.Slab_17.Heart_Piece"],                        "equals": true, "location": "Slab_17 WIP", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #12", "it": "Frammento di maschera #12" }, "keys": ["__flags.Peak_06.Heart_Piece"],                        "equals": true, "location": "Peak_06 WIP", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #13", "it": "Frammento di maschera #13" }, "keys": ["__flags.Wisp_07.Heart_Piece"],                        "equals": true, "location": "Wisp_07 WIP", "wikiSlug": "aa" },
-            { "label": { "en": "Mask Shard #14", "it": "Frammento di maschera #14" }, "keys": ["__flags.Coral_19b.Heart_Piece"],                      "equals": true, "location": "Coral_19b WIP", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #14", "it": "Frammento di maschera #14" }, "keys": ["__flags.Coral_19b.Heart_Piece"],                      "equals": true, "location": "bottom left room on blasted steps, you need silk soar", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #15", "it": "Frammento di maschera #15" }, "keys": ["PurchasedBonebottomHeartPiece"],                      "equals": true, "location": "Can be bought from Pebb for 300 rosaries", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #16", "it": "Frammento di maschera #16" }, "query": { "name": "Sprintmaster Race","path": "Data.IsCompleted" }, "equals": true, "location": "Sprintmaster Race wish", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #17", "it": "Frammento di maschera #17" }, "query": { "name": "Destroy Thread Cores","path": "Data.IsCompleted" }, "equals": true, "location": "Destroy Thread Cores wish", "wikiSlug": "aa" },
@@ -57,7 +57,7 @@
             { "label": { "en": "Spool Fragment #4",  "it": "Frammento di seta #4" },  "keys": ["purchasedGrindleSpoolPiece"],          "equals": true, "location": "purchasedGrindleSpoolPiece", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #5",  "it": "Frammento di seta #5" },  "keys": ["MerchantEnclaveSpoolPiece"],           "equals": true, "location": "MerchantEnclaveSpoolPiece", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #6",  "it": "Frammento di seta #6" },  "keys": ["__flags.Bone_11b.Silk_Spool"],         "equals": true, "location": "Bone_11b WIP", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #7",  "it": "Frammento di seta #7" },  "keys": ["__flags.Bone_East_13.Silk_Spool"],     "equals": true, "location": "Bone_East_13 WIP", "wikiSlug": "aa" },
+            { "label": { "en": "Spool Fragment #7",  "it": "Frammento di seta #7" },  "keys": ["__flags.Bone_East_13.Silk_Spool"],     "equals": true, "location": "Deep rocks", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #8",  "it": "Frammento di seta #8" },  "keys": ["__flags.Greymoor_02.Silk_Spool"],      "equals": true, "location": "Greymoor_02 WIP", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #9",  "it": "Frammento di seta #9" },  "keys": ["__flags.Weave_11.Silk_Spool"],         "equals": true, "location": "Weave_11 WIP", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #10", "it": "Frammento di seta #10" }, "keys": ["__flags.Song_19_entrance.Silk_Spool"], "equals": true, "location": "Song_19_entrance WIP", "wikiSlug": "aa" },
@@ -68,7 +68,7 @@
             { "label": { "en": "Spool Fragment #15", "it": "Frammento di seta #15" }, "keys": ["__flags.Library_11b.Silk_Spool"],      "equals": true, "location": "Library_11b WIP", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #16", "it": "Frammento di seta #16" }, "keys": ["__flags.Dock_03c.Silk_Spool"],         "equals": true, "location": "Dock_03c WIP", "wikiSlug": "aa" },
             { "label": { "en": "Spool Fragment #17", "it": "Frammento di seta #17" }, "keys": ["__flags.Arborium_09.Silk_Spool"],      "equals": true, "location": "Arborium_09 WIP", "wikiSlug": "aa" },
-            { "label": { "en": "Spool Fragment #18", "it": "Frammento di seta #18" }, "keys": ["__flags.Hang_03_top.Silk_Spool"],      "equals": true, "location": "Hang_03_top WIP", "wikiSlug": "aa" }
+            { "label": { "en": "Spool Fragment #18", "it": "Frammento di seta #18" }, "keys": ["__flags.Hang_03_top.Silk_Spool"],      "equals": true, "location": "In the top of high halls", "wikiSlug": "aa" }
           ]
         },
         {
@@ -77,9 +77,9 @@
           "desc":  { "en": "Upgrades to the Knight's main regen skill.", "it": "Potenziamenti dell'abilità principale di rigenerazione." },
           "contrib": 3, 
           "items": [
-            { "label": { "en": "#1 Silk Heart", "it": "Cuore di seta #1" }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Defeating the Bell Beast in The Marrow area",            "it": "Arma Base" }, "wikiSlug": "aa" },
-            { "label": { "en": "#2 Silk Heart", "it": "Cuore di seta #2" }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Defeating the Unravelled in The Whiteward",            "it": "Arma Base" }, "wikiSlug": "aa" },
-            { "label": { "en": "#3 Silk Heart", "it": "Cuore di seta #3" }, "keys": ["IsUnlocked"], "equals": true, "location": { "en": "Defeating Lace in The Act Two",            "it": "Arma Base" }, "wikiSlug": "aa" }
+            { "label": { "en": "#1 Silk Heart", "it": "Cuore di seta #1" }, "includes": { "key": "scenesVisited", "value": "Memory_Silk_Heart_BellBeast" }, "equals": true, "location": { "en": "Defeating the Bell Beast in The Marrow area",            "it": "Arma Base" }, "wikiSlug": "aa" },
+            { "label": { "en": "#2 Silk Heart", "it": "Cuore di seta #2" }, "includes": { "key": "scenesVisited", "value": "Memory_Silk_Heart_Unraveled" }, "equals": true, "location": { "en": "Defeating the Unravelled in The Whiteward",            "it": "Arma Base" }, "wikiSlug": "aa" },
+            { "label": { "en": "#3 Silk Heart", "it": "Cuore di seta #3" }, "includes": { "key": "scenesVisited", "value": "Memory_Silk_Heart_Lace" }, "equals": true, "location": { "en": "Defeating Lace in The Act Two",            "it": "Arma Base" }, "wikiSlug": "aa" }
           ]
         },
         {
@@ -244,10 +244,46 @@
         }
       ]
     },
-
+    { "id": "Essentials",    "label": { "en": "Essentials %", "it": "Essentials %" }, "sections": [
+      { "id": "Key", "label": { "en": "Keys", "it": "Keys" }, "items": [
+        { "label": { "en": "Simple key #1", "it": "Simple key #1" }, "keys": ["PurchasedBonebottomFaithToken"], "equals": true , "location": "pebb", "wikiSlug": "aa"},
+        { "label": { "en": "Simple key #2", "it": "Simple key #2" }, "keys": ["CollectedDustCageKey"], "equals": true , "location": "Sinner's Road", "wikiSlug": "aa"},
+        { "label": { "en": "Simple key #3", "it": "Simple key #3" }, "keys": ["MerchantEnclaveSimpleKey"], "equals": true, "location": "Jubliana", "wikiSlug": "aa" },
+        { "label": { "en": "Simple key #4", "it": "Simple key #4" }, "keys": ["__flags.Bellshrine_Coral.Collectable_Item_Pickup"],"equals": true, "location": "coral bench", "wikiSlug": "aa" },
+        { "label": { "en": "Gate key", "it": "Gate key" }, "keys": ["BallowGivenKey"], "equals": true, "location": "found and used in the Deep Docks", "wikiSlug": "aa" },
+        { "label": { "en": "White key", "it": "White key" }, "keys": ["collectedWardKey"], "equals": true, "location": "found at the far right edge of Songclave", "wikiSlug": "aa" },
+        { "label": { "en": "Surgeon's Key", "it": "Surgeon's Key" }, "keys": ["collectedWardBossKey"], "equals": true, "location": "Found on the corpse of a Surgeon in the Whiteward", "wikiSlug": "aa" },
+        { "label": { "en": "Key of Apostate", "it": "Key of Apostate" }, "keys": ["HasSlabKeyC"], "equals": true, "location": "in the Putrified Ducts region", "wikiSlug": "aa" },
+        { "label": { "en": "Key of Indolent", "it": "Key of Indolent" }, "keys": ["HasSlabKeyA"], "equals": true, "location": "found and used in the Slab", "wikiSlug": "aa" },
+        { "label": { "en": "Key of Heretic", "it": "Key of Heretic" }, "keys": ["HasSlabKeyB"], "equals": true, "location": "found and used in the Slab", "wikiSlug": "aa" },
+        { "label": { "en": "Architect's Key", "it": "Architect's Key" }, "keys": ["PurchasedArchitectKey"], "equals": true, "location": "Purchased from the Twelfth Architect", "wikiSlug": "aa" }
+      ] },
+      { "id": "memorylocket", "label": { "en": "Memory Lockets", "it": "Memory Lockets" }, "items": [
+        { "label": { "en": "Memory Locket #1", "it": "Memory Locket #1" }, "query": { "name": "Rock Rollers","path": "Data.IsCompleted" }, "equals": true , "location": "start the Volatile Flintbeetles wish", "wikiSlug": "aa"},
+        { "label": { "en": "Memory Locket #2", "it": "Memory Locket #2" }, "keys": ["__flags.Bone_18.Collectable_Item_Pickup"], "equals": true , "location": "The Marrow", "wikiSlug": "aa"},
+        { "label": { "en": "Memory Locket #3", "it": "Memory Locket #3" }, "keys": [""], "equals": true, "location": "", "wikiSlug": "aa" },
+        { "label": { "en": "Memory Locket #4", "it": "Memory Locket #4" }, "keys": [""],"equals": true, "location": "", "wikiSlug": "aa" },
+        { "label": { "en": "Memory Locket #5", "it": "Memory Locket #5" }, "keys": [""], "equals": true , "location": "", "wikiSlug": "aa"},
+        { "label": { "en": "Memory Locket #6", "it": "Memory Locket #6" }, "keys": [""], "equals": true , "location": "", "wikiSlug": "aa"},
+        { "label": { "en": "Memory Locket #7", "it": "Memory Locket #7" }, "keys": [""], "equals": true , "location": "", "wikiSlug": "aa"},
+        { "label": { "en": "Memory Locket #8", "it": "Memory Locket #8" }, "keys": [""], "equals": true, "location": "", "wikiSlug": "aa" },
+        { "label": { "en": "Memory Locket #9", "it": "Memory Locket #9" }, "keys": [""],"equals": true, "location": "", "wikiSlug": "aa" },
+        { "label": { "en": "Memory Locket #10", "it": "Memory Locket #10" }, "keys": [""], "equals": true , "location": "", "wikiSlug": "aa"},
+        { "label": { "en": "Memory Locket #11", "it": "Memory Locket #11" }, "keys": [""], "equals": true , "location": "", "wikiSlug": "aa"},
+        { "label": { "en": "Memory Locket #12", "it": "Memory Locket #12" }, "keys": [""], "equals": true, "location": "", "wikiSlug": "aa" },
+        { "label": { "en": "Memory Locket #13", "it": "Memory Locket #13" }, "keys": [""],"equals": true, "location": "", "wikiSlug": "aa" },
+        { "label": { "en": "Memory Locket #14", "it": "Memory Locket #14" }, "keys": [""], "equals": true , "location": "", "wikiSlug": "aa"},
+        { "label": { "en": "Memory Locket #15", "it": "Memory Locket #15" }, "keys": [""], "equals": true, "location": "", "wikiSlug": "aa" },
+        { "label": { "en": "Memory Locket #16", "it": "Memory Locket #16" }, "keys": [""], "equals": true , "location": "", "wikiSlug": "aa"},
+        { "label": { "en": "Memory Locket #17", "it": "Memory Locket #17" }, "keys": [""], "equals": true, "location": "", "wikiSlug": "aa" },
+        { "label": { "en": "Memory Locket #18", "it": "Memory Locket #18" }, "keys": [""],"equals": true, "location": "", "wikiSlug": "aa" },
+        { "label": { "en": "Memory Locket #19", "it": "Memory Locket #19" }, "keys": [""], "equals": true , "location": "", "wikiSlug": "aa"},
+        { "label": { "en": "Memory Locket #20", "it": "Memory Locket #20" }, "keys": [""], "equals": true, "location": "", "wikiSlug": "aa" }
+      ] }
+    ] },
     {
       "id": "boss",
-      "label": { "en": "Boss %", "it": "Boss %" },
+      "label": { "en": "Boss % WIP", "it": "Boss % WIP" },
       "sections": [
         {
           "id": "boss-list",
