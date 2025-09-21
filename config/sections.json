@@ -308,7 +308,7 @@
 { "label": { "en": "Trobbio",                  "it": "Trobbio" },                   "keys": ["defeatedTrobbio"],               "equals": true, "wikiSlug": "Trobbio" },
 { "label": { "en": "Signis and Gron",          "it": "Signis and Gron" },           "keys": ["defeatedDockForemen"],           "equals": true, "wikiSlug": "Forebrothers_Signis_%26_Gron" },
 { "label": { "en": "Groal the Great",          "it": "Groal the Great" },           "keys": ["DefeatedSwampShaman"],           "equals": true, "wikiSlug": "Groal the Great" },
-{ "label": { "en": "The Unraveled",            "it": "The Unraveled" },             "keys": ["defeatedTheUnraveled"],          "equals": true, "wikiSlug": "The Unraveled" },
+{ "label": { "en": "The Unravelled",            "it": "The Unravelled" },           "keys": ["wardBossDefeated"],              "equals": true, "wikiSlug": "The_Unravelled" },
 { "label": { "en": "Disgraced Chef Lugoli",    "it": "Disgraced Chef Lugoli" },     "keys": ["defeatedRoachkeeperChef"],       "equals": true, "wikiSlug": "Disgraced Chef Lugoli" },
 { "label": { "en": "First Sinner",             "it": "First Sinner" },              "keys": ["defeatedFirstSinner"],           "equals": true, "wikiSlug": "First_Sinner" },            
 { "label": { "en": "Craggler",                 "it": "Craggler" },                  "keys": ["defeatedCraggler"],              "equals": true, "wikiSlug": "Craggler" },
