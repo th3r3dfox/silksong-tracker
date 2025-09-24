@@ -31,7 +31,7 @@
             { "label": { "en": "Mask Shard #6",  "it": "Frammento di maschera #6" },  "keys": ["__flags.Song_09.Heart_Piece"],                        "equals": true, "location": "Choral Chambers/Cogwork Core", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #7",  "it": "Frammento di maschera #7" },  "keys": ["__flags.Library_05.Heart_Piece"],                     "equals": true, "location": "The Citadel - Whispering Vaults", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #8",  "it": "Frammento di maschera #8" },  "keys": ["__flags.Bone_East_LavaChallenge.Heart_Piece__1_"],    "equals": true, "location": "Bone_East_LavaChallenge WIP", "wikiSlug": "aa" },
-            { "label": { "en": "Mask Shard #9",  "it": "Frammento di maschera #9" },  "keys": ["__flags.Peak_04c.Heart_Piece"],                       "equals": true, "location": "Peak_04c WIP", "wikiSlug": "aa" },
+            { "label": { "en": "Mask Shard #9",  "it": "Frammento di maschera #9" },  "keys": ["__flags.Peak_04c.Heart_Piece"],                       "equals": true, "location": "Far left mount fay", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #10", "it": "Frammento di maschera #10" }, "keys": ["__flags.Shadow_13.Heart_Piece"],                      "equals": true, "location": "Shadow_13 WIP", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #11", "it": "Frammento di maschera #11" }, "keys": ["__flags.Slab_17.Heart_Piece"],                        "equals": true, "location": "Slab_17 WIP", "wikiSlug": "aa" },
             { "label": { "en": "Mask Shard #12", "it": "Frammento di maschera #12" }, "keys": ["__flags.Peak_06.Heart_Piece"],                        "equals": true, "location": "Peak_06 WIP", "wikiSlug": "aa" },
