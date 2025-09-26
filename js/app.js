@@ -52,7 +52,8 @@ const I18N_UI = {
     chooseFile: 'Choose Save File…',
     showJson: 'Show JSON',
     noFile: 'No file',
-    chooseSaveNote: 'Choose the correct save file: <code>user*.dat</code> (e.g. <code>user1.dat</code>).'
+    chooseSaveNote: 'Choose the correct save file: <code>user*.dat</code> (e.g. <code>user1.dat</code>).',
+    noFileLoaded:'Please load a save file first.'
   },
   it: {
     spoilers: 'Spoiler',
@@ -62,7 +63,8 @@ const I18N_UI = {
     chooseFile: 'Scegli salvataggio…',
     showJson: 'Mostra JSON',
     noFile: 'Nessun file',
-    chooseSaveNote: 'Scegli il file di salvataggio corretto: <code>user*.dat</code> (es. <code>user1.dat</code>).'
+    chooseSaveNote: 'Scegli il file di salvataggio corretto: <code>user*.dat</code> (es. <code>user1.dat</code>).',
+    noFileLoaded:'Carica prima un salvataggio.'
   },
 };
 
@@ -169,7 +171,7 @@ function applyHeroTranslations(){
 
   if (browseBtn)    browseBtn.textContent = ui('chooseFile');
   if (showJsonBtn)  showJsonBtn.textContent = ui('showJson');
-  const noFileEl = document.getElementById('noFileLabel');
+  const noFileEl = document.getElementById('fileInfo');
   if (noFileEl) noFileEl.textContent = ui('noFile');
 
   function setHeroLabel(valueSel, labelObj){
@@ -666,7 +668,7 @@ savePathDisplay?.addEventListener('click', () => {
   function closeModal(){ if(!jsonModal) return; jsonModal.classList.remove('show'); jsonModal.setAttribute('aria-hidden','true'); }
   if (showJsonBtn){
     showJsonBtn.addEventListener('click', () => {
-      if (!lastSaveObj){ alert('Carica prima un salvataggio.'); return; }
+      if (!lastSaveObj){ alert(ui('noFileLoaded')); return; }
       if (rawModalOutput) rawModalOutput.textContent = JSON.stringify(lastSaveObj, null, 2);
       openModal();
     });
