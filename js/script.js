@@ -801,14 +801,10 @@ section.appendChild(heading);
 
 
 
+
 function showGenericModal(data) {
   const overlay = document.getElementById("info-overlay");
   const content = document.getElementById("info-content");
-
-  // 🔧 Risolve il percorso della mappa (locale + GitHub)
-  const mapSrc = data?.map
-    ? (data.map.startsWith("http") ? data.map : `${BASE_PATH}/${data.map}`)
-    : null;
 
   content.innerHTML = `
     <button id="closeInfoModal" class="modal-close">✕</button>
@@ -817,13 +813,7 @@ function showGenericModal(data) {
     <p class="info-description">${data.description || "No description available."}</p>
     ${data.obtain ? `<p class="info-extra"><strong>Obtained:</strong> ${data.obtain}</p>` : ""}
     ${data.cost ? `<p class="info-extra"><strong>Cost:</strong> ${data.cost}</p>` : ""}
-    ${mapSrc ? `
-      <div class="info-map-wrapper">
-        <a href="${mapSrc}" target="_blank">
-          <img src="${mapSrc}" alt="Map location" class="info-map" title="Click to open full map">
-        </a>
-      </div>
-    ` : ""}
+   ${data.map ? `<img src="${BASE_PATH}/${data.map}" alt="Map location" class="info-map">` : ""}
     ${data.link ? `<div class="info-link-wrapper"><a href="${data.link}" target="_blank" class="info-link">More info →</a></div>` : ""}
   `;
 
