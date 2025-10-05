@@ -442,20 +442,21 @@ function renderGenericGrid({
     // Se “solo mancanti” ed è completato → non renderizzare proprio la card
     if (showMissingOnly && isDone) return;
 
-    // Immagini / classi
-    if (isDone) {
-      img.src = item.icon || `img/${realContainerId}/${item.id}.png`;
-      div.classList.add("done");
-    } else if (spoilerOn) {
-      img.src = item.icon || `img/${realContainerId}/${item.id}.png`;
-      div.classList.add("unlocked");
-    } else {
-      img.src = "../assets/icons/locked.png";
-      div.classList.add("locked");
-      const realSrc = item.icon || `img/${realContainerId}/${item.id}.png`;
-      div.addEventListener("mouseenter", () => img.src = realSrc);
-      div.addEventListener("mouseleave", () => img.src = "../assets/icons/locked.png");
-    }
+  // Immagini / classi
+if (isDone) {
+  img.src = item.icon || `../assets/icons/${item.id}.png`;
+  div.classList.add("done");
+} else if (spoilerOn) {
+  img.src = item.icon || `../assets/icons/${item.id}.png`;
+  div.classList.add("unlocked");
+} else {
+  img.src = "../assets/icons/locked.png";
+  div.classList.add("locked");
+
+  const realSrc = item.icon || `../assets/icons/${item.id}.png`;
+  div.addEventListener("mouseenter", () => img.src = realSrc);
+  div.addEventListener("mouseleave", () => img.src = "../assets/icons/locked.png");
+}
 
     // Titolo + modal
     const title = document.createElement("div");
