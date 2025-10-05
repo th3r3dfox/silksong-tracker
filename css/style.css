@@ -1489,3 +1489,14 @@ a, button, .btn-primary, .sidebar-item, .icon-btn {
     font-size: 1.8rem;
   }
 }
+
+.info-map {
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  max-width: 100%;
+}
+.info-map:hover {
+  transform: scale(1.02);
+}
