@@ -813,7 +813,7 @@ function showGenericModal(data) {
     <p class="info-description">${data.description || "No description available."}</p>
     ${data.obtain ? `<p class="info-extra"><strong>Obtained:</strong> ${data.obtain}</p>` : ""}
     ${data.cost ? `<p class="info-extra"><strong>Cost:</strong> ${data.cost}</p>` : ""}
-   ${data.map ? `<img src="${BASE_PATH}/${data.map}" alt="Map location" class="info-map">` : ""}
+   ${mapSrc ? `<a href="${mapSrc}" target="_blank"><img src="${mapSrc}" alt="Map location" class="info-map" title="Click to open full map"></a>` : ""}
     ${data.link ? `<div class="info-link-wrapper"><a href="${data.link}" target="_blank" class="info-link">More info →</a></div>` : ""}
   `;
 
