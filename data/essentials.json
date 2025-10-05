@@ -1,0 +1,416 @@
+[
+  {
+    "id": "category-cloaks",
+    "label": "Cloaks",
+    "desc": "The Cloak is an equipment item in Hollow Knight: Silksong.",
+    "contrib": 0,
+    "items": [
+{
+  "id": "ability-drifters-cloak",
+  "label": "Drifter's Cloak",
+  "icon": "assets/icons/Drifter's_Cloak.png",
+  "category": "Miscellaneous",
+  "flag": "hasBrolly",
+  "type": "flag",
+  "description": "The Seamstress in the Far Fields will sew an array of spines into Hornet's cloak as a reward for completing the Flexile Spines Wish. Hokers must be attacked in order to collect the 25 necessary Spine Cores.",
+  "link": "https://hollowknight.wiki/w/Drifter%27s_Cloak",
+  "map": "https://cdn.wikimg.net/en/hkwiki/images/thumb/2/27/Mapshot_SS_Seamstress_01.png/200px-Mapshot_SS_Seamstress_01.png"
+},
+{
+  "id": "ability-faydown-cloak",
+  "label": "Faydown Cloak",
+  "icon": "assets/icons/Faydown_Drifter's_Cloak.png",
+  "category": "Miscellaneous",
+  "flag": "hasDoubleJump",
+  "type": "flag",
+  "description": "The Faydown Cloak can be acquired at the peak of Mount Fay, which involves a series of platforming challenges using the Clawline to cross large gaps, bounce off obstacles, and gain altitude, all while working under the time pressure from the mountain's freezing climate. Upon reaching the peak, Hornet must play her Needolin to call down a Fayforn that will grant her this item.",
+  "link": "https://hollowknight.wiki/w/Faydown_Cloak",
+  "map": "https://cdn.wikimg.net/en/hkwiki/images/thumb/7/79/Mapshot_SS_Fayforn.png/140px-Mapshot_SS_Fayforn.png"
+}
+    ]
+  },
+{
+  "id": "category-keys",
+  "label": "Keys",
+  "desc": "Important keys used to unlock special areas and progress in Pharloom.",
+  "contrib": 0,
+  "items": [
+    {
+      "id": "key-simple-1",
+      "label": "Simple Key #1",
+      "icon": "assets/icons/Simple_Key.png",
+      "category": "Keys",
+      "flag": "PurchasedBonebottomFaithToken",
+      "type": "key",
+      "description": "Bought from Pebb in Bonebottom.",
+      "link": "https://hollowknight.wiki/w/Simple_Key_(Silksong)"
+    },
+    {
+      "id": "key-simple-2",
+      "label": "Simple Key #2",
+      "icon": "assets/icons/Simple_Key.png",
+      "category": "Keys",
+      "flag": "CollectedDustCageKey",
+      "type": "key",
+      "description": "Found in Sinner's Road.",
+      "link": "https://hollowknight.wiki/w/Simple_Key_(Silksong)"
+    },
+    {
+      "id": "key-simple-3",
+      "label": "Simple Key #3",
+      "icon": "assets/icons/Simple_Key.png",
+      "category": "Keys",
+      "flag": "MerchantEnclaveSimpleKey",
+      "type": "key",
+      "description": "Purchased from Jubilana in Merchant Enclave.",
+      "link": "https://hollowknight.wiki/w/Simple_Key_(Silksong)"
+    },
+    {
+      "id": "key-simple-4",
+      "label": "Simple Key #4",
+      "icon": "assets/icons/Simple_Key.png",
+  "category": "Keys",
+  "flag": "Collectable_Item_Pickup",
+  "scene": "Bellshrine_Coral",
+  "type": "sceneBool",
+      "description": "Found near the Coral Bench.",
+      "link": "https://hollowknight.wiki/w/Simple_Key_(Silksong)"
+    },
+    {
+      "id": "key-gate",
+      "label": "Gate Key",
+      "icon": "assets/icons/Diving_Bell_Key.png",
+      "category": "Keys",
+      "flag": "BallowGivenKey",
+      "type": "key",
+      "description": "Found and used in the Deep Docks.",
+      "link": "https://hollowknight.wiki/w/Diving_Bell_Key#Trivia"
+    },
+    {
+      "id": "key-white",
+      "label": "White Key",
+      "icon": "assets/icons/White_Key.png",
+      "category": "Keys",
+      "flag": "collectedWardKey",
+      "type": "key",
+      "description": "Found at the far right edge of Songclave.",
+      "link": "https://hollowknight.wiki/w/White_Key"
+    },
+    {
+      "id": "key-surgeon",
+      "label": "Surgeon's Key",
+      "icon": "assets/icons/Surgeon's_Key.png",
+      "category": "Keys",
+      "flag": "collectedWardBossKey",
+      "type": "key",
+      "description": "Found on the corpse of a Surgeon in the Whiteward.",
+      "link": "https://hollowknight.wiki/w/Surgeon%27s_Key"
+    },
+    {
+      "id": "key-apostate",
+      "label": "Key of Apostate",
+      "icon": "assets/icons/Key_of_Apostate.png",
+      "category": "Keys",
+      "flag": "HasSlabKeyC",
+      "type": "key",
+      "description": "Found in the Putrified Ducts region.",
+      "link": "https://hollowknight.wiki/w/Key_of_Apostate"
+    },
+    {
+      "id": "key-indolent",
+      "label": "Key of Indolent",
+      "icon": "assets/icons/Key_of_Indolent.png",
+      "category": "Keys",
+      "flag": "HasSlabKeyA",
+      "type": "key",
+      "description": "Found and used in the Slab.",
+      "link": "https://hollowknight.wiki/w/Key_of_Indolent"
+    },
+    {
+      "id": "key-heretic",
+      "label": "Key of Heretic",
+      "icon": "assets/icons/Key_of_Heretic.png",
+      "category": "Keys",
+      "flag": "HasSlabKeyB",
+      "type": "key",
+      "description": "Found and used in the Slab.",
+      "link": "https://hollowknight.wiki/w/Key_of_Heretic"
+    },
+    {
+      "id": "key-architect",
+      "label": "Architect's Key",
+      "icon": "assets/icons/Architect's_Key.png",
+      "category": "Keys",
+      "flag": "PurchasedArchitectKey",
+      "type": "key",
+      "description": "Purchased from the Twelfth Architect.",
+      "link": "https://hollowknight.wiki/w/Architect%27s_Key"
+    }
+  ]
+},
+{
+  "id": "memory_lockets",
+  "label": "Memory Lockets",
+  "desc": "Special collectibles found throughout Pharloom that preserve memories of those who came before.",
+  "contrib": 0,
+  "items": [
+              {
+      "id": "memory-locket-1",
+      "label": "Memory Locket 1",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Bone_18",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "The Marrow, northeast of the Bellway station",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+      {
+      "id": "memory-locket-2",
+      "label": "Memory Locket 2",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Ant_20",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Hunter's March, below the Chapel of the Beast",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+  {
+      "id": "memory-locket-3",
+      "label": "Memory Locket 3",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "flag": "PurchasedPilgrimsRestMemoryLocket",
+      "type": "flag",
+      "description": "Purchased from Mort in Far Fields for 150 rosaries, or from Grindle in Blasted Steps for 250 rosaries if not purchased before Act 3 begins",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-4",
+      "label": "Memory Locket 4",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Greymoor_16",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "West of the Greymoor Bellway",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-5",
+      "label": "Memory Locket 5",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "flag": "Rock Rollers",
+      "type": "quest",
+      "description": "Bone Bottom, awarded after completing the Volatile Flintbeetles Wish",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-6",
+      "label": "Memory Locket 6",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "flag": "PurchasedBelltownMemoryLocket",
+      "type": "flag",
+      "description": "Purchased from Frey in Bellhart for  330  Rosaries",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-7",
+      "label": "Memory Locket 7",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Coral_02",
+      "flag": "Collectable Item Pickup (1)",
+      "type": "sceneBool",
+      "description": "Blasted Steps",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-8",
+      "label": "Memory Locket 8",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Crawl_09",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Southwest Wormways",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-9",
+      "label": "Memory Locket 9",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Shadow_20",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Bilewater, in a hidden room northwest of the Bellway",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-10",
+      "label": "Memory Locket 10",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Bellway_City",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Above the Grand Bellway, accessed from Exhaust Organ",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-11",
+      "label": "Memory Locket 11",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Under_08",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Underworks, west of the benches by the confessional",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-12",
+      "label": "Memory Locket 12",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Dock_13",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Deep Docks, west of the diving bell",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-13",
+      "label": "Memory Locket 13",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Library_08",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Whispering Vaults, below the exit to the outside area",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-14",
+      "label": "Memory Locket 14",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Coral_23",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Southwest Sands of Karak",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-15",
+      "label": "Memory Locket 15",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Halfway_01",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Inside of Halfway Home, above the left-hand door",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-16",
+      "label": "Memory Locket 16",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Arborium_05",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "In the central area of the Memorium",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-17",
+      "label": "Memory Locket 17",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Slab_Cell_Quiet",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "The Slab, in the shortcut cave between the Bellway area and the upper areas",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+    {
+      "id": "memory-locket-18",
+      "label": "Memory Locket 18",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Shadow_27",
+      "flag": "Breakable Hang Sack Memory Locket",
+      "type": "sceneBool",
+      "description": "Bilewater, held by a corpse in a breakable cocoon just west of the hidden bench. Not visible until the cocoon is broken.",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-19",
+      "label": "Memory Locket 19",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Belltown",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Bellhart, above the Bellhome",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    },
+        {
+      "id": "memory-locket-20",
+      "label": "Memory Locket 20",
+      "icon": "assets/icons/Memory_Locket.png",
+      "category": "Memory Lockets",
+      "scene": "Bone_East_25",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Far Fields, east of Skarrsinger Karmelita",
+      "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+]
+
+
+
+
+

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "lace",
+    "label": "Lace",
+    "flag": "defeatedLace1",
+    "icon": "https://cdn.wikimg.net/en/hkwiki/images/thumb/e/e6/B_Lace.png/150px-B_Lace.png",
+    "description": "A massive mossy creature found in the Verdant Caverns.",
+    "link": "https://silksong.wiki/moss-mother"
+  },
+  {
+    "id": "moss_mother",
+    "label": "Moss Mother",
+    "flag": "defeatedMossMother",
+    "icon": "https://cdn.wikimg.net/en/hkwiki/images/1/1e/B_Moss_Mother.png",
+    "description": "A massive mossy creature found in the Verdant Caverns.",
+    "link": "https://silksong.wiki/moss-mother"
+  },
+  {
+    "id": "skull_king",
+    "label": "Skull Tyrant",
+    "flag": "defeatedSkullKing",
+    "icon": "https://cdn.wikimg.net/en/hkwiki/images/thumb/2/29/B_Skull_Tyrant.png/150px-B_Skull_Tyrant.png",
+    "description": "A massive mossy creature found in the Verdant Caverns.",
+    "link": "https://silksong.wiki/moss-mother"
+  },
+  {
+    "id": "bell_beast",
+    "label": "Bell Beast",
+    "flag": "defeatedBellBeast",
+    "icon": "https://cdn.wikimg.net/en/hkwiki/images/thumb/8/84/B_Bell_Beast.png/150px-B_Bell_Beast.png",
+    "description": "A massive mossy creature found in the Verdant Caverns.",
+    "link": "https://silksong.wiki/moss-mother"
+  },
+  {
+    "id": "splinter_queen",
+    "label": "Sister Splinter",
+    "flag": "defeatedSplinterQueen",
+    "icon": "https://cdn.wikimg.net/en/hkwiki/images/thumb/5/5c/B_Sister_Splinter.png/300px-B_Sister_Splinter.png",
+    "description": "A massive mossy creature found in the Verdant Caverns.",
+    "link": "https://silksong.wiki/moss-mother"
+  },
+  {
+    "id": "pinstress",
+    "label": "Pinstress",
+    "flag": "PinstressBattle",
+    "icon": "https://cdn.wikimg.net/en/hkwiki/images/thumb/a/a7/B_Pinstress.png/97px-B_Pinstress.png",
+    "description": "A massive mossy creature found in the Verdant Caverns.",
+    "link": "https://silksong.wiki/moss-mother"
+  }
+]
