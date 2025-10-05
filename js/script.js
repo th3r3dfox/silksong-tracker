@@ -663,7 +663,7 @@ document.querySelectorAll(".sidebar-item").forEach(btn => {
 
 // ✅ Aggiunta: set home-active al primo caricamento se siamo su home
 window.addEventListener("DOMContentLoaded", () => {
-  const savedTab = localStorage.getItem("activeTab") || "main"; // se non c’è nulla → default main
+  const savedTab = localStorage.getItem("activeTab") || "home"; // se non c’è nulla → default main
 
   // resetto tutto
   document.querySelectorAll(".sidebar-item").forEach(i => i.classList.remove("is-active"));
