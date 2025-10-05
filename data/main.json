@@ -80,7 +80,7 @@
       "id": "mask-shard-1",
       "label": "Mask Shard #1",
       "icon": "assets/icons/MaskShard.png",
-      "map": "assets/maps/mask1.pmg",
+      "map": "assets/maps/MaskShard/mask1.png",
       "category": "Mask Shards",
       "flag": "PurchasedBonebottomHeartPiece",
       "type": "flag",
