@@ -1490,3 +1490,28 @@ a, button, .btn-primary, .sidebar-item, .icon-btn {
   }
 }
 
+html {
+  font-display: swap;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.25s ease;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.overlay:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar { width: 220px; flex-shrink: 0; }
+.topbar { min-height: 60px; }
