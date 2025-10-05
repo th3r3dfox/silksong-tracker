@@ -3,7 +3,7 @@ import { decodeSave } from "./decoder.js";
 import { formatBytes, deepFindAny, formatValue } from "./utils.js";
 
 /* ---------- Costanti ---------- */
-const WIKI_BASE = "https://hollowknight.fandom.com/wiki/";
+const WIKI_BASE = "https://hollowknight.wiki/w/";
 
 /* ---------- Stato ---------- */
 let fieldConfig = { fields: [] };
