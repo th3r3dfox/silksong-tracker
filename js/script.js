@@ -7,14 +7,51 @@ import { decodeSilksongSave } from "./SaveDecoder.js";
 // ---------- DATA ----------
 let bossList = [];
 
-fetch('data/bosses.json?' + Date.now())
-  .then(res => res.json())
-  .then(data => {
-    bossList = Array.isArray(data) ? data : (data.items || []);
-    console.log("✅ Bosses loaded:", bossList.length, "items");
-    renderBossGrid();
-  })
-  .catch(err => console.error("❌ Error loading bosses.json:", err));
+async function updateBossesContent() {
+  const response = await fetch("data/bosses.json?" + Date.now());
+  const bossesData = await response.json();
+  const spoilerOn = document.getElementById("spoilerToggle").checked;
+  const showMissingOnly = document.getElementById("missingToggle")?.checked;
+
+  const container = document.getElementById("boss-grid");
+  container.innerHTML = "";
+
+  // Ogni categoria (Bosses, Boss Variants)
+  bossesData.forEach(sectionData => {
+    const section = document.createElement("div");
+    section.className = "main-section-block";
+
+    // Titolo con conteggio
+    const heading = document.createElement("h3");
+    heading.className = "category-title";
+    heading.textContent = sectionData.label;
+
+    // Descrizione
+    if (sectionData.desc) {
+      const desc = document.createElement("p");
+      desc.className = "category-desc";
+      desc.textContent = sectionData.desc;
+      section.appendChild(desc);
+    }
+
+    // Sottogriglia
+    const subgrid = document.createElement("div");
+    subgrid.className = "grid";
+    const visible = renderGenericGrid({
+      containerEl: subgrid,
+      data: sectionData.items,
+      spoilerOn
+    });
+
+    if (showMissingOnly && visible === 0) return;
+
+    section.appendChild(heading);
+    section.appendChild(subgrid);
+    container.appendChild(section);
+  });
+}
+
+
 
 
 function renderBossGrid() {
@@ -48,7 +85,7 @@ document.getElementById("spoilerToggle").addEventListener("change", () => {
   const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
   
   const updater = {
-    bosses: updateIcons,
+    bosses: updateBossesContent,
     main: updateMainContent,
     essentials: updateNewTabContent,
     // aggiungi qui eventuali altre sezioni:
@@ -582,7 +619,7 @@ async function handleSaveFile(file) {
       // --- Aggiorna la tab attiva
       const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
       const updater = {
-        bosses: updateIcons,
+        bosses: updateBossesContent,
         main: updateMainContent,
         essentials: updateNewTabContent
       };
@@ -663,7 +700,7 @@ document.querySelectorAll(".sidebar-item").forEach(btn => {
 
     // Funzioni per sezione
     const updater = {
-      bosses: updateIcons,
+      bosses: updateBossesContent,
       main: updateMainContent,
       essentials: updateNewTabContent,
     };
@@ -689,7 +726,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // aggiorno il contenuto della scheda
   const updater = {
-    bosses: updateIcons,
+    bosses: updateBossesContent,
     main: updateMainContent,
     essentials: updateNewTabContent,
   };
@@ -863,7 +900,7 @@ document.getElementById("missingToggle").addEventListener("change", () => {
   const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
 
   const updater = {
-    bosses: updateIcons,
+    bosses: updateBossesContent,
     main: updateMainContent,
     essentials: updateNewTabContent,
   };
