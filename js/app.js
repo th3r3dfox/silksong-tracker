@@ -114,7 +114,7 @@ const I18N_FOOTER = {
     memText: (url, name) =>
       `In memory of <strong>${name}</strong>, creator of the first game's <a href="${url}" target="_blank" rel="noopener">Analyzer</a>, which accompanied me through my 112% adventures.`,
     legal: (tc, ss) =>
-      `Hollow Knight by <a href="${tc}" target="_blank" rel="noopener">Team Cherry</a> © 2017–2025 — learn more about <a href="${ss}" target="_blank" rel="noopener">Hollow Knight: Silksong</a>. This is an unofficial fan project with no affiliation to Team Cherry.`,
+      `Hollow Knight by <a href="${tc}" target="_blank" rel="noopener">Team Cherry</a> © 2017-2025 — learn more about <a href="${ss}" target="_blank" rel="noopener">Hollow Knight: Silksong</a>. This is an unofficial fan project with no affiliation to Team Cherry.`,
   },
   it: {
     title: "Informazioni sul progetto",
@@ -127,7 +127,7 @@ const I18N_FOOTER = {
     memText: (url, name) =>
       `In memoria di <strong>${name}</strong>, creatore dell'<a href="${url}" target="_blank" rel="noopener">Analyzer</a> del primo gioco, che mi ha accompagnato nelle mie avventure fino al 112%.`,
     legal: (tc, ss) =>
-      `Hollow Knight di <a href="${tc}" target="_blank" rel="noopener">Team Cherry</a> © 2017–2025 — scopri di più su <a href="${ss}" target="_blank" rel="noopener">Hollow Knight: Silksong</a>. Progetto non ufficiale, senza affiliazione con Team Cherry.`,
+      `Hollow Knight di <a href="${tc}" target="_blank" rel="noopener">Team Cherry</a> © 2017-2025 — scopri di più su <a href="${ss}" target="_blank" rel="noopener">Hollow Knight: Silksong</a>. Progetto non ufficiale, senza affiliazione con Team Cherry.`,
   },
 };
 
