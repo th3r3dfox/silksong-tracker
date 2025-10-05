@@ -24,7 +24,7 @@ function renderBossGrid() {
     const img = document.createElement("img");
     img.alt = boss.label;
     img.dataset.realIcon = boss.icon;
-    img.src = "../assets/icons/locked.png";
+    img.src = "assets/icons/locked.png";
 
     const label = document.createElement("div");
     label.textContent = boss.label;
