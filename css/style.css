@@ -1445,3 +1445,47 @@ html, body {
 a, button, .btn-primary, .sidebar-item, .icon-btn {
   cursor: url('../assets/misc/Cursor_32px.png') 8 8, pointer;
 }
+
+/* --- FIX LAYOUT HOME SU SCHERMI PICCOLI --- */
+@media (max-width: 1400px) {
+  .main-wrapper {
+    margin-left: 240px; /* evita che il testo vada sotto la sidebar */
+  }
+
+  .home-content {
+    padding: 0 2rem;
+  }
+
+  .home-content h1 {
+    font-size: 2.3rem;
+    line-height: 1.3;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .home-section-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem;
+  }
+
+  .main-wrapper {
+    margin-left: 0;
+    padding-top: 2rem;
+  }
+
+  .home-content h1 {
+    font-size: 1.8rem;
+  }
+}
