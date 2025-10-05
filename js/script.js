@@ -7,12 +7,15 @@ import { decodeSilksongSave } from "./SaveDecoder.js";
 // ---------- DATA ----------
 let bossList = [];
 
-fetch('data/bosses.json')
+fetch('data/bosses.json?' + Date.now())
   .then(res => res.json())
   .then(data => {
-    bossList = data;
+    bossList = Array.isArray(data) ? data : (data.items || []);
+    console.log("✅ Bosses loaded:", bossList.length, "items");
     renderBossGrid();
-  });
+  })
+  .catch(err => console.error("❌ Error loading bosses.json:", err));
+
 
 function renderBossGrid() {
   const grid = document.getElementById("boss-grid");
