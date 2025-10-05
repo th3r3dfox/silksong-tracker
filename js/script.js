@@ -1,4 +1,7 @@
 console.log("No cost too great. No mind to think. No will to break. No voice to cry suffering.");
+const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
+  ? "/silksong-tracker"
+  : "";
 import { decodeSilksongSave } from "./SaveDecoder.js";
 
 // ---------- DATA ----------
@@ -430,38 +433,42 @@ function renderGenericGrid({
 
     // Stato “completato”
     let isDone = false;
-    if (item.type === "level" || item.type === "region-level" || item.type === "min" || item.type === "region-min") {
+    if (["level", "region-level", "min", "region-min"].includes(item.type)) {
       isDone = (value ?? 0) >= (item.required ?? 0);
     } else if (item.type === "collectable") {
       isDone = (value ?? 0) > 0;
     } else {
-      // flag / key / ability / sceneBool ...
       isDone = value === true;
     }
 
     // Se “solo mancanti” ed è completato → non renderizzare proprio la card
     if (showMissingOnly && isDone) return;
 
-  // Immagini / classi
-if (isDone) {
-  img.src = item.icon || `../assets/icons/${item.id}.png`;
-  div.classList.add("done");
-} else if (spoilerOn) {
-  img.src = item.icon || `../assets/icons/${item.id}.png`;
-  div.classList.add("unlocked");
-} else {
-  img.src = "../assets/icons/locked.png";
-  div.classList.add("locked");
+    // 🖼️ Gestione immagini
+    const iconPath = item.icon || `${BASE_PATH}/assets/icons/${item.id}.png`;
+    const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
 
-  const realSrc = item.icon || `../assets/icons/${item.id}.png`;
-  div.addEventListener("mouseenter", () => img.src = realSrc);
-  div.addEventListener("mouseleave", () => img.src = "../assets/icons/locked.png");
-}
+    if (isDone) {
+      img.src = iconPath;
+      div.classList.add("done");
+    } else if (spoilerOn) {
+      img.src = iconPath;
+      div.classList.add("unlocked");
+    } else {
+      img.src = lockedPath;
+      div.classList.add("locked");
+
+      div.addEventListener("mouseenter", () => (img.src = iconPath));
+      div.addEventListener("mouseleave", () => (img.src = lockedPath));
+    }
 
     // Titolo + modal
     const title = document.createElement("div");
     title.className = "title";
-    title.textContent = (silkVariants.includes(item.flag) && !unlockedSilkVariant) ? "Silkshot" : item.label;
+    title.textContent =
+      silkVariants.includes(item.flag) && !unlockedSilkVariant
+        ? "Silkshot"
+        : item.label;
 
     div.appendChild(img);
     div.appendChild(title);
