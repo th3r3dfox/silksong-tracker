@@ -1614,18 +1614,24 @@ body {
   z-index: 20;
 }
 
-.main-wrapper {
-  margin-left: 220px;
-  width: calc(100% - 220px);
-  min-height: 100vh;
-  background: var(--bg-1);
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
 main {
   max-width: 1400px;
   margin: 0 auto;
   padding: 24px;
+  box-sizing: border-box;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ centra tutto orizzontalmente */
+}
+
+main {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  background: var(--bg-1);
   box-sizing: border-box;
 }
