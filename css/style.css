@@ -95,9 +95,10 @@ body.home-active main {
 main {
   padding: 24px;
   background: #181818;
-  height: calc(100vh - 44px);
+  min-height: calc(100vh - 44px); /* cambia height → min-height */
   overflow-y: auto;
   box-sizing: border-box;
+  padding-bottom: 80px; /* aggiungi spazio extra sotto */
 }
 
 .section{ max-width:980px; margin:0 auto;padding: 16px 20px; }
