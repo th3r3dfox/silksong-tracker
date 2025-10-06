@@ -71,8 +71,7 @@
       {
         "id": "pale-monarch",
         "label": "Pale Monarch",
-        "type": "quest",
-        "flag": "Citadel Ascent Silk Defeat",
+        "category": "Boss", "flag": "silk boss","type": "journal","subtype": "kills","required": 1,
         "icon": "assets/quest/Seek_Quest_Icon.png",
         "description": "Confront the one who haunts the lands of Pharloom. Defeat Grand Mother Silk.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
