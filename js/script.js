@@ -895,12 +895,14 @@ section.appendChild(heading);
 
 
 async function updateWishesContent() {
+  const container = document.getElementById("wishes-grid");
+  if (!container) return console.warn("[updateWishesContent] Missing #wishes-grid in DOM");
+
   const response = await fetch("data/wishes.json");
   const questData = await response.json();
   const spoilerOn = document.getElementById("spoilerToggle").checked;
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
 
-  const container = document.getElementById("wishes-grid");
   container.innerHTML = "";
 
   questData.forEach(sectionData => {
