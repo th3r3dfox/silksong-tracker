@@ -23,10 +23,34 @@ async function updateBossesContent() {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
-    // Titolo principale (centrato)
+    // Titolo principale
     const heading = document.createElement("h3");
     heading.className = "category-title";
     heading.textContent = sectionData.label;
+
+    // 🔢 Calcolo ottenuti / totali (come in updateMainContent)
+    if (Array.isArray(sectionData.items)) {
+      let obtained = 0;
+      const total = sectionData.items.length;
+
+      (sectionData.items || []).forEach(item => {
+        const val = window.save ? resolveSaveValue(window.save, item) : false;
+        const isUnlocked =
+          (item.type === "level" || item.type === "min" || item.type === "region-level" || item.type === "region-min")
+            ? (val ?? 0) >= (item.required ?? 0)
+            : item.type === "collectable"
+              ? (val ?? 0) > 0
+              : val === true;
+
+        if (isUnlocked) obtained++;
+      });
+
+      const count = document.createElement("span");
+      count.className = "category-count";
+      count.textContent = ` ${obtained}/${total}`;
+      heading.appendChild(count);
+    }
+
     section.appendChild(heading);
 
     // Descrizione (solo una volta per categoria)
@@ -52,6 +76,7 @@ async function updateBossesContent() {
     container.appendChild(section);
   });
 }
+
 
 
 
