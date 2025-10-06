@@ -1581,3 +1581,56 @@ html {
   height: 64px;
   margin-bottom: 6px;
 }
+
+#wishes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: stretch;
+  width: 100%;
+}
+
+#wishes-grid .main-section-block {
+  flex: 1 1 300px;
+  min-width: 280px;
+  margin-bottom: 2rem;
+  background: none;
+  border: none;
+  padding-top: 0;
+}
+
+#wishes-grid .main-section-block h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+#wishes-grid .category-desc {
+  text-align: center;
+  color: #bbb;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+#wishes-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  justify-content: center;
+}
+
+#wishes-grid .boss {
+  background: var(--bg-3);
+  border: 1px solid var(--stroke-soft);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+#wishes-grid .boss img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 8px;
+}
