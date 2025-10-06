@@ -900,7 +900,7 @@ async function updateWhisesContent() {
   const spoilerOn = document.getElementById("spoilerToggle").checked;
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
 
-  const container = document.getElementById("quests-grid");
+  const container = document.getElementById("whises-grid");
   container.innerHTML = "";
 
   questData.forEach(sectionData => {
