@@ -116,6 +116,7 @@ document.getElementById("spoilerToggle").addEventListener("change", () => {
     bosses: updateBossesContent,
     main: updateMainContent,
     essentials: updateNewTabContent,
+    quests: updateWhisesContent,
     // aggiungi qui eventuali altre sezioni:
     // charms: updateCharms,
     // items: updateItems,
@@ -673,7 +674,8 @@ async function handleSaveFile(file) {
       const updater = {
         bosses: updateBossesContent,
         main: updateMainContent,
-        essentials: updateNewTabContent
+        essentials: updateNewTabContent,
+        quests: updateWhisesContent,
       };
       updater[activeTab]?.();
 
@@ -755,6 +757,7 @@ document.querySelectorAll(".sidebar-item").forEach(btn => {
       bosses: updateBossesContent,
       main: updateMainContent,
       essentials: updateNewTabContent,
+      quests: updateWhisesContent,
     };
     updater[selectedTab]?.();
   });
@@ -781,6 +784,7 @@ window.addEventListener("DOMContentLoaded", () => {
     bosses: updateBossesContent,
     main: updateMainContent,
     essentials: updateNewTabContent,
+    quests: updateWhisesContent,
   };
   updater[savedTab]?.();
 });
@@ -890,7 +894,7 @@ section.appendChild(heading);
 }
 
 
-async function updateQuestContent() {
+async function updateWhisesContent() {
   const response = await fetch("data/quests.json");
   const questData = await response.json();
   const spoilerOn = document.getElementById("spoilerToggle").checked;
@@ -1032,6 +1036,7 @@ document.getElementById("missingToggle").addEventListener("change", () => {
     bosses: updateBossesContent,
     main: updateMainContent,
     essentials: updateNewTabContent,
+    quests: updateWhisesContent,
   };
 
   // 🔄 forza un re-render della tab attiva
