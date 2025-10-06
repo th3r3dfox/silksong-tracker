@@ -1671,3 +1671,37 @@ main {
   overflow-y: auto;
   box-sizing: border-box;
 }
+
+/* ✅ FIX layout centrale allineato correttamente accanto alla sidebar */
+body {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.main-wrapper {
+  margin-left: 220px;
+  flex: 1;
+  width: calc(100% - 220px);
+  min-height: 100vh;
+  overflow-y: auto;
+  background: var(--bg-1);
+  padding-bottom: 60px; /* evita taglio fondo */
+}
+
+main {
+  max-width: 1400px; /* centrato ma non infinito */
+  margin: 0 auto;
+  padding: 24px;
+  box-sizing: border-box;
+}
