@@ -74,10 +74,7 @@ body.home-active main {
   z-index: 20;
 }
 
-.main-wrapper{ 
-  margin-left:220px; 
-  /* width calc removed to prevent layout breakages with fixed sidebar */
-}
+
 
 .topbar{
   height:48px;
@@ -91,13 +88,7 @@ body.home-active main {
 
 .topbar-right{ margin-left:auto; display:flex; gap:10px; align-items:center; }
 
-main {
-  padding: 24px;
-  background: #181818;
-  height: calc(100vh - 44px);
-  overflow-y: auto;
-  box-sizing: border-box;
-}
+
 
 .section{ max-width:980px; margin:0 auto;padding: 16px 20px; }
 
@@ -1656,28 +1647,13 @@ main {
   box-shadow: 0 0 6px rgba(241, 196, 15, 0.5);
 }
 
-/* --- FIX layout principale --- */
-.main-wrapper {
-  margin-left: 220px;
-  width: calc(100% - 220px); /* ✅ ripristina larghezza giusta accanto alla sidebar */
-  overflow-y: auto;
-  min-height: 100vh;
-}
-
-main {
-  padding: 24px;
-  background: var(--bg-1);
-  min-height: 100vh;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
-/* ✅ FIX layout centrale allineato correttamente accanto alla sidebar */
+/* --- LAYOUT GLOBALE CORRETTO --- */
 body {
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;  /* niente scroll orizzontale */
+  overflow-y: auto;    /* scroll verticale normale */
 }
 
 .sidebar {
@@ -1687,21 +1663,27 @@ body {
   position: fixed;
   left: 0;
   top: 0;
+  background: var(--bg-2);
+  border-right: 1px solid var(--stroke);
+  z-index: 20;
 }
 
 .main-wrapper {
-  margin-left: 220px;
   flex: 1;
+  margin-left: 220px;
   width: calc(100% - 220px);
   min-height: 100vh;
-  overflow-y: auto;
   background: var(--bg-1);
-  padding-bottom: 60px; /* evita taglio fondo */
+  padding-bottom: 60px;
+  overflow-y: auto;
 }
 
 main {
-  max-width: 1400px; /* centrato ma non infinito */
+  max-width: 1400px;
   margin: 0 auto;
   padding: 24px;
+  background: var(--bg-1);
   box-sizing: border-box;
+  color: var(--ink-2);
 }
+
