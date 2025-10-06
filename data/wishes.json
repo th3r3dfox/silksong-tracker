@@ -198,7 +198,7 @@
         "label": "The Lost Fleas #1",
         "type": "quest",
         "flag": "Save the Fleas Pre",
-        "icon": "assets/quest/",
+        "icon": "assets/quest/wayfarer.png",
         "description": "Speak to the fleas before starting their rescue.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -207,7 +207,7 @@
         "label": "The Lost Fleas #2",
         "type": "quest",
         "flag": "Save the Fleas",
-        "icon": "assets/quest/",
+        "icon": "assets/quest/wayfarer.png",
         "description": "Find and save the 5 lost fleas.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
