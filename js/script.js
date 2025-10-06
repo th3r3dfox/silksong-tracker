@@ -422,18 +422,28 @@ if (item.type === "key") {
     return false;
   }
 
-  if (item.type === "journal") {
-  const entry = pd.Journal?.savedData?.find(e => e.Name === item.flag);
+if (item.type === "journal") {
+  const journalList =
+    pd.EnemyJournalKillData?.list ||
+    pd.Journal?.savedData ||
+    pd.JournalData?.savedData ||
+    root.Journal?.savedData ||
+    [];
+
+  const entry = journalList.find(e => e.Name === item.flag);
   if (!entry) return false;
 
-  // Diversi tipi di condizione
-  if (item.subtype === "seen") return entry.Data?.IsSeen === true;
-  if (item.subtype === "unlocked") return entry.Data?.IsUnlocked === true;
-  if (item.subtype === "kills") return (entry.Data?.Kills ?? 0) >= (item.required ?? 1);
+  const data = entry.Record || entry.Data || {};
 
-  // Fallback: considerato ottenuto se IsSeen o IsUnlocked sono true
-  return entry.Data?.IsSeen || entry.Data?.IsUnlocked || (entry.Data?.Kills ?? 0) > 0;
+  // Support different conditions
+  if (item.subtype === "kills") return (data.Kills ?? 0) >= (item.required ?? 1);
+  if (item.subtype === "seen") return data.HasBeenSeen === true;
+  if (item.subtype === "unlocked") return data.IsUnlocked === true;
+
+  // fallback
+  return data.HasBeenSeen || (data.Kills ?? 0) > 0;
 }
+
 
 
 
