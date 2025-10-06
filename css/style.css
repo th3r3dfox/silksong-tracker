@@ -1566,4 +1566,19 @@ html {
   transform: scale(0.97);
 }
 
+.quest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-2);
+  border-radius: var(--radius-lg);
+  padding: 10px;
+  text-align: center;
+}
+
+.quest img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 6px;
+}
 
