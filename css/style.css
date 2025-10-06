@@ -1652,24 +1652,6 @@ main {
   scrollbar-color: #555 #111;
 }
 
-/* --- FIX: padding inferiore per evitare taglio dell’ultima riga --- */
-main {
-  height: auto !important;
-  min-height: 100vh;
-  overflow-y: auto;
-  padding-bottom: 80px; /* spazio extra sotto tutte le sezioni */
-}
-
-/* Ogni griglia ha margine extra in basso per sicurezza */
-.grid {
-  margin-bottom: 40px;
-}
-
-/* In caso di scrollbar invisibile, forza uno spazio visivo extra */
-.main-section-block:last-child {
-  padding-bottom: 60px;
-}
-
 .boss.accepted {
   border: 2px solid #f1c40f; /* giallo oro */
   box-shadow: 0 0 6px rgba(241, 196, 15, 0.5);
