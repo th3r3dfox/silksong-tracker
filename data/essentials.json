@@ -411,7 +411,102 @@
       "link": "https://hollowknight.wiki/w/Pale_Oil"
     }
   ]
+},
+{
+  "id": "category-craftmetals",
+  "label": "Craft Metals",
+  "desc": "Refined metals used for crafting and upgrading tools throughout Pharloom.",
+  "contrib": 0,
+  "items": [
+    {
+      "id": "craftmetal-bonebottom",
+      "label": "Craft Metal (Bonebottom)",
+      "icon": "assets/icons/Craft_Metal.png",
+      "category": "Craft Metals",
+      "flag": "PurchasedBonebottomToolMetal",
+      "type": "flag",
+      "description": "Bought from Pebb in Bone Bottom for 60 Rosaries.",
+      "link": "https://hollowknight.wiki/w/Craft_Metal"
+    },
+    {
+      "id": "craftmetal-bone-07",
+      "label": "Craft Metal (Bone_07)",
+      "icon": "assets/icons/Craft_Metal.png",
+      "category": "Craft Metals",
+      "scene": "Bone_07",
+      "flag": "Collectable Item Pickup - Tool Metal",
+      "type": "sceneBool",
+      "description": "Found by exploding a tunnel of rock in the northeast area of the Marrow, in the large room west of the entrance to Hunter's March.",
+      "link": "https://hollowknight.wiki/w/Craft_Metal"
+    },
+    {
+      "id": "craftmetal-dock-03",
+      "label": "Craft Metal (Dock_03)",
+      "icon": "assets/icons/Craft_Metal.png",
+      "category": "Craft Metals",
+      "scene": "Dock_03",
+      "flag": "Collectable Item Pickup - Tool Metal",
+      "type": "sceneBool",
+      "description": "Found in a chest behind the locked door in Deep Docks. It is located at the southwest corner of the bottom-most room that connects to Far Fields. (It is closer to the Far Fields Bellway Station than the Deep Docks Bellway Station.)",
+      "link": "https://hollowknight.wiki/w/Craft_Metal"
+    },
+    {
+      "id": "craftmetal-coral-32",
+      "label": "Craft Metal (Coral_32)",
+      "icon": "assets/icons/Craft_Metal.png",
+      "category": "Craft Metals",
+      "scene": "Coral_32",
+      "flag": "Collectable Item Pickup - Tool Metal",
+      "type": "sceneBool",
+      "description": "Found in the Blasted Steps in a hidden area in the room before the Last Judge by falling down a hole at the east side of the room.",
+      "link": "https://hollowknight.wiki/w/Craft_Metal"
+    },
+    {
+      "id": "craftmetal-merchant-enclave",
+      "label": "Craft Metal (Merchant Enclave)",
+      "icon": "assets/icons/Craft_Metal.png",
+      "category": "Craft Metals",
+      "flag": "MerchantEnclaveToolMetal",
+      "type": "flag",
+      "description": "Bought from Jubilana in Songclave for 180 Rosaries after completing the 'The Lost Merchant' Wish.",
+      "link": "https://hollowknight.wiki/w/Craft_Metal"
+    },
+    {
+      "id": "craftmetal-wisp-05",
+      "label": "Craft Metal (Wisp_05)",
+      "icon": "assets/icons/Craft_Metal.png",
+      "category": "Craft Metals",
+      "scene": "Wisp_05",
+      "flag": "Collectable Item Pickup - Tool Metal",
+      "type": "sceneBool",
+      "description": "Found behind a breakable ceiling in Wisp Thicket.",
+      "link": "https://hollowknight.wiki/w/Craft_Metal"
+    },
+    {
+      "id": "craftmetal-under-19b",
+      "label": "Craft Metal (Under_19b)",
+      "icon": "assets/icons/Craft_Metal.png",
+      "category": "Craft Metals",
+      "scene": "Under_19b",
+      "flag": "Collectable Item Pickup - Tool Metal",
+      "type": "sceneBool",
+      "description": "Found at the end of a tunnel in the eastern Underworks, directly south of where Clawline can be found.",
+      "link": "https://hollowknight.wiki/w/Craft_Metal"
+    },
+    {
+      "id": "craftmetal-aqueduct-05",
+      "label": "Craft Metal (Aqueduct_05)",
+      "icon": "assets/icons/Craft_Metal.png",
+      "category": "Craft Metals",
+      "scene": "Aqueduct_05",
+      "flag": "Collectable Item Pickup - Tool Metal",
+      "type": "sceneBool",
+      "description": "Found at the far eastern end of the Pale Lake in Putrified Ducts.",
+      "link": "https://hollowknight.wiki/w/Craft_Metal"
+    }
+  ]
 }
+
 
 
 
