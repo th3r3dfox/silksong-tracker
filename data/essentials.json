@@ -78,7 +78,7 @@
     },
     {
       "id": "key-gate",
-      "label": "Gate Key",
+      "label": "Diving Bell Key",
       "icon": "assets/icons/Diving_Bell_Key.png",
       "category": "Keys",
       "flag": "BallowGivenKey",
