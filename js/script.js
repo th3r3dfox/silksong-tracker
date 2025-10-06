@@ -408,7 +408,6 @@ if (item.type === "quest") {
 
   // Normalizza il nome per evitare problemi di maiuscole/spazi
   const normalize = s => String(s || "").toLowerCase().trim();
-
   const flagNorm = normalize(item.flag);
 
   // Cerca in tutti i possibili array
@@ -422,9 +421,18 @@ if (item.type === "quest") {
 
   const data = entry.Data || entry.Record || {};
 
-  // ✅ Valore finale
-  return data.IsCompleted === true || data.Completed === true || data.Complete === true;
+  // 🎯 Stato della quest
+  if (data.IsCompleted === true || data.Completed === true || data.Complete === true) {
+    return "completed";
+  }
+
+  if (data.IsAccepted === true || data.Accepted === true) {
+    return "accepted";
+  }
+
+  return false;
 }
+
 
 
   // Scene flags (Mask Shards, Heart Pieces ecc.)
@@ -546,15 +554,19 @@ function renderGenericGrid({
     const img = document.createElement("img");
     img.alt = item.label;
 
-    // Valore dal salvataggio
+    // 🔍 Valore dal salvataggio (quest ora può ritornare "completed" o "accepted")
     const value = resolveSaveValue(save, item);
 
-    // Stato “completato”
     let isDone = false;
+    let isAccepted = false;
+
     if (["level", "region-level", "min", "region-min"].includes(item.type)) {
       isDone = (value ?? 0) >= (item.required ?? 0);
     } else if (item.type === "collectable") {
       isDone = (value ?? 0) > 0;
+    } else if (item.type === "quest") {
+      isDone = value === "completed" || value === true;
+      isAccepted = value === "accepted";
     } else {
       isDone = value === true;
     }
@@ -562,13 +574,16 @@ function renderGenericGrid({
     // Se “solo mancanti” ed è completato → non renderizzare proprio la card
     if (showMissingOnly && isDone) return;
 
-    // 🖼️ Gestione immagini
+    // 🖼️ Gestione immagini e stato
     const iconPath = item.icon || `${BASE_PATH}/assets/icons/${item.id}.png`;
     const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
 
     if (isDone) {
       img.src = iconPath;
       div.classList.add("done");
+    } else if (isAccepted) {
+      img.src = iconPath;
+      div.classList.add("accepted");
     } else if (spoilerOn) {
       img.src = iconPath;
       div.classList.add("unlocked");
@@ -598,6 +613,7 @@ function renderGenericGrid({
 
   return renderedCount;
 }
+
 
 
 

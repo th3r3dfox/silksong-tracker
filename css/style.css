@@ -1669,3 +1669,8 @@ main {
 .main-section-block:last-child {
   padding-bottom: 60px;
 }
+
+.boss.accepted {
+  border: 2px solid #f1c40f; /* giallo oro */
+  box-shadow: 0 0 6px rgba(241, 196, 15, 0.5);
+}
