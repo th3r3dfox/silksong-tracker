@@ -241,9 +241,7 @@ const value =
     : save[item.flag];
 ```
 
-This checks whether the flag exists either:
-- Globally, e.g. `save["Collectable Item Pickup"]`, or
-- Within a scene, e.g. `save["Dock_08"]["Heart Piece"]`.
+This checks whether the flag exists either globally or within a specific scene.
 
 If the flag exists and is `true`, the item is marked as obtained.
 
@@ -297,9 +295,6 @@ These names come from:
 }
 ```
 
-This entry links the in-game event “Collectable Item Pickup” directly to the decoded save data,
-so the tracker can mark Everbloom as obtained once that flag is true.
-
 ---
 
 ## 6. JavaScript Components
@@ -310,7 +305,12 @@ so the tracker can mark Everbloom as obtained once that flag is true.
 | `decodeSilksongSave(fileBytes)` | SaveDecoder.js | Executes the full decode process (AES → Inflate → JSON). |
 | `renderGenericGrid({ data, containerId })` | script.js | Renders items into the UI grid. |
 | `switchTab(tabId)` | script.js | Handles tab navigation. |
-| `updateFilters()` | script.js | Applies “missing” and “spoiler” filters. |
+| `updateBossesContent()` | script.js | Loads and renders bosses using async fetch. |
+| `updateMainContent()` | script.js | Loads and renders main data sections. |
+| `updateNewTabContent()` | script.js | Loads and renders essentials/extra sections. |
+| `resolveSaveValue(save, item)` | script.js | Resolves correct values for any save flag or nested object. |
+| `indexFlags(root)` | script.js | Indexes nested scene flags into a flat reference map. |
+| `showGenericModal(data)` | script.js | Displays detailed modal with icon, map, and wiki link. |
 
 ---
 
@@ -359,12 +359,65 @@ completion% = Σ (completedItems / totalItems) × contrib
 
 ---
 
-## 10. Technology Stack
+## 10. Adding New Tabs
+
+To add a new tab, follow these steps:
+
+1. Add a sidebar link in `index.html` with a unique `data-tab` attribute.  
+2. Add a corresponding `<section>` element with ID `yourtab-section`.  
+3. Create an async function `updateYourTabContent()` in `script.js` that fetches a JSON file and renders content using `renderGenericGrid`.  
+4. Register the new function in the `updater` object used by tab switching and toggles.
+
+Example:
+
+```js
+async function updateCharmsContent() {
+  const response = await fetch("data/charms.json");
+  const charmsData = await response.json();
+  renderGenericGrid({ containerId: "charms-grid", data: charmsData });
+}
+
+const updater = {
+  bosses: updateBossesContent,
+  main: updateMainContent,
+  essentials: updateNewTabContent,
+  charms: updateCharmsContent
+};
+```
+
+---
+
+## 11. Async Functions and Modular Structure
+
+All data-loading operations now use **`async/await`** for clarity and better control.
+
+Example:
+
+```js
+async function updateBossesContent() {
+  const response = await fetch("data/bosses.json?" + Date.now());
+  const data = await response.json();
+  // Rendering logic...
+}
+```
+
+Benefits:
+
+| Aspect | Advantage |
+|---------|-----------|
+| Readability | Code looks sequential and easy to follow. |
+| Error Handling | Works with `try/catch` blocks for unified control. |
+| Modularity | Each tab uses a separate async updater. |
+| Flexibility | Easier to expand with new content and JSON sources. |
+
+---
+
+## 12. Technology Stack
 
 | Layer | Technology | Purpose |
 |--------|-------------|----------|
 | Front-End | HTML5, CSS3, Font Awesome | UI and layout |
-| Logic | JavaScript (ES6 Modules) | Core functionality |
+| Logic | JavaScript (ES6 Modules, async/await) | Core functionality |
 | Cryptography | CryptoJS | AES decryption |
 | Compression | Pako.js | zlib decompression |
 | Data | JSON | Static metadata |
@@ -372,9 +425,10 @@ completion% = Σ (completedItems / totalItems) × contrib
 
 ---
 
-## 11. Credits
-  
+## 13. Credits
+
+Developed by Fox  
 Inspired by *ReznorMichael’s “Hollow Knight Save Analyzer”*  
 A non-commercial fan project not affiliated with Team Cherry.  
 
-Version: v0.2.0
+Version: v0.3.0
