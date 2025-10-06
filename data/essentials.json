@@ -344,7 +344,7 @@
       "icon": "assets/icons/Memory_Locket.png",
       "category": "Memory Lockets",
       "scene": "Shadow_27",
-      "flag": "Breakable Hang Sack Memory Locket",
+      "flag": "Sack Corpse Pickup",
       "type": "sceneBool",
       "description": "Bilewater, held by a corpse in a breakable cocoon just west of the hidden bench. Not visible until the cocoon is broken.",
       "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
