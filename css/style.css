@@ -461,13 +461,6 @@ a:hover {
   text-align: center;
 }
 
-
-html,
-body {
-  overflow: hidden;   /* 🔒 il body non scrolla più */
-  height: 100%;
-}
-
 .overlay {
   position: fixed;
   inset: 0;
