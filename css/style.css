@@ -1515,3 +1515,13 @@ html {
 
 .sidebar { width: 220px; flex-shrink: 0; }
 .topbar { min-height: 60px; }
+
+#boss-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#boss-grid .main-section-block {
+  width: 100%;
+}

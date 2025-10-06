@@ -21,18 +21,20 @@ async function updateBossesContent() {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
-    // Titolo con conteggio
-    const heading = document.createElement("h3");
-    heading.className = "category-title";
-    heading.textContent = sectionData.label;
+// Titolo con conteggio
+const heading = document.createElement("h3");
+heading.className = "category-title";
+heading.textContent = sectionData.label;
+section.appendChild(heading);
 
-    // Descrizione
-    if (sectionData.desc) {
-      const desc = document.createElement("p");
-      desc.className = "category-desc";
-      desc.textContent = sectionData.desc;
-      section.appendChild(desc);
-    }
+// Descrizione (dopo il titolo)
+if (sectionData.desc) {
+  const desc = document.createElement("p");
+  desc.className = "category-desc";
+  desc.textContent = sectionData.desc;
+  section.appendChild(desc);
+}
+
 
     // Sottogriglia
     const subgrid = document.createElement("div");
