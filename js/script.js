@@ -895,7 +895,7 @@ section.appendChild(heading);
 
 
 async function updateWhisesContent() {
-  const response = await fetch("data/quests.json");
+  const response = await fetch("data/whises.json");
   const questData = await response.json();
   const spoilerOn = document.getElementById("spoilerToggle").checked;
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
