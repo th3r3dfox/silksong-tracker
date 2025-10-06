@@ -1006,7 +1006,7 @@ a:hover {
 /* Background per le altre tab */
 main {
   background: var(--bg-1);
-  min-height: 100vh;
+  min-height: calc(100vh - 44px);
   color: var(--ink-2);
   z-index: 3;
 }
