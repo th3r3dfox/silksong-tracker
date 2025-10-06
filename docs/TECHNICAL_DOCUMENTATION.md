@@ -359,17 +359,7 @@ completion% = Σ (completedItems / totalItems) × contrib
 
 ---
 
-## 10. Planned Features
-
-- Map previews for each item using the `map` field.  
-- Real-time completion percentage.  
-- LocalStorage caching of last decoded save.  
-- Search and filtering by flag or category.  
-- Detailed boss viewer using `bosses.json`.
-
----
-
-## 11. Technology Stack
+## 10. Technology Stack
 
 | Layer | Technology | Purpose |
 |--------|-------------|----------|
@@ -382,9 +372,8 @@ completion% = Σ (completedItems / totalItems) × contrib
 
 ---
 
-## 12. Credits
-
-Developed by Fox  
+## 11. Credits
+  
 Inspired by *ReznorMichael’s “Hollow Knight Save Analyzer”*  
 A non-commercial fan project not affiliated with Team Cherry.  
 
