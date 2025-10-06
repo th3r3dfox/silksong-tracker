@@ -395,8 +395,8 @@
       "label": "Citadel Pale Oil",
       "icon": "assets/icons/Pale_Oil.png",
       "category": "Pale Oils",
-      "flag": "Great Taste of Pharloom",
       "type": "quest",
+      "flag": "Great Gourmand",
       "description": "Reward for completing the 'Great Taste of Pharloom' Wish.",
       "link": "https://hollowknight.wiki/w/Pale_Oil"
     },
@@ -405,8 +405,8 @@
       "label": "Flea Games Pale Oil",
       "icon": "assets/icons/Pale_Oil.png",
       "category": "Pale Oils",
-      "flag": "Ecstasy of the End",
       "type": "quest",
+      "flag": "Flea Games Pre",
       "description": "Reward for completing the 'Ecstasy of the End' Wish.",
       "link": "https://hollowknight.wiki/w/Pale_Oil"
     }
