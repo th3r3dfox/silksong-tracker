@@ -45,14 +45,13 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
   font-family: 'TrajanPro', serif;
   background: var(--bg-1);
   color: var(--ink-2);
-  /* Remove flex here to avoid width calc issues with fixed sidebar */
-  display: block;
-  overflow-x: hidden;
-  overflow: hidden;
-  height: 100%;
+  overflow-x: hidden;     /* ✅ blocca solo lo scroll orizzontale */
+  overflow-y: auto;       /* ✅ abilita lo scroll verticale */
+  display: flex;          /* ✅ permette layout a due colonne */
 }
 
 body.home-active main {
@@ -1470,19 +1469,26 @@ a, button, .btn-primary, .sidebar-item, .icon-btn {
 }
 
 @media (max-width: 1000px) {
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 0.5rem;
-  }
+.sidebar {
+  width: 220px;
+  background: var(--bg-2);
+  border-right: 1px solid var(--stroke);
+  padding: 16px 14px;
+  box-sizing: border-box;
+  height: 100vh;
+  position: sticky; /* ✅ rimane visibile mentre si scrolla */
+  top: 0;
+  overflow-y: auto;
+  flex-shrink: 0;
+  z-index: 20;
+}
 
-  .main-wrapper {
-    margin-left: 0;
-    padding-top: 2rem;
-  }
+.main-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  height: 100vh;
+  margin-left: 0; /* ✅ niente margine fisso */
+}
 
   .home-content h1 {
     font-size: 1.8rem;
