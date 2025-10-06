@@ -520,8 +520,7 @@
   "flag": "Huntress Quest",
   "icon": "assets/quest/Hunt_Wishes.png",
   "description": "Use tools to acquire organs of various types so Huntress may feed her brood.",
-  "link": "https://hollowknight.wiki/w/Category:Wishes",
-  "exclusiveGroup": "wish-variant"
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
 },
 {
   "id": "runtfeast",
@@ -530,8 +529,7 @@
   "flag": "Huntress Quest Runt",
   "icon": "assets/quest/Hunt_Wishes.png",
   "description": "Use tools to acquire organs of various types so Runt may feed.",
-  "link": "https://hollowknight.wiki/w/Category:Wishes",
-  "exclusiveGroup": "wish-variant"
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
 },
 {
   "id": "dark-hearts",

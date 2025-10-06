@@ -945,6 +945,25 @@ async function updateWishesContent() {
     const countedGroups = new Set();
 
     (sectionData.items || []).forEach(item => {
+  // 🔒 Gestione quest mutuamente esclusive
+  const exclusivePairs = [
+    ["Huntress Quest", "Huntress Quest Runt"], // 👈 coppia 1
+    // ["Quest A", "Quest B"],  // puoi aggiungerne altre
+  ];
+
+  // Cerca se l’item fa parte di una coppia
+  const pair = exclusivePairs.find(p => p.includes(item.flag));
+  if (pair && window.save) {
+    const [a, b] = pair;
+    const aDone = resolveSaveValue(window.save, { flag: a, type: "quest" });
+    const bDone = resolveSaveValue(window.save, { flag: b, type: "quest" });
+
+    // se una è completata o iniziata → salta la creazione dell’altra
+    if ((aDone && item.flag === b) || (bDone && item.flag === a)) {
+      return; // ❌ non renderizzare questa quest
+    }
+  }
+
       const val = window.save ? resolveSaveValue(window.save, item) : false;
       const isUnlocked =
         (item.type === "level" || item.type === "min" || item.type === "region-level" || item.type === "region-min")

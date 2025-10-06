@@ -420,7 +420,7 @@
   "items": [
     {
       "id": "craftmetal-bonebottom",
-      "label": "Craft Metal (Bonebottom)",
+      "label": "Craft Metal",
       "icon": "assets/icons/Craft_Metal.png",
       "category": "Craft Metals",
       "flag": "PurchasedBonebottomToolMetal",
@@ -430,7 +430,7 @@
     },
     {
       "id": "craftmetal-bone-07",
-      "label": "Craft Metal (Bone_07)",
+      "label": "Craft Metal",
       "icon": "assets/icons/Craft_Metal.png",
       "category": "Craft Metals",
       "scene": "Bone_07",
@@ -441,7 +441,7 @@
     },
     {
       "id": "craftmetal-dock-03",
-      "label": "Craft Metal (Dock_03)",
+      "label": "Craft Metal",
       "icon": "assets/icons/Craft_Metal.png",
       "category": "Craft Metals",
       "scene": "Dock_03",
@@ -452,7 +452,7 @@
     },
     {
       "id": "craftmetal-coral-32",
-      "label": "Craft Metal (Coral_32)",
+      "label": "Craft Metal",
       "icon": "assets/icons/Craft_Metal.png",
       "category": "Craft Metals",
       "scene": "Coral_32",
@@ -463,7 +463,7 @@
     },
     {
       "id": "craftmetal-merchant-enclave",
-      "label": "Craft Metal (Merchant Enclave)",
+      "label": "Craft Metal",
       "icon": "assets/icons/Craft_Metal.png",
       "category": "Craft Metals",
       "flag": "MerchantEnclaveToolMetal",
@@ -473,7 +473,7 @@
     },
     {
       "id": "craftmetal-wisp-05",
-      "label": "Craft Metal (Wisp_05)",
+      "label": "Craft Metal",
       "icon": "assets/icons/Craft_Metal.png",
       "category": "Craft Metals",
       "scene": "Wisp_05",
@@ -484,7 +484,7 @@
     },
     {
       "id": "craftmetal-under-19b",
-      "label": "Craft Metal (Under_19b)",
+      "label": "Craft Metal",
       "icon": "assets/icons/Craft_Metal.png",
       "category": "Craft Metals",
       "scene": "Under_19b",
@@ -495,7 +495,7 @@
     },
     {
       "id": "craftmetal-aqueduct-05",
-      "label": "Craft Metal (Aqueduct_05)",
+      "label": "Craft Metal",
       "icon": "assets/icons/Craft_Metal.png",
       "category": "Craft Metals",
       "scene": "Aqueduct_05",
