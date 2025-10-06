@@ -939,12 +939,31 @@ async function updateWishesContent() {
     heading.className = "category-title";
     heading.textContent = sectionData.label;
 
+    // 🔒 Gestione quest mutuamente esclusive — filtro prima del rendering
+    const exclusivePairs = [
+      ["Huntress Quest", "Huntress Quest Runt"], // 👈 coppia 1
+    ];
+
+    const filteredItems = (sectionData.items || []).filter(item => {
+      if (!window.save) return true;
+      const pair = exclusivePairs.find(p => p.includes(item.flag));
+      if (!pair) return true;
+
+      const [a, b] = pair;
+      const aDone = resolveSaveValue(window.save, { flag: a, type: "quest" });
+      const bDone = resolveSaveValue(window.save, { flag: b, type: "quest" });
+
+      // ❌ se una è completata, nascondi l’altra
+      if ((aDone && item.flag === b) || (bDone && item.flag === a)) return false;
+      return true;
+    });
+
     // 🔢 Calcolo ottenuti / totali
     let obtained = 0;
     const exclusiveGroups = new Set();
     const countedGroups = new Set();
 
-    (sectionData.items || []).forEach(item => {
+    filteredItems.forEach(item => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
       const isUnlocked =
         (item.type === "level" || item.type === "min" || item.type === "region-level" || item.type === "region-min")
@@ -964,7 +983,10 @@ async function updateWishesContent() {
       }
     });
 
-    const total = (sectionData.items?.filter(i => !i.exclusiveGroup).length || 0) + exclusiveGroups.size;
+    // 🔢 Calcolo totale corretto (esclude anche le quest nascoste)
+    const total = (
+      filteredItems.filter(i => !i.exclusiveGroup).length || 0
+    ) + exclusiveGroups.size;
 
     // ➕ Conteggio ottenuti / totali
     const count = document.createElement("span");
@@ -982,26 +1004,6 @@ async function updateWishesContent() {
       section.appendChild(desc);
     }
 
-    // 🔒 Gestione quest mutuamente esclusive — filtro prima del rendering
-    const exclusivePairs = [
-      ["Huntress Quest", "Huntress Quest Runt"], // 👈 coppia 1
-    ];
-
-    const filteredItems = (sectionData.items || []).filter(item => {
-      if (!window.save) return true;
-      const pair = exclusivePairs.find(p => p.includes(item.flag));
-      if (!pair) return true;
-
-      const [a, b] = pair;
-      const aDone = resolveSaveValue(window.save, { flag: a, type: "quest" });
-      const bDone = resolveSaveValue(window.save, { flag: b, type: "quest" });
-
-      // ❌ se una è completata, nascondi l’altra
-      if ((aDone && item.flag === b) || (bDone && item.flag === a)) return false;
-
-      return true;
-    });
-
     // Griglia interna
     const subgrid = document.createElement("div");
     subgrid.className = "grid";
@@ -1018,6 +1020,7 @@ async function updateWishesContent() {
     container.appendChild(section);
   });
 }
+
 
 
 
