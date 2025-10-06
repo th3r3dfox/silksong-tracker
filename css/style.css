@@ -1663,9 +1663,18 @@ main {
   box-shadow: 0 0 6px rgba(241, 196, 15, 0.5);
 }
 
+/* --- FIX layout principale --- */
 .main-wrapper {
   margin-left: 220px;
-  width: calc(100% - 220px); /* ✅ ripristina la larghezza giusta */
+  width: calc(100% - 220px); /* ✅ ripristina larghezza giusta accanto alla sidebar */
   overflow-y: auto;
   min-height: 100vh;
+}
+
+main {
+  padding: 24px;
+  background: var(--bg-1);
+  min-height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
