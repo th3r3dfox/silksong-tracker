@@ -5,6 +5,8 @@ It helps players explore their progress, bosses defeated, items collected, and h
 
 All data is processed **locally in your browser** — your save file is never uploaded or stored.
 
+https://th3r3dfox.github.io/silksong-tracker/
+
 ---
 
 ## Features
