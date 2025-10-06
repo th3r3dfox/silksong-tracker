@@ -245,7 +245,18 @@ a:hover {
   position: relative; /* REQUIRED for spoiler overlay */
   transition:transform .08s, border-color .15s, background .15s, box-shadow .15s;
   box-shadow:0 2px 5px rgba(0,0,0,0.2);
+  overflow: visible;      /* ✅ evita il taglio del testo */
 }
+
+.boss .title,
+.boss div {
+  text-align: center;
+  white-space: normal;    /* ✅ permette a nomi lunghi di andare a capo */
+  word-break: break-word; /* ✅ forza la divisione se troppo lungo */
+  line-height: 1.2em;
+  max-width: 90%;         /* ✅ evita che tocchi i bordi */
+}
+
 .boss:hover{ border-color:#3b3d40; transform:translateY(-1px); }
 .boss img{ width:64px; height:64px; margin:8px auto 10px; object-fit:contain; filter:none; }
 
