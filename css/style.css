@@ -111,15 +111,6 @@ main {
 /* ------------------
    SIDEBAR: QUICK ACTIONS (icone orizzontali)
 -------------------*/
-.sidebar-actions {
-  display: grid;
-  grid-template-columns: repeat(2, 40px);
-  gap: 6px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 6px;
-}
-
 
 .icon-btn {
   width: 42px;
@@ -1540,10 +1531,11 @@ html {
 
 .sidebar-actions {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* due colonne */
-  gap: 10px;                            /* spazio uniforme tra bottoni */
-  justify-items: center;                /* centra le icone orizzontalmente */
-  align-items: center;                  /* centra verticalmente */
-  margin-bottom: 10px;                  /* piccolo spazio sotto */
+  grid-template-columns: repeat(2, 42px); /* 2 colonne larghe quanto i bottoni */
+  gap: 6px;                               /* meno spazio verticale/orizzontale */
+  justify-content: center;                /* centra la griglia intera */
+  align-items: center;
+  margin-bottom: 6px;                     /* margine più contenuto */
 }
+
 
