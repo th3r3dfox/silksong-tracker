@@ -11,7 +11,7 @@
         "type": "quest",
         "flag": "Citadel Seeker",
         "icon": "assets/quest/Seek_Quest_Icon.png",
-        "description": "",
+        "description": "Ascend through the lands of Pharloom and reach the Citadel at the kingdom's peak. Reach the Citadel. ",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
       {
@@ -19,8 +19,8 @@
         "label": "The Threadspun Town",
         "type": "quest",
         "flag": "The Threadspun Town",
-        "icon": "",
-        "description": "Break the silken curse ensnaring the town of Bellhart.",
+        "icon": "assets/quest/Save_Quest_Icon.png",
+        "description": "Break the silken curse ensnaring the town of Bellhart. Defeat Widow to free the town of Bellhart. ",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
       {
@@ -28,8 +28,8 @@
         "label": "Grand Gate",
         "type": "quest",
         "flag": "Grand Gate Bellshrines",
-        "icon": "",
-        "description": "Awaken the old bells throughout the lands.",
+        "icon": "assets/quest/Gate_Quest_Icon.png",
+        "description": "Awaken the old bells throughout the lands. Journey to the five Bellshrines throughout lower Pharloom and ring them to unlock the Grand Gate",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
       {
@@ -37,8 +37,8 @@
         "label": "Silent Halls",
         "type": "quest",
         "flag": "Citadel Investigate",
-        "icon": "",
-        "description": "Venture inside the Citadel and confront the veiled bugs.",
+        "icon": "assets/quest/Seek_Quest_Icon.png",
+        "description": "Venture inside the Citadel and confront the veiled bugs. Confront Lace within the Choral Chambers.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
       {
@@ -46,8 +46,8 @@
         "label": "Pharloom’s Crown #1",
         "type": "quest",
         "flag": "Citadel Ascent",
-        "icon": "",
-        "description": "Scale the Citadel and confront the one who haunts the lands of Pharloom.",
+        "icon": "assets/quest/Seek_Quest_Icon.png",
+        "description": "Scale the Citadel and confront the one who haunts the lands of Pharloom. ",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
       {
@@ -55,7 +55,7 @@
         "label": "Pharloom’s Crown #2",
         "type": "quest",
         "flag": "Citadel Ascent Melodies",
-        "icon": "",
+        "icon": "assets/quest/Seek_Quest_Icon.png",
         "description": "Learn the threefold melody and open the path to the Citadel’s crest.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -64,7 +64,7 @@
         "label": "Pharloom’s Crown #3",
         "type": "quest",
         "flag": "Citadel Ascent Lift",
-        "icon": "",
+        "icon": "assets/quest/Seek_Quest_Icon.png",
         "description": "Rise above the Citadel and confront the one who haunts the land of Pharloom.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -73,8 +73,8 @@
         "label": "Pale Monarch",
         "type": "quest",
         "flag": "Citadel Ascent Silk Defeat",
-        "icon": "",
-        "description": "Confront the one who haunts the lands of Pharloom.",
+        "icon": "assets/quest/Seek_Quest_Icon.png",
+        "description": "Confront the one who haunts the lands of Pharloom. Defeat Grand Mother Silk.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
       {
@@ -82,8 +82,8 @@
         "label": "Soul Snare",
         "type": "quest",
         "flag": "Silk Defeat Snare",
-        "icon": "",
-        "description": "Scale the Citadel and ensnare its monarch in a deadly trap.",
+        "icon": "assets/quest/Snare_Quest_Icon.png",
+        "description": "Scale the Citadel and ensnare its monarch in a deadly trap. Defeat Grand Mother Silk with the Needolin.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
       {
@@ -91,8 +91,8 @@
         "label": "After the Fall",
         "type": "quest",
         "flag": "Black Thread Pt0",
-        "icon": "",
-        "description": "Discover the fate of Pharloom.",
+        "icon": "assets/quest/Fall_Quest_Icon.png",
+        "description": "Discover the fate of Pharloom. Escape the Cradle.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
       {
@@ -100,7 +100,7 @@
         "label": "Awaiting the End",
         "type": "quest",
         "flag": "Black Thread Pt1 Shamans",
-        "icon": "",
+        "icon": "assets/quest/Fall_Quest_Icon.png",
         "description": "Confront the caretaker and his family in the Ruined Chapel beside Bone Bottom.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -109,7 +109,7 @@
         "label": "Beast in the Bells",
         "type": "quest",
         "flag": "Bellbeast Rescue",
-        "icon": "",
+        "icon": "assets/quest/Beast_Quest_Icon.png",
         "description": "Descend into the Bellway and defeat the hostile creature within.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -118,7 +118,7 @@
         "label": "The Dark Below #1",
         "type": "quest",
         "flag": "Diving Bell Pt1 Inspect",
-        "icon": "",
+        "icon": "assets/quest/Fall_Quest_Icon.png",
         "description": "In Deep Docks, find a way to descend beneath Pharloom.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -127,7 +127,7 @@
         "label": "The Dark Below #2",
         "type": "quest",
         "flag": "Diving Bell Pt2 Ballow",
-        "icon": "",
+        "icon": "assets/quest/Fall_Quest_Icon.png",
         "description": "Find aid in the Deep Docks to access its diving bell and descend beneath Pharloom.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -136,7 +136,7 @@
         "label": "The Dark Below #3",
         "type": "quest",
         "flag": "Diving Bell Pt3 Descend",
-        "icon": "",
+        "icon": "assets/quest/Fall_Quest_Icon.png",
         "description": "Use the diving bell in Deep Docks to descend beneath Pharloom.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -145,7 +145,7 @@
         "label": "The Dark Below #4",
         "type": "quest",
         "flag": "Black Thread Pt2 Abyss",
-        "icon": "",
+        "icon": "assets/quest/Fall_Quest_Icon.png",
         "description": "Reach the source of the black threads within the Abyss.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -154,7 +154,7 @@
         "label": "Return to Pharloom",
         "type": "quest",
         "flag": "Black Thread Pt3 Escape",
-        "icon": "",
+        "icon": "assets/quest/Fall_Quest_Icon.png",
         "description": "Escape the Abyss.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -163,7 +163,7 @@
         "label": "Spell Seeker",
         "type": "quest",
         "flag": "Black Thread Pt4 Return",
-        "icon": "",
+        "icon": "assets/quest/Fall_Quest_Icon.png",
         "description": "Return to the Snail Shamans in the Ruined Chapel beside Bone Bottom.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -172,7 +172,7 @@
         "label": "The Old Hearts",
         "type": "quest",
         "flag": "Black Thread Pt5 Heart",
-        "icon": "",
+        "icon": "assets/quest/Fall_Quest_Icon.png",
         "description": "Enliven and acquire the old hearts of Pharloom.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },
@@ -181,7 +181,7 @@
         "label": "Last Dive",
         "type": "quest",
         "flag": "Black Thread Pt6 Flower",
-        "icon": "",
+        "icon": "assets/quest/Finale_Quest_Icon.png",
         "description": "Dive into the Void and cut Pharloom free.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       }

@@ -1583,22 +1583,24 @@ html {
 }
 
 
-#wishes-section {
+/* --- Wishes layout orizzontale come Main% --- */
+#wishes-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
   align-items: flex-start;
 }
 
-#wishes-section .main-section-block {
+#wishes-grid .main-section-block {
   flex: 1 1 300px;
   min-width: 280px;
   margin-bottom: 2rem;
   padding-top: 0;
 }
 
-#wishes-section .main-section-block .grid {
+#wishes-grid .main-section-block .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 12px;
 }
+
