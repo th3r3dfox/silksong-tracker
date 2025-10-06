@@ -179,8 +179,7 @@
       {
         "id": "last-dive",
         "label": "Last Dive",
-        "type": "quest",
-        "flag": "Black Thread Pt6 Flower",
+        "category": "Boss", "flag": "Lost Lace","type": "journal","subtype": "kills","required": 1,
         "icon": "assets/quest/Finale_Quest_Icon.png",
         "description": "Dive into the Void and cut Pharloom free.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
