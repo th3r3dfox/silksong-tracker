@@ -373,5 +373,90 @@
       "link": "https://hollowknight.wiki/w/Category:Wishes"
     }
     ]
-  }
+  },
+{
+  "id": "gather-wishes",
+  "label": "Gather Wishes",
+  "desc": "Gather Wishes involve exploring a region of the map (or in the case of the Great Taste of Pharloom wish, the entire map) and finding specific items to turn in to an NPC and complete the wish. Collecting the required items usually does not directly involve killing enemies, with some exceptions.",
+  "contrib": 0,
+  "items": [
+    {
+      "id": "berry-picking-1",
+      "label": "Berry Picking #1",
+      "type": "quest",
+      "flag": "Mossberry Collection Pre",
+      "icon": "assets/quest/Gather.png",
+      "description": "Speak to the druid in Mosshome.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "berry-picking-2",
+      "label": "Berry Picking #2",
+      "type": "quest",
+      "flag": "Mossberry Collection 1",
+      "icon": "assets/quest/Gather.png",
+      "description": "Collect 3 mossberries.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "rite-of-the-pollip",
+      "label": "Rite of the Pollip",
+      "type": "quest",
+      "flag": "Shell Flowers",
+      "icon": "assets/quest/Gather.png",
+      "description": "Collect Pollip Hearts from the purple flowers of Shellwood.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+  "id": "silver-bells",
+  "label": "Silver Bells",
+  "type": "quest",
+  "flag": "Shiny Bell Goomba",
+  "icon": "assets/quest/Gather.png",
+  "description": "Collect silver bells in the Bellvein tunnels above and below Bellhart.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "alchemists-assistant",
+  "label": "Alchemist's Assistant",
+  "type": "quest",
+  "flag": "Extractor Blue",
+  "icon": "assets/quest/Gather.png",
+  "description": "Collect 3 Plasmium Buds in the Lower Wormways.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "great-taste-of-pharloom",
+  "label": "Great Taste of Pharloom",
+  "type": "quest",
+  "flag": "Great Gourmand",
+  "icon": "assets/quest/Gather.png",
+  "description": "Collect rare delicacies of Pharloom.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+}
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ]
