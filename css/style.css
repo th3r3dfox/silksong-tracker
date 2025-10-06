@@ -1662,14 +1662,3 @@ main {
   border: 2px solid #f1c40f; /* giallo oro */
   box-shadow: 0 0 6px rgba(241, 196, 15, 0.5);
 }
-
-main {
-  height: auto !important;          /* lascia che cresca con il contenuto */
-  min-height: 100vh;                /* ma mantiene altezza minima piena */
-  overflow-y: auto !important;      /* abilita sempre lo scroll verticale */
-  padding-bottom: 80px;             /* aggiunge spazio di sicurezza in fondo */
-}
-
-.grid {
-  overflow: visible !important;     /* impedisce il taglio delle card */
-}
