@@ -422,6 +422,20 @@ if (item.type === "key") {
     return false;
   }
 
+  if (item.type === "journal") {
+  const entry = pd.Journal?.savedData?.find(e => e.Name === item.flag);
+  if (!entry) return false;
+
+  // Diversi tipi di condizione
+  if (item.subtype === "seen") return entry.Data?.IsSeen === true;
+  if (item.subtype === "unlocked") return entry.Data?.IsUnlocked === true;
+  if (item.subtype === "kills") return (entry.Data?.Kills ?? 0) >= (item.required ?? 1);
+
+  // Fallback: considerato ottenuto se IsSeen o IsUnlocked sono true
+  return entry.Data?.IsSeen || entry.Data?.IsUnlocked || (entry.Data?.Kills ?? 0) > 0;
+}
+
+
 
   // Fallback generico
   if (item.flag && pd[item.flag] !== undefined) {
