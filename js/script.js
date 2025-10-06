@@ -396,11 +396,36 @@ function resolveSaveValue(save, item) {
     return entry?.Data?.IsUnlocked === true;
   }
 
-  // Quests
-  if (item.type === "quest") {
-    const entry = pd.QuestCompletionData?.savedData?.find(e => e.Name === item.flag);
-    return entry?.Data?.IsCompleted ?? false;
+// Quests (Wishes)
+if (item.type === "quest") {
+  // Elenchi possibili di dati per compatibilità (alcuni dump usano nomi diversi)
+  const questLists = [
+    pd.QuestCompletionData?.savedData,
+    pd.Quests?.savedData,
+    pd.QuestsData?.savedData,
+    pd.QuestData?.savedData,
+  ].filter(Boolean);
+
+  // Normalizza il nome per evitare problemi di maiuscole/spazi
+  const normalize = s => String(s || "").toLowerCase().trim();
+
+  const flagNorm = normalize(item.flag);
+
+  // Cerca in tutti i possibili array
+  let entry;
+  for (const list of questLists) {
+    entry = list.find(e => normalize(e.Name) === flagNorm);
+    if (entry) break;
   }
+
+  if (!entry) return false;
+
+  const data = entry.Data || entry.Record || {};
+
+  // ✅ Valore finale
+  return data.IsCompleted === true || data.Completed === true || data.Complete === true;
+}
+
 
   // Scene flags (Mask Shards, Heart Pieces ecc.)
   if (item.type === "sceneBool") {

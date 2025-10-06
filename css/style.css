@@ -51,6 +51,12 @@ html, body {
   /* Remove flex here to avoid width calc issues with fixed sidebar */
   display: block;
   overflow-x: hidden;
+  overflow: hidden;
+  height: 100%;
+}
+
+body.home-active main {
+  overflow: hidden; /* blocca lo scroll solo in home */
 }
 
 /* ------------------
@@ -461,15 +467,6 @@ html,
 body {
   overflow: hidden;   /* 🔒 il body non scrolla più */
   height: 100%;
-}
-
-
-body.home-active {
-  overflow-y: hidden;
-}
-
-body:not(.home-active) {
-  overflow-y: auto;
 }
 
 .overlay {
@@ -1582,12 +1579,12 @@ html {
 }
 
 /* ------------------
-   WISHES (fix layout)
+   WISHES — layout pulito e coerente
 -------------------*/
 #wishes-grid {
   display: flex;
-  flex-direction: column;     /* impila le categorie verticalmente */
-  gap: 60px;                  /* spazio tra Main / Wayfarer / Gather */
+  flex-direction: column;  /* impila le categorie verticalmente */
+  gap: 60px;               /* spazio tra Main / Wayfarer / Gather */
   align-items: stretch;
   width: 100%;
 }
@@ -1631,27 +1628,8 @@ html {
   justify-content: center;
 }
 
-/* Card singola */
-#wishes-grid .boss {
-  background: var(--bg-3);
-  border: 1px solid var(--stroke-soft);
-  border-radius: 12px;
-  padding: 14px;
-  text-align: center;
-  transition: transform 0.15s ease, border-color 0.15s ease;
-}
+/* Le card usano lo stile .boss globale — niente override */
 
-#wishes-grid .boss:hover {
-  border-color: #3b3d40;
-  transform: translateY(-1px);
-}
-
-#wishes-grid .boss img {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 8px;
-  object-fit: contain;
-}
 
 /* Dark scrollbar per main */
 main::-webkit-scrollbar {
