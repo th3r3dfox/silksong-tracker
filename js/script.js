@@ -890,6 +890,83 @@ section.appendChild(heading);
 }
 
 
+async function updateQuestContent() {
+  const response = await fetch("data/quests.json");
+  const questData = await response.json();
+  const spoilerOn = document.getElementById("spoilerToggle").checked;
+  const showMissingOnly = document.getElementById("missingToggle")?.checked;
+
+  const container = document.getElementById("quests-grid");
+  container.innerHTML = "";
+
+  questData.forEach(sectionData => {
+    const section = document.createElement("div");
+    section.className = "main-section-block";
+
+    // Titolo con percentuale e conteggio
+    const heading = document.createElement("h3");
+    heading.className = "category-title";
+    heading.textContent = sectionData.label;
+
+    // 🔢 Calcolo ottenuti / totali
+    let obtained = 0;
+    const exclusiveGroups = new Set();
+    const countedGroups = new Set();
+
+    (sectionData.items || []).forEach(item => {
+      const val = window.save ? resolveSaveValue(window.save, item) : false;
+      const isUnlocked =
+        (item.type === "level" || item.type === "min" || item.type === "region-level" || item.type === "region-min")
+          ? (val ?? 0) >= (item.required ?? 0)
+          : item.type === "collectable"
+            ? (val ?? 0) > 0
+            : val === true;
+
+      if (item.exclusiveGroup) {
+        exclusiveGroups.add(item.exclusiveGroup);
+        if (isUnlocked && !countedGroups.has(item.exclusiveGroup)) {
+          countedGroups.add(item.exclusiveGroup);
+          obtained++;
+        }
+      } else {
+        obtained += isUnlocked ? 1 : 0;
+      }
+    });
+
+    const total = (sectionData.items?.filter(i => !i.exclusiveGroup).length || 0) + exclusiveGroups.size;
+
+    // ➕ Conteggio ottenuti / totali
+    const count = document.createElement("span");
+    count.className = "category-count";
+    count.textContent = ` ${obtained}/${total}`;
+    heading.appendChild(count);
+
+    section.appendChild(heading);
+
+    // Descrizione opzionale
+    if (sectionData.desc) {
+      const desc = document.createElement("p");
+      desc.className = "category-desc";
+      desc.textContent = sectionData.desc;
+      section.appendChild(desc);
+    }
+
+    // Griglia interna
+    const subgrid = document.createElement("div");
+    subgrid.className = "grid";
+    const visible = renderGenericGrid({
+      containerEl: subgrid,
+      data: sectionData.items,
+      spoilerOn
+    });
+
+    // Se “solo mancanti” e non ci sono → salta
+    if (showMissingOnly && visible === 0) return;
+
+    section.appendChild(subgrid);
+    container.appendChild(section);
+  });
+}
 
 
 
