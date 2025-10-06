@@ -445,7 +445,7 @@
       "icon": "assets/icons/Craft_Metal.png",
       "category": "Craft Metals",
       "scene": "Dock_03",
-      "flag": "Collectable Item Pickup - Tool Metal",
+      "flag": "Collectable Item Pickup",
       "type": "sceneBool",
       "description": "Found in a chest behind the locked door in Deep Docks. It is located at the southwest corner of the bottom-most room that connects to Far Fields. (It is closer to the Far Fields Bellway Station than the Deep Docks Bellway Station.)",
       "link": "https://hollowknight.wiki/w/Craft_Metal"
