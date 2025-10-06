@@ -459,9 +459,8 @@ a:hover {
 
 html,
 body {
-  overflow-y: overlay;
+  overflow: hidden;   /* 🔒 il body non scrolla più */
   height: 100%;
-  scrollbar-gutter: auto;
 }
 
 
@@ -1652,4 +1651,25 @@ html {
   height: 64px;
   margin-bottom: 8px;
   object-fit: contain;
+}
+
+/* Dark scrollbar per main */
+main::-webkit-scrollbar {
+  width: 10px;
+}
+main::-webkit-scrollbar-track {
+  background: #111;
+}
+main::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 6px;
+}
+main::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Firefox */
+main {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #111;
 }
