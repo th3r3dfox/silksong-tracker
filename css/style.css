@@ -1532,18 +1532,17 @@ html {
 .sidebar-actions {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2x2 */
-  gap: 8px;                               /* spazio equilibrato tra bottoni */
+  gap: 8px;
   justify-content: center;
   align-items: center;
-  margin: 10px auto;
-  max-width: 120px;                       /* centra il blocco visivamente */
+  margin: 10px 0;
 }
 
 .icon-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.04);
+  width: 100%;
+  height: 42px; /* altezza uguale a prima */
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
   color: var(--ink-2);
   display: grid;
@@ -1553,18 +1552,18 @@ html {
 }
 
 .icon-btn i {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .icon-btn:hover {
-  background: rgba(197,106,45,0.18);
+  background: rgba(197,106,45,0.15);
   border-color: var(--accent);
   color: var(--accent);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .icon-btn:active {
-  transform: scale(0.96);
+  transform: scale(0.97);
 }
 
 
