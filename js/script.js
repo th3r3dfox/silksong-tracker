@@ -939,38 +939,44 @@ async function updateWishesContent() {
   const container = document.getElementById("wishes-grid");
   if (!container) return console.warn("[updateWishesContent] Missing #wishes-grid in DOM");
 
+  // 🗃️ Carica il file JSON
   const response = await fetch("data/wishes.json");
   const questData = await response.json();
-  const spoilerOn = document.getElementById("spoilerToggle").checked;
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
 
+  const spoilerOn = document.getElementById("spoilerToggle")?.checked;
+  const showMissingOnly = document.getElementById("missingToggle")?.checked;
   container.innerHTML = "";
 
   questData.forEach(sectionData => {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
-    // Titolo con percentuale e conteggio
+    // 🏷️ Titolo sezione
     const heading = document.createElement("h3");
     heading.className = "category-title";
     heading.textContent = sectionData.label;
 
-    // 🔒 Gestione quest mutuamente esclusive — filtro prima del rendering
+    // 🔒 Gestione quest mutuamente esclusive (solo una visibile)
     const exclusivePairs = [
       ["Huntress Quest", "Huntress Quest Runt"], // 👈 coppia 1
+      // puoi aggiungerne altre qui
     ];
 
+    // ✅ Filtra le quest in base ai salvataggi
     const filteredItems = (sectionData.items || []).filter(item => {
       if (!window.save) return true;
       const pair = exclusivePairs.find(p => p.includes(item.flag));
       if (!pair) return true;
 
       const [a, b] = pair;
-      const aDone = resolveSaveValue(window.save, { flag: a, type: "quest" });
-      const bDone = resolveSaveValue(window.save, { flag: b, type: "quest" });
+      const aVal = resolveSaveValue(window.save, { flag: a, type: "quest" });
+      const bVal = resolveSaveValue(window.save, { flag: b, type: "quest" });
 
-      // ❌ se una è completata, nascondi l’altra
-      if ((aDone && item.flag === b) || (bDone && item.flag === a)) return false;
+      // Se una delle due è completata o accettata, nascondi l’altra
+      const aActive = aVal === true || aVal === "completed" || aVal === "accepted";
+      const bActive = bVal === true || bVal === "completed" || bVal === "accepted";
+      if ((aActive && item.flag === b) || (bActive && item.flag === a)) return false;
+
       return true;
     });
 
@@ -981,12 +987,17 @@ async function updateWishesContent() {
 
     filteredItems.forEach(item => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
+
+      // ✅ Supporto completo per “quest” accepted/completed
       const isUnlocked =
-        (item.type === "level" || item.type === "min" || item.type === "region-level" || item.type === "region-min")
-          ? (val ?? 0) >= (item.required ?? 0)
-          : item.type === "collectable"
-            ? (val ?? 0) > 0
-            : val === true;
+        item.type === "quest"
+          ? (val === "completed" || val === true)
+          : (item.type === "level" || item.type === "min" ||
+             item.type === "region-level" || item.type === "region-min")
+            ? (val ?? 0) >= (item.required ?? 0)
+            : item.type === "collectable"
+              ? (val ?? 0) > 0
+              : val === true;
 
       if (item.exclusiveGroup) {
         exclusiveGroups.add(item.exclusiveGroup);
@@ -999,12 +1010,12 @@ async function updateWishesContent() {
       }
     });
 
-    // 🔢 Calcolo totale corretto (esclude anche le quest nascoste)
-    const total = (
-      filteredItems.filter(i => !i.exclusiveGroup).length || 0
-    ) + exclusiveGroups.size;
+    // 📊 Calcolo totale corretto (senza bug)
+    const total =
+      (filteredItems.filter(i => !i.exclusiveGroup).length || 0) +
+      exclusiveGroups.size;
 
-    // ➕ Conteggio ottenuti / totali
+    // ➕ Mostra conteggio
     const count = document.createElement("span");
     count.className = "category-count";
     count.textContent = ` ${obtained}/${total}`;
@@ -1012,7 +1023,7 @@ async function updateWishesContent() {
 
     section.appendChild(heading);
 
-    // Descrizione opzionale
+    // 📝 Descrizione (se presente)
     if (sectionData.desc) {
       const desc = document.createElement("p");
       desc.className = "category-desc";
@@ -1020,22 +1031,24 @@ async function updateWishesContent() {
       section.appendChild(desc);
     }
 
-    // Griglia interna
+    // 🧱 Griglia interna
     const subgrid = document.createElement("div");
     subgrid.className = "grid";
+
     const visible = renderGenericGrid({
       containerEl: subgrid,
-      data: filteredItems, // 👈 usa solo le quest filtrate
+      data: filteredItems,
       spoilerOn
     });
 
-    // Se “solo mancanti” e non ci sono → salta
+    // Se “solo mancanti” ed è vuota → non mostrare
     if (showMissingOnly && visible === 0) return;
 
     section.appendChild(subgrid);
     container.appendChild(section);
   });
 }
+
 
 
 
