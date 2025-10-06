@@ -113,27 +113,26 @@ main {
 -------------------*/
 .sidebar-actions {
   display: grid;
-  grid-template-columns: repeat(2, 44px);
-  gap: 10px;
+  grid-template-columns: repeat(2, 40px);
+  gap: 6px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 
-.icon-btn{
-  display:grid; place-items:center;
-  width:44px; height:44px;
-  border:1px solid var(--stroke);
-  border-radius:12px;
-  background:rgba(255,255,255,.02);
-  color:var(--ink-2);
-  text-decoration:none;
-  transition:background .15s,border-color .15s,transform .08s;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
 }
 .icon-btn i{ font-size:18px; line-height:1; }
-.icon-btn:hover{ background:rgba(255,255,255,.06); border-color:#4a4c50; }
+.icon-btn:hover {
+  background: rgba(255,255,255,0.12);
+}
 .icon-btn:active{ transform:translateY(1px); }
 
 /* Support legacy classes used in your markup */
