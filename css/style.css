@@ -111,13 +111,15 @@ main {
 /* ------------------
    SIDEBAR: QUICK ACTIONS (icone orizzontali)
 -------------------*/
-.sidebar-actions{
-  display:grid;
-  grid-template-columns:repeat(3,44px);
-  justify-content:center;
-  gap:10px;
-  margin-bottom:var(--space-3);
+.sidebar-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 44px);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
+
 
 .icon-btn{
   display:grid; place-items:center;
@@ -1536,3 +1538,13 @@ html {
 #boss-grid .main-section-block {
   width: 100%;
 }
+
+.sidebar-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* due colonne */
+  gap: 10px;                            /* spazio uniforme tra bottoni */
+  justify-items: center;                /* centra le icone orizzontalmente */
+  align-items: center;                  /* centra verticalmente */
+  margin-bottom: 10px;                  /* piccolo spazio sotto */
+}
+
