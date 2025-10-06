@@ -1531,11 +1531,38 @@ html {
 
 .sidebar-actions {
   display: grid;
-  grid-template-columns: repeat(2, 42px); /* 2 colonne larghe quanto i bottoni */
-  gap: 6px;                               /* meno spazio verticale/orizzontale */
-  justify-content: center;                /* centra la griglia intera */
+  grid-template-columns: repeat(2, 38px);
+  gap: 4px;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 6px;                     /* margine più contenuto */
+  margin-bottom: 10px;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  color: var(--ink-2);
+  display: grid;
+  place-items: center;
+  transition: all 0.15s ease-in-out;
+}
+
+.icon-btn i {
+  font-size: 15px;
+}
+
+.icon-btn:hover {
+  background: rgba(197,106,45,0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.icon-btn:active {
+  transform: scale(0.96);
 }
 
 
