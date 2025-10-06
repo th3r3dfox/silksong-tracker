@@ -1,0 +1,73 @@
+[
+  {
+    "label": "Main Quests",
+    "desc": "Major storylines that drive Hornet’s journey across Pharloom.",
+    "items": [
+      { "id": "citadel_seeker", "label": "Citadel Seeker", "flag": "Citadel Seeker", "type": "quest", "category": "main", "description": "Begin your ascent through the Great Citadel." },
+      { "id": "threadspun_town", "label": "The Threadspun Town", "flag": "The Threadspun Town", "type": "quest", "category": "main", "description": "Break the silken curse ensnaring Bellhart." },
+      { "id": "grand_gate", "label": "Grand Gate Bellshrines", "flag": "Grand Gate Bellshrines", "type": "quest", "category": "main", "description": "Awaken the old bells throughout Pharloom." },
+      { "id": "citadel_investigate", "label": "Silent Halls", "flag": "Citadel Investigate", "type": "quest", "category": "main", "description": "Venture inside the Citadel and confront the veiled bugs." },
+      { "id": "citadel_ascent", "label": "Pharloom’s Crown", "flag": "Citadel Ascent", "type": "quest", "category": "main", "description": "Scale the Citadel and confront the one who haunts Pharloom." },
+      { "id": "citadel_ascent_melodies", "label": "Threefold Melody", "flag": "Citadel Ascent Melodies", "type": "quest", "category": "main", "description": "Learn the melodies to reach the Citadel’s crest." },
+      { "id": "silk_defeat_snare", "label": "Soul Snare", "flag": "Silk Defeat Snare", "type": "quest", "category": "main", "description": "Set a deadly trap for Pharloom’s monarch." },
+      { "id": "black_thread", "label": "Black Thread Saga", "flag": "Black Thread Pt0", "type": "quest", "category": "main", "description": "Discover the fate of Pharloom and confront its dark heart." }
+    ]
+  },
+  {
+    "label": "Wayfarer Quests",
+    "desc": "Help travelers and wanderers you meet along the way.",
+    "items": [
+      { "id": "save_fleas", "label": "Save the Fleas", "flag": "Save the Fleas", "type": "quest", "category": "wayfarer", "description": "Find and rescue the lost fleas." },
+      { "id": "save_courier", "label": "My Missing Courier", "flag": "Save Courier Short", "type": "quest", "category": "wayfarer", "description": "Search for Tipp, the lost courier." },
+      { "id": "save_merchant", "label": "The Wandering Merchant", "flag": "Save City Merchant", "type": "quest", "category": "wayfarer", "description": "Track the merchant Jubilana across Pharloom." },
+      { "id": "save_sherma", "label": "Balm for the Wounded", "flag": "Save Sherma", "type": "quest", "category": "wayfarer", "description": "Aid the pilgrim Sherma on his journey." },
+      { "id": "shakra_final", "label": "Trail’s End", "flag": "Shakra Final Quest", "type": "quest", "category": "wayfarer", "description": "Search for Shakra and her master in Bilewater." },
+      { "id": "pinstress_battle", "label": "Fatal Resolve", "flag": "Pinstress Battle", "type": "quest", "category": "wayfarer", "description": "Confront the Pinstress atop Mount Fay." },
+      { "id": "garmond_black_threaded", "label": "Hero’s Call", "flag": "Garmond Black Threaded", "type": "quest", "category": "wayfarer", "description": "Answer the distress call near the Blasted Steps." }
+    ]
+  },
+  {
+    "label": "Hunt Quests",
+    "desc": "Track and defeat dangerous beasts across Pharloom.",
+    "items": [
+      { "id": "pilgrim_rags", "label": "Pilgrim Rags", "flag": "Pilgrim Rags", "type": "quest", "category": "hunt", "description": "Hunt haunted pilgrims and collect their shawls." },
+      { "id": "brolly_get", "label": "Flexile Spines", "flag": "Brolly Get", "type": "quest", "category": "hunt", "description": "Hunt hokers in the Far Fields and gather spines." },
+      { "id": "roach_killing", "label": "Roach Guts", "flag": "Roach Killing", "type": "quest", "category": "hunt", "description": "Slay muckroaches and collect roach guts." },
+      { "id": "skull_king", "label": "The Terrible Tyrant", "flag": "Skull King", "type": "quest", "category": "hunt", "description": "Hunt a Skull Tyrant of the Marrow." },
+      { "id": "beastfly_hunt", "label": "Savage Beastfly", "flag": "Beastfly Hunt", "type": "quest", "category": "hunt", "description": "Track and defeat the savage Beastfly." },
+      { "id": "broodmother_hunt", "label": "The Wailing Mother", "flag": "Broodmother Hunt", "type": "quest", "category": "hunt", "description": "Hunt the wailing creature in the Slab." },
+      { "id": "huntress_quest", "label": "Broodfeast", "flag": "Huntress Quest", "type": "quest", "category": "hunt", "description": "Collect organs to feed the Huntress’s brood." }
+    ]
+  },
+  {
+    "label": "Gather Quests",
+    "desc": "Collect rare resources and ingredients found in the wild.",
+    "items": [
+      { "id": "mossberry_collection", "label": "Berry Picking", "flag": "Mossberry Collection 1", "type": "quest", "category": "gather", "description": "Collect mossberries for the druid in Mosshome." },
+      { "id": "shell_flowers", "label": "Rite of the Pollip", "flag": "Shell Flowers", "type": "quest", "category": "gather", "description": "Gather Pollip Hearts from the flowers of Shellwood." },
+      { "id": "shiny_bell", "label": "Silver Bells", "flag": "Shiny Bell Goomba", "type": "quest", "category": "gather", "description": "Collect silver bells from the Bellvein tunnels." },
+      { "id": "extractor_blue", "label": "Alchemist’s Assistant", "flag": "Extractor Blue", "type": "quest", "category": "gather", "description": "Collect Plasmium Buds from the Lower Wormways." },
+      { "id": "great_gourmand", "label": "Great Taste of Pharloom", "flag": "Great Gourmand", "type": "quest", "category": "gather", "description": "Find rare delicacies from across Pharloom." }
+    ]
+  },
+  {
+    "label": "Donate Quests",
+    "desc": "Contribute resources to aid Pharloom’s restoration.",
+    "items": [
+      { "id": "building_materials", "label": "Bonebottom Repairs", "flag": "Building Materials", "type": "quest", "category": "donate", "description": "Donate Shell Shards to repair Bonebottom." },
+      { "id": "bridge", "label": "A Lifesaving Bridge", "flag": "Building Materials (Bridge)", "type": "quest", "category": "donate", "description": "Donate Shell Shards to construct a bridge." },
+      { "id": "belltown_house", "label": "Restoration of Bellhart", "flag": "Belltown House Start", "type": "quest", "category": "donate", "description": "Donate Rosaries to aid Bellhart’s rebuilding." },
+      { "id": "songclave_donation", "label": "Building Songclave", "flag": "Songclave Donation 1", "type": "quest", "category": "donate", "description": "Donate Rosaries to expand the Songclave." },
+      { "id": "statue", "label": "Icon of Hope", "flag": "Building Materials (Statue)", "type": "quest", "category": "donate", "description": "Contribute to the construction of an icon in Bellhart." }
+    ]
+  },
+  {
+    "label": "Special / Misc Quests",
+    "desc": "Unique or one-time encounters that don’t fit other categories.",
+    "items": [
+      { "id": "journal", "label": "Hunter’s Journal", "flag": "Journal", "type": "quest", "category": "learn", "description": "Defeat creatures to fill the Hunter’s Journal." },
+      { "id": "mr_mushroom", "label": "Passing of the Age", "flag": "Mr Mushroom", "type": "quest", "category": "witness", "description": "Witness the cryptic journey of the wandering mushroom." },
+      { "id": "sprintmaster_race", "label": "Fastest in Pharloom", "flag": "Sprintmaster Race", "type": "quest", "category": "sprint", "description": "Race Sprintmaster Swift and prove your speed." }
+    ]
+  }
+]
