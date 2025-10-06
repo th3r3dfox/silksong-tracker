@@ -1582,37 +1582,45 @@ html {
   margin-bottom: 6px;
 }
 
+/* --- FIX WISHES LAYOUT --- */
 #wishes-grid {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  flex-direction: column;   /* una categoria per riga */
+  gap: 60px;
   align-items: stretch;
   width: 100%;
 }
 
+/* Ogni blocco categoria (Main Wishes, Wayfarer...) */
 #wishes-grid .main-section-block {
-  flex: 1 1 300px;
-  min-width: 280px;
-  margin-bottom: 2rem;
+  flex: 1 1 auto;
   background: none;
   border: none;
   padding-top: 0;
+  text-align: center;
 }
 
+/* Titolo centrato e coerente con Main% */
 #wishes-grid .main-section-block h3 {
-  text-align: center;
   font-size: 1.6rem;
-  margin-bottom: 0.5rem;
   font-weight: 700;
-}
-
-#wishes-grid .category-desc {
+  color: var(--ink-1);
+  margin-bottom: 0.4rem;
   text-align: center;
-  color: #bbb;
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
 }
 
+/* Descrizione sotto il titolo */
+#wishes-grid .category-desc {
+  color: #bbb;
+  font-size: 1rem;
+  margin-bottom: 1.4rem;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Griglia interna di card */
 #wishes-grid .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -1620,17 +1628,22 @@ html {
   justify-content: center;
 }
 
+/* Card coerenti con Main% */
 #wishes-grid .boss {
   background: var(--bg-3);
   border: 1px solid var(--stroke-soft);
   border-radius: 12px;
-  padding: 12px;
+  padding: 14px;
   text-align: center;
-  transition: all 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease;
 }
-
+#wishes-grid .boss:hover {
+  border-color: #3b3d40;
+  transform: translateY(-1px);
+}
 #wishes-grid .boss img {
   width: 64px;
   height: 64px;
   margin-bottom: 8px;
+  object-fit: contain;
 }
