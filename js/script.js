@@ -16,27 +16,28 @@ async function updateBossesContent() {
   const container = document.getElementById("boss-grid");
   container.innerHTML = "";
 
-  // Ogni categoria (Bosses, Boss Variants)
-  bossesData.forEach(sectionData => {
+  // Gestisce eventuale formato singolo oggetto
+  const sections = Array.isArray(bossesData) ? bossesData : [bossesData];
+
+  sections.forEach(sectionData => {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
-// Titolo con conteggio
-const heading = document.createElement("h3");
-heading.className = "category-title";
-heading.textContent = sectionData.label;
-section.appendChild(heading);
+    // Titolo principale (centrato)
+    const heading = document.createElement("h3");
+    heading.className = "category-title";
+    heading.textContent = sectionData.label;
+    section.appendChild(heading);
 
-// Descrizione (dopo il titolo)
-if (sectionData.desc) {
-  const desc = document.createElement("p");
-  desc.className = "category-desc";
-  desc.textContent = sectionData.desc;
-  section.appendChild(desc);
-}
+    // Descrizione (solo una volta per categoria)
+    if (sectionData.desc) {
+      const desc = document.createElement("p");
+      desc.className = "category-desc";
+      desc.textContent = sectionData.desc;
+      section.appendChild(desc);
+    }
 
-
-    // Sottogriglia
+    // Griglia con i boss
     const subgrid = document.createElement("div");
     subgrid.className = "grid";
     const visible = renderGenericGrid({
@@ -47,11 +48,11 @@ if (sectionData.desc) {
 
     if (showMissingOnly && visible === 0) return;
 
-    section.appendChild(heading);
     section.appendChild(subgrid);
     container.appendChild(section);
   });
 }
+
 
 
 
@@ -79,7 +80,7 @@ function renderBossGrid() {
     grid.appendChild(div);
   });
 
-  updateIcons();
+  updateBossesContent();
 }
 
 // ---------- SPOILER TOGGLE ----------
@@ -245,7 +246,7 @@ section.appendChild(heading);
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  updateIcons();
+  updateBossesContent();
 
   // ---------- MODAL SETUP ----------
   const overlay  = document.getElementById("uploadOverlay");
