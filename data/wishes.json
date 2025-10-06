@@ -470,7 +470,7 @@
     },
     {
   "id": "crawbug-clearing-pre",
-  "label": "Crawbug Clearing",
+  "label": "Crawbug Clearing #1",
   "type": "quest",
   "flag": "Crow Feathers Pre",
   "icon": "assets/quest/Hunt_Wishes.png",
@@ -479,7 +479,7 @@
 },
 {
   "id": "crawbug-clearing",
-  "label": "Crawbug Clearing",
+  "label": "Crawbug Clearing #2",
   "type": "quest",
   "flag": "Crow Feathers",
   "icon": "assets/quest/Hunt_Wishes.png",
