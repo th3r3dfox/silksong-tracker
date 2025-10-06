@@ -1,7 +1,7 @@
 [
   {
     "id": "main-quests",
-    "label": "Main Quests",
+    "label": "Main Wishes",
     "desc": "Complete all main storyline quests in Pharloom.",
     "contrib": 0,
     "items": [
@@ -185,6 +185,194 @@
         "description": "Dive into the Void and cut Pharloom free.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       }
+    ]
+  },
+    {
+    "id": "wayfarer-quests",
+    "label": "Wayfarer Wishes",
+    "desc": "Wayfarer Wishes usually involve finding an item or NPC during Hornet's exploration of Pharloom at the request of another NPC. Later in the game, some Wayfarer Wishes will be placed that involve defeating optional bosses.",
+    "contrib": 0,
+    "items": [
+            {
+        "id": "lost-fleas-1",
+        "label": "The Lost Fleas #1",
+        "type": "quest",
+        "flag": "Save the Fleas Pre",
+        "icon": "assets/quest/",
+        "description": "Speak to the fleas before starting their rescue.",
+        "link": "https://hollowknight.wiki/w/Category:Wishes"
+      },
+      {
+        "id": "lost-fleas-2",
+        "label": "The Lost Fleas #2",
+        "type": "quest",
+        "flag": "Save the Fleas",
+        "icon": "assets/quest/",
+        "description": "Find and save the 5 lost fleas.",
+        "link": "https://hollowknight.wiki/w/Category:Wishes"
+      },
+      {
+      "id": "pinmasters-oil",
+      "label": "Pinmaster's Oil",
+      "type": "quest",
+      "flag": "A Pinsmiths Tools",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Retrieve pale oil from the Citadel.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "my-missing-courier",
+      "label": "My Missing Courier",
+      "type": "quest",
+      "flag": "Save Courier Short",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Search for traces of the courier Tipp and track his location.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "my-missing-brother",
+      "label": "My Missing Brother",
+      "type": "quest",
+      "flag": "Save Courier Tall",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Search for traces of the courier Pill and track his location.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "balm-for-the-wounded",
+      "label": "Balm for the Wounded",
+      "type": "quest",
+      "flag": "Save Sherma",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Search for traces of the pilgrim Sherma and track his location.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+        {
+      "id": "the-wandering-merchant",
+      "label": "The Wandering Merchant",
+      "type": "quest",
+      "flag": "Save City Merchant",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Search for traces of the merchant Jubilana and track her location.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "the-lost-merchant",
+      "label": "The Lost Merchant",
+      "type": "quest",
+      "flag": "Save City Merchant Bridge",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Search for traces of the merchant Jubilana and track her location.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "rite-of-rebirth",
+      "label": "Rite of Rebirth",
+      "type": "quest",
+      "flag": "Wood Witch Curse",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Bind the twisted bud.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "infestation-operation",
+      "label": "Infestation Operation",
+      "type": "quest",
+      "flag": "Doctor Curse Cure",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Acquire steel spines from Crull and Benjin in Sinner's Road so Yarnaby can remove the parasite.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+        {
+      "id": "trails-end",
+      "label": "Trail's End",
+      "type": "quest",
+      "flag": "Shakra Final Quest",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Search for Shakra and her master in Bilewater.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "final-audience",
+      "label": "Final Audience",
+      "type": "quest",
+      "flag": "Song Knight",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Track the second sentinel by their markers left near Songclave.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "silk-and-soul-1",
+      "label": "Silk and Soul #1",
+      "type": "quest",
+      "flag": "Soul Snare Pre",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Meet with the caretaker in Songclave.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "silk-and-soul-2",
+      "label": "Silk and Soul #2",
+      "type": "quest",
+      "flag": "Soul Snare",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Acquire the necessary components to build a powerful trap.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+        {
+      "id": "fatal-resolve-1",
+      "label": "Fatal Resolve #1",
+      "type": "quest",
+      "flag": "Pinstress Battle Pre",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Travel to Pinstress's home at the far edge of the Blasted Steps and accept her challenge.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "fatal-resolve-2",
+      "label": "Fatal Resolve #2",
+      "type": "quest",
+      "flag": "Pinstress Battle",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Find Pinstress on the stormward side of Mount Fay and defeat her in battle.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "pain-anguish-and-misery",
+      "label": "Pain, Anguish and Misery",
+      "type": "quest",
+      "flag": "Tormented Trobbio",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Return to the Citadel's stage, beside the Whispering Vaults.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+        {
+      "id": "heros-call",
+      "label": "Hero's Call",
+      "type": "quest",
+      "flag": "Garmond Black Threaded",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Seek out the distressed bug near the Blasted Steps Bellway.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "ecstasy-of-the-end-1",
+      "label": "Ecstasy of the End #1",
+      "type": "quest",
+      "flag": "Flea Games Pre",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Speak to Fleamaster Mooshka of Fleatopia.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "ecstasy-of-the-end-2",
+      "label": "Ecstasy of the End #2",
+      "type": "quest",
+      "flag": "Flea Games",
+      "icon": "assets/quest/wayfarer.png",
+      "description": "Achieve high score in the Flea Games and become Grand Champion.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    }
     ]
   }
 ]
