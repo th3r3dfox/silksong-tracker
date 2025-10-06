@@ -1652,3 +1652,17 @@ main {
   scrollbar-width: thin;
   scrollbar-color: #555 #111;
 }
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  height: auto !important;
+}
+
+.sidebar {
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  z-index: 50 !important;
+  display: block !important;
+}
