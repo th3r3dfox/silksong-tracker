@@ -434,13 +434,230 @@
   "link": "https://hollowknight.wiki/w/Category:Wishes"
 }
   ]
+},
+{
+  "id": "hunt-wishes",
+  "label": "Hunt Wishes",
+  "desc": "Hunt Wishes involve killing normal (or occasionally special) enemies in a specific part of the world and collecting items dropped by them to turn in and complete the wish. The only exception to this is the Dark Hearts wish, which does not require Hornet to collect any items and whose enemy is found all across Pharloom. ",
+  "contrib": 0,
+  "items": [
+    {
+      "id": "garb-of-the-pilgrims",
+      "label": "Garb of the Pilgrims",
+      "type": "quest",
+      "flag": "Pilgrim Rags",
+      "icon": "assets/quest/Hunt_Wishes.png",
+      "description": "Hunt haunted pilgrims of Pharloom and collect pilgrim shawls from their bodies.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "flexile-spines",
+      "label": "Flexile Spines",
+      "type": "quest",
+      "flag": "Brolly Get",
+      "icon": "assets/quest/Hunt_Wishes.png",
+      "description": "Hunt Hokers in the far fields and collect spine cores.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "volatile-flintbeetles",
+      "label": "Volatile Flintbeetles",
+      "type": "quest",
+      "flag": "Rock Rollers",
+      "icon": "assets/quest/Hunt_Wishes.png",
+      "description": "Track down Flintbeetles in the Marrow and defeat them to collect flintgems. Flintbeetles can be tracked by their stone-sheddings and aromatic dung.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+  "id": "crawbug-clearing-pre",
+  "label": "Crawbug Clearing",
+  "type": "quest",
+  "flag": "Crow Feathers Pre",
+  "icon": "assets/quest/Hunt_Wishes.png",
+  "description": "Speak to Creige of the Halfway Home in Greymoor.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "crawbug-clearing",
+  "label": "Crawbug Clearing",
+  "type": "quest",
+  "flag": "Crow Feathers",
+  "icon": "assets/quest/Hunt_Wishes.png",
+  "description": "Hunt Crawbugs in Greymoor and collect their ragpelt.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "roach-guts",
+  "label": "Roach Guts",
+  "type": "quest",
+  "flag": "Roach Killing",
+  "icon": "assets/quest/Hunt_Wishes.png",
+  "description": "Hunt the Muckroaches of Sinner's Road and collect roach guts from their bodies.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "fine-pins",
+  "label": "Fine Pins",
+  "type": "quest",
+  "flag": "Fine Pins",
+  "icon": "assets/quest/Hunt_Wishes.png",
+  "description": "Hunt pin-welding Choirbugs of the Citadel and collect fine pins.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "cloaks-of-the-choir",
+  "label": "Cloaks of the Choir",
+  "type": "quest",
+  "flag": "Song Pilgrim Cloaks",
+  "icon": "assets/quest/Hunt_Wishes.png",
+  "description": "Hunt cloaked Choirbugs of the Citadel and collect choir cloaks from their bodies.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "broodfeast",
+  "label": "Broodfeast",
+  "type": "quest",
+  "flag": "Huntress Quest",
+  "icon": "assets/quest/Hunt_Wishes.png",
+  "description": "Use tools to acquire organs of various types so Huntress may feed her brood.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "runtfeast",
+  "label": "Runtfeast",
+  "type": "quest",
+  "flag": "Huntress Quest Runt",
+  "icon": "assets/quest/Hunt_Wishes.png",
+  "description": "Use tools to acquire organs of various types so Runt may feed.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "dark-hearts",
+  "label": "Dark Hearts",
+  "type": "quest",
+  "flag": "Destroy Thread Cores",
+  "icon": "assets/quest/Hunt_Wishes.png",
+  "description": "Destroy void masses throughout Pharloom.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+}
+  ]
+},
+{
+  "id": "grand_hunt-wishes",
+  "label": "Grand Hunt Wishes",
+  "desc": "Grand Hunt Wishes are always accepted from a Wishwall, and involve finding and killing a unique boss enemy and claiming a trophy item from them to turn in and complete the wish. They carry a high reward, either yielding a Heavy Rosary Necklace or a Mask Shard.",
+  "contrib": 0,
+  "items": [
+    {
+  "id": "the-terrible-tyrant",
+  "label": "The Terrible Tyrant",
+  "type": "quest",
+  "flag": "Skull King",
+  "icon": "assets/quest/Grand_Hunt_Quest_Icon.png",
+  "description": "Hunt a Skull Tyrant of the Marrow.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "savage-beastfly",
+  "label": "Savage Beastfly",
+  "type": "quest",
+  "flag": "Beastfly Hunt",
+  "icon": "assets/quest/Grand_Hunt_Quest_Icon.png",
+  "description": "Track down the savage Beastfly in the Far Fields and defeat it.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "the-wailing-mother",
+  "label": "The Wailing Mother",
+  "type": "quest",
+  "flag": "Broodmother Hunt",
+  "icon": "assets/quest/Grand_Hunt_Quest_Icon.png",
+  "description": "Track down the wailing creature in the Slab and slay it.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+},
+{
+  "id": "the-hidden-hunter",
+  "label": "The Hidden Hunter",
+  "type": "quest",
+  "flag": "Ant Trapper",
+  "icon": "assets/quest/Grand_Hunt_Quest_Icon.png",
+  "description": "Track the one who stole Gilly's keepsake near the Bellshrine between Deep Docks and Far Fields.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
 }
 
-
-
-
-
-
+]
+},
+{
+  "id": "donate-wishes",
+  "label": "Donate Wishes",
+  "desc": "Contribute shell shards and rosaries to support rebuilding efforts across Pharloom.",
+  "contrib": 0,
+  "items": [
+    {
+      "id": "bone-bottom-repairs",
+      "label": "Bone Bottom Repairs",
+      "type": "quest",
+      "flag": "Building Materials",
+      "icon": "assets/quest/donate.png",
+      "description": "Donate 200 shell shards.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "a-lifesaving-bridge",
+      "label": "A Lifesaving Bridge",
+      "type": "quest",
+      "flag": "Building Materials (Bridge)",
+      "icon": "assets/quest/donate.png",
+      "description": "Donate 300 shell shards to aid the building of a bridge.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "restoration-of-bellhart",
+      "label": "Restoration of Bellhart",
+      "type": "quest",
+      "flag": "Belltown House Start",
+      "icon": "assets/quest/donate.png",
+      "description": "Donate 250 rosaries to aid the rebuilding of Bellhart.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "an-icon-of-hope",
+      "label": "An Icon of Hope",
+      "type": "quest",
+      "flag": "Building Materials (Statue)",
+      "icon": "assets/quest/donate.png",
+      "description": "Donate 400 shell shards to aid the construction of an icon of hope.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "bellharts-glory",
+      "label": "Bellhart's Glory",
+      "type": "quest",
+      "flag": "Belltown House Mid",
+      "icon": "assets/quest/donate.png",
+      "description": "Donate 400 rosaries to complete the rebuilding of Bellhart.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+      "id": "building-up-songclave",
+      "label": "Building Up Songclave",
+      "type": "quest",
+      "flag": "Songclave Donation 1",
+      "icon": "assets/quest/donate.png",
+      "description": "Donate 300 rosaries to aid the growing Songclave.",
+      "link": "https://hollowknight.wiki/w/Category:Wishes"
+    },
+    {
+  "id": "strengthening-songclave",
+  "label": "Strengthening Songclave",
+  "type": "quest",
+  "flag": "Songclave Donation 2",
+  "icon": "assets/quest/donate.png",
+  "description": "Donate rosaries to aid the Songclave's residents.",
+  "link": "https://hollowknight.wiki/w/Category:Wishes"
+}
+  ]
+}
 
 
 
