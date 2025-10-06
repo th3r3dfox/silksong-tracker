@@ -116,7 +116,7 @@ document.getElementById("spoilerToggle").addEventListener("change", () => {
     bosses: updateBossesContent,
     main: updateMainContent,
     essentials: updateNewTabContent,
-    quests: updateWhisesContent,
+    wishes: updateWishesContent,
     // aggiungi qui eventuali altre sezioni:
     // charms: updateCharms,
     // items: updateItems,
@@ -675,7 +675,7 @@ async function handleSaveFile(file) {
         bosses: updateBossesContent,
         main: updateMainContent,
         essentials: updateNewTabContent,
-        quests: updateWhisesContent,
+        wishes: updateWishesContent,
       };
       updater[activeTab]?.();
 
@@ -757,7 +757,7 @@ document.querySelectorAll(".sidebar-item").forEach(btn => {
       bosses: updateBossesContent,
       main: updateMainContent,
       essentials: updateNewTabContent,
-      quests: updateWhisesContent,
+      wishes: updateWishesContent,
     };
     updater[selectedTab]?.();
   });
@@ -784,7 +784,7 @@ window.addEventListener("DOMContentLoaded", () => {
     bosses: updateBossesContent,
     main: updateMainContent,
     essentials: updateNewTabContent,
-    quests: updateWhisesContent,
+    wishes: updateWishesContent,
   };
   updater[savedTab]?.();
 });
@@ -894,13 +894,13 @@ section.appendChild(heading);
 }
 
 
-async function updateWhisesContent() {
-  const response = await fetch("data/whises.json");
+async function updateWishesContent() {
+  const response = await fetch("data/wishes.json");
   const questData = await response.json();
   const spoilerOn = document.getElementById("spoilerToggle").checked;
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
 
-  const container = document.getElementById("whises-grid");
+  const container = document.getElementById("wishes-grid");
   container.innerHTML = "";
 
   questData.forEach(sectionData => {
@@ -1036,7 +1036,7 @@ document.getElementById("missingToggle").addEventListener("change", () => {
     bosses: updateBossesContent,
     main: updateMainContent,
     essentials: updateNewTabContent,
-    quests: updateWhisesContent,
+    wishes: updateWishesContent,
   };
 
   // 🔄 forza un re-render della tab attiva
