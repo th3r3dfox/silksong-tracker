@@ -192,7 +192,117 @@ Each top-level category defines a group of related items.
 
 ---
 
-## 5. JavaScript Components
+## 5. Flag Recognition Logic
+
+### 5.1 What Are Flags
+
+Flags are internal variables stored in the Silksong save file that record the player’s progress and actions.  
+Each flag represents a specific state in the game: a collected item, a defeated boss, or a completed quest.
+
+Example of flags inside a decoded save file:
+
+```json
+{
+  "hasDash": true,
+  "PurchasedBonebottomHeartPiece": true,
+  "Collectable Item Pickup": false,
+  "Silk Spool": { "Bone_11b": true }
+}
+```
+
+These names come directly from the game’s C# code (Unity serialization).  
+When the player performs an action, the game sets the corresponding flag to `true` or updates its value (integer for upgrades).
+
+---
+
+### 5.2 How Flags Are Used by the Tracker
+
+Each entry in `main.json` includes a `flag` field that tells the app which save value to check.
+
+Example item:
+
+```json
+{
+  "id": "everbloom",
+  "label": "Everbloom",
+  "flag": "Collectable Item Pickup",
+  "type": "collectable"
+}
+```
+
+When a save is decoded, the tracker compares each `flag` in the static JSON data with the decoded `saveData` object.
+
+The key logic (from `script.js`):
+
+```js
+const value =
+  (item.type?.startsWith("region") || item.region)
+    ? save[item.region]?.[item.flag]
+    : save[item.flag];
+```
+
+This checks whether the flag exists either:
+- Globally, e.g. `save["Collectable Item Pickup"]`, or
+- Within a scene, e.g. `save["Dock_08"]["Heart Piece"]`.
+
+If the flag exists and is `true`, the item is marked as obtained.
+
+---
+
+### 5.3 Example Flag Mapping
+
+| Item | Flag | Example in save file | Result |
+|------|------|----------------------|---------|
+| Everbloom | Collectable Item Pickup | `"Collectable Item Pickup": true` | Obtained |
+| Mask Shard #1 | PurchasedBonebottomHeartPiece | `"PurchasedBonebottomHeartPiece": false` | Missing |
+| Swift Step | hasDash | `"hasDash": true` | Obtained |
+
+---
+
+### 5.4 Why Flags Have Readable Names
+
+Flags such as `"Collectable Item Pickup"`, `"Heart Piece"`, or `"Beastfly Hunt"` are not arbitrary —  
+they are the exact string identifiers used by the game’s code when saving data.
+
+These names come from:
+- Unity’s C# variable names serialized in the `.dat` file;
+- Community reverse-engineering of Silksong’s prototype saves;
+- Empirical testing (comparing flags before and after certain in-game actions).
+
+---
+
+### 5.5 Summary
+
+| Concept | Description |
+|----------|-------------|
+| Flag | A key stored in the Silksong save representing progress or events. |
+| Source | Unity’s internal C# save data structure. |
+| Used In | The `flag` field inside `main.json` items. |
+| Check Logic | `save[flag]` or `save[scene][flag]` depending on item type. |
+| Example | `"Collectable Item Pickup"` → used to detect Everbloom collectable. |
+
+---
+
+### 5.6 Example Definition in `main.json`
+
+```json
+{
+  "id": "everbloom",
+  "label": "Everbloom",
+  "flag": "Collectable Item Pickup",
+  "type": "collectable",
+  "icon": "assets/icons/Everbloom.png",
+  "description": "Return to the Snail Shamans and complete the memory sequence.",
+  "link": "https://hollowknight.wiki/w/Everbloom"
+}
+```
+
+This entry links the in-game event “Collectable Item Pickup” directly to the decoded save data,
+so the tracker can mark Everbloom as obtained once that flag is true.
+
+---
+
+## 6. JavaScript Components
 
 | Function | File | Description |
 |-----------|------|-------------|
@@ -204,7 +314,7 @@ Each top-level category defines a group of related items.
 
 ---
 
-## 6. User Interface (`index.html`)
+## 7. User Interface (`index.html`)
 
 ### Layout
 
@@ -228,7 +338,7 @@ Scripts are loaded as ES6 modules (`type="module"`) for modular imports.
 
 ---
 
-## 7. Security and Privacy
+## 8. Security and Privacy
 
 - 100% client-side execution.  
 - No server calls or network requests.  
@@ -238,7 +348,7 @@ Scripts are loaded as ES6 modules (`type="module"`) for modular imports.
 
 ---
 
-## 8. Completion Percentage (Planned)
+## 9. Completion Percentage (Planned)
 
 Each category defines a `contrib` value representing its weight in overall completion.  
 A future feature will compute total completion using:
@@ -249,7 +359,7 @@ completion% = Σ (completedItems / totalItems) × contrib
 
 ---
 
-## 9. Planned Features
+## 10. Planned Features
 
 - Map previews for each item using the `map` field.  
 - Real-time completion percentage.  
@@ -259,7 +369,7 @@ completion% = Σ (completedItems / totalItems) × contrib
 
 ---
 
-## 10. Technology Stack
+## 11. Technology Stack
 
 | Layer | Technology | Purpose |
 |--------|-------------|----------|
@@ -272,8 +382,9 @@ completion% = Σ (completedItems / totalItems) × contrib
 
 ---
 
-## 11. Credits
+## 12. Credits
 
+Developed by Fox  
 Inspired by *ReznorMichael’s “Hollow Knight Save Analyzer”*  
 A non-commercial fan project not affiliated with Team Cherry.  
 
