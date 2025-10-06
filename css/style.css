@@ -1662,3 +1662,10 @@ main {
   border: 2px solid #f1c40f; /* giallo oro */
   box-shadow: 0 0 6px rgba(241, 196, 15, 0.5);
 }
+
+.main-wrapper {
+  margin-left: 220px;
+  width: calc(100% - 220px); /* ✅ ripristina la larghezza giusta */
+  overflow-y: auto;
+  min-height: 100vh;
+}
