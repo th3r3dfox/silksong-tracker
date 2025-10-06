@@ -10,7 +10,7 @@
         "label": "The Great Citadel",
         "type": "quest",
         "flag": "Citadel Seeker",
-        "icon": "assets/data/quest/Seek_Quest_Icon.png",
+        "icon": "assets/quest/Seek_Quest_Icon.png",
         "description": "",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
       },

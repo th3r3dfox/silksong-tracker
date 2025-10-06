@@ -1582,28 +1582,23 @@ html {
   margin-bottom: 6px;
 }
 
-/* ------------------
-   WISHES GRID FIX
--------------------*/
-#wishes-grid {
+
+#wishes-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+#wishes-section .main-section-block {
+  flex: 1 1 300px;
+  min-width: 280px;
+  margin-bottom: 2rem;
+  padding-top: 0;
+}
+
+#wishes-section .main-section-block .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* 2+ colonne */
-  gap: 16px;
-  justify-content: center;
-  align-items: start;
-  margin-top: 16px;
-}
-
-#wishes-grid .boss {
-  max-width: 100%;
-  background: var(--bg-3);
-  border: 1px solid var(--stroke-soft);
-  border-radius: 10px;
-  padding: 12px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-#wishes-grid .boss:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
 }
