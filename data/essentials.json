@@ -372,8 +372,46 @@
       "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
     }
   ]
+},
+{
+  "id": "category-pale-oils",
+  "label": "Pale Oils",
+  "desc": "Special refined oils found across Pharloom, often tied to rare quests or hidden vaults.",
+  "contrib": 0,
+  "items": [
+    {
+      "id": "pale-oil-vaults",
+      "label": "Vaults Pale Oil",
+      "icon": "assets/icons/Pale_Oil.png",
+      "category": "Pale Oils",
+      "scene": "Library_03",
+      "flag": "Collectable Item Pickup",
+      "type": "sceneBool",
+      "description": "Located in northeast Choral Chambers, accessed through the adjoining room in Whispering Vaults",
+      "link": "https://hollowknight.wiki/w/Pale_Oil"
+    },
+    {
+      "id": "pale-oil-citadel",
+      "label": "Citadel Pale Oil",
+      "icon": "assets/icons/Pale_Oil.png",
+      "category": "Pale Oils",
+      "flag": "Great Taste of Pharloom",
+      "type": "quest",
+      "description": "Reward for completing the 'Great Taste of Pharloom' Wish.",
+      "link": "https://hollowknight.wiki/w/Pale_Oil"
+    },
+    {
+      "id": "pale-oil-flea-games",
+      "label": "Flea Games Pale Oil",
+      "icon": "assets/icons/Pale_Oil.png",
+      "category": "Pale Oils",
+      "flag": "Ecstasy of the End",
+      "type": "quest",
+      "description": "Reward for completing the 'Ecstasy of the End' Wish.",
+      "link": "https://hollowknight.wiki/w/Pale_Oil"
+    }
+  ]
 }
-
 
 
 
