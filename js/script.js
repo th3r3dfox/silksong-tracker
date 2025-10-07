@@ -701,8 +701,15 @@ async function handleSaveFile(fileOrHandle) {
 
     // 🔹 Se riceviamo un FileSystemFileHandle (nuova API)
     if (fileOrHandle && fileOrHandle.getFile) {
-      file = await fileOrHandle.getFile();
-      window.lastFileHandle = fileOrHandle; // salva il riferimento persistente
+      try {
+        file = await fileOrHandle.getFile();
+        window.lastFileHandle = fileOrHandle; // salva il riferimento persistente
+      } catch (err) {
+        console.warn("Permission or access error:", err);
+        showToast("⚠️ Browser permission issue. Please reselect your save file.");
+        document.getElementById("uploadOverlay")?.classList.remove("hidden");
+        return;
+      }
     } else {
       // 🔹 Altrimenti è un normale File (da input)
       file = fileOrHandle;
@@ -710,6 +717,7 @@ async function handleSaveFile(fileOrHandle) {
 
     if (!file) {
       showToast("❌ No file selected.");
+      document.getElementById("uploadOverlay")?.classList.remove("hidden");
       return;
     }
 
@@ -723,6 +731,7 @@ async function handleSaveFile(fileOrHandle) {
 
     if (!validateSave(saveData)) {
       showToast("❌ Invalid or corrupted save file");
+      document.getElementById("uploadOverlay")?.classList.remove("hidden");
       return;
     }
 
@@ -741,6 +750,9 @@ async function handleSaveFile(fileOrHandle) {
         window.lastFileHandle = handle;
       } catch (err) {
         console.warn("User cancelled or API not supported:", err);
+        showToast("⚠️ Browser permission issue. Please reselect your save file.");
+        document.getElementById("uploadOverlay")?.classList.remove("hidden");
+        return;
       }
     }
 
@@ -774,13 +786,15 @@ async function handleSaveFile(fileOrHandle) {
 
     applyMissingFilter?.();
     showToast("✅ Save file loaded successfully!");
-    document.getElementById("uploadOverlay").classList.add("hidden");
+    document.getElementById("uploadOverlay")?.classList.add("hidden");
 
   } catch (err) {
     console.error("[save] Decode error:", err);
-    showToast("❌ Failed to decode Silksong save file");
+    showToast("⚠️ Browser permission or file access issue. Please reselect your save file.");
+    document.getElementById("uploadOverlay")?.classList.remove("hidden");
   }
 }
+
 
 
 async function refreshSaveFile() {
