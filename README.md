@@ -1,16 +1,41 @@
-# `silksong-tracker`
+# Silksong Tracker
 
-This is a website that allows you to see the current progress on your save file for [Hollow Knight: Silksong](https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/).
+**Silksong Tracker** is a web-based tool that allows you to analyze and visualize your *Hollow Knight: Silksong* save files.  
+It helps players explore their progress, bosses defeated, items collected, and hidden secrets.
 
-You can view the website [here](https://th3r3dfox.github.io/silksong-tracker/).
+All data is processed **locally in your browser** — your save file is never uploaded or stored.
 
-## Contributing
+https://th3r3dfox.github.io/silksong-tracker/
 
-This project uses [Prettier](https://prettier.io/), an automatic code formatter. You can run it like this:
+---
 
-```sh
-cd silksong-tracker
-npm ci # To install the JavaScript dependencies.
-npm lint # To check to see if the codebase is correctly formatted.
-npm format # To automatically format the codebase.
-```
+## Features
+
+- Upload and decode Silksong `.dat` save files
+- View progress for bosses, items, and upgrades
+- Toggle **spoiler** and **missing only** filters
+- All decoding and rendering happens client-side
+- Compatible with modern browsers (Chrome, Firefox, Edge)
+
+---
+
+## How to Use
+
+1. Go to the hosted tracker (if deployed) or open `index.html` locally.  
+2. Click **Upload Save** or drag your `.dat` file (e.g., `user1.dat`) into the drop area.  
+3. The tracker will decode the save and display progress by category.
+
+---
+
+## Technical Details
+
+A full explanation of the project architecture, decoding logic, and data model is available here:  
+[docs/TECHNICAL_DOCUMENTATION.md](./docs/TECHNICAL_DOCUMENTATION.md)
+
+---
+
+## Credits
+
+Inspired by *ReznorMichael’s “Hollow Knight Save Analyzer”*  
+A non-commercial fan project not affiliated with Team Cherry.
+

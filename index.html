@@ -1,288 +1,239 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Silksong Tracker</title>
-    <meta
-      name="description"
-      content="Silksong Tracker - analyze your Hollow Knight: Silksong save files and discover your progress, collectibles, and completion percentage."
-    />
-    <meta
-      name="keywords"
-      content="Hollow Knight, Silksong, Save Analyzer, Silksong Tracker, Progress, Collectibles, Checklist, Completion"
-    />
-    <meta name="author" content="th3r3dfox" />
-    <meta name="robots" content="index, follow" />
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<link rel="preload" href="assets/fontawesome/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/fontawesome/css/all.min.css"></noscript>
 
-    <!-- canonical only (no hreflang) -->
-    <link
-      rel="canonical"
-      href="https://th3r3dfox.github.io/silksong-tracker/"
-    />
 
-    <!-- social sharing (facoltativo ma consigliato) -->
-    <meta property="og:title" content="Silksong Tracker" />
-    <meta
-      property="og:description"
-      content="Analyze your Silksong save files and track progress, collectibles, and completion."
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://th3r3dfox.github.io/silksong-tracker/"
-    />
-    <meta
-      property="og:image"
-      content="https://th3r3dfox.github.io/silksong-tracker/img/preview.png"
-    />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silksong Tracker</title>
+  <link rel="icon" type="image/png" href="assets/misc/favicon.png" />
+<!-- <base href="https://th3r3dfox.github.io/silksong-tracker/"> -->
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Silksong Tracker" />
-    <meta
-      name="twitter:description"
-      content="Analyze your Silksong save files and track progress, collectibles, and completion."
-    />
-    <meta
-      name="twitter:image"
-      content="https://th3r3dfox.github.io/silksong-tracker/img/preview.png"
-    />
 
-    <!-- Favicon (file presente in img/favicon.png) -->
-    <link rel="icon" type="image/png" href="img/favicon.png" />
 
-    <!-- Stili -->
-    <link rel="stylesheet" href="css/styles.css" />
+  <!-- 🪶 Social Preview -->
+<meta property="og:title" content="Silksong Tracker" />
+<meta property="og:description" content="Analyze and visualize your Hollow Knight: Silksong save file — track bosses, items, and secrets with a clean UI." />
+<meta property="og:image" content="https://th3r3dfox.github.io/silksong-tracker/assets/misc/preview.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://th3r3dfox.github.io/silksong-tracker/" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    
+<aside class="sidebar">
+    <div class="sidebar-header">
+  <img src="assets/misc/favicon.png" class="logo-icon" width="64" height="64" alt="Silksong Tracker Logo" />
+  <div class="app-name">silksong Tracker</div>
+</div>
 
-    <!-- CryptoJS (necessario al decoder) -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
-      defer
-    ></script>
+  <!-- Actions: icone orizzontali -->
 
-    <!-- App -->
-    <script type="module" src="js/app.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <!-- Titolo principale -->
-      <h1
-        class="site-title compact"
-        aria-label="Save Completion Analyzer for Silksong"
-      >
-        <span class="title-main">Save Completion Analyzer</span>
-        <span class="title-sub">for Silksong</span>
-      </h1>
+<div class="sidebar-links">
+<a href="https://hollowknight.wiki" target="_blank" class="sidebar-wiki-btn">
+  Wiki
+</a>
 
-      <!-- Barra superiore: percorso + selezione file -->
-      <header class="topbar" aria-label="Caricamento salvataggio">
-        <div class="save-path">
-          <div
-            id="savePathDisplay"
-            class="save-display"
-            title="Clicca per copiare"
-          >
-            %userprofile%\appdata\LocalLow\Team Cherry\Hollow Knight Silksong
-          </div>
-        </div>
+</div>
+<div class="sidebar-actions">
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3568819705&tscn=1759369168" class="icon-btn" title="Steam Discussions" target="_blank">
+    <i class="fab fa-steam"></i>
+  </a>
+  <a href="https://discord.gg/eGVaUWvrTb" class="icon-btn" title="Discord" target="_blank">
+    <i class="fab fa-discord"></i>
+  </a>
+  <a href="https://www.reddit.com/r/HollowKnight/comments/1nyw6qe/silksong_save_tracker_major_update_released/" class="icon-btn" title="Reddit" target="_blank">
+    <i class="fab fa-reddit-alien"></i>
+  </a>
+  <a href="https://github.com/th3r3dfox/silksong-tracker" class="icon-btn" title="GitHub Repository" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+</div>
 
-        <!-- testo tra percorso e file chooser -->
-        <p id="chooseSaveNote" class="upload-hint">
-          Choose the correct save file: <code>user*.dat</code> (e.g.
-          <code>user1.dat</code>).
-        </p>
 
-        <div class="file-chooser">
-          <button id="browseBtn" type="button" class="choose-btn">
-            📂 Choose Save File...
-          </button>
-          <input
-            type="file"
-            id="fileInput"
-            accept=".json,.dat,.sav,.bin"
-            hidden
-          />
-          <a
-            id="steamCloudBtn"
-            class="btn-ghost"
-            href="https://store.steampowered.com/account/remotestorageapp/?appid=1030300"
-            target="_blank"
-            rel="noopener"
-            title="Open the game’s Steam Cloud save page"
-            style="margin-left: 10px"
-          >
-            Steam Cloud…
-          </a>
-          <button
-            id="showJsonBtn"
-            type="button"
-            class="btn-ghost small"
-            disabled
-          >
-            Mostra JSON
-          </button>
-        </div>
-      </header>
+  <div class="sidebar-divider"></div>
 
-      <!-- Hero: stato di gioco + metadati -->
-      <section class="hero" aria-label="Stato di gioco">
-        <h2 class="hk-title">
-          Game Status <span id="gameStatusPct" class="pill">0%</span>
-        </h2>
+  <!-- Progress -->
+  <div class="sidebar-section">
+    <h3 class="sidebar-title">PROGRESS</h3>
+    <a href="#" class="sidebar-item is-active" data-tab="home">Home</a>
+    <a href="#" class="sidebar-item" data-tab="main">Main%</a>
+    <a href="#" class="sidebar-item" data-tab="essentials">Essentials %</a>
+    <a href="#" class="sidebar-item" data-tab="bosses">Bosses</a>
+    <a href="#" class="sidebar-item" data-tab="wishes">Wishes</a>
+    <!-- aggiungerai altre voci qui -->
+  </div>
+</aside>
 
-        <ul class="meta">
-          <li>⏺ Time Played: <span id="timePlayedText">—</span></li>
-          <li>Save Version: <span id="saveVersionText">—</span></li>
-        </ul>
+  <div class="main-wrapper">
+<header class="topbar">
+  <div class="topbar-right">
 
-        <hr class="ornament" />
+          <!-- 🔹 Act Filter -->
+      <div class="act-filter">
+        <label for="actFilter">Act:</label>
+        <select id="actFilter">
+          <option value="all">All</option>
+          <option value="1">Act I</option>
+          <option value="2">Act II</option>
+          <option value="3">Act III</option>
+        </select>
+      </div>
+    
+    <label class="toggle">
+    <input type="checkbox" id="missingToggle"> Show only missing </label>
+    <label><input type="checkbox" id="spoilerToggle"> Show spoilers</label>
+    <button id="openUploadModal" class="btn-primary">Upload save</button>
+    <input type="file" id="fileInput" accept=".dat" hidden>
+  </div>
+</header>
 
-        <div class="stats-row" role="group" aria-label="Statistiche principali">
-          <div class="stat">
-            <div class="label">Health:</div>
-            <div class="value" id="healthValue">—</div>
-          </div>
-          <div class="stat">
-            <div class="label">Max Silk:</div>
-            <div class="value" id="maxsetaValue">—</div>
-          </div>
-          <div class="stat">
-            <div class="label">Silk Hearts:</div>
-            <div class="value" id="setaValue">—</div>
-          </div>
-          <div class="stat">
-            <div class="label">Rosaries:</div>
-            <div class="value" id="rosariValue">—</div>
-          </div>
-          <div class="stat">
-            <div class="label">Sheel Shards:</div>
-            <div class="value" id="scheggeValue">—</div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Tabs dei gruppi -->
-      <nav id="tabs" class="tabs" aria-label="Categorie"></nav>
+    <main>
 
-      <!-- Sezioni (empilate) che il JS popola -->
-      <section
-        id="sectionsStack"
-        class="sections-stack"
-        aria-label="Sezioni"
-      ></section>
 
-      <noscript>Abilita JavaScript per utilizzare il decoder.</noscript>
+<section id="home-section" class="tab">
+  <div class="home-content cinematic">
 
-      <!-- Modal JSON decifrato -->
-      <div
-        id="jsonModal"
-        class="modal"
-        aria-hidden="true"
-        role="dialog"
-        aria-label="Salvataggio decifrato"
-      >
-        <div class="modal__backdrop" data-close="1"></div>
-        <div class="modal__dialog" role="document">
-          <header class="modal__head">
-            <h3 class="modal__title">Json Log</h3>
-            <div class="modal__actions">
-              <button id="copyJsonBtn" class="btn-ghost tiny" title="Copia">
-                Copy
-              </button>
-              <button
-                id="downloadJsonBtn"
-                class="btn-ghost tiny"
-                title="Scarica"
-              >
-                Download
-              </button>
-              <button
-                id="closeJsonBtn"
-                class="btn-ghost tiny"
-                aria-label="Chiudi"
-              >
-                ✕
-              </button>
-            </div>
-          </header>
-          <pre id="rawModalOutput" class="modal__code">—</pre>
-        </div>
+    <!-- ✨ INTRO -->
+    <div class="intro-block">
+      <h1>Welcome to the Silksong Save Tracker</h1>
+      <p>
+        Explore your <strong>Hollow Knight: Silksong</strong> save file and track your progress across bosses, items, and secrets.
+      </p>
+    </div>
+
+    <div class="cinematic-grid">
+
+      <!-- ⚙️ HOW IT WORKS -->
+      <div class="home-section-block cinematic-left">
+        <h2><i class="fa-solid fa-gears"></i> How it Works</h2>
+        <ol>
+          <li><strong>Upload your save file</strong> — Click <em>Upload Save</em> at the top-right corner.</li>
+          <li><strong>Decode and explore</strong> — The tool automatically decrypts your progress.</li>
+          <li><strong>Track everything</strong> — View items, bosses, and regions completed, with spoiler toggles available.</li>
+        </ol>
+      </div>
+
+      <!-- 🧩 ABOUT -->
+      <div class="home-section-block cinematic-right">
+        <h2><i class="fa-solid fa-hammer"></i> About This Project</h2>
+        <p>This fan-made tracker helps players understand how progress is stored and displayed in the game’s save files.</p>
+        <p><strong>All data is processed locally</strong> — your save never leaves your device.</p>
+
+        <div class="status-pill">Work in Progress · v0.2.0</div>
+        <p>Development is ongoing — expect future updates, new sections, and improved visuals over time.</p>
+      </div>
+
+    </div>
+
+    <!-- 🕯 IN MEMORY -->
+    <div class="home-section-block tribute cinematic-bottom">
+      <h2><i class="fa-solid fa-candle"></i> In Memory</h2>
+      <p>
+        Dedicated to <strong>ReznorMichael</strong>, creator of the original <a href="https://reznormichael.github.io/hollow-knight-completion-check/" target="_blank">Hollow Knight Save Analyzer</a> —  
+        a tool that guided me through my 112% journey.
+      </p>
+
+      <h3>Credits</h3>
+      <p>Made by <strong>Fox</strong> · Inspired by <a href="https://hollowknight.wiki/w/Hollow_Knight_Wiki" target="_blank">Hollow Knight</a> and its incredible community.</p>
+      <p class="muted">This is a non-commercial fan project not affiliated with Team Cherry.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<section id="main-section" class="tab hidden">
+  <h2>Main%</h2>
+
+<!-- ✅ Riassunto progressione -->
+<div id="main-stats" class="main-stats">
+  <div class="completion">
+    <span class="label">Completion:</span>
+    <span id="completionValue">0%</span>
+  </div>
+  <div class="playtime">
+    <span class="label">Play Time:</span>
+    <span id="playtimeValue">0h 00m</span>
+  </div>
+  <div class="rosaries">
+    <span class="label">Rosaries:</span>
+    <span id="rosariesValue">0</span>
+  </div>
+  <div class="shards">
+    <span class="label">Shell Shards:</span>
+    <span id="shardsValue">0</span>
+  </div>
+</div>
+
+<div class="grid" id="main-grid"></div>
+</section>
+
+<section id="essentials-section" class="tab hidden">
+  <h2>Essentials %</h2>
+  <div class="grid" id="essentials-grid"></div>
+</section>
+
+
+<section id="bosses-section" class="tab hidden">
+  <h2>Boss</h2>
+  <div id="boss-grid" class="grid"></div>
+</section>
+
+<section id="wishes-section" class="tab hidden">
+  <h2>Wishes</h2>
+  <div id="wishes-grid" class="grid"></div>
+</section>
+
+
+
+
+<!-- ✅ Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+<script type="module">
+  import { decodeSilksongSave } from './js/SaveDecoder.js';
+  window.decodeSilksongSave = decodeSilksongSave;
+</script>
+<script type="module" src="./js/script.js"></script>
+
+  <div id="uploadOverlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="uploadTitle">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="uploadTitle">Upload your save file</h3>
+      <button class="modal-close" id="closeUploadModal" aria-label="Close">✕</button>
+    </div>
+
+    <div id="dropzone" class="dropzone" tabindex="0">
+      <p>Drag and drop your save file here, or click to browse!</p>
+      <p>Choose the correct save file: user*.dat (e.g. user1.dat)</p>
+    </div>
+
+    <div class="help">
+      <h4>Need help finding your save?</h4>
+      <p class="muted">What do you play on?</p>
+<div class="platforms">
+  <a class="pill">Mac</a>
+  <a class="pill">Windows</a>
+  <a class="pill">Linux</a>
+  <a class="pill">Steam Cloud</a>
+</div>
+
       </div>
     </div>
-    <footer id="offtopic" role="contentinfo" aria-labelledby="ftTitle">
-      <div class="footer-wrap">
-        <!-- 1) Stato progetto -->
-        <section class="foot-block">
-          <h3 class="foot-title" id="ftTitle">Off Topic</h3>
-          <p class="pill" id="ftPill">Work in Progress • v1.0.0</p>
-          <p class="foot-text" id="ftWipDesc">
-            Questo progetto è in sviluppo attivo. Alcune sezioni potrebbero
-            cambiare o ampliarsi con i prossimi aggiornamenti.
-          </p>
-        </section>
+  </div>
+</div>
+<div id="info-overlay" class="overlay hidden">
+  <div id="info-content" class="modal">
+    <!-- JS will populate this -->
+    <button id="closeInfoModal" class="modal-close">✕</button>
+  </div>
+</div>
 
-        <!-- 2) Crediti -->
-        <section class="foot-block">
-          <h4 class="foot-subtitle" id="ftCreditsTitle">Crediti</h4>
-          <p class="foot-text">
-            <span id="ftCreditsPrefix">Sito realizzato da</span>
-            <a href="#" id="creditLink" target="_blank" rel="noopener">
-              <strong id="creditName">[IL_TUO_NICK]</strong> </a
-            >.
-          </p>
-        </section>
-
-        <!-- 3) In memoria -->
-        <section class="foot-block">
-          <h4 class="foot-subtitle" id="ftMemTitle">In memoria</h4>
-          <p class="foot-text" id="ftMemText">
-            Un pensiero a chi ha dato il via alla tradizione degli analyzer per
-            Hollow Knight. Il primo creatore dell’Analyzer originale ci ha
-            lasciati, ma la sua passione vive in ogni strumento che aiuta la
-            community a esplorare, capire e condividere.
-            <em>Grazie per l’ispirazione.</em>
-          </p>
-        </section>
-      </div>
-
-      <div class="foot-fine">
-        <small id="ftLegal">
-          Progetto non ufficiale, senza affiliazione con Team Cherry. Tutti i
-          marchi appartengono ai rispettivi proprietari.
-        </small>
-      </div>
-    </footer>
-
-    <button id="toTop" aria-label="Torna all'inizio"></button>
-    <script>
-      (function () {
-        const btn = document.getElementById("toTop");
-        const SHOW_AFTER = 200; // pixel di scroll prima che appaia
-
-        function onScroll() {
-          if (window.scrollY > SHOW_AFTER) {
-            btn.classList.add("show");
-          } else {
-            btn.classList.remove("show");
-          }
-        }
-
-        function scrollToTop() {
-          const reduceMotion = window.matchMedia(
-            "(prefers-reduced-motion: reduce)",
-          ).matches;
-          window.scrollTo({
-            top: 0,
-            behavior: reduceMotion ? "auto" : "smooth",
-          });
-        }
-
-        window.addEventListener("scroll", onScroll, { passive: true });
-        btn.addEventListener("click", scrollToTop);
-
-        // inizializza stato corretto
-        onScroll();
-      })();
-    </script>
-  </body>
+</body>
 </html>
