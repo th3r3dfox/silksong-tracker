@@ -15,7 +15,8 @@
       "category": "Needle Upgrades",
       "icon": "assets/icons/1_Needle.png",
       "description": "Long sewing tool, uniquely balanced for combat. The blade is marked by time and use.",
-      "link": "https://hollowknight.wiki/w/Needle"
+      "link": "https://hollowknight.wiki/w/Needle",
+      "mode": "normal"  
     },
     {
       "id": "nail1",

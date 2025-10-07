@@ -6,6 +6,18 @@ import { decodeSilksongSave } from "./SaveDecoder.js";
 let currentActFilter = document.getElementById("actFilter")?.value || "all";
 
 
+function matchMode(item) {
+  // Nessuna modalità specificata → sempre visibile
+  if (!item.mode) return true;
+
+  // Nessun salvataggio → mostra solo quelli "normal"
+  if (!window.save) return item.mode === "normal";
+
+  // Se il salvataggio è presente → mostra solo quelli coerenti
+  return item.mode === window.saveMode;
+}
+
+
 // ---------- DATA ----------
 let bossList = [];
 
@@ -31,8 +43,10 @@ async function updateBossesContent(selectedAct = "all") {
 
     // ✅ 1️⃣ Filtra per act
     let filteredItems = (sectionData.items || []).filter(item =>
-      selectedAct === "all" || Number(item.act) === Number(selectedAct)
-    );
+  (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
+  matchMode(item)
+);
+
 
     // ✅ 2️⃣ Filtra “solo mancanti” (coerente con act)
     if (showMissingOnly && window.save) {
@@ -178,8 +192,10 @@ async function updateNewTabContent(selectedAct = "all") {
 
     // ✅ Filtra per act e mancanti
     let filteredItems = (sectionData.items || []).filter(item =>
-      selectedAct === "all" || Number(item.act) === Number(selectedAct)
-    );
+  (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
+  matchMode(item)
+);
+
 
     if (showMissingOnly && window.save) {
       filteredItems = filteredItems.filter(item => {
@@ -694,6 +710,7 @@ function validateSave(obj) {
   return obj && typeof obj === "object" && obj.playerData;
 }
 
+
 // --- Caricamento file principale ---
 async function handleSaveFile(fileOrHandle) {
   try {
@@ -703,7 +720,7 @@ async function handleSaveFile(fileOrHandle) {
     if (fileOrHandle && fileOrHandle.getFile) {
       try {
         file = await fileOrHandle.getFile();
-        window.lastFileHandle = fileOrHandle; // salva il riferimento persistente
+        window.lastFileHandle = fileOrHandle;
       } catch (err) {
         console.warn("Permission or access error:", err);
         showToast("⚠️ Browser permission issue. Please reselect your save file.");
@@ -711,7 +728,6 @@ async function handleSaveFile(fileOrHandle) {
         return;
       }
     } else {
-      // 🔹 Altrimenti è un normale File (da input)
       file = fileOrHandle;
     }
 
@@ -741,7 +757,7 @@ async function handleSaveFile(fileOrHandle) {
     window.lastSaveBuffer = buffer;
     window.lastSaveIsDat = isDat;
 
-    // 🔒 Se il browser supporta File System Access, chiedi permesso e memorizza l’handle
+    // 🔒 File System Access (permessi persistenti)
     if (!window.lastFileHandle && "showOpenFilePicker" in window) {
       try {
         const [handle] = await window.showOpenFilePicker({
@@ -772,26 +788,27 @@ async function handleSaveFile(fileOrHandle) {
     const shards = saveData.playerData?.ShellShards ?? 0;
     safeSetText("rosariesValue", String(rosaries));
     safeSetText("shardsValue", String(shards));
-// --- Rileva modalità di gioco ---
-// --- Rileva modalità di gioco ---
-const modeValue = saveData.playerData?.permadeathMode ?? 0;
-const isSteelSoul =
-  modeValue === 1 ||
-  saveData.playerData?.isSteelSoulMode === true ||
-  saveData.playerData?.SteelSoulMode === true ||
-  saveData.playerData?.GameMode === "SteelSoul";
 
-const banner = document.getElementById("modeBanner");
-if (banner) {
-  banner.innerHTML = isSteelSoul
-    ? `<img src="${BASE_PATH}/assets/icons/Steel_Soul_Icon.png" alt="Steel Soul" class="mode-icon"> STEEL SOUL SAVE LOADED`
-    : `NORMAL SAVE LOADED`;
-  banner.classList.remove("hidden");
-  banner.classList.toggle("steel", isSteelSoul);
-}
+    // --- Rileva modalità di gioco ---
+    const modeValue = saveData.playerData?.permadeathMode ?? 0;
+    const isSteelSoul =
+      modeValue === 1 ||
+      saveData.playerData?.isSteelSoulMode === true ||
+      saveData.playerData?.SteelSoulMode === true ||
+      saveData.playerData?.GameMode === "SteelSoul";
 
+    // ✅ Salva modalità globalmente (dopo la dichiarazione)
+    window.saveMode = isSteelSoul ? "steel" : "normal";
 
-
+    // 🪶 Mostra banner visivo
+    const banner = document.getElementById("modeBanner");
+    if (banner) {
+      banner.innerHTML = isSteelSoul
+        ? `<img src="${BASE_PATH}/assets/icons/Steel_Soul_Icon.png" alt="Steel Soul" class="mode-icon"> STEEL SOUL SAVE LOADED`
+        : `NORMAL SAVE LOADED`;
+      banner.classList.remove("hidden");
+      banner.classList.toggle("steel", isSteelSoul);
+    }
 
     // --- Aggiorna la tab attiva ---
     const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
@@ -814,6 +831,7 @@ if (banner) {
     document.getElementById("uploadOverlay")?.classList.remove("hidden");
   }
 }
+
 
 
 
@@ -890,22 +908,30 @@ async function updateCompletionContent(selectedAct = "all") {
     let obtained = 0;
     let total = 0;
 
-    const filteredItems = (sectionData.items || []).filter(item => {
-      if (selectedAct !== "all" && Number(item.act) !== Number(selectedAct)) return false;
-      if (!window.save) return true;
+const filteredItems = (sectionData.items || []).filter(item => {
+  // 🔹 Filtra per atto
+  if (selectedAct !== "all" && Number(item.act) !== Number(selectedAct)) return false;
+  if (!window.save) return true;
 
-      const val = resolveSaveValue(window.save, item);
+  // 🔹 Filtra per tipo di salvataggio (normal / steel)
+  if (item.mode) {
+  if (!window.save && item.mode === "steel") return false;
+  if (window.save && item.mode !== window.saveMode) return false;
+}
 
-      // Filtra solo mancanti se richiesto
-      if (showMissingOnly) {
-        if (item.type === "collectable") return (val ?? 0) === 0;
-        if (["level", "min", "region-level", "region-min"].includes(item.type))
-          return (val ?? 0) < (item.required ?? 0);
-        return val !== true;
-      }
+  const val = resolveSaveValue(window.save, item);
 
-      return true;
-    });
+  // 🔹 Filtra solo mancanti se richiesto
+  if (showMissingOnly) {
+    if (item.type === "collectable") return (val ?? 0) === 0;
+    if (["level", "min", "region-level", "region-min"].includes(item.type))
+      return (val ?? 0) < (item.required ?? 0);
+    return val !== true;
+  }
+
+  return true;
+});
+
 
     filteredItems.forEach(item => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
@@ -1097,8 +1123,10 @@ async function updateMainContent(selectedAct = "all") {
 
     // ✅ Filtra per act e solo mancanti
     let filteredItems = (sectionData.items || []).filter(item =>
-      selectedAct === "all" || Number(item.act) === Number(selectedAct)
-    );
+  (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
+  matchMode(item)
+);
+
 
     if (showMissingOnly && window.save) {
       filteredItems = filteredItems.filter(item => {
@@ -1205,18 +1233,32 @@ async function updateWishesContent(selectedAct = "all") {
     ];
 
     // ✅ 1️⃣ Filtra per salvataggio
-    let filteredItems = (sectionData.items || []).filter(item => {
-      if (!window.save) return true;
-      const pair = exclusivePairs.find(p => p.includes(item.flag));
-      if (!pair) return true;
-      const [a, b] = pair;
-      const aVal = resolveSaveValue(window.save, { flag: a, type: "quest" });
-      const bVal = resolveSaveValue(window.save, { flag: b, type: "quest" });
-      const aActive = aVal === true || aVal === "completed" || aVal === "accepted";
-      const bActive = bVal === true || bVal === "completed" || bVal === "accepted";
-      if ((aActive && item.flag === b) || (bActive && item.flag === a)) return false;
-      return true;
-    });
+let filteredItems = (sectionData.items || []).filter(item => {
+  // 🔹 Filtra per tipo di salvataggio (normal / steel)
+  if (item.mode) {
+    // Nessun salvataggio → mostra solo i "normal"
+    if (!window.save && item.mode === "steel") return false;
+    // Se c'è un salvataggio → mostra solo quelli coerenti
+    if (window.save && item.mode !== window.saveMode) return false;
+  }
+
+  // 🔹 Gestione coppie esclusive (es. Huntress Quest / Runt)
+  const pair = exclusivePairs.find(p => p.includes(item.flag));
+  if (!pair) return true;
+
+  const [a, b] = pair;
+  const aVal = window.save ? resolveSaveValue(window.save, { flag: a, type: "quest" }) : false;
+  const bVal = window.save ? resolveSaveValue(window.save, { flag: b, type: "quest" }) : false;
+
+  const aActive = aVal === true || aVal === "completed" || aVal === "accepted";
+  const bActive = bVal === true || bVal === "completed" || bVal === "accepted";
+
+  if ((aActive && item.flag === b) || (bActive && item.flag === a)) return false;
+
+  return true;
+});
+
+
 
     // ✅ 2️⃣ Filtra per atto selezionato
     filteredItems = filteredItems.filter(item =>
