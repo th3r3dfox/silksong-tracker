@@ -712,6 +712,118 @@ function validateSave(obj) {
   return obj && typeof obj === "object" && obj.playerData;
 }
 
+function updateRawsaveContent() {
+  const container = document.getElementById("rawsave-output");
+  if (!container)
+    return console.warn("[updateRawsaveContent] Missing #rawsave-output");
+
+  if (!window.save) {
+    container.textContent = "⚠️ No save file loaded.";
+    return;
+  }
+
+  try {
+    container.textContent = JSON.stringify(window.save, null, 2);
+  } catch (err) {
+    container.textContent = "❌ Failed to display raw save.";
+    console.error(err);
+  }
+}
+
+// --- RAWSAVE TOOLS ---
+document.addEventListener("DOMContentLoaded", () => {
+  const copyBtn = document.getElementById("copyRawsaveBtn");
+  const downloadBtn = document.getElementById("downloadRawsaveBtn");
+  const searchInput = document.getElementById("rawsave-search");
+  const output = document.getElementById("rawsave-output");
+  const nextBtn = document.getElementById("nextMatch");
+  const prevBtn = document.getElementById("prevMatch");
+  const counter = document.getElementById("searchCounter");
+
+  // 📋 Copy JSON
+  copyBtn?.addEventListener("click", () => {
+    const text = output?.textContent || "";
+    navigator.clipboard
+      .writeText(text)
+      .then(() => showToast("📋 JSON copied to clipboard!"))
+      .catch(() => showToast("⚠️ Copy failed."));
+  });
+
+  // 💾 Download JSON
+  downloadBtn?.addEventListener("click", () => {
+    if (!window.save) return showToast("⚠️ No save loaded yet.");
+    const blob = new Blob([JSON.stringify(window.save, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "silksong-save.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // 🔍 Ricerca navigabile
+  let currentMatch = 0;
+  let matches = [];
+
+  function scrollToMatch(index) {
+    const allMarks = output.querySelectorAll("mark.search-match");
+    allMarks.forEach((m) => m.classList.remove("active-match"));
+    if (allMarks[index - 1]) {
+      allMarks[index - 1].classList.add("active-match");
+      allMarks[index - 1].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+    counter.textContent = `${index}/${matches.length}`;
+  }
+
+  searchInput?.addEventListener("input", () => {
+    const query = searchInput.value.trim();
+    const jsonText = JSON.stringify(window.save || {}, null, 2);
+    output.innerHTML = jsonText;
+    matches = [];
+    currentMatch = 0;
+    counter.textContent = "0/0";
+    if (!query) return;
+
+    const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(safeQuery, "gi");
+
+    let html = "";
+    let lastIndex = 0;
+    let match;
+    while ((match = regex.exec(jsonText)) !== null) {
+      html += jsonText.slice(lastIndex, match.index);
+      html += `<mark class="search-match">${match[0]}</mark>`;
+      lastIndex = regex.lastIndex;
+      matches.push(match.index);
+    }
+    html += jsonText.slice(lastIndex);
+    output.innerHTML = html;
+
+    if (matches.length > 0) {
+      currentMatch = 1;
+      scrollToMatch(currentMatch);
+    }
+    counter.textContent = `${currentMatch}/${matches.length}`;
+  });
+
+  nextBtn?.addEventListener("click", () => {
+    if (matches.length === 0) return;
+    currentMatch = (currentMatch % matches.length) + 1;
+    scrollToMatch(currentMatch);
+  });
+
+  prevBtn?.addEventListener("click", () => {
+    if (matches.length === 0) return;
+    currentMatch = ((currentMatch - 2 + matches.length) % matches.length) + 1;
+    scrollToMatch(currentMatch);
+  });
+});
+
 // --- Caricamento file principale ---
 async function handleSaveFile(file) {
   try {
@@ -734,6 +846,12 @@ async function handleSaveFile(file) {
       document.getElementById("uploadOverlay")?.classList.remove("hidden");
       return;
     }
+
+    document.getElementById("rawsave-output").textContent = JSON.stringify(
+      saveData,
+      null,
+      2,
+    );
 
     // ✅ Indicizza e salva globalmente
     window.save = indexFlags(saveData);
@@ -788,6 +906,7 @@ async function handleSaveFile(file) {
       essentials: updateNewTabContent,
       wishes: updateWishesContent,
       completion: updateCompletionContent,
+      rawsave: updateRawsaveContent,
     };
     updater[activeTab]?.();
 
@@ -980,6 +1099,7 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
       essentials: updateNewTabContent,
       wishes: updateWishesContent,
       completion: updateCompletionContent,
+      rawsave: updateRawsaveContent,
     };
 
     updater[selectedTab]?.(currentActFilter); // <-- applica il filtro salvato
@@ -1030,6 +1150,7 @@ window.addEventListener("DOMContentLoaded", () => {
     essentials: updateNewTabContent,
     wishes: updateWishesContent,
     completion: updateCompletionContent,
+    rawsave: updateRawsaveContent,
   };
 
   // Delay minimo per sicurezza (previene race con rendering DOM)
@@ -1379,6 +1500,7 @@ function reRenderActiveTab() {
     essentials: updateNewTabContent,
     wishes: updateWishesContent,
     completion: updateCompletionContent,
+    rawsave: updateRawsaveContent,
   };
 
   updater[activeTab]?.(currentAct);

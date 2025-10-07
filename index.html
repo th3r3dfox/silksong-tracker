@@ -103,6 +103,8 @@
         <a href="#" class="sidebar-item" data-tab="bosses">Bosses</a>
         <a href="#" class="sidebar-item" data-tab="completion">Completion</a>
         <a href="#" class="sidebar-item" data-tab="wishes">Wishes</a>
+        <h3 class="sidebar-title">UTILS</h3>
+        <a href="#" class="sidebar-item" data-tab="rawsave">Raw Save Data</a>
         <!-- aggiungerai altre voci qui -->
       </div>
     </aside>
@@ -181,6 +183,31 @@
         <section id="wishes-section" class="tab hidden">
           <h2>Wishes</h2>
           <div id="wishes-grid" class="grid"></div>
+        </section>
+
+        <section id="rawsave-section" class="tab hidden">
+          <div class="rawsave-container">
+            <div class="rawsave-header">
+              <h2>Raw Save Data</h2>
+              <div class="rawsave-actions">
+                <input
+                  type="text"
+                  id="rawsave-search"
+                  placeholder="Search..."
+                  class="rawsave-search"
+                />
+                <span id="searchCounter" class="search-counter">0/0</span>
+                <button id="prevMatch" class="rawsave-btn">◀</button>
+                <button id="nextMatch" class="rawsave-btn">▶</button>
+                <button id="copyRawsaveBtn" class="rawsave-btn">Copy</button>
+                <button id="downloadRawsaveBtn" class="rawsave-btn">
+                  Download
+                </button>
+              </div>
+            </div>
+
+            <pre id="rawsave-output">No save loaded.</pre>
+          </div>
         </section>
 
         <!-- ✅ Scripts -->
