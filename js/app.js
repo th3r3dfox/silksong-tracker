@@ -32,7 +32,7 @@ const closeJsonBtn = document.getElementById("closeJsonBtn");
 const SUPPORTED_LANGS = ["it", "en"];
 function systemLang() {
   const prefs = (navigator.languages || [navigator.language || "en"]).map((s) =>
-    s.toLowerCase()
+    s.toLowerCase(),
   );
   for (const p of prefs) {
     const base = p.split("-")[0];
@@ -146,7 +146,7 @@ function applyFooterTranslations() {
     "ftPill",
     typeof versionPillText === "function"
       ? versionPillText()
-      : `${d.wip} • v${APP_VERSION}`
+      : `${d.wip} • v${APP_VERSION}`,
   );
   setTxt("ftWipDesc", d.wipDesc);
   setTxt("ftCreditsTitle", d.creditsTitle);
@@ -284,7 +284,7 @@ function escapeHtml(str) {
         ">": "&gt;",
         '"': "&quot;",
         "'": "&#39;",
-      }[m])
+      })[m],
   );
 }
 function getAtPath(obj, path) {
@@ -417,7 +417,7 @@ function resolveItemValue(saveObj, item) {
     const coll = pickCollectionByNamespace(saveObj, ns);
     if (Array.isArray(coll) && coll.length) {
       const hitScoped = coll.find(
-        (n) => String(n?.Name ?? n?.name ?? "").toLowerCase() === qName
+        (n) => String(n?.Name ?? n?.name ?? "").toLowerCase() === qName,
       );
       if (hitScoped) {
         const v = getAtPath(hitScoped, qPath);
@@ -508,7 +508,7 @@ function renderEmptyFields() {
     if (field.target) return;
     const li = document.createElement("li");
     li.innerHTML = `<strong>${escapeHtml(
-      tr(field.label)
+      tr(field.label),
     )}:</strong> <span id="field-${idx}">—</span>`;
     listEl.appendChild(li);
   });
@@ -556,7 +556,7 @@ function buildTabs() {
 function updateTabsUI() {
   if (!tabsEl) return;
   [...tabsEl.querySelectorAll(".tab")].forEach((btn) =>
-    btn.classList.remove("active")
+    btn.classList.remove("active"),
   );
   const idx = (groupsCfg.groups || []).findIndex((g) => g.id === activeGroupId);
   if (idx >= 0) tabsEl.children[idx]?.classList.add("active");
@@ -746,7 +746,7 @@ savePathDisplay?.addEventListener("click", () => {
       savePathDisplay.style.borderColor = "#28a745";
       setTimeout(
         () => (savePathDisplay.style.borderColor = "rgba(255,255,255,0.25)"),
-        900
+        900,
       );
     })
     .catch(console.error);
@@ -805,7 +805,7 @@ savePathDisplay?.addEventListener("click", () => {
 /* === Spoiler UI state === */
 let SPOILERS_ON = JSON.parse(localStorage.getItem("spoilersOn") || "false");
 let SHOW_ONLY_MISSING = JSON.parse(
-  localStorage.getItem("onlyMissing") || "false"
+  localStorage.getItem("onlyMissing") || "false",
 );
 
 // CSS minimo per censura inline (spoiler)
@@ -931,7 +931,7 @@ function appendInlineMeta(li, item, isDone) {
 
 function applyVisibilityFilters() {
   const uls = document.querySelectorAll(
-    "#sectionsStack ul.checklist, #sectionsStack ul.item-list"
+    "#sectionsStack ul.checklist, #sectionsStack ul.item-list",
   );
 
   uls.forEach((ul) => {
@@ -940,7 +940,7 @@ function applyVisibilityFilters() {
       doneCount = 0;
 
     ul.querySelectorAll(
-      ":scope > li.section-complete-banner, :scope > li.empty-msg"
+      ":scope > li.section-complete-banner, :scope > li.empty-msg",
     ).forEach((n) => n.remove());
 
     ul.querySelectorAll(":scope > li").forEach((li) => {

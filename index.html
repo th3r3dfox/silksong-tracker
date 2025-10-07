@@ -1,210 +1,288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Silksong Tracker</title>
-    <meta name="description" content="Silksong Tracker - analyze your Hollow Knight: Silksong save files and discover your progress, collectibles, and completion percentage.">
-  <meta name="keywords" content="Hollow Knight, Silksong, Save Analyzer, Silksong Tracker, Progress, Collectibles, Checklist, Completion">
-  <meta name="author" content="th3r3dfox">
-  <meta name="robots" content="index, follow">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Silksong Tracker</title>
+    <meta
+      name="description"
+      content="Silksong Tracker - analyze your Hollow Knight: Silksong save files and discover your progress, collectibles, and completion percentage."
+    />
+    <meta
+      name="keywords"
+      content="Hollow Knight, Silksong, Save Analyzer, Silksong Tracker, Progress, Collectibles, Checklist, Completion"
+    />
+    <meta name="author" content="th3r3dfox" />
+    <meta name="robots" content="index, follow" />
 
-  <!-- canonical only (no hreflang) -->
-  <link rel="canonical" href="https://th3r3dfox.github.io/silksong-tracker/">
+    <!-- canonical only (no hreflang) -->
+    <link
+      rel="canonical"
+      href="https://th3r3dfox.github.io/silksong-tracker/"
+    />
 
-  <!-- social sharing (facoltativo ma consigliato) -->
-  <meta property="og:title" content="Silksong Tracker">
-  <meta property="og:description" content="Analyze your Silksong save files and track progress, collectibles, and completion.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://th3r3dfox.github.io/silksong-tracker/">
-  <meta property="og:image" content="https://th3r3dfox.github.io/silksong-tracker/img/preview.png">
+    <!-- social sharing (facoltativo ma consigliato) -->
+    <meta property="og:title" content="Silksong Tracker" />
+    <meta
+      property="og:description"
+      content="Analyze your Silksong save files and track progress, collectibles, and completion."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://th3r3dfox.github.io/silksong-tracker/"
+    />
+    <meta
+      property="og:image"
+      content="https://th3r3dfox.github.io/silksong-tracker/img/preview.png"
+    />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Silksong Tracker">
-  <meta name="twitter:description" content="Analyze your Silksong save files and track progress, collectibles, and completion.">
-  <meta name="twitter:image" content="https://th3r3dfox.github.io/silksong-tracker/img/preview.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Silksong Tracker" />
+    <meta
+      name="twitter:description"
+      content="Analyze your Silksong save files and track progress, collectibles, and completion."
+    />
+    <meta
+      name="twitter:image"
+      content="https://th3r3dfox.github.io/silksong-tracker/img/preview.png"
+    />
 
+    <!-- Favicon (file presente in img/favicon.png) -->
+    <link rel="icon" type="image/png" href="img/favicon.png" />
 
-  <!-- Favicon (file presente in img/favicon.png) -->
-  <link rel="icon" type="image/png" href="img/favicon.png" />
+    <!-- Stili -->
+    <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Stili -->
-  <link rel="stylesheet" href="css/styles.css" />
+    <!-- CryptoJS (necessario al decoder) -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+      defer
+    ></script>
 
-  <!-- CryptoJS (necessario al decoder) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" defer></script>
+    <!-- App -->
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Titolo principale -->
+      <h1
+        class="site-title compact"
+        aria-label="Save Completion Analyzer for Silksong"
+      >
+        <span class="title-main">Save Completion Analyzer</span>
+        <span class="title-sub">for Silksong</span>
+      </h1>
 
-  <!-- App -->
-  <script type="module" src="js/app.js"></script>
-</head>
-<body>
-  <div class="container">
-
-    <!-- Titolo principale -->
-    <h1 class="site-title compact" aria-label="Save Completion Analyzer for Silksong">
-      <span class="title-main">Save Completion Analyzer</span>
-      <span class="title-sub">for Silksong</span>
-    </h1>
-
-    <!-- Barra superiore: percorso + selezione file -->
-    <header class="topbar" aria-label="Caricamento salvataggio">
-  <div class="save-path">
-    <div id="savePathDisplay" class="save-display" title="Clicca per copiare">
-      %userprofile%\appdata\LocalLow\Team Cherry\Hollow Knight Silksong
-    </div>
-  </div>
-
-  <!-- testo tra percorso e file chooser -->
-  <p id="chooseSaveNote" class="upload-hint">
-    Choose the correct save file: <code>user*.dat</code> (e.g. <code>user1.dat</code>).
-  </p>
-
-  <div class="file-chooser">
-    <button id="browseBtn" type="button" class="choose-btn">📂 Choose Save File...</button>
-    <input type="file" id="fileInput" accept=".json,.dat,.sav,.bin" hidden />
-    <a
-  id="steamCloudBtn"
-  class="btn-ghost"
-  href="https://store.steampowered.com/account/remotestorageapp/?appid=1030300"
-  target="_blank" rel="noopener"
-  title="Open the game’s Steam Cloud save page"
-  style="margin-left:10px;"
->
-  Steam Cloud…
-</a>
-    <button id="showJsonBtn" type="button" class="btn-ghost small" disabled>Mostra JSON</button>
-  </div>
-</header>
-
-    <!-- Hero: stato di gioco + metadati -->
-    <section class="hero" aria-label="Stato di gioco">
-      <h2 class="hk-title">
-        Game Status <span id="gameStatusPct" class="pill">0%</span>
-      </h2>
-
-      <ul class="meta">
-        <li>⏺ Time Played: <span id="timePlayedText">—</span></li>
-        <li>Save Version: <span id="saveVersionText">—</span></li>
-      </ul>
-
-      <hr class="ornament" />
-
-      <div class="stats-row" role="group" aria-label="Statistiche principali">
-        <div class="stat">
-          <div class="label">Health:</div>
-          <div class="value" id="healthValue">—</div>
-        </div>
-        <div class="stat">
-          <div class="label">Max Silk:</div>
-          <div class="value" id="maxsetaValue">—</div>
-        </div>
-        <div class="stat">
-          <div class="label">Silk Hearts:</div>
-          <div class="value" id="setaValue">—</div>
-        </div>
-        <div class="stat">
-          <div class="label">Rosaries:</div>
-          <div class="value" id="rosariValue">—</div>
-        </div>
-        <div class="stat">
-          <div class="label">Sheel Shards:</div>
-          <div class="value" id="scheggeValue">—</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tabs dei gruppi -->
-    <nav id="tabs" class="tabs" aria-label="Categorie"></nav>
-
-    <!-- Sezioni (empilate) che il JS popola -->
-    <section id="sectionsStack" class="sections-stack" aria-label="Sezioni"></section>
-
-    <noscript>Abilita JavaScript per utilizzare il decoder.</noscript>
-  
-    <!-- Modal JSON decifrato -->
-    <div id="jsonModal" class="modal" aria-hidden="true" role="dialog" aria-label="Salvataggio decifrato">
-      <div class="modal__backdrop" data-close="1"></div>
-      <div class="modal__dialog" role="document">
-        <header class="modal__head">
-          <h3 class="modal__title">Json Log</h3>
-          <div class="modal__actions">
-            <button id="copyJsonBtn" class="btn-ghost tiny" title="Copia">Copy</button>
-            <button id="downloadJsonBtn" class="btn-ghost tiny" title="Scarica">Download</button>
-            <button id="closeJsonBtn" class="btn-ghost tiny" aria-label="Chiudi">✕</button>
+      <!-- Barra superiore: percorso + selezione file -->
+      <header class="topbar" aria-label="Caricamento salvataggio">
+        <div class="save-path">
+          <div
+            id="savePathDisplay"
+            class="save-display"
+            title="Clicca per copiare"
+          >
+            %userprofile%\appdata\LocalLow\Team Cherry\Hollow Knight Silksong
           </div>
-        </header>
-        <pre id="rawModalOutput" class="modal__code">—</pre>
+        </div>
+
+        <!-- testo tra percorso e file chooser -->
+        <p id="chooseSaveNote" class="upload-hint">
+          Choose the correct save file: <code>user*.dat</code> (e.g.
+          <code>user1.dat</code>).
+        </p>
+
+        <div class="file-chooser">
+          <button id="browseBtn" type="button" class="choose-btn">
+            📂 Choose Save File...
+          </button>
+          <input
+            type="file"
+            id="fileInput"
+            accept=".json,.dat,.sav,.bin"
+            hidden
+          />
+          <a
+            id="steamCloudBtn"
+            class="btn-ghost"
+            href="https://store.steampowered.com/account/remotestorageapp/?appid=1030300"
+            target="_blank"
+            rel="noopener"
+            title="Open the game’s Steam Cloud save page"
+            style="margin-left: 10px"
+          >
+            Steam Cloud…
+          </a>
+          <button
+            id="showJsonBtn"
+            type="button"
+            class="btn-ghost small"
+            disabled
+          >
+            Mostra JSON
+          </button>
+        </div>
+      </header>
+
+      <!-- Hero: stato di gioco + metadati -->
+      <section class="hero" aria-label="Stato di gioco">
+        <h2 class="hk-title">
+          Game Status <span id="gameStatusPct" class="pill">0%</span>
+        </h2>
+
+        <ul class="meta">
+          <li>⏺ Time Played: <span id="timePlayedText">—</span></li>
+          <li>Save Version: <span id="saveVersionText">—</span></li>
+        </ul>
+
+        <hr class="ornament" />
+
+        <div class="stats-row" role="group" aria-label="Statistiche principali">
+          <div class="stat">
+            <div class="label">Health:</div>
+            <div class="value" id="healthValue">—</div>
+          </div>
+          <div class="stat">
+            <div class="label">Max Silk:</div>
+            <div class="value" id="maxsetaValue">—</div>
+          </div>
+          <div class="stat">
+            <div class="label">Silk Hearts:</div>
+            <div class="value" id="setaValue">—</div>
+          </div>
+          <div class="stat">
+            <div class="label">Rosaries:</div>
+            <div class="value" id="rosariValue">—</div>
+          </div>
+          <div class="stat">
+            <div class="label">Sheel Shards:</div>
+            <div class="value" id="scheggeValue">—</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tabs dei gruppi -->
+      <nav id="tabs" class="tabs" aria-label="Categorie"></nav>
+
+      <!-- Sezioni (empilate) che il JS popola -->
+      <section
+        id="sectionsStack"
+        class="sections-stack"
+        aria-label="Sezioni"
+      ></section>
+
+      <noscript>Abilita JavaScript per utilizzare il decoder.</noscript>
+
+      <!-- Modal JSON decifrato -->
+      <div
+        id="jsonModal"
+        class="modal"
+        aria-hidden="true"
+        role="dialog"
+        aria-label="Salvataggio decifrato"
+      >
+        <div class="modal__backdrop" data-close="1"></div>
+        <div class="modal__dialog" role="document">
+          <header class="modal__head">
+            <h3 class="modal__title">Json Log</h3>
+            <div class="modal__actions">
+              <button id="copyJsonBtn" class="btn-ghost tiny" title="Copia">
+                Copy
+              </button>
+              <button
+                id="downloadJsonBtn"
+                class="btn-ghost tiny"
+                title="Scarica"
+              >
+                Download
+              </button>
+              <button
+                id="closeJsonBtn"
+                class="btn-ghost tiny"
+                aria-label="Chiudi"
+              >
+                ✕
+              </button>
+            </div>
+          </header>
+          <pre id="rawModalOutput" class="modal__code">—</pre>
+        </div>
       </div>
     </div>
+    <footer id="offtopic" role="contentinfo" aria-labelledby="ftTitle">
+      <div class="footer-wrap">
+        <!-- 1) Stato progetto -->
+        <section class="foot-block">
+          <h3 class="foot-title" id="ftTitle">Off Topic</h3>
+          <p class="pill" id="ftPill">Work in Progress • v1.0.0</p>
+          <p class="foot-text" id="ftWipDesc">
+            Questo progetto è in sviluppo attivo. Alcune sezioni potrebbero
+            cambiare o ampliarsi con i prossimi aggiornamenti.
+          </p>
+        </section>
 
-  </div>
-  <footer id="offtopic" role="contentinfo" aria-labelledby="ftTitle">
-  <div class="footer-wrap">
-    <!-- 1) Stato progetto -->
-    <section class="foot-block">
-      <h3 class="foot-title" id="ftTitle">Off Topic</h3>
-      <p class="pill" id="ftPill">Work in Progress • v1.0.0</p>
-      <p class="foot-text" id="ftWipDesc">
-        Questo progetto è in sviluppo attivo. Alcune sezioni potrebbero cambiare o ampliarsi con i prossimi aggiornamenti.
-      </p>
-    </section>
+        <!-- 2) Crediti -->
+        <section class="foot-block">
+          <h4 class="foot-subtitle" id="ftCreditsTitle">Crediti</h4>
+          <p class="foot-text">
+            <span id="ftCreditsPrefix">Sito realizzato da</span>
+            <a href="#" id="creditLink" target="_blank" rel="noopener">
+              <strong id="creditName">[IL_TUO_NICK]</strong> </a
+            >.
+          </p>
+        </section>
 
-    <!-- 2) Crediti -->
-    <section class="foot-block">
-      <h4 class="foot-subtitle" id="ftCreditsTitle">Crediti</h4>
-      <p class="foot-text">
-        <span id="ftCreditsPrefix">Sito realizzato da</span>
-        <a href="#" id="creditLink" target="_blank" rel="noopener">
-          <strong id="creditName">[IL_TUO_NICK]</strong>
-        </a>.
-      </p>
-    </section>
+        <!-- 3) In memoria -->
+        <section class="foot-block">
+          <h4 class="foot-subtitle" id="ftMemTitle">In memoria</h4>
+          <p class="foot-text" id="ftMemText">
+            Un pensiero a chi ha dato il via alla tradizione degli analyzer per
+            Hollow Knight. Il primo creatore dell’Analyzer originale ci ha
+            lasciati, ma la sua passione vive in ogni strumento che aiuta la
+            community a esplorare, capire e condividere.
+            <em>Grazie per l’ispirazione.</em>
+          </p>
+        </section>
+      </div>
 
-    <!-- 3) In memoria -->
-    <section class="foot-block">
-      <h4 class="foot-subtitle" id="ftMemTitle">In memoria</h4>
-      <p class="foot-text" id="ftMemText">
-        Un pensiero a chi ha dato il via alla tradizione degli analyzer per Hollow Knight. Il primo creatore dell’Analyzer originale ci ha lasciati, ma la sua passione vive in ogni strumento che aiuta la community a esplorare, capire e condividere. <em>Grazie per l’ispirazione.</em>
-      </p>
-    </section>
-  </div>
+      <div class="foot-fine">
+        <small id="ftLegal">
+          Progetto non ufficiale, senza affiliazione con Team Cherry. Tutti i
+          marchi appartengono ai rispettivi proprietari.
+        </small>
+      </div>
+    </footer>
 
-  <div class="foot-fine">
-    <small id="ftLegal">
-      Progetto non ufficiale, senza affiliazione con Team Cherry. Tutti i marchi appartengono ai rispettivi proprietari.
-    </small>
-  </div>
-</footer>
+    <button id="toTop" aria-label="Torna all'inizio"></button>
+    <script>
+      (function () {
+        const btn = document.getElementById("toTop");
+        const SHOW_AFTER = 200; // pixel di scroll prima che appaia
 
-</footer>
+        function onScroll() {
+          if (window.scrollY > SHOW_AFTER) {
+            btn.classList.add("show");
+          } else {
+            btn.classList.remove("show");
+          }
+        }
 
-</footer>
-<button id="toTop" aria-label="Torna all'inizio"></button>
-<script>
-  (function(){
-    const btn = document.getElementById("toTop");
-    const SHOW_AFTER = 200; // pixel di scroll prima che appaia
+        function scrollToTop() {
+          const reduceMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+          ).matches;
+          window.scrollTo({
+            top: 0,
+            behavior: reduceMotion ? "auto" : "smooth",
+          });
+        }
 
-    function onScroll(){
-      if(window.scrollY > SHOW_AFTER){
-        btn.classList.add("show");
-      } else {
-        btn.classList.remove("show");
-      }
-    }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        btn.addEventListener("click", scrollToTop);
 
-    function scrollToTop(){
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    btn.addEventListener("click", scrollToTop);
-
-    // inizializza stato corretto
-    onScroll();
-  })();
-</script>
-
-</body>
+        // inizializza stato corretto
+        onScroll();
+      })();
+    </script>
+  </body>
 </html>
