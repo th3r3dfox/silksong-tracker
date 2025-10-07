@@ -718,35 +718,17 @@ function validateSave(obj) {
 }
 
 // --- Caricamento file principale ---
-async function handleSaveFile(fileOrHandle) {
+async function handleSaveFile(file) {
   try {
-    let file, buffer, isDat;
-
-    // 🔹 Se riceviamo un FileSystemFileHandle (nuova API)
-    if (fileOrHandle && fileOrHandle.getFile) {
-      try {
-        file = await fileOrHandle.getFile();
-        window.lastFileHandle = fileOrHandle;
-      } catch (err) {
-        console.warn("Permission or access error:", err);
-        showToast(
-          "⚠️ Browser permission issue. Please reselect your save file.",
-        );
-        document.getElementById("uploadOverlay")?.classList.remove("hidden");
-        return;
-      }
-    } else {
-      file = fileOrHandle;
-    }
-
     if (!file) {
       showToast("❌ No file selected.");
       document.getElementById("uploadOverlay")?.classList.remove("hidden");
       return;
     }
 
-    buffer = await file.arrayBuffer();
-    isDat = file.name.toLowerCase().endsWith(".dat");
+    const buffer = await file.arrayBuffer();
+    const isDat = file.name.toLowerCase().endsWith(".dat");
+
 
     // 🔍 Decodifica file
     const saveData = isDat
@@ -765,27 +747,6 @@ async function handleSaveFile(fileOrHandle) {
     window.lastSaveBuffer = buffer;
     window.lastSaveIsDat = isDat;
 
-    // 🔒 File System Access (permessi persistenti)
-    if (!window.lastFileHandle && "showOpenFilePicker" in window) {
-      try {
-        const [handle] = await window.showOpenFilePicker({
-          types: [
-            {
-              description: "Silksong Save",
-              accept: { "application/octet-stream": [".dat"] },
-            },
-          ],
-        });
-        window.lastFileHandle = handle;
-      } catch (err) {
-        console.warn("User cancelled or API not supported:", err);
-        showToast(
-          "⚠️ Browser permission issue. Please reselect your save file.",
-        );
-        document.getElementById("uploadOverlay")?.classList.remove("hidden");
-        return;
-      }
-    }
 
     // 🔘 Mostra bottone di refresh
     const refreshBtn = document.getElementById("refreshSaveBtn");
@@ -849,48 +810,25 @@ async function handleSaveFile(fileOrHandle) {
   }
 }
 
+// --- Refresh manuale ---
 async function refreshSaveFile() {
   try {
-    if (window.lastFileHandle) {
-      // ✅ Legge di nuovo il file direttamente dal disco
-      const file = await window.lastFileHandle.getFile();
-      const buffer = await file.arrayBuffer();
-      const isDat = file.name.toLowerCase().endsWith(".dat");
-
-      const saveData = isDat
-        ? decodeSilksongSave(buffer)
-        : JSON.parse(new TextDecoder("utf-8").decode(buffer));
-
-      window.save = indexFlags(saveData);
-
-      const activeTab = document.querySelector(".sidebar-item.is-active")
-        ?.dataset.tab;
-      const updater = {
-        bosses: updateBossesContent,
-        main: updateMainContent,
-        essentials: updateNewTabContent,
-        wishes: updateWishesContent,
-        completion: updateCompletionContent,
-      };
-      updater[activeTab]?.();
-
-      applyMissingFilter?.();
-      showToast("✅ Save refreshed from disk!");
+    if (!window.lastSaveFile) {
+      showToast("⚠️ No save file loaded yet.");
+      document.getElementById("fileInput").click(); // apre la selezione file
       return;
     }
 
-    // 🧩 fallback per browser che non supportano la nuova API
-    if (window.lastSaveFile) {
-      showToast("📂 Browser limitation — please reselect your save file.");
-      document.getElementById("fileInput").click();
-    } else {
-      showToast("⚠️ No save file loaded yet.");
-    }
+    // 🔄 Ricarica lo stesso file già in memoria
+    showToast("🔄 Reloading save file...");
+    await handleSaveFile(window.lastSaveFile);
+
   } catch (err) {
     console.error("[refreshSaveFile]", err);
     showToast("❌ Failed to refresh save file");
   }
 }
+
 
 async function updateCompletionContent(selectedAct = "all") {
   const container = document.getElementById("completion-grid");
