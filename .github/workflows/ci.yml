@@ -17,6 +17,8 @@ jobs:
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: [lint]
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
     permissions:
       pages: write
