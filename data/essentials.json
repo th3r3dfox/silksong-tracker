@@ -541,44 +541,6 @@
       "link": "https://hollowknight.wiki/w/Craft_Metal"
     }
   ]
-},
-{
-  "id": "category-fleas",
-  "label": "Fleas",
-  "desc": "Small lost creatures scattered throughout Pharloom, rescued by Hornet during her journey.",
-  "contrib": 0,
-  "items": [
-    { "id": "lost-flea-1", "label": "Lost Flea #1", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Bone_06", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-2", "label": "Lost Flea #2", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Dock_16", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-3", "label": "Lost Flea #3", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Bone_East_05", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-17", "label": "Lost Flea #4", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Dock_03d", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-5", "label": "Lost Flea #5", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Ant_03", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-4", "label": "Lost Flea #6", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Bone_East_17b", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-9", "label": "Lost Flea #7", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Bone_East_10_Church", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-14", "label": "Lost Flea #8", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Crawl_06", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-6", "label": "Lost Flea #9", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Greymoor_15b", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-7", "label": "Lost Flea #10", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Greymoor_06", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-29", "label": "Kratt #11", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "CaravanLechReturnedToCaravan", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-13", "label": "Lost Flea #12", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Belltown_04", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-8", "label": "Lost Flea #13", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Shellwood_03", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-10", "label": "Lost Flea #14", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Coral_35", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-11", "label": "Lost Flea #15", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Dust_12", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-16", "label": "Lost Flea #16", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Shadow_28", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-12", "label": "Lost Flea #17", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Dust_09", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-27", "label": "Lost Flea #18", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Slab_06", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-18", "label": "Lost Flea #19", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Under_23", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-26", "label": "Lost Flea #20", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Under_21", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-20", "label": "Lost Flea #21", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Song_14", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-24", "label": "Lost Flea #22", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Song_11", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-19", "label": "Lost Flea #23", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Shadow_10", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-28", "label": "Giant Flea #24", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "tamedGiantFlea", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-15", "label": "Lost Flea #25", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Slab_Cell", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-27", "label": "Lost Flea #26", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Slab_06", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-22", "label": "Lost Flea #27", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Peak_05c", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-21", "label": "Lost Flea #28", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Coral_24", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-30", "label": "(Vog) #29", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "MetTroupeHunterWild", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
-    { "id": "lost-flea-25", "label": "Lost Flea #30", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Library_01", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" }
-  ]
 }
 
 
