@@ -1901,3 +1901,41 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 .hidden {
   display: none !important;
 }
+
+#modeBanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, rgba(255,255,255,0.05), rgba(255,255,255,0.08));
+  color: #e6b37b;
+  font-family: 'TrajanPro', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  text-shadow: 0 0 6px rgba(230, 179, 123, 0.4), 0 0 12px rgba(200, 140, 80, 0.3);
+  filter: drop-shadow(0 0 4px rgba(230, 179, 123, 0.3));
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+
+#modeBanner.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modeBanner.steel {
+color: #9aa7b1;
+text-shadow: 0 0 6px #ccd5db, 0 0 12px #596066;
+}
+
+#modeBanner .mode-icon {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+}

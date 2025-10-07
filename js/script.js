@@ -772,6 +772,26 @@ async function handleSaveFile(fileOrHandle) {
     const shards = saveData.playerData?.ShellShards ?? 0;
     safeSetText("rosariesValue", String(rosaries));
     safeSetText("shardsValue", String(shards));
+// --- Rileva modalità di gioco ---
+// --- Rileva modalità di gioco ---
+const modeValue = saveData.playerData?.permadeathMode ?? 0;
+const isSteelSoul =
+  modeValue === 1 ||
+  saveData.playerData?.isSteelSoulMode === true ||
+  saveData.playerData?.SteelSoulMode === true ||
+  saveData.playerData?.GameMode === "SteelSoul";
+
+const banner = document.getElementById("modeBanner");
+if (banner) {
+  banner.innerHTML = isSteelSoul
+    ? `<img src="${BASE_PATH}/assets/icons/Steel_Soul_Icon.png" alt="Steel Soul" class="mode-icon"> STEEL SOUL SAVE LOADED`
+    : `NORMAL SAVE LOADED`;
+  banner.classList.remove("hidden");
+  banner.classList.toggle("steel", isSteelSoul);
+}
+
+
+
 
     // --- Aggiorna la tab attiva ---
     const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
