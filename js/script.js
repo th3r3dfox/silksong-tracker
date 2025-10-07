@@ -63,7 +63,7 @@ async function updateBossesContent(selectedAct = "all") {
           ? (val ?? 0) >= (item.required ?? 0)
           : item.type === "collectable"
             ? (val ?? 0) > 0
-            : val === true;
+            : (val === true || val === "collected" || val === "deposited");
       if (isUnlocked) obtained++;
     });
 
@@ -211,7 +211,7 @@ async function updateNewTabContent(selectedAct = "all") {
           ? (val ?? 0) >= (item.required ?? 0)
           : item.type === "collectable"
             ? (val ?? 0) > 0
-            : val === true;
+            : (val === true || val === "collected" || val === "deposited");
 
       if (item.exclusiveGroup) {
         exclusiveGroups.add(item.exclusiveGroup);
@@ -494,6 +494,21 @@ if (item.type === "journal") {
   return data.HasBeenSeen || (data.Kills ?? 0) > 0;
 }
 
+  // Relics (Choral Commandments, Weaver Effigies, etc.)
+  if (item.type === "relic" && item.flag) {
+    const list = save?.Relics?.savedData || save?.playerData?.Relics?.savedData || [];
+    const entry = list.find(e => e.Name === item.flag);
+    if (!entry) return false;
+
+    const data = entry.Data || {};
+
+    if (data.IsDeposited === true) return "deposited";
+    if (data.IsCollected === true) return "collected";
+
+    return false;
+  }
+
+
 
 
 
@@ -569,7 +584,11 @@ if (item.act) {
     } else if (item.type === "quest") {
       isDone = value === "completed" || value === true;
       isAccepted = value === "accepted";
-    } else {
+    } 
+    else if (item.type === "relic") {
+  isDone = value === "deposited";     // verde = consegnata
+  isAccepted = value === "collected"; // giallo = trovata ma non depositata
+    }else {
       isDone = value === true;
     }
 
@@ -675,70 +694,228 @@ function validateSave(obj) {
   return obj && typeof obj === "object" && obj.playerData;
 }
 
-async function handleSaveFile(file) {
-  const reader = new FileReader();
-  reader.onload = async evt => {
-    try {
-      const buffer = evt.target.result;
+// --- Caricamento file principale ---
+async function handleSaveFile(fileOrHandle) {
+  try {
+    let file, buffer, isDat;
 
-      // 🔍 Riconosce se è un file .dat o un JSON
+    // 🔹 Se riceviamo un FileSystemFileHandle (nuova API)
+    if (fileOrHandle && fileOrHandle.getFile) {
+      file = await fileOrHandle.getFile();
+      window.lastFileHandle = fileOrHandle; // salva il riferimento persistente
+    } else {
+      // 🔹 Altrimenti è un normale File (da input)
+      file = fileOrHandle;
+    }
+
+    if (!file) {
+      showToast("❌ No file selected.");
+      return;
+    }
+
+    buffer = await file.arrayBuffer();
+    isDat = file.name.toLowerCase().endsWith(".dat");
+
+    // 🔍 Decodifica file
+    const saveData = isDat
+      ? decodeSilksongSave(buffer)
+      : JSON.parse(new TextDecoder("utf-8").decode(buffer));
+
+    if (!validateSave(saveData)) {
+      showToast("❌ Invalid or corrupted save file");
+      return;
+    }
+
+    // ✅ Indicizza e salva globalmente
+    window.save = indexFlags(saveData);
+    window.lastSaveFile = file;
+    window.lastSaveBuffer = buffer;
+    window.lastSaveIsDat = isDat;
+
+    // 🔒 Se il browser supporta File System Access, chiedi permesso e memorizza l’handle
+    if (!window.lastFileHandle && "showOpenFilePicker" in window) {
+      try {
+        const [handle] = await window.showOpenFilePicker({
+          types: [{ description: "Silksong Save", accept: { "application/octet-stream": [".dat"] } }],
+        });
+        window.lastFileHandle = handle;
+      } catch (err) {
+        console.warn("User cancelled or API not supported:", err);
+      }
+    }
+
+    // 🔘 Mostra bottone di refresh
+    const refreshBtn = document.getElementById("refreshSaveBtn");
+    if (refreshBtn) refreshBtn.classList.remove("hidden");
+
+    // --- Aggiorna statistiche UI ---
+    const completion = saveData.playerData?.completionPercentage ?? 0;
+    const seconds = saveData.playerData?.playTime ?? 0;
+    const hours = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    safeSetText("completionValue", `${completion}%`);
+    safeSetText("playtimeValue", `${hours}h ${mins}m`);
+
+    const rosaries = saveData.playerData?.geo ?? 0;
+    const shards = saveData.playerData?.ShellShards ?? 0;
+    safeSetText("rosariesValue", String(rosaries));
+    safeSetText("shardsValue", String(shards));
+
+    // --- Aggiorna la tab attiva ---
+    const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
+    const updater = {
+      bosses: updateBossesContent,
+      main: updateMainContent,
+      essentials: updateNewTabContent,
+      wishes: updateWishesContent,
+      completion: updateCompletionContent,
+    };
+    updater[activeTab]?.();
+
+    applyMissingFilter?.();
+    showToast("✅ Save file loaded successfully!");
+    document.getElementById("uploadOverlay").classList.add("hidden");
+
+  } catch (err) {
+    console.error("[save] Decode error:", err);
+    showToast("❌ Failed to decode Silksong save file");
+  }
+}
+
+
+async function refreshSaveFile() {
+  try {
+    if (window.lastFileHandle) {
+      // ✅ Legge di nuovo il file direttamente dal disco
+      const file = await window.lastFileHandle.getFile();
+      const buffer = await file.arrayBuffer();
       const isDat = file.name.toLowerCase().endsWith(".dat");
 
-      let saveData;
-      if (isDat) {
-        saveData = decodeSilksongSave(buffer);
-      } else {
-        saveData = JSON.parse(new TextDecoder("utf-8").decode(buffer));
-      }
+      const saveData = isDat
+        ? decodeSilksongSave(buffer)
+        : JSON.parse(new TextDecoder("utf-8").decode(buffer));
 
-      if (!validateSave(saveData)) {
-        showToast("❌ Invalid or corrupted save file");
-        return;
-      }
-
-      // ✅ Indicizza e salva globalmente
       window.save = indexFlags(saveData);
 
-      // --- Aggiorna statistiche
-      const completion = saveData.playerData?.completionPercentage ?? 0;
-      const seconds = saveData.playerData?.playTime ?? 0;
-      const hours = Math.floor(seconds / 3600);
-      const mins = Math.floor((seconds % 3600) / 60);
-      safeSetText("completionValue", `${completion}%`);
-      safeSetText("playtimeValue", `${hours}h ${mins}m`);
-
-      const rosaries = saveData.playerData?.geo ?? 0;
-      const shards = saveData.playerData?.ShellShards ?? 0;
-      safeSetText("rosariesValue", String(rosaries));
-      safeSetText("shardsValue", String(shards));
-
-      // --- Aggiorna la tab attiva
       const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
       const updater = {
         bosses: updateBossesContent,
         main: updateMainContent,
         essentials: updateNewTabContent,
         wishes: updateWishesContent,
+        completion: updateCompletionContent,
       };
       updater[activeTab]?.();
 
-      // --- Applica filtri e chiudi overlay
       applyMissingFilter?.();
-      showToast("✅ Save file loaded successfully!");
-      document.getElementById("uploadOverlay").classList.add("hidden");
-
-    } catch (err) {
-      console.error("[save] Decode error:", err);
-      showToast("❌ Failed to decode Silksong save file");
+      showToast("✅ Save refreshed from disk!");
+      return;
     }
-  };
 
-  // ✅ Legge sempre come ArrayBuffer (gestisce .dat e JSON)
-  reader.readAsArrayBuffer(file);
+    // 🧩 fallback per browser che non supportano la nuova API
+    if (window.lastSaveFile) {
+      showToast("📂 Browser limitation — please reselect your save file.");
+      document.getElementById("fileInput").click();
+    } else {
+      showToast("⚠️ No save file loaded yet.");
+    }
+
+  } catch (err) {
+    console.error("[refreshSaveFile]", err);
+    showToast("❌ Failed to refresh save file");
+  }
 }
 
 
 
+
+
+
+async function updateCompletionContent(selectedAct = "all") {
+  const container = document.getElementById("completion-grid");
+  if (!container) return console.warn("[updateCompletionContent] Missing #completion-grid in DOM");
+
+  // 📦 Carica il file JSON
+  const response = await fetch("data/completion.json?" + Date.now());
+  const completionData = await response.json();
+
+  const spoilerOn = document.getElementById("spoilerToggle")?.checked;
+  const showMissingOnly = document.getElementById("missingToggle")?.checked;
+  container.innerHTML = "";
+
+  completionData.forEach(sectionData => {
+    const section = document.createElement("div");
+    section.className = "main-section-block";
+
+    // 🏷️ Titolo sezione
+    const heading = document.createElement("h3");
+    heading.className = "category-title";
+    heading.textContent = sectionData.label;
+
+    // 🔢 Calcolo ottenuti / totali
+    let obtained = 0;
+    let total = 0;
+
+    const filteredItems = (sectionData.items || []).filter(item => {
+      if (selectedAct !== "all" && Number(item.act) !== Number(selectedAct)) return false;
+      if (!window.save) return true;
+
+      const val = resolveSaveValue(window.save, item);
+
+      // Filtra solo mancanti se richiesto
+      if (showMissingOnly) {
+        if (item.type === "collectable") return (val ?? 0) === 0;
+        if (["level", "min", "region-level", "region-min"].includes(item.type))
+          return (val ?? 0) < (item.required ?? 0);
+        return val !== true;
+      }
+
+      return true;
+    });
+
+    filteredItems.forEach(item => {
+      const val = window.save ? resolveSaveValue(window.save, item) : false;
+      const isUnlocked =
+        item.type === "collectable" ? (val ?? 0) > 0 :
+        ["level", "min", "region-level", "region-min"].includes(item.type)
+          ? (val ?? 0) >= (item.required ?? 0)
+          : (val === true || val === "collected" || val === "deposited");
+
+      if (isUnlocked) obtained++;
+      total++;
+    });
+
+    // 📊 Mostra conteggio progressi
+    const count = document.createElement("span");
+    count.className = "category-count";
+    count.textContent = ` ${obtained}/${total}`;
+    heading.appendChild(count);
+    section.appendChild(heading);
+
+    // 🧾 Descrizione
+    if (sectionData.desc) {
+      const desc = document.createElement("p");
+      desc.className = "category-desc";
+      desc.textContent = sectionData.desc;
+      section.appendChild(desc);
+    }
+
+    // 🧱 Griglia interna
+    const subgrid = document.createElement("div");
+    subgrid.className = "grid";
+
+    const visible = renderGenericGrid({
+      containerEl: subgrid,
+      data: filteredItems,
+      spoilerOn
+    });
+
+    if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) return;
+
+    section.appendChild(subgrid);
+    container.appendChild(section);
+  });
+}
 
 
 
@@ -804,6 +981,7 @@ document.querySelectorAll(".sidebar-item").forEach(btn => {
       main: updateMainContent,
       essentials: updateNewTabContent,
       wishes: updateWishesContent,
+      completion: updateCompletionContent,
     };
 
     updater[selectedTab]?.(currentActFilter); // <-- applica il filtro salvato
@@ -855,6 +1033,7 @@ window.addEventListener("DOMContentLoaded", () => {
     main: updateMainContent,
     essentials: updateNewTabContent,
     wishes: updateWishesContent,
+    completion: updateCompletionContent,
   };
 
   // Delay minimo per sicurezza (previene race con rendering DOM)
@@ -917,7 +1096,7 @@ async function updateMainContent(selectedAct = "all") {
           ? (val ?? 0) >= (item.required ?? 0)
           : item.type === "collectable"
             ? (val ?? 0) > 0
-            : val === true;
+            : (val === true || val === "collected" || val === "deposited");
 
       if (item.exclusiveGroup) {
         exclusiveGroups.add(item.exclusiveGroup);
@@ -1044,7 +1223,7 @@ async function updateWishesContent(selectedAct = "all") {
             ? (val ?? 0) >= (item.required ?? 0)
             : item.type === "collectable"
               ? (val ?? 0) > 0
-              : val === true;
+              : (val === true || val === "collected" || val === "deposited");
 
       if (item.exclusiveGroup) {
         exclusiveGroups.add(item.exclusiveGroup);
@@ -1147,7 +1326,20 @@ function showGenericModal(data) {
 document.addEventListener("DOMContentLoaded", () => {
   const closeInfo = document.getElementById("closeInfoModal");
   const infoOverlay = document.getElementById("info-overlay");
+  const refreshBtn = document.getElementById("refreshSaveBtn");
 
+  // 🎯 Refresh Save
+  if (refreshBtn) {
+    refreshBtn.addEventListener("click", () => {
+      if (typeof refreshSaveFile === "function") {
+        refreshSaveFile();
+      } else {
+        console.warn("refreshSaveFile() not defined yet.");
+      }
+    });
+  }
+
+  // 🎬 Info Modal
   if (closeInfo && infoOverlay) {
     closeInfo.addEventListener("click", () => infoOverlay.classList.add("hidden"));
     infoOverlay.addEventListener("click", (e) => {
@@ -1155,6 +1347,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 
 function reRenderActiveTab() {
@@ -1171,6 +1364,7 @@ function reRenderActiveTab() {
     main: updateMainContent,
     essentials: updateNewTabContent,
     wishes: updateWishesContent,
+    completion: updateCompletionContent,
   };
 
   updater[activeTab]?.(currentAct);

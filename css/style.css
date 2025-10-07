@@ -1718,15 +1718,8 @@ main {
 
 /* Hover leggera */
 .act-label:hover {
-  transform: translateX(-50%) scale(1.05);
-  opacity: 1;
-}
-
-
-
-.act-label:hover {
-  transform: scale(1.05);
-  opacity: 1;
+  transform: translate(-50%, 0) scale(1.05);
+  transform-origin: center;
 }
 
 /* 🌈 Colori etichette attive */
@@ -1759,4 +1752,152 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.4);
 }
 
+/* ------------------
+   COMPLETION — layout coerente
+-------------------*/
+#completion-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: stretch;
+  width: 100%;
+}
 
+/* Ogni blocco principale */
+#completion-grid .main-section-block {
+  flex: 1 1 auto;
+  background: none;
+  border: none;
+  padding-top: 0;
+  text-align: center;
+}
+
+/* Titolo e conteggio */
+#completion-grid .main-section-block h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink-1);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Descrizione sotto titolo */
+#completion-grid .category-desc {
+  text-align: center;
+  color: #bbb;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Griglia interna delle card */
+#completion-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  justify-content: center;
+}
+
+/* --- Colorazione dinamica per stato del boss --- */
+.boss.done .act-label {
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(255,255,255,0.4);
+  opacity: 1;
+}
+
+.boss.unlocked .act-label {
+  color: #ccc;
+  opacity: 0.85;
+}
+
+.boss.locked .act-label {
+  color: #666;
+  opacity: 0.6;
+}
+
+.boss.done .act-label.act-1 { color: #fff; box-shadow: 0 0 6px #fff; }
+.boss.done .act-label.act-2 { color: #b2f0ff; box-shadow: 0 0 8px rgba(178,240,255,0.6); }
+.boss.done .act-label.act-3 { color: #baffb5; box-shadow: 0 0 8px rgba(186,255,181,0.6); }
+
+/* 🔧 FIX: Colori visibili per boss completati */
+.boss.done .act-label {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+.boss.done .act-label.act-1 {
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.boss.done .act-label.act-2 {
+  color: #a4e3ff;
+  box-shadow: 0 0 8px rgba(164, 227, 255, 0.6);
+}
+
+.boss.done .act-label.act-3 {
+  color: #9fff9f;
+  box-shadow: 0 0 8px rgba(159, 255, 159, 0.6);
+}
+
+/*  locked rimangono scuri */
+.boss.locked .act-label {
+  color: #666 !important;
+  background: rgba(0,0,0,0.4) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+  box-shadow: none !important;
+  opacity: 0.6;
+}
+
+/*  unlocked ma non done: neutri */
+.boss.unlocked .act-label {
+  color: #ccc;
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.2);
+  opacity: 0.9;
+}
+
+/*  Disabilita ogni effetto hover o glow sugli ACT label */
+.act-label,
+.act-label:hover,
+.boss.done .act-label:hover,
+.boss.unlocked .act-label:hover,
+.boss.locked .act-label:hover {
+  transform: translate(-50%, 0) !important;
+  filter: none !important;
+  opacity: 1 !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+#home-section .home-content {
+  overflow-y: auto;
+  max-height: 100vh;
+  padding-bottom: 14vh;   /* ✅ più spazio dinamico */
+  margin-bottom: 4vh;     /* ✅ piccolo buffer extra */
+  scroll-padding-bottom: 100px; /* per sicurezza in scroll */
+}
+
+#boss-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tribute {
+  margin-bottom: 10vh;
+}
+
+/* ------------------
+   GENERIC HIDDEN UTILITY
+-------------------*/
+.hidden {
+  display: none !important;
+}

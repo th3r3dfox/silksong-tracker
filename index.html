@@ -62,6 +62,7 @@
     <a href="#" class="sidebar-item" data-tab="main">Main%</a>
     <a href="#" class="sidebar-item" data-tab="essentials">Essentials %</a>
     <a href="#" class="sidebar-item" data-tab="bosses">Bosses</a>
+    <a href="#" class="sidebar-item" data-tab="completion">Completion</a>
     <a href="#" class="sidebar-item" data-tab="wishes">Wishes</a>
     <!-- aggiungerai altre voci qui -->
   </div>
@@ -71,7 +72,7 @@
 <header class="topbar">
   <div class="topbar-right">
 
-          <!-- 🔹 Act Filter -->
+          <!--  Act Filter -->
       <div class="act-filter">
         <label for="actFilter">Act:</label>
         <select id="actFilter">
@@ -86,6 +87,7 @@
     <input type="checkbox" id="missingToggle"> Show only missing </label>
     <label><input type="checkbox" id="spoilerToggle"> Show spoilers</label>
     <button id="openUploadModal" class="btn-primary">Upload save</button>
+    <button id="refreshSaveBtn" class="btn-primary hidden">Refresh save</button>
     <input type="file" id="fileInput" accept=".dat" hidden>
   </div>
 </header>
@@ -185,6 +187,12 @@
   <h2>Boss</h2>
   <div id="boss-grid" class="grid"></div>
 </section>
+
+<section id="completion-section" class="tab hidden">
+  <h2>Completion</h2>
+  <div id="completion-grid" class="grid"></div>
+</section>
+
 
 <section id="wishes-section" class="tab hidden">
   <h2>Wishes</h2>

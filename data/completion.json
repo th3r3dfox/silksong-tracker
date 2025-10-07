@@ -1,0 +1,266 @@
+[
+{
+  "id": "category-relic",
+  "label": "relics",
+  "desc": "Items that can be traded to certain NPCs for Rosaries or other services.",
+  "contrib": 0,
+  "items": [
+    {
+      "id": "choral-commandment-1",
+      "label": "Choral Commandment 1",
+      "icon": "assets/completion/Choral_Commandment.png",
+      "category": "Choral Commandments",
+      "scene": "Mosshome",
+      "flag": "Seal Chit Aspid_01",
+      "type": "relic",
+      "act": 1,
+      "description": "On a high-up ledge. Left from Mosshome.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "choral-commandment-2",
+      "label": "Choral Commandment 2",
+      "icon": "assets/completion/Choral_Commandment.png",
+      "category": "Choral Commandments",
+      "scene": "Whiteward",
+      "flag": "Seal Chit Ward Corpse",
+      "type": "relic",
+      "act": 2,
+      "description": "Top-Left Room of Whiteward.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "choral-commandment-3",
+      "label": "Choral Commandment 3",
+      "icon": "assets/completion/Choral_Commandment.png",
+      "category": "Choral Commandments",
+      "scene": "Whiteward",
+      "flag": "Seal Chit Silk Siphon",
+      "type": "relic",
+      "act": 2,
+      "description": "At the end of a room above the Hidden Passage in Whiteward, easiest to reach via Silk Soar.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "choral-commandment-4",
+      "label": "Choral Commandment 4",
+      "icon": "assets/completion/Choral_Commandment.png",
+      "category": "Choral Commandments",
+      "scene": "Songclave",
+      "flag": "Seal Chit City Merchant",
+      "type": "relic",
+      "act": 2,
+      "description": "Can be purchased from Jubilana (Songclave) for 210 Rosaries. Requires 'The Lost Merchant Wish' completed.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "weaver-effigy-1",
+      "label": "Weaver Effigy 1",
+      "icon": "assets/completion/Weaver_Effigy.png",
+      "category": "Weaver Effigies",
+      "scene": "Bonetown_upper_room",
+      "flag": "Weaver Totem Bonetown_upper_room",
+      "type": "relic",
+      "act": 1,
+      "description": "In a secret room above Bone Bottom. Easiest to reach with Drifter's Cloak and floating down from above.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "weaver-effigy-2",
+      "label": "Weaver Effigy 2",
+      "icon": "assets/completion/Weaver_Effigy.png",
+      "category": "Weaver Effigies",
+      "scene": "Shellwood_Witch_Tunnel",
+      "flag": "Weaver Totem Witch",
+      "type": "relic",
+      "act": 2,
+      "description": "Shellwood Witch Tunnel. Requires Cling Grip.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "weaver-effigy-3",
+      "label": "Weaver Effigy 3",
+      "icon": "assets/completion/Weaver_Effigy.png",
+      "category": "Weaver Effigies",
+      "scene": "Slab_Bottom",
+      "flag": "Weaver Totem Slab_Bottom",
+      "type": "relic",
+      "act": 1,
+      "description": "Bottom right of the Slab. Found on a corpse.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "bone-scroll-1",
+      "label": "Bone Scroll 1",
+      "icon": "assets/completion/Bone_Scroll.png",
+      "category": "Bone Scrolls",
+      "scene": "Greymoor_flooded_corridor",
+      "flag": "Bone Record Greymoor_flooded_corridor",
+      "type": "relic",
+      "act": 1,
+      "description": "Greymore Secret Room. Swim all the way to the right.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "bone-scroll-2",
+      "label": "Bone Scroll 2",
+      "icon": "assets/completion/Bone_Scroll.png",
+      "category": "Bone Scrolls",
+      "scene": "Bone_East_14",
+      "flag": "Bone Record Bone_East_14",
+      "type": "relic",
+      "act": 1,
+      "description": "Far Fields secret room. Reachable with Drifter's Cloak.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "bone-scroll-3",
+      "label": "Bone Scroll 3",
+      "icon": "assets/completion/Bone_Scroll.png",
+      "category": "Bone Scrolls",
+      "scene": "Understore_Map_Room",
+      "flag": "Bone Record Understore_Map_Room",
+      "type": "relic",
+      "act": 2,
+      "description": "Left side of Underworks, behind a breakable wall.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "bone-scroll-4",
+      "label": "Bone Scroll 4",
+      "icon": "assets/completion/Bone_Scroll.png",
+      "category": "Bone Scrolls",
+      "scene": "Wisp_Top",
+      "flag": "Bone Record Wisp Top",
+      "type": "relic",
+      "act": 2,
+      "description": "Top of Wisp Thicket platform challenge.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "rune-harp-1",
+      "label": "Rune Harp 1",
+      "icon": "assets/completion/Rune_Harp.png",
+      "category": "Rune Harps",
+      "scene": "Weave_08",
+      "flag": "Weaver Record Weave_08",
+      "type": "relic",
+      "act": 1,
+      "description": "On a high-up ledge in Weavernest Atla.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "rune-harp-2",
+      "label": "Rune Harp 2",
+      "icon": "assets/completion/Rune_Harp.png",
+      "category": "Rune Harps",
+      "scene": "Sprint_Challenge",
+      "flag": "Weaver Record Sprint_Challenge",
+      "type": "relic",
+      "act": 1,
+      "description": "Secret room in Far Fields Weaver nest (Sprint Challenge).",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "rune-harp-3",
+      "label": "Rune Harp 3",
+      "icon": "assets/completion/Rune_Harp.png",
+      "category": "Rune Harps",
+      "scene": "Conductor",
+      "flag": "Weaver Record Conductor",
+      "type": "relic",
+      "act": 3,
+      "description": "Found where Conductor Ballador would be in Act 3.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+  {
+      "id": "psalm-cylinder-grindle",
+      "label": "Psalm Cylinder – Grindle",
+      "icon": "assets/completion/Psalm_Cylinder.png",
+      "category": "Psalm Cylinders",
+      "flag": "Psalm Cylinder Grindle",
+      "type": "relic",
+      "act": 1,
+      "description": "Sold by Grindle for 240 Rosaries (Blasted Steps).",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "psalm-cylinder-vaultkeeper",
+      "label": "Psalm Cylinder – Vaultkeeper Cardinius Lair",
+      "icon": "assets/completion/Psalm_Cylinder.png",
+      "category": "Psalm Cylinders",
+      "flag": "Psalm Cylinder Librarian",
+      "type": "relic",
+      "act": 2,
+      "description": "Obtained from Vaultkeeper Cardinius in the Whispering Vaults.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "psalm-cylinder-vaults",
+      "label": "Psalm Cylinder – Whispering Vaults",
+      "icon": "assets/completion/Psalm_Cylinder.png",
+      "category": "Psalm Cylinders",
+      "scene": "Library_Roof",
+      "flag": "Psalm Cylinder Library Roof",
+      "type": "relic",
+      "act": 2,
+      "description": "At the end of a parkour challenge at the top of the Whispering Vaults. Requires Clawline.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "psalm-cylinder-high-halls",
+      "label": "Psalm Cylinder – High Halls",
+      "icon": "assets/completion/Psalm_Cylinder.png",
+      "category": "Psalm Cylinders",
+      "scene": "Hang",
+      "flag": "Psalm Cylinder Hang",
+      "type": "relic",
+      "act": 2,
+      "description": "Behind a breakable wall in High Halls. Requires Clawline.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "psalm-cylinder-underworks",
+      "label": "Psalm Cylinder – Underworks",
+      "icon": "assets/completion/Psalm_Cylinder.png",
+      "category": "Psalm Cylinders",
+      "scene": "Ward",
+      "flag": "Psalm Cylinder Ward",
+      "type": "relic",
+      "act": 2,
+      "description": "Behind a breakable wall at the top of Underworks.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "sacred-cylinder",
+      "label": "Sacred Cylinder",
+      "icon": "assets/completion/Sacred_Cylinder.png",
+      "category": "Psalm Cylinders",
+      "flag": "Librarian Melody Cylinder",
+      "type": "relic",
+      "act": 2,
+      "description": "Whispering Vaults: part of the Vaultkeeper’s Melody objective.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    },
+    {
+      "id": "arcane-egg",
+      "label": "Arcane Egg",
+      "icon": "assets/completion/Arcane_Egg_Silksong.png",
+      "category": "Arcane Egg",
+      "scene": "Abyss_Middle",
+      "flag": "Ancient Egg Abyss Middle",
+      "type": "relic",
+      "act": 3,
+      "description": "Behind a platforming sequence in the Abyss.",
+      "link": "https://hollowknight.wiki/w/Relics"
+    }
+  ]
+}
+
+
+
+
+
+
+
+]
