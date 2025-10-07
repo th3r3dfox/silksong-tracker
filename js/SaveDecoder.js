@@ -1,8 +1,7 @@
-import { CSHARP_HEADER, AES_KEY_STRING } from './constants.js';
+import { CSHARP_HEADER, AES_KEY_STRING } from "./constants.js";
 
 // ✅ Usa direttamente
 const CryptoJS = window.CryptoJS;
-
 
 /**
  * 🔹 Rimuove l'header e il prefisso di lunghezza dal file .dat
@@ -36,18 +35,22 @@ export function decodeSilksongSave(arrayBuffer) {
 
     // Step 3: decifra AES ECB PKCS7
     const encryptedWords = CryptoJS.enc.Base64.parse(b64String);
-    const cipherParams = CryptoJS.lib.CipherParams.create({ ciphertext: encryptedWords });
+    const cipherParams = CryptoJS.lib.CipherParams.create({
+      ciphertext: encryptedWords,
+    });
     const key = CryptoJS.enc.Utf8.parse(AES_KEY_STRING);
 
     const decrypted = CryptoJS.AES.decrypt(cipherParams, key, {
       mode: CryptoJS.mode.ECB,
-      padding: CryptoJS.pad.Pkcs7
+      padding: CryptoJS.pad.Pkcs7,
     });
 
     const jsonString = CryptoJS.enc.Utf8.stringify(decrypted);
 
     if (!jsonString || !jsonString.startsWith("{")) {
-      throw new Error("Invalid or encrypted Silksong save (bad header or AES key)");
+      throw new Error(
+        "Invalid or encrypted Silksong save (bad header or AES key)",
+      );
     }
 
     const parsed = JSON.parse(jsonString);
