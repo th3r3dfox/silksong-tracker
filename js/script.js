@@ -729,7 +729,6 @@ async function handleSaveFile(file) {
     const buffer = await file.arrayBuffer();
     const isDat = file.name.toLowerCase().endsWith(".dat");
 
-
     // 🔍 Decodifica file
     const saveData = isDat
       ? decodeSilksongSave(buffer)
@@ -746,7 +745,6 @@ async function handleSaveFile(file) {
     window.lastSaveFile = file;
     window.lastSaveBuffer = buffer;
     window.lastSaveIsDat = isDat;
-
 
     // 🔘 Mostra bottone di refresh
     const refreshBtn = document.getElementById("refreshSaveBtn");
@@ -822,13 +820,11 @@ async function refreshSaveFile() {
     // 🔄 Ricarica lo stesso file già in memoria
     showToast("🔄 Reloading save file...");
     await handleSaveFile(window.lastSaveFile);
-
   } catch (err) {
     console.error("[refreshSaveFile]", err);
     showToast("❌ Failed to refresh save file");
   }
 }
-
 
 async function updateCompletionContent(selectedAct = "all") {
   const container = document.getElementById("completion-grid");
