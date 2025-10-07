@@ -1,249 +1,323 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-<link rel="preload" href="assets/fontawesome/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="assets/fontawesome/css/all.min.css"></noscript>
+  <head>
+    <link
+      rel="preload"
+      href="assets/fontawesome/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="assets/fontawesome/css/all.min.css"
+    /></noscript>
 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silksong Tracker</title>
+    <link rel="icon" type="image/png" href="assets/misc/favicon.png" />
+    <!-- <base href="https://th3r3dfox.github.io/silksong-tracker/"> -->
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Silksong Tracker</title>
-  <link rel="icon" type="image/png" href="assets/misc/favicon.png" />
-<!-- <base href="https://th3r3dfox.github.io/silksong-tracker/"> -->
+    <!-- 🪶 Social Preview -->
+    <meta property="og:title" content="Silksong Tracker" />
+    <meta
+      property="og:description"
+      content="Analyze and visualize your Hollow Knight: Silksong save file — track bosses, items, and secrets with a clean UI."
+    />
+    <meta
+      property="og:image"
+      content="https://th3r3dfox.github.io/silksong-tracker/assets/misc/preview.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://th3r3dfox.github.io/silksong-tracker/"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img
+          src="assets/misc/favicon.png"
+          class="logo-icon"
+          width="64"
+          height="64"
+          alt="Silksong Tracker Logo"
+        />
+        <div class="app-name">silksong Tracker</div>
+      </div>
 
+      <!-- Actions: icone orizzontali -->
 
+      <div class="sidebar-links">
+        <a
+          href="https://hollowknight.wiki"
+          target="_blank"
+          class="sidebar-wiki-btn"
+        >
+          Wiki
+        </a>
+      </div>
+      <div class="sidebar-actions">
+        <a
+          href="https://steamcommunity.com/sharedfiles/filedetails/?id=3568819705&tscn=1759369168"
+          class="icon-btn"
+          title="Steam Discussions"
+          target="_blank"
+        >
+          <i class="fab fa-steam"></i>
+        </a>
+        <a
+          href="https://discord.gg/eGVaUWvrTb"
+          class="icon-btn"
+          title="Discord"
+          target="_blank"
+        >
+          <i class="fab fa-discord"></i>
+        </a>
+        <a
+          href="https://www.reddit.com/r/HollowKnight/comments/1nyw6qe/silksong_save_tracker_major_update_released/"
+          class="icon-btn"
+          title="Reddit"
+          target="_blank"
+        >
+          <i class="fab fa-reddit-alien"></i>
+        </a>
+        <a
+          href="https://github.com/th3r3dfox/silksong-tracker"
+          class="icon-btn"
+          title="GitHub Repository"
+          target="_blank"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
 
-  <!-- 🪶 Social Preview -->
-<meta property="og:title" content="Silksong Tracker" />
-<meta property="og:description" content="Analyze and visualize your Hollow Knight: Silksong save file — track bosses, items, and secrets with a clean UI." />
-<meta property="og:image" content="https://th3r3dfox.github.io/silksong-tracker/assets/misc/preview.png" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://th3r3dfox.github.io/silksong-tracker/" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-    
-<aside class="sidebar">
-    <div class="sidebar-header">
-  <img src="assets/misc/favicon.png" class="logo-icon" width="64" height="64" alt="Silksong Tracker Logo" />
-  <div class="app-name">silksong Tracker</div>
-</div>
+      <div class="sidebar-divider"></div>
 
-  <!-- Actions: icone orizzontali -->
+      <!-- Progress -->
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">PROGRESS</h3>
+        <a href="#" class="sidebar-item is-active" data-tab="home">Home</a>
+        <a href="#" class="sidebar-item" data-tab="main">Main%</a>
+        <a href="#" class="sidebar-item" data-tab="essentials">Essentials %</a>
+        <a href="#" class="sidebar-item" data-tab="bosses">Bosses</a>
+        <a href="#" class="sidebar-item" data-tab="completion">Completion</a>
+        <a href="#" class="sidebar-item" data-tab="wishes">Wishes</a>
+        <!-- aggiungerai altre voci qui -->
+      </div>
+    </aside>
 
-<div class="sidebar-links">
-<a href="https://hollowknight.wiki" target="_blank" class="sidebar-wiki-btn">
-  Wiki
-</a>
-
-</div>
-<div class="sidebar-actions">
-  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3568819705&tscn=1759369168" class="icon-btn" title="Steam Discussions" target="_blank">
-    <i class="fab fa-steam"></i>
-  </a>
-  <a href="https://discord.gg/eGVaUWvrTb" class="icon-btn" title="Discord" target="_blank">
-    <i class="fab fa-discord"></i>
-  </a>
-  <a href="https://www.reddit.com/r/HollowKnight/comments/1nyw6qe/silksong_save_tracker_major_update_released/" class="icon-btn" title="Reddit" target="_blank">
-    <i class="fab fa-reddit-alien"></i>
-  </a>
-  <a href="https://github.com/th3r3dfox/silksong-tracker" class="icon-btn" title="GitHub Repository" target="_blank">
-    <i class="fab fa-github"></i>
-  </a>
-</div>
-
-
-  <div class="sidebar-divider"></div>
-
-  <!-- Progress -->
-  <div class="sidebar-section">
-    <h3 class="sidebar-title">PROGRESS</h3>
-    <a href="#" class="sidebar-item is-active" data-tab="home">Home</a>
-    <a href="#" class="sidebar-item" data-tab="main">Main%</a>
-    <a href="#" class="sidebar-item" data-tab="essentials">Essentials %</a>
-    <a href="#" class="sidebar-item" data-tab="bosses">Bosses</a>
-    <a href="#" class="sidebar-item" data-tab="completion">Completion</a>
-    <a href="#" class="sidebar-item" data-tab="wishes">Wishes</a>
-    <!-- aggiungerai altre voci qui -->
-  </div>
-</aside>
-
-  <div class="main-wrapper">
-<header class="topbar">
-  <div class="topbar-right">
-
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-right">
           <!--  Act Filter -->
-      <div class="act-filter">
-        <label for="actFilter">Act:</label>
-        <select id="actFilter">
-          <option value="all">All</option>
-          <option value="1">Act I</option>
-          <option value="2">Act II</option>
-          <option value="3">Act III</option>
-        </select>
-      </div>
-    
-    <label class="toggle">
-    <input type="checkbox" id="missingToggle"> Show only missing </label>
-    <label><input type="checkbox" id="spoilerToggle"> Show spoilers</label>
-    <button id="openUploadModal" class="btn-primary">Upload save</button>
-    <button id="refreshSaveBtn" class="btn-primary hidden">Refresh save</button>
-    <input type="file" id="fileInput" accept=".dat" hidden>
-  </div>
+          <div class="act-filter">
+            <label for="actFilter">Act:</label>
+            <select id="actFilter">
+              <option value="all">All</option>
+              <option value="1">Act I</option>
+              <option value="2">Act II</option>
+              <option value="3">Act III</option>
+            </select>
+          </div>
 
+          <label class="toggle">
+            <input type="checkbox" id="missingToggle" /> Show only missing
+          </label>
+          <label
+            ><input type="checkbox" id="spoilerToggle" /> Show spoilers</label
+          >
+          <button id="openUploadModal" class="btn-primary">Upload save</button>
+          <button id="refreshSaveBtn" class="btn-primary hidden">
+            Refresh save
+          </button>
+          <input type="file" id="fileInput" accept=".dat" hidden />
+        </div>
+      </header>
 
-</header>
+      <div id="modeBanner" class="hidden"></div>
+      <main>
+        <section id="home-section" class="tab">
+          <div class="home-content cinematic">
+            <!-- ✨ INTRO -->
+            <div class="intro-block">
+              <h1>Welcome to the Silksong Save Tracker</h1>
+              <p>
+                Explore your <strong>Hollow Knight: Silksong</strong> save file
+                and track your progress across bosses, items, and secrets.
+              </p>
+            </div>
 
-  <div id="modeBanner" class="hidden"></div>
-    <main>
+            <div class="cinematic-grid">
+              <!-- ⚙️ HOW IT WORKS -->
+              <div class="home-section-block cinematic-left">
+                <h2><i class="fa-solid fa-gears"></i> How it Works</h2>
+                <ol>
+                  <li>
+                    <strong>Upload your save file</strong> — Click
+                    <em>Upload Save</em> at the top-right corner.
+                  </li>
+                  <li>
+                    <strong>Decode and explore</strong> — The tool automatically
+                    decrypts your progress.
+                  </li>
+                  <li>
+                    <strong>Track everything</strong> — View items, bosses, and
+                    regions completed, with spoiler toggles available.
+                  </li>
+                </ol>
+              </div>
 
+              <!-- 🧩 ABOUT -->
+              <div class="home-section-block cinematic-right">
+                <h2><i class="fa-solid fa-hammer"></i> About This Project</h2>
+                <p>
+                  This fan-made tracker helps players understand how progress is
+                  stored and displayed in the game’s save files.
+                </p>
+                <p>
+                  <strong>All data is processed locally</strong> — your save
+                  never leaves your device.
+                </p>
 
-<section id="home-section" class="tab">
-  <div class="home-content cinematic">
+                <div class="status-pill">Work in Progress · v0.2.0</div>
+                <p>
+                  Development is ongoing — expect future updates, new sections,
+                  and improved visuals over time.
+                </p>
+              </div>
+            </div>
 
-    <!-- ✨ INTRO -->
-    <div class="intro-block">
-      <h1>Welcome to the Silksong Save Tracker</h1>
-      <p>
-        Explore your <strong>Hollow Knight: Silksong</strong> save file and track your progress across bosses, items, and secrets.
-      </p>
+            <!-- 🕯 IN MEMORY -->
+            <div class="home-section-block tribute cinematic-bottom">
+              <h2><i class="fa-solid fa-candle"></i> In Memory</h2>
+              <p>
+                Dedicated to <strong>ReznorMichael</strong>, creator of the
+                original
+                <a
+                  href="https://reznormichael.github.io/hollow-knight-completion-check/"
+                  target="_blank"
+                  >Hollow Knight Save Analyzer</a
+                >
+                — a tool that guided me through my 112% journey.
+              </p>
+
+              <h3>Credits</h3>
+              <p>
+                Made by <strong>Fox</strong> · Inspired by
+                <a
+                  href="https://hollowknight.wiki/w/Hollow_Knight_Wiki"
+                  target="_blank"
+                  >Hollow Knight</a
+                >
+                and its incredible community.
+              </p>
+              <p class="muted">
+                This is a non-commercial fan project not affiliated with Team
+                Cherry.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="main-section" class="tab hidden">
+          <h2>Main%</h2>
+
+          <!-- ✅ Riassunto progressione -->
+          <div id="main-stats" class="main-stats">
+            <div class="completion">
+              <span class="label">Completion:</span>
+              <span id="completionValue">0%</span>
+            </div>
+            <div class="playtime">
+              <span class="label">Play Time:</span>
+              <span id="playtimeValue">0h 00m</span>
+            </div>
+            <div class="rosaries">
+              <span class="label">Rosaries:</span>
+              <span id="rosariesValue">0</span>
+            </div>
+            <div class="shards">
+              <span class="label">Shell Shards:</span>
+              <span id="shardsValue">0</span>
+            </div>
+          </div>
+
+          <div class="grid" id="main-grid"></div>
+        </section>
+
+        <section id="essentials-section" class="tab hidden">
+          <h2>Essentials %</h2>
+          <div class="grid" id="essentials-grid"></div>
+        </section>
+
+        <section id="bosses-section" class="tab hidden">
+          <h2>Boss</h2>
+          <div id="boss-grid" class="grid"></div>
+        </section>
+
+        <section id="completion-section" class="tab hidden">
+          <h2>Completion</h2>
+          <div id="completion-grid" class="grid"></div>
+        </section>
+
+        <section id="wishes-section" class="tab hidden">
+          <h2>Wishes</h2>
+          <div id="wishes-grid" class="grid"></div>
+        </section>
+
+        <!-- ✅ Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+        <script type="module">
+          import { decodeSilksongSave } from "./js/SaveDecoder.js";
+          window.decodeSilksongSave = decodeSilksongSave;
+        </script>
+        <script type="module" src="./js/script.js"></script>
+
+        <div
+          id="uploadOverlay"
+          class="overlay hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="uploadTitle"
+        >
+          <div class="modal">
+            <div class="modal-header">
+              <h3 id="uploadTitle">Upload your save file</h3>
+              <button
+                class="modal-close"
+                id="closeUploadModal"
+                aria-label="Close"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div id="dropzone" class="dropzone" tabindex="0">
+              <p>Drag and drop your save file here, or click to browse!</p>
+              <p>Choose the correct save file: user*.dat (e.g. user1.dat)</p>
+            </div>
+
+            <div class="help">
+              <h4>Need help finding your save?</h4>
+              <p class="muted">What do you play on?</p>
+              <div class="platforms">
+                <a class="pill">Mac</a>
+                <a class="pill">Windows</a>
+                <a class="pill">Linux</a>
+                <a class="pill">Steam Cloud</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="info-overlay" class="overlay hidden">
+          <div id="info-content" class="modal">
+            <!-- JS will populate this -->
+            <button id="closeInfoModal" class="modal-close">✕</button>
+          </div>
+        </div>
+      </main>
     </div>
-
-    <div class="cinematic-grid">
-
-      <!-- ⚙️ HOW IT WORKS -->
-      <div class="home-section-block cinematic-left">
-        <h2><i class="fa-solid fa-gears"></i> How it Works</h2>
-        <ol>
-          <li><strong>Upload your save file</strong> — Click <em>Upload Save</em> at the top-right corner.</li>
-          <li><strong>Decode and explore</strong> — The tool automatically decrypts your progress.</li>
-          <li><strong>Track everything</strong> — View items, bosses, and regions completed, with spoiler toggles available.</li>
-        </ol>
-      </div>
-
-      <!-- 🧩 ABOUT -->
-      <div class="home-section-block cinematic-right">
-        <h2><i class="fa-solid fa-hammer"></i> About This Project</h2>
-        <p>This fan-made tracker helps players understand how progress is stored and displayed in the game’s save files.</p>
-        <p><strong>All data is processed locally</strong> — your save never leaves your device.</p>
-
-        <div class="status-pill">Work in Progress · v0.2.0</div>
-        <p>Development is ongoing — expect future updates, new sections, and improved visuals over time.</p>
-      </div>
-
-    </div>
-
-    <!-- 🕯 IN MEMORY -->
-    <div class="home-section-block tribute cinematic-bottom">
-      <h2><i class="fa-solid fa-candle"></i> In Memory</h2>
-      <p>
-        Dedicated to <strong>ReznorMichael</strong>, creator of the original <a href="https://reznormichael.github.io/hollow-knight-completion-check/" target="_blank">Hollow Knight Save Analyzer</a> —  
-        a tool that guided me through my 112% journey.
-      </p>
-
-      <h3>Credits</h3>
-      <p>Made by <strong>Fox</strong> · Inspired by <a href="https://hollowknight.wiki/w/Hollow_Knight_Wiki" target="_blank">Hollow Knight</a> and its incredible community.</p>
-      <p class="muted">This is a non-commercial fan project not affiliated with Team Cherry.</p>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-<section id="main-section" class="tab hidden">
-  <h2>Main%</h2>
-
-<!-- ✅ Riassunto progressione -->
-<div id="main-stats" class="main-stats">
-  <div class="completion">
-    <span class="label">Completion:</span>
-    <span id="completionValue">0%</span>
-  </div>
-  <div class="playtime">
-    <span class="label">Play Time:</span>
-    <span id="playtimeValue">0h 00m</span>
-  </div>
-  <div class="rosaries">
-    <span class="label">Rosaries:</span>
-    <span id="rosariesValue">0</span>
-  </div>
-  <div class="shards">
-    <span class="label">Shell Shards:</span>
-    <span id="shardsValue">0</span>
-  </div>
-</div>
-
-<div class="grid" id="main-grid"></div>
-</section>
-
-<section id="essentials-section" class="tab hidden">
-  <h2>Essentials %</h2>
-  <div class="grid" id="essentials-grid"></div>
-</section>
-
-
-<section id="bosses-section" class="tab hidden">
-  <h2>Boss</h2>
-  <div id="boss-grid" class="grid"></div>
-</section>
-
-<section id="completion-section" class="tab hidden">
-  <h2>Completion</h2>
-  <div id="completion-grid" class="grid"></div>
-</section>
-
-
-<section id="wishes-section" class="tab hidden">
-  <h2>Wishes</h2>
-  <div id="wishes-grid" class="grid"></div>
-</section>
-
-
-
-
-<!-- ✅ Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
-<script type="module">
-  import { decodeSilksongSave } from './js/SaveDecoder.js';
-  window.decodeSilksongSave = decodeSilksongSave;
-</script>
-<script type="module" src="./js/script.js"></script>
-
-  <div id="uploadOverlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="uploadTitle">
-  <div class="modal">
-    <div class="modal-header">
-      <h3 id="uploadTitle">Upload your save file</h3>
-      <button class="modal-close" id="closeUploadModal" aria-label="Close">✕</button>
-    </div>
-
-    <div id="dropzone" class="dropzone" tabindex="0">
-      <p>Drag and drop your save file here, or click to browse!</p>
-      <p>Choose the correct save file: user*.dat (e.g. user1.dat)</p>
-    </div>
-
-    <div class="help">
-      <h4>Need help finding your save?</h4>
-      <p class="muted">What do you play on?</p>
-<div class="platforms">
-  <a class="pill">Mac</a>
-  <a class="pill">Windows</a>
-  <a class="pill">Linux</a>
-  <a class="pill">Steam Cloud</a>
-</div>
-
-      </div>
-    </div>
-  </div>
-</div>
-<div id="info-overlay" class="overlay hidden">
-  <div id="info-content" class="modal">
-    <!-- JS will populate this -->
-    <button id="closeInfoModal" class="modal-close">✕</button>
-  </div>
-</div>
-
-</body>
+  </body>
 </html>

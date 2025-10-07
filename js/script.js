@@ -1,10 +1,11 @@
-console.log("No cost too great. No mind to think. No will to break. No voice to cry suffering.");
+console.log(
+  "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
+);
 const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
   ? "/silksong-tracker"
   : "";
 import { decodeSilksongSave } from "./SaveDecoder.js";
 let currentActFilter = document.getElementById("actFilter")?.value || "all";
-
 
 function matchMode(item) {
   // Nessuna modalità specificata → sempre visibile
@@ -16,7 +17,6 @@ function matchMode(item) {
   // Se il salvataggio è presente → mostra solo quelli coerenti
   return item.mode === window.saveMode;
 }
-
 
 // ---------- DATA ----------
 let bossList = [];
@@ -32,7 +32,7 @@ async function updateBossesContent(selectedAct = "all") {
 
   const sections = Array.isArray(bossesData) ? bossesData : [bossesData];
 
-  sections.forEach(sectionData => {
+  sections.forEach((sectionData) => {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
@@ -42,15 +42,15 @@ async function updateBossesContent(selectedAct = "all") {
     heading.textContent = sectionData.label;
 
     // ✅ 1️⃣ Filtra per act
-    let filteredItems = (sectionData.items || []).filter(item =>
-  (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-  matchMode(item)
-);
-
+    let filteredItems = (sectionData.items || []).filter(
+      (item) =>
+        (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
+        matchMode(item),
+    );
 
     // ✅ 2️⃣ Filtra “solo mancanti” (coerente con act)
     if (showMissingOnly && window.save) {
-      filteredItems = filteredItems.filter(item => {
+      filteredItems = filteredItems.filter((item) => {
         const val = resolveSaveValue(window.save, item);
         if (item.type === "collectable") return (val ?? 0) === 0;
         if (["level", "min", "region-level", "region-min"].includes(item.type))
@@ -60,7 +60,7 @@ async function updateBossesContent(selectedAct = "all") {
     }
 
     // 🔹 Colori atti
-    filteredItems.forEach(item => {
+    filteredItems.forEach((item) => {
       if (item.act === 1) item.actColor = "act-1";
       else if (item.act === 2) item.actColor = "act-2";
       else if (item.act === 3) item.actColor = "act-3";
@@ -69,15 +69,17 @@ async function updateBossesContent(selectedAct = "all") {
     // 🔢 Calcolo ottenuti / totali
     let obtained = 0;
 
-    filteredItems.forEach(item => {
+    filteredItems.forEach((item) => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
       const isUnlocked =
-        (item.type === "level" || item.type === "min" ||
-         item.type === "region-level" || item.type === "region-min")
+        item.type === "level" ||
+        item.type === "min" ||
+        item.type === "region-level" ||
+        item.type === "region-min"
           ? (val ?? 0) >= (item.required ?? 0)
           : item.type === "collectable"
             ? (val ?? 0) > 0
-            : (val === true || val === "collected" || val === "deposited");
+            : val === true || val === "collected" || val === "deposited";
       if (isUnlocked) obtained++;
     });
 
@@ -102,18 +104,17 @@ async function updateBossesContent(selectedAct = "all") {
     const visible = renderGenericGrid({
       containerEl: subgrid,
       data: filteredItems,
-      spoilerOn
+      spoilerOn,
     });
 
     // se non ci sono elementi visibili, non aggiungere la sezione
-    if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) return;
+    if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
+      return;
 
     section.appendChild(subgrid);
     container.appendChild(section);
   });
 }
-
-
 
 // ---------- SPOILER TOGGLE ----------
 document.getElementById("spoilerToggle").addEventListener("change", () => {
@@ -127,29 +128,26 @@ document.getElementById("spoilerToggle").addEventListener("change", () => {
   reRenderActiveTab();
 });
 
-
 function updateIcons() {
   const spoilerOn = document.getElementById("spoilerToggle").checked;
   renderGenericGrid({
     containerId: "boss-grid",
     data: bossList,
-    spoilerOn
+    spoilerOn,
   });
 }
-
-
-
 
 //  document.getElementById("missingToggle").addEventListener("change", applyMissingFilter);
 
 function applyMissingFilter() {
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
 
-  document.querySelectorAll(".main-section-block").forEach(section => {
+  document.querySelectorAll(".main-section-block").forEach((section) => {
     let hasVisible = false;
-    const sectionName = section.querySelector("h3")?.textContent?.trim() || "??";
+    const sectionName =
+      section.querySelector("h3")?.textContent?.trim() || "??";
 
-    section.querySelectorAll(".boss").forEach(el => {
+    section.querySelectorAll(".boss").forEach((el) => {
       if (showMissingOnly) {
         if (el.classList.contains("done")) {
           el.style.display = "none";
@@ -163,15 +161,10 @@ function applyMissingFilter() {
       }
     });
 
-
     // Nascondi l'intera sezione se non ha elementi visibili
     section.style.display = hasVisible ? "" : "none";
-    
   });
 }
-
-
-
 
 async function updateNewTabContent(selectedAct = "all") {
   const response = await fetch("data/essentials.json");
@@ -182,7 +175,7 @@ async function updateNewTabContent(selectedAct = "all") {
   const container = document.getElementById("essentials-grid");
   container.innerHTML = "";
 
-  newtabData.forEach(sectionData => {
+  newtabData.forEach((sectionData) => {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
@@ -191,14 +184,14 @@ async function updateNewTabContent(selectedAct = "all") {
     heading.textContent = sectionData.label;
 
     // ✅ Filtra per act e mancanti
-    let filteredItems = (sectionData.items || []).filter(item =>
-  (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-  matchMode(item)
-);
-
+    let filteredItems = (sectionData.items || []).filter(
+      (item) =>
+        (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
+        matchMode(item),
+    );
 
     if (showMissingOnly && window.save) {
-      filteredItems = filteredItems.filter(item => {
+      filteredItems = filteredItems.filter((item) => {
         const val = resolveSaveValue(window.save, item);
         if (item.type === "collectable") return (val ?? 0) === 0;
         if (["level", "min", "region-level", "region-min"].includes(item.type))
@@ -208,7 +201,7 @@ async function updateNewTabContent(selectedAct = "all") {
     }
 
     // 🔹 Colori atti
-    filteredItems.forEach(item => {
+    filteredItems.forEach((item) => {
       if (item.act === 1) item.actColor = "act-1";
       else if (item.act === 2) item.actColor = "act-2";
       else if (item.act === 3) item.actColor = "act-3";
@@ -219,15 +212,17 @@ async function updateNewTabContent(selectedAct = "all") {
     const exclusiveGroups = new Set();
     const countedGroups = new Set();
 
-    filteredItems.forEach(item => {
+    filteredItems.forEach((item) => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
       const isUnlocked =
-        (item.type === "level" || item.type === "min" ||
-         item.type === "region-level" || item.type === "region-min")
+        item.type === "level" ||
+        item.type === "min" ||
+        item.type === "region-level" ||
+        item.type === "region-min"
           ? (val ?? 0) >= (item.required ?? 0)
           : item.type === "collectable"
             ? (val ?? 0) > 0
-            : (val === true || val === "collected" || val === "deposited");
+            : val === true || val === "collected" || val === "deposited";
 
       if (item.exclusiveGroup) {
         exclusiveGroups.add(item.exclusiveGroup);
@@ -241,7 +236,7 @@ async function updateNewTabContent(selectedAct = "all") {
     });
 
     const total =
-      (filteredItems.filter(i => !i.exclusiveGroup).length || 0) +
+      (filteredItems.filter((i) => !i.exclusiveGroup).length || 0) +
       exclusiveGroups.size;
 
     const count = document.createElement("span");
@@ -264,27 +259,24 @@ async function updateNewTabContent(selectedAct = "all") {
     const visible = renderGenericGrid({
       containerEl: subgrid,
       data: filteredItems,
-      spoilerOn
+      spoilerOn,
     });
 
-    if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) return;
+    if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
+      return;
 
     section.appendChild(subgrid);
     container.appendChild(section);
   });
 }
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   updateBossesContent();
 
   // ---------- MODAL SETUP ----------
-  const overlay  = document.getElementById("uploadOverlay");
+  const overlay = document.getElementById("uploadOverlay");
   const dropzone = document.getElementById("dropzone");
-  const openBtn  = document.getElementById("openUploadModal");
+  const openBtn = document.getElementById("openUploadModal");
   const closeBtn = document.getElementById("closeUploadModal");
   const fileInput = document.getElementById("fileInput");
 
@@ -315,155 +307,182 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  ["dragenter", "dragover"].forEach(evt =>
-    dropzone.addEventListener(evt, e => {
-      e.preventDefault(); e.stopPropagation();
+  ["dragenter", "dragover"].forEach((evt) =>
+    dropzone.addEventListener(evt, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       dropzone.classList.add("dragover");
-    })
+    }),
   );
-  ["dragleave", "drop"].forEach(evt =>
-    dropzone.addEventListener(evt, e => {
-      e.preventDefault(); e.stopPropagation();
+  ["dragleave", "drop"].forEach((evt) =>
+    dropzone.addEventListener(evt, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       dropzone.classList.remove("dragover");
-    })
+    }),
   );
-  dropzone.addEventListener("drop", e => {
+  dropzone.addEventListener("drop", (e) => {
     const files = e.dataTransfer?.files;
     if (files && files[0]) handleSaveFile(files[0]);
   });
 
   // ---------- PILLS COPY ----------
   const paths = {
-    windows: "%userprofile%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong",
+    windows:
+      "%userprofile%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong",
     mac: "~/Library/Application Support/com.teamcherry.hollowsilksong",
     linux: "~/.config/unity3d/Team Cherry/Hollow Knight Silksong",
-    steam: "%userprofile%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong"
+    steam:
+      "%userprofile%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong",
   };
 
-  document.querySelectorAll(".pill").forEach(btn => {
+  document.querySelectorAll(".pill").forEach((btn) => {
     btn.addEventListener("click", () => {
       const key = btn.textContent.trim().toLowerCase();
       const path = paths[key];
 
       if (!path) {
-  if (key === "steam cloud") {
-    window.open("https://store.steampowered.com/account/remotestorageapp/?appid=1030300", "_blank");
-    return;
-  }
+        if (key === "steam cloud") {
+          window.open(
+            "https://store.steampowered.com/account/remotestorageapp/?appid=1030300",
+            "_blank",
+          );
+          return;
+        }
 
-  showToast("❌ No path available for: " + key);
-  return;
-}
+        showToast("❌ No path available for: " + key);
+        return;
+      }
 
-      navigator.clipboard.writeText(path).then(() => {
-        showToast("📋 Path copied to clipboard!");
-      }).catch(err => {
-        console.error("Errore clipboard:", err);
-        showToast("⚠️ Unable to copy path.");
-      });
+      navigator.clipboard
+        .writeText(path)
+        .then(() => {
+          showToast("📋 Path copied to clipboard!");
+        })
+        .catch((err) => {
+          console.error("Errore clipboard:", err);
+          showToast("⚠️ Unable to copy path.");
+        });
     });
   });
 });
 
 function resolveSaveValue(save, item) {
   const root = save;
-  const pd   = root?.playerData || root; // compat fallback
+  const pd = root?.playerData || root; // compat fallback
 
   if (!root) return undefined;
 
   // Flag diretti
-  if (item.type === "flag" && item.flag && Object.prototype.hasOwnProperty.call(pd, item.flag)) {
+  if (
+    item.type === "flag" &&
+    item.flag &&
+    Object.prototype.hasOwnProperty.call(pd, item.flag)
+  ) {
     return pd[item.flag];
   }
 
   // Collectables
   if (item.type === "collectable") {
-    const entry = pd.Collectables?.savedData?.find(e => e.Name === item.flag);
+    const entry = pd.Collectables?.savedData?.find((e) => e.Name === item.flag);
     return entry?.Data?.Amount ?? 0;
   }
 
-  
-
   // Tools / Crests (Hunter, Reaper, Wanderer, ecc.)
-  if (item.type === "tool" || item.type === "toolEquip" || item.type === "crest") {
-    const normalize = s => String(s || "")
-      .toLowerCase()
-      .replace(/\s+/g, " ")
-      .trim();
+  if (
+    item.type === "tool" ||
+    item.type === "toolEquip" ||
+    item.type === "crest"
+  ) {
+    const normalize = (s) =>
+      String(s || "")
+        .toLowerCase()
+        .replace(/\s+/g, " ")
+        .trim();
 
     const flagNorm = normalize(item.flag);
 
-    const findIn = bucket =>
-      bucket?.savedData?.find(e => normalize(e?.Name) === flagNorm);
+    const findIn = (bucket) =>
+      bucket?.savedData?.find((e) => normalize(e?.Name) === flagNorm);
 
-    const entry =
-      findIn(pd.Tools) ||
-      findIn(pd.ToolEquips);
+    const entry = findIn(pd.Tools) || findIn(pd.ToolEquips);
 
     return entry?.Data?.IsUnlocked === true;
   }
 
-// Quests (Wishes)
-if (item.type === "quest") {
-  // Elenchi possibili di dati per compatibilità (alcuni dump usano nomi diversi)
-  const questLists = [
-    pd.QuestCompletionData?.savedData,
-    pd.Quests?.savedData,
-    pd.QuestsData?.savedData,
-    pd.QuestData?.savedData,
-  ].filter(Boolean);
+  // Quests (Wishes)
+  if (item.type === "quest") {
+    // Elenchi possibili di dati per compatibilità (alcuni dump usano nomi diversi)
+    const questLists = [
+      pd.QuestCompletionData?.savedData,
+      pd.Quests?.savedData,
+      pd.QuestsData?.savedData,
+      pd.QuestData?.savedData,
+    ].filter(Boolean);
 
-  // Normalizza il nome per evitare problemi di maiuscole/spazi
-  const normalize = s => String(s || "").toLowerCase().trim();
-  const flagNorm = normalize(item.flag);
+    // Normalizza il nome per evitare problemi di maiuscole/spazi
+    const normalize = (s) =>
+      String(s || "")
+        .toLowerCase()
+        .trim();
+    const flagNorm = normalize(item.flag);
 
-  // Cerca in tutti i possibili array
-  let entry;
-  for (const list of questLists) {
-    entry = list.find(e => normalize(e.Name) === flagNorm);
-    if (entry) break;
+    // Cerca in tutti i possibili array
+    let entry;
+    for (const list of questLists) {
+      entry = list.find((e) => normalize(e.Name) === flagNorm);
+      if (entry) break;
+    }
+
+    if (!entry) return false;
+
+    const data = entry.Data || entry.Record || {};
+
+    // 🎯 Stato della quest
+    if (
+      data.IsCompleted === true ||
+      data.Completed === true ||
+      data.Complete === true
+    ) {
+      return "completed";
+    }
+
+    if (data.IsAccepted === true || data.Accepted === true) {
+      return "accepted";
+    }
+
+    return false;
   }
-
-  if (!entry) return false;
-
-  const data = entry.Data || entry.Record || {};
-
-  // 🎯 Stato della quest
-  if (data.IsCompleted === true || data.Completed === true || data.Complete === true) {
-    return "completed";
-  }
-
-  if (data.IsAccepted === true || data.Accepted === true) {
-    return "accepted";
-  }
-
-  return false;
-}
-
-
 
   // Scene flags (Mask Shards, Heart Pieces ecc.)
   if (item.type === "sceneBool") {
-    const scene = String(item.scene || "").trim().replace(/\s+/g, "_");
-    const idKey = String(item.flag  || "").trim().replace(/\s+/g, "_").replace(/[^\w.]/g, "_");
+    const scene = String(item.scene || "")
+      .trim()
+      .replace(/\s+/g, "_");
+    const idKey = String(item.flag || "")
+      .trim()
+      .replace(/\s+/g, "_")
+      .replace(/[^\w.]/g, "_");
 
     const val = root.__flags?.[scene]?.[idKey];
     if (val !== undefined) return val;
 
     if (root[scene]) {
-      return root[scene][item.flag] ??
-             root[scene][item.flag.replace(/ /g, "_")] ??
-             false;
+      return (
+        root[scene][item.flag] ??
+        root[scene][item.flag.replace(/ /g, "_")] ??
+        false
+      );
     }
   }
 
   // Keys
-if (item.type === "key") {
-  if (item.scene) {
-    return root.__flags?.[item.scene]?.[item.flag] === true;
+  if (item.type === "key") {
+    if (item.scene) {
+      return root.__flags?.[item.scene]?.[item.flag] === true;
+    }
+    return pd[item.flag] === true;
   }
-  return pd[item.flag] === true;
-}
 
   // Scene visited (Silk Hearts, Memories ecc.)
   if (item.type === "sceneVisited" && item.scene) {
@@ -478,7 +497,7 @@ if (item.type === "key") {
     return current; // ✅ ritorna SEMPRE il numero, lo sblocco si calcola dopo
   }
 
-    // Flag numerici (flagInt) — es. CaravanTroupeLocation >= 2
+  // Flag numerici (flagInt) — es. CaravanTroupeLocation >= 2
   if (item.type === "flagInt" && item.flag) {
     const current = pd[item.flag];
     if (typeof current === "number") {
@@ -488,32 +507,34 @@ if (item.type === "key") {
     return false;
   }
 
-if (item.type === "journal") {
-  const journalList =
-    pd.EnemyJournalKillData?.list ||
-    pd.Journal?.savedData ||
-    pd.JournalData?.savedData ||
-    root.Journal?.savedData ||
-    [];
+  if (item.type === "journal") {
+    const journalList =
+      pd.EnemyJournalKillData?.list ||
+      pd.Journal?.savedData ||
+      pd.JournalData?.savedData ||
+      root.Journal?.savedData ||
+      [];
 
-  const entry = journalList.find(e => e.Name === item.flag);
-  if (!entry) return false;
+    const entry = journalList.find((e) => e.Name === item.flag);
+    if (!entry) return false;
 
-  const data = entry.Record || entry.Data || {};
+    const data = entry.Record || entry.Data || {};
 
-  // Support different conditions
-  if (item.subtype === "kills") return (data.Kills ?? 0) >= (item.required ?? 1);
-  if (item.subtype === "seen") return data.HasBeenSeen === true;
-  if (item.subtype === "unlocked") return data.IsUnlocked === true;
+    // Support different conditions
+    if (item.subtype === "kills")
+      return (data.Kills ?? 0) >= (item.required ?? 1);
+    if (item.subtype === "seen") return data.HasBeenSeen === true;
+    if (item.subtype === "unlocked") return data.IsUnlocked === true;
 
-  // fallback
-  return data.HasBeenSeen || (data.Kills ?? 0) > 0;
-}
+    // fallback
+    return data.HasBeenSeen || (data.Kills ?? 0) > 0;
+  }
 
   // Relics (Choral Commandments, Weaver Effigies, etc.)
   if (item.type === "relic" && item.flag) {
-    const list = save?.Relics?.savedData || save?.playerData?.Relics?.savedData || [];
-    const entry = list.find(e => e.Name === item.flag);
+    const list =
+      save?.Relics?.savedData || save?.playerData?.Relics?.savedData || [];
+    const entry = list.find((e) => e.Name === item.flag);
     if (!entry) return false;
 
     const data = entry.Data || {};
@@ -524,28 +545,20 @@ if (item.type === "journal") {
     return false;
   }
 
-
-
-
-
   // Fallback generico
   if (item.flag && pd[item.flag] !== undefined) {
     return pd[item.flag];
   }
 
-  
-
   return undefined;
 }
-
-
 
 function renderGenericGrid({
   containerId,
   containerEl,
   data,
   spoilerOn,
-  save = window.save
+  save = window.save,
 }) {
   const container = containerEl || document.getElementById(containerId);
   const realContainerId = containerId || container?.id || "unknown";
@@ -555,13 +568,15 @@ function renderGenericGrid({
 
   // 🔎 Varianti Silkshot (unica card visibile)
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
-  const unlockedSilkVariant = silkVariants.find(v =>
-    save?.playerData?.Tools?.savedData?.some(e => e.Name === v && e.Data?.IsUnlocked)
+  const unlockedSilkVariant = silkVariants.find((v) =>
+    save?.playerData?.Tools?.savedData?.some(
+      (e) => e.Name === v && e.Data?.IsUnlocked,
+    ),
   );
 
   let renderedCount = 0;
 
-  data.forEach(item => {
+  data.forEach((item) => {
     // Silkshot → mostra solo 1 variante
     if (silkVariants.includes(item.flag)) {
       if (unlockedSilkVariant && item.flag !== unlockedSilkVariant) return;
@@ -571,15 +586,14 @@ function renderGenericGrid({
     const div = document.createElement("div");
     div.className = "boss";
 
-// 🔹 Etichetta dell'atto (ACT I / II / III)
-if (item.act) {
-  const romanActs = {1: "I", 2: "II", 3: "III"};
-  const actLabel = document.createElement("span");
-  actLabel.className = `act-label ${item.actColor}`;
-  actLabel.textContent = `ACT ${romanActs[item.act]}`;
-  div.appendChild(actLabel);
-}
-
+    // 🔹 Etichetta dell'atto (ACT I / II / III)
+    if (item.act) {
+      const romanActs = { 1: "I", 2: "II", 3: "III" };
+      const actLabel = document.createElement("span");
+      actLabel.className = `act-label ${item.actColor}`;
+      actLabel.textContent = `ACT ${romanActs[item.act]}`;
+      div.appendChild(actLabel);
+    }
 
     div.id = `${realContainerId}-${item.id}`;
     div.dataset.flag = item.flag;
@@ -600,11 +614,10 @@ if (item.act) {
     } else if (item.type === "quest") {
       isDone = value === "completed" || value === true;
       isAccepted = value === "accepted";
-    } 
-    else if (item.type === "relic") {
-  isDone = value === "deposited";     // verde = consegnata
-  isAccepted = value === "collected"; // giallo = trovata ma non depositata
-    }else {
+    } else if (item.type === "relic") {
+      isDone = value === "deposited"; // verde = consegnata
+      isAccepted = value === "collected"; // giallo = trovata ma non depositata
+    } else {
       isDone = value === true;
     }
 
@@ -651,37 +664,33 @@ if (item.act) {
   return renderedCount;
 }
 
-
-
-
-
-
-
-
-
-function indexFlags(root){
+function indexFlags(root) {
   const flags = {};
   const mark = (sceneRaw, idRaw, value) => {
     if (!sceneRaw || !idRaw) return;
-    const scene = String(sceneRaw).trim().replace(/\s+/g,'_');
-    const idKey = String(idRaw).trim()
-      .replace(/\s+/g,'_')
-      .replace(/[^\w.]/g,'_');
+    const scene = String(sceneRaw).trim().replace(/\s+/g, "_");
+    const idKey = String(idRaw)
+      .trim()
+      .replace(/\s+/g, "_")
+      .replace(/[^\w.]/g, "_");
     if (!flags[scene]) flags[scene] = {};
     flags[scene][idKey] = Boolean(value);
   };
 
-  function walk(node){
-    if (Array.isArray(node)){ for (const it of node) walk(it); return; }
-    if (node && typeof node === 'object'){
-      const hasScene = ('SceneName' in node) || ('sceneName' in node);
-      const hasId    = ('ID' in node)        || ('Id' in node) || ('id' in node);
-      const hasVal   = ('Value' in node)     || ('value' in node);
+  function walk(node) {
+    if (Array.isArray(node)) {
+      for (const it of node) walk(it);
+      return;
+    }
+    if (node && typeof node === "object") {
+      const hasScene = "SceneName" in node || "sceneName" in node;
+      const hasId = "ID" in node || "Id" in node || "id" in node;
+      const hasVal = "Value" in node || "value" in node;
 
-      if (hasScene && hasId && hasVal){
+      if (hasScene && hasId && hasVal) {
         const scene = node.SceneName ?? node.sceneName;
-        const id    = node.ID ?? node.Id ?? node.id;
-        const val   = node.Value ?? node.value;
+        const id = node.ID ?? node.Id ?? node.id;
+        const val = node.Value ?? node.value;
         mark(scene, id, val);
       }
       for (const k in node) walk(node[k]);
@@ -693,10 +702,8 @@ function indexFlags(root){
   return root;
 }
 
-
-
 // ---------- FILE HANDLING ----------
-document.getElementById("fileInput").addEventListener("change", e => {
+document.getElementById("fileInput").addEventListener("change", (e) => {
   const file = e.target.files && e.target.files[0];
   if (file) handleSaveFile(file);
 });
@@ -710,7 +717,6 @@ function validateSave(obj) {
   return obj && typeof obj === "object" && obj.playerData;
 }
 
-
 // --- Caricamento file principale ---
 async function handleSaveFile(fileOrHandle) {
   try {
@@ -723,7 +729,9 @@ async function handleSaveFile(fileOrHandle) {
         window.lastFileHandle = fileOrHandle;
       } catch (err) {
         console.warn("Permission or access error:", err);
-        showToast("⚠️ Browser permission issue. Please reselect your save file.");
+        showToast(
+          "⚠️ Browser permission issue. Please reselect your save file.",
+        );
         document.getElementById("uploadOverlay")?.classList.remove("hidden");
         return;
       }
@@ -761,12 +769,19 @@ async function handleSaveFile(fileOrHandle) {
     if (!window.lastFileHandle && "showOpenFilePicker" in window) {
       try {
         const [handle] = await window.showOpenFilePicker({
-          types: [{ description: "Silksong Save", accept: { "application/octet-stream": [".dat"] } }],
+          types: [
+            {
+              description: "Silksong Save",
+              accept: { "application/octet-stream": [".dat"] },
+            },
+          ],
         });
         window.lastFileHandle = handle;
       } catch (err) {
         console.warn("User cancelled or API not supported:", err);
-        showToast("⚠️ Browser permission issue. Please reselect your save file.");
+        showToast(
+          "⚠️ Browser permission issue. Please reselect your save file.",
+        );
         document.getElementById("uploadOverlay")?.classList.remove("hidden");
         return;
       }
@@ -811,7 +826,8 @@ async function handleSaveFile(fileOrHandle) {
     }
 
     // --- Aggiorna la tab attiva ---
-    const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
+    const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset
+      .tab;
     const updater = {
       bosses: updateBossesContent,
       main: updateMainContent,
@@ -824,16 +840,14 @@ async function handleSaveFile(fileOrHandle) {
     applyMissingFilter?.();
     showToast("✅ Save file loaded successfully!");
     document.getElementById("uploadOverlay")?.classList.add("hidden");
-
   } catch (err) {
     console.error("[save] Decode error:", err);
-    showToast("⚠️ Browser permission or file access issue. Please reselect your save file.");
+    showToast(
+      "⚠️ Browser permission or file access issue. Please reselect your save file.",
+    );
     document.getElementById("uploadOverlay")?.classList.remove("hidden");
   }
 }
-
-
-
 
 async function refreshSaveFile() {
   try {
@@ -849,7 +863,8 @@ async function refreshSaveFile() {
 
       window.save = indexFlags(saveData);
 
-      const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
+      const activeTab = document.querySelector(".sidebar-item.is-active")
+        ?.dataset.tab;
       const updater = {
         bosses: updateBossesContent,
         main: updateMainContent,
@@ -871,21 +886,18 @@ async function refreshSaveFile() {
     } else {
       showToast("⚠️ No save file loaded yet.");
     }
-
   } catch (err) {
     console.error("[refreshSaveFile]", err);
     showToast("❌ Failed to refresh save file");
   }
 }
 
-
-
-
-
-
 async function updateCompletionContent(selectedAct = "all") {
   const container = document.getElementById("completion-grid");
-  if (!container) return console.warn("[updateCompletionContent] Missing #completion-grid in DOM");
+  if (!container)
+    return console.warn(
+      "[updateCompletionContent] Missing #completion-grid in DOM",
+    );
 
   // 📦 Carica il file JSON
   const response = await fetch("data/completion.json?" + Date.now());
@@ -895,7 +907,7 @@ async function updateCompletionContent(selectedAct = "all") {
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
   container.innerHTML = "";
 
-  completionData.forEach(sectionData => {
+  completionData.forEach((sectionData) => {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
@@ -908,38 +920,39 @@ async function updateCompletionContent(selectedAct = "all") {
     let obtained = 0;
     let total = 0;
 
-const filteredItems = (sectionData.items || []).filter(item => {
-  // 🔹 Filtra per atto
-  if (selectedAct !== "all" && Number(item.act) !== Number(selectedAct)) return false;
-  if (!window.save) return true;
+    const filteredItems = (sectionData.items || []).filter((item) => {
+      // 🔹 Filtra per atto
+      if (selectedAct !== "all" && Number(item.act) !== Number(selectedAct))
+        return false;
+      if (!window.save) return true;
 
-  // 🔹 Filtra per tipo di salvataggio (normal / steel)
-  if (item.mode) {
-  if (!window.save && item.mode === "steel") return false;
-  if (window.save && item.mode !== window.saveMode) return false;
-}
+      // 🔹 Filtra per tipo di salvataggio (normal / steel)
+      if (item.mode) {
+        if (!window.save && item.mode === "steel") return false;
+        if (window.save && item.mode !== window.saveMode) return false;
+      }
 
-  const val = resolveSaveValue(window.save, item);
+      const val = resolveSaveValue(window.save, item);
 
-  // 🔹 Filtra solo mancanti se richiesto
-  if (showMissingOnly) {
-    if (item.type === "collectable") return (val ?? 0) === 0;
-    if (["level", "min", "region-level", "region-min"].includes(item.type))
-      return (val ?? 0) < (item.required ?? 0);
-    return val !== true;
-  }
+      // 🔹 Filtra solo mancanti se richiesto
+      if (showMissingOnly) {
+        if (item.type === "collectable") return (val ?? 0) === 0;
+        if (["level", "min", "region-level", "region-min"].includes(item.type))
+          return (val ?? 0) < (item.required ?? 0);
+        return val !== true;
+      }
 
-  return true;
-});
+      return true;
+    });
 
-
-    filteredItems.forEach(item => {
+    filteredItems.forEach((item) => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
       const isUnlocked =
-        item.type === "collectable" ? (val ?? 0) > 0 :
-        ["level", "min", "region-level", "region-min"].includes(item.type)
-          ? (val ?? 0) >= (item.required ?? 0)
-          : (val === true || val === "collected" || val === "deposited");
+        item.type === "collectable"
+          ? (val ?? 0) > 0
+          : ["level", "min", "region-level", "region-min"].includes(item.type)
+            ? (val ?? 0) >= (item.required ?? 0)
+            : val === true || val === "collected" || val === "deposited";
 
       if (isUnlocked) obtained++;
       total++;
@@ -967,19 +980,16 @@ const filteredItems = (sectionData.items || []).filter(item => {
     const visible = renderGenericGrid({
       containerEl: subgrid,
       data: filteredItems,
-      spoilerOn
+      spoilerOn,
     });
 
-    if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) return;
+    if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
+      return;
 
     section.appendChild(subgrid);
     container.appendChild(section);
   });
 }
-
-
-
-
 
 // ---------- TOAST ----------
 function showToast(message) {
@@ -1004,16 +1014,18 @@ function showToast(message) {
 
 // Gestione click sulla sidebar
 // Gestione click sulla sidebar
-document.querySelectorAll(".sidebar-item").forEach(btn => {
-  btn.addEventListener("click", e => {
+document.querySelectorAll(".sidebar-item").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
     e.preventDefault();
 
     // Rimuove/aggiunge la classe di attivazione
-    document.querySelectorAll(".sidebar-item").forEach(i => i.classList.remove("is-active"));
+    document
+      .querySelectorAll(".sidebar-item")
+      .forEach((i) => i.classList.remove("is-active"));
     btn.classList.add("is-active");
 
     // Nasconde tutte le tab
-    document.querySelectorAll(".tab").forEach(section => {
+    document.querySelectorAll(".tab").forEach((section) => {
       section.classList.add("hidden");
     });
 
@@ -1033,7 +1045,8 @@ document.querySelectorAll(".sidebar-item").forEach(btn => {
 
     // Attiva/disattiva home scroll
     document.body.classList.toggle("home-active", selectedTab === "home");
-    document.documentElement.style.overflowY = selectedTab === "home" ? "hidden" : "auto";
+    document.documentElement.style.overflowY =
+      selectedTab === "home" ? "hidden" : "auto";
 
     // 🔹 Aggiorna la tab corrente con il filtro corretto
     const updater = {
@@ -1047,8 +1060,6 @@ document.querySelectorAll(".sidebar-item").forEach(btn => {
     updater[selectedTab]?.(currentActFilter); // <-- applica il filtro salvato
   });
 });
-
-
 
 // ✅ Aggiunta: set home-active al primo caricamento se siamo su home
 window.addEventListener("DOMContentLoaded", () => {
@@ -1074,8 +1085,12 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // 🔹 Reset visibilità tab
-  document.querySelectorAll(".sidebar-item").forEach(i => i.classList.remove("is-active"));
-  document.querySelectorAll(".tab").forEach(section => section.classList.add("hidden"));
+  document
+    .querySelectorAll(".sidebar-item")
+    .forEach((i) => i.classList.remove("is-active"));
+  document
+    .querySelectorAll(".tab")
+    .forEach((section) => section.classList.add("hidden"));
 
   // 🔹 Attiva la scheda salvata
   const btn = document.querySelector(`.sidebar-item[data-tab="${savedTab}"]`);
@@ -1102,8 +1117,6 @@ window.addEventListener("DOMContentLoaded", () => {
   }, 50);
 });
 
-
-
 async function updateMainContent(selectedAct = "all") {
   const response = await fetch("data/main.json");
   const mainData = await response.json();
@@ -1113,7 +1126,7 @@ async function updateMainContent(selectedAct = "all") {
   const container = document.getElementById("main-grid");
   container.innerHTML = "";
 
-  mainData.forEach(sectionData => {
+  mainData.forEach((sectionData) => {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
@@ -1122,14 +1135,14 @@ async function updateMainContent(selectedAct = "all") {
     heading.textContent = sectionData.label;
 
     // ✅ Filtra per act e solo mancanti
-    let filteredItems = (sectionData.items || []).filter(item =>
-  (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-  matchMode(item)
-);
-
+    let filteredItems = (sectionData.items || []).filter(
+      (item) =>
+        (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
+        matchMode(item),
+    );
 
     if (showMissingOnly && window.save) {
-      filteredItems = filteredItems.filter(item => {
+      filteredItems = filteredItems.filter((item) => {
         const val = resolveSaveValue(window.save, item);
         if (item.type === "collectable") return (val ?? 0) === 0;
         if (["level", "min", "region-level", "region-min"].includes(item.type))
@@ -1139,7 +1152,7 @@ async function updateMainContent(selectedAct = "all") {
     }
 
     // 🔹 Colori atti
-    filteredItems.forEach(item => {
+    filteredItems.forEach((item) => {
       if (item.act === 1) item.actColor = "act-1";
       else if (item.act === 2) item.actColor = "act-2";
       else if (item.act === 3) item.actColor = "act-3";
@@ -1150,15 +1163,17 @@ async function updateMainContent(selectedAct = "all") {
     const exclusiveGroups = new Set();
     const countedGroups = new Set();
 
-    filteredItems.forEach(item => {
+    filteredItems.forEach((item) => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
       const isUnlocked =
-        (item.type === "level" || item.type === "min" ||
-         item.type === "region-level" || item.type === "region-min")
+        item.type === "level" ||
+        item.type === "min" ||
+        item.type === "region-level" ||
+        item.type === "region-min"
           ? (val ?? 0) >= (item.required ?? 0)
           : item.type === "collectable"
             ? (val ?? 0) > 0
-            : (val === true || val === "collected" || val === "deposited");
+            : val === true || val === "collected" || val === "deposited";
 
       if (item.exclusiveGroup) {
         exclusiveGroups.add(item.exclusiveGroup);
@@ -1172,7 +1187,7 @@ async function updateMainContent(selectedAct = "all") {
     });
 
     const total =
-      (filteredItems.filter(i => !i.exclusiveGroup).length || 0) +
+      (filteredItems.filter((i) => !i.exclusiveGroup).length || 0) +
       exclusiveGroups.size;
 
     const count = document.createElement("span");
@@ -1195,20 +1210,21 @@ async function updateMainContent(selectedAct = "all") {
     const visible = renderGenericGrid({
       containerEl: subgrid,
       data: filteredItems,
-      spoilerOn
+      spoilerOn,
     });
 
-    if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) return;
+    if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
+      return;
 
     section.appendChild(subgrid);
     container.appendChild(section);
   });
 }
 
-
 async function updateWishesContent(selectedAct = "all") {
   const container = document.getElementById("wishes-grid");
-  if (!container) return console.warn("[updateWishesContent] Missing #wishes-grid in DOM");
+  if (!container)
+    return console.warn("[updateWishesContent] Missing #wishes-grid in DOM");
 
   // 🗃️ Carica il file JSON
   const response = await fetch("data/wishes.json");
@@ -1218,7 +1234,7 @@ async function updateWishesContent(selectedAct = "all") {
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
   container.innerHTML = "";
 
-  questData.forEach(sectionData => {
+  questData.forEach((sectionData) => {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
@@ -1228,46 +1244,50 @@ async function updateWishesContent(selectedAct = "all") {
     heading.textContent = sectionData.label;
 
     // 🔒 Gestione quest mutuamente esclusive
-    const exclusivePairs = [
-      ["Huntress Quest", "Huntress Quest Runt"],
-    ];
+    const exclusivePairs = [["Huntress Quest", "Huntress Quest Runt"]];
 
     // ✅ 1️⃣ Filtra per salvataggio
-let filteredItems = (sectionData.items || []).filter(item => {
-  // 🔹 Filtra per tipo di salvataggio (normal / steel)
-  if (item.mode) {
-    // Nessun salvataggio → mostra solo i "normal"
-    if (!window.save && item.mode === "steel") return false;
-    // Se c'è un salvataggio → mostra solo quelli coerenti
-    if (window.save && item.mode !== window.saveMode) return false;
-  }
+    let filteredItems = (sectionData.items || []).filter((item) => {
+      // 🔹 Filtra per tipo di salvataggio (normal / steel)
+      if (item.mode) {
+        // Nessun salvataggio → mostra solo i "normal"
+        if (!window.save && item.mode === "steel") return false;
+        // Se c'è un salvataggio → mostra solo quelli coerenti
+        if (window.save && item.mode !== window.saveMode) return false;
+      }
 
-  // 🔹 Gestione coppie esclusive (es. Huntress Quest / Runt)
-  const pair = exclusivePairs.find(p => p.includes(item.flag));
-  if (!pair) return true;
+      // 🔹 Gestione coppie esclusive (es. Huntress Quest / Runt)
+      const pair = exclusivePairs.find((p) => p.includes(item.flag));
+      if (!pair) return true;
 
-  const [a, b] = pair;
-  const aVal = window.save ? resolveSaveValue(window.save, { flag: a, type: "quest" }) : false;
-  const bVal = window.save ? resolveSaveValue(window.save, { flag: b, type: "quest" }) : false;
+      const [a, b] = pair;
+      const aVal = window.save
+        ? resolveSaveValue(window.save, { flag: a, type: "quest" })
+        : false;
+      const bVal = window.save
+        ? resolveSaveValue(window.save, { flag: b, type: "quest" })
+        : false;
 
-  const aActive = aVal === true || aVal === "completed" || aVal === "accepted";
-  const bActive = bVal === true || bVal === "completed" || bVal === "accepted";
+      const aActive =
+        aVal === true || aVal === "completed" || aVal === "accepted";
+      const bActive =
+        bVal === true || bVal === "completed" || bVal === "accepted";
 
-  if ((aActive && item.flag === b) || (bActive && item.flag === a)) return false;
+      if ((aActive && item.flag === b) || (bActive && item.flag === a))
+        return false;
 
-  return true;
-});
-
-
+      return true;
+    });
 
     // ✅ 2️⃣ Filtra per atto selezionato
-    filteredItems = filteredItems.filter(item =>
-      selectedAct === "all" || Number(item.act) === Number(selectedAct)
+    filteredItems = filteredItems.filter(
+      (item) =>
+        selectedAct === "all" || Number(item.act) === Number(selectedAct),
     );
 
     // ✅ 3️⃣ Seleziona solo i mancanti (coerente con l’atto)
     if (showMissingOnly && window.save) {
-      filteredItems = filteredItems.filter(item => {
+      filteredItems = filteredItems.filter((item) => {
         const val = resolveSaveValue(window.save, item);
         if (item.type === "quest") return val !== "completed" && val !== true;
         if (item.type === "collectable") return (val ?? 0) === 0;
@@ -1278,7 +1298,7 @@ let filteredItems = (sectionData.items || []).filter(item => {
     }
 
     // 🔹 Colori atti
-    filteredItems.forEach(item => {
+    filteredItems.forEach((item) => {
       if (item.act === 1) item.actColor = "act-1";
       else if (item.act === 2) item.actColor = "act-2";
       else if (item.act === 3) item.actColor = "act-3";
@@ -1289,17 +1309,19 @@ let filteredItems = (sectionData.items || []).filter(item => {
     const exclusiveGroups = new Set();
     const countedGroups = new Set();
 
-    filteredItems.forEach(item => {
+    filteredItems.forEach((item) => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
       const isUnlocked =
         item.type === "quest"
-          ? (val === "completed" || val === true)
-          : (item.type === "level" || item.type === "min" ||
-             item.type === "region-level" || item.type === "region-min")
+          ? val === "completed" || val === true
+          : item.type === "level" ||
+              item.type === "min" ||
+              item.type === "region-level" ||
+              item.type === "region-min"
             ? (val ?? 0) >= (item.required ?? 0)
             : item.type === "collectable"
               ? (val ?? 0) > 0
-              : (val === true || val === "collected" || val === "deposited");
+              : val === true || val === "collected" || val === "deposited";
 
       if (item.exclusiveGroup) {
         exclusiveGroups.add(item.exclusiveGroup);
@@ -1313,7 +1335,7 @@ let filteredItems = (sectionData.items || []).filter(item => {
     });
 
     const total =
-      (filteredItems.filter(i => !i.exclusiveGroup).length || 0) +
+      (filteredItems.filter((i) => !i.exclusiveGroup).length || 0) +
       exclusiveGroups.size;
 
     // 🧮 Intestazione
@@ -1338,24 +1360,17 @@ let filteredItems = (sectionData.items || []).filter(item => {
     const visible = renderGenericGrid({
       containerEl: subgrid,
       data: filteredItems,
-      spoilerOn
+      spoilerOn,
     });
 
     // Se non c'è nulla da mostrare → salta
-    if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) return;
+    if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
+      return;
 
     section.appendChild(subgrid);
     container.appendChild(section);
   });
 }
-
-
-
-
-
-
-
-
 
 function showGenericModal(data) {
   const overlay = document.getElementById("info-overlay");
@@ -1363,7 +1378,9 @@ function showGenericModal(data) {
 
   // ✅ Percorso completo per la mappa (funziona anche su GitHub Pages)
   const mapSrc = data.map
-    ? (data.map.startsWith("http") ? data.map : `${BASE_PATH}/${data.map}`)
+    ? data.map.startsWith("http")
+      ? data.map
+      : `${BASE_PATH}/${data.map}`
     : null;
 
   content.innerHTML = `
@@ -1373,18 +1390,26 @@ function showGenericModal(data) {
     <p class="info-description">${data.description || "No description available."}</p>
     ${data.obtain ? `<p class="info-extra"><strong>Obtained:</strong> ${data.obtain}</p>` : ""}
     ${data.cost ? `<p class="info-extra"><strong>Cost:</strong> ${data.cost}</p>` : ""}
-    ${mapSrc ? `
+    ${
+      mapSrc
+        ? `
       <div class="info-map-wrapper">
         <a href="${mapSrc}" target="_blank" title="Click to open full map">
           <img src="${mapSrc}" alt="Map location" class="info-map">
         </a>
       </div>
-    ` : ""}
-    ${data.link ? `
+    `
+        : ""
+    }
+    ${
+      data.link
+        ? `
       <div class="info-link-wrapper">
         <a href="${data.link}" target="_blank" class="info-link">More info →</a>
       </div>
-    ` : ""}
+    `
+        : ""
+    }
   `;
 
   overlay.classList.remove("hidden");
@@ -1393,11 +1418,6 @@ function showGenericModal(data) {
     overlay.classList.add("hidden");
   });
 }
-
-
-
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const closeInfo = document.getElementById("closeInfoModal");
@@ -1417,17 +1437,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🎬 Info Modal
   if (closeInfo && infoOverlay) {
-    closeInfo.addEventListener("click", () => infoOverlay.classList.add("hidden"));
+    closeInfo.addEventListener("click", () =>
+      infoOverlay.classList.add("hidden"),
+    );
     infoOverlay.addEventListener("click", (e) => {
       if (e.target === infoOverlay) infoOverlay.classList.add("hidden");
     });
   }
 });
 
-
-
 function reRenderActiveTab() {
-  const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
+  const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset
+    .tab;
   const currentAct = document.getElementById("actFilter")?.value || "all";
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
 
@@ -1446,6 +1467,9 @@ function reRenderActiveTab() {
   updater[activeTab]?.(currentAct);
 }
 
-document.getElementById("missingToggle").addEventListener("change", reRenderActiveTab);
-document.getElementById("actFilter").addEventListener("change", reRenderActiveTab);
-
+document
+  .getElementById("missingToggle")
+  .addEventListener("change", reRenderActiveTab);
+document
+  .getElementById("actFilter")
+  .addEventListener("change", reRenderActiveTab);
