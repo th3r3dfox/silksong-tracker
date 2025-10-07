@@ -3,57 +3,78 @@ const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
   ? "/silksong-tracker"
   : "";
 import { decodeSilksongSave } from "./SaveDecoder.js";
+let currentActFilter = document.getElementById("actFilter")?.value || "all";
+
 
 // ---------- DATA ----------
 let bossList = [];
 
-async function updateBossesContent() {
+async function updateBossesContent(selectedAct = "all") {
   const response = await fetch("data/bosses.json?" + Date.now());
   const bossesData = await response.json();
-  const spoilerOn = document.getElementById("spoilerToggle").checked;
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
 
+  const spoilerOn = document.getElementById("spoilerToggle")?.checked;
+  const showMissingOnly = document.getElementById("missingToggle")?.checked;
   const container = document.getElementById("boss-grid");
   container.innerHTML = "";
 
-  // Gestisce eventuale formato singolo oggetto
   const sections = Array.isArray(bossesData) ? bossesData : [bossesData];
 
   sections.forEach(sectionData => {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
-    // Titolo principale
+    // Titolo sezione + conteggio
     const heading = document.createElement("h3");
     heading.className = "category-title";
     heading.textContent = sectionData.label;
 
-    // 🔢 Calcolo ottenuti / totali (come in updateMainContent)
-    if (Array.isArray(sectionData.items)) {
-      let obtained = 0;
-      const total = sectionData.items.length;
+    // ✅ 1️⃣ Filtra per act
+    let filteredItems = (sectionData.items || []).filter(item =>
+      selectedAct === "all" || Number(item.act) === Number(selectedAct)
+    );
 
-      (sectionData.items || []).forEach(item => {
-        const val = window.save ? resolveSaveValue(window.save, item) : false;
-        const isUnlocked =
-          (item.type === "level" || item.type === "min" || item.type === "region-level" || item.type === "region-min")
-            ? (val ?? 0) >= (item.required ?? 0)
-            : item.type === "collectable"
-              ? (val ?? 0) > 0
-              : val === true;
-
-        if (isUnlocked) obtained++;
+    // ✅ 2️⃣ Filtra “solo mancanti” (coerente con act)
+    if (showMissingOnly && window.save) {
+      filteredItems = filteredItems.filter(item => {
+        const val = resolveSaveValue(window.save, item);
+        if (item.type === "collectable") return (val ?? 0) === 0;
+        if (["level", "min", "region-level", "region-min"].includes(item.type))
+          return (val ?? 0) < (item.required ?? 0);
+        return val !== true;
       });
-
-      const count = document.createElement("span");
-      count.className = "category-count";
-      count.textContent = ` ${obtained}/${total}`;
-      heading.appendChild(count);
     }
 
+    // 🔹 Colori atti
+    filteredItems.forEach(item => {
+      if (item.act === 1) item.actColor = "act-1";
+      else if (item.act === 2) item.actColor = "act-2";
+      else if (item.act === 3) item.actColor = "act-3";
+    });
+
+    // 🔢 Calcolo ottenuti / totali
+    let obtained = 0;
+
+    filteredItems.forEach(item => {
+      const val = window.save ? resolveSaveValue(window.save, item) : false;
+      const isUnlocked =
+        (item.type === "level" || item.type === "min" ||
+         item.type === "region-level" || item.type === "region-min")
+          ? (val ?? 0) >= (item.required ?? 0)
+          : item.type === "collectable"
+            ? (val ?? 0) > 0
+            : val === true;
+      if (isUnlocked) obtained++;
+    });
+
+    const total = filteredItems.length;
+
+    const count = document.createElement("span");
+    count.className = "category-count";
+    count.textContent = ` ${obtained}/${total}`;
+    heading.appendChild(count);
     section.appendChild(heading);
 
-    // Descrizione (solo una volta per categoria)
     if (sectionData.desc) {
       const desc = document.createElement("p");
       desc.className = "category-desc";
@@ -61,16 +82,17 @@ async function updateBossesContent() {
       section.appendChild(desc);
     }
 
-    // Griglia con i boss
     const subgrid = document.createElement("div");
     subgrid.className = "grid";
+
     const visible = renderGenericGrid({
       containerEl: subgrid,
-      data: sectionData.items,
+      data: filteredItems,
       spoilerOn
     });
 
-    if (showMissingOnly && visible === 0) return;
+    // se non ci sono elementi visibili, non aggiungere la sezione
+    if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) return;
 
     section.appendChild(subgrid);
     container.appendChild(section);
@@ -79,51 +101,18 @@ async function updateBossesContent() {
 
 
 
-
-
-
-function renderBossGrid() {
-  const grid = document.getElementById("boss-grid");
-  grid.innerHTML = "";
-
-  bossList.forEach(boss => {
-    const div = document.createElement("div");
-    div.className = "boss";
-    div.id = boss.id;
-    div.dataset.flag = boss.flag;
-
-    const img = document.createElement("img");
-    img.alt = boss.label;
-    img.dataset.realIcon = boss.icon;
-    img.src = "assets/icons/locked.png";
-
-    const label = document.createElement("div");
-    label.textContent = boss.label;
-
-    div.appendChild(img);
-    div.appendChild(label);
-    grid.appendChild(div);
-  });
-
-  updateBossesContent();
-}
-
 // ---------- SPOILER TOGGLE ----------
 document.getElementById("spoilerToggle").addEventListener("change", () => {
-  const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
-  
-  const updater = {
-    bosses: updateBossesContent,
-    main: updateMainContent,
-    essentials: updateNewTabContent,
-    wishes: updateWishesContent,
-    // aggiungi qui eventuali altre sezioni:
-    // charms: updateCharms,
-    // items: updateItems,
-  };
+  const spoilerChecked = document.getElementById("spoilerToggle").checked;
+  document.body.classList.toggle("spoiler-on", !spoilerChecked);
 
-  updater[activeTab]?.();
+  // Salva anche questo stato se vuoi mantenerlo al refresh
+  localStorage.setItem("showSpoilers", spoilerChecked);
+
+  // Usa la stessa logica dei filtri (così mantiene Act + Missing)
+  reRenderActiveTab();
 });
+
 
 function updateIcons() {
   const spoilerOn = document.getElementById("spoilerToggle").checked;
@@ -134,7 +123,10 @@ function updateIcons() {
   });
 }
 
-document.getElementById("missingToggle").addEventListener("change", applyMissingFilter);
+
+
+
+//  document.getElementById("missingToggle").addEventListener("change", applyMissingFilter);
 
 function applyMissingFilter() {
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
@@ -167,12 +159,12 @@ function applyMissingFilter() {
 
 
 
-async function updateNewTabContent() {
+async function updateNewTabContent(selectedAct = "all") {
   const response = await fetch("data/essentials.json");
   const newtabData = await response.json();
-  const spoilerOn = document.getElementById("spoilerToggle").checked;
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
 
+  const spoilerOn = document.getElementById("spoilerToggle")?.checked;
+  const showMissingOnly = document.getElementById("missingToggle")?.checked;
   const container = document.getElementById("essentials-grid");
   container.innerHTML = "";
 
@@ -180,69 +172,68 @@ async function updateNewTabContent() {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
-// Titolo con percentuale e conteggio
-const heading = document.createElement("h3");
-heading.className = "category-title";
-heading.textContent = sectionData.label;
+    const heading = document.createElement("h3");
+    heading.className = "category-title";
+    heading.textContent = sectionData.label;
 
-// 🔢 Calcola ottenuti / totali per questa categoria
-// Conta correttamente anche gruppi esclusivi
-let obtained = 0;
-const exclusiveGroups = new Set();
-const countedGroups = new Set();
+    // ✅ Filtra per act e mancanti
+    let filteredItems = (sectionData.items || []).filter(item =>
+      selectedAct === "all" || Number(item.act) === Number(selectedAct)
+    );
 
-(sectionData.items || []).forEach(item => {
-  const val = window.save ? resolveSaveValue(window.save, item) : false;
-  const isUnlocked =
-    (item.type === "level" || item.type === "min" || item.type === "region-level" || item.type === "region-min")
-      ? (val ?? 0) >= (item.required ?? 0)
-      : item.type === "collectable"
-        ? (val ?? 0) > 0
-        : val === true;
-
-  // Se l’oggetto appartiene a un gruppo esclusivo
-  if (item.exclusiveGroup) {
-    exclusiveGroups.add(item.exclusiveGroup);
-    if (isUnlocked && !countedGroups.has(item.exclusiveGroup)) {
-      countedGroups.add(item.exclusiveGroup);
-      obtained++;
+    if (showMissingOnly && window.save) {
+      filteredItems = filteredItems.filter(item => {
+        const val = resolveSaveValue(window.save, item);
+        if (item.type === "collectable") return (val ?? 0) === 0;
+        if (["level", "min", "region-level", "region-min"].includes(item.type))
+          return (val ?? 0) < (item.required ?? 0);
+        return val !== true;
+      });
     }
-  } else {
-    obtained += isUnlocked ? 1 : 0;
-  }
-});
 
-// Totale reale = item normali + gruppi esclusivi (non la somma di tutti)
-const total = (sectionData.items?.filter(i => !i.exclusiveGroup).length || 0) + exclusiveGroups.size;
+    // 🔹 Colori atti
+    filteredItems.forEach(item => {
+      if (item.act === 1) item.actColor = "act-1";
+      else if (item.act === 2) item.actColor = "act-2";
+      else if (item.act === 3) item.actColor = "act-3";
+    });
 
-if (window.save && Array.isArray(sectionData.items)) {
-  obtained = sectionData.items.filter(item => {
-    const val = resolveSaveValue(window.save, item);
-    if (item.type === "level" || item.type === "min" || item.type === "region-level" || item.type === "region-min") {
-      return (val ?? 0) >= (item.required ?? 0);
-    } else if (item.type === "collectable") {
-      return (val ?? 0) > 0;
-    } else {
-      return val === true;
-    }
-  }).length;
-}
+    // 🔢 Conteggio ottenuti / totali
+    let obtained = 0;
+    const exclusiveGroups = new Set();
+    const countedGroups = new Set();
 
-// 🔘 Percentuale contrib (quella definita nel JSON)
-if (sectionData.contrib && sectionData.contrib > 0) {
-  const contrib = document.createElement("span");
-  contrib.className = "category-contrib";
-  contrib.textContent = ` (${sectionData.contrib}%)`;
-  heading.appendChild(contrib);
-}
+    filteredItems.forEach(item => {
+      const val = window.save ? resolveSaveValue(window.save, item) : false;
+      const isUnlocked =
+        (item.type === "level" || item.type === "min" ||
+         item.type === "region-level" || item.type === "region-min")
+          ? (val ?? 0) >= (item.required ?? 0)
+          : item.type === "collectable"
+            ? (val ?? 0) > 0
+            : val === true;
 
-// ➕ Conteggio ottenuti / totali
-const count = document.createElement("span");
-count.className = "category-count";
-count.textContent = ` ${obtained}/${total}`;
-heading.appendChild(count);
+      if (item.exclusiveGroup) {
+        exclusiveGroups.add(item.exclusiveGroup);
+        if (isUnlocked && !countedGroups.has(item.exclusiveGroup)) {
+          countedGroups.add(item.exclusiveGroup);
+          obtained++;
+        }
+      } else {
+        obtained += isUnlocked ? 1 : 0;
+      }
+    });
 
-section.appendChild(heading);
+    const total =
+      (filteredItems.filter(i => !i.exclusiveGroup).length || 0) +
+      exclusiveGroups.size;
+
+    const count = document.createElement("span");
+    count.className = "category-count";
+    count.textContent = ` ${obtained}/${total}`;
+    heading.appendChild(count);
+
+    section.appendChild(heading);
 
     if (sectionData.desc) {
       const desc = document.createElement("p");
@@ -253,19 +244,19 @@ section.appendChild(heading);
 
     const subgrid = document.createElement("div");
     subgrid.className = "grid";
+
     const visible = renderGenericGrid({
       containerEl: subgrid,
-      data: sectionData.items,
+      data: filteredItems,
       spoilerOn
     });
 
-    if (showMissingOnly && visible === 0) return;
+    if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) return;
 
     section.appendChild(subgrid);
     container.appendChild(section);
   });
 }
-
 
 
 
@@ -548,6 +539,17 @@ function renderGenericGrid({
 
     const div = document.createElement("div");
     div.className = "boss";
+
+// 🔹 Etichetta dell'atto (ACT I / II / III)
+if (item.act) {
+  const romanActs = {1: "I", 2: "II", 3: "III"};
+  const actLabel = document.createElement("span");
+  actLabel.className = `act-label ${item.actColor}`;
+  actLabel.textContent = `ACT ${romanActs[item.act]}`;
+  div.appendChild(actLabel);
+}
+
+
     div.id = `${realContainerId}-${item.id}`;
     div.dataset.flag = item.flag;
 
@@ -764,13 +766,16 @@ function showToast(message) {
 }
 
 // Gestione click sulla sidebar
+// Gestione click sulla sidebar
 document.querySelectorAll(".sidebar-item").forEach(btn => {
   btn.addEventListener("click", e => {
     e.preventDefault();
 
+    // Rimuove/aggiunge la classe di attivazione
     document.querySelectorAll(".sidebar-item").forEach(i => i.classList.remove("is-active"));
     btn.classList.add("is-active");
 
+    // Nasconde tutte le tab
     document.querySelectorAll(".tab").forEach(section => {
       section.classList.add("hidden");
     });
@@ -781,63 +786,91 @@ document.querySelectorAll(".sidebar-item").forEach(btn => {
       activeSection.classList.remove("hidden");
     }
 
+    // 🔹 Mantieni stato filtro ACT
+    const savedAct = localStorage.getItem("currentActFilter") || "all";
+    document.getElementById("actFilter").value = savedAct;
+    currentActFilter = savedAct;
+
+    // 🔹 Salva tab attiva
     localStorage.setItem("activeTab", selectedTab);
 
-    // toggle body scroll based on home
+    // Attiva/disattiva home scroll
     document.body.classList.toggle("home-active", selectedTab === "home");
+    document.documentElement.style.overflowY = selectedTab === "home" ? "hidden" : "auto";
 
-    // Fix scroll instantly
-    if (selectedTab === "home") {
-      document.documentElement.style.overflowY = "hidden";
-    } else {
-      document.documentElement.style.overflowY = "auto";
-    }
-
-    // Funzioni per sezione
+    // 🔹 Aggiorna la tab corrente con il filtro corretto
     const updater = {
       bosses: updateBossesContent,
       main: updateMainContent,
       essentials: updateNewTabContent,
       wishes: updateWishesContent,
     };
-    updater[selectedTab]?.();
+
+    updater[selectedTab]?.(currentActFilter); // <-- applica il filtro salvato
   });
 });
 
 
+
 // ✅ Aggiunta: set home-active al primo caricamento se siamo su home
 window.addEventListener("DOMContentLoaded", () => {
-  const savedTab = localStorage.getItem("activeTab") || "home"; // se non c’è nulla → default main
+  // 🔹 Ripristina tab e filtri salvati
+  const savedTab = localStorage.getItem("activeTab") || "home";
+  const savedAct = localStorage.getItem("currentActFilter") || "all";
+  const spoilerToggle = document.getElementById("spoilerToggle");
+  const missingToggle = document.getElementById("missingToggle");
 
-  // resetto tutto
+  // 🔹 Ripristina valore del filtro Act
+  document.getElementById("actFilter").value = savedAct;
+  currentActFilter = savedAct;
+
+  // 🔹 Sincronizza stato "Show spoilers" (mantiene i colori coerenti)
+  if (spoilerToggle) {
+    const spoilerChecked = spoilerToggle.checked;
+    document.body.classList.toggle("spoiler-on", !spoilerChecked);
+  }
+
+  // 🔹 Sincronizza stato "Show only missing"
+  if (missingToggle) {
+    missingToggle.checked = localStorage.getItem("showMissingOnly") === "true";
+  }
+
+  // 🔹 Reset visibilità tab
   document.querySelectorAll(".sidebar-item").forEach(i => i.classList.remove("is-active"));
   document.querySelectorAll(".tab").forEach(section => section.classList.add("hidden"));
 
-  // attivo la scheda salvata
+  // 🔹 Attiva la scheda salvata
   const btn = document.querySelector(`.sidebar-item[data-tab="${savedTab}"]`);
   if (btn) btn.classList.add("is-active");
 
   const activeSection = document.getElementById(`${savedTab}-section`);
   if (activeSection) activeSection.classList.remove("hidden");
 
-  // aggiorno il contenuto della scheda
+  // 🔹 Applica la classe home-active se serve
+  document.body.classList.toggle("home-active", savedTab === "home");
+
+  // 🔹 Aggiorna il contenuto della tab (con il filtro dell'atto)
   const updater = {
     bosses: updateBossesContent,
     main: updateMainContent,
     essentials: updateNewTabContent,
     wishes: updateWishesContent,
   };
-  updater[savedTab]?.();
+
+  // Delay minimo per sicurezza (previene race con rendering DOM)
+  setTimeout(() => {
+    updater[savedTab]?.(currentActFilter);
+  }, 50);
 });
 
 
 
-async function updateMainContent() {
+async function updateMainContent(selectedAct = "all") {
   const response = await fetch("data/main.json");
   const mainData = await response.json();
-  const spoilerOn = document.getElementById("spoilerToggle").checked;
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
 
+  const spoilerOn = document.getElementById("spoilerToggle")?.checked;
+  const showMissingOnly = document.getElementById("missingToggle")?.checked;
   const container = document.getElementById("main-grid");
   container.innerHTML = "";
 
@@ -845,71 +878,69 @@ async function updateMainContent() {
     const section = document.createElement("div");
     section.className = "main-section-block";
 
-// Titolo con percentuale e conteggio
-const heading = document.createElement("h3");
-heading.className = "category-title";
-heading.textContent = sectionData.label;
+    const heading = document.createElement("h3");
+    heading.className = "category-title";
+    heading.textContent = sectionData.label;
 
-// 🔢 Calcola ottenuti / totali per questa categoria
-// Conta correttamente anche gruppi esclusivi
-let obtained = 0;
-const exclusiveGroups = new Set();
-const countedGroups = new Set();
+    // ✅ Filtra per act e solo mancanti
+    let filteredItems = (sectionData.items || []).filter(item =>
+      selectedAct === "all" || Number(item.act) === Number(selectedAct)
+    );
 
-(sectionData.items || []).forEach(item => {
-  const val = window.save ? resolveSaveValue(window.save, item) : false;
-  const isUnlocked =
-    (item.type === "level" || item.type === "min" || item.type === "region-level" || item.type === "region-min")
-      ? (val ?? 0) >= (item.required ?? 0)
-      : item.type === "collectable"
-        ? (val ?? 0) > 0
-        : val === true;
-
-  // Se l’oggetto appartiene a un gruppo esclusivo
-  if (item.exclusiveGroup) {
-    exclusiveGroups.add(item.exclusiveGroup);
-    if (isUnlocked && !countedGroups.has(item.exclusiveGroup)) {
-      countedGroups.add(item.exclusiveGroup);
-      obtained++;
+    if (showMissingOnly && window.save) {
+      filteredItems = filteredItems.filter(item => {
+        const val = resolveSaveValue(window.save, item);
+        if (item.type === "collectable") return (val ?? 0) === 0;
+        if (["level", "min", "region-level", "region-min"].includes(item.type))
+          return (val ?? 0) < (item.required ?? 0);
+        return val !== true;
+      });
     }
-  } else {
-    obtained += isUnlocked ? 1 : 0;
-  }
-});
 
-// Totale reale = item normali + gruppi esclusivi (non la somma di tutti)
-const total = (sectionData.items?.filter(i => !i.exclusiveGroup).length || 0) + exclusiveGroups.size;
+    // 🔹 Colori atti
+    filteredItems.forEach(item => {
+      if (item.act === 1) item.actColor = "act-1";
+      else if (item.act === 2) item.actColor = "act-2";
+      else if (item.act === 3) item.actColor = "act-3";
+    });
 
-if (window.save && Array.isArray(sectionData.items)) {
-  obtained = sectionData.items.filter(item => {
-    const val = resolveSaveValue(window.save, item);
-    if (item.type === "level" || item.type === "min" || item.type === "region-level" || item.type === "region-min") {
-      return (val ?? 0) >= (item.required ?? 0);
-    } else if (item.type === "collectable") {
-      return (val ?? 0) > 0;
-    } else {
-      return val === true;
-    }
-  }).length;
-}
+    // 🔢 Calcolo ottenuti / totali
+    let obtained = 0;
+    const exclusiveGroups = new Set();
+    const countedGroups = new Set();
 
-// 🔘 Percentuale contrib (quella definita nel JSON)
-if (sectionData.contrib && sectionData.contrib > 0) {
-  const contrib = document.createElement("span");
-  contrib.className = "category-contrib";
-  contrib.textContent = ` (${sectionData.contrib}%)`;
-  heading.appendChild(contrib);
-}
+    filteredItems.forEach(item => {
+      const val = window.save ? resolveSaveValue(window.save, item) : false;
+      const isUnlocked =
+        (item.type === "level" || item.type === "min" ||
+         item.type === "region-level" || item.type === "region-min")
+          ? (val ?? 0) >= (item.required ?? 0)
+          : item.type === "collectable"
+            ? (val ?? 0) > 0
+            : val === true;
 
-// ➕ Conteggio ottenuti / totali
-const count = document.createElement("span");
-count.className = "category-count";
-count.textContent = ` ${obtained}/${total}`;
-heading.appendChild(count);
+      if (item.exclusiveGroup) {
+        exclusiveGroups.add(item.exclusiveGroup);
+        if (isUnlocked && !countedGroups.has(item.exclusiveGroup)) {
+          countedGroups.add(item.exclusiveGroup);
+          obtained++;
+        }
+      } else {
+        obtained += isUnlocked ? 1 : 0;
+      }
+    });
 
-section.appendChild(heading);
+    const total =
+      (filteredItems.filter(i => !i.exclusiveGroup).length || 0) +
+      exclusiveGroups.size;
 
-    // Descrizione
+    const count = document.createElement("span");
+    count.className = "category-count";
+    count.textContent = ` ${obtained}/${total}`;
+    heading.appendChild(count);
+
+    section.appendChild(heading);
+
     if (sectionData.desc) {
       const desc = document.createElement("p");
       desc.className = "category-desc";
@@ -917,17 +948,16 @@ section.appendChild(heading);
       section.appendChild(desc);
     }
 
-    // Griglia
     const subgrid = document.createElement("div");
     subgrid.className = "grid";
+
     const visible = renderGenericGrid({
       containerEl: subgrid,
-      data: sectionData.items,
+      data: filteredItems,
       spoilerOn
     });
 
-    // Se “solo mancanti” ed è vuota → non appendere la sezione
-    if (showMissingOnly && visible === 0) return;
+    if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) return;
 
     section.appendChild(subgrid);
     container.appendChild(section);
@@ -935,7 +965,7 @@ section.appendChild(heading);
 }
 
 
-async function updateWishesContent() {
+async function updateWishesContent(selectedAct = "all") {
   const container = document.getElementById("wishes-grid");
   if (!container) return console.warn("[updateWishesContent] Missing #wishes-grid in DOM");
 
@@ -956,39 +986,56 @@ async function updateWishesContent() {
     heading.className = "category-title";
     heading.textContent = sectionData.label;
 
-    // 🔒 Gestione quest mutuamente esclusive (solo una visibile)
+    // 🔒 Gestione quest mutuamente esclusive
     const exclusivePairs = [
-      ["Huntress Quest", "Huntress Quest Runt"], // 👈 coppia 1
-      // puoi aggiungerne altre qui
+      ["Huntress Quest", "Huntress Quest Runt"],
     ];
 
-    // ✅ Filtra le quest in base ai salvataggi
-    const filteredItems = (sectionData.items || []).filter(item => {
+    // ✅ 1️⃣ Filtra per salvataggio
+    let filteredItems = (sectionData.items || []).filter(item => {
       if (!window.save) return true;
       const pair = exclusivePairs.find(p => p.includes(item.flag));
       if (!pair) return true;
-
       const [a, b] = pair;
       const aVal = resolveSaveValue(window.save, { flag: a, type: "quest" });
       const bVal = resolveSaveValue(window.save, { flag: b, type: "quest" });
-
-      // Se una delle due è completata o accettata, nascondi l’altra
       const aActive = aVal === true || aVal === "completed" || aVal === "accepted";
       const bActive = bVal === true || bVal === "completed" || bVal === "accepted";
       if ((aActive && item.flag === b) || (bActive && item.flag === a)) return false;
-
       return true;
     });
 
-    // 🔢 Calcolo ottenuti / totali
+    // ✅ 2️⃣ Filtra per atto selezionato
+    filteredItems = filteredItems.filter(item =>
+      selectedAct === "all" || Number(item.act) === Number(selectedAct)
+    );
+
+    // ✅ 3️⃣ Seleziona solo i mancanti (coerente con l’atto)
+    if (showMissingOnly && window.save) {
+      filteredItems = filteredItems.filter(item => {
+        const val = resolveSaveValue(window.save, item);
+        if (item.type === "quest") return val !== "completed" && val !== true;
+        if (item.type === "collectable") return (val ?? 0) === 0;
+        if (["level", "min", "region-level", "region-min"].includes(item.type))
+          return (val ?? 0) < (item.required ?? 0);
+        return val !== true;
+      });
+    }
+
+    // 🔹 Colori atti
+    filteredItems.forEach(item => {
+      if (item.act === 1) item.actColor = "act-1";
+      else if (item.act === 2) item.actColor = "act-2";
+      else if (item.act === 3) item.actColor = "act-3";
+    });
+
+    // 🔢 Calcolo ottenuti / totali (sulla base del filtro attuale)
     let obtained = 0;
     const exclusiveGroups = new Set();
     const countedGroups = new Set();
 
     filteredItems.forEach(item => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
-
-      // ✅ Supporto completo per “quest” accepted/completed
       const isUnlocked =
         item.type === "quest"
           ? (val === "completed" || val === true)
@@ -1010,12 +1057,11 @@ async function updateWishesContent() {
       }
     });
 
-    // 📊 Calcolo totale corretto (senza bug)
     const total =
       (filteredItems.filter(i => !i.exclusiveGroup).length || 0) +
       exclusiveGroups.size;
 
-    // ➕ Mostra conteggio
+    // 🧮 Intestazione
     const count = document.createElement("span");
     count.className = "category-count";
     count.textContent = ` ${obtained}/${total}`;
@@ -1023,7 +1069,6 @@ async function updateWishesContent() {
 
     section.appendChild(heading);
 
-    // 📝 Descrizione (se presente)
     if (sectionData.desc) {
       const desc = document.createElement("p");
       desc.className = "category-desc";
@@ -1041,13 +1086,15 @@ async function updateWishesContent() {
       spoilerOn
     });
 
-    // Se “solo mancanti” ed è vuota → non mostrare
-    if (showMissingOnly && visible === 0) return;
+    // Se non c'è nulla da mostrare → salta
+    if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) return;
 
     section.appendChild(subgrid);
     container.appendChild(section);
   });
 }
+
+
 
 
 
@@ -1109,8 +1156,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.getElementById("missingToggle").addEventListener("change", () => {
+
+function reRenderActiveTab() {
   const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset.tab;
+  const currentAct = document.getElementById("actFilter")?.value || "all";
+  const showMissingOnly = document.getElementById("missingToggle")?.checked;
+
+  // Salva stati
+  localStorage.setItem("currentActFilter", currentAct);
+  localStorage.setItem("showMissingOnly", showMissingOnly);
 
   const updater = {
     bosses: updateBossesContent,
@@ -1119,7 +1173,9 @@ document.getElementById("missingToggle").addEventListener("change", () => {
     wishes: updateWishesContent,
   };
 
-  // 🔄 forza un re-render della tab attiva
-  updater[activeTab]?.();
-});
+  updater[activeTab]?.(currentAct);
+}
+
+document.getElementById("missingToggle").addEventListener("change", reRenderActiveTab);
+document.getElementById("actFilter").addEventListener("change", reRenderActiveTab);
 

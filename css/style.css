@@ -254,7 +254,7 @@ a:hover {
 }
 
 .boss:hover{ border-color:#3b3d40; transform:translateY(-1px); }
-.boss img{ width:64px; height:64px; margin:8px auto 10px; object-fit:contain; filter:none; }
+.boss img{ width:64px; height:64px; margin:8px auto 10px; object-fit:contain; filter:none; z-index: 1; /* immagine sopra l’etichetta */}
 
 /* SPOILER / LOCKED STATE */
 .boss.locked::after{
@@ -1653,4 +1653,100 @@ main {
   border: 2px solid #f1c40f; /* giallo oro */
   box-shadow: 0 0 6px rgba(241, 196, 15, 0.5);
 }
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.act-filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.act-filter label {
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.act-filter select {
+  background: var(--bg-3);
+  border: 1px solid var(--stroke);
+  color: var(--ink-1);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-family: inherit;
+}
+
+.grid i {
+  margin-right: 6px;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* --- Indicatore visivo dell'Atto --- */
+.boss {
+  position: relative; /* serve per posizionare il puntino dentro la card */
+}
+
+.act-label {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-family: 'TrajanPro', serif;
+  font-size: 0.85rem;              /* 🔹 più grande */
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  opacity: 1;
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.9),
+    0 0 10px currentColor;          /* 🔹 glow del colore */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  z-index: 0; /* etichetta dietro l'immagine */
+}
+
+.act-label:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* 🌈 Colori etichette attive */
+.act-1.act-label { color: #7afc83; box-shadow: 0 0 8px rgba(122, 252, 131, 0.4); }
+.act-2.act-label { color: #ffffff; box-shadow: 0 0 8px rgba(255, 255, 255, 0.4); }
+.act-3.act-label { color: #ffcc55; box-shadow: 0 0 8px rgba(255, 204, 85, 0.4); }
+
+/* ⚙️ Quando spoiler è attivo → etichette spente */
+body.spoiler-on .act-label {
+  color: #bdbdbd !important;
+  box-shadow: none !important;
+  opacity: 0.6;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* ✨ Glow morbido e realistico stile Hollow Knight */
+body.spoiler-on .boss:hover .act-label.act-1 {
+  color: #7afc83;
+  opacity: 1;
+  text-shadow: 0 0 6px rgba(122, 252, 131, 0.8), 0 0 12px rgba(122, 252, 131, 0.5);
+}
+body.spoiler-on .boss:hover .act-label.act-2 {
+  color: #ffffff;
+  opacity: 1;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.5);
+}
+body.spoiler-on .boss:hover .act-label.act-3 {
+  color: #ffcc55;
+  opacity: 1;
+  text-shadow: 0 0 6px rgba(255, 204, 85, 0.8), 0 0 12px rgba(255, 204, 85, 0.5);
+}
+
 
