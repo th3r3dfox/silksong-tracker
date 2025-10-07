@@ -1,7 +1,7 @@
 [
   {
     "id": "category-relic",
-    "label": "relics",
+    "label": "Relics",
     "desc": "Items that can be traded to certain NPCs for Rosaries or other services.",
     "contrib": 0,
     "items": [
@@ -174,6 +174,26 @@
         "link": "https://hollowknight.wiki/w/Relics"
       },
       {
+        "id": "arcane-egg",
+        "label": "Arcane Egg",
+        "icon": "assets/completion/Arcane_Egg_Silksong.png",
+        "category": "Arcane Egg",
+        "scene": "Abyss_Middle",
+        "flag": "Ancient Egg Abyss Middle",
+        "type": "relic",
+        "act": 3,
+        "description": "Behind a platforming sequence in the Abyss.",
+        "link": "https://hollowknight.wiki/w/Relics"
+      }
+    ]
+  },
+  {
+    "id": "category-cylinder",
+    "label": "Cylinder",
+    "desc": "They are cylinders inscribed with recordings, which may be heard by bringing them to Vaultkeeper Cardinius. Listening to the Sacred Cylinder",
+    "contrib": 0,
+    "items": [
+      {
         "id": "psalm-cylinder-grindle",
         "label": "Psalm Cylinder – Grindle",
         "icon": "assets/completion/Psalm_Cylinder.png",
@@ -240,18 +260,6 @@
         "type": "relic",
         "act": 2,
         "description": "Whispering Vaults: part of the Vaultkeeper’s Melody objective.",
-        "link": "https://hollowknight.wiki/w/Relics"
-      },
-      {
-        "id": "arcane-egg",
-        "label": "Arcane Egg",
-        "icon": "assets/completion/Arcane_Egg_Silksong.png",
-        "category": "Arcane Egg",
-        "scene": "Abyss_Middle",
-        "flag": "Ancient Egg Abyss Middle",
-        "type": "relic",
-        "act": 3,
-        "description": "Behind a platforming sequence in the Abyss.",
         "link": "https://hollowknight.wiki/w/Relics"
       }
     ]

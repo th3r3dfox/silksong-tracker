@@ -1,5 +1,5 @@
 console.log(
-  "No cost too great. No mind to think. No will to break. No voice to cry suffering."
+  "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
 );
 const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
   ? "/silksong-tracker"
@@ -40,7 +40,7 @@ async function updateBossesContent(selectedAct = "all") {
     let filteredItems = (sectionData.items || []).filter(
       (item) =>
         (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-        matchMode(item)
+        matchMode(item),
     );
 
     // ✅ 2️⃣ Filtra “solo mancanti” (coerente con act)
@@ -182,7 +182,7 @@ async function updateNewTabContent(selectedAct = "all") {
     let filteredItems = (sectionData.items || []).filter(
       (item) =>
         (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-        matchMode(item)
+        matchMode(item),
     );
 
     if (showMissingOnly && window.save) {
@@ -307,14 +307,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       e.stopPropagation();
       dropzone.classList.add("dragover");
-    })
+    }),
   );
   ["dragleave", "drop"].forEach((evt) =>
     dropzone.addEventListener(evt, (e) => {
       e.preventDefault();
       e.stopPropagation();
       dropzone.classList.remove("dragover");
-    })
+    }),
   );
   dropzone.addEventListener("drop", (e) => {
     const files = e.dataTransfer?.files;
@@ -340,7 +340,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (key === "steam cloud") {
           window.open(
             "https://store.steampowered.com/account/remotestorageapp/?appid=1030300",
-            "_blank"
+            "_blank",
           );
           return;
         }
@@ -565,8 +565,8 @@ function renderGenericGrid({
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
   const unlockedSilkVariant = silkVariants.find((v) =>
     save?.playerData?.Tools?.savedData?.some(
-      (e) => e.Name === v && e.Data?.IsUnlocked
-    )
+      (e) => e.Name === v && e.Data?.IsUnlocked,
+    ),
   );
 
   let renderedCount = 0;
@@ -797,7 +797,7 @@ async function handleSaveFile(file) {
   } catch (err) {
     console.error("[save] Decode error:", err);
     showToast(
-      "⚠️ Browser permission or file access issue. Please reselect your save file."
+      "⚠️ Browser permission or file access issue. Please reselect your save file.",
     );
     document.getElementById("uploadOverlay")?.classList.remove("hidden");
   }
@@ -825,7 +825,7 @@ async function updateCompletionContent(selectedAct = "all") {
   const container = document.getElementById("completion-grid");
   if (!container)
     return console.warn(
-      "[updateCompletionContent] Missing #completion-grid in DOM"
+      "[updateCompletionContent] Missing #completion-grid in DOM",
     );
 
   // 📦 Carica il file JSON
@@ -1059,7 +1059,7 @@ async function updateMainContent(selectedAct = "all") {
     let filteredItems = (sectionData.items || []).filter(
       (item) =>
         (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-        matchMode(item)
+        matchMode(item),
     );
 
     if (showMissingOnly && window.save) {
@@ -1199,7 +1199,7 @@ async function updateWishesContent(selectedAct = "all") {
     // ✅ 2️⃣ Filtra per atto selezionato
     filteredItems = filteredItems.filter(
       (item) =>
-        selectedAct === "all" || Number(item.act) === Number(selectedAct)
+        selectedAct === "all" || Number(item.act) === Number(selectedAct),
     );
 
     // ✅ 3️⃣ Seleziona solo i mancanti (coerente con l’atto)
@@ -1355,7 +1355,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 🎬 Info Modal
   if (closeInfo && infoOverlay) {
     closeInfo.addEventListener("click", () =>
-      infoOverlay.classList.add("hidden")
+      infoOverlay.classList.add("hidden"),
     );
     infoOverlay.addEventListener("click", (e) => {
       if (e.target === infoOverlay) infoOverlay.classList.add("hidden");
