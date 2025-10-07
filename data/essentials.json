@@ -545,7 +545,7 @@
 {
   "id": "category-fleas",
   "label": "Fleas",
-  "desc": "Small lost creatures scattered throughout Pharloom, rescued by Hornet during her journey.",
+  "desc": "Fleas are fluffy bugs scattered throughout most of Pharloom belonging to the Flea Caravan. They can be found caged, stuck, or resting in precarious locations.",
   "contrib": 0,
   "items": [
     { "id": "lost-flea-1", "label": "Lost Flea #1", "icon": "assets/icons/fleas.png", "category": "Fleas", "flag": "SavedFlea_Bone_06", "type": "flag", "map": "", "link": "https://hollowknight.wiki/w/Flea" },
