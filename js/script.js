@@ -1,5 +1,5 @@
 console.log(
-  "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
+  "No cost too great. No mind to think. No will to break. No voice to cry suffering."
 );
 const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
   ? "/silksong-tracker"
@@ -45,7 +45,7 @@ async function updateBossesContent(selectedAct = "all") {
     let filteredItems = (sectionData.items || []).filter(
       (item) =>
         (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-        matchMode(item),
+        matchMode(item)
     );
 
     // ✅ 2️⃣ Filtra “solo mancanti” (coerente con act)
@@ -187,7 +187,7 @@ async function updateNewTabContent(selectedAct = "all") {
     let filteredItems = (sectionData.items || []).filter(
       (item) =>
         (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-        matchMode(item),
+        matchMode(item)
     );
 
     if (showMissingOnly && window.save) {
@@ -312,14 +312,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       e.stopPropagation();
       dropzone.classList.add("dragover");
-    }),
+    })
   );
   ["dragleave", "drop"].forEach((evt) =>
     dropzone.addEventListener(evt, (e) => {
       e.preventDefault();
       e.stopPropagation();
       dropzone.classList.remove("dragover");
-    }),
+    })
   );
   dropzone.addEventListener("drop", (e) => {
     const files = e.dataTransfer?.files;
@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (key === "steam cloud") {
           window.open(
             "https://store.steampowered.com/account/remotestorageapp/?appid=1030300",
-            "_blank",
+            "_blank"
           );
           return;
         }
@@ -570,8 +570,8 @@ function renderGenericGrid({
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
   const unlockedSilkVariant = silkVariants.find((v) =>
     save?.playerData?.Tools?.savedData?.some(
-      (e) => e.Name === v && e.Data?.IsUnlocked,
-    ),
+      (e) => e.Name === v && e.Data?.IsUnlocked
+    )
   );
 
   let renderedCount = 0;
@@ -729,7 +729,6 @@ async function handleSaveFile(file) {
     const buffer = await file.arrayBuffer();
     const isDat = file.name.toLowerCase().endsWith(".dat");
 
-
     // 🔍 Decodifica file
     const saveData = isDat
       ? decodeSilksongSave(buffer)
@@ -746,7 +745,6 @@ async function handleSaveFile(file) {
     window.lastSaveFile = file;
     window.lastSaveBuffer = buffer;
     window.lastSaveIsDat = isDat;
-
 
     // 🔘 Mostra bottone di refresh
     const refreshBtn = document.getElementById("refreshSaveBtn");
@@ -804,7 +802,7 @@ async function handleSaveFile(file) {
   } catch (err) {
     console.error("[save] Decode error:", err);
     showToast(
-      "⚠️ Browser permission or file access issue. Please reselect your save file.",
+      "⚠️ Browser permission or file access issue. Please reselect your save file."
     );
     document.getElementById("uploadOverlay")?.classList.remove("hidden");
   }
@@ -822,19 +820,17 @@ async function refreshSaveFile() {
     // 🔄 Ricarica lo stesso file già in memoria
     showToast("🔄 Reloading save file...");
     await handleSaveFile(window.lastSaveFile);
-
   } catch (err) {
     console.error("[refreshSaveFile]", err);
     showToast("❌ Failed to refresh save file");
   }
 }
 
-
 async function updateCompletionContent(selectedAct = "all") {
   const container = document.getElementById("completion-grid");
   if (!container)
     return console.warn(
-      "[updateCompletionContent] Missing #completion-grid in DOM",
+      "[updateCompletionContent] Missing #completion-grid in DOM"
     );
 
   // 📦 Carica il file JSON
@@ -982,9 +978,7 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
     localStorage.setItem("activeTab", selectedTab);
 
     // Attiva/disattiva home scroll
-    document.body.classList.toggle("home-active", selectedTab === "home");
-    document.documentElement.style.overflowY =
-      selectedTab === "home" ? "hidden" : "auto";
+    document.documentElement.style.overflowY = "auto";
 
     // 🔹 Aggiorna la tab corrente con il filtro corretto
     const updater = {
@@ -999,10 +993,9 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
   });
 });
 
-// ✅ Aggiunta: set home-active al primo caricamento se siamo su home
 window.addEventListener("DOMContentLoaded", () => {
   // 🔹 Ripristina tab e filtri salvati
-  const savedTab = localStorage.getItem("activeTab") || "home";
+  const savedTab = localStorage.getItem("activeTab") || "main";
   const savedAct = localStorage.getItem("currentActFilter") || "all";
   const spoilerToggle = document.getElementById("spoilerToggle");
   const missingToggle = document.getElementById("missingToggle");
@@ -1036,9 +1029,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const activeSection = document.getElementById(`${savedTab}-section`);
   if (activeSection) activeSection.classList.remove("hidden");
-
-  // 🔹 Applica la classe home-active se serve
-  document.body.classList.toggle("home-active", savedTab === "home");
 
   // 🔹 Aggiorna il contenuto della tab (con il filtro dell'atto)
   const updater = {
@@ -1076,7 +1066,7 @@ async function updateMainContent(selectedAct = "all") {
     let filteredItems = (sectionData.items || []).filter(
       (item) =>
         (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-        matchMode(item),
+        matchMode(item)
     );
 
     if (showMissingOnly && window.save) {
@@ -1220,7 +1210,7 @@ async function updateWishesContent(selectedAct = "all") {
     // ✅ 2️⃣ Filtra per atto selezionato
     filteredItems = filteredItems.filter(
       (item) =>
-        selectedAct === "all" || Number(item.act) === Number(selectedAct),
+        selectedAct === "all" || Number(item.act) === Number(selectedAct)
     );
 
     // ✅ 3️⃣ Seleziona solo i mancanti (coerente con l’atto)
@@ -1376,7 +1366,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 🎬 Info Modal
   if (closeInfo && infoOverlay) {
     closeInfo.addEventListener("click", () =>
-      infoOverlay.classList.add("hidden"),
+      infoOverlay.classList.add("hidden")
     );
     infoOverlay.addEventListener("click", (e) => {
       if (e.target === infoOverlay) infoOverlay.classList.add("hidden");
