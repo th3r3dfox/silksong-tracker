@@ -1689,30 +1689,40 @@ main {
 
 /* --- Indicatore visivo dell'Atto --- */
 .boss {
-  position: relative; /* serve per posizionare il puntino dentro la card */
+  position: relative;
+  margin-top: 26px; /* spazio per il badge sopra */
 }
 
 .act-label {
   position: absolute;
-  top: 6px;
-  right: 8px;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'TrajanPro', serif;
-  font-size: 0.85rem;              /* 🔹 più grande */
+  font-size: 0.70rem;              /* grande come prima */
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: bold;
-  padding: 3px 8px;
+   padding: 2px 7px;               /* più compatto */
   border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(2px);
   opacity: 1;
   text-shadow:
     0 0 6px rgba(0, 0, 0, 0.9),
-    0 0 10px currentColor;          /* 🔹 glow del colore */
+    0 0 10px currentColor;
   transition: transform 0.2s ease, opacity 0.2s ease;
-  z-index: 0; /* etichetta dietro l'immagine */
+  z-index: 5;
 }
+
+/* Hover leggera */
+.act-label:hover {
+  transform: translateX(-50%) scale(1.05);
+  opacity: 1;
+}
+
+
 
 .act-label:hover {
   transform: scale(1.05);
@@ -1720,9 +1730,9 @@ main {
 }
 
 /* 🌈 Colori etichette attive */
-.act-1.act-label { color: #7afc83; box-shadow: 0 0 8px rgba(122, 252, 131, 0.4); }
+.act-1.act-label { color: #ffffff; box-shadow: 0 0 8px rgba(255, 255, 255, 0.4); }
 .act-2.act-label { color: #ffffff; box-shadow: 0 0 8px rgba(255, 255, 255, 0.4); }
-.act-3.act-label { color: #ffcc55; box-shadow: 0 0 8px rgba(255, 204, 85, 0.4); }
+.act-3.act-label { color: #ffffff; box-shadow: 0 0 8px rgba(255, 255, 255, 0.4); }
 
 /* ⚙️ Quando spoiler è attivo → etichette spente */
 body.spoiler-on .act-label {
@@ -1734,9 +1744,9 @@ body.spoiler-on .act-label {
 
 /* ✨ Glow morbido e realistico stile Hollow Knight */
 body.spoiler-on .boss:hover .act-label.act-1 {
-  color: #7afc83;
+  color: #ffffff;
   opacity: 1;
-  text-shadow: 0 0 6px rgba(122, 252, 131, 0.8), 0 0 12px rgba(122, 252, 131, 0.5);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.4);
 }
 body.spoiler-on .boss:hover .act-label.act-2 {
   color: #ffffff;
@@ -1744,9 +1754,9 @@ body.spoiler-on .boss:hover .act-label.act-2 {
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.5);
 }
 body.spoiler-on .boss:hover .act-label.act-3 {
-  color: #ffcc55;
+  color: #ffffff;
   opacity: 1;
-  text-shadow: 0 0 6px rgba(255, 204, 85, 0.8), 0 0 12px rgba(255, 204, 85, 0.5);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.4);
 }
 
 
