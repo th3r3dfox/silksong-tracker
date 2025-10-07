@@ -1,0 +1,16 @@
+{
+  "name": "silksong-tracker",
+  "homepage": "https://github.com/th3r3dfox/silksong-tracker#readme",
+  "bugs": {
+    "url": "https://github.com/th3r3dfox/silksong-tracker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/th3r3dfox/silksong-tracker.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "prettier": "3.6.2"
+  }
+}
