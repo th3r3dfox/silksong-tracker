@@ -678,7 +678,8 @@
         "flag": "Courier Delivery Dustpens Slave",
         "icon": "assets/quest/Delivery.png",
         "description": "Deliver the Queen's Egg to Styx of Sinner's Road.",
-        "link": "https://hollowknight.wiki/w/Category:Wishes"
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "mode": "normal"
       },
       {
         "id": "liquid-lacquer",
@@ -732,6 +733,16 @@
         "icon": "assets/quest/Witness_Quest_Icon.png",
         "description": "We speak the wish of the Master Herald, he who signs an Age's end.",
         "link": "https://hollowknight.wiki/w/Category:Wishes"
+      },
+      {
+        "id": "a_vassal_lost",
+        "label": "A Vassal Lost",
+        "type": "quest",
+        "flag": "",
+        "icon": "assets/quest/Steel_Wish_Art.png",
+        "description": "Investigate the resting sites marked by Steel Seer Zi to uncover the location of her vassal.",
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "mode": "steel"
       }
     ]
   }

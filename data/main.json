@@ -15,8 +15,7 @@
         "category": "Needle Upgrades",
         "icon": "assets/icons/1_Needle.png",
         "description": "Long sewing tool, uniquely balanced for combat. The blade is marked by time and use.",
-        "link": "https://hollowknight.wiki/w/Needle",
-        "mode": "normal"
+        "link": "https://hollowknight.wiki/w/Needle"
       },
       {
         "id": "nail1",
@@ -1588,7 +1587,21 @@
         "act": 1,
         "description": "Found in the Wormways.",
         "link": "https://hollowknight.wiki/w/Dead_Bug%27s_Purse",
-        "map": ""
+        "map": "",
+        "mode": "normal"
+      },
+      {
+        "id": "yellow-shell-satchel",
+        "label": "Shell Satchel",
+        "icon": "assets/icons/Shell_Satchel.png",
+        "category": "Yellow Tools",
+        "flag": "Shell Satchel",
+        "type": "tool",
+        "act": 1,
+        "description": "Found on a corpse in the northeast portion of the Wormways during Steel Soul mode, replacing the Dead Bug's Purse.",
+        "link": "https://hollowknight.wiki/w/Shell_Satchel",
+        "map": "",
+        "mode": "steel"
       },
       {
         "id": "yellow-magnetite-dice",

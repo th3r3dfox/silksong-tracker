@@ -338,6 +338,19 @@
         "link": "https://hollowknight.wiki/w/skull-tyrant"
       },
       {
+        "id": "summoned_saviour",
+        "label": "Summoned Saviour",
+        "act": 3,
+        "icon": "assets/boss/Summoned_Saviour.png",
+        "category": "journal",
+        "flag": "Abyss Mass",
+        "subtype": "kills",
+        "required": 1,
+        "description": "Summoned Saviour can be found southwest of Bonegrave, a sub area of Moss Grotto, behind a breakable wall. It is only accessible in Steel Soul Mode and after finding three resting sites for the A Vassal Lost Task.",
+        "link": "https://hollowknight.wiki/w/skull-tyrant",
+        "mode": "steel"
+      },
+      {
         "id": "the_unravelled",
         "label": "The Unravelled",
         "act": 2,
