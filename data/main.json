@@ -581,7 +581,7 @@
         "category": "Silk Hearts",
         "scene": "Memory_Silk_Heart_WardBoss",
         "type": "sceneVisited",
-        "act": 1,
+        "act": 2,
         "description": "Defeating the Unravelled in The Whiteward.",
         "link": "https://hollowknight.wiki/w/Silk_Heart"
       },
@@ -592,7 +592,7 @@
         "category": "Silk Hearts",
         "scene": "Memory_Silk_Heart_LaceTower",
         "type": "sceneVisited",
-        "act": 1,
+        "act": 2,
         "description": "Defeating Lace in Act Two.",
         "link": "https://hollowknight.wiki/w/Silk_Heart"
       }
@@ -770,7 +770,7 @@
         "category": "Silk Skills",
         "flag": "Silk Bomb",
         "type": "tool",
-        "act": 1,
+        "act": 2,
         "description": "Forgotten Weaver technique. Sew rending runes upon one's enemies.",
         "link": "https://hollowknight.wiki/w/Rune_Rage"
       },
@@ -1503,7 +1503,7 @@
         "category": "Blue Tools",
         "flag": "Pinstress Tool",
         "type": "tool",
-        "act": 2,
+        "act": 3,
         "description": "Reward for defeating Pinstress.",
         "link": "https://hollowknight.wiki/w/Pin_Badge",
         "map": ""
