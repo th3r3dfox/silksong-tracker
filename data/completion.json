@@ -265,6 +265,446 @@
     ]
   },
   {
+    "id": "category-materium",
+    "label": "Materium",
+    "desc": "Crystallized essences of Pharloom’s forces, gathered to empower tools and relics.",
+    "contrib": 0,
+    "items": [
+      {
+        "id": "materium-silk",
+        "label": "Silk",
+        "icon": "assets/completion/Silk.png",
+        "category": "Materium",
+        "flag": "Silk",
+        "type": "materium",
+        "description": "Entry unlocked by default",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-shell-shard",
+        "label": "Shell Shards",
+        "icon": "assets/completion/Shards_large.png",
+        "category": "Materium",
+        "flag": "Shell Shard",
+        "type": "materium",
+        "description": "Entry unlocked by default",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-rosaries",
+        "label": "Rosaries",
+        "icon": "assets/completion/Rosaries_large.png",
+        "category": "Materium",
+        "flag": "Rosary Small",
+        "type": "materium",
+        "description": "Entry unlocked by default",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-shell-rosaries",
+        "label": "Shell Rosaries",
+        "icon": "assets/completion/Shell_Rosaries_large.png",
+        "category": "Materium",
+        "flag": "Rosary Mid",
+        "type": "materium",
+        "description": "Entry unlocked by default",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-pearl-rosaries",
+        "label": "Pearl Rosaries",
+        "icon": "assets/completion/Pearl_Rosaries_large.png",
+        "category": "Materium",
+        "flag": "Rosary Big",
+        "type": "materium",
+        "description": "Entry unlocked by default",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-mossberry",
+        "label": "Mossberry",
+        "icon": "assets/completion/Mossberry.png",
+        "category": "Materium",
+        "flag": "Mossberry",
+        "type": "materium",
+        "description": "See Mossberry: How to Acquire",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-mossberry-stew",
+        "label": "Mossberry Stew",
+        "icon": "assets/completion/Mossberry_Stew.png",
+        "category": "Materium",
+        "flag": "Mossberry Stew",
+        "type": "materium",
+        "description": "Given by Moss Druid during the Great Taste of Pharloom wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-pilgrim-shawl",
+        "label": "Pilgrim Shawl",
+        "icon": "assets/completion/Pilgrim_Shawl.png",
+        "category": "Materium",
+        "flag": "Pilgrim Rag",
+        "type": "materium",
+        "description": "Dropped by pilgrim enemies during the Garb of the Pilgrims wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-smeltstone",
+        "label": "Flintstone",
+        "icon": "assets/completion/Flintstone.png",
+        "category": "Materium",
+        "flag": "Smeltstone",
+        "type": "materium",
+        "description": "Found in Deep Docks",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-rock-roller-item",
+        "label": "Flintgem",
+        "icon": "assets/completion/Flintgem.png",
+        "category": "Materium",
+        "flag": "Rock Roller Item",
+        "type": "materium",
+        "description": "Dropped by Flintbeetles",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-tool-metal",
+        "label": "Craftmetal",
+        "icon": "assets/icons/Craft_Metal.png",
+        "category": "Materium",
+        "flag": "Tool Metal",
+        "type": "materium",
+        "description": "Rare element found naturally within the rock and bone of Pharloom",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-common-spine",
+        "label": "Spine Core",
+        "icon": "assets/completion/Spine_Core.png",
+        "category": "Materium",
+        "flag": "Common Spine",
+        "type": "materium",
+        "description": "Dropped by Hokers during the Flexile Spines wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-skull-king-fragment",
+        "label": "Crown Fragment",
+        "icon": "assets/completion/Crown_Fragment.png",
+        "category": "Materium",
+        "flag": "Skull King Fragment",
+        "type": "materium",
+        "description": "Dropped by Skull Tyrant during the The Terrible Tyrant wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-beastfly-remains",
+        "label": "Horn Fragment",
+        "icon": "assets/completion/Horn_Fragment.png",
+        "category": "Materium",
+        "flag": "Beastfly Remains",
+        "type": "materium",
+        "description": "Dropped by Savage Beastfly during the Savage Beastfly wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+
+      {
+        "id": "materium-silver-bellclapper",
+        "label": "Silver Bell",
+        "icon": "assets/completion/Silver_Bell.png",
+        "category": "Materium",
+        "flag": "Silver Bellclapper",
+        "type": "materium",
+        "description": "Found throughout Bellhart during the Silver Bells wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-pale-oil",
+        "label": "Pale Oil",
+        "icon": "assets/icons/Pale_Oil.png",
+        "category": "Materium",
+        "flag": "Pale Oil",
+        "type": "materium",
+        "description": "Bile gland of a rare sylphean slug. Talented pinmasters can use the glistening liquid within to improve a blade's sharpness.",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-lifeblood",
+        "label": "Plasmium",
+        "icon": "assets/completion/Plasmium.png",
+        "category": "Materium",
+        "flag": "Lifeblood",
+        "type": "materium",
+        "description": "Collected using the Needle Phial during the Alchemist's Assistant wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-plasmium-blood",
+        "label": "Plasmified Blood",
+        "icon": "assets/completion/Plasmified_Blood.png",
+        "category": "Materium",
+        "flag": "Plasmium Blood",
+        "type": "materium",
+        "description": "Collected using the Needle Phial during the Advanced Alchemy wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-crow-feathers",
+        "label": "Ragpelt",
+        "icon": "assets/completion/Ragpelt.png",
+        "category": "Materium",
+        "flag": "Crow Feathers",
+        "type": "materium",
+        "description": "Dropped by Craw enemies during the Crawbug Clearing wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-shell-flower",
+        "label": "Pollip Heart",
+        "icon": "assets/completion/Pollip_Heart.png",
+        "category": "Materium",
+        "flag": "Shell Flower",
+        "type": "materium",
+        "description": "Core of a flower formed around the body of a consumed Wood Wasp. Secretes a sticky sap that the wasps subsist on.",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-roach-corpse-item",
+        "label": "Roach Guts",
+        "icon": "assets/completion/Roach_Guts.png",
+        "category": "Materium",
+        "flag": "Roach Corpse Item",
+        "type": "materium",
+        "description": "Dropped by Muckroachs during the Roach Guts wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-courier-supplies-generic",
+        "label": "Courier's Swag",
+        "icon": "assets/completion/Courier's_Swag.png",
+        "category": "Materium",
+        "flag": "Courier Supplies Generic",
+        "type": "materium",
+        "description": "Given by Tipp & Pill during Delivery Wishes",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-courier-supplies-slave",
+        "label": "Queen's Egg",
+        "icon": "assets/completion/Queen's_Egg.png",
+        "category": "Materium",
+        "flag": "Courier Supplies Slave",
+        "type": "materium",
+        "description": "Given by Tipp & Pill during the Queen's Egg wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-courier-supplies-mask-maker",
+        "label": "Liquid Lacquer",
+        "icon": "assets/completion/Liquid_Lacquer.png",
+        "category": "Materium",
+        "flag": "Courier Supplies Mask Maker",
+        "type": "materium",
+        "description": "Given by Tipp & Pill during the Liquid Lacquer wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-courier-supplies-gourmand",
+        "label": "Courier's Rasher",
+        "icon": "assets/completion/Courier's_Rasher.png",
+        "category": "Materium",
+        "flag": "Courier Supplies Gourmand",
+        "type": "materium",
+        "description": "Given by Tipp & Pill during the Great Taste of Pharloom wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-vintage-nectar",
+        "label": "Vintage Nectar",
+        "icon": "assets/completion/Vintage_Nectar.png",
+        "category": "Materium",
+        "flag": "Vintage Nectar",
+        "type": "materium",
+        "description": "Sold by Creige during the Great Taste of Pharloom wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-pickled-roach-egg",
+        "label": "Pickled Muckmaggot",
+        "icon": "assets/completion/Pickled_Muckmaggot.png",
+        "category": "Materium",
+        "flag": "Pickled Roach Egg",
+        "type": "materium",
+        "description": "Dropped by Disgraced Chef Lugoli",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-crustnut",
+        "label": "Crustnut",
+        "icon": "assets/completion/Crustnut.png",
+        "category": "Materium",
+        "flag": "Crustnut",
+        "type": "materium",
+        "description": "Found in Sands of Karak",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-extractor-machine-pins",
+        "label": "Steel Spines",
+        "icon": "assets/completion/Steel_Spines.png",
+        "category": "Materium",
+        "flag": "Extractor Machine Pins",
+        "type": "materium",
+        "description": "Sold by Crull and Benjin during the Infestation Operation wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-song-pilgrim-cloak",
+        "label": "Choir Cloak",
+        "icon": "assets/completion/Choir_Cloak.png",
+        "category": "Materium",
+        "flag": "Song Pilgrim Cloak",
+        "type": "materium",
+        "description": "Dropped by pilgrim enemies in The Citadel during the Cloaks of the Choir wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-magnetite",
+        "label": "Magnetite",
+        "icon": "assets/completion/Magnetite.png",
+        "category": "Materium",
+        "flag": "Magnetite",
+        "type": "materium",
+        "description": "Found in Brightvein",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-broodmother-remains",
+        "label": "Broodmother's Eye",
+        "icon": "assets/completion/Broodmother's_Eye.png",
+        "category": "Materium",
+        "flag": "Broodmother Remains",
+        "type": "materium",
+        "description": "Dropped by Broodmother",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-enemy-morsel-seared",
+        "label": "Seared Organ",
+        "icon": "assets/completion/Seared_Organ.png",
+        "category": "Materium",
+        "flag": "Enemy Morsel Seared",
+        "type": "materium",
+        "description": "Meat harvested from a defeated creature. It has been seared in a way that noticeably affects the flavour.",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-enemy-morsel-shredded",
+        "label": "Shredded Organ",
+        "icon": "assets/completion/Shredded_Organ.png",
+        "category": "Materium",
+        "flag": "Enemy Morsel Shredded",
+        "type": "materium",
+        "description": "Meat harvested from a defeated creature. It has been diced into fine chunks.",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-enemy-morsel-speared",
+        "label": "Skewered Organ",
+        "icon": "assets/completion/Skewered_Organ.png",
+        "category": "Materium",
+        "flag": "Enemy Morsel Speared",
+        "type": "materium",
+        "description": "Meat harvested from a defeated creature. It has been cleanly speared through, but is otherwise intact.",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-voltstone",
+        "label": "Voltridian",
+        "icon": "assets/completion/Voltridian.png",
+        "category": "Materium",
+        "flag": "Voltstone",
+        "type": "materium",
+        "description": "Found in Voltnest",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-snare-soul-bell-hermit",
+        "label": "Hermit's Soul",
+        "icon": "assets/completion/Hermit's_Soul.png",
+        "category": "Materium",
+        "flag": "Snare Soul Bell Hermit",
+        "type": "materium",
+        "description": "Given by Bell Hermit during the Silk & Soul wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-snare-soul-churchkeeper",
+        "label": "Maiden's Soul",
+        "icon": "assets/completion/Maiden's_Soul.png",
+        "category": "Materium",
+        "flag": "Snare Soul Churchkeeper",
+        "type": "materium",
+        "description": "Given by Chapel Maid during the Silk & Soul wish",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-snare-soul-swamp-bug",
+        "label": "Seeker's Soul",
+        "icon": "assets/completion/Seekers_Soul.png",
+        "category": "Materium",
+        "flag": "Snare Soul Swamp Bug",
+        "type": "materium",
+        "description": "Found in Bilewater after defeating Groal the Great",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-coral-heart",
+        "label": "Encrusted Heart",
+        "icon": "assets/completion/Heart_Coral.png",
+        "category": "Materium",
+        "flag": "Coral Heart",
+        "type": "materium",
+        "description": "Awarded after defeating Crust King Khann in Coral Tower",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-flower-heart",
+        "label": "Pollen Heart",
+        "icon": "assets/completion/Heart_Flower.png",
+        "category": "Materium",
+        "flag": "Flower Heart",
+        "type": "materium",
+        "description": "Awarded after defeating Nyleth in Shellwood",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-hunter-heart",
+        "label": "Hunter's Heart",
+        "icon": "assets/completion/Heart_Hunter.png",
+        "category": "Materium",
+        "flag": "Hunter Heart",
+        "type": "materium",
+        "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields",
+        "link": "https://hollowknight.wiki/w/Materium"
+      },
+      {
+        "id": "materium-clover-heart",
+        "label": "Conjoined Heart",
+        "icon": "assets/completion/Heart_Clover.png",
+        "category": "Materium",
+        "flag": "Clover Heart",
+        "type": "materium",
+        "description": "Awarded after defeating the Clover Dancers in Lost Verdania",
+        "link": "https://hollowknight.wiki/w/Materium"
+      }
+    ]
+  },
+
+  {
     "id": "category-mementos",
     "label": "Mementos",
     "desc": "Keepsakes given by allies or obtained through notable encounters. Some may hold sentimental value.",

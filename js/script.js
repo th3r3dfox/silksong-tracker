@@ -549,6 +549,26 @@ function resolveSaveValue(save, item) {
     return false;
   }
 
+  // ⚡ Materium tracking (seen = verde, collected = giallo)
+  if (item.type === "materium" && item.flag) {
+    const list =
+      save?.playerData?.MateriumCollected?.savedData ||
+      save?.MateriumCollected?.savedData ||
+      [];
+
+    const entry = list.find((e) => e.Name === item.flag);
+    if (!entry) return false;
+
+    const data = entry.Data || {};
+
+    // ✅ verde se visto nella board
+    if (data.HasSeenInRelicBoard === true) return "deposited";
+    // 🟡 giallo se raccolto ma non visto nella board
+    if (data.IsCollected === true) return "collected";
+
+    return false;
+  }
+
   // Fallback generico
   if (item.flag && pd[item.flag] !== undefined) {
     return pd[item.flag];
@@ -621,6 +641,10 @@ function renderGenericGrid({
     } else if (item.type === "relic") {
       isDone = value === "deposited"; // verde = consegnata
       isAccepted = value === "collected"; // giallo = trovata ma non depositata
+    } else if (item.type === "materium") {
+      // "deposited" = verde (done), "collected" = giallo (accepted)
+      isDone = value === "deposited";
+      isAccepted = value === "collected";
     } else {
       isDone = value === true;
     }
