@@ -2396,3 +2396,31 @@ mark.active-match {
   background: #ffd966;
   color: #000;
 }
+
+.boss {
+  position: relative;
+}
+
+.missable-icon {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-family: "TrajanPro", serif;
+  font-weight: bold;
+  font-size: 1.8em; /* ← più grande */
+  color: #e07b31; /* rame brillante */
+  opacity: 0.95;
+  cursor: help;
+  line-height: 1;
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.7),
+    0 0 8px rgba(224, 123, 49, 0.4);
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+.missable-icon:hover {
+  transform: scale(1.25);
+  filter: brightness(1.3);
+}

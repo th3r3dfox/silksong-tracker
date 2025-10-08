@@ -525,16 +525,25 @@ function resolveSaveValue(save, item) {
     return data.HasBeenSeen || (data.Kills ?? 0) > 0;
   }
 
-  // Relics (Choral Commandments, Weaver Effigies, etc.)
+  // Relics (Choral Commandments, Weaver Effigies, Mementos, etc.)
   if (item.type === "relic" && item.flag) {
-    const list =
+    const relicList =
       save?.Relics?.savedData || save?.playerData?.Relics?.savedData || [];
-    const entry = list.find((e) => e.Name === item.flag);
+
+    const mementoList =
+      save?.MementosDeposited?.savedData ||
+      save?.playerData?.MementosDeposited?.savedData ||
+      [];
+
+    const combinedList = relicList.concat(mementoList);
+
+    const entry = combinedList.find((e) => e.Name === item.flag);
     if (!entry) return false;
 
     const data = entry.Data || {};
 
-    if (data.IsDeposited === true) return "deposited";
+    if (data.IsDeposited === true) return "deposited"; // ✅ Verde
+    if (data.HasSeenInRelicBoard === true) return "collected"; // 🟡 Giallo
     if (data.IsCollected === true) return "collected";
 
     return false;
@@ -618,6 +627,14 @@ function renderGenericGrid({
 
     // Se “solo mancanti” ed è completato → non renderizzare proprio la card
     if (showMissingOnly && isDone) return;
+
+    if (item.missable) {
+      const warn = document.createElement("span");
+      warn.className = "missable-icon";
+      warn.title = "Missable item – can be permanently lost";
+      warn.textContent = "!";
+      div.appendChild(warn);
+    }
 
     // 🖼️ Gestione immagini e stato
     const iconPath = item.icon || `${BASE_PATH}/assets/icons/${item.id}.png`;

@@ -126,7 +126,8 @@
         "subtype": "kills",
         "required": 1,
         "description": "They can be first met in Greymoor, in a small outcropping to the upper left of the Bellway Station. They can also be seen in Sinner's Road briefly, in the long room right above where Disgraced Chef Lugoli can be found, having beaten a Roachkeeper. In Act 3, they can be found in The Marrow, Mosshome, Far Fields, Greymoor, Sinner's Road, Shellwood, or Blasted Steps. ",
-        "link": "https://hollowknight.wiki/w/garmond-and-zaza"
+        "link": "https://hollowknight.wiki/w/garmond-and-zaza",
+        "missable": true
       },
       {
         "id": "grand_mother_silk",
@@ -229,7 +230,8 @@
         "category": "Boss",
         "flag": "defeatedWhiteCloverstag",
         "description": "The Palestag can be found in Lost Verdania. ",
-        "link": "https://hollowknight.wiki/w/palestag"
+        "link": "https://hollowknight.wiki/w/palestag",
+        "missable": true
       },
       {
         "id": "phantom",
@@ -295,7 +297,8 @@
         "subtype": "kills",
         "required": 1,
         "description": "Once the Wish Trail's End is completed, Shakra can be met just outside the Greymoor entrance to Bellhart by ringing her post, where she will challenge Hornet to a friendly duel",
-        "link": "https://hollowknight.wiki/w/shakra"
+        "link": "https://hollowknight.wiki/w/shakra",
+        "missable": true
       },
       {
         "id": "seth",

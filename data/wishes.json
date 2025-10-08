@@ -30,7 +30,8 @@
         "flag": "Grand Gate Bellshrines",
         "icon": "assets/quest/Gate_Quest_Icon.png",
         "description": "Awaken the old bells throughout the lands. Journey to the five Bellshrines throughout lower Pharloom and ring them to unlock the Grand Gate",
-        "link": "https://hollowknight.wiki/w/Category:Wishes"
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "missable": true
       },
       {
         "id": "silent-halls",
@@ -224,7 +225,8 @@
         "flag": "A Pinsmiths Tools",
         "icon": "assets/quest/wayfarer.png",
         "description": "Retrieve pale oil from the Citadel.",
-        "link": "https://hollowknight.wiki/w/Category:Wishes"
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "missable": true
       },
       {
         "id": "my-missing-courier",
@@ -456,7 +458,8 @@
         "flag": "Pilgrim Rags",
         "icon": "assets/quest/Hunt_Wishes.png",
         "description": "Hunt haunted pilgrims of Pharloom and collect pilgrim shawls from their bodies.",
-        "link": "https://hollowknight.wiki/w/Category:Wishes"
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "missable": true
       },
       {
         "id": "flexile-spines",
@@ -474,7 +477,8 @@
         "flag": "Rock Rollers",
         "icon": "assets/quest/Hunt_Wishes.png",
         "description": "Track down Flintbeetles in the Marrow and defeat them to collect flintgems. Flintbeetles can be tracked by their stone-sheddings and aromatic dung.",
-        "link": "https://hollowknight.wiki/w/Category:Wishes"
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "missable": true
       },
       {
         "id": "crawbug-clearing-pre",
@@ -501,7 +505,8 @@
         "flag": "Roach Killing",
         "icon": "assets/quest/Hunt_Wishes.png",
         "description": "Hunt the Muckroaches of Sinner's Road and collect roach guts from their bodies.",
-        "link": "https://hollowknight.wiki/w/Category:Wishes"
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "missable": true
       },
       {
         "id": "fine-pins",
@@ -563,7 +568,8 @@
         "flag": "Skull King",
         "icon": "assets/quest/Grand_Hunt_Quest_Icon.png",
         "description": "Hunt a Skull Tyrant of the Marrow.",
-        "link": "https://hollowknight.wiki/w/Category:Wishes"
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "missable": true
       },
       {
         "id": "savage-beastfly",
@@ -634,7 +640,8 @@
         "flag": "Building Materials (Statue)",
         "icon": "assets/quest/donate.png",
         "description": "Donate 400 shell shards to aid the construction of an icon of hope.",
-        "link": "https://hollowknight.wiki/w/Category:Wishes"
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "missable": true
       },
       {
         "id": "bellharts-glory",
