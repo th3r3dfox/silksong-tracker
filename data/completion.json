@@ -263,5 +263,138 @@
         "link": "https://hollowknight.wiki/w/Relics"
       }
     ]
+  },
+  {
+    "id": "category-mementos",
+    "label": "Mementos",
+    "desc": "Keepsakes given by allies or obtained through notable encounters. Some may hold sentimental value.",
+    "contrib": 0,
+    "items": [
+      {
+        "id": "memento-hunter",
+        "label": "Hunter's Memento",
+        "icon": "assets/completion/Memento_Hunters.png",
+        "category": "Mementos",
+        "flag": "Hunter Memento",
+        "type": "relic",
+        "act": 1,
+        "description": "Given by the Hunter upon mastering his trials.",
+        "link": "https://hollowknight.wiki/w/Memento"
+      },
+      {
+        "id": "memento-grey",
+        "label": "Grey Memento",
+        "icon": "assets/completion/Memento_Grey.png",
+        "category": "Mementos",
+        "flag": "Grey Memento",
+        "type": "relic",
+        "act": 1,
+        "description": "Received from Grey after completing her personal quest.",
+        "link": "https://hollowknight.wiki/w/Memento"
+      },
+      {
+        "id": "memento-guardian",
+        "label": "Guardian's Memento",
+        "icon": "assets/completion/Memento_Guardian.png",
+        "category": "Mementos",
+        "flag": "Memento Seth",
+        "type": "relic",
+        "act": 2,
+        "description": "A token awarded by the Guardian for triumph in the Flea Games.",
+        "link": "https://hollowknight.wiki/w/Memento"
+      },
+      {
+        "id": "memento-sprintmaster",
+        "label": "Sprintmaster's Memento",
+        "icon": "assets/completion/Memento_Sprintmaster.png",
+        "category": "Mementos",
+        "flag": "Sprintmaster Memento",
+        "type": "relic",
+        "act": 2,
+        "description": "Gifted by the Sprintmaster after proving unmatched agility.",
+        "link": "https://hollowknight.wiki/w/Memento"
+      },
+      {
+        "id": "memento-craw",
+        "label": "Craw's Memento",
+        "icon": "assets/completion/Memento_Craw.png",
+        "category": "Mementos",
+        "flag": "Crowman Memento",
+        "type": "relic",
+        "act": 2,
+        "description": "A keepsake found upon aiding Craw, a relic of quiet gratitude.",
+        "link": "https://hollowknight.wiki/w/Memento"
+      },
+      {
+        "id": "memento-heros",
+        "label": "Hero's Memento",
+        "icon": "assets/completion/Memento_Heros.png",
+        "category": "Mementos",
+        "flag": "Memento Garmond",
+        "type": "relic",
+        "act": 3,
+        "description": "Awarded by Garmond — a symbol of perseverance through peril.",
+        "link": "https://hollowknight.wiki/w/Memento"
+      },
+      {
+        "id": "memento-surface",
+        "label": "Surface Memento",
+        "icon": "assets/completion/Memento_Surface.png",
+        "category": "Mementos",
+        "flag": "Memento Surface",
+        "type": "relic",
+        "act": 3,
+        "description": "Awarded by Garmond — a symbol of perseverance through peril.",
+        "link": "https://hollowknight.wiki/w/Memento"
+      },
+      {
+        "id": "heart-flower",
+        "label": "Pollen Heart",
+        "icon": "assets/completion/Heart_Flower.png",
+        "category": "Mementos",
+        "flag": "Heart Flower",
+        "type": "relic",
+        "act": 1,
+        "description": "Awarded after defeating Nyleth in Shellwood.",
+        "link": "https://hollowknight.wiki/w/Heart",
+        "missable": true
+      },
+      {
+        "id": "heart-coral",
+        "label": "Encrusted Heart",
+        "icon": "assets/completion/Heart_Coral.png",
+        "category": "Mementos",
+        "flag": "Heart Coral",
+        "type": "relic",
+        "act": 1,
+        "description": "Awarded after defeating Crust King Khann in Coral Tower.",
+        "link": "https://hollowknight.wiki/w/Heart",
+        "missable": true
+      },
+      {
+        "id": "heart-hunter",
+        "label": "Hunter's Heart",
+        "icon": "assets/completion/Heart_Hunter.png",
+        "category": "Mementos",
+        "flag": "Heart Hunter",
+        "type": "relic",
+        "act": 2,
+        "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields.",
+        "link": "https://hollowknight.wiki/w/Heart",
+        "missable": true
+      },
+      {
+        "id": "heart-clover",
+        "label": "Conjoined Heart",
+        "icon": "assets/completion/Heart_Clover.png",
+        "category": "Mementos",
+        "flag": "Clover Heart",
+        "type": "relic",
+        "act": 3,
+        "description": "Awarded after defeating the Clover Dancers in Lost Verdania.",
+        "link": "https://hollowknight.wiki/w/Heart",
+        "missable": true
+      }
+    ]
   }
 ]
