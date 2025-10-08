@@ -836,5 +836,33 @@
         "missable": true
       }
     ]
+  },
+  {
+    "id": "category-misc",
+    "label": "Misc Collectables",
+    "desc": "Special single-instance items gathered and deposited the Bellhome in Bellhart before it can be used.",
+    "contrib": 0,
+    "items": [
+      {
+        "id": "misc-materium",
+        "label": "Materium",
+        "type": "device",
+        "scene": "Arborium_07",
+        "flag": "Collectable Item Pickup Materium",
+        "relatedFlag": "ConstructedMaterium",
+        "icon": "assets/completion/Materium_item.png",
+        "description": "The Materium can be found in the upper part of the Memorium. The item must be constructed in the Bellhome in Bellhart before it can be used."
+      },
+      {
+        "id": "misc-farsight",
+        "label": "Farsight",
+        "type": "device",
+        "scene": "Abyss_08",
+        "flag": "Collectable Item Pickup",
+        "relatedFlag": "ConstructedFarsight",
+        "icon": "assets/completion/Farsight.png",
+        "description": "Found in The Abyss, in the upper east passage of Weavenest Absolom. The item must be constructed in the Bellhome in Bellhart before it can be used."
+      }
+    ]
   }
 ]

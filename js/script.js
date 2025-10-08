@@ -569,6 +569,38 @@ function resolveSaveValue(save, item) {
     return false;
   }
 
+  // Devices (Materium, Farsight, ecc.)
+  if (item.type === "device") {
+    const scene = String(item.scene || "")
+      .trim()
+      .replace(/\s+/g, "_");
+    const idKey = String(item.flag || "")
+      .trim()
+      .replace(/\s+/g, "_");
+    const depositFlag = String(item.relatedFlag || "").trim();
+
+    // ✅ Verde — oggetto depositato
+    if (
+      depositFlag &&
+      (save?.playerData?.[depositFlag] === true || save?.[depositFlag] === true)
+    ) {
+      return "deposited";
+    }
+
+    // 🟡 Giallo — oggetto raccolto nella scena
+    const sceneFlags =
+      save?.__flags?.[scene] ||
+      save?.playerData?.__flags?.[scene] ||
+      save?.[scene] ||
+      {};
+
+    if (sceneFlags[idKey] === true) {
+      return "collected";
+    }
+
+    return false;
+  }
+
   // Fallback generico
   if (item.flag && pd[item.flag] !== undefined) {
     return pd[item.flag];
@@ -645,6 +677,9 @@ function renderGenericGrid({
       // "deposited" = verde (done), "collected" = giallo (accepted)
       isDone = value === "deposited";
       isAccepted = value === "collected";
+    } else if (item.type === "device") {
+      isDone = value === "deposited"; // ✅ Verde
+      isAccepted = value === "collected"; // 🟡 Giallo
     } else {
       isDone = value === true;
     }
