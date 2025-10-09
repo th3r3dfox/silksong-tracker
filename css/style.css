@@ -50,11 +50,11 @@ body {
   background: var(--bg-1);
   color: var(--ink-2);
   overflow: hidden;
-  /*display: flex;           ✅ permette layout a due colonne */
+  /*display: flex;           ✅ allows two-column layout */
 }
 
 body.home-active main {
-  overflow: hidden; /* blocca lo scroll solo in home */
+  overflow: hidden; /* block scroll only in home */
 }
 
 /* ------------------
@@ -191,7 +191,7 @@ main {
   border-color: #666;
 }
 
-/* Divider + titolo sezione */
+/* Divider + section title */
 .sidebar-divider {
   height: 1px;
   background: var(--stroke-soft);
@@ -245,7 +245,7 @@ a {
     text-shadow 0.2s ease;
 }
 a:hover {
-  color: #e69b50; /* più luminoso per hover */
+  color: #e69b50; /* brighter for hover */
   text-shadow: 0 0 8px rgba(197, 106, 45, 0.4);
 }
 
@@ -294,7 +294,7 @@ a:hover {
     box-shadow 0.25s ease;
 }
 .btn-primary:hover {
-  background: #a95b22; /* versione più profonda */
+  background: #a95b22; /* deeper version */
   box-shadow: 0 0 12px rgba(197, 106, 45, 0.4);
 }
 
@@ -321,16 +321,16 @@ a:hover {
     background 0.15s,
     box-shadow 0.15s;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  overflow: visible; /* ✅ evita il taglio del testo */
+  overflow: visible; /* ✅ prevents text clipping */
 }
 
 .boss .title,
 .boss div {
   text-align: center;
-  white-space: normal; /* ✅ permette a nomi lunghi di andare a capo */
-  word-break: break-word; /* ✅ forza la divisione se troppo lungo */
+  white-space: normal; /* ✅ allows long names to wrap */
+  word-break: break-word; /* ✅ forces word break if too long */
   line-height: 1.2em;
-  max-width: 90%; /* ✅ evita che tocchi i bordi */
+  max-width: 90%; /* ✅ prevents touching edges */
 }
 
 .boss:hover {
@@ -343,7 +343,7 @@ a:hover {
   margin: 8px auto 10px;
   object-fit: contain;
   filter: none;
-  z-index: 1; /* immagine sopra l’etichetta */
+  z-index: 1; /* image above label */
 }
 
 /* SPOILER / LOCKED STATE */
@@ -676,7 +676,7 @@ a:hover {
   margin: 6px 0;
 }
 
-/* Rende i blocchi di categoria affiancati orizzontalmente */
+/* Makes category blocks side by side horizontally */
 #main-grid {
   display: block;
   flex-wrap: wrap;
@@ -684,24 +684,24 @@ a:hover {
   align-items: flex-start;
 }
 
-/* Ogni blocco-categoria ha larghezza fissa */
+/* Each category block has fixed width */
 .main-section-block {
   flex: 1 1 300px;
   min-width: 280px;
   margin-bottom: 2rem;
-  padding-top: 0; /* ✅ elimina spazio sopra al titolo */
+  padding-top: 0; /* ✅ remove space above title */
 }
 
-/* Il titolo della sottocategoria */
+/* The subcategory title */
 .main-section-block h3 {
   font-size: 1.2rem;
   color: var(--ink-1);
-  margin-top: 0; /* ✅ elimina lo spazio sopra */
-  margin-bottom: 2rem; /* piccolo spazio sotto */
+  margin-top: 0; /* ✅ remove space above */
+  margin-bottom: 2rem; /* small space below */
   line-height: 1.2;
 }
 
-/* Griglia degli oggetti dentro ogni blocco */
+/* Grid of objects inside each block */
 .main-section-block .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -719,10 +719,10 @@ a:hover {
 }
 
 .tab > h2 {
-  margin-top: 0; /* elimina lo spazio sopra */
-  padding-top: 0; /* evita offset extra */
-  margin-bottom: 1.2rem; /* spazio pulito sotto */
-  font-size: 1.5rem; /* leggermente più grande */
+  margin-top: 0; /* remove space above */
+  padding-top: 0; /* avoid extra offset */
+  margin-bottom: 1.2rem; /* clean space below */
+  font-size: 1.5rem; /* slightly larger */
   color: var(--ink-1);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -733,7 +733,7 @@ a:hover {
   color: var(--ink-1);
   margin: 0 0 10px;
   padding-bottom: 4px;
-  border-bottom: 1px solid var(--stroke-soft); /* sottolineatura elegante */
+  border-bottom: 1px solid var(--stroke-soft); /* elegant underline */
 }
 
 .main-stats {
@@ -804,32 +804,32 @@ a:hover {
 }
 
 .main-section-block h3 {
-  text-align: center; /* centra il titolo */
-  font-size: 1.6rem; /* leggermente più grande */
+  text-align: center; /* center the title */
+  font-size: 1.6rem; /* slightly larger */
   font-weight: 700;
   margin-bottom: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px; /* spazio tra titolo e percentuale */
+  gap: 8px; /* space between title and percentage */
 }
 
 .category-contrib {
   background: #333;
   color: #fff;
-  font-size: 1.1rem; /* più grande */
+  font-size: 1.1rem; /* larger */
   font-weight: 700;
-  padding: 4px 12px; /* pill più ampia */
-  border-radius: 16px; /* angoli più arrotondati */
-  display: inline-block; /* per restare centrata accanto al titolo */
+  padding: 4px 12px; /* wider pill */
+  border-radius: 16px; /* more rounded corners */
+  display: inline-block; /* to stay centered next to title */
 }
 
 .category-desc {
-  text-align: center; /* centra la descrizione */
+  text-align: center; /* center the description */
   font-size: 1rem;
   color: #bbb;
   margin-bottom: 1.5rem;
-  max-width: 600px; /* limita la larghezza per leggibilità */
+  max-width: 600px; /* limits width for readability */
   margin-left: auto;
   margin-right: auto;
 }
@@ -844,8 +844,8 @@ a:hover {
 }
 
 .toggle input {
-  accent-color: #888; /* colore del check */
-  transform: scale(1.2); /* più grande */
+  accent-color: #888; /* check color */
+  transform: scale(1.2); /* larger */
 }
 
 .main-stats {
@@ -898,15 +898,15 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px; /* spaziatura più stretta */
+  gap: 6px; /* tighter spacing */
   width: 100%;
-  padding: 8px 12px; /* proporzioni simili agli altri */
-  font-size: 0.9rem; /* leggermente più piccolo */
+  padding: 8px 12px; /* similar proportions to others */
+  font-size: 0.9rem; /* slightly smaller */
   font-weight: 600;
   color: #fff;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--stroke-soft);
-  border-radius: 8px; /* uguale agli altri bottoni */
+  border-radius: 8px; /* same as other buttons */
   text-decoration: none;
   transition:
     background 0.2s,
@@ -1062,7 +1062,7 @@ a:hover {
   font-size: 1.05em;
 }
 
-/* ✅ Nuovo layout responsive sfalsato */
+/* ✅ New staggered responsive layout */
 .home-grid {
   display: flex;
   flex-wrap: wrap;
@@ -1122,7 +1122,7 @@ a:hover {
 -------------------*/
 .tab {
   position: relative;
-  z-index: 2; /* sopra lo sfondo della home */
+  z-index: 2; /* above home background */
   display: block;
 }
 
@@ -1133,7 +1133,7 @@ a:hover {
 #home-section.tab {
   position: fixed;
   inset: 0;
-  z-index: 1; /* la home rimane sotto alle altre sezioni */
+  z-index: 1; /* home stays below other sections */
 }
 
 /* Background per le altre tab */
@@ -1421,7 +1421,7 @@ main {
   margin-bottom: 80px;
 }
 
-/* blocchi principali affiancati */
+/* main blocks side by side */
 .home-section-block {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
@@ -1448,7 +1448,7 @@ main {
   transform: translateY(30px);
 }
 
-/* in memory centrale e largo */
+/* in memory central and wide */
 .tribute {
   grid-column: 1 / -1;
   text-align: center;
@@ -1530,9 +1530,9 @@ main a:hover,
   font-size: 0.8em;
 }
 
-/* MAIN% — titolo centrato e compatto */
+/* MAIN% — centered and compact title */
 #main-section .category-title {
-  display: block; /* annulla flex se presente */
+  display: block; /* cancel flex if present */
   text-align: center;
   width: 100%;
   margin-bottom: 0.3rem;
@@ -1547,13 +1547,13 @@ main a:hover,
 /* reset di margin auto usati altrove */
 #main-section .category-title .category-count,
 #main-section .category-title .category-contrib {
-  margin: 0 0 0 0.25rem; /* piccolo spazio tra parti */
+  margin: 0 0 0 0.25rem; /* small space between parts */
   position: static;
-  display: inline; /* garantisce la centratura in linea */
+  display: inline; /* ensures inline centering */
   vertical-align: baseline;
 }
 
-/* pill percentuale */
+/* percentage pill */
 #main-section .category-title .category-contrib {
   background: var(--bg-3);
   color: var(--ink-2);
@@ -1568,7 +1568,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-/* ✅ Optional: bordi coerenti con il tema */
+/* ✅ Optional: borders consistent with theme */
 input[type="checkbox"] {
   width: 16px;
   height: 16px;
@@ -1598,7 +1598,7 @@ body {
     auto;
 }
 
-/* Quando si passa sopra i link o bottoni */
+/* When hovering over links or buttons */
 a,
 button,
 .btn-primary,
@@ -1612,7 +1612,7 @@ button,
 /* --- FIX LAYOUT HOME SU SCHERMI PICCOLI --- */
 @media (max-width: 1400px) {
   .main-wrapper {
-    margin-left: 240px; /* evita che il testo vada sotto la sidebar */
+    margin-left: 240px; /* prevents text from going under sidebar */
   }
 
   .home-content {
@@ -1641,7 +1641,7 @@ button,
     padding: 16px 14px;
     box-sizing: border-box;
     height: 100vh;
-    position: fixed; /* 🔒 deve restare fixed anche su mobile */
+    position: fixed; /* 🔒 must stay fixed even on mobile */
     left: 0;
     top: 0;
     overflow-y: auto;
@@ -1653,7 +1653,7 @@ button,
     flex: 1;
     overflow-y: auto;
     height: 100vh;
-    margin-left: 220px; /* ✅ mantiene l'allineamento a destra */
+    margin-left: 220px; /* ✅ maintain right alignment */
   }
 
   .home-content h1 {
@@ -1705,7 +1705,7 @@ html {
 
 .icon-btn {
   width: 100%;
-  height: 42px; /* altezza uguale a prima */
+  height: 42px; /* same height as before */
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1748,12 +1748,12 @@ html {
 }
 
 /* ------------------
-   WISHES — layout pulito e coerente
+   WISHES — clean and consistent layout
 -------------------*/
 #wishes-grid {
   display: flex;
-  flex-direction: column; /* impila le categorie verticalmente */
-  gap: 60px; /* spazio tra Main / Wayfarer / Gather */
+  flex-direction: column; /* stack categories vertically */
+  gap: 60px; /* space between Main / Wayfarer / Gather */
   align-items: stretch;
   width: 100%;
 }
@@ -1780,7 +1780,7 @@ html {
   gap: 8px;
 }
 
-/* Descrizione sotto titolo */
+/* Description below title */
 #wishes-grid .category-desc {
   text-align: center;
   color: #bbb;
@@ -1861,7 +1861,7 @@ main {
 /* --- Indicatore visivo dell'Atto --- */
 .boss {
   position: relative;
-  margin-top: 26px; /* spazio per il badge sopra */
+  margin-top: 26px; /* space for badge above */
 }
 
 .act-label {
@@ -1870,11 +1870,11 @@ main {
   left: 50%;
   transform: translateX(-50%);
   font-family: "TrajanPro", serif;
-  font-size: 0.7rem; /* grande come prima */
+  font-size: 0.7rem; /* same size as before */
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: bold;
-  padding: 2px 7px; /* più compatto */
+  padding: 2px 7px; /* more compact */
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(0, 0, 0, 0.45);
@@ -1943,7 +1943,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 }
 
 /* ------------------
-   COMPLETION — layout coerente
+   COMPLETION — consistent layout
 -------------------*/
 #completion-grid {
   display: flex;
@@ -1953,7 +1953,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   width: 100%;
 }
 
-/* Ogni blocco principale */
+/* Each main block */
 #completion-grid .main-section-block {
   flex: 1 1 auto;
   background: none;
@@ -1975,7 +1975,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   gap: 8px;
 }
 
-/* Descrizione sotto titolo */
+/* Description below title */
 #completion-grid .category-desc {
   text-align: center;
   color: #bbb;
@@ -2061,7 +2061,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   opacity: 0.9;
 }
 
-/*  Disabilita ogni effetto hover o glow sugli ACT label */
+/*  Disable any hover or glow effects on ACT labels */
 .act-label,
 .act-label:hover,
 .boss.done .act-label:hover,
@@ -2079,9 +2079,9 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 #home-section .home-content {
   overflow-y: auto;
   max-height: 100vh;
-  padding-bottom: 14vh; /* ✅ più spazio dinamico */
-  margin-bottom: 4vh; /* ✅ piccolo buffer extra */
-  scroll-padding-bottom: 100px; /* per sicurezza in scroll */
+  padding-bottom: 14vh; /* ✅ more dynamic space */
+  margin-bottom: 4vh; /* ✅ small extra buffer */
+  scroll-padding-bottom: 100px; /* for scroll safety */
 }
 
 #boss-grid {
@@ -2273,7 +2273,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   background: var(--bg-1);
   color: var(--ink-1);
   font-family: monospace;
-  padding: 60px 25px 25px; /* ⬅️ aggiunto padding-top per evitare sovrapposizione */
+  padding: 60px 25px 25px; /* ⬅️ added padding-top to avoid overlap */
   line-height: 1.4;
   font-size: 0.9rem;
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
@@ -2301,8 +2301,8 @@ body.spoiler-on .boss:hover .act-label.act-3 {
     32,
     34,
     0.85
-  ); /* stesso colore del tema, ma traslucido */
-  backdrop-filter: blur(6px); /* ✨ effetto vetro */
+  ); /* same theme color, but translucent */
+  backdrop-filter: blur(6px); /* ✨ glass effect */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2311,7 +2311,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Titolo coerente */
+/* Consistent title */
 .rawsave-header h2 {
   font-family: "TrajanPro", serif;
   color: var(--accent);
@@ -2377,7 +2377,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   background: var(--bg-1);
   color: var(--ink-1);
   font-family: monospace;
-  padding: 30px 25px; /* 🔥 spazio sufficiente sotto l’header */
+  padding: 30px 25px; /* 🔥 sufficient space below header */
   line-height: 1.4;
   font-size: 0.9rem;
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
