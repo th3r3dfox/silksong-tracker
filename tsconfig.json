@@ -1,0 +1,20 @@
+// The configuration file for TypeScript.
+{
+  "$schema": "https://raw.githubusercontent.com/complete-ts/complete/main/packages/complete-tsconfig/schemas/tsconfig-strict-schema.json",
+
+  "extends": [
+    // https://github.com/complete-ts/complete/blob/main/packages/complete-tsconfig/tsconfig.base.json
+    "complete-tsconfig/tsconfig.base.json",
+
+    // https://github.com/complete-ts/complete/blob/main/packages/complete-tsconfig/tsconfig.browser.json
+    "complete-tsconfig/tsconfig.browser.json",
+  ],
+
+  "compilerOptions": {
+    // Specifies the compilation target. The default is "es5". We need to change this because we
+    // iterate over `Uint8Array<ArrayBufferLike>` in "SaveDecoder.js".
+    "target": "es2015",
+  },
+
+  "include": ["./js/*.js"],
+}

@@ -1,23 +1,35 @@
-import { AES_KEY_STRING, CSHARP_HEADER } from "./constants.js";
+const CSHARP_HEADER = new Uint8Array([
+  0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0,
+]);
 
-// ✅ Use directly
-const CryptoJS = window.CryptoJS;
+/** The AES key used by Silksong to encrypt saves. */
+const AES_KEY_STRING = "UKu52ePUBwetZ9wNX88o54dnfKRu0T1l";
+
+/** @type {any} */
+const { CryptoJS } = window;
 
 /**
  * 🔹 Removes the header and length prefix from the .dat file
+ *
+ * @param {Uint8Array} bytes
  */
 function removeHeader(bytes) {
   const withoutHeader = bytes.subarray(CSHARP_HEADER.length, bytes.length - 1);
   let lengthCount = 0;
   for (let i = 0; i < 5; i++) {
     lengthCount++;
-    if ((withoutHeader[i] & 0x80) === 0) break;
+    const byte = withoutHeader[i];
+    if (byte !== undefined && (byte & 0x80) === 0) {
+      break;
+    }
   }
   return withoutHeader.subarray(lengthCount);
 }
 
 /**
  * 🔓 Decodes a Hollow Knight: Silksong .dat save file
+ *
+ * @param {ArrayBuffer} arrayBuffer
  */
 export function decodeSilksongSave(arrayBuffer) {
   try {
