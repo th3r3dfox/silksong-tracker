@@ -217,10 +217,10 @@ async function updateNewTabContent(selectedAct = "all") {
           ? (val ?? 0) >= (item.required ?? 0)
           : item.type === "collectable"
             ? (val ?? 0) > 0
-            : val === true ||
-              val === "collected" ||
-              val === "deposited" ||
-              val === "completed";
+            : val === true
+              || val === "collected"
+              || val === "deposited"
+              || val === "completed";
 
       if (item.exclusiveGroup) {
         exclusiveGroups.add(item.exclusiveGroup);
@@ -1300,10 +1300,10 @@ async function updateMainContent(selectedAct = "all") {
           ? (val ?? 0) >= (item.required ?? 0)
           : item.type === "collectable"
             ? (val ?? 0) > 0
-            : val === true ||
-              val === "collected" ||
-              val === "deposited" ||
-              val === "completed";
+            : val === true
+              || val === "collected"
+              || val === "deposited"
+              || val === "completed";
 
       if (item.exclusiveGroup) {
         exclusiveGroups.add(item.exclusiveGroup);
