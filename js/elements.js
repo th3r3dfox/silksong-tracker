@@ -1,8 +1,7 @@
 /**
  * Helper function to get an HTML element and throw an error if it does not exist.
  *
- * @param id {string}
- * @param msg {string}
+ * @param {string} id
  * @returns {HTMLElement}
  */
 function getHTMLElement(id) {
@@ -19,7 +18,7 @@ function getHTMLElement(id) {
  * Helper function to get an HTML input element and throw an error if it does not exist or if it is
  * not an intput element.
  *
- * @param id {string}
+ * @param {string} id
  * @returns {HTMLInputElement}
  */
 function getHTMLInputElement(id) {
@@ -34,7 +33,26 @@ function getHTMLInputElement(id) {
   return element;
 }
 
-export const actFilter = getHTMLElement("actFilter");
+/**
+ * Helper function to get an HTML select element and throw an error if it does not exist or if it is
+ * not an select element.
+ *
+ * @param {string} id
+ * @returns {HTMLSelectElement}
+ */
+function getHTMLSelectElement(id) {
+  const element = getHTMLElement(id);
+
+  if (!(element instanceof HTMLSelectElement)) {
+    throw new Error(
+      `The HTML element with an id of "${id}" is not an HTML select element.`,
+    );
+  }
+
+  return element;
+}
+
+export const actFilter = getHTMLSelectElement("actFilter");
 export const allProgressGrid = getHTMLElement("allprogress-grid");
 export const backToTop = getHTMLElement("backToTop");
 export const closeInfoModal = getHTMLElement("closeInfoModal");

@@ -767,7 +767,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/** @param file {File} */
+/** @param {File} file */
 async function handleSaveFile(file) {
   try {
     if (!file) {
@@ -869,7 +869,9 @@ async function refreshSaveFile() {
   }
 }
 
-// ---------- TOAST ----------
+/**
+ * @param {string} message
+ */
 function showToast(message) {
   const toast = document.createElement("div");
   toast.textContent = message;
@@ -893,6 +895,12 @@ function showToast(message) {
 // Handle sidebar clicks
 // Handle sidebar clicks
 document.querySelectorAll(".sidebar-item").forEach((btn) => {
+  if (!(btn instanceof HTMLAnchorElement)) {
+    throw new Error(
+      'An element with a class of "sidebar-item" was not an anchor.',
+    );
+  }
+
   btn.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -907,7 +915,7 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
       section.classList.add("hidden");
     });
 
-    const selectedTab = btn.dataset.tab;
+    const selectedTab = btn.dataset["tab"];
     const activeSection = document.getElementById(`${selectedTab}-section`);
     if (activeSection) {
       activeSection.classList.remove("hidden");
@@ -984,13 +992,17 @@ async function updateAllProgressContent(selectedAct = "all") {
       fetch("data/wishes.json").then((r) => r.json()),
     ]);
 
+  if (!Array.isArray(bossesData)) {
+    throw new Error('The contents of the "bosses.json" file was not an array.');
+  }
+
   // Create section headers and render each category
   const categories = [
     { title: "Main Progress", data: mainData },
     { title: "Essential Items", data: essentialsData },
     {
       title: "Bosses",
-      data: Array.isArray(bossesData) ? bossesData : [bossesData],
+      data: bossesData,
     },
     { title: "Completion", data: completionData },
     { title: "Wishes", data: wishesData },
@@ -1027,9 +1039,14 @@ async function updateAllProgressContent(selectedAct = "all") {
           if (item.type === "collectable") return (val ?? 0) === 0;
           if (
             ["level", "min", "region-level", "region-min"].includes(item.type)
-          )
+          ) {
             return (val ?? 0) < (item.required ?? 0);
-          if (item.type === "quest") return val !== "completed" && val !== true;
+          }
+
+          if (item.type === "quest") {
+            return val !== "completed" && val !== true;
+          }
+
           return val !== true;
         });
       }

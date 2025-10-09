@@ -11,7 +11,7 @@ const { CryptoJS } = window;
 /**
  * 🔹 Removes the header and length prefix from the .dat file
  *
- * @param bytes {Uint8Array}
+ * @param {Uint8Array} bytes
  */
 function removeHeader(bytes) {
   const withoutHeader = bytes.subarray(CSHARP_HEADER.length, bytes.length - 1);
@@ -29,7 +29,7 @@ function removeHeader(bytes) {
 /**
  * 🔓 Decodes a Hollow Knight: Silksong .dat save file
  *
- * @param arrayBuffer {ArrayBuffer}
+ * @param {ArrayBuffer} arrayBuffer
  */
 export function decodeSilksongSave(arrayBuffer) {
   try {
