@@ -13,6 +13,12 @@ function matchMode(item) {
   return item.mode === window.saveMode; // AFTER loading -> match mode
 }
 
+// --- Gruppi mutualmente esclusivi globali ---
+const EXCLUSIVE_GROUPS = [
+  ["Heart Flower", "Heart Coral", "Heart Hunter", "Clover Heart"],
+  ["Huntress Quest", "Huntress Quest Runt"], //broodfest runefest
+];
+
 // ---------- SPOILER TOGGLE ----------
 document.getElementById("spoilerToggle").addEventListener("change", () => {
   const spoilerChecked = document.getElementById("spoilerToggle").checked;
@@ -416,22 +422,29 @@ function renderGenericGrid({
     ),
   );
 
-  // --- Mutualmente esclusivi: Memento Hearts ---
-  const heartFlags = [
-    "Heart Flower",
-    "Heart Coral",
-    "Heart Hunter",
-    "Clover Heart",
-  ];
-  const ownedHeart = heartFlags.find((flag) => {
-    const val = resolveSaveValue(save, { type: "relic", flag });
-    return val === "deposited" || val === "collected";
+  // --- Applica gruppi mutualmente esclusivi (globale, relic + quest) ---
+  EXCLUSIVE_GROUPS.forEach((group) => {
+    const owned = group.find((flag) => {
+      // prova prima come relic
+      let val = resolveSaveValue(save, { type: "relic", flag });
+      // se non è relic valido, prova come quest
+      if (!val || val === false)
+        val = resolveSaveValue(save, { type: "quest", flag });
+
+      return (
+        val === "deposited"
+        || val === "collected"
+        || val === "completed"
+        || val === true
+      );
+    });
+
+    if (owned) {
+      data = data.filter(
+        (item) => !group.includes(item.flag) || item.flag === owned,
+      );
+    }
   });
-  if (ownedHeart) {
-    data = data.filter(
-      (item) => !heartFlags.includes(item.flag) || item.flag === ownedHeart,
-    );
-  }
 
   let renderedCount = 0;
 
@@ -1004,34 +1017,54 @@ async function updateAllProgressContent(selectedAct = "all") {
         });
       }
 
-      // --- Applica filtro mutualmente esclusivo per i cuori (Mementos) ---
-      const heartFlags = [
-        "Heart Flower",
-        "Heart Coral",
-        "Heart Hunter",
-        "Clover Heart",
-      ];
-      const ownedHeart = heartFlags.find((flag) => {
-        const val = resolveSaveValue(window.save, { type: "relic", flag });
-        return val === "deposited" || val === "collected";
+      // --- Applica gruppi mutualmente esclusivi (globale) ---
+      EXCLUSIVE_GROUPS.forEach((group) => {
+        const owned = group.find((flag) => {
+          const val = resolveSaveValue(window.save, { type: "relic", flag });
+          return val === "deposited" || val === "collected";
+        });
+        if (owned) {
+          filteredItems = filteredItems.filter(
+            (item) => !group.includes(item.flag) || item.flag === owned,
+          );
+        }
       });
-      if (ownedHeart) {
-        filteredItems = filteredItems.filter(
-          (item) => !heartFlags.includes(item.flag) || item.flag === ownedHeart,
-        );
-      }
 
-      // Add act colors
+      // Aggiungi colori atto
       filteredItems.forEach((item) => {
         if (item.act === 1) item.actColor = "act-1";
         else if (item.act === 2) item.actColor = "act-2";
         else if (item.act === 3) item.actColor = "act-3";
       });
 
-      // Calculate obtained/total
+      // --- Conteggio corretto (con gruppi esclusivi) ---
       let obtained = 0;
       const exclusiveGroups = new Set();
       const countedGroups = new Set();
+
+      // --- Applica gruppi mutualmente esclusivi (globale, relic + quest) ---
+      EXCLUSIVE_GROUPS.forEach((group) => {
+        const owned = group.find((flag) => {
+          // prova prima come relic
+          let val = resolveSaveValue(window.save, { type: "relic", flag });
+          // se non è relic valido, prova come quest
+          if (!val || val === false)
+            val = resolveSaveValue(window.save, { type: "quest", flag });
+
+          return (
+            val === "deposited"
+            || val === "collected"
+            || val === "completed"
+            || val === true
+          );
+        });
+
+        if (owned) {
+          filteredItems = filteredItems.filter(
+            (item) => !group.includes(item.flag) || item.flag === owned,
+          );
+        }
+      });
 
       filteredItems.forEach((item) => {
         const val = window.save ? resolveSaveValue(window.save, item) : false;
