@@ -2296,12 +2296,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   position: sticky;
   top: 0;
   z-index: 5;
-  background: rgba(
-    31,
-    32,
-    34,
-    0.85
-  ); /* same theme color, but translucent */
+  background: rgba(31, 32, 34, 0.85); /* same theme color, but translucent */
   backdrop-filter: blur(6px); /* ✨ glass effect */
   display: flex;
   justify-content: space-between;
