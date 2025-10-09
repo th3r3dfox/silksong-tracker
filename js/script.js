@@ -16,7 +16,7 @@ function matchMode(item) {
 // --- Gruppi mutualmente esclusivi globali ---
 const EXCLUSIVE_GROUPS = [
   ["Heart Flower", "Heart Coral", "Heart Hunter", "Clover Heart"],
-  ["Huntress Quest", "Huntress Quest Runt"], //broodfest runefest
+  ["Huntress Quest", "Huntress Quest Runt"], //broodfest runtfeast
 ];
 
 // ---------- SPOILER TOGGLE ----------
