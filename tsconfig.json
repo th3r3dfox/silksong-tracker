@@ -10,5 +10,11 @@
     "complete-tsconfig/tsconfig.browser.json",
   ],
 
+  "compilerOptions": {
+    // Specifies the compilation target. The default is "es5". We need to change this because we
+    // iterate over `Uint8Array<ArrayBufferLike>` in "SaveDecoder.js".
+    "target": "es2015",
+  },
+
   "include": ["./js/*.js"],
 }

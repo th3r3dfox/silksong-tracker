@@ -2,6 +2,7 @@
 
 import {
   actFilter,
+  allProgressGrid,
   backToTop,
   closeInfoModal,
   closeUploadModal,
@@ -9,6 +10,7 @@ import {
   downloadRawsaveBtn,
   dropzone,
   fileInput,
+  infoOverlay,
   missingToggle,
   nextMatch,
   openUploadModal,
