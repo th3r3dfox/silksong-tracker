@@ -1,3 +1,4 @@
+import { actFilter } from "./elements.js";
 import { decodeSilksongSave } from "./SaveDecoder.js";
 
 console.log(
@@ -7,7 +8,7 @@ console.log(
 const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
   ? "/silksong-tracker"
   : "";
-let currentActFilter = document.getElementById("actFilter")?.value || "all";
+let currentActFilter = actFilter.value || "all";
 
 const TAB_TO_UPDATE_FUNCTION = {
   allprogress: updateAllProgressContent,
@@ -16,8 +17,12 @@ const TAB_TO_UPDATE_FUNCTION = {
 const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION);
 
 function matchMode(item) {
-  if (!item.mode) return true; // no mode -> always visible
-  if (!window.save) return true; // BEFORE loading a save -> show all
+  if (!item.mode) {
+    return true; // no mode -> always visible
+  }
+  if (!window.save) {
+    return true; // BEFORE loading a save -> show all
+  }
   return item.mode === window.saveMode; // AFTER loading -> match mode
 }
 
@@ -906,7 +911,7 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
 
     // 🔹 Maintain ACT filter state
     const savedAct = localStorage.getItem("currentActFilter") || "all";
-    document.getElementById("actFilter").value = savedAct;
+    actFilter.value = savedAct;
     currentActFilter = savedAct;
 
     // 🔹 Save active tab
@@ -931,7 +936,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const missingToggle = document.getElementById("missingToggle");
 
   // 🔹 Restore Act filter value
-  document.getElementById("actFilter").value = savedAct;
+  actFilter.value = savedAct;
   currentActFilter = savedAct;
 
   // 🔹 Synchronize "Show spoilers" state (keeps colors consistent)
@@ -1224,7 +1229,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function reRenderActiveTab() {
   const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset
     .tab;
-  const currentAct = document.getElementById("actFilter")?.value || "all";
+  const currentAct = actFilter.value || "all";
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
 
   // Save states
