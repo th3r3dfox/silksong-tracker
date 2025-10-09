@@ -2448,7 +2448,9 @@ mark.active-match {
   border: none;
   background: transparent;
   cursor: pointer;
-  transition: opacity 0.3s, transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
   z-index: 1000;
 }
 

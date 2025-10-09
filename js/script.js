@@ -160,10 +160,9 @@ async function updateNewTabContent(selectedAct = "all") {
 }
 
 // ---------- Back to top button listener ----------
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   const backToTop = document.getElementById("backToTop");
   const main = document.querySelector("main");
-
 
   main.addEventListener("scroll", () => {
     const scrollPosition = main.scrollTop;
