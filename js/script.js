@@ -268,6 +268,31 @@ async function updateNewTabContent(selectedAct = "all") {
   });
 }
 
+// ---------- Back to top button listener ----------
+document.addEventListener('DOMContentLoaded', () => {
+  const backToTop = document.getElementById("backToTop");
+  const main = document.querySelector("main");
+
+
+  main.addEventListener("scroll", () => {
+    const scrollPosition = main.scrollTop;
+
+    if (scrollPosition > 300) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+  });
+
+  // Scroll back to top
+  backToTop.addEventListener("click", () => {
+    main.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   // ---------- MODAL SETUP ----------
   const overlay = document.getElementById("uploadOverlay");
