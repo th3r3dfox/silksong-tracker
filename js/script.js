@@ -21,10 +21,10 @@ function matchMode(item) {
   return item.mode === window.saveMode; // AFTER loading -> match mode
 }
 
-// --- Gruppi mutualmente esclusivi globali ---
+// --- Global mutually exclusive groups ---
 const EXCLUSIVE_GROUPS = [
   ["Heart Flower", "Heart Coral", "Heart Hunter", "Clover Heart"],
-  ["Huntress Quest", "Huntress Quest Runt"], //broodfest  runtfeast
+  ["Huntress Quest", "Huntress Quest Runt"], // broodfest runtfeast
 ];
 
 // ---------- SPOILER TOGGLE ----------
@@ -32,10 +32,10 @@ document.getElementById("spoilerToggle").addEventListener("change", () => {
   const spoilerChecked = document.getElementById("spoilerToggle").checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
 
-  // Salva anche questo stato se vuoi mantenerlo al refresh
+  // Save this state too if you want to keep it on refresh
   localStorage.setItem("showSpoilers", spoilerChecked);
 
-  // Usa la stessa logica dei filtri (così mantiene Act + Missing)
+  // Use the same filter logic (so it maintains Act + Missing)
   reRenderActiveTab();
 });
 
@@ -61,7 +61,7 @@ function applyMissingFilter() {
       }
     });
 
-    // Nascondi l'intera sezione se non ha elementi visibili
+    // Hide the entire section if it has no visible elements
     section.style.display = hasVisible ? "" : "none";
   });
 }
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fileInput = document.getElementById("fileInput");
 
   if (!overlay || !dropzone || !openBtn || !closeBtn || !fileInput) {
-    console.warn("[upload modal] Elementi mancanti nel DOM.");
+    console.warn("[upload modal] Missing elements in DOM.");
     return;
   }
 
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
           showToast("📋 Path copied to clipboard!");
         })
         .catch((err) => {
-          console.error("Errore clipboard:", err);
+          console.error("Clipboard error:", err);
           showToast("⚠️ Unable to copy path.");
         });
     });
@@ -191,7 +191,7 @@ function resolveSaveValue(save, item) {
 
   if (!root) return undefined;
 
-  // Flag diretti
+  // Direct flags
   if (
     item.type === "flag"
     && item.flag
@@ -230,7 +230,7 @@ function resolveSaveValue(save, item) {
 
   // Quests (Wishes)
   if (item.type === "quest") {
-    // Elenchi possibili di dati per compatibilità (alcuni dump usano nomi diversi)
+    // Possible data lists for compatibility (some dumps use different names)
     const questLists = [
       pd.QuestCompletionData?.savedData,
       pd.Quests?.savedData,
@@ -238,14 +238,14 @@ function resolveSaveValue(save, item) {
       pd.QuestData?.savedData,
     ].filter(Boolean);
 
-    // Normalizza il nome per evitare problemi di maiuscole/spazi
+    // Normalize the name to avoid case/space issues
     const normalize = (s) =>
       String(s || "")
         .toLowerCase()
         .trim();
     const flagNorm = normalize(item.flag);
 
-    // Cerca in tutti i possibili array
+    // Search in all possible arrays
     let entry;
     for (const list of questLists) {
       entry = list.find((e) => normalize(e.Name) === flagNorm);
@@ -256,7 +256,7 @@ function resolveSaveValue(save, item) {
 
     const data = entry.Data || entry.Record || {};
 
-    // 🎯 Stato della quest
+    // 🎯 Quest status
     if (
       data.IsCompleted === true
       || data.Completed === true
@@ -308,14 +308,14 @@ function resolveSaveValue(save, item) {
     return scenes.includes(item.scene);
   }
 
-  // Progressioni numeriche (Needle, ToolPouchUpgrades, ToolKitUpgrades, ecc.)
+  // Numeric progressions (Needle, ToolPouchUpgrades, ToolKitUpgrades, etc.)
   if ((item.type === "level" || item.type === "min") && item.flag) {
     const current = pd[item.flag] ?? 0;
 
-    return current; // ✅ ritorna SEMPRE il numero, lo sblocco si calcola dopo
+    return current; // ✅ always return the number, unlock is calculated later
   }
 
-  // Flag numerici (flagInt) — es. CaravanTroupeLocation >= 2
+  // Numeric flags (flagInt) — e.g. CaravanTroupeLocation >= 2
   if (item.type === "flagInt" && item.flag) {
     const current = pd[item.flag];
     if (typeof current === "number") {
@@ -365,14 +365,14 @@ function resolveSaveValue(save, item) {
 
     const data = entry.Data || {};
 
-    if (data.IsDeposited === true) return "deposited"; // ✅ Verde
-    if (data.HasSeenInRelicBoard === true) return "collected"; // 🟡 Giallo
+    if (data.IsDeposited === true) return "deposited"; // ✅ Green
+    if (data.HasSeenInRelicBoard === true) return "collected"; // 🟡 Yellow
     if (data.IsCollected === true) return "collected";
 
     return false;
   }
 
-  // ⚡ Materium tracking (seen = verde, collected = giallo)
+  // ⚡ Materium tracking (seen = green, collected = yellow)
   if (item.type === "materium" && item.flag) {
     const list =
       save?.playerData?.MateriumCollected?.savedData
@@ -384,15 +384,15 @@ function resolveSaveValue(save, item) {
 
     const data = entry.Data || {};
 
-    // ✅ verde se visto nella board
+    // ✅ green if seen in board
     if (data.HasSeenInRelicBoard === true) return "deposited";
-    // 🟡 giallo se raccolto ma non visto nella board
+    // 🟡 yellow if collected but not seen in board
     if (data.IsCollected === true) return "collected";
 
     return false;
   }
 
-  // Devices (Materium, Farsight, ecc.)
+  // Devices (Materium, Farsight, etc.)
   if (item.type === "device") {
     const scene = String(item.scene || "")
       .trim()
@@ -402,7 +402,7 @@ function resolveSaveValue(save, item) {
       .replace(/\s+/g, "_");
     const depositFlag = String(item.relatedFlag || "").trim();
 
-    // ✅ Verde — oggetto depositato
+    // ✅ Green — item deposited
     if (
       depositFlag
       && (save?.playerData?.[depositFlag] === true
@@ -411,7 +411,7 @@ function resolveSaveValue(save, item) {
       return "deposited";
     }
 
-    // 🟡 Giallo — oggetto raccolto nella scena
+    // 🟡 Yellow — item collected in scene
     const sceneFlags =
       save?.__flags?.[scene]
       || save?.playerData?.__flags?.[scene]
@@ -425,7 +425,7 @@ function resolveSaveValue(save, item) {
     return false;
   }
 
-  // Fallback generico
+  // Generic fallback
   if (item.flag && pd[item.flag] !== undefined) {
     return pd[item.flag];
   }
@@ -446,7 +446,7 @@ function renderGenericGrid({
 
   container.innerHTML = "";
 
-  // 🔎 Varianti Silkshot (unica card visibile)
+  // 🔎 Silkshot variants (only one card visible)
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
   const unlockedSilkVariant = silkVariants.find((v) =>
     save?.playerData?.Tools?.savedData?.some(
@@ -454,12 +454,12 @@ function renderGenericGrid({
     ),
   );
 
-  // --- Applica gruppi mutualmente esclusivi (globale, relic + quest) ---
+  // --- Apply mutually exclusive groups (global, relic + quest) ---
   EXCLUSIVE_GROUPS.forEach((group) => {
     const owned = group.find((flag) => {
-      // prova prima come relic
+      // try first as relic
       let val = resolveSaveValue(save, { type: "relic", flag });
-      // se non è relic valido, prova come quest
+      // if not a valid relic, try as quest
       if (!val || val === false)
         val = resolveSaveValue(save, { type: "quest", flag });
 
@@ -481,7 +481,7 @@ function renderGenericGrid({
   let renderedCount = 0;
 
   data.forEach((item) => {
-    // Silkshot → mostra solo 1 variante
+    // Silkshot → show only 1 variant
     if (silkVariants.includes(item.flag)) {
       if (unlockedSilkVariant && item.flag !== unlockedSilkVariant) return;
       if (!unlockedSilkVariant && item.flag !== "WebShot Architect") return;
@@ -490,7 +490,7 @@ function renderGenericGrid({
     const div = document.createElement("div");
     div.className = "boss";
 
-    // 🔹 Etichetta dell'atto (ACT I / II / III)
+    // 🔹 Act label (ACT I / II / III)
     if (item.act) {
       const romanActs = { 1: "I", 2: "II", 3: "III" };
       const actLabel = document.createElement("span");
@@ -505,7 +505,7 @@ function renderGenericGrid({
     const img = document.createElement("img");
     img.alt = item.label;
 
-    // 🔍 Valore dal salvataggio (quest ora può ritornare "completed" o "accepted")
+    // 🔍 Value from save file (quest can now return "completed" or "accepted")
     const value = resolveSaveValue(save, item);
 
     let isDone = false;
@@ -519,20 +519,20 @@ function renderGenericGrid({
       isDone = value === "completed" || value === true;
       isAccepted = value === "accepted";
     } else if (item.type === "relic") {
-      isDone = value === "deposited"; // verde = consegnata
-      isAccepted = value === "collected"; // giallo = trovata ma non depositata
+      isDone = value === "deposited"; // green = delivered
+      isAccepted = value === "collected"; // yellow = found but not deposited
     } else if (item.type === "materium") {
-      // "deposited" = verde (done), "collected" = giallo (accepted)
+      // "deposited" = green (done), "collected" = yellow (accepted)
       isDone = value === "deposited";
       isAccepted = value === "collected";
     } else if (item.type === "device") {
-      isDone = value === "deposited"; // ✅ Verde
-      isAccepted = value === "collected"; // 🟡 Giallo
+      isDone = value === "deposited"; // ✅ Green
+      isAccepted = value === "collected"; // 🟡 Yellow
     } else {
       isDone = value === true;
     }
 
-    // Se “solo mancanti” ed è completato → non renderizzare proprio la card
+    // If "only missing" and it's completed → don't render the card at all
     if (showMissingOnly && isDone) return;
 
     if (item.missable) {
@@ -543,7 +543,7 @@ function renderGenericGrid({
       div.appendChild(warn);
     }
 
-    // 🖼️ Gestione immagini e stato
+    // 🖼️ Image and state management
     const iconPath = item.icon || `${BASE_PATH}/assets/icons/${item.id}.png`;
     const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
 
@@ -551,7 +551,7 @@ function renderGenericGrid({
       img.src = iconPath;
       div.classList.add("done");
 
-      //if the item is done, hide missble icon
+      // if the item is done, hide missable icon
       const missableIcon = div.querySelector(".missable-icon");
       if (missableIcon) missableIcon.style.display = "none";
     } else if (isAccepted) {
@@ -568,7 +568,7 @@ function renderGenericGrid({
       div.addEventListener("mouseleave", () => (img.src = lockedPath));
     }
 
-    // Titolo + modal
+    // Title + modal
     const title = document.createElement("div");
     title.className = "title";
     title.textContent =
@@ -691,7 +691,7 @@ document.addEventListener("DOMContentLoaded", () => {
     URL.revokeObjectURL(url);
   });
 
-  // 🔍 Ricerca navigabile
+  // 🔍 Navigable search
   let currentMatch = 0;
   let matches = [];
 
@@ -764,7 +764,7 @@ async function handleSaveFile(file) {
     const buffer = await file.arrayBuffer();
     const isDat = file.name.toLowerCase().endsWith(".dat");
 
-    // 🔍 Decodifica file
+    // 🔍 Decode file
     const saveData = isDat
       ? decodeSilksongSave(buffer)
       : JSON.parse(new TextDecoder("utf-8").decode(buffer));
@@ -781,17 +781,17 @@ async function handleSaveFile(file) {
       2,
     );
 
-    // ✅ Indicizza e salva globalmente
+    // ✅ Index and save globally
     window.save = indexFlags(saveData);
     window.lastSaveFile = file;
     window.lastSaveBuffer = buffer;
     window.lastSaveIsDat = isDat;
 
-    // 🔘 Mostra bottone di refresh
+    // 🔘 Show refresh button
     const refreshBtn = document.getElementById("refreshSaveBtn");
     if (refreshBtn) refreshBtn.classList.remove("hidden");
 
-    // --- Aggiorna statistiche UI ---
+    // --- Update UI statistics ---
     const completion = saveData.playerData?.completionPercentage ?? 0;
     const seconds = saveData.playerData?.playTime ?? 0;
     const hours = Math.floor(seconds / 3600);
@@ -804,7 +804,7 @@ async function handleSaveFile(file) {
     safeSetText("rosariesValue", String(rosaries));
     safeSetText("shardsValue", String(shards));
 
-    // --- Rileva modalità di gioco ---
+    // --- Detect game mode ---
     const modeValue = saveData.playerData?.permadeathMode ?? 0;
     const isSteelSoul =
       modeValue === 1
@@ -812,10 +812,10 @@ async function handleSaveFile(file) {
       || saveData.playerData?.SteelSoulMode === true
       || saveData.playerData?.GameMode === "SteelSoul";
 
-    // ✅ Salva modalità globalmente (dopo la dichiarazione)
+    // ✅ Save mode globally (after declaration)
     window.saveMode = isSteelSoul ? "steel" : "normal";
 
-    // 🪶 Mostra banner visivo
+    // 🪶 Show visual banner
     const banner = document.getElementById("modeBanner");
     if (banner) {
       banner.innerHTML = isSteelSoul
@@ -825,7 +825,7 @@ async function handleSaveFile(file) {
       banner.classList.toggle("steel", isSteelSoul);
     }
 
-    // --- Aggiorna la tab attiva ---
+    // --- Update active tab ---
     const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset
       .tab;
     TAB_TO_UPDATE_FUNCTION[activeTab]?.();
@@ -847,11 +847,11 @@ async function refreshSaveFile() {
   try {
     if (!window.lastSaveFile) {
       showToast("⚠️ No save file loaded yet.");
-      document.getElementById("fileInput").click(); // apre la selezione file
+      document.getElementById("fileInput").click(); // opens file selection
       return;
     }
 
-    // 🔄 Ricarica lo stesso file già in memoria
+    // 🔄 Reload the same file already in memory
     showToast("🔄 Reloading save file...");
     await handleSaveFile(window.lastSaveFile);
   } catch (err) {
@@ -881,19 +881,19 @@ function showToast(message) {
   setTimeout(() => toast.remove(), 2500);
 }
 
-// Gestione click sulla sidebar
-// Gestione click sulla sidebar
+// Handle sidebar clicks
+// Handle sidebar clicks
 document.querySelectorAll(".sidebar-item").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    // Rimuove/aggiunge la classe di attivazione
+    // Remove/add activation class
     document
       .querySelectorAll(".sidebar-item")
       .forEach((i) => i.classList.remove("is-active"));
     btn.classList.add("is-active");
 
-    // Nasconde tutte le tab
+    // Hide all tabs
     document.querySelectorAll(".tab").forEach((section) => {
       section.classList.add("hidden");
     });
@@ -904,23 +904,23 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
       activeSection.classList.remove("hidden");
     }
 
-    // 🔹 Mantieni stato filtro ACT
+    // 🔹 Maintain ACT filter state
     const savedAct = localStorage.getItem("currentActFilter") || "all";
     document.getElementById("actFilter").value = savedAct;
     currentActFilter = savedAct;
 
-    // 🔹 Salva tab attiva
+    // 🔹 Save active tab
     localStorage.setItem("activeTab", selectedTab);
 
-    // Attiva/disattiva home scroll
+    // Enable/disable home scroll
     document.documentElement.style.overflowY = "auto";
 
-    TAB_TO_UPDATE_FUNCTION[selectedTab]?.(currentActFilter); // <-- applica il filtro salvato
+    TAB_TO_UPDATE_FUNCTION[selectedTab]?.(currentActFilter); // <-- apply saved filter
   });
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  // 🔹 Ripristina tab e filtri salvati
+  // 🔹 Restore saved tab and filters
   let savedTab = localStorage.getItem("activeTab");
   if (!VALID_TABS.includes(savedTab)) {
     savedTab = VALID_TABS[0];
@@ -930,22 +930,22 @@ window.addEventListener("DOMContentLoaded", () => {
   const spoilerToggle = document.getElementById("spoilerToggle");
   const missingToggle = document.getElementById("missingToggle");
 
-  // 🔹 Ripristina valore del filtro Act
+  // 🔹 Restore Act filter value
   document.getElementById("actFilter").value = savedAct;
   currentActFilter = savedAct;
 
-  // 🔹 Sincronizza stato "Show spoilers" (mantiene i colori coerenti)
+  // 🔹 Synchronize "Show spoilers" state (keeps colors consistent)
   if (spoilerToggle) {
     const spoilerChecked = spoilerToggle.checked;
     document.body.classList.toggle("spoiler-on", !spoilerChecked);
   }
 
-  // 🔹 Sincronizza stato "Show only missing"
+  // 🔹 Synchronize "Show only missing" state
   if (missingToggle) {
     missingToggle.checked = localStorage.getItem("showMissingOnly") === "true";
   }
 
-  // 🔹 Reset visibilità tab
+  // 🔹 Reset tab visibility
   document
     .querySelectorAll(".sidebar-item")
     .forEach((i) => i.classList.remove("is-active"));
@@ -953,14 +953,14 @@ window.addEventListener("DOMContentLoaded", () => {
     .querySelectorAll(".tab")
     .forEach((section) => section.classList.add("hidden"));
 
-  // 🔹 Attiva la scheda salvata
+  // 🔹 Activate saved tab
   const btn = document.querySelector(`.sidebar-item[data-tab="${savedTab}"]`);
   if (btn) btn.classList.add("is-active");
 
   const activeSection = document.getElementById(`${savedTab}-section`);
   if (activeSection) activeSection.classList.remove("hidden");
 
-  // Delay minimo per sicurezza (previene race con rendering DOM)
+  // Minimum delay for safety (prevents race with DOM rendering)
   setTimeout(() => {
     TAB_TO_UPDATE_FUNCTION[savedTab]?.(currentActFilter);
   }, 50);
@@ -1037,7 +1037,7 @@ async function updateAllProgressContent(selectedAct = "all") {
         });
       }
 
-      // --- Applica gruppi mutualmente esclusivi (globale) ---
+      // --- Apply mutually exclusive groups (global) ---
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
           const val = resolveSaveValue(window.save, { type: "relic", flag });
@@ -1050,24 +1050,24 @@ async function updateAllProgressContent(selectedAct = "all") {
         }
       });
 
-      // Aggiungi colori atto
+      // Add act colors
       filteredItems.forEach((item) => {
         if (item.act === 1) item.actColor = "act-1";
         else if (item.act === 2) item.actColor = "act-2";
         else if (item.act === 3) item.actColor = "act-3";
       });
 
-      // --- Conteggio corretto (con gruppi esclusivi) ---
+      // --- Correct count (with exclusive groups) ---
       let obtained = 0;
       const exclusiveGroups = new Set();
       const countedGroups = new Set();
 
-      // --- Applica gruppi mutualmente esclusivi (globale, relic + quest) ---
+      // --- Apply mutually exclusive groups (global, relic + quest) ---
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
-          // prova prima come relic
+          // try first as relic
           let val = resolveSaveValue(window.save, { type: "relic", flag });
-          // se non è relic valido, prova come quest
+          // if not a valid relic, try as quest
           if (!val || val === false)
             val = resolveSaveValue(window.save, { type: "quest", flag });
 
@@ -1151,7 +1151,7 @@ function showGenericModal(data) {
   const overlay = document.getElementById("info-overlay");
   const content = document.getElementById("info-content");
 
-  // ✅ Percorso completo per la mappa (funziona anche su GitHub Pages)
+  // ✅ Full path for map (also works on GitHub Pages)
   const mapSrc = data.map
     ? data.map.startsWith("http")
       ? data.map
@@ -1227,7 +1227,7 @@ function reRenderActiveTab() {
   const currentAct = document.getElementById("actFilter")?.value || "all";
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
 
-  // Salva stati
+  // Save states
   localStorage.setItem("currentActFilter", currentAct);
   localStorage.setItem("showMissingOnly", showMissingOnly);
 

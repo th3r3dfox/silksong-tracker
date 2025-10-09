@@ -1,10 +1,10 @@
 import { AES_KEY_STRING, CSHARP_HEADER } from "./constants.js";
 
-// ✅ Usa direttamente
+// ✅ Use directly
 const CryptoJS = window.CryptoJS;
 
 /**
- * 🔹 Rimuove l'header e il prefisso di lunghezza dal file .dat
+ * 🔹 Removes the header and length prefix from the .dat file
  */
 function removeHeader(bytes) {
   const withoutHeader = bytes.subarray(CSHARP_HEADER.length, bytes.length - 1);
@@ -17,23 +17,23 @@ function removeHeader(bytes) {
 }
 
 /**
- * 🔓 Decodifica un salvataggio .dat di Hollow Knight: Silksong
+ * 🔓 Decodes a Hollow Knight: Silksong .dat save file
  */
 export function decodeSilksongSave(arrayBuffer) {
   try {
     const bytes = new Uint8Array(arrayBuffer);
 
-    // Step 1: rimuove l’header Unity/C#
+    // Step 1: remove Unity/C# header
     const noHeader = removeHeader(bytes);
 
-    // Step 2: converte in base64 string (chunked per sicurezza)
+    // Step 2: convert to base64 string (chunked for safety)
     let b64String = "";
     const CHUNK_SIZE = 0x8000;
     for (let i = 0; i < noHeader.length; i += CHUNK_SIZE) {
       b64String += String.fromCharCode(...noHeader.slice(i, i + CHUNK_SIZE));
     }
 
-    // Step 3: decifra AES ECB PKCS7
+    // Step 3: decrypt AES ECB PKCS7
     const encryptedWords = CryptoJS.enc.Base64.parse(b64String);
     const cipherParams = CryptoJS.lib.CipherParams.create({
       ciphertext: encryptedWords,
