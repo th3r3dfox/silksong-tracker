@@ -799,8 +799,8 @@ async function handleSaveFile(file) {
     window.lastSaveIsDat = isDat;
 
     // 🔘 Show refresh button
-    if (refreshBtn) {
-      refreshBtn.classList.remove("hidden");
+    if (refreshSaveBtn) {
+      refreshSaveBtn.classList.remove("hidden");
     }
 
     // --- Update UI statistics ---
