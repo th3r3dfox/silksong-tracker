@@ -939,8 +939,12 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
 window.addEventListener("DOMContentLoaded", () => {
   // 🔹 Restore saved tab and filters
   let savedTab = localStorage.getItem("activeTab");
-  if (!VALID_TABS.includes(savedTab)) {
-    savedTab = VALID_TABS[0];
+  if (savedTab === null || !VALID_TABS.includes(savedTab)) {
+    const firstValidTab = VALID_TABS[0];
+    if (firstValidTab === undefined) {
+      throw new Error("Failed to get the first valid tab.");
+    }
+    savedTab = firstValidTab;
   }
 
   const savedAct = localStorage.getItem("currentActFilter") || "all";
@@ -966,10 +970,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // 🔹 Activate saved tab
   const btn = document.querySelector(`.sidebar-item[data-tab="${savedTab}"]`);
-  if (btn) btn.classList.add("is-active");
+  if (btn) {
+    btn.classList.add("is-active");
+  }
 
   const activeSection = document.getElementById(`${savedTab}-section`);
-  if (activeSection) activeSection.classList.remove("hidden");
+  if (activeSection) {
+    activeSection.classList.remove("hidden");
+  }
 
   // Minimum delay for safety (prevents race with DOM rendering)
   setTimeout(() => {
