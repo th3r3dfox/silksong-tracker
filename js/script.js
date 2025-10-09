@@ -1225,16 +1225,37 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function reRenderActiveTab() {
-  const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset
-    .tab;
+  const activeElement = document.querySelector(".sidebar-item.is-active");
+  if (activeElement === null) {
+    throw new Error("Failed to get the active element.");
+  }
+  if (!(activeElement instanceof HTMLAnchorElement)) {
+    throw new Error("The active element was not an HTML anchor element.");
+  }
+
+  const activeTab = activeElement.dataset["tab"];
+  if (activeTab === undefined) {
+    throw new Error(
+      "Failed to get the name of the active tab from the active element.",
+    );
+  }
+
   const currentAct = actFilter.value || "all";
   const showMissingOnly = missingToggle.checked;
 
   // Save states
   localStorage.setItem("currentActFilter", currentAct);
-  localStorage.setItem("showMissingOnly", showMissingOnly);
+  localStorage.setItem("showMissingOnly", showMissingOnly.toString());
 
-  TAB_TO_UPDATE_FUNCTION[activeTab]?.(currentAct);
+  const index = /** @type {keyof typeof TAB_TO_UPDATE_FUNCTION} */ (activeTab);
+  const func = TAB_TO_UPDATE_FUNCTION[index];
+  if (func === undefined) {
+    throw new Error(
+      `Failed to find the function corresponding to tab: ${activeTab}`,
+    );
+  }
+
+  func(currentAct);
 }
 
 missingToggle.addEventListener("change", reRenderActiveTab);
