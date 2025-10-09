@@ -1242,6 +1242,7 @@ async function updateAllProgressContent(selectedAct = "all") {
 }
 
 function showGenericModal(data) {
+  // ✅ Full path for map (supports both local and external URLs)
   const mapSrc = data.map
     ? data.map.startsWith("http")
       ? data.map
@@ -1252,20 +1253,34 @@ function showGenericModal(data) {
     <button id="modalCloseBtn" class="modal-close">✕</button>
     <img src="${data.icon}" alt="${data.label}" class="info-image">
     <h2 class="info-title">${data.label}</h2>
-    <p class="info-description">${data.description || "No description available."}</p>
+    <p class="info-description">
+      ${data.description || "No description available."}
+    </p>
+
     ${data.obtain ? `<p class="info-extra"><strong>Obtained:</strong> ${data.obtain}</p>` : ""}
     ${data.cost ? `<p class="info-extra"><strong>Cost:</strong> ${data.cost}</p>` : ""}
+
     ${
       mapSrc
         ? `
-      <div class="info-map-wrapper">
-        <a href="${mapSrc}" target="_blank" title="Click to open full map">
-          <img src="${mapSrc}" alt="Map location" class="info-map">
-        </a>
-      </div>
-    `
+<div class="info-map-wrapper">
+  <div class="map-loading-overlay">
+    <span class="map-loading-text">Loading map...</span>
+  </div>
+  <iframe
+    src="${mapSrc}"
+    class="info-map-embed"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen
+    onload="this.previousElementSibling.remove()">
+  </iframe>
+</div>
+
+      `
         : ""
     }
+
     ${
       data.link
         ? `
