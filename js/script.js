@@ -1,11 +1,19 @@
+import { decodeSilksongSave } from "./SaveDecoder.js";
+
 console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
 );
+
 const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
   ? "/silksong-tracker"
   : "";
-import { decodeSilksongSave } from "./SaveDecoder.js";
 let currentActFilter = document.getElementById("actFilter")?.value || "all";
+
+const TAB_TO_UPDATE_FUNCTION = {
+  allprogress: updateAllProgressContent,
+  rawsave: updateRawsaveContent,
+};
+const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION);
 
 function matchMode(item) {
   if (!item.mode) return true; // no mode -> always visible
@@ -796,11 +804,7 @@ async function handleSaveFile(file) {
     // --- Aggiorna la tab attiva ---
     const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset
       .tab;
-    const updater = {
-      rawsave: updateRawsaveContent,
-      allprogress: updateAllProgressContent,
-    };
-    updater[activeTab]?.();
+    TAB_TO_UPDATE_FUNCTION[activeTab]?.();
 
     applyMissingFilter?.();
     showToast("✅ Save file loaded successfully!");
@@ -887,19 +891,17 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
     // Attiva/disattiva home scroll
     document.documentElement.style.overflowY = "auto";
 
-    // 🔹 Aggiorna la tab corrente con il filtro corretto
-    const updater = {
-      rawsave: updateRawsaveContent,
-      allprogress: updateAllProgressContent,
-    };
-
-    updater[selectedTab]?.(currentActFilter); // <-- applica il filtro salvato
+    TAB_TO_UPDATE_FUNCTION[selectedTab]?.(currentActFilter); // <-- applica il filtro salvato
   });
 });
 
 window.addEventListener("DOMContentLoaded", () => {
   // 🔹 Ripristina tab e filtri salvati
-  const savedTab = localStorage.getItem("activeTab") || "allprogress";
+  let savedTab = localStorage.getItem("activeTab");
+  if (!VALID_TABS.includes(savedTab)) {
+    savedTab = "allprogress";
+  }
+
   const savedAct = localStorage.getItem("currentActFilter") || "all";
   const spoilerToggle = document.getElementById("spoilerToggle");
   const missingToggle = document.getElementById("missingToggle");
@@ -934,15 +936,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const activeSection = document.getElementById(`${savedTab}-section`);
   if (activeSection) activeSection.classList.remove("hidden");
 
-  // 🔹 Aggiorna il contenuto della tab (con il filtro dell'atto)
-  const updater = {
-    rawsave: updateRawsaveContent,
-    allprogress: updateAllProgressContent,
-  };
-
   // Delay minimo per sicurezza (previene race con rendering DOM)
   setTimeout(() => {
-    updater[savedTab]?.(currentActFilter);
+    TAB_TO_UPDATE_FUNCTION[savedTab]?.(currentActFilter);
   }, 50);
 });
 
@@ -1211,12 +1207,7 @@ function reRenderActiveTab() {
   localStorage.setItem("currentActFilter", currentAct);
   localStorage.setItem("showMissingOnly", showMissingOnly);
 
-  const updater = {
-    rawsave: updateRawsaveContent,
-    allprogress: updateAllProgressContent,
-  };
-
-  updater[activeTab]?.(currentAct);
+  TAB_TO_UPDATE_FUNCTION[activeTab]?.(currentAct);
 }
 
 document
