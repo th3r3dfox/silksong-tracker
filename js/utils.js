@@ -85,6 +85,20 @@ export function assertObject(value, msg) {
 }
 
 /**
+ * Helper function to throw an error if the provided value is not a string.
+ *
+ * @param {unknown} value
+ * @param {string} msg
+ * @returns {asserts value is string}
+ * @throws {TypeError}
+ */
+export function assertString(value, msg) {
+  if (typeof value !== "string") {
+    throw new TypeError(msg);
+  }
+}
+
+/**
  * Helper function to narrow an unknown value to an object (i.e. a TypeScript record).
  *
  * Under the hood, this checks for `typeof variable === "object"`, `variable !== null`, and

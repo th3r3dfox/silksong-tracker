@@ -29,6 +29,7 @@ import {
   assertIs,
   assertNotNull,
   assertObject,
+  assertString,
 } from "./utils.js";
 
 console.log(
@@ -247,11 +248,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/**
+ * @param {Record<string, unknown> | undefined} save
+ * @param {Record<string, unknown>} item
+ */
 function resolveSaveValue(save, item) {
   const root = save;
-  const pd = root?.playerData || root; // compat fallback
+  const playerData = root?.["playerData"] || root; // compat fallback
 
-  if (!root) return undefined;
+  if (root === undefined) {
+    return undefined;
+  }
 
   // Direct flags
   if (
@@ -264,7 +271,9 @@ function resolveSaveValue(save, item) {
 
   // Collectables
   if (item.type === "collectable") {
-    const entry = pd.Collectables?.savedData?.find((e) => e.Name === item.flag);
+    const entry = playerData.Collectables?.savedData?.find(
+      (e) => e.Name === item.flag,
+    );
     return entry?.Data?.Amount ?? 0;
   }
 
@@ -285,7 +294,7 @@ function resolveSaveValue(save, item) {
     const findIn = (bucket) =>
       bucket?.savedData?.find((e) => normalize(e?.Name) === flagNorm);
 
-    const entry = findIn(pd.Tools) || findIn(pd.ToolEquips);
+    const entry = findIn(playerData.Tools) || findIn(playerData.ToolEquips);
 
     return entry?.Data?.IsUnlocked === true;
   }
@@ -294,10 +303,10 @@ function resolveSaveValue(save, item) {
   if (item.type === "quest") {
     // Possible data lists for compatibility (some dumps use different names)
     const questLists = [
-      pd.QuestCompletionData?.savedData,
-      pd.Quests?.savedData,
-      pd.QuestsData?.savedData,
-      pd.QuestData?.savedData,
+      playerData.QuestCompletionData?.savedData,
+      playerData.Quests?.savedData,
+      playerData.QuestsData?.savedData,
+      playerData.QuestData?.savedData,
     ].filter(Boolean);
 
     // Normalize the name to avoid case/space issues
@@ -314,7 +323,9 @@ function resolveSaveValue(save, item) {
       if (entry) break;
     }
 
-    if (!entry) return false;
+    if (!entry) {
+      return false;
+    }
 
     const data = entry.Data || entry.Record || {};
 
@@ -361,7 +372,7 @@ function resolveSaveValue(save, item) {
     if (item.scene) {
       return root.__flags?.[item.scene]?.[item.flag] === true;
     }
-    return pd[item.flag] === true;
+    return playerData[item.flag] === true;
   }
 
   // Scene visited (Silk Hearts, Memories ecc.)
@@ -372,14 +383,14 @@ function resolveSaveValue(save, item) {
 
   // Numeric progressions (Needle, ToolPouchUpgrades, ToolKitUpgrades, etc.)
   if ((item.type === "level" || item.type === "min") && item.flag) {
-    const current = pd[item.flag] ?? 0;
+    const current = playerData[item.flag] ?? 0;
 
     return current; // ✅ always return the number, unlock is calculated later
   }
 
   // Numeric flags (flagInt) — e.g. CaravanTroupeLocation >= 2
   if (item.type === "flagInt" && item.flag) {
-    const current = pd[item.flag];
+    const current = playerData[item.flag];
     if (typeof current === "number") {
       const required = item.value ?? item.required ?? 1;
       return current >= required;
@@ -389,9 +400,9 @@ function resolveSaveValue(save, item) {
 
   if (item.type === "journal") {
     const journalList =
-      pd.EnemyJournalKillData?.list
-      || pd.Journal?.savedData
-      || pd.JournalData?.savedData
+      playerData.EnemyJournalKillData?.list
+      || playerData.Journal?.savedData
+      || playerData.JournalData?.savedData
       || root.Journal?.savedData
       || [];
 
@@ -423,13 +434,23 @@ function resolveSaveValue(save, item) {
     const combinedList = relicList.concat(mementoList);
 
     const entry = combinedList.find((e) => e.Name === item.flag);
-    if (!entry) return false;
+    if (!entry) {
+      return false;
+    }
 
     const data = entry.Data || {};
 
-    if (data.IsDeposited === true) return "deposited"; // ✅ Green
-    if (data.HasSeenInRelicBoard === true) return "collected"; // 🟡 Yellow
-    if (data.IsCollected === true) return "collected";
+    if (data.IsDeposited === true) {
+      return "deposited"; // ✅ Green
+    }
+
+    if (data.HasSeenInRelicBoard === true) {
+      return "collected"; // 🟡 Yellow
+    }
+
+    if (data.IsCollected === true) {
+      return "collected";
+    }
 
     return false;
   }
@@ -488,8 +509,8 @@ function resolveSaveValue(save, item) {
   }
 
   // Generic fallback
-  if (item.flag && pd[item.flag] !== undefined) {
-    return pd[item.flag];
+  if (item.flag && playerData[item.flag] !== undefined) {
+    return playerData[item.flag];
   }
 
   return undefined;
@@ -510,11 +531,37 @@ function renderGenericGrid({
 
   // 🔎 Silkshot variants (only one card visible)
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
-  const unlockedSilkVariant = silkVariants.find((v) =>
-    save?.playerData?.Tools?.savedData?.some(
-      (e) => e.Name === v && e.Data?.IsUnlocked,
-    ),
-  );
+  const unlockedSilkVariant = silkVariants.find((silkVariant) => {
+    if (save === undefined) {
+      return false;
+    }
+
+    const { playerData } = save;
+    assertDefined(playerData, 'The "playerData" property does not exist.');
+    assertObject(playerData, 'The "playerData" property was not an object.');
+
+    const { Tools } = playerData;
+    assertDefined(Tools, 'The "Tools" property does not exist.');
+    assertObject(Tools, 'The "Tools" property was not an object.');
+
+    const { savedData } = Tools;
+    assertDefined(savedData, 'The "savedData" property does not exist.');
+    assertArray(savedData, 'The "savedData" property was not an array.');
+
+    return savedData.some((tool) => {
+      assertObject(
+        tool,
+        'One of the elements in "savedData" was not an object.',
+      );
+
+      const { Name, Data } = tool;
+      assertString(Name, 'The "Name" property was not a string.');
+      assertObject(Data, 'The "Data" property was not an object.');
+
+      const { IsUnlocked } = Data;
+      return Name === silkVariant && IsUnlocked === true;
+    });
+  });
 
   // --- Apply mutually exclusive groups (global, relic + quest) ---
   EXCLUSIVE_GROUPS.forEach((group) => {
