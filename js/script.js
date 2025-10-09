@@ -1,4 +1,4 @@
-import { actFilter } from "./elements.js";
+import { actFilter, fileInput } from "./elements.js";
 import { decodeSilksongSave } from "./SaveDecoder.js";
 
 console.log(
@@ -631,7 +631,7 @@ function indexFlags(root) {
 }
 
 // ---------- FILE HANDLING ----------
-document.getElementById("fileInput").addEventListener("change", (e) => {
+fileInput.addEventListener("change", (e) => {
   const file = e.target.files && e.target.files[0];
   if (file) handleSaveFile(file);
 });

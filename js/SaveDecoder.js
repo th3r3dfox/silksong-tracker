@@ -1,17 +1,22 @@
 import { AES_KEY_STRING, CSHARP_HEADER } from "./constants.js";
 
-// ✅ Use directly
-const CryptoJS = window.CryptoJS;
+/** @type {any} */
+const { CryptoJS } = window;
 
 /**
  * 🔹 Removes the header and length prefix from the .dat file
+ *
+ * @param bytes {Uint8Array}
  */
 function removeHeader(bytes) {
   const withoutHeader = bytes.subarray(CSHARP_HEADER.length, bytes.length - 1);
   let lengthCount = 0;
   for (let i = 0; i < 5; i++) {
     lengthCount++;
-    if ((withoutHeader[i] & 0x80) === 0) break;
+    const byte = withoutHeader[i];
+    if (byte !== undefined && (byte & 0x80) === 0) {
+      break;
+    }
   }
   return withoutHeader.subarray(lengthCount);
 }
