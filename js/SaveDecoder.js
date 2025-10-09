@@ -5,7 +5,7 @@ const CSHARP_HEADER = new Uint8Array([
 /** The AES key used by Silksong to encrypt saves. */
 const AES_KEY_STRING = "UKu52ePUBwetZ9wNX88o54dnfKRu0T1l";
 
-/** @type {any} */
+/** @type any */
 const { CryptoJS } = window;
 
 /**

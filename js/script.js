@@ -13,6 +13,7 @@ import {
   infoContent,
   infoOverlay,
   missingToggle,
+  modeBanner,
   nextMatch,
   openUploadModal,
   prevMatch,
@@ -34,20 +35,38 @@ const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
   : "";
 let currentActFilter = actFilter.value || "all";
 
+/** @type Record<string, unknown> | undefined */
+let currentLoadedSaveFile;
+
+/** @type { "steel" | "normal" | undefined } */
+let currentLoadedSaveFileMode;
+
+/** @type File | undefined */
+let lastLoadedSaveFile;
+
+/** @type Record<string, (selectedAct?: string) => Promise<void>> */
 const TAB_TO_UPDATE_FUNCTION = {
   allprogress: updateAllProgressContent,
   rawsave: updateRawSaveContent,
 };
 const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION);
 
+/** @param { Record<string, string> } item */
 function matchMode(item) {
-  if (!item.mode) {
-    return true; // no mode -> always visible
+  const { mode } = item;
+
+  // no mode -> always visible
+  if (mode === undefined) {
+    return true;
   }
-  if (!window.save) {
-    return true; // BEFORE loading a save -> show all
+
+  // BEFORE loading a save -> show all
+  if (currentLoadedSaveFile !== undefined) {
+    return true;
   }
-  return item.mode === window.saveMode; // AFTER loading -> match mode
+
+  // AFTER loading -> match mode
+  return item["mode"] === currentLoadedSaveFileMode;
 }
 
 // --- Global mutually exclusive groups ---
@@ -169,6 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ---------- PILLS COPY ----------
+  /** @type Record<string, string> */
   const paths = {
     windows:
       "%userprofile%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong",
@@ -462,7 +482,7 @@ function renderGenericGrid({
   containerEl,
   data,
   spoilerOn,
-  save = window.save,
+  save = currentLoadedSaveFile,
 }) {
   const container = containerEl || document.getElementById(containerId);
   const realContainerId = containerId || container?.id || "unknown";
@@ -611,16 +631,22 @@ function renderGenericGrid({
   return renderedCount;
 }
 
+/** @param { Record<string, unknown> } root */
 function indexFlags(root) {
+  /** @type Record<string, unknown> */
   const flags = {};
   const mark = (sceneRaw, idRaw, value) => {
-    if (!sceneRaw || !idRaw) return;
+    if (!sceneRaw || !idRaw) {
+      return;
+    }
     const scene = String(sceneRaw).trim().replace(/\s+/g, "_");
     const idKey = String(idRaw)
       .trim()
       .replace(/\s+/g, "_")
       .replace(/[^\w.]/g, "_");
-    if (!flags[scene]) flags[scene] = {};
+    if (!flags[scene]) {
+      flags[scene] = {};
+    }
     flags[scene][idKey] = Boolean(value);
   };
 
@@ -657,6 +683,10 @@ fileInput.addEventListener("change", (e) => {
   }
 });
 
+/**
+ * @param {string} id
+ * @param {string} text
+ */
 function safeSetText(id, text) {
   const el = document.getElementById(id);
   if (el) {
@@ -664,18 +694,19 @@ function safeSetText(id, text) {
   }
 }
 
+/** @param { Record<string, unknown> } obj */
 function validateSave(obj) {
-  return obj && typeof obj === "object" && obj.playerData;
+  return obj && typeof obj === "object" && obj["playerData"] !== undefined;
 }
 
-function updateRawSaveContent() {
-  if (!window.save) {
+async function updateRawSaveContent() {
+  if (currentLoadedSaveFile === undefined) {
     rawSaveOutput.textContent = "⚠️ No save file loaded.";
     return;
   }
 
   try {
-    rawSaveOutput.textContent = JSON.stringify(window.save, null, 2);
+    rawSaveOutput.textContent = JSON.stringify(currentLoadedSaveFile, null, 2);
   } catch (err) {
     rawSaveOutput.textContent = "❌ Failed to display raw save.";
     console.error(err);
@@ -695,8 +726,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 💾 Download JSON
   downloadRawsaveBtn.addEventListener("click", () => {
-    if (!window.save) return showToast("⚠️ No save loaded yet.");
-    const blob = new Blob([JSON.stringify(window.save, null, 2)], {
+    if (currentLoadedSaveFile === undefined) {
+      return showToast("⚠️ No save loaded yet.");
+    }
+    const blob = new Blob([JSON.stringify(currentLoadedSaveFile, null, 2)], {
       type: "application/json",
     });
     const url = URL.createObjectURL(blob);
@@ -726,7 +759,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   rawSaveSearch.addEventListener("input", () => {
     const query = rawSaveSearch.value.trim();
-    const jsonText = JSON.stringify(window.save || {}, null, 2);
+    const jsonText = JSON.stringify(currentLoadedSaveFile || {}, null, 2);
     rawSaveOutput.innerHTML = jsonText;
     matches = [];
     currentMatch = 0;
@@ -781,6 +814,7 @@ async function handleSaveFile(file) {
     const isDat = file.name.toLowerCase().endsWith(".dat");
 
     // 🔍 Decode file
+    /** @type Record<string, unknown> */
     const saveData = isDat
       ? decodeSilksongSave(buffer)
       : JSON.parse(new TextDecoder("utf-8").decode(buffer));
@@ -794,10 +828,8 @@ async function handleSaveFile(file) {
     rawSaveOutput.textContent = JSON.stringify(saveData, null, 2);
 
     // ✅ Index and save globally
-    window.save = indexFlags(saveData);
-    window.lastSaveFile = file;
-    window.lastSaveBuffer = buffer;
-    window.lastSaveIsDat = isDat;
+    currentLoadedSaveFile = indexFlags(saveData);
+    lastLoadedSaveFile = file;
 
     // 🔘 Show refresh button
     if (refreshSaveBtn) {
@@ -826,7 +858,7 @@ async function handleSaveFile(file) {
       || saveData.playerData?.GameMode === "SteelSoul";
 
     // ✅ Save mode globally (after declaration)
-    window.saveMode = isSteelSoul ? "steel" : "normal";
+    currentLoadedSaveFileMode = isSteelSoul ? "steel" : "normal";
 
     // 🪶 Show visual banner
     modeBanner.innerHTML = isSteelSoul
@@ -836,9 +868,24 @@ async function handleSaveFile(file) {
     modeBanner.classList.toggle("steel", isSteelSoul);
 
     // --- Update active tab ---
-    const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset
-      .tab;
-    TAB_TO_UPDATE_FUNCTION[activeTab]?.();
+    const activeElement = document.querySelector(".sidebar-item.is-active");
+    if (activeElement === null) {
+      throw new Error("Failed to get the active element.");
+    }
+    if (!(activeElement instanceof HTMLAnchorElement)) {
+      throw new Error("The active element was not an HTML anchor element.");
+    }
+    const activeTab = activeElement.dataset["tab"];
+    if (activeTab === undefined) {
+      throw new Error(
+        "Failed to get the name of the active tab from the active element.",
+      );
+    }
+    const func = TAB_TO_UPDATE_FUNCTION[activeTab];
+    if (func === undefined) {
+      throw new Error(`Failed to find the function for tab: ${activeTab}`);
+    }
+    func();
 
     applyMissingFilter?.();
     showToast("✅ Save file loaded successfully!");
@@ -855,7 +902,7 @@ async function handleSaveFile(file) {
 // --- Refresh manuale ---
 async function refreshSaveFile() {
   try {
-    if (!window.lastSaveFile) {
+    if (lastLoadedSaveFile === undefined) {
       showToast("⚠️ No save file loaded yet.");
       fileInput.click(); // opens file selection
       return;
@@ -863,7 +910,7 @@ async function refreshSaveFile() {
 
     // 🔄 Reload the same file already in memory
     showToast("🔄 Reloading save file...");
-    await handleSaveFile(window.lastSaveFile);
+    await handleSaveFile(lastLoadedSaveFile);
   } catch (err) {
     console.error("[refreshSaveFile]", err);
     showToast("❌ Failed to refresh save file");
@@ -980,9 +1027,11 @@ window.addEventListener("DOMContentLoaded", () => {
     activeSection.classList.remove("hidden");
   }
 
+  const func = TAB_TO_UPDATE_FUNCTION[savedTab];
+
   // Minimum delay for safety (prevents race with DOM rendering)
   setTimeout(() => {
-    TAB_TO_UPDATE_FUNCTION[savedTab]?.(currentActFilter);
+    func(currentActFilter);
   }, 50);
 });
 
@@ -1001,10 +1050,6 @@ async function updateAllProgressContent(selectedAct = "all") {
       fetch("data/wishes.json").then((r) => r.json()),
     ]);
 
-  if (!Array.isArray(bossesData)) {
-    throw new Error('The contents of the "bosses.json" file was not an array.');
-  }
-
   // Create section headers and render each category
   const categories = [
     { title: "Main Progress", data: mainData },
@@ -1018,6 +1063,12 @@ async function updateAllProgressContent(selectedAct = "all") {
   ];
 
   categories.forEach(({ title, data }) => {
+    if (!Array.isArray(data)) {
+      throw new Error(
+        "The contents of one of the JSON files was not an array.",
+      );
+    }
+
     // Create category header
     const categoryHeader = document.createElement("h2");
     categoryHeader.className = "category-header";
@@ -1035,17 +1086,25 @@ async function updateAllProgressContent(selectedAct = "all") {
       heading.className = "category-title";
       heading.textContent = sectionData.label;
 
-      // Filter items
-      let filteredItems = (sectionData.items || []).filter(
+      const items = sectionData.items ?? [];
+      if (!Array.isArray(items)) {
+        throw new Error(
+          'The contents of the "items" field in a JSON file was not an array.',
+        );
+      }
+      let filteredItems = items.filter(
         (item) =>
           (selectedAct === "all" || Number(item.act) === Number(selectedAct))
           && matchMode(item),
       );
 
-      if (showMissingOnly && window.save) {
+      if (showMissingOnly && currentLoadedSaveFile !== undefined) {
         filteredItems = filteredItems.filter((item) => {
-          const val = resolveSaveValue(window.save, item);
-          if (item.type === "collectable") return (val ?? 0) === 0;
+          const val = resolveSaveValue(currentLoadedSaveFile, item);
+          if (item.type === "collectable") {
+            return (val ?? 0) === 0;
+          }
+
           if (
             ["level", "min", "region-level", "region-min"].includes(item.type)
           ) {
@@ -1063,7 +1122,10 @@ async function updateAllProgressContent(selectedAct = "all") {
       // --- Apply mutually exclusive groups (global) ---
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
-          const val = resolveSaveValue(window.save, { type: "relic", flag });
+          const val = resolveSaveValue(currentLoadedSaveFile, {
+            type: "relic",
+            flag,
+          });
           return val === "deposited" || val === "collected";
         });
         if (owned) {
@@ -1089,10 +1151,16 @@ async function updateAllProgressContent(selectedAct = "all") {
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
           // try first as relic
-          let val = resolveSaveValue(window.save, { type: "relic", flag });
+          let val = resolveSaveValue(currentLoadedSaveFile, {
+            type: "relic",
+            flag,
+          });
           // if not a valid relic, try as quest
           if (!val || val === false)
-            val = resolveSaveValue(window.save, { type: "quest", flag });
+            val = resolveSaveValue(currentLoadedSaveFile, {
+              type: "quest",
+              flag,
+            });
 
           return (
             val === "deposited"
@@ -1110,7 +1178,10 @@ async function updateAllProgressContent(selectedAct = "all") {
       });
 
       filteredItems.forEach((item) => {
-        const val = window.save ? resolveSaveValue(window.save, item) : false;
+        const val =
+          currentLoadedSaveFile === undefined
+            ? false
+            : resolveSaveValue(currentLoadedSaveFile, item);
         const isUnlocked =
           item.type === "quest"
             ? val === "completed" || val === true
@@ -1259,8 +1330,7 @@ function reRenderActiveTab() {
   localStorage.setItem("currentActFilter", currentAct);
   localStorage.setItem("showMissingOnly", showMissingOnly.toString());
 
-  const index = /** @type {keyof typeof TAB_TO_UPDATE_FUNCTION} */ (activeTab);
-  const func = TAB_TO_UPDATE_FUNCTION[index];
+  const func = TAB_TO_UPDATE_FUNCTION[activeTab];
   if (func === undefined) {
     throw new Error(
       `Failed to find the function corresponding to tab: ${activeTab}`,
