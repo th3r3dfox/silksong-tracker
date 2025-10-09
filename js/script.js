@@ -13,104 +13,6 @@ function matchMode(item) {
   return item.mode === window.saveMode; // AFTER loading -> match mode
 }
 
-// ---------- DATA ----------
-let bossList = [];
-
-async function updateBossesContent(selectedAct = "all") {
-  const response = await fetch("data/bosses.json?" + Date.now());
-  const bossesData = await response.json();
-
-  const spoilerOn = document.getElementById("spoilerToggle")?.checked;
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
-  const container = document.getElementById("boss-grid");
-  container.innerHTML = "";
-
-  const sections = Array.isArray(bossesData) ? bossesData : [bossesData];
-
-  sections.forEach((sectionData) => {
-    const section = document.createElement("div");
-    section.className = "main-section-block";
-
-    // Titolo sezione + conteggio
-    const heading = document.createElement("h3");
-    heading.className = "category-title";
-    heading.textContent = sectionData.label;
-
-    // ✅ 1️⃣ Filtra per act
-    let filteredItems = (sectionData.items || []).filter(
-      (item) =>
-        (selectedAct === "all" || Number(item.act) === Number(selectedAct))
-        && matchMode(item),
-    );
-
-    // ✅ 2️⃣ Filtra “solo mancanti” (coerente con act)
-    if (showMissingOnly && window.save) {
-      filteredItems = filteredItems.filter((item) => {
-        const val = resolveSaveValue(window.save, item);
-        if (item.type === "collectable") return (val ?? 0) === 0;
-        if (["level", "min", "region-level", "region-min"].includes(item.type))
-          return (val ?? 0) < (item.required ?? 0);
-        return val !== true;
-      });
-    }
-
-    // 🔹 Colori atti
-    filteredItems.forEach((item) => {
-      if (item.act === 1) item.actColor = "act-1";
-      else if (item.act === 2) item.actColor = "act-2";
-      else if (item.act === 3) item.actColor = "act-3";
-    });
-
-    // 🔢 Calcolo ottenuti / totali
-    let obtained = 0;
-
-    filteredItems.forEach((item) => {
-      const val = window.save ? resolveSaveValue(window.save, item) : false;
-      const isUnlocked =
-        item.type === "level"
-        || item.type === "min"
-        || item.type === "region-level"
-        || item.type === "region-min"
-          ? (val ?? 0) >= (item.required ?? 0)
-          : item.type === "collectable"
-            ? (val ?? 0) > 0
-            : val === true || val === "collected" || val === "deposited";
-      if (isUnlocked) obtained++;
-    });
-
-    const total = filteredItems.length;
-
-    const count = document.createElement("span");
-    count.className = "category-count";
-    count.textContent = ` ${obtained}/${total}`;
-    heading.appendChild(count);
-    section.appendChild(heading);
-
-    if (sectionData.desc) {
-      const desc = document.createElement("p");
-      desc.className = "category-desc";
-      desc.textContent = sectionData.desc;
-      section.appendChild(desc);
-    }
-
-    const subgrid = document.createElement("div");
-    subgrid.className = "grid";
-
-    const visible = renderGenericGrid({
-      containerEl: subgrid,
-      data: filteredItems,
-      spoilerOn,
-    });
-
-    // se non ci sono elementi visibili, non aggiungere la sezione
-    if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
-      return;
-
-    section.appendChild(subgrid);
-    container.appendChild(section);
-  });
-}
-
 // ---------- SPOILER TOGGLE ----------
 document.getElementById("spoilerToggle").addEventListener("change", () => {
   const spoilerChecked = document.getElementById("spoilerToggle").checked;
@@ -122,17 +24,6 @@ document.getElementById("spoilerToggle").addEventListener("change", () => {
   // Usa la stessa logica dei filtri (così mantiene Act + Missing)
   reRenderActiveTab();
 });
-
-function updateIcons() {
-  const spoilerOn = document.getElementById("spoilerToggle").checked;
-  renderGenericGrid({
-    containerId: "boss-grid",
-    data: bossList,
-    spoilerOn,
-  });
-}
-
-//  document.getElementById("missingToggle").addEventListener("change", applyMissingFilter);
 
 function applyMissingFilter() {
   const showMissingOnly = document.getElementById("missingToggle")?.checked;
@@ -657,6 +548,23 @@ function renderGenericGrid({
     ),
   );
 
+  // --- Mutualmente esclusivi: Memento Hearts ---
+  const heartFlags = [
+    "Heart Flower",
+    "Heart Coral",
+    "Heart Hunter",
+    "Clover Heart",
+  ];
+  const ownedHeart = heartFlags.find((flag) => {
+    const val = resolveSaveValue(save, { type: "relic", flag });
+    return val === "deposited" || val === "collected";
+  });
+  if (ownedHeart) {
+    data = data.filter(
+      (item) => !heartFlags.includes(item.flag) || item.flag === ownedHeart,
+    );
+  }
+
   let renderedCount = 0;
 
   data.forEach((item) => {
@@ -1008,11 +916,6 @@ async function handleSaveFile(file) {
     const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset
       .tab;
     const updater = {
-      bosses: updateBossesContent,
-      main: updateMainContent,
-      essentials: updateNewTabContent,
-      wishes: updateWishesContent,
-      completion: updateCompletionContent,
       rawsave: updateRawsaveContent,
       allprogress: updateAllProgressContent,
     };
@@ -1046,103 +949,6 @@ async function refreshSaveFile() {
     console.error("[refreshSaveFile]", err);
     showToast("❌ Failed to refresh save file");
   }
-}
-
-async function updateCompletionContent(selectedAct = "all") {
-  const container = document.getElementById("completion-grid");
-  if (!container)
-    return console.warn(
-      "[updateCompletionContent] Missing #completion-grid in DOM",
-    );
-
-  // 📦 Carica il file JSON
-  const response = await fetch("data/completion.json?" + Date.now());
-  const completionData = await response.json();
-
-  const spoilerOn = document.getElementById("spoilerToggle")?.checked;
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
-  container.innerHTML = "";
-
-  completionData.forEach((sectionData) => {
-    const section = document.createElement("div");
-    section.className = "main-section-block";
-
-    // 🏷️ Titolo sezione
-    const heading = document.createElement("h3");
-    heading.className = "category-title";
-    heading.textContent = sectionData.label;
-
-    // 🔢 Calcolo ottenuti / totali
-    let obtained = 0;
-    let total = 0;
-
-    const filteredItems = (sectionData.items || []).filter((item) => {
-      // 🔹 Filtra per atto
-      if (selectedAct !== "all" && Number(item.act) !== Number(selectedAct))
-        return false;
-      if (!window.save) return true;
-
-      // filter by save mode (only AFTER a save is loaded)
-      if (item.mode && window.save && item.mode !== window.saveMode)
-        return false;
-
-      const val = resolveSaveValue(window.save, item);
-
-      // 🔹 Filtra solo mancanti se richiesto
-      if (showMissingOnly) {
-        if (item.type === "collectable") return (val ?? 0) === 0;
-        if (["level", "min", "region-level", "region-min"].includes(item.type))
-          return (val ?? 0) < (item.required ?? 0);
-        return val !== true;
-      }
-
-      return true;
-    });
-
-    filteredItems.forEach((item) => {
-      const val = window.save ? resolveSaveValue(window.save, item) : false;
-      const isUnlocked =
-        item.type === "collectable"
-          ? (val ?? 0) > 0
-          : ["level", "min", "region-level", "region-min"].includes(item.type)
-            ? (val ?? 0) >= (item.required ?? 0)
-            : val === true || val === "collected" || val === "deposited";
-
-      if (isUnlocked) obtained++;
-      total++;
-    });
-
-    // 📊 Mostra conteggio progressi
-    const count = document.createElement("span");
-    count.className = "category-count";
-    count.textContent = ` ${obtained}/${total}`;
-    heading.appendChild(count);
-    section.appendChild(heading);
-
-    // 🧾 Descrizione
-    if (sectionData.desc) {
-      const desc = document.createElement("p");
-      desc.className = "category-desc";
-      desc.textContent = sectionData.desc;
-      section.appendChild(desc);
-    }
-
-    // 🧱 Griglia interna
-    const subgrid = document.createElement("div");
-    subgrid.className = "grid";
-
-    const visible = renderGenericGrid({
-      containerEl: subgrid,
-      data: filteredItems,
-      spoilerOn,
-    });
-
-    if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
-      return;
-
-    section.appendChild(subgrid);
-    container.appendChild(section);
-  });
 }
 
 // ---------- TOAST ----------
@@ -1202,11 +1008,6 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
 
     // 🔹 Aggiorna la tab corrente con il filtro corretto
     const updater = {
-      bosses: updateBossesContent,
-      main: updateMainContent,
-      essentials: updateNewTabContent,
-      wishes: updateWishesContent,
-      completion: updateCompletionContent,
       rawsave: updateRawsaveContent,
       allprogress: updateAllProgressContent,
     };
@@ -1254,11 +1055,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // 🔹 Aggiorna il contenuto della tab (con il filtro dell'atto)
   const updater = {
-    bosses: updateBossesContent,
-    main: updateMainContent,
-    essentials: updateNewTabContent,
-    wishes: updateWishesContent,
-    completion: updateCompletionContent,
     rawsave: updateRawsaveContent,
     allprogress: updateAllProgressContent,
   };
@@ -1268,113 +1064,6 @@ window.addEventListener("DOMContentLoaded", () => {
     updater[savedTab]?.(currentActFilter);
   }, 50);
 });
-
-async function updateMainContent(selectedAct = "all") {
-  const response = await fetch("data/main.json");
-  const mainData = await response.json();
-
-  const spoilerOn = document.getElementById("spoilerToggle")?.checked;
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
-  const container = document.getElementById("main-grid");
-  container.innerHTML = "";
-
-  mainData.forEach((sectionData) => {
-    const section = document.createElement("div");
-    section.className = "main-section-block";
-
-    const heading = document.createElement("h3");
-    heading.className = "category-title";
-    heading.textContent = sectionData.label;
-
-    // ✅ Filtra per act e solo mancanti
-    let filteredItems = (sectionData.items || []).filter(
-      (item) =>
-        (selectedAct === "all" || Number(item.act) === Number(selectedAct))
-        && matchMode(item),
-    );
-
-    if (showMissingOnly && window.save) {
-      filteredItems = filteredItems.filter((item) => {
-        const val = resolveSaveValue(window.save, item);
-        if (item.type === "collectable") return (val ?? 0) === 0;
-        if (["level", "min", "region-level", "region-min"].includes(item.type))
-          return (val ?? 0) < (item.required ?? 0);
-        return val !== true;
-      });
-    }
-
-    // 🔹 Colori atti
-    filteredItems.forEach((item) => {
-      if (item.act === 1) item.actColor = "act-1";
-      else if (item.act === 2) item.actColor = "act-2";
-      else if (item.act === 3) item.actColor = "act-3";
-    });
-
-    // 🔢 Calcolo ottenuti / totali
-    let obtained = 0;
-    const exclusiveGroups = new Set();
-    const countedGroups = new Set();
-
-    filteredItems.forEach((item) => {
-      const val = window.save ? resolveSaveValue(window.save, item) : false;
-      const isUnlocked =
-        item.type === "level"
-        || item.type === "min"
-        || item.type === "region-level"
-        || item.type === "region-min"
-          ? (val ?? 0) >= (item.required ?? 0)
-          : item.type === "collectable"
-            ? (val ?? 0) > 0
-            : val === true
-              || val === "collected"
-              || val === "deposited"
-              || val === "completed";
-
-      if (item.exclusiveGroup) {
-        exclusiveGroups.add(item.exclusiveGroup);
-        if (isUnlocked && !countedGroups.has(item.exclusiveGroup)) {
-          countedGroups.add(item.exclusiveGroup);
-          obtained++;
-        }
-      } else {
-        obtained += isUnlocked ? 1 : 0;
-      }
-    });
-
-    const total =
-      (filteredItems.filter((i) => !i.exclusiveGroup).length || 0)
-      + exclusiveGroups.size;
-
-    const count = document.createElement("span");
-    count.className = "category-count";
-    count.textContent = ` ${obtained}/${total}`;
-    heading.appendChild(count);
-
-    section.appendChild(heading);
-
-    if (sectionData.desc) {
-      const desc = document.createElement("p");
-      desc.className = "category-desc";
-      desc.textContent = sectionData.desc;
-      section.appendChild(desc);
-    }
-
-    const subgrid = document.createElement("div");
-    subgrid.className = "grid";
-
-    const visible = renderGenericGrid({
-      containerEl: subgrid,
-      data: filteredItems,
-      spoilerOn,
-    });
-
-    if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
-      return;
-
-    section.appendChild(subgrid);
-    container.appendChild(section);
-  });
-}
 
 async function updateAllProgressContent(selectedAct = "all") {
   const container = document.getElementById("allprogress-grid");
@@ -1447,6 +1136,23 @@ async function updateAllProgressContent(selectedAct = "all") {
         });
       }
 
+      // --- Applica filtro mutualmente esclusivo per i cuori (Mementos) ---
+      const heartFlags = [
+        "Heart Flower",
+        "Heart Coral",
+        "Heart Hunter",
+        "Clover Heart",
+      ];
+      const ownedHeart = heartFlags.find((flag) => {
+        const val = resolveSaveValue(window.save, { type: "relic", flag });
+        return val === "deposited" || val === "collected";
+      });
+      if (ownedHeart) {
+        filteredItems = filteredItems.filter(
+          (item) => !heartFlags.includes(item.flag) || item.flag === ownedHeart,
+        );
+      }
+
       // Add act colors
       filteredItems.forEach((item) => {
         if (item.act === 1) item.actColor = "act-1";
@@ -1517,153 +1223,6 @@ async function updateAllProgressContent(selectedAct = "all") {
       section.appendChild(subgrid);
       container.appendChild(section);
     });
-  });
-}
-
-async function updateWishesContent(selectedAct = "all") {
-  const container = document.getElementById("wishes-grid");
-  if (!container)
-    return console.warn("[updateWishesContent] Missing #wishes-grid in DOM");
-
-  // 🗃️ Carica il file JSON
-  const response = await fetch("data/wishes.json");
-  const questData = await response.json();
-
-  const spoilerOn = document.getElementById("spoilerToggle")?.checked;
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
-  container.innerHTML = "";
-
-  questData.forEach((sectionData) => {
-    const section = document.createElement("div");
-    section.className = "main-section-block";
-
-    // 🏷️ Titolo sezione
-    const heading = document.createElement("h3");
-    heading.className = "category-title";
-    heading.textContent = sectionData.label;
-
-    // 🔒 Gestione quest mutuamente esclusive
-    const exclusivePairs = [["Huntress Quest", "Huntress Quest Runt"]];
-
-    // ✅ 1️⃣ Filtra per salvataggio
-    let filteredItems = (sectionData.items || []).filter((item) => {
-      // filter by save mode (only AFTER a save is loaded)
-      if (item.mode && window.save && item.mode !== window.saveMode)
-        return false;
-
-      // 🔹 Gestione coppie esclusive (es. Huntress Quest / Runt)
-      const pair = exclusivePairs.find((p) => p.includes(item.flag));
-      if (!pair) return true;
-
-      const [a, b] = pair;
-      const aVal = window.save
-        ? resolveSaveValue(window.save, { flag: a, type: "quest" })
-        : false;
-      const bVal = window.save
-        ? resolveSaveValue(window.save, { flag: b, type: "quest" })
-        : false;
-
-      const aActive =
-        aVal === true || aVal === "completed" || aVal === "accepted";
-      const bActive =
-        bVal === true || bVal === "completed" || bVal === "accepted";
-
-      if ((aActive && item.flag === b) || (bActive && item.flag === a))
-        return false;
-
-      return true;
-    });
-
-    // ✅ 2️⃣ Filtra per atto selezionato
-    filteredItems = filteredItems.filter(
-      (item) =>
-        selectedAct === "all" || Number(item.act) === Number(selectedAct),
-    );
-
-    // ✅ 3️⃣ Seleziona solo i mancanti (coerente con l’atto)
-    if (showMissingOnly && window.save) {
-      filteredItems = filteredItems.filter((item) => {
-        const val = resolveSaveValue(window.save, item);
-        if (item.type === "quest") return val !== "completed" && val !== true;
-        if (item.type === "collectable") return (val ?? 0) === 0;
-        if (["level", "min", "region-level", "region-min"].includes(item.type))
-          return (val ?? 0) < (item.required ?? 0);
-        return val !== true;
-      });
-    }
-
-    // 🔹 Colori atti
-    filteredItems.forEach((item) => {
-      if (item.act === 1) item.actColor = "act-1";
-      else if (item.act === 2) item.actColor = "act-2";
-      else if (item.act === 3) item.actColor = "act-3";
-    });
-
-    // 🔢 Calcolo ottenuti / totali (sulla base del filtro attuale)
-    let obtained = 0;
-    const exclusiveGroups = new Set();
-    const countedGroups = new Set();
-
-    filteredItems.forEach((item) => {
-      const val = window.save ? resolveSaveValue(window.save, item) : false;
-      const isUnlocked =
-        item.type === "quest"
-          ? val === "completed" || val === true
-          : item.type === "level"
-              || item.type === "min"
-              || item.type === "region-level"
-              || item.type === "region-min"
-            ? (val ?? 0) >= (item.required ?? 0)
-            : item.type === "collectable"
-              ? (val ?? 0) > 0
-              : val === true || val === "collected" || val === "deposited";
-
-      if (item.exclusiveGroup) {
-        exclusiveGroups.add(item.exclusiveGroup);
-        if (isUnlocked && !countedGroups.has(item.exclusiveGroup)) {
-          countedGroups.add(item.exclusiveGroup);
-          obtained++;
-        }
-      } else {
-        obtained += isUnlocked ? 1 : 0;
-      }
-    });
-
-    const total =
-      (filteredItems.filter((i) => !i.exclusiveGroup).length || 0)
-      + exclusiveGroups.size;
-
-    // 🧮 Intestazione
-    const count = document.createElement("span");
-    count.className = "category-count";
-    count.textContent = ` ${obtained}/${total}`;
-    heading.appendChild(count);
-
-    section.appendChild(heading);
-
-    if (sectionData.desc) {
-      const desc = document.createElement("p");
-      desc.className = "category-desc";
-      desc.textContent = sectionData.desc;
-      section.appendChild(desc);
-    }
-
-    // 🧱 Griglia interna
-    const subgrid = document.createElement("div");
-    subgrid.className = "grid";
-
-    const visible = renderGenericGrid({
-      containerEl: subgrid,
-      data: filteredItems,
-      spoilerOn,
-    });
-
-    // Se non c'è nulla da mostrare → salta
-    if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
-      return;
-
-    section.appendChild(subgrid);
-    container.appendChild(section);
   });
 }
 
@@ -1752,11 +1311,6 @@ function reRenderActiveTab() {
   localStorage.setItem("showMissingOnly", showMissingOnly);
 
   const updater = {
-    bosses: updateBossesContent,
-    main: updateMainContent,
-    essentials: updateNewTabContent,
-    wishes: updateWishesContent,
-    completion: updateCompletionContent,
     rawsave: updateRawsaveContent,
     allprogress: updateAllProgressContent,
   };
