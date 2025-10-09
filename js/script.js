@@ -995,8 +995,8 @@ async function updateAllProgressContent(selectedAct = "all") {
     await Promise.all([
       fetch("data/main.json").then((r) => r.json()),
       fetch("data/essentials.json").then((r) => r.json()),
-      fetch("data/bosses.json?" + Date.now()).then((r) => r.json()),
-      fetch("data/completion.json?" + Date.now()).then((r) => r.json()),
+      fetch("data/bosses.json").then((r) => r.json()),
+      fetch("data/completion.json").then((r) => r.json()),
       fetch("data/wishes.json").then((r) => r.json()),
     ]);
 
