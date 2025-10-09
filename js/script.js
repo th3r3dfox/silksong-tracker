@@ -39,8 +39,8 @@ async function updateBossesContent(selectedAct = "all") {
     // ✅ 1️⃣ Filtra per act
     let filteredItems = (sectionData.items || []).filter(
       (item) =>
-        (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-        matchMode(item),
+        (selectedAct === "all" || Number(item.act) === Number(selectedAct))
+        && matchMode(item),
     );
 
     // ✅ 2️⃣ Filtra “solo mancanti” (coerente con act)
@@ -67,10 +67,10 @@ async function updateBossesContent(selectedAct = "all") {
     filteredItems.forEach((item) => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
       const isUnlocked =
-        item.type === "level" ||
-        item.type === "min" ||
-        item.type === "region-level" ||
-        item.type === "region-min"
+        item.type === "level"
+        || item.type === "min"
+        || item.type === "region-level"
+        || item.type === "region-min"
           ? (val ?? 0) >= (item.required ?? 0)
           : item.type === "collectable"
             ? (val ?? 0) > 0
@@ -181,8 +181,8 @@ async function updateNewTabContent(selectedAct = "all") {
     // ✅ Filtra per act e mancanti
     let filteredItems = (sectionData.items || []).filter(
       (item) =>
-        (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-        matchMode(item),
+        (selectedAct === "all" || Number(item.act) === Number(selectedAct))
+        && matchMode(item),
     );
 
     if (showMissingOnly && window.save) {
@@ -210,10 +210,10 @@ async function updateNewTabContent(selectedAct = "all") {
     filteredItems.forEach((item) => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
       const isUnlocked =
-        item.type === "level" ||
-        item.type === "min" ||
-        item.type === "region-level" ||
-        item.type === "region-min"
+        item.type === "level"
+        || item.type === "min"
+        || item.type === "region-level"
+        || item.type === "region-min"
           ? (val ?? 0) >= (item.required ?? 0)
           : item.type === "collectable"
             ? (val ?? 0) > 0
@@ -231,8 +231,8 @@ async function updateNewTabContent(selectedAct = "all") {
     });
 
     const total =
-      (filteredItems.filter((i) => !i.exclusiveGroup).length || 0) +
-      exclusiveGroups.size;
+      (filteredItems.filter((i) => !i.exclusiveGroup).length || 0)
+      + exclusiveGroups.size;
 
     const count = document.createElement("span");
     count.className = "category-count";
@@ -266,8 +266,6 @@ async function updateNewTabContent(selectedAct = "all") {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  updateBossesContent();
-
   // ---------- MODAL SETUP ----------
   const overlay = document.getElementById("uploadOverlay");
   const dropzone = document.getElementById("dropzone");
@@ -370,9 +368,9 @@ function resolveSaveValue(save, item) {
 
   // Flag diretti
   if (
-    item.type === "flag" &&
-    item.flag &&
-    Object.prototype.hasOwnProperty.call(pd, item.flag)
+    item.type === "flag"
+    && item.flag
+    && Object.prototype.hasOwnProperty.call(pd, item.flag)
   ) {
     return pd[item.flag];
   }
@@ -385,9 +383,9 @@ function resolveSaveValue(save, item) {
 
   // Tools / Crests (Hunter, Reaper, Wanderer, ecc.)
   if (
-    item.type === "tool" ||
-    item.type === "toolEquip" ||
-    item.type === "crest"
+    item.type === "tool"
+    || item.type === "toolEquip"
+    || item.type === "crest"
   ) {
     const normalize = (s) =>
       String(s || "")
@@ -435,9 +433,9 @@ function resolveSaveValue(save, item) {
 
     // 🎯 Stato della quest
     if (
-      data.IsCompleted === true ||
-      data.Completed === true ||
-      data.Complete === true
+      data.IsCompleted === true
+      || data.Completed === true
+      || data.Complete === true
     ) {
       return "completed";
     }
@@ -464,9 +462,9 @@ function resolveSaveValue(save, item) {
 
     if (root[scene]) {
       return (
-        root[scene][item.flag] ??
-        root[scene][item.flag.replace(/ /g, "_")] ??
-        false
+        root[scene][item.flag]
+        ?? root[scene][item.flag.replace(/ /g, "_")]
+        ?? false
       );
     }
   }
@@ -504,11 +502,11 @@ function resolveSaveValue(save, item) {
 
   if (item.type === "journal") {
     const journalList =
-      pd.EnemyJournalKillData?.list ||
-      pd.Journal?.savedData ||
-      pd.JournalData?.savedData ||
-      root.Journal?.savedData ||
-      [];
+      pd.EnemyJournalKillData?.list
+      || pd.Journal?.savedData
+      || pd.JournalData?.savedData
+      || root.Journal?.savedData
+      || [];
 
     const entry = journalList.find((e) => e.Name === item.flag);
     if (!entry) return false;
@@ -531,9 +529,9 @@ function resolveSaveValue(save, item) {
       save?.Relics?.savedData || save?.playerData?.Relics?.savedData || [];
 
     const mementoList =
-      save?.MementosDeposited?.savedData ||
-      save?.playerData?.MementosDeposited?.savedData ||
-      [];
+      save?.MementosDeposited?.savedData
+      || save?.playerData?.MementosDeposited?.savedData
+      || [];
 
     const combinedList = relicList.concat(mementoList);
 
@@ -552,9 +550,9 @@ function resolveSaveValue(save, item) {
   // ⚡ Materium tracking (seen = verde, collected = giallo)
   if (item.type === "materium" && item.flag) {
     const list =
-      save?.playerData?.MateriumCollected?.savedData ||
-      save?.MateriumCollected?.savedData ||
-      [];
+      save?.playerData?.MateriumCollected?.savedData
+      || save?.MateriumCollected?.savedData
+      || [];
 
     const entry = list.find((e) => e.Name === item.flag);
     if (!entry) return false;
@@ -581,18 +579,19 @@ function resolveSaveValue(save, item) {
 
     // ✅ Verde — oggetto depositato
     if (
-      depositFlag &&
-      (save?.playerData?.[depositFlag] === true || save?.[depositFlag] === true)
+      depositFlag
+      && (save?.playerData?.[depositFlag] === true
+        || save?.[depositFlag] === true)
     ) {
       return "deposited";
     }
 
     // 🟡 Giallo — oggetto raccolto nella scena
     const sceneFlags =
-      save?.__flags?.[scene] ||
-      save?.playerData?.__flags?.[scene] ||
-      save?.[scene] ||
-      {};
+      save?.__flags?.[scene]
+      || save?.playerData?.__flags?.[scene]
+      || save?.[scene]
+      || {};
 
     if (sceneFlags[idKey] === true) {
       return "collected";
@@ -955,10 +954,10 @@ async function handleSaveFile(file) {
     // --- Rileva modalità di gioco ---
     const modeValue = saveData.playerData?.permadeathMode ?? 0;
     const isSteelSoul =
-      modeValue === 1 ||
-      saveData.playerData?.isSteelSoulMode === true ||
-      saveData.playerData?.SteelSoulMode === true ||
-      saveData.playerData?.GameMode === "SteelSoul";
+      modeValue === 1
+      || saveData.playerData?.isSteelSoulMode === true
+      || saveData.playerData?.SteelSoulMode === true
+      || saveData.playerData?.GameMode === "SteelSoul";
 
     // ✅ Salva modalità globalmente (dopo la dichiarazione)
     window.saveMode = isSteelSoul ? "steel" : "normal";
@@ -983,6 +982,7 @@ async function handleSaveFile(file) {
       wishes: updateWishesContent,
       completion: updateCompletionContent,
       rawsave: updateRawsaveContent,
+      allprogress: updateAllProgressContent,
     };
     updater[activeTab]?.();
 
@@ -1176,6 +1176,7 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
       wishes: updateWishesContent,
       completion: updateCompletionContent,
       rawsave: updateRawsaveContent,
+      allprogress: updateAllProgressContent,
     };
 
     updater[selectedTab]?.(currentActFilter); // <-- applica il filtro salvato
@@ -1184,7 +1185,7 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
 
 window.addEventListener("DOMContentLoaded", () => {
   // 🔹 Ripristina tab e filtri salvati
-  const savedTab = localStorage.getItem("activeTab") || "main";
+  const savedTab = localStorage.getItem("activeTab") || "allprogress";
   const savedAct = localStorage.getItem("currentActFilter") || "all";
   const spoilerToggle = document.getElementById("spoilerToggle");
   const missingToggle = document.getElementById("missingToggle");
@@ -1227,6 +1228,7 @@ window.addEventListener("DOMContentLoaded", () => {
     wishes: updateWishesContent,
     completion: updateCompletionContent,
     rawsave: updateRawsaveContent,
+    allprogress: updateAllProgressContent,
   };
 
   // Delay minimo per sicurezza (previene race con rendering DOM)
@@ -1255,8 +1257,8 @@ async function updateMainContent(selectedAct = "all") {
     // ✅ Filtra per act e solo mancanti
     let filteredItems = (sectionData.items || []).filter(
       (item) =>
-        (selectedAct === "all" || Number(item.act) === Number(selectedAct)) &&
-        matchMode(item),
+        (selectedAct === "all" || Number(item.act) === Number(selectedAct))
+        && matchMode(item),
     );
 
     if (showMissingOnly && window.save) {
@@ -1284,10 +1286,10 @@ async function updateMainContent(selectedAct = "all") {
     filteredItems.forEach((item) => {
       const val = window.save ? resolveSaveValue(window.save, item) : false;
       const isUnlocked =
-        item.type === "level" ||
-        item.type === "min" ||
-        item.type === "region-level" ||
-        item.type === "region-min"
+        item.type === "level"
+        || item.type === "min"
+        || item.type === "region-level"
+        || item.type === "region-min"
           ? (val ?? 0) >= (item.required ?? 0)
           : item.type === "collectable"
             ? (val ?? 0) > 0
@@ -1305,8 +1307,8 @@ async function updateMainContent(selectedAct = "all") {
     });
 
     const total =
-      (filteredItems.filter((i) => !i.exclusiveGroup).length || 0) +
-      exclusiveGroups.size;
+      (filteredItems.filter((i) => !i.exclusiveGroup).length || 0)
+      + exclusiveGroups.size;
 
     const count = document.createElement("span");
     count.className = "category-count";
@@ -1336,6 +1338,150 @@ async function updateMainContent(selectedAct = "all") {
 
     section.appendChild(subgrid);
     container.appendChild(section);
+  });
+}
+
+async function updateAllProgressContent(selectedAct = "all") {
+  const container = document.getElementById("allprogress-grid");
+  if (!container)
+    return console.warn(
+      "[updateAllProgressContent] Missing #allprogress-grid in DOM",
+    );
+
+  const spoilerOn = document.getElementById("spoilerToggle")?.checked;
+  const showMissingOnly = document.getElementById("missingToggle")?.checked;
+  container.innerHTML = "";
+
+  // Load all data files
+  const [mainData, essentialsData, bossesData, completionData, wishesData] =
+    await Promise.all([
+      fetch("data/main.json").then((r) => r.json()),
+      fetch("data/essentials.json").then((r) => r.json()),
+      fetch("data/bosses.json?" + Date.now()).then((r) => r.json()),
+      fetch("data/completion.json?" + Date.now()).then((r) => r.json()),
+      fetch("data/wishes.json").then((r) => r.json()),
+    ]);
+
+  // Create section headers and render each category
+  const categories = [
+    { title: "Main Progress", data: mainData },
+    { title: "Essential Items", data: essentialsData },
+    {
+      title: "Bosses",
+      data: Array.isArray(bossesData) ? bossesData : [bossesData],
+    },
+    { title: "Completion", data: completionData },
+    { title: "Wishes", data: wishesData },
+  ];
+
+  categories.forEach(({ title, data }) => {
+    // Create category header
+    const categoryHeader = document.createElement("h2");
+    categoryHeader.className = "category-header";
+    categoryHeader.textContent = title;
+    categoryHeader.style.marginTop = "2rem";
+    categoryHeader.style.marginBottom = "1rem";
+    container.appendChild(categoryHeader);
+
+    // Render sections within this category
+    data.forEach((sectionData) => {
+      const section = document.createElement("div");
+      section.className = "main-section-block";
+
+      const heading = document.createElement("h3");
+      heading.className = "category-title";
+      heading.textContent = sectionData.label;
+
+      // Filter items
+      let filteredItems = (sectionData.items || []).filter(
+        (item) =>
+          (selectedAct === "all" || Number(item.act) === Number(selectedAct))
+          && matchMode(item),
+      );
+
+      if (showMissingOnly && window.save) {
+        filteredItems = filteredItems.filter((item) => {
+          const val = resolveSaveValue(window.save, item);
+          if (item.type === "collectable") return (val ?? 0) === 0;
+          if (
+            ["level", "min", "region-level", "region-min"].includes(item.type)
+          )
+            return (val ?? 0) < (item.required ?? 0);
+          if (item.type === "quest") return val !== "completed" && val !== true;
+          return val !== true;
+        });
+      }
+
+      // Add act colors
+      filteredItems.forEach((item) => {
+        if (item.act === 1) item.actColor = "act-1";
+        else if (item.act === 2) item.actColor = "act-2";
+        else if (item.act === 3) item.actColor = "act-3";
+      });
+
+      // Calculate obtained/total
+      let obtained = 0;
+      const exclusiveGroups = new Set();
+      const countedGroups = new Set();
+
+      filteredItems.forEach((item) => {
+        const val = window.save ? resolveSaveValue(window.save, item) : false;
+        const isUnlocked =
+          item.type === "quest"
+            ? val === "completed" || val === true
+            : item.type === "level"
+                || item.type === "min"
+                || item.type === "region-level"
+                || item.type === "region-min"
+              ? (val ?? 0) >= (item.required ?? 0)
+              : item.type === "collectable"
+                ? (val ?? 0) > 0
+                : val === true || val === "collected" || val === "deposited";
+
+        if (item.exclusiveGroup) {
+          exclusiveGroups.add(item.exclusiveGroup);
+          if (isUnlocked && !countedGroups.has(item.exclusiveGroup)) {
+            countedGroups.add(item.exclusiveGroup);
+            obtained++;
+          }
+        } else {
+          obtained += isUnlocked ? 1 : 0;
+        }
+      });
+
+      const total =
+        (filteredItems.filter((i) => !i.exclusiveGroup).length || 0)
+        + exclusiveGroups.size;
+
+      const count = document.createElement("span");
+      count.className = "category-count";
+      count.textContent = ` ${obtained}/${total}`;
+      heading.appendChild(count);
+
+      section.appendChild(heading);
+
+      if (sectionData.desc) {
+        const desc = document.createElement("p");
+        desc.className = "category-desc";
+        desc.textContent = sectionData.desc;
+        section.appendChild(desc);
+      }
+
+      const subgrid = document.createElement("div");
+      subgrid.className = "grid";
+
+      const visible = renderGenericGrid({
+        containerEl: subgrid,
+        data: filteredItems,
+        spoilerOn,
+      });
+
+      if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
+        return;
+
+      section.appendChild(subgrid);
+      container.appendChild(section);
+    });
   });
 }
 
@@ -1428,10 +1574,10 @@ async function updateWishesContent(selectedAct = "all") {
       const isUnlocked =
         item.type === "quest"
           ? val === "completed" || val === true
-          : item.type === "level" ||
-              item.type === "min" ||
-              item.type === "region-level" ||
-              item.type === "region-min"
+          : item.type === "level"
+              || item.type === "min"
+              || item.type === "region-level"
+              || item.type === "region-min"
             ? (val ?? 0) >= (item.required ?? 0)
             : item.type === "collectable"
               ? (val ?? 0) > 0
@@ -1449,8 +1595,8 @@ async function updateWishesContent(selectedAct = "all") {
     });
 
     const total =
-      (filteredItems.filter((i) => !i.exclusiveGroup).length || 0) +
-      exclusiveGroups.size;
+      (filteredItems.filter((i) => !i.exclusiveGroup).length || 0)
+      + exclusiveGroups.size;
 
     // 🧮 Intestazione
     const count = document.createElement("span");
@@ -1577,6 +1723,7 @@ function reRenderActiveTab() {
     wishes: updateWishesContent,
     completion: updateCompletionContent,
     rawsave: updateRawsaveContent,
+    allprogress: updateAllProgressContent,
   };
 
   updater[activeTab]?.(currentAct);
