@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 const CSHARP_HEADER = new Uint8Array([
   0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0,
 ]);
@@ -29,6 +27,8 @@ function removeHeader(bytes) {
 
 /**
  * 🔓 Decodes a Hollow Knight: Silksong .dat save file
+ *
+ * @param arrayBuffer {ArrayBuffer}
  */
 export function decodeSilksongSave(arrayBuffer) {
   try {
