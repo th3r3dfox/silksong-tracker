@@ -10,6 +10,7 @@ import {
   downloadRawsaveBtn,
   dropzone,
   fileInput,
+  infoContent,
   infoOverlay,
   missingToggle,
   nextMatch,
@@ -1170,7 +1171,6 @@ async function updateAllProgressContent(selectedAct = "all") {
 }
 
 function showGenericModal(data) {
-  // ✅ Full path for map (also works on GitHub Pages)
   const mapSrc = data.map
     ? data.map.startsWith("http")
       ? data.map
@@ -1178,7 +1178,7 @@ function showGenericModal(data) {
     : null;
 
   infoContent.innerHTML = `
-    <button id="closeInfoModal" class="modal-close">✕</button>
+    <button id="modalCloseBtn" class="modal-close">✕</button>
     <img src="${data.icon}" alt="${data.label}" class="info-image">
     <h2 class="info-title">${data.label}</h2>
     <p class="info-description">${data.description || "No description available."}</p>
@@ -1208,9 +1208,13 @@ function showGenericModal(data) {
 
   infoOverlay.classList.remove("hidden");
 
-  closeInfoModal.addEventListener("click", () => {
-    infoOverlay.classList.add("hidden");
-  });
+  // 🔧 attach listener to the *newly created* close button
+  const modalCloseBtn = document.getElementById("modalCloseBtn");
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener("click", () => {
+      infoOverlay.classList.add("hidden");
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
