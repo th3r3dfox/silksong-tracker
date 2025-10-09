@@ -899,7 +899,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // 🔹 Ripristina tab e filtri salvati
   let savedTab = localStorage.getItem("activeTab");
   if (!VALID_TABS.includes(savedTab)) {
-    savedTab = "allprogress";
+    savedTab = VALID_TABS[0];
   }
 
   const savedAct = localStorage.getItem("currentActFilter") || "all";
