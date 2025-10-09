@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import {
   actFilter,
   allProgressGrid,
@@ -25,6 +23,13 @@ import {
   uploadOverlay,
 } from "./elements.js";
 import { decodeSilksongSave } from "./SaveDecoder.js";
+import {
+  assertArray,
+  assertDefined,
+  assertIs,
+  assertNotNull,
+  assertObject,
+} from "./utils.js";
 
 console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
@@ -38,7 +43,7 @@ let currentActFilter = actFilter.value || "all";
 /** @type Record<string, unknown> | undefined */
 let currentLoadedSaveFile;
 
-/** @type { "steel" | "normal" | undefined } */
+/** @type {"steel" | "normal" | undefined} */
 let currentLoadedSaveFileMode;
 
 /** @type File | undefined */
@@ -51,7 +56,7 @@ const TAB_TO_UPDATE_FUNCTION = {
 };
 const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION);
 
-/** @param { Record<string, string> } item */
+/** @param {Record<string, string>} item */
 function matchMode(item) {
   const { mode } = item;
 
@@ -91,20 +96,32 @@ function applyMissingFilter() {
   const showMissingOnly = missingToggle.checked;
 
   document.querySelectorAll(".main-section-block").forEach((section) => {
+    assertIs(
+      section,
+      HTMLDivElement,
+      'An element with the "main-section-block" class not was a div element.',
+    );
+
     let hasVisible = false;
     const sectionName =
       section.querySelector("h3")?.textContent?.trim() || "??";
 
-    section.querySelectorAll(".boss").forEach((el) => {
+    section.querySelectorAll(".boss").forEach((div) => {
+      assertIs(
+        div,
+        HTMLDivElement,
+        'An element with the "boss" class not was a div element.',
+      );
+
       if (showMissingOnly) {
-        if (el.classList.contains("done")) {
-          el.style.display = "none";
+        if (div.classList.contains("done")) {
+          div.style.display = "none";
         } else {
-          el.style.display = "";
+          div.style.display = "";
           hasVisible = true;
         }
       } else {
-        el.style.display = "";
+        div.style.display = "";
         hasVisible = true;
       }
     });
@@ -117,6 +134,7 @@ function applyMissingFilter() {
 // ---------- Back to top button listener ----------
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("main");
+  assertNotNull(main, "Failed to get the main element.");
 
   main.addEventListener("scroll", () => {
     const scrollPosition = main.scrollTop;
@@ -597,7 +615,15 @@ function renderGenericGrid({
 
       // if the item is done, hide missable icon
       const missableIcon = div.querySelector(".missable-icon");
-      if (missableIcon) missableIcon.style.display = "none";
+      if (missableIcon !== null) {
+        assertIs(
+          missableIcon,
+          HTMLSpanElement,
+          'An element with the "missable-icon" class was not a span element.',
+        );
+
+        missableIcon.style.display = "none";
+      }
     } else if (isAccepted) {
       img.src = iconPath;
       div.classList.add("accepted");
@@ -631,7 +657,7 @@ function renderGenericGrid({
   return renderedCount;
 }
 
-/** @param { Record<string, unknown> } root */
+/** @param {Record<string, unknown>} root */
 function indexFlags(root) {
   /** @type Record<string, unknown> */
   const flags = {};
@@ -650,6 +676,7 @@ function indexFlags(root) {
     flags[scene][idKey] = Boolean(value);
   };
 
+  /** @param {Record<string, unknown>} node */
   function walk(node) {
     if (Array.isArray(node)) {
       for (const it of node) walk(it);
@@ -661,12 +688,14 @@ function indexFlags(root) {
       const hasVal = "Value" in node || "value" in node;
 
       if (hasScene && hasId && hasVal) {
-        const scene = node.SceneName ?? node.sceneName;
-        const id = node.ID ?? node.Id ?? node.id;
-        const val = node.Value ?? node.value;
+        const scene = node["SceneName"] ?? node["sceneName"];
+        const id = node["ID"] ?? node["Id"] ?? node["id"];
+        const val = node["Value"] ?? node["value"];
         mark(scene, id, val);
       }
-      for (const k in node) walk(node[k]);
+      for (const k in node) {
+        walk(node[k]);
+      }
     }
   }
 
@@ -694,7 +723,7 @@ function safeSetText(id, text) {
   }
 }
 
-/** @param { Record<string, unknown> } obj */
+/** @param {Record<string, unknown>} obj */
 function validateSave(obj) {
   return obj && typeof obj === "object" && obj["playerData"] !== undefined;
 }
@@ -869,25 +898,24 @@ async function handleSaveFile(file) {
 
     // --- Update active tab ---
     const activeElement = document.querySelector(".sidebar-item.is-active");
-    if (activeElement === null) {
-      throw new Error("Failed to get the active element.");
-    }
-    if (!(activeElement instanceof HTMLAnchorElement)) {
-      throw new Error("The active element was not an HTML anchor element.");
-    }
-    const activeTab = activeElement.dataset["tab"];
-    if (activeTab === undefined) {
-      throw new Error(
-        "Failed to get the name of the active tab from the active element.",
-      );
-    }
-    const func = TAB_TO_UPDATE_FUNCTION[activeTab];
-    if (func === undefined) {
-      throw new Error(`Failed to find the function for tab: ${activeTab}`);
-    }
-    func();
+    assertNotNull(activeElement, "Failed to get the active element.");
+    assertIs(
+      activeElement,
+      HTMLAnchorElement,
+      "The active element was not an HTML anchor element.",
+    );
 
-    applyMissingFilter?.();
+    const activeTab = activeElement.dataset["tab"];
+    assertDefined(
+      activeTab,
+      "Failed to get the name of the active tab from the active element.",
+    );
+
+    const func = TAB_TO_UPDATE_FUNCTION[activeTab];
+    assertDefined(func, `Failed to find the function for tab: ${activeTab}`);
+    await func();
+
+    applyMissingFilter();
     showToast("✅ Save file loaded successfully!");
     uploadOverlay.classList.add("hidden");
   } catch (err) {
@@ -941,29 +969,28 @@ function showToast(message) {
 }
 
 // Handle sidebar clicks
-// Handle sidebar clicks
-document.querySelectorAll(".sidebar-item").forEach((btn) => {
-  if (!(btn instanceof HTMLAnchorElement)) {
-    throw new Error(
-      'An element with a class of "sidebar-item" was not an anchor.',
-    );
-  }
+document.querySelectorAll(".sidebar-item").forEach((anchor) => {
+  assertIs(
+    anchor,
+    HTMLAnchorElement,
+    'An element with a class of "sidebar-item" was not an anchor.',
+  );
 
-  btn.addEventListener("click", (e) => {
+  anchor.addEventListener("click", (e) => {
     e.preventDefault();
 
     // Remove/add activation class
     document
       .querySelectorAll(".sidebar-item")
       .forEach((i) => i.classList.remove("is-active"));
-    btn.classList.add("is-active");
+    anchor.classList.add("is-active");
 
     // Hide all tabs
     document.querySelectorAll(".tab").forEach((section) => {
       section.classList.add("hidden");
     });
 
-    const selectedTab = btn.dataset["tab"];
+    const selectedTab = anchor.dataset["tab"];
     const activeSection = document.getElementById(`${selectedTab}-section`);
     if (activeSection) {
       activeSection.classList.remove("hidden");
@@ -989,9 +1016,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let savedTab = localStorage.getItem("activeTab");
   if (savedTab === null || !VALID_TABS.includes(savedTab)) {
     const firstValidTab = VALID_TABS[0];
-    if (firstValidTab === undefined) {
-      throw new Error("Failed to get the first valid tab.");
-    }
+    assertDefined(firstValidTab, "Failed to get the first valid tab.");
     savedTab = firstValidTab;
   }
 
@@ -1063,11 +1088,10 @@ async function updateAllProgressContent(selectedAct = "all") {
   ];
 
   categories.forEach(({ title, data }) => {
-    if (!Array.isArray(data)) {
-      throw new Error(
-        "The contents of one of the JSON files was not an array.",
-      );
-    }
+    assertArray(
+      data,
+      "The contents of one of the JSON files was not an array.",
+    );
 
     // Create category header
     const categoryHeader = document.createElement("h2");
@@ -1079,19 +1103,28 @@ async function updateAllProgressContent(selectedAct = "all") {
 
     // Render sections within this category
     data.forEach((sectionData) => {
+      assertObject(
+        sectionData,
+        "One of the JSON array elements was not an object.",
+      );
+
       const section = document.createElement("div");
       section.className = "main-section-block";
 
       const heading = document.createElement("h3");
       heading.className = "category-title";
-      heading.textContent = sectionData.label;
 
-      const items = sectionData.items ?? [];
-      if (!Array.isArray(items)) {
-        throw new Error(
-          'The contents of the "items" field in a JSON file was not an array.',
-        );
+      const { label } = sectionData;
+      if (typeof label === "string") {
+        heading.textContent = label;
       }
+
+      const items = sectionData["items"] ?? [];
+      assertArray(
+        items,
+        'The contents of the "items" field in a JSON file was not an array.',
+      );
+
       let filteredItems = items.filter(
         (item) =>
           (selectedAct === "all" || Number(item.act) === Number(selectedAct))
@@ -1324,19 +1357,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function reRenderActiveTab() {
   const activeElement = document.querySelector(".sidebar-item.is-active");
-  if (activeElement === null) {
-    throw new Error("Failed to get the active element.");
-  }
-  if (!(activeElement instanceof HTMLAnchorElement)) {
-    throw new Error("The active element was not an HTML anchor element.");
-  }
+  assertNotNull(activeElement, "Failed to get the active element.");
+  assertIs(
+    activeElement,
+    HTMLAnchorElement,
+    "The active element was not an HTML anchor element.",
+  );
 
   const activeTab = activeElement.dataset["tab"];
-  if (activeTab === undefined) {
-    throw new Error(
-      "Failed to get the name of the active tab from the active element.",
-    );
-  }
+  assertDefined(
+    activeTab,
+    "Failed to get the name of the active tab from the active element.",
+  );
 
   const currentAct = actFilter.value || "all";
   const showMissingOnly = missingToggle.checked;
@@ -1346,11 +1378,10 @@ function reRenderActiveTab() {
   localStorage.setItem("showMissingOnly", showMissingOnly.toString());
 
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
-  if (func === undefined) {
-    throw new Error(
-      `Failed to find the function corresponding to tab: ${activeTab}`,
-    );
-  }
+  assertDefined(
+    func,
+    `Failed to find the function corresponding to tab: ${activeTab}`,
+  );
 
   func(currentAct);
 }

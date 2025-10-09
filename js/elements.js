@@ -1,3 +1,5 @@
+import { assertIs, assertNotNull } from "./utils";
+
 /**
  * Helper function to get an HTML element and throw an error if it does not exist.
  *
@@ -6,11 +8,7 @@
  */
 function getHTMLElement(id) {
   const element = document.getElementById(id);
-
-  if (element === null) {
-    throw new Error(`Failed to get HTML element with id: ${id}`);
-  }
-
+  assertNotNull(element, `Failed to get HTML element with id: ${id}`);
   return element;
 }
 
@@ -23,13 +21,11 @@ function getHTMLElement(id) {
  */
 function getHTMLInputElement(id) {
   const element = getHTMLElement(id);
-
-  if (!(element instanceof HTMLInputElement)) {
-    throw new Error(
-      `The HTML element with an id of "${id}" is not an HTML input element.`,
-    );
-  }
-
+  assertIs(
+    element,
+    HTMLInputElement,
+    `The element with an id of "${id}" is not an input element.`,
+  );
   return element;
 }
 
@@ -42,13 +38,11 @@ function getHTMLInputElement(id) {
  */
 function getHTMLSelectElement(id) {
   const element = getHTMLElement(id);
-
-  if (!(element instanceof HTMLSelectElement)) {
-    throw new Error(
-      `The HTML element with an id of "${id}" is not an HTML select element.`,
-    );
-  }
-
+  assertIs(
+    element,
+    HTMLSelectElement,
+    `The element with an id of "${id}" is not a select element.`,
+  );
   return element;
 }
 
