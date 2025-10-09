@@ -2420,6 +2420,18 @@ mark.active-match {
     filter 0.25s ease;
 }
 
+.missable-icon {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 1.4rem;
+  color: var(--accent);
+  filter: none !important;
+  backdrop-filter: none !important;
+  z-index: 3;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
 .missable-icon:hover {
   transform: scale(1.25);
   filter: brightness(1.3);

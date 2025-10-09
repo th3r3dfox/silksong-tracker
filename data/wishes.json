@@ -686,7 +686,54 @@
         "icon": "assets/quest/Delivery.png",
         "description": "Deliver the Queen's Egg to Styx of Sinner's Road.",
         "link": "https://hollowknight.wiki/w/Category:Wishes",
-        "mode": "normal"
+        "mode": "normal",
+        "act": 1
+      },
+      {
+        "id": "delivery-bonebottom",
+        "label": "Bone Bottom Supplies",
+        "type": "quest",
+        "flag": "Courier Delivery Bonebottom",
+        "icon": "assets/quest/Delivery.png",
+        "description": "Deliver supplies to the fixer Flick in Bone Bottom.",
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "mode": "normal",
+        "act": 1,
+        "missable": true
+      },
+      {
+        "id": "delivery-pilgrim-rest",
+        "label": "Pilgrim's Rest Supplies",
+        "type": "quest",
+        "flag": "Courier Delivery Pilgrims Rest",
+        "icon": "assets/quest/Delivery.png",
+        "description": "Deliver supplies to Mort in Pilgrim's Rest.",
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "mode": "normal",
+        "act": 1,
+        "missable": true
+      },
+      {
+        "id": "delivery-songclade-supplies",
+        "label": "Songclave Supplies",
+        "type": "quest",
+        "flag": "Courier Delivery Songclave",
+        "icon": "assets/quest/Delivery.png",
+        "description": "Deliver supplies to the Caretaker in Songclave.",
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "mode": "normal",
+        "act": 2
+      },
+      {
+        "id": "delivery-songclade-supplies",
+        "label": "Fleatopia Supplies",
+        "type": "quest",
+        "flag": "Courier Delivery Fleatopia",
+        "icon": "assets/quest/Delivery.png",
+        "description": "Deliver supplies to the Fleamaster Mooshka in Fleatopia.",
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "mode": "normal",
+        "act": 2
       },
       {
         "id": "liquid-lacquer",
@@ -695,7 +742,18 @@
         "flag": "Courier Delivery Mask Maker",
         "icon": "assets/quest/Delivery.png",
         "description": "Deliver liquid lacquer to the Mask Maker upon Mount Fay.",
-        "link": "https://hollowknight.wiki/w/Category:Wishes"
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "act": 2
+      },
+      {
+        "id": "survivor-supplies",
+        "label": "Survivor's Camp Supplies",
+        "type": "quest",
+        "flag": "Courier Delivery Fixer",
+        "icon": "assets/quest/Delivery.png",
+        "description": "Deliver supplies to Flick at the Survivor's Camp.",
+        "link": "https://hollowknight.wiki/w/Category:Wishes",
+        "act": 3
       }
     ]
   },
@@ -745,7 +803,7 @@
         "id": "a_vassal_lost",
         "label": "A Vassal Lost",
         "type": "quest",
-        "flag": "",
+        "flag": "Steel Sentinel",
         "icon": "assets/quest/Steel_Wish_Art.png",
         "description": "Investigate the resting sites marked by Steel Seer Zi to uncover the location of her vassal.",
         "link": "https://hollowknight.wiki/w/Category:Wishes",
