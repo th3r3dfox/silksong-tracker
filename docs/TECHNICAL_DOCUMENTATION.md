@@ -2,8 +2,8 @@
 
 ## 1. Overview
 
-Silksong Tracker is a browser-based web application that analyzes and visualizes save files from _Hollow Knight: Silksong_.  
-It decodes encrypted `.dat` files locally in the browser, extracts progression data, and displays it in an interactive interface.  
+Silksong Tracker is a browser-based web application that analyzes and visualizes save files from _Hollow Knight: Silksong_.
+It decodes encrypted `.dat` files locally in the browser, extracts progression data, and displays it in an interactive interface.
 All operations occur locally, ensuring privacy and data safety.
 
 ---
@@ -50,7 +50,7 @@ const saveData = decodeSilksongSave(fileBytes);
 
 ### 3.2 Save Decoding (`SaveDecoder.js`)
 
-The Silksong save file is a C# serialized, AES-encrypted, and zlib-compressed binary.  
+The Silksong save file is a C# serialized, AES-encrypted, and zlib-compressed binary.
 Decoding happens in four main steps:
 
 | Step | Function              | Description                                            |
@@ -85,7 +85,7 @@ export const CSHARP_HEADER = new Uint8Array([
 
 ### 3.3 Data Correlation and Rendering (`script.js`)
 
-Static data from `data/main.json` and `data/bosses.json` defines all trackable items.  
+Static data from `data/main.json` and `data/bosses.json` defines all trackable items.
 Each JSON entry includes a flag and logic to determine if it’s completed or missing.
 
 **Example:**
@@ -196,7 +196,7 @@ Each top-level category defines a group of related items.
 
 ### 5.1 What Are Flags
 
-Flags are internal variables stored in the Silksong save file that record the player’s progress and actions.  
+Flags are internal variables stored in the Silksong save file that record the player’s progress and actions.
 Each flag represents a specific state in the game: a collected item, a defeated boss, or a completed quest.
 
 Example of flags inside a decoded save file:
@@ -210,7 +210,7 @@ Example of flags inside a decoded save file:
 }
 ```
 
-These names come directly from the game’s C# code (Unity serialization).  
+These names come directly from the game’s C# code (Unity serialization).
 When the player performs an action, the game sets the corresponding flag to `true` or updates its value (integer for upgrades).
 
 ---
@@ -259,7 +259,7 @@ If the flag exists and is `true`, the item is marked as obtained.
 
 ### 5.4 Why Flags Have Readable Names
 
-Flags such as `"Collectable Item Pickup"`, `"Heart Piece"`, or `"Beastfly Hunt"` are not arbitrary —  
+Flags such as `"Collectable Item Pickup"`, `"Heart Piece"`, or `"Beastfly Hunt"` are not arbitrary —
 they are the exact string identifiers used by the game’s code when saving data.
 
 These names come from:
@@ -306,9 +306,7 @@ These names come from:
 | `decodeSilksongSave(fileBytes)`            | SaveDecoder.js | Executes the full decode process (AES → Inflate → JSON).    |
 | `renderGenericGrid({ data, containerId })` | script.js      | Renders items into the UI grid.                             |
 | `switchTab(tabId)`                         | script.js      | Handles tab navigation.                                     |
-| `updateBossesContent()`                    | script.js      | Loads and renders bosses using async fetch.                 |
-| `updateMainContent()`                      | script.js      | Loads and renders main data sections.                       |
-| `updateNewTabContent()`                    | script.js      | Loads and renders essentials/extra sections.                |
+| `updateAllProgressContent()`               | script.js      | Loads and renders bosses using async fetch.                 |
 | `resolveSaveValue(save, item)`             | script.js      | Resolves correct values for any save flag or nested object. |
 | `indexFlags(root)`                         | script.js      | Indexes nested scene flags into a flat reference map.       |
 | `showGenericModal(data)`                   | script.js      | Displays detailed modal with icon, map, and wiki link.      |
@@ -351,7 +349,7 @@ Scripts are loaded as ES6 modules (`type="module"`) for modular imports.
 
 ## 9. Completion Percentage (Planned)
 
-Each category defines a `contrib` value representing its weight in overall completion.  
+Each category defines a `contrib` value representing its weight in overall completion.
 A future feature will compute total completion using:
 
 ```
@@ -428,8 +426,8 @@ Benefits:
 
 ## 13. Credits
 
-Developed by Fox  
-Inspired by _ReznorMichael’s “Hollow Knight Save Analyzer”_  
+Developed by Fox
+Inspired by _ReznorMichael’s “Hollow Knight Save Analyzer”_
 A non-commercial fan project not affiliated with Team Cherry.
 
 Version: v0.3.0
