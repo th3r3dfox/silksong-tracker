@@ -35,4 +35,11 @@ function getHTMLInputElement(id) {
 }
 
 export const actFilter = getHTMLInputElement("actFilter");
+export const backToTop = getHTMLElement("backToTop");
+export const closeUploadModal = getHTMLElement("closeUploadModal");
+export const dropzone = getHTMLElement("dropzone");
 export const fileInput = getHTMLElement("fileInput");
+export const missingToggle = getHTMLInputElement("missingToggle");
+export const openUploadModal = getHTMLElement("openUploadModal");
+export const spoilerToggle = getHTMLInputElement("spoilerToggle");
+export const uploadOverlay = getHTMLElement("uploadOverlay");

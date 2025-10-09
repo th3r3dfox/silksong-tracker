@@ -1,4 +1,14 @@
-import { actFilter, fileInput } from "./elements.js";
+import {
+  actFilter,
+  backToTop,
+  closeUploadModal,
+  dropzone,
+  fileInput,
+  missingToggle,
+  openUploadModal,
+  spoilerToggle,
+  uploadOverlay,
+} from "./elements.js";
 import { decodeSilksongSave } from "./SaveDecoder.js";
 
 console.log(
@@ -33,19 +43,19 @@ const EXCLUSIVE_GROUPS = [
 ];
 
 // ---------- SPOILER TOGGLE ----------
-document.getElementById("spoilerToggle").addEventListener("change", () => {
-  const spoilerChecked = document.getElementById("spoilerToggle").checked;
+spoilerToggle.addEventListener("change", () => {
+  const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
 
   // Save this state too if you want to keep it on refresh
-  localStorage.setItem("showSpoilers", spoilerChecked);
+  localStorage.setItem("showSpoilers", spoilerChecked.toString());
 
   // Use the same filter logic (so it maintains Act + Missing)
   reRenderActiveTab();
 });
 
 function applyMissingFilter() {
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
+  const showMissingOnly = missingToggle.checked;
 
   document.querySelectorAll(".main-section-block").forEach((section) => {
     let hasVisible = false;
@@ -73,7 +83,6 @@ function applyMissingFilter() {
 
 // ---------- Back to top button listener ----------
 document.addEventListener("DOMContentLoaded", () => {
-  const backToTop = document.getElementById("backToTop");
   const main = document.querySelector("main");
 
   main.addEventListener("scroll", () => {
@@ -96,30 +105,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // ---------- MODAL SETUP ----------
-  const overlay = document.getElementById("uploadOverlay");
-  const dropzone = document.getElementById("dropzone");
-  const openBtn = document.getElementById("openUploadModal");
-  const closeBtn = document.getElementById("closeUploadModal");
-  const fileInput = document.getElementById("fileInput");
-
-  if (!overlay || !dropzone || !openBtn || !closeBtn || !fileInput) {
-    console.warn("[upload modal] Missing elements in DOM.");
-    return;
-  }
-
-  function openUploadModal() {
-    overlay.classList.remove("hidden");
+  function openUploadModalFunc() {
+    uploadOverlay.classList.remove("hidden");
     dropzone.focus();
   }
-  function closeUploadModal() {
-    overlay.classList.add("hidden");
+  function closeUploadModalFunc() {
+    uploadOverlay.classList.add("hidden");
   }
 
-  openBtn.addEventListener("click", openUploadModal);
-  closeBtn.addEventListener("click", closeUploadModal);
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) closeUploadModal();
+  openUploadModal.addEventListener("click", openUploadModalFunc);
+  closeUploadModal.addEventListener("click", closeUploadModalFunc);
+  uploadOverlay.addEventListener("click", (e) => {
+    if (e.target === uploadOverlay) closeUploadModalFunc();
   });
 
   dropzone.addEventListener("click", () => fileInput.click());

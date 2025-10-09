@@ -1,6 +1,5 @@
 import { AES_KEY_STRING, CSHARP_HEADER } from "./constants.js";
 
-/** @type {any} */
 const { CryptoJS } = window;
 
 /**
