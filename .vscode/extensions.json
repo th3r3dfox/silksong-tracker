@@ -2,6 +2,6 @@
 // repository: https://go.microsoft.com/fwlink/?LinkId=827846
 {
   "recommendations": [
-    "esbenp.prettier-vscode" // The formatter
-  ]
+    "esbenp.prettier-vscode", // The formatter
+  ],
 }
