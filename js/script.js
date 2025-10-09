@@ -1,11 +1,22 @@
+// @ts-nocheck
+
 import {
   actFilter,
   backToTop,
+  closeInfoModal,
   closeUploadModal,
+  copyRawsaveBtn,
+  downloadRawsaveBtn,
   dropzone,
   fileInput,
   missingToggle,
+  nextMatch,
   openUploadModal,
+  prevMatch,
+  rawSaveOutput,
+  rawSaveSearch,
+  refreshSaveBtn,
+  searchCounter,
   spoilerToggle,
   uploadOverlay,
 } from "./elements.js";
@@ -22,7 +33,7 @@ let currentActFilter = actFilter.value || "all";
 
 const TAB_TO_UPDATE_FUNCTION = {
   allprogress: updateAllProgressContent,
-  rawsave: updateRawsaveContent,
+  rawsave: updateRawSaveContent,
 };
 const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION);
 
@@ -141,9 +152,17 @@ document.addEventListener("DOMContentLoaded", () => {
       dropzone.classList.remove("dragover");
     }),
   );
-  dropzone.addEventListener("drop", (e) => {
-    const files = e.dataTransfer?.files;
-    if (files && files[0]) handleSaveFile(files[0]);
+  dropzone.addEventListener("drop", (dragEvent) => {
+    const { dataTransfer } = dragEvent;
+    if (dataTransfer === null) {
+      return;
+    }
+
+    const files = dataTransfer.files;
+    const firstFile = files[0];
+    if (firstFile !== undefined) {
+      handleSaveFile(firstFile);
+    }
   });
 
   // ---------- PILLS COPY ----------
@@ -444,7 +463,7 @@ function renderGenericGrid({
 }) {
   const container = containerEl || document.getElementById(containerId);
   const realContainerId = containerId || container?.id || "unknown";
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
+  const showMissingOnly = missingToggle.checked;
 
   container.innerHTML = "";
 
@@ -630,49 +649,41 @@ function indexFlags(root) {
 // ---------- FILE HANDLING ----------
 fileInput.addEventListener("change", (e) => {
   const file = e.target.files && e.target.files[0];
-  if (file) handleSaveFile(file);
+  if (file) {
+    handleSaveFile(file);
+  }
 });
 
 function safeSetText(id, text) {
   const el = document.getElementById(id);
-  if (el) el.textContent = text;
+  if (el) {
+    el.textContent = text;
+  }
 }
 
 function validateSave(obj) {
   return obj && typeof obj === "object" && obj.playerData;
 }
 
-function updateRawsaveContent() {
-  const container = document.getElementById("rawsave-output");
-  if (!container)
-    return console.warn("[updateRawsaveContent] Missing #rawsave-output");
-
+function updateRawSaveContent() {
   if (!window.save) {
-    container.textContent = "⚠️ No save file loaded.";
+    rawSaveOutput.textContent = "⚠️ No save file loaded.";
     return;
   }
 
   try {
-    container.textContent = JSON.stringify(window.save, null, 2);
+    rawSaveOutput.textContent = JSON.stringify(window.save, null, 2);
   } catch (err) {
-    container.textContent = "❌ Failed to display raw save.";
+    rawSaveOutput.textContent = "❌ Failed to display raw save.";
     console.error(err);
   }
 }
 
 // --- RAWSAVE TOOLS ---
 document.addEventListener("DOMContentLoaded", () => {
-  const copyBtn = document.getElementById("copyRawsaveBtn");
-  const downloadBtn = document.getElementById("downloadRawsaveBtn");
-  const searchInput = document.getElementById("rawsave-search");
-  const output = document.getElementById("rawsave-output");
-  const nextBtn = document.getElementById("nextMatch");
-  const prevBtn = document.getElementById("prevMatch");
-  const counter = document.getElementById("searchCounter");
-
   // 📋 Copy JSON
-  copyBtn?.addEventListener("click", () => {
-    const text = output?.textContent || "";
+  copyRawsaveBtn.addEventListener("click", () => {
+    const text = rawSaveOutput.textContent || "";
     navigator.clipboard
       .writeText(text)
       .then(() => showToast("📋 JSON copied to clipboard!"))
@@ -680,7 +691,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 💾 Download JSON
-  downloadBtn?.addEventListener("click", () => {
+  downloadRawsaveBtn.addEventListener("click", () => {
     if (!window.save) return showToast("⚠️ No save loaded yet.");
     const blob = new Blob([JSON.stringify(window.save, null, 2)], {
       type: "application/json",
@@ -698,7 +709,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let matches = [];
 
   function scrollToMatch(index) {
-    const allMarks = output.querySelectorAll("mark.search-match");
+    const allMarks = rawSaveOutput.querySelectorAll("mark.search-match");
     allMarks.forEach((m) => m.classList.remove("active-match"));
     if (allMarks[index - 1]) {
       allMarks[index - 1].classList.add("active-match");
@@ -707,16 +718,16 @@ document.addEventListener("DOMContentLoaded", () => {
         block: "center",
       });
     }
-    counter.textContent = `${index}/${matches.length}`;
+    searchCounter.textContent = `${index}/${matches.length}`;
   }
 
-  searchInput?.addEventListener("input", () => {
-    const query = searchInput.value.trim();
+  rawSaveSearch.addEventListener("input", () => {
+    const query = rawSaveSearch.value.trim();
     const jsonText = JSON.stringify(window.save || {}, null, 2);
-    output.innerHTML = jsonText;
+    rawSaveOutput.innerHTML = jsonText;
     matches = [];
     currentMatch = 0;
-    counter.textContent = "0/0";
+    searchCounter.textContent = "0/0";
     if (!query) return;
 
     const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -732,34 +743,34 @@ document.addEventListener("DOMContentLoaded", () => {
       matches.push(match.index);
     }
     html += jsonText.slice(lastIndex);
-    output.innerHTML = html;
+    rawSaveOutput.innerHTML = html;
 
     if (matches.length > 0) {
       currentMatch = 1;
       scrollToMatch(currentMatch);
     }
-    counter.textContent = `${currentMatch}/${matches.length}`;
+    searchCounter.textContent = `${currentMatch}/${matches.length}`;
   });
 
-  nextBtn?.addEventListener("click", () => {
+  nextMatch.addEventListener("click", () => {
     if (matches.length === 0) return;
     currentMatch = (currentMatch % matches.length) + 1;
     scrollToMatch(currentMatch);
   });
 
-  prevBtn?.addEventListener("click", () => {
+  prevMatch.addEventListener("click", () => {
     if (matches.length === 0) return;
     currentMatch = ((currentMatch - 2 + matches.length) % matches.length) + 1;
     scrollToMatch(currentMatch);
   });
 });
 
-// --- Caricamento file principale ---
+/** @param file {File} */
 async function handleSaveFile(file) {
   try {
     if (!file) {
       showToast("❌ No file selected.");
-      document.getElementById("uploadOverlay")?.classList.remove("hidden");
+      uploadOverlay.classList.remove("hidden");
       return;
     }
 
@@ -773,15 +784,11 @@ async function handleSaveFile(file) {
 
     if (!validateSave(saveData)) {
       showToast("❌ Invalid or corrupted save file");
-      document.getElementById("uploadOverlay")?.classList.remove("hidden");
+      uploadOverlay.classList.remove("hidden");
       return;
     }
 
-    document.getElementById("rawsave-output").textContent = JSON.stringify(
-      saveData,
-      null,
-      2,
-    );
+    rawSaveOutput.textContent = JSON.stringify(saveData, null, 2);
 
     // ✅ Index and save globally
     window.save = indexFlags(saveData);
@@ -790,8 +797,9 @@ async function handleSaveFile(file) {
     window.lastSaveIsDat = isDat;
 
     // 🔘 Show refresh button
-    const refreshBtn = document.getElementById("refreshSaveBtn");
-    if (refreshBtn) refreshBtn.classList.remove("hidden");
+    if (refreshBtn) {
+      refreshBtn.classList.remove("hidden");
+    }
 
     // --- Update UI statistics ---
     const completion = saveData.playerData?.completionPercentage ?? 0;
@@ -818,14 +826,11 @@ async function handleSaveFile(file) {
     window.saveMode = isSteelSoul ? "steel" : "normal";
 
     // 🪶 Show visual banner
-    const banner = document.getElementById("modeBanner");
-    if (banner) {
-      banner.innerHTML = isSteelSoul
-        ? `<img src="${BASE_PATH}/assets/icons/Steel_Soul_Icon.png" alt="Steel Soul" class="mode-icon"> STEEL SOUL SAVE LOADED`
-        : `NORMAL SAVE LOADED`;
-      banner.classList.remove("hidden");
-      banner.classList.toggle("steel", isSteelSoul);
-    }
+    modeBanner.innerHTML = isSteelSoul
+      ? `<img src="${BASE_PATH}/assets/icons/Steel_Soul_Icon.png" alt="Steel Soul" class="mode-icon"> STEEL SOUL SAVE LOADED`
+      : `NORMAL SAVE LOADED`;
+    modeBanner.classList.remove("hidden");
+    modeBanner.classList.toggle("steel", isSteelSoul);
 
     // --- Update active tab ---
     const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset
@@ -834,13 +839,13 @@ async function handleSaveFile(file) {
 
     applyMissingFilter?.();
     showToast("✅ Save file loaded successfully!");
-    document.getElementById("uploadOverlay")?.classList.add("hidden");
+    uploadOverlay.classList.add("hidden");
   } catch (err) {
     console.error("[save] Decode error:", err);
     showToast(
       "⚠️ Browser permission or file access issue. Please reselect your save file.",
     );
-    document.getElementById("uploadOverlay")?.classList.remove("hidden");
+    uploadOverlay.classList.remove("hidden");
   }
 }
 
@@ -849,7 +854,7 @@ async function refreshSaveFile() {
   try {
     if (!window.lastSaveFile) {
       showToast("⚠️ No save file loaded yet.");
-      document.getElementById("fileInput").click(); // opens file selection
+      fileInput.click(); // opens file selection
       return;
     }
 
@@ -929,23 +934,17 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const savedAct = localStorage.getItem("currentActFilter") || "all";
-  const spoilerToggle = document.getElementById("spoilerToggle");
-  const missingToggle = document.getElementById("missingToggle");
 
   // 🔹 Restore Act filter value
   actFilter.value = savedAct;
   currentActFilter = savedAct;
 
   // 🔹 Synchronize "Show spoilers" state (keeps colors consistent)
-  if (spoilerToggle) {
-    const spoilerChecked = spoilerToggle.checked;
-    document.body.classList.toggle("spoiler-on", !spoilerChecked);
-  }
+  const spoilerChecked = spoilerToggle.checked;
+  document.body.classList.toggle("spoiler-on", !spoilerChecked);
 
   // 🔹 Synchronize "Show only missing" state
-  if (missingToggle) {
-    missingToggle.checked = localStorage.getItem("showMissingOnly") === "true";
-  }
+  missingToggle.checked = localStorage.getItem("showMissingOnly") === "true";
 
   // 🔹 Reset tab visibility
   document
@@ -969,15 +968,9 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 async function updateAllProgressContent(selectedAct = "all") {
-  const container = document.getElementById("allprogress-grid");
-  if (!container)
-    return console.warn(
-      "[updateAllProgressContent] Missing #allprogress-grid in DOM",
-    );
-
-  const spoilerOn = document.getElementById("spoilerToggle")?.checked;
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
-  container.innerHTML = "";
+  const spoilerOn = spoilerToggle.checked;
+  const showMissingOnly = missingToggle.checked;
+  allProgressGrid.innerHTML = "";
 
   // Load all data files
   const [mainData, essentialsData, bossesData, completionData, wishesData] =
@@ -1008,7 +1001,7 @@ async function updateAllProgressContent(selectedAct = "all") {
     categoryHeader.textContent = title;
     categoryHeader.style.marginTop = "2rem";
     categoryHeader.style.marginBottom = "1rem";
-    container.appendChild(categoryHeader);
+    allProgressGrid.appendChild(categoryHeader);
 
     // Render sections within this category
     data.forEach((sectionData) => {
@@ -1144,15 +1137,12 @@ async function updateAllProgressContent(selectedAct = "all") {
         return;
 
       section.appendChild(subgrid);
-      container.appendChild(section);
+      allProgressGrid.appendChild(section);
     });
   });
 }
 
 function showGenericModal(data) {
-  const overlay = document.getElementById("info-overlay");
-  const content = document.getElementById("info-content");
-
   // ✅ Full path for map (also works on GitHub Pages)
   const mapSrc = data.map
     ? data.map.startsWith("http")
@@ -1160,7 +1150,7 @@ function showGenericModal(data) {
       : `${BASE_PATH}/${data.map}`
     : null;
 
-  content.innerHTML = `
+  infoContent.innerHTML = `
     <button id="closeInfoModal" class="modal-close">✕</button>
     <img src="${data.icon}" alt="${data.label}" class="info-image">
     <h2 class="info-title">${data.label}</h2>
@@ -1189,45 +1179,37 @@ function showGenericModal(data) {
     }
   `;
 
-  overlay.classList.remove("hidden");
+  infoOverlay.classList.remove("hidden");
 
-  document.getElementById("closeInfoModal").addEventListener("click", () => {
-    overlay.classList.add("hidden");
+  closeInfoModal.addEventListener("click", () => {
+    infoOverlay.classList.add("hidden");
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const closeInfo = document.getElementById("closeInfoModal");
-  const infoOverlay = document.getElementById("info-overlay");
-  const refreshBtn = document.getElementById("refreshSaveBtn");
-
   // 🎯 Refresh Save
-  if (refreshBtn) {
-    refreshBtn.addEventListener("click", () => {
-      if (typeof refreshSaveFile === "function") {
-        refreshSaveFile();
-      } else {
-        console.warn("refreshSaveFile() not defined yet.");
-      }
-    });
-  }
+  refreshSaveBtn.addEventListener("click", () => {
+    if (typeof refreshSaveFile === "function") {
+      refreshSaveFile();
+    } else {
+      console.warn("refreshSaveFile() not defined yet.");
+    }
+  });
 
   // 🎬 Info Modal
-  if (closeInfo && infoOverlay) {
-    closeInfo.addEventListener("click", () =>
-      infoOverlay.classList.add("hidden"),
-    );
-    infoOverlay.addEventListener("click", (e) => {
-      if (e.target === infoOverlay) infoOverlay.classList.add("hidden");
-    });
-  }
+  closeInfoModal.addEventListener("click", () =>
+    infoOverlay.classList.add("hidden"),
+  );
+  infoOverlay.addEventListener("click", (e) => {
+    if (e.target === infoOverlay) infoOverlay.classList.add("hidden");
+  });
 });
 
 function reRenderActiveTab() {
   const activeTab = document.querySelector(".sidebar-item.is-active")?.dataset
     .tab;
   const currentAct = actFilter.value || "all";
-  const showMissingOnly = document.getElementById("missingToggle")?.checked;
+  const showMissingOnly = missingToggle.checked;
 
   // Save states
   localStorage.setItem("currentActFilter", currentAct);
@@ -1236,9 +1218,5 @@ function reRenderActiveTab() {
   TAB_TO_UPDATE_FUNCTION[activeTab]?.(currentAct);
 }
 
-document
-  .getElementById("missingToggle")
-  .addEventListener("change", reRenderActiveTab);
-document
-  .getElementById("actFilter")
-  .addEventListener("change", reRenderActiveTab);
+missingToggle.addEventListener("change", reRenderActiveTab);
+actFilter.addEventListener("change", reRenderActiveTab);
