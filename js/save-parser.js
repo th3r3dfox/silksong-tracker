@@ -1,6 +1,5 @@
 import { z } from "https://cdn.jsdelivr.net/npm/zod@4/+esm";
 
-/** TODO: Use Zod so that we don't have to manually validate every field in the entire save file. */
 export const silksongSaveSchema = z.object({
   playerData: z
     .object({
