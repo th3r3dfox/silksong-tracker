@@ -31,7 +31,7 @@ export async function parseSilksongSave(saveFile) {
  * simplifies checking for flags later, since some flags are represented in the raw save file as a
  * boolean and some as an integer.
  *
- * @param {z.infer<typeof silksongSaveSchema>} root
+ * @param {Record<string, unknown>} root
  */
 export function getSaveFileFlags(root) {
   /** @type Record<string, Record<string, boolean>> */
