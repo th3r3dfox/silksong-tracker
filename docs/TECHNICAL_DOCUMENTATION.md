@@ -6,32 +6,30 @@ Silksong Tracker is a browser-based web application that analyzes and visualizes
 It decodes encrypted `.dat` files locally in the browser, extracts progression data, and displays it in an interactive interface.
 All operations occur locally, ensuring privacy and data safety.
 
----
-
 ## 2. Architecture
 
 The project is entirely client-side, structured as follows:
 
-```
+```txt
 silksong-tracker/
 │
 ├── index.html               # Main UI and layout
 │
 ├── js/
 │   ├── script.js            # Core logic and rendering
-│   ├── SaveDecoder.js       # Binary decoding and AES decryption
+│   ├── save-decoder.js      # Binary decoding and AES decryption
 │   ├── constants.js         # Unity header and AES key constants
-│
-├── data/
-│   ├── main.json            # Database of items, upgrades, and skills
-│   ├── bosses.json          # Optional boss data
+|   |
+|   └── data/
+|       ├── main.json            # Database of items, upgrades, and skills
+|       └── bosses.json          # Optional boss data
 │
 ├── css/style.css            # Styles and theme definitions
 ├── assets/                  # Icons, fonts, and images
-└── README.md / docs/        # Documentation
+├── docs/                    # Documentation
+└── README.md                # Documentation
+docs/
 ```
-
----
 
 ## 3. Data Flow
 
@@ -45,8 +43,6 @@ silksong-tracker/
 import { decodeSilksongSave } from "./SaveDecoder.js";
 const saveData = decodeSilksongSave(fileBytes);
 ```
-
----
 
 ### 3.2 Save Decoding (`SaveDecoder.js`)
 
@@ -81,8 +77,6 @@ export const CSHARP_HEADER = new Uint8Array([
 }
 ```
 
----
-
 ### 3.3 Data Correlation and Rendering (`script.js`)
 
 Static data from `data/main.json` and `data/bosses.json` defines all trackable items.
@@ -111,8 +105,6 @@ const value =
 
 Each item is rendered in the grid with its current state (obtained / missing).
 
----
-
 ## 4. Data Model — `main.json`
 
 ### 4.1 Category Object
@@ -136,8 +128,6 @@ Each top-level category defines a group of related items.
 | desc    | string | Category description.            |
 | contrib | number | Weight in completion percentage. |
 | items   | array  | List of item definitions.        |
-
----
 
 ### 4.2 Item Object
 
@@ -175,8 +165,6 @@ Each top-level category defines a group of related items.
 | exclusiveGroup | string _(optional)_ | Group of mutually exclusive variants. |
 | link           | string _(optional)_ | External wiki or documentation URL.   |
 
----
-
 ### 4.3 Supported Type Values
 
 | Type         | Meaning                     | Logic                           |
@@ -189,8 +177,6 @@ Each top-level category defines a group of related items.
 | quest        | Quest completion flag.      | `Boolean(save[flag])`           |
 | tool         | Equipment or tool obtained. | `Boolean(save[flag])`           |
 | collectable  | Unique collectible.         | `Boolean(save[flag])`           |
-
----
 
 ## 5. Flag Recognition Logic
 
@@ -212,8 +198,6 @@ Example of flags inside a decoded save file:
 
 These names come directly from the game’s C# code (Unity serialization).
 When the player performs an action, the game sets the corresponding flag to `true` or updates its value (integer for upgrades).
-
----
 
 ### 5.2 How Flags Are Used by the Tracker
 
@@ -245,8 +229,6 @@ This checks whether the flag exists either globally or within a specific scene.
 
 If the flag exists and is `true`, the item is marked as obtained.
 
----
-
 ### 5.3 Example Flag Mapping
 
 | Item          | Flag                          | Example in save file                     | Result   |
@@ -254,8 +236,6 @@ If the flag exists and is `true`, the item is marked as obtained.
 | Everbloom     | Collectable Item Pickup       | `"Collectable Item Pickup": true`        | Obtained |
 | Mask Shard #1 | PurchasedBonebottomHeartPiece | `"PurchasedBonebottomHeartPiece": false` | Missing  |
 | Swift Step    | hasDash                       | `"hasDash": true`                        | Obtained |
-
----
 
 ### 5.4 Why Flags Have Readable Names
 
@@ -268,8 +248,6 @@ These names come from:
 - Community reverse-engineering of Silksong’s prototype saves;
 - Empirical testing (comparing flags before and after certain in-game actions).
 
----
-
 ### 5.5 Summary
 
 | Concept     | Description                                                         |
@@ -279,8 +257,6 @@ These names come from:
 | Used In     | The `flag` field inside `main.json` items.                          |
 | Check Logic | `save[flag]` or `save[scene][flag]` depending on item type.         |
 | Example     | `"Collectable Item Pickup"` → used to detect Everbloom collectable. |
-
----
 
 ### 5.6 Example Definition in `main.json`
 
@@ -296,8 +272,6 @@ These names come from:
 }
 ```
 
----
-
 ## 6. JavaScript Components
 
 | Function                                   | File           | Description                                                 |
@@ -310,8 +284,6 @@ These names come from:
 | `getSaveValue(save, item)`                 | script.js      | Resolves correct values for any save flag or nested object. |
 | `getFlags(root)`                           | script.js      | Extracts nested scene flags into a flat reference map.      |
 | `showGenericModal(data)`                   | script.js      | Displays detailed modal with icon, map, and wiki link.      |
-
----
 
 ## 7. User Interface (`index.html`)
 
@@ -335,8 +307,6 @@ These names come from:
 
 Scripts are loaded as ES6 modules (`type="module"`) for modular imports.
 
----
-
 ## 8. Security and Privacy
 
 - 100% client-side execution.
@@ -345,18 +315,14 @@ Scripts are loaded as ES6 modules (`type="module"`) for modular imports.
 - Data exists only in memory during session runtime.
 - Decryption uses well-established open-source libraries.
 
----
-
 ## 9. Completion Percentage (Planned)
 
 Each category defines a `contrib` value representing its weight in overall completion.
 A future feature will compute total completion using:
 
-```
+```txt
 completion% = Σ (completedItems / totalItems) × contrib
 ```
-
----
 
 ## 10. Adding New Tabs
 
@@ -384,8 +350,6 @@ const updater = {
 };
 ```
 
----
-
 ## 11. Async Functions and Modular Structure
 
 All data-loading operations now use **`async/await`** for clarity and better control.
@@ -409,8 +373,6 @@ Benefits:
 | Modularity     | Each tab uses a separate async updater.             |
 | Flexibility    | Easier to expand with new content and JSON sources. |
 
----
-
 ## 12. Technology Stack
 
 | Layer        | Technology                            | Purpose            |
@@ -421,13 +383,3 @@ Benefits:
 | Compression  | Pako.js                               | zlib decompression |
 | Data         | JSON                                  | Static metadata    |
 | Hosting      | GitHub Pages                          | Static hosting     |
-
----
-
-## 13. Credits
-
-Developed by Fox
-Inspired by _ReznorMichael’s “Hollow Knight Save Analyzer”_
-A non-commercial fan project not affiliated with Team Cherry.
-
-Version: v0.3.0
