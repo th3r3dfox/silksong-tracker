@@ -31,7 +31,6 @@ import {
 import { decodeSilksongSave } from "./save-decoder.js";
 import {
   getSaveFileFlags,
-  objectWithSavedData,
   parseSilksongSave,
   silksongSaveSchema,
 } from "./save-parser.js";
@@ -42,7 +41,6 @@ import {
   assertNotNull,
   assertObject,
   assertString,
-  isKeyOf,
   normalizeString,
 } from "./utils.js";
 
@@ -119,6 +117,8 @@ function applyMissingFilter() {
     );
 
     let hasVisible = false;
+    const sectionName =
+      section.querySelector("h3")?.textContent?.trim() || "??";
 
     section.querySelectorAll(".boss").forEach((div) => {
       assertIs(
@@ -140,7 +140,7 @@ function applyMissingFilter() {
       }
     });
 
-    // Hide the entire section if it has no visible elements.
+    // Hide the entire section if it has no visible elements
     section.style.display = hasVisible ? "" : "none";
   });
 }
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Scroll back to top.
+  // Scroll back to top
   backToTop.addEventListener("click", () => {
     main.scrollTo({
       top: 0,
@@ -219,6 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handleSaveFile(firstFile);
   });
 
+  // ---------- PILLS COPY ----------
   /** @type Record<string, string> */
   const paths = {
     windows:
@@ -261,39 +262,56 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * @typedef {{type: string, flag: string}} Item
- */
-
-/**
- * @param {z.infer<typeof silksongSaveSchema> | undefined} save
- * @param {Item} item
+ * @param {Record<string, unknown> | undefined} save
+ * @param {Record<string, unknown>} item
  */
 function resolveSaveValue(save, item) {
-  if (save === undefined) {
+  const root = save;
+  if (root === undefined) {
     return undefined;
   }
 
-  const { playerData } = save;
-  const { type, flag } = item;
-  const normalizedFlag = normalizeString(flag);
+  const playerData = root?.["playerData"] || root; // compat fallback
+  assertObject(playerData, "playerData was not an object.");
+
+  const { flag, type } = item;
 
   switch (type) {
     case "flag": {
-      return isKeyOf(flag, playerData) ? playerData[flag] : undefined;
+      assertString(flag, 'The "flag" property was not a string.');
+      return playerData[flag];
     }
 
     case "collectable": {
       const { Collectables } = playerData;
+      assertObject(
+        Collectables,
+        'The "Collectables" property was not an object.',
+      );
+
       const { savedData } = Collectables;
+      assertArray(savedData, 'The "savedData" property was not an array.');
 
       const entry = savedData.find((element) => {
-        return element.Name === flag;
+        assertObject(
+          element,
+          'One of the elements in the "savedData" array was not an object.',
+        );
+        return element["Name"] === flag;
       });
+
       if (entry === undefined) {
         return undefined;
       }
 
+      assertObject(
+        entry,
+        'The matching entry in the "savedData" array was not an object.',
+      );
+
       const { Data } = entry;
+      assertObject(Data, 'The "Data" property was not an object.');
+
       const { Amount } = Data;
       return Amount ?? 0;
     }
@@ -301,47 +319,86 @@ function resolveSaveValue(save, item) {
     case "tool":
     case "toolEquip":
     case "crest": {
-      /** @param {z.infer<typeof objectWithSavedData>} object */
-      function findIn(object) {
-        const matchingElement = object.savedData.find(
-          (element) => normalizeString(element.Name) === normalizedFlag,
-        );
+      if (typeof flag !== "string") {
+        return undefined;
+      }
+
+      const normalizedFlag = normalizeString(flag);
+
+      const { Tools, ToolEquips } = playerData;
+      assertObject(Tools, 'The "Tools" property was not an object.');
+      assertObject(ToolEquips, 'The "ToolEquips" property was not an object.');
+
+      const findIn = (/** @type {Record<String, unknown>} */ bucket) => {
+        const { savedData } = bucket;
+        assertArray(savedData, 'The "savedData" property was not an array.');
+        const matchingElement = savedData.find((element) => {
+          assertObject(
+            element,
+            'One of the elements in the "saveData" array was not an object.',
+          );
+          const { Name } = element;
+          assertString(Name, 'The "Name" property was not a string.');
+          return normalizeString(Name) === normalizedFlag;
+        });
 
         if (matchingElement === undefined) {
           return undefined;
         }
 
+        assertObject(
+          matchingElement,
+          'The matching element in the "saveData" array was not an object.',
+        );
         return matchingElement;
-      }
+      };
 
-      const { Tools, ToolEquips } = playerData;
       const entry = findIn(Tools) ?? findIn(ToolEquips);
       if (entry === undefined) {
         return undefined;
       }
 
-      return entry.Data["IsUnlocked"] === true;
+      return entry?.Data?.IsUnlocked === true;
     }
 
     // Wishes
     case "quest": {
-      const { QuestCompletionData } = playerData;
+      // Possible data lists for compatibility (some dumps use different names)
+      const questLists = [
+        playerData.QuestCompletionData?.savedData,
+        playerData.Quests?.savedData,
+        playerData.QuestsData?.savedData,
+        playerData.QuestData?.savedData,
+      ].filter(Boolean);
 
-      const entry = QuestCompletionData.savedData.find(
-        (e) => normalizeString(e.Name) === normalizedFlag,
-      );
+      // Normalize the name to avoid case/space issues
+      const flagNorm = normalizeString(item["flag"]);
 
-      if (entry === undefined) {
-        return undefined;
+      // Search in all possible arrays
+      let entry;
+      for (const list of questLists) {
+        entry = list.find((e) => normalizeString(e.Name) === flagNorm);
+        if (entry) {
+          break;
+        }
       }
 
-      const { Data } = entry;
+      if (!entry) {
+        return false;
+      }
 
-      if (Data["IsCompleted"] === true) {
+      const data = entry.Data || entry.Record || {};
+
+      // 🎯 Quest status
+      if (
+        data.IsCompleted === true
+        || data.Completed === true
+        || data.Complete === true
+      ) {
         return "completed";
       }
 
-      if (Data["IsAccepted"] === true) {
+      if (data.IsAccepted === true || data.Accepted === true) {
         return "accepted";
       }
 
@@ -363,10 +420,10 @@ function resolveSaveValue(save, item) {
         return val;
       }
 
-      if (save[scene]) {
+      if (root[scene]) {
         return (
-          save[scene][item.flag]
-          ?? save[scene][item.flag.replace(/ /g, "_")]
+          root[scene][item.flag]
+          ?? root[scene][item.flag.replace(/ /g, "_")]
           ?? false
         );
       }
@@ -420,7 +477,7 @@ function resolveSaveValue(save, item) {
         playerData.EnemyJournalKillData?.list
         || playerData.Journal?.savedData
         || playerData.JournalData?.savedData
-        || save.Journal?.savedData
+        || root.Journal?.savedData
         || [];
 
       const entry = journalList.find((e) => e.Name === item.flag);
@@ -599,7 +656,6 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
         type: "relic",
         flag,
       });
-
       // if not a valid relic, try as quest
       if (!val || val === false) {
         val = resolveSaveValue(currentLoadedSaveData, { type: "quest", flag });
