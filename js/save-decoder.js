@@ -1,3 +1,5 @@
+// @ts-check
+
 const CSHARP_HEADER = new Uint8Array([
   0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0,
 ]);
@@ -7,8 +9,8 @@ const AES_KEY_STRING = "UKu52ePUBwetZ9wNX88o54dnfKRu0T1l";
 
 // The web crypto API does not support AES-ECB, since it is considered insecure. However, that is
 // what Unity uses, so use an external library to handle the decryption.
-/** @type any */
-const { CryptoJS } = window;
+/** @type {import("crypto-js")} */
+const CryptoJS = window.CryptoJS;
 
 /**
  * Removes the header and length prefix from the .dat file.

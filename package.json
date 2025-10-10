@@ -15,6 +15,7 @@
     "lint": "prettier --check . && tsc && eslint --max-warnings 0 ."
   },
   "devDependencies": {
+    "@types/crypto-js": "4.2.2",
     "complete-lint": "4.1.0",
     "zod": "4.1.12"
   }
