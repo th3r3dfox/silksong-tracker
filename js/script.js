@@ -370,6 +370,8 @@ function resolveSaveValue(save, item) {
           ?? false
         );
       }
+
+      return false;
     }
 
     case "key": {
@@ -379,7 +381,7 @@ function resolveSaveValue(save, item) {
       return playerData[item.flag] === true;
     }
 
-    // Scene visited (Silk Hearts, Memories ecc.)
+    // Scene visited (Silk Hearts, Memories etc.)
     case "sceneVisited": {
       if (item.scene) {
         const scenes = save?.playerData?.scenesVisited || [];
