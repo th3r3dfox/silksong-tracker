@@ -1,5 +1,6 @@
 // @ts-nocheck
 
+import { z } from "https://cdn.jsdelivr.net/npm/zod@4/+esm";
 import {
   actFilter,
   allProgressGrid,
@@ -29,7 +30,7 @@ import {
   uploadOverlay,
 } from "./elements.js";
 import { decodeSilksongSave } from "./save-decoder.js";
-import { parseSilksongSave } from "./save-parser.js";
+import { parseSilksongSave, silksongSaveSchema } from "./save-parser.js";
 import {
   assertArray,
   assertDefined,
@@ -801,10 +802,11 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
   return renderedCount;
 }
 
-/** @param {Record<string, unknown>} root */
+/** @param {z.infer<typeof silksongSaveSchema>} root */
 function indexFlags(root) {
   /** @type Record<string, unknown> */
   const flags = {};
+
   const mark = (sceneRaw, idRaw, value) => {
     if (!sceneRaw || !idRaw) {
       return;
