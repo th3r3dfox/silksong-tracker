@@ -6,6 +6,7 @@ import {
   backToTop,
   closeInfoModal,
   closeUploadModal,
+  completionValue,
   copyRawsaveBtn,
   downloadRawsaveBtn,
   dropzone,
@@ -16,11 +17,14 @@ import {
   modeBanner,
   nextMatch,
   openUploadModal,
+  playtimeValue,
   prevMatch,
   rawSaveOutput,
   rawSaveSearch,
   refreshSaveBtn,
+  rosariesValue,
   searchCounter,
+  shardsValue,
   spoilerToggle,
   uploadOverlay,
 } from "./elements.js";
@@ -852,17 +856,6 @@ fileInput.addEventListener("change", (event) => {
   handleSaveFile(file);
 });
 
-/**
- * @param {string} id
- * @param {string} text
- */
-function safeSetText(id, text) {
-  const el = document.getElementById(id);
-  if (el) {
-    el.textContent = text;
-  }
-}
-
 async function updateRawSaveContent() {
   if (currentLoadedSaveFile === undefined) {
     rawSaveOutput.textContent = "⚠️ No save file loaded.";
@@ -992,49 +985,39 @@ async function handleSaveFile(file) {
 
     // 🔍 Decode file
     /** @type Record<string, unknown> */
-    const saveData = isDat
+    const saveDataRaw = isDat
       ? decodeSilksongSave(buffer)
       : JSON.parse(new TextDecoder("utf-8").decode(buffer));
 
-    const saveData2 = await parseSilksongSave(saveData);
-    if (saveData2 === undefined) {
+    const saveData = await parseSilksongSave(saveDataRaw);
+    if (saveData === undefined) {
       showToast("❌ Invalid or corrupted save file");
       uploadOverlay.classList.remove("hidden");
       return;
     }
-    // TODO: Pass saveData2 around instead of saveData, since it has proper types.
 
     rawSaveOutput.textContent = JSON.stringify(saveData, undefined, 2);
 
-    // ✅ Index and save globally
-    currentLoadedSaveFile = indexFlags(saveData);
+    // Index and save globally
+    currentLoadedSaveFile = indexFlags(saveDataRaw); // TODO: Change to `saveData`.
     lastLoadedSaveFile = file;
 
-    // 🔘 Show refresh button
-    if (refreshSaveBtn) {
-      refreshSaveBtn.classList.remove("hidden");
-    }
+    // Show refresh button
+    refreshSaveBtn.classList.remove("hidden");
 
     // --- Update UI statistics ---
-    const completion = saveData.playerData?.completionPercentage ?? 0;
-    const seconds = saveData.playerData?.playTime ?? 0;
+    completionValue.textContent = `${saveData.playerData.completionPercentage}%`;
+
+    const seconds = saveData.playerData.playTime;
     const hours = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60);
-    safeSetText("completionValue", `${completion}%`);
-    safeSetText("playtimeValue", `${hours}h ${mins}m`);
+    playtimeValue.textContent = `${hours}h ${mins}m`;
 
-    const rosaries = saveData.playerData?.geo ?? 0;
-    const shards = saveData.playerData?.ShellShards ?? 0;
-    safeSetText("rosariesValue", String(rosaries));
-    safeSetText("shardsValue", String(shards));
+    rosariesValue.textContent = saveData.playerData.geo.toString();
+    shardsValue.textContent = saveData.playerData.ShellShards.toString();
 
     // --- Detect game mode ---
-    const modeValue = saveData.playerData?.permadeathMode ?? 0;
-    const isSteelSoul =
-      modeValue === 1
-      || saveData.playerData?.isSteelSoulMode === true
-      || saveData.playerData?.SteelSoulMode === true
-      || saveData.playerData?.GameMode === "SteelSoul";
+    const isSteelSoul = saveData.playerData.permadeathMode === 1;
 
     // ✅ Save mode globally (after declaration)
     currentLoadedSaveFileMode = isSteelSoul ? "steel" : "normal";

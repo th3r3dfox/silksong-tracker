@@ -19,7 +19,7 @@
     "moduleResolution": "bundler",
     "baseUrl": ".",
     "paths": {
-      "https://cdn.jsdelivr.net/npm/zod@3/+esm": ["node_modules/zod"],
+      "https://cdn.jsdelivr.net/npm/zod@4/+esm": ["node_modules/zod"],
     },
 
     // Specifies the compilation target. The default is "es5". We need to change this because we
