@@ -97,13 +97,13 @@ const EXCLUSIVE_GROUPS = [
 ];
 
 // ---------- SPOILER TOGGLE ----------
-spoilerToggle.addEventListener("change", () => {
+spoilerToggle.addEventListener("change", async () => {
   const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
   localStorage.setItem("showSpoilers", spoilerChecked.toString());
 
   // Use the same filter logic (so it maintains Act + Missing)
-  reRenderActiveTab();
+  await reRenderActiveTab();
 });
 
 function applyMissingFilter() {
@@ -953,10 +953,9 @@ async function handleSaveFile(file) {
     rawSaveOutput.textContent = JSON.stringify(saveData, undefined, 2);
 
     // Index and save globally
-    currentLoadedSaveData = saveDataRaw; // TODO
+    currentLoadedSaveData = saveDataRaw; // TODO: Change to "saveData" instead.
     currentLoadedSaveDataRaw = saveDataRaw;
     currentLoadedSaveDataFlags = getSaveFileFlags(saveDataRaw);
-    lastLoadedSaveFile = file;
 
     // --- Update UI statistics ---
     completionValue.textContent = `${saveData.playerData.completionPercentage}%`;
@@ -1044,8 +1043,8 @@ document.querySelectorAll(".sidebar-item").forEach((anchor) => {
     'An element with a class of "sidebar-item" was not an anchor.',
   );
 
-  anchor.addEventListener("click", (e) => {
-    e.preventDefault();
+  anchor.addEventListener("click", async (pointerEvent) => {
+    pointerEvent.preventDefault();
 
     // Remove/add activation class
     document
@@ -1059,10 +1058,15 @@ document.querySelectorAll(".sidebar-item").forEach((anchor) => {
     });
 
     const selectedTab = anchor.dataset["tab"];
-    const activeSection = document.getElementById(`${selectedTab}-section`);
-    if (activeSection) {
-      activeSection.classList.remove("hidden");
-    }
+    assertDefined(
+      selectedTab,
+      "Failed to find the tab corresponding to an anchor element.",
+    );
+
+    const activeSectionID = `${selectedTab}-section`;
+    const activeSection = document.getElementById(activeSectionID);
+    assertNotNull(activeSection, `Failed to get element: ${activeSectionID}`);
+    activeSection.classList.remove("hidden");
 
     // 🔹 Maintain ACT filter state
     const savedAct = localStorage.getItem("currentActFilter") || "all";
@@ -1075,7 +1079,9 @@ document.querySelectorAll(".sidebar-item").forEach((anchor) => {
     // Enable/disable home scroll
     document.documentElement.style.overflowY = "auto";
 
-    TAB_TO_UPDATE_FUNCTION[selectedTab]?.(currentActFilter); // <-- apply saved filter
+    const func = TAB_TO_UPDATE_FUNCTION[selectedTab];
+    assertDefined(func, `Failed to find the function for tab: ${selectedTab}`);
+    await func(currentActFilter);
   });
 });
 
@@ -1128,8 +1134,8 @@ window.addEventListener("DOMContentLoaded", () => {
   assertDefined(func, `Failed to find the function for tab: ${savedTab}`);
 
   // Minimum delay for safety (prevents race with DOM rendering)
-  setTimeout(() => {
-    func(currentActFilter);
+  setTimeout(async () => {
+    await func(currentActFilter);
   }, 50);
 });
 
@@ -1427,7 +1433,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function reRenderActiveTab() {
+async function reRenderActiveTab() {
   const activeElement = document.querySelector(".sidebar-item.is-active");
   assertNotNull(activeElement, "Failed to get the active element.");
   assertIs(
@@ -1455,7 +1461,7 @@ function reRenderActiveTab() {
     `Failed to find the function corresponding to tab: ${activeTab}`,
   );
 
-  func(currentAct);
+  await func(currentAct);
 }
 
 missingToggle.addEventListener("change", reRenderActiveTab);
