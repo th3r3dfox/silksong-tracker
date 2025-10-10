@@ -74,7 +74,6 @@
         {
           "id": "pale-monarch",
           "label": "Pale Monarch",
-          "category": "Boss",
           "flag": "Silk Boss",
           "type": "journal",
           "subtype": "kills",
@@ -185,7 +184,6 @@
         {
           "id": "last-dive",
           "label": "Last Dive",
-          "category": "Boss",
           "flag": "Lost Lace",
           "type": "journal",
           "subtype": "kills",

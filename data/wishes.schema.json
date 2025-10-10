@@ -66,11 +66,6 @@
                   "type": "string",
                   "format": "uri"
                 },
-                "category": {
-                  "type": "string",
-                  "description": "The section of the save file that contains the flag used to track this wish",
-                  "enum": ["Boss"]
-                },
                 "subtype": {
                   "type": "string",
                   "description": "Subtype for tracking (e.g., 'kills' for kill count)",
