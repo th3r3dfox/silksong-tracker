@@ -803,7 +803,7 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
 
 /** @param {z.infer<typeof silksongSaveSchema>} root */
 function getFlags(root) {
-  /** @type Record<string, unknown> */
+  /** @type Record<string, Record<string, boolean>> */
   const flags = {};
 
   const mark = (sceneRaw, idRaw, value) => {
