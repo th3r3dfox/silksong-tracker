@@ -1,6 +1,5 @@
 // @ts-nocheck
 
-import { z } from "https://cdn.jsdelivr.net/npm/zod@4/+esm";
 import {
   actFilter,
   allProgressGrid,
@@ -30,7 +29,7 @@ import {
   uploadOverlay,
 } from "./elements.js";
 import { decodeSilksongSave } from "./save-decoder.js";
-import { parseSilksongSave, silksongSaveSchema } from "./save-parser.js";
+import { getSaveFileFlags, parseSilksongSave } from "./save-parser.js";
 import {
   assertArray,
   assertDefined,
@@ -38,8 +37,6 @@ import {
   assertNotNull,
   assertObject,
   assertString,
-  isArray,
-  isObject,
   normalizeString,
 } from "./utils.js";
 
@@ -803,66 +800,6 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
   return renderedCount;
 }
 
-/** @param {z.infer<typeof silksongSaveSchema>} root */
-function getFlags(root) {
-  /** @type Record<string, Record<string, boolean>> */
-  const flags = {};
-
-  /**
-   * @param {string} sceneRaw
-   * @param {string} idRaw
-   * @param {number | boolean} value
-   */
-  function mark(sceneRaw, idRaw, value) {
-    if (!sceneRaw || !idRaw) {
-      return;
-    }
-    const scene = sceneRaw.trim().replace(/\s+/g, "_");
-    const idKey = idRaw
-      .trim()
-      .replace(/\s+/g, "_")
-      .replace(/[^\w.]/g, "_");
-
-    if (!flags[scene]) {
-      flags[scene] = {};
-    }
-    flags[scene][idKey] = Boolean(value);
-  }
-
-  /** @param {unknown} node */
-  function walk(node) {
-    if (isArray(node)) {
-      for (const element of node) {
-        walk(element);
-      }
-      return;
-    }
-
-    if (isObject(node)) {
-      const { SceneName, ID, Value } = node;
-
-      if (SceneName !== undefined && ID !== undefined && Value !== undefined) {
-        assertString(SceneName, 'The "SceneName" property is not a string.');
-        assertString(ID, 'The "ID" property is not a string.');
-        if (typeof Value !== "number" && typeof Value !== "boolean") {
-          throw new TypeError(
-            `The \"Value\" property has an unknown type of: ${typeof Value}`,
-          );
-        }
-
-        mark(SceneName, ID, Value);
-      }
-
-      for (const value in Object.values(node)) {
-        walk(value);
-      }
-    }
-  }
-
-  walk(root);
-  return flags;
-}
-
 // ---------- FILE HANDLING ----------
 fileInput.addEventListener("change", (event) => {
   const file = fileInput.files?.[0];
@@ -1013,7 +950,7 @@ async function handleSaveFile(file) {
 
     // Index and save globally
     currentLoadedSaveFile = saveDataRaw; // TODO: Change to `saveData`.
-    currentLoadedSaveFileFlags = getFlags(saveDataRaw);
+    currentLoadedSaveFileFlags = getSaveFileFlags(saveDataRaw);
     lastLoadedSaveFile = file;
 
     // Show refresh button
