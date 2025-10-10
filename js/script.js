@@ -7,7 +7,8 @@ import essentialsJSON from "./data/essentials.json" with { type: "json" };
 import mainJSON from "./data/main.json" with { type: "json" };
 import wishesJSON from "./data/wishes.json" with { type: "json" };
 import {
-  actFilter,
+  actDropdownBtn,
+  actDropdownMenu,
   allProgressGrid,
   backToTop,
   closeInfoModal,
@@ -60,7 +61,75 @@ let tocObserver = null;
 const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
   ? "/silksong-tracker"
   : "";
-let currentActFilter = actFilter.value || "all";
+
+// --- Act Dropdown Logic (modern multi-select with checkboxes) ---
+const dropdownBtn = actDropdownBtn;
+const dropdownMenu = actDropdownMenu;
+const clearBtn = document.getElementById("actClearBtn");
+
+// Toggle menu visibility
+dropdownBtn.addEventListener("click", () => {
+  dropdownMenu.classList.toggle("hidden");
+});
+
+// Close dropdown if user clicks outside
+document.addEventListener("click", (e) => {
+  if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+    dropdownMenu.classList.add("hidden");
+  }
+});
+
+// Handle "Select All / Deselect All"
+clearBtn.addEventListener("click", () => {
+  const checkboxes = dropdownMenu.querySelectorAll("input[type='checkbox']");
+  const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
+  checkboxes.forEach((cb) => (cb.checked = !allChecked));
+  clearBtn.textContent = allChecked ? "Select All" : "Deselect All";
+  updateActFilter();
+});
+
+// Update filter when any checkbox changes
+dropdownMenu.querySelectorAll("input[type='checkbox']").forEach((cb) => {
+  cb.addEventListener("change", updateActFilter);
+});
+
+// Restore state on load
+window.addEventListener("DOMContentLoaded", () => {
+  try {
+    const savedActs = JSON.parse(localStorage.getItem("currentActFilter")) || [
+      1, 2, 3,
+    ];
+    dropdownMenu.querySelectorAll("input[type='checkbox']").forEach((cb) => {
+      cb.checked = savedActs.includes(parseInt(cb.value));
+    });
+  } catch {
+    console.warn("Invalid saved Act filter, resetting to all acts.");
+  }
+});
+
+// Core update function
+async function updateActFilter() {
+  const selectedActs = Array.from(
+    dropdownMenu.querySelectorAll("input[type='checkbox']:checked"),
+  ).map((cb) => parseInt(cb.value));
+
+  // Save selection
+  localStorage.setItem("currentActFilter", JSON.stringify(selectedActs));
+
+  console.log("Selected Acts:", selectedActs);
+  await reRenderActiveTab(); // 🔁 Update the active tab immediately
+}
+
+function getSelectedActs() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("currentActFilter")) || [
+      1, 2, 3,
+    ];
+    return Array.isArray(saved) ? saved : [1, 2, 3];
+  } catch {
+    return [1, 2, 3];
+  }
+}
 
 /** @type z.infer<typeof silksongSaveSchema> | undefined */
 let currentLoadedSaveData;
@@ -1021,9 +1090,15 @@ document.querySelectorAll(".sidebar-item").forEach((anchor) => {
     activeSection.classList.remove("hidden");
 
     // 🔹 Maintain ACT filter state
-    const savedAct = localStorage.getItem("currentActFilter") || "all";
-    actFilter.value = savedAct;
-    currentActFilter = savedAct;
+    let savedActs;
+    try {
+      savedActs = JSON.parse(localStorage.getItem("currentActFilter")) || [
+        "all",
+      ];
+      if (!Array.isArray(savedActs)) savedActs = ["all"];
+    } catch {
+      savedActs = ["all"];
+    }
 
     // 🔹 Save active tab
     localStorage.setItem("activeTab", selectedTab);
@@ -1033,7 +1108,7 @@ document.querySelectorAll(".sidebar-item").forEach((anchor) => {
 
     const func = TAB_TO_UPDATE_FUNCTION[selectedTab];
     assertDefined(func, `Failed to find the function for tab: ${selectedTab}`);
-    await func(currentActFilter);
+    await func();
   });
 });
 
@@ -1049,8 +1124,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const savedAct = localStorage.getItem("currentActFilter") || "all";
 
   // 🔹 Restore Act filter value
-  actFilter.value = savedAct;
-  currentActFilter = savedAct;
+  let savedActs;
+  try {
+    savedActs = JSON.parse(localStorage.getItem("currentActFilter")) || ["all"];
+    if (!Array.isArray(savedActs)) savedActs = ["all"];
+  } catch {
+    savedActs = ["all"];
+  }
 
   // 🔹 Restore "Show spoilers" state from localStorage
   const savedSpoilerState = localStorage.getItem("showSpoilers");
@@ -1087,7 +1167,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Minimum delay for safety (prevents race with DOM rendering)
   setTimeout(async () => {
-    await func(currentActFilter);
+    await func();
   }, 50);
 });
 
@@ -1135,12 +1215,12 @@ async function updateAllProgressContent(selectedAct = "all") {
       let items = sectionData.items ?? [];
       assertArray(items, 'The "items" field must be an array.');
 
-      // === Filters & Act selection ===
-      let filteredItems = items.filter(
-        (item) =>
-          (selectedAct === "all" || Number(item.act) === Number(selectedAct))
-          && matchMode(item),
-      );
+      const selectedActs = getSelectedActs();
+      let filteredItems = items.filter((item) => {
+        if (selectedActs.length === 0 || selectedActs.length === 3)
+          return matchMode(item); // "tutti"
+        return selectedActs.includes(item.act) && matchMode(item);
+      });
 
       if (showMissingOnly && currentLoadedSaveData) {
         filteredItems = filteredItems.filter((item) => {
@@ -1459,11 +1539,12 @@ async function reRenderActiveTab() {
     "Failed to get the name of the active tab from the active element.",
   );
 
-  const currentAct = actFilter.value || "all";
+  // ✅ Get selected acts (supports multi-select)
+  const selectedActs = getSelectedActs();
   const showMissingOnly = missingToggle.checked;
 
-  // Save states
-  localStorage.setItem("currentActFilter", currentAct);
+  // ✅ Save current state
+  localStorage.setItem("currentActFilter", JSON.stringify(selectedActs));
   localStorage.setItem("showMissingOnly", showMissingOnly.toString());
 
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
@@ -1472,8 +1553,8 @@ async function reRenderActiveTab() {
     `Failed to find the function corresponding to tab: ${activeTab}`,
   );
 
-  await func(currentAct);
+  // ✅ Re-render the currently active tab
+  await func();
 }
 
 missingToggle.addEventListener("change", reRenderActiveTab);
-actFilter.addEventListener("change", reRenderActiveTab);

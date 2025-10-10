@@ -2537,7 +2537,7 @@ mark.active-match {
 /* === TABLE OF CONTENTS (TOC) === */
 .toc-container {
   position: fixed;
-  top: 60px;
+  top: 44px;
   right: 0;
   bottom: 0;
   width: 260px;
@@ -2685,14 +2685,9 @@ main {
   --banner-height: 36px; /* actual height of the golden mode banner */
 }
 
-/* Position TOC exactly below topbar and banner */
-.toc-container {
-  top: calc(var(--topbar-height) + var(--banner-height));
-}
-
 /* Ensure the main content starts below both elements */
 main {
-  padding-top: calc(var(--topbar-height) + var(--banner-height) + 12px);
+  padding-top: var(--topbar-height);
 }
 
 /* === MODE BANNER  === */
@@ -2732,7 +2727,144 @@ main {
     0 0 12px #596066;
 }
 
-.toc-container {
-  top: calc(var(--topbar-height) + var(--banner-height));
-  z-index: 150; /* lower than banner */
+/* === DROPDOWN MULTISELECT === */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background: var(--bg-3);
+  color: var(--ink-1);
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: "TrajanPro", serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  min-width: 160px;
+  background: var(--bg-2);
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 8px 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu.hidden {
+  display: none;
+}
+
+.dropdown-menu label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-2);
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu label:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ink-1);
+}
+
+.dropdown-menu input[type="checkbox"] {
+  accent-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--stroke-soft);
+  margin: 6px 0;
+}
+
+.dropdown-clear {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-family: "TrajanPro", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown-clear:hover {
+  color: #e69b50;
+  text-shadow: 0 0 6px rgba(197, 106, 45, 0.4);
+}
+
+/* === Dropdown always above everything === */
+#actDropdownBtn,
+#actDropdownMenu {
+  position: relative;
+  z-index: 9999; /* Ensure dropdown is always visible */
+}
+
+/* === Mode banner (fixed below topbar, non-blocking) === */
+#modeBanner {
+  position: fixed;
+  top: var(--topbar-height); /* stays just below topbar */
+  left: 220px; /* aligns with sidebar */
+  right: 0;
+  z-index: 1000; /* below dropdown, above content */
+  pointer-events: none; /* so it never blocks clicks */
+}
+
+/* --- Ensure dropdown always visible above the banner --- */
+.dropdown {
+  position: relative;
+  z-index: 3000; /* create local stacking context */
+}
+
+#actDropdownMenu {
+  position: absolute;
+  z-index: 4000; /* above banner */
+}
+
+/* --- Keep dropdown always above banner --- */
+.dropdown {
+  position: relative;
+  z-index: 3000;
+}
+
+#actDropdownMenu {
+  position: absolute;
+  z-index: 4000; /* visible above everything */
+}
+
+/* --- Mode banner below dropdown but still fixed --- */
+#modeBanner {
+  position: fixed;
+  top: var(--topbar-height);
+  left: 220px;
+  right: 0;
+  z-index: 2000; /* lower than dropdown */
+  pointer-events: none; /* so it never blocks clicks */
 }

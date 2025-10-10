@@ -46,7 +46,8 @@ function getHTMLSelectElement(id) {
   return element;
 }
 
-export const actFilter = getHTMLSelectElement("actFilter");
+export const actDropdownBtn = getHTMLElement("actDropdownBtn");
+export const actDropdownMenu = getHTMLElement("actDropdownMenu");
 export const allProgressGrid = getHTMLElement("allprogress-grid");
 export const backToTop = getHTMLElement("backToTop");
 export const closeInfoModal = getHTMLElement("closeInfoModal");
