@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {
   actFilter,
   allProgressGrid,
@@ -951,6 +953,7 @@ async function handleSaveFile(file) {
       uploadOverlay.classList.remove("hidden");
       return;
     }
+    // TODO: Pass saveData2 around instead of saveData, since it has proper types.
 
     rawSaveOutput.textContent = JSON.stringify(saveData, undefined, 2);
 
