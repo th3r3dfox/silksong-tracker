@@ -22,7 +22,8 @@ import {
   spoilerToggle,
   uploadOverlay,
 } from "./elements.js";
-import { decodeSilksongSave } from "./SaveDecoder.js";
+import { decodeSilksongSave } from "./save-decoder.js";
+import { parseSilksongSave } from "./save-parser.js";
 import {
   assertArray,
   assertDefined,
@@ -31,6 +32,7 @@ import {
   assertObject,
   assertString,
   normalizeString,
+  showToast,
 } from "./utils.js";
 
 console.log(
@@ -570,11 +572,10 @@ function resolveSaveValue(save, item) {
 }
 
 function renderGenericGrid({ containerEl, data, spoilerOn }) {
-  const container = containerEl || document.getElementById(containerId);
-  const realContainerId = containerId || container?.id || "unknown";
+  const realContainerId = containerEl?.id || "unknown";
   const showMissingOnly = missingToggle.checked;
 
-  container.innerHTML = "";
+  containerEl.innerHTML = "";
 
   // 🔎 Silkshot variants (only one card visible)
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
@@ -747,7 +748,7 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     div.appendChild(title);
     div.addEventListener("click", () => showGenericModal(item));
 
-    container.appendChild(div);
+    containerEl.appendChild(div);
     renderedCount++;
   });
 
@@ -943,6 +944,9 @@ async function handleSaveFile(file) {
       ? decodeSilksongSave(buffer)
       : JSON.parse(new TextDecoder("utf-8").decode(buffer));
 
+    const saveData2 = parseSilksongSave(saveData);
+    console.log("XXXXX", saveData2);
+
     if (!validateSave(saveData)) {
       showToast("❌ Invalid or corrupted save file");
       uploadOverlay.classList.remove("hidden");
@@ -1038,29 +1042,6 @@ async function refreshSaveFile() {
     console.error("[refreshSaveFile]", err);
     showToast("❌ Failed to refresh save file");
   }
-}
-
-/**
- * @param {string} message
- */
-function showToast(message) {
-  const toast = document.createElement("div");
-  toast.textContent = message;
-  toast.style.cssText = `
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    z-index: 9999;
-    box-shadow: 0 0 6px rgba(0,0,0,0.3);
-  `;
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 2500);
 }
 
 // Handle sidebar clicks

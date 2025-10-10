@@ -9,12 +9,13 @@ const AES_KEY_STRING = "UKu52ePUBwetZ9wNX88o54dnfKRu0T1l";
 const { CryptoJS } = window;
 
 /**
- * 🔹 Removes the header and length prefix from the .dat file
+ * Removes the header and length prefix from the .dat file.
  *
  * @param {Uint8Array} bytes
  */
 function removeHeader(bytes) {
   const withoutHeader = bytes.subarray(CSHARP_HEADER.length, bytes.length - 1);
+
   let lengthCount = 0;
   for (let i = 0; i < 5; i++) {
     lengthCount++;
@@ -23,11 +24,12 @@ function removeHeader(bytes) {
       break;
     }
   }
+
   return withoutHeader.subarray(lengthCount);
 }
 
 /**
- * 🔓 Decodes a Hollow Knight: Silksong .dat save file
+ * Decodes a Hollow Knight: Silksong .dat save file.
  *
  * @param {ArrayBuffer} arrayBuffer
  */
@@ -65,12 +67,14 @@ export function decodeSilksongSave(arrayBuffer) {
       );
     }
 
+    console.log('Raw JSON from decrypt (first 500):', jsonString.substring(0, 500));
+    console.log('Raw JSON from decrypt (last 500):', jsonString.substring(jsonString.length - 500));
+    console.log('Contains __flags:', jsonString.includes('__flags'));
+
     const parsed = JSON.parse(jsonString);
-    console.groupEnd();
     return parsed;
   } catch (err) {
     console.error("[Decode] Failed to decode Silksong save:", err);
-    console.groupEnd();
     throw new Error("Invalid or encrypted Silksong save file");
   }
 }
