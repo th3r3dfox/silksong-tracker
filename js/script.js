@@ -264,8 +264,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /**
  * @typedef {{
- *   type: string,
- *   flag: string,
+ *   type?: string,
+ *   flag?: string,
  *   relatedFlag?: string,
  *   scene?: string,
  *   required?: number,
@@ -291,7 +291,7 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
 
   switch (type) {
     case "flag": {
-      return playerDataExpanded[flag];
+      return flag === undefined ? undefined : playerDataExpanded[flag];
     }
 
     case "collectable": {
@@ -313,6 +313,10 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
     case "tool":
     case "toolEquip":
     case "crest": {
+      if (flag === undefined) {
+        return undefined;
+      }
+
       const normalizedFlag = normalizeString(flag);
 
       /** @param {z.infer<typeof objectWithSavedData>} object */
@@ -339,9 +343,12 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
 
     // Wishes
     case "quest": {
-      const { QuestCompletionData } = playerData;
+      if (flag === undefined) {
+        return undefined;
+      }
       const normalizedFlag = normalizeString(flag);
 
+      const { QuestCompletionData } = playerData;
       const entry = QuestCompletionData.savedData.find(
         (e) => normalizeString(e.Name) === normalizedFlag,
       );
@@ -380,11 +387,13 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
 
     case "key": {
       if (scene === undefined) {
-        return playerDataExpanded[flag] === true;
+        return flag === undefined ? false : playerDataExpanded[flag] === true;
       }
 
       const sceneFlags = saveDataFlags[scene];
-      return isObject(sceneFlags) ? sceneFlags[flag] === true : false;
+      return isObject(sceneFlags) && flag !== undefined
+        ? sceneFlags[flag] === true
+        : false;
     }
 
     // Silk Hearts, Memories etc.
@@ -401,17 +410,13 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
     case "level":
     case "min": {
       // ✅ always return the number, unlock is calculated later
-      return playerDataExpanded[flag] ?? 0;
+      return flag === undefined ? 0 : (playerDataExpanded[flag] ?? 0);
     }
 
     // e.g. CaravanTroupeLocation >= 2
     case "flagInt": {
-      const current = playerDataExpanded[flag];
-      if (typeof current === "number") {
-        return current >= (required ?? 1);
-      }
-
-      return false;
+      const current = flag === undefined ? 0 : playerDataExpanded[flag];
+      return typeof current === "number" ? current >= (required ?? 1) : false;
     }
 
     case "journal": {
@@ -510,7 +515,7 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
 
     default: {
       // In certain cases, the type will be undefined.
-      return playerDataExpanded[flag];
+      return flag === undefined ? undefined : playerDataExpanded[flag];
     }
   }
 }
