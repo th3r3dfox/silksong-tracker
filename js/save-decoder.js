@@ -63,16 +63,9 @@ export function decodeSilksongSave(arrayBuffer) {
     });
 
     const jsonString = CryptoJS.enc.Utf8.stringify(decrypted);
-
-    if (!jsonString.startsWith("{")) {
-      throw new Error(
-        "Invalid or encrypted Silksong save (bad header or AES key)",
-      );
-    }
-
     return JSON.parse(jsonString);
   } catch (err) {
-    console.error("[Decode] Failed to decode Silksong save:", err);
-    throw new Error("Invalid or encrypted Silksong save file");
+    console.error("[Decode] Failed to decode Silksong save file:", err);
+    throw new Error("Failed to decode Silksong save file");
   }
 }

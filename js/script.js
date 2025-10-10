@@ -934,10 +934,15 @@ async function handleSaveFile(file) {
     const isDat = file.name.toLowerCase().endsWith(".dat");
 
     // 🔍 Decode file
-    /** @type Record<string, unknown> */
+    /** @type unknown */
     const saveDataRaw = isDat
       ? decodeSilksongSave(buffer)
       : JSON.parse(new TextDecoder("utf-8").decode(buffer));
+
+    assertObject(
+      saveDataRaw,
+      "Failed to convert the decrypted save file to an object.",
+    );
 
     const saveData = await parseSilksongSave(saveDataRaw);
     if (saveData === undefined) {
