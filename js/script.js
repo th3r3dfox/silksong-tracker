@@ -76,7 +76,7 @@ const TAB_TO_UPDATE_FUNCTION = {
 };
 const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION);
 
-/** @param {Record<string, string>} item */
+/** @param {Item} item */
 function matchMode(item) {
   const { mode } = item;
 
@@ -91,7 +91,7 @@ function matchMode(item) {
   }
 
   // AFTER loading -> match mode
-  return item["mode"] === currentLoadedSaveDataMode;
+  return mode === currentLoadedSaveDataMode;
 }
 
 // --- Global mutually exclusive groups ---
@@ -270,6 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
  *   scene?: string,
  *   required?: number,
  *   subtype?: string,
+ *   mode?: string,
  * }} Item
  */
 
