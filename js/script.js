@@ -268,10 +268,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /**
  * @param {z.infer<typeof silksongSaveSchema> | undefined} saveData
+ * @param {Record<string, unknown> | undefined} saveDataFlags
  * @param {Item} item
  */
-function getSaveDataValue(saveData, item) {
-  if (saveData === undefined) {
+function getSaveDataValue(saveData, saveDataFlags, item) {
+  if (saveData === undefined || saveDataFlags === undefined) {
     return undefined;
   }
 
@@ -355,7 +356,7 @@ function getSaveDataValue(saveData, item) {
       const normalizedScene = normalizeStringWithUnderscores(scene ?? "");
       const normalizedFlag = normalizeStringWithUnderscores(flag ?? "");
 
-      const sceneFlags = currentLoadedSaveDataFlags?.[normalizedScene];
+      const sceneFlags = saveDataFlags[normalizedScene];
       if (isObject(sceneFlags)) {
         const value = sceneFlags[normalizedFlag];
         if (value !== undefined) {
@@ -368,10 +369,11 @@ function getSaveDataValue(saveData, item) {
 
     case "key": {
       if (scene === undefined) {
-        return playerData[flag] === true;
+        return isKeyOf(flag, playerData) ? playerData[flag] === true : false;
       }
 
-      return currentLoadedSaveDataFlags?.[scene]?.[flag] === true;
+      const sceneFlags = saveDataFlags[scene];
+      return isObject(sceneFlags) ? sceneFlags[flag] === true : false;
     }
 
     // Scene visited (Silk Hearts, Memories etc.)
@@ -592,14 +594,22 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
   EXCLUSIVE_GROUPS.forEach((group) => {
     const owned = group.find((flag) => {
       // try first as relic
-      let val = getSaveDataValue(currentLoadedSaveData, {
-        type: "relic",
-        flag,
-      });
+      let val = getSaveDataValue(
+        currentLoadedSaveData,
+        currentLoadedSaveDataFlags,
+        {
+          type: "relic",
+          flag,
+        },
+      );
 
       // if not a valid relic, try as quest
       if (!val || val === false) {
-        val = getSaveDataValue(currentLoadedSaveData, { type: "quest", flag });
+        val = getSaveDataValue(
+          currentLoadedSaveData,
+          currentLoadedSaveDataFlags,
+          { type: "quest", flag },
+        );
       }
 
       return (
@@ -649,7 +659,11 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     img.alt = item.label;
 
     // 🔍 Value from save file (quest can now return "completed" or "accepted")
-    const value = getSaveDataValue(currentLoadedSaveData, item);
+    const value = getSaveDataValue(
+      currentLoadedSaveData,
+      currentLoadedSaveDataFlags,
+      item,
+    );
 
     let isDone = false;
     let isAccepted = false;
@@ -1154,7 +1168,11 @@ async function updateAllProgressContent(selectedAct = "all") {
 
       if (showMissingOnly && currentLoadedSaveData !== undefined) {
         filteredItems = filteredItems.filter((item) => {
-          const val = getSaveDataValue(currentLoadedSaveData, item);
+          const val = getSaveDataValue(
+            currentLoadedSaveData,
+            currentLoadedSaveDataFlags,
+            item,
+          );
           if (item.type === "collectable") {
             return (val ?? 0) === 0;
           }
@@ -1176,10 +1194,14 @@ async function updateAllProgressContent(selectedAct = "all") {
       // --- Apply mutually exclusive groups (global) ---
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
-          const val = getSaveDataValue(currentLoadedSaveData, {
-            type: "relic",
-            flag,
-          });
+          const val = getSaveDataValue(
+            currentLoadedSaveData,
+            currentLoadedSaveDataFlags,
+            {
+              type: "relic",
+              flag,
+            },
+          );
           return val === "deposited" || val === "collected";
         });
         if (owned) {
@@ -1209,16 +1231,24 @@ async function updateAllProgressContent(selectedAct = "all") {
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
           // try first as relic
-          let val = getSaveDataValue(currentLoadedSaveData, {
-            type: "relic",
-            flag,
-          });
+          let val = getSaveDataValue(
+            currentLoadedSaveData,
+            currentLoadedSaveDataFlags,
+            {
+              type: "relic",
+              flag,
+            },
+          );
           // if not a valid relic, try as quest
           if (!val || val === false) {
-            val = getSaveDataValue(currentLoadedSaveData, {
-              type: "quest",
-              flag,
-            });
+            val = getSaveDataValue(
+              currentLoadedSaveData,
+              currentLoadedSaveDataFlags,
+              {
+                type: "quest",
+                flag,
+              },
+            );
           }
 
           return (
@@ -1240,7 +1270,11 @@ async function updateAllProgressContent(selectedAct = "all") {
         const val =
           currentLoadedSaveData === undefined
             ? false
-            : getSaveDataValue(currentLoadedSaveData, item);
+            : getSaveDataValue(
+                currentLoadedSaveData,
+                currentLoadedSaveDataFlags,
+                item,
+              );
         const isUnlocked =
           item.type === "quest"
             ? val === "completed" || val === true

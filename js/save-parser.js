@@ -28,6 +28,18 @@ export const silksongSaveSchema = z.object({
       ShellShards: z.int(),
       ToolEquips: objectWithSavedData,
       Tools: objectWithSavedData,
+
+      // Keys
+      PurchasedBonebottomFaithToken: z.boolean(),
+      CollectedDustCageKey: z.boolean(),
+      MerchantEnclaveSimpleKey: z.boolean(),
+      BallowGivenKey: z.boolean(),
+      collectedWardKey: z.boolean(),
+      collectedWardBossKey: z.boolean(),
+      HasSlabKeyC: z.boolean(),
+      HasSlabKeyA: z.boolean(),
+      HasSlabKeyB: z.boolean(),
+      PurchasedArchitectKey: z.boolean(),
     })
     .readonly(),
   sceneData: z.object({}).readonly(),
