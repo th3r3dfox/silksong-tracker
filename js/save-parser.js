@@ -1,14 +1,27 @@
 import { z } from "https://cdn.jsdelivr.net/npm/zod@4/+esm";
 import { assertString, isArray, isObject } from "./utils.js";
 
+export const objectWithSavedData = z.object({
+  savedData: z.array(
+    z.object({
+      Data: z.record(z.string(), z.unknown()),
+      Name: z.string(),
+    }),
+  ),
+});
+
 export const silksongSaveSchema = z.object({
   playerData: z
     .object({
+      Collectables: objectWithSavedData,
       completionPercentage: z.int(),
       geo: z.int(),
       permadeathMode: z.union([z.literal(0), z.literal(1)]),
       playTime: z.number(),
+      QuestCompletionData: objectWithSavedData,
       ShellShards: z.int(),
+      ToolEquips: objectWithSavedData,
+      Tools: objectWithSavedData,
     })
     .readonly(),
   sceneData: z.object({}).readonly(),
