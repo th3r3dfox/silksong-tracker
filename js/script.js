@@ -30,6 +30,7 @@ import {
   assertNotNull,
   assertObject,
   assertString,
+  normalizeString,
 } from "./utils.js";
 
 console.log(
@@ -199,11 +200,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const files = dataTransfer.files;
+    const { files } = dataTransfer;
     const firstFile = files[0];
-    if (firstFile !== undefined) {
-      handleSaveFile(firstFile);
-    }
+    handleSaveFile(firstFile);
   });
 
   // ---------- PILLS COPY ----------
@@ -254,49 +253,100 @@ document.addEventListener("DOMContentLoaded", () => {
  */
 function resolveSaveValue(save, item) {
   const root = save;
-  const playerData = root?.["playerData"] || root; // compat fallback
-
   if (root === undefined) {
     return undefined;
   }
 
-  // Direct flags
-  if (
-    item.type === "flag"
-    && item.flag
-    && Object.prototype.hasOwnProperty.call(playerData, item.flag)
-  ) {
-    return playerData[item.flag];
-  }
+  const playerData = root?.["playerData"] || root; // compat fallback
+  assertObject(playerData, "playerData was not an object.");
 
-  // Collectables
-  if (item.type === "collectable") {
-    const entry = playerData.Collectables?.savedData?.find(
-      (e) => e.Name === item.flag,
-    );
-    return entry?.Data?.Amount ?? 0;
-  }
+  const { flag, type } = item;
 
-  // Tools / Crests (Hunter, Reaper, Wanderer, ecc.)
-  if (
-    item.type === "tool"
-    || item.type === "toolEquip"
-    || item.type === "crest"
-  ) {
-    const normalize = (s) =>
-      String(s || "")
-        .toLowerCase()
-        .replace(/\s+/g, " ")
-        .trim();
+  switch (type) {
+    case "flag": {
+      assertString(flag, 'The "flag" property was not a string.');
+      const value = playerData[flag];
+      return typeof value === "string" ? value : undefined;
+    }
 
-    const flagNorm = normalize(item.flag);
+    case "collectable": {
+      const { Collectables } = playerData;
+      assertObject(
+        Collectables,
+        'The "Collectables" property was not an object.',
+      );
 
-    const findIn = (bucket) =>
-      bucket?.savedData?.find((e) => normalize(e?.Name) === flagNorm);
+      const { savedData } = Collectables;
+      assertArray(savedData, 'The "savedData" property was not an array.');
 
-    const entry = findIn(playerData.Tools) || findIn(playerData.ToolEquips);
+      const entry = savedData.find((element) => {
+        assertObject(
+          element,
+          'One of the elements in the "savedData" array was not an object.',
+        );
+        return element["Name"] === flag;
+      });
 
-    return entry?.Data?.IsUnlocked === true;
+      if (entry === undefined) {
+        return undefined;
+      }
+
+      assertObject(
+        entry,
+        'The matching entry in the "savedData" array was not an object.',
+      );
+
+      const { Data } = entry;
+      assertObject(Data, 'The "Data" property was not an object.');
+
+      const { Amount } = Data;
+      return Amount ?? 0;
+    }
+
+    case "tool":
+    case "toolEquip":
+    case "crest": {
+      if (typeof flag !== "string") {
+        return undefined;
+      }
+
+      const normalizedFlag = normalizeString(flag);
+
+      const { Tools, ToolEquips } = playerData;
+      assertObject(Tools, 'The "Tools" property was not an object.');
+      assertObject(ToolEquips, 'The "ToolEquips" property was not an object.');
+
+      const findIn = (/** @type {Record<String, unknown>} */ bucket) => {
+        const { savedData } = bucket;
+        assertArray(savedData, 'The "savedData" property was not an array.');
+        const matchingElement = savedData.find((element) => {
+          assertObject(
+            element,
+            'One of the elements in the "saveData" array was not an object.',
+          );
+          const { Name } = element;
+          assertString(Name, 'The "Name" property was not a string.');
+          return normalizeString(Name) === normalizedFlag;
+        });
+
+        if (matchingElement === undefined) {
+          return undefined;
+        }
+
+        assertObject(
+          matchingElement,
+          'The matching element in the "saveData" array was not an object.',
+        );
+        return matchingElement;
+      };
+
+      const entry = findIn(Tools) ?? findIn(ToolEquips);
+      if (entry === undefined) {
+        return undefined;
+      }
+
+      return entry?.Data?.IsUnlocked === true;
+    }
   }
 
   // Quests (Wishes)
@@ -310,16 +360,12 @@ function resolveSaveValue(save, item) {
     ].filter(Boolean);
 
     // Normalize the name to avoid case/space issues
-    const normalize = (s) =>
-      String(s || "")
-        .toLowerCase()
-        .trim();
-    const flagNorm = normalize(item.flag);
+    const flagNorm = normalizeString(item["flag"]);
 
     // Search in all possible arrays
     let entry;
     for (const list of questLists) {
-      entry = list.find((e) => normalize(e.Name) === flagNorm);
+      entry = list.find((e) => normalizeString(e.Name) === flagNorm);
       if (entry) break;
     }
 
@@ -412,10 +458,17 @@ function resolveSaveValue(save, item) {
     const data = entry.Record || entry.Data || {};
 
     // Support different conditions
-    if (item.subtype === "kills")
+    if (item.subtype === "kills") {
       return (data.Kills ?? 0) >= (item.required ?? 1);
-    if (item.subtype === "seen") return data.HasBeenSeen === true;
-    if (item.subtype === "unlocked") return data.IsUnlocked === true;
+    }
+
+    if (item.subtype === "seen") {
+      return data.HasBeenSeen === true;
+    }
+
+    if (item.subtype === "unlocked") {
+      return data.IsUnlocked === true;
+    }
 
     // fallback
     return data.HasBeenSeen || (data.Kills ?? 0) > 0;
@@ -516,13 +569,7 @@ function resolveSaveValue(save, item) {
   return undefined;
 }
 
-function renderGenericGrid({
-  containerId,
-  containerEl,
-  data,
-  spoilerOn,
-  save = currentLoadedSaveFile,
-}) {
+function renderGenericGrid({ containerEl, data, spoilerOn }) {
   const container = containerEl || document.getElementById(containerId);
   const realContainerId = containerId || container?.id || "unknown";
   const showMissingOnly = missingToggle.checked;
@@ -532,11 +579,11 @@ function renderGenericGrid({
   // 🔎 Silkshot variants (only one card visible)
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
   const unlockedSilkVariant = silkVariants.find((silkVariant) => {
-    if (save === undefined) {
+    if (currentLoadedSaveFile === undefined) {
       return false;
     }
 
-    const { playerData } = save;
+    const { playerData } = currentLoadedSaveFile;
     assertDefined(playerData, 'The "playerData" property does not exist.');
     assertObject(playerData, 'The "playerData" property was not an object.');
 
@@ -551,7 +598,7 @@ function renderGenericGrid({
     return savedData.some((tool) => {
       assertObject(
         tool,
-        'One of the elements in "savedData" was not an object.',
+        'One of the elements in the "savedData" array was not an object.',
       );
 
       const { Name, Data } = tool;
@@ -567,10 +614,13 @@ function renderGenericGrid({
   EXCLUSIVE_GROUPS.forEach((group) => {
     const owned = group.find((flag) => {
       // try first as relic
-      let val = resolveSaveValue(save, { type: "relic", flag });
+      let val = resolveSaveValue(currentLoadedSaveFile, {
+        type: "relic",
+        flag,
+      });
       // if not a valid relic, try as quest
       if (!val || val === false)
-        val = resolveSaveValue(save, { type: "quest", flag });
+        val = resolveSaveValue(currentLoadedSaveFile, { type: "quest", flag });
 
       return (
         val === "deposited"
@@ -615,7 +665,7 @@ function renderGenericGrid({
     img.alt = item.label;
 
     // 🔍 Value from save file (quest can now return "completed" or "accepted")
-    const value = resolveSaveValue(save, item);
+    const value = resolveSaveValue(currentLoadedSaveFile, item);
 
     let isDone = false;
     let isAccepted = false;
@@ -752,11 +802,9 @@ function indexFlags(root) {
 }
 
 // ---------- FILE HANDLING ----------
-fileInput.addEventListener("change", (e) => {
-  const file = e.target.files && e.target.files[0];
-  if (file) {
-    handleSaveFile(file);
-  }
+fileInput.addEventListener("change", (event) => {
+  const file = event.target?.files && event.target.files[0];
+  handleSaveFile(file);
 });
 
 /**
@@ -877,7 +925,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/** @param {File} file */
+/** @param {File | undefined } file */
 async function handleSaveFile(file) {
   try {
     if (!file) {
@@ -985,7 +1033,7 @@ async function refreshSaveFile() {
 
     // 🔄 Reload the same file already in memory
     showToast("🔄 Reloading save file...");
-    await handleSaveFile(lastLoadedSaveFile);
+    handleSaveFile(lastLoadedSaveFile);
   } catch (err) {
     console.error("[refreshSaveFile]", err);
     showToast("❌ Failed to refresh save file");
@@ -1152,7 +1200,7 @@ async function updateAllProgressContent(selectedAct = "all") {
     data.forEach((sectionData) => {
       assertObject(
         sectionData,
-        "One of the JSON array elements was not an object.",
+        "One of the elements in the JSON array was not an object.",
       );
 
       const section = document.createElement("div");

@@ -114,3 +114,12 @@ export function isObject(variable) {
     && !Array.isArray(variable)
   );
 }
+
+/** @param {string} string */
+export function normalizeString(string) {
+  if (typeof string !== "string") {
+    string = String(string);
+  }
+
+  return string.toLowerCase().replace(/\s+/g, " ").trim();
+}
