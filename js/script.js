@@ -1,11 +1,11 @@
 // @ts-nocheck
 
 import { z } from "https://cdn.jsdelivr.net/npm/zod@4/+esm";
-import bossesData from "../data/bosses.json" with { type: "json" };
-import completionData from "../data/completion.json" with { type: "json" };
-import essentialsData from "../data/essentials.json" with { type: "json" };
-import mainData from "../data/main.json" with { type: "json" };
-import wishesData from "../data/wishes.json" with { type: "json" };
+import bossesJSON from "../data/bosses.json" with { type: "json" };
+import completionJSON from "../data/completion.json" with { type: "json" };
+import essentialsJSON from "../data/essentials.json" with { type: "json" };
+import mainJSON from "../data/main.json" with { type: "json" };
+import wishesJSON from "../data/wishes.json" with { type: "json" };
 import {
   actFilter,
   allProgressGrid,
@@ -1096,14 +1096,14 @@ async function updateAllProgressContent(selectedAct = "all") {
 
   // Create section headers and render each category
   const categories = [
-    { title: "Main Progress", data: mainData },
-    { title: "Essential Items", data: essentialsData },
+    { title: "Main Progress", data: mainJSON },
+    { title: "Essential Items", data: essentialsJSON },
     {
       title: "Bosses",
-      data: bossesData,
+      data: bossesJSON.items,
     },
-    { title: "Completion", data: completionData },
-    { title: "Wishes", data: wishesData },
+    { title: "Completion", data: completionJSON },
+    { title: "Wishes", data: wishesJSON },
   ];
 
   categories.forEach(({ title, data }) => {
