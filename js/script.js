@@ -857,6 +857,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentMatch = 0;
   let matches = [];
 
+  /** @param {number} index */
   function scrollToMatch(index) {
     const allMarks = rawSaveOutput.querySelectorAll("mark.search-match");
     allMarks.forEach((m) => m.classList.remove("active-match"));
