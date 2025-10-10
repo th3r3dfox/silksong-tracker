@@ -67,10 +67,6 @@ export function decodeSilksongSave(arrayBuffer) {
       );
     }
 
-    console.log('Raw JSON from decrypt (first 500):', jsonString.substring(0, 500));
-    console.log('Raw JSON from decrypt (last 500):', jsonString.substring(jsonString.length - 500));
-    console.log('Contains __flags:', jsonString.includes('__flags'));
-
     const parsed = JSON.parse(jsonString);
     return parsed;
   } catch (err) {

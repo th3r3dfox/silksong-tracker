@@ -32,7 +32,6 @@ import {
   assertObject,
   assertString,
   normalizeString,
-  showToast,
 } from "./utils.js";
 
 console.log(
@@ -819,11 +818,6 @@ function safeSetText(id, text) {
   }
 }
 
-/** @param {Record<string, unknown>} obj */
-function validateSave(obj) {
-  return obj && typeof obj === "object" && obj["playerData"] !== undefined;
-}
-
 async function updateRawSaveContent() {
   if (currentLoadedSaveFile === undefined) {
     rawSaveOutput.textContent = "⚠️ No save file loaded.";
@@ -831,7 +825,11 @@ async function updateRawSaveContent() {
   }
 
   try {
-    rawSaveOutput.textContent = JSON.stringify(currentLoadedSaveFile, null, 2);
+    rawSaveOutput.textContent = JSON.stringify(
+      currentLoadedSaveFile,
+      undefined,
+      2,
+    );
   } catch (err) {
     rawSaveOutput.textContent = "❌ Failed to display raw save.";
     console.error(err);
@@ -854,9 +852,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentLoadedSaveFile === undefined) {
       return showToast("⚠️ No save loaded yet.");
     }
-    const blob = new Blob([JSON.stringify(currentLoadedSaveFile, null, 2)], {
-      type: "application/json",
-    });
+    const blob = new Blob(
+      [JSON.stringify(currentLoadedSaveFile, undefined, 2)],
+      {
+        type: "application/json",
+      },
+    );
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -884,7 +885,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   rawSaveSearch.addEventListener("input", () => {
     const query = rawSaveSearch.value.trim();
-    const jsonText = JSON.stringify(currentLoadedSaveFile || {}, null, 2);
+    const jsonText = JSON.stringify(currentLoadedSaveFile || {}, undefined, 2);
     rawSaveOutput.innerHTML = jsonText;
     matches = [];
     currentMatch = 0;
@@ -944,16 +945,14 @@ async function handleSaveFile(file) {
       ? decodeSilksongSave(buffer)
       : JSON.parse(new TextDecoder("utf-8").decode(buffer));
 
-    const saveData2 = parseSilksongSave(saveData);
-    console.log("XXXXX", saveData2);
-
-    if (!validateSave(saveData)) {
+    const saveData2 = await parseSilksongSave(saveData);
+    if (saveData2 === undefined) {
       showToast("❌ Invalid or corrupted save file");
       uploadOverlay.classList.remove("hidden");
       return;
     }
 
-    rawSaveOutput.textContent = JSON.stringify(saveData, null, 2);
+    rawSaveOutput.textContent = JSON.stringify(saveData, undefined, 2);
 
     // ✅ Index and save globally
     currentLoadedSaveFile = indexFlags(saveData);
@@ -1042,6 +1041,29 @@ async function refreshSaveFile() {
     console.error("[refreshSaveFile]", err);
     showToast("❌ Failed to refresh save file");
   }
+}
+
+/**
+ * @param {string} message
+ */
+function showToast(message) {
+  const toast = document.createElement("div");
+  toast.textContent = message;
+  toast.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    z-index: 9999;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  `;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 2500);
 }
 
 // Handle sidebar clicks
