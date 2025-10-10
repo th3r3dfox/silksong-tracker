@@ -11,8 +11,22 @@
   ],
 
   "compilerOptions": {
+    // We do not transpile TypeScript files to JavaScript files. Instead, we just type-check the
+    // JavaScript files directly.
+    "noEmit": true,
+
+    // Needed so that we can import JSON files.
+    "module": "esnext",
+
+    // Needed so that TypeScript can find the types for Zod.
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "https://cdn.jsdelivr.net/npm/zod@4/+esm": ["node_modules/zod"],
+    },
+
     // Specifies the compilation target. The default is "es5". We need to change this because we
-    // iterate over `Uint8Array<ArrayBufferLike>` in "SaveDecoder.js".
+    // iterate over `Uint8Array<ArrayBufferLike>` in "save-decoder.js".
     "target": "es2015",
   },
 

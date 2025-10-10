@@ -307,8 +307,8 @@ These names come from:
 | `renderGenericGrid({ data, containerId })` | script.js      | Renders items into the UI grid.                             |
 | `switchTab(tabId)`                         | script.js      | Handles tab navigation.                                     |
 | `updateAllProgressContent()`               | script.js      | Loads and renders bosses using async fetch.                 |
-| `resolveSaveValue(save, item)`             | script.js      | Resolves correct values for any save flag or nested object. |
-| `indexFlags(root)`                         | script.js      | Indexes nested scene flags into a flat reference map.       |
+| `getSaveValue(save, item)`                 | script.js      | Resolves correct values for any save flag or nested object. |
+| `getFlags(root)`                           | script.js      | Extracts nested scene flags into a flat reference map.      |
 | `showGenericModal(data)`                   | script.js      | Displays detailed modal with icon, map, and wiki link.      |
 
 ---

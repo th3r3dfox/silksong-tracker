@@ -1,11 +1,18 @@
 // @ts-nocheck
 
+import { z } from "https://cdn.jsdelivr.net/npm/zod@4/+esm";
+import bossesData from "../data/bosses.json" with { type: "json" };
+import completionData from "../data/completion.json" with { type: "json" };
+import essentialsData from "../data/essentials.json" with { type: "json" };
+import mainData from "../data/main.json" with { type: "json" };
+import wishesData from "../data/wishes.json" with { type: "json" };
 import {
   actFilter,
   allProgressGrid,
   backToTop,
   closeInfoModal,
   closeUploadModal,
+  completionValue,
   copyRawsaveBtn,
   downloadRawsaveBtn,
   dropzone,
@@ -16,15 +23,33 @@ import {
   modeBanner,
   nextMatch,
   openUploadModal,
+  playtimeValue,
   prevMatch,
   rawSaveOutput,
   rawSaveSearch,
-  refreshSaveBtn,
+  rosariesValue,
   searchCounter,
+  shardsValue,
   spoilerToggle,
   uploadOverlay,
 } from "./elements.js";
-import { decodeSilksongSave } from "./SaveDecoder.js";
+import { decodeSilksongSave } from "./save-decoder.js";
+import {
+  getSaveFileFlags,
+  objectWithSavedData,
+  parseSilksongSave,
+  silksongSaveSchema,
+} from "./save-parser.js";
+import {
+  assertArray,
+  assertDefined,
+  assertIs,
+  assertNotNull,
+  assertObject,
+  isObject,
+  normalizeString,
+  normalizeStringWithUnderscores,
+} from "./utils.js";
 
 console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
@@ -35,14 +60,14 @@ const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
   : "";
 let currentActFilter = actFilter.value || "all";
 
+/** @type z.infer<typeof silksongSaveSchema> | undefined */
+let currentLoadedSaveData;
+
 /** @type Record<string, unknown> | undefined */
-let currentLoadedSaveFile;
+let currentLoadedSaveDataFlags;
 
-/** @type { "steel" | "normal" | undefined } */
-let currentLoadedSaveFileMode;
-
-/** @type File | undefined */
-let lastLoadedSaveFile;
+/** @type {"steel" | "normal" | undefined} */
+let currentLoadedSaveDataMode;
 
 /** @type Record<string, (selectedAct?: string) => Promise<void>> */
 const TAB_TO_UPDATE_FUNCTION = {
@@ -51,7 +76,7 @@ const TAB_TO_UPDATE_FUNCTION = {
 };
 const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION);
 
-/** @param { Record<string, string> } item */
+/** @param {Item} item */
 function matchMode(item) {
   const { mode } = item;
 
@@ -66,7 +91,7 @@ function matchMode(item) {
   }
 
   // AFTER loading -> match mode
-  return item["mode"] === currentLoadedSaveFileMode;
+  return mode === currentLoadedSaveDataMode;
 }
 
 // --- Global mutually exclusive groups ---
@@ -76,40 +101,48 @@ const EXCLUSIVE_GROUPS = [
 ];
 
 // ---------- SPOILER TOGGLE ----------
-spoilerToggle.addEventListener("change", () => {
+spoilerToggle.addEventListener("change", async () => {
   const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
-
-  // Save this state too if you want to keep it on refresh
   localStorage.setItem("showSpoilers", spoilerChecked.toString());
 
   // Use the same filter logic (so it maintains Act + Missing)
-  reRenderActiveTab();
+  await reRenderActiveTab();
 });
 
 function applyMissingFilter() {
   const showMissingOnly = missingToggle.checked;
 
   document.querySelectorAll(".main-section-block").forEach((section) => {
-    let hasVisible = false;
-    const sectionName =
-      section.querySelector("h3")?.textContent?.trim() || "??";
+    assertIs(
+      section,
+      HTMLDivElement,
+      'An element with the "main-section-block" class not was a div element.',
+    );
 
-    section.querySelectorAll(".boss").forEach((el) => {
+    let hasVisible = false;
+
+    section.querySelectorAll(".boss").forEach((div) => {
+      assertIs(
+        div,
+        HTMLDivElement,
+        'An element with the "boss" class not was a div element.',
+      );
+
       if (showMissingOnly) {
-        if (el.classList.contains("done")) {
-          el.style.display = "none";
+        if (div.classList.contains("done")) {
+          div.style.display = "none";
         } else {
-          el.style.display = "";
+          div.style.display = "";
           hasVisible = true;
         }
       } else {
-        el.style.display = "";
+        div.style.display = "";
         hasVisible = true;
       }
     });
 
-    // Hide the entire section if it has no visible elements
+    // Hide the entire section if it has no visible elements.
     section.style.display = hasVisible ? "" : "none";
   });
 }
@@ -117,6 +150,7 @@ function applyMissingFilter() {
 // ---------- Back to top button listener ----------
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("main");
+  assertNotNull(main, "Failed to get the main element.");
 
   main.addEventListener("scroll", () => {
     const scrollPosition = main.scrollTop;
@@ -128,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Scroll back to top
+  // Scroll back to top.
   backToTop.addEventListener("click", () => {
     main.scrollTo({
       top: 0,
@@ -149,7 +183,9 @@ document.addEventListener("DOMContentLoaded", () => {
   openUploadModal.addEventListener("click", openUploadModalFunc);
   closeUploadModal.addEventListener("click", closeUploadModalFunc);
   uploadOverlay.addEventListener("click", (e) => {
-    if (e.target === uploadOverlay) closeUploadModalFunc();
+    if (e.target === uploadOverlay) {
+      closeUploadModalFunc();
+    }
   });
 
   dropzone.addEventListener("click", () => fileInput.click());
@@ -180,14 +216,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const files = dataTransfer.files;
+    const { files } = dataTransfer;
     const firstFile = files[0];
-    if (firstFile !== undefined) {
-      handleSaveFile(firstFile);
-    }
+    handleSaveFile(firstFile);
   });
 
-  // ---------- PILLS COPY ----------
   /** @type Record<string, string> */
   const paths = {
     windows:
@@ -229,289 +262,329 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function resolveSaveValue(save, item) {
-  const root = save;
-  const pd = root?.playerData || root; // compat fallback
+/**
+ * @typedef {{
+ *   type?: string,
+ *   flag?: string,
+ *   relatedFlag?: string,
+ *   scene?: string,
+ *   required?: number,
+ *   subtype?: string,
+ *   mode?: string,
+ * }} Item
+ */
 
-  if (!root) return undefined;
-
-  // Direct flags
-  if (
-    item.type === "flag"
-    && item.flag
-    && Object.prototype.hasOwnProperty.call(pd, item.flag)
-  ) {
-    return pd[item.flag];
+/**
+ * @param {z.infer<typeof silksongSaveSchema> | undefined} saveData
+ * @param {Record<string, unknown> | undefined} saveDataFlags
+ * @param {Item} item
+ */
+function getSaveDataValue(saveData, saveDataFlags, item) {
+  if (saveData === undefined || saveDataFlags === undefined) {
+    return undefined;
   }
 
-  // Collectables
-  if (item.type === "collectable") {
-    const entry = pd.Collectables?.savedData?.find((e) => e.Name === item.flag);
-    return entry?.Data?.Amount ?? 0;
-  }
+  const { playerData } = saveData;
+  /** @type Record<string, unknown> */
+  const playerDataExpanded = playerData;
 
-  // Tools / Crests (Hunter, Reaper, Wanderer, ecc.)
-  if (
-    item.type === "tool"
-    || item.type === "toolEquip"
-    || item.type === "crest"
-  ) {
-    const normalize = (s) =>
-      String(s || "")
-        .toLowerCase()
-        .replace(/\s+/g, " ")
-        .trim();
+  const { type, flag, relatedFlag, scene, required, subtype } = item;
 
-    const flagNorm = normalize(item.flag);
-
-    const findIn = (bucket) =>
-      bucket?.savedData?.find((e) => normalize(e?.Name) === flagNorm);
-
-    const entry = findIn(pd.Tools) || findIn(pd.ToolEquips);
-
-    return entry?.Data?.IsUnlocked === true;
-  }
-
-  // Quests (Wishes)
-  if (item.type === "quest") {
-    // Possible data lists for compatibility (some dumps use different names)
-    const questLists = [
-      pd.QuestCompletionData?.savedData,
-      pd.Quests?.savedData,
-      pd.QuestsData?.savedData,
-      pd.QuestData?.savedData,
-    ].filter(Boolean);
-
-    // Normalize the name to avoid case/space issues
-    const normalize = (s) =>
-      String(s || "")
-        .toLowerCase()
-        .trim();
-    const flagNorm = normalize(item.flag);
-
-    // Search in all possible arrays
-    let entry;
-    for (const list of questLists) {
-      entry = list.find((e) => normalize(e.Name) === flagNorm);
-      if (entry) break;
+  switch (type) {
+    case "flag": {
+      return flag === undefined ? undefined : playerDataExpanded[flag];
     }
 
-    if (!entry) return false;
+    case "collectable": {
+      const { Collectables } = playerData;
+      const { savedData } = Collectables;
 
-    const data = entry.Data || entry.Record || {};
+      const entry = savedData.find((element) => {
+        return element.Name === flag;
+      });
+      if (entry === undefined) {
+        return undefined;
+      }
 
-    // 🎯 Quest status
-    if (
-      data.IsCompleted === true
-      || data.Completed === true
-      || data.Complete === true
-    ) {
-      return "completed";
+      const { Data } = entry;
+      const { Amount } = Data;
+      return Amount ?? 0;
     }
 
-    if (data.IsAccepted === true || data.Accepted === true) {
-      return "accepted";
+    case "tool":
+    case "toolEquip":
+    case "crest": {
+      if (flag === undefined) {
+        return undefined;
+      }
+
+      const normalizedFlag = normalizeString(flag);
+
+      /** @param {z.infer<typeof objectWithSavedData>} object */
+      function findIn(object) {
+        const matchingElement = object.savedData.find(
+          (element) => normalizeString(element.Name) === normalizedFlag,
+        );
+
+        if (matchingElement === undefined) {
+          return undefined;
+        }
+
+        return matchingElement;
+      }
+
+      const { Tools, ToolEquips } = playerData;
+      const entry = findIn(Tools) ?? findIn(ToolEquips);
+      if (entry === undefined) {
+        return undefined;
+      }
+
+      return entry.Data["IsUnlocked"] === true;
     }
 
-    return false;
-  }
+    // Wishes
+    case "quest": {
+      if (flag === undefined) {
+        return undefined;
+      }
+      const normalizedFlag = normalizeString(flag);
 
-  // Scene flags (Mask Shards, Heart Pieces ecc.)
-  if (item.type === "sceneBool") {
-    const scene = String(item.scene || "")
-      .trim()
-      .replace(/\s+/g, "_");
-    const idKey = String(item.flag || "")
-      .trim()
-      .replace(/\s+/g, "_")
-      .replace(/[^\w.]/g, "_");
-
-    const val = root.__flags?.[scene]?.[idKey];
-    if (val !== undefined) return val;
-
-    if (root[scene]) {
-      return (
-        root[scene][item.flag]
-        ?? root[scene][item.flag.replace(/ /g, "_")]
-        ?? false
+      const { QuestCompletionData } = playerData;
+      const entry = QuestCompletionData.savedData.find(
+        (e) => normalizeString(e.Name) === normalizedFlag,
       );
-    }
-  }
+      if (entry === undefined) {
+        return undefined;
+      }
 
-  // Keys
-  if (item.type === "key") {
-    if (item.scene) {
-      return root.__flags?.[item.scene]?.[item.flag] === true;
-    }
-    return pd[item.flag] === true;
-  }
+      const { Data } = entry;
 
-  // Scene visited (Silk Hearts, Memories ecc.)
-  if (item.type === "sceneVisited" && item.scene) {
-    const scenes = save?.playerData?.scenesVisited || [];
-    return scenes.includes(item.scene);
-  }
+      if (Data["IsCompleted"] === true) {
+        return "completed";
+      }
 
-  // Numeric progressions (Needle, ToolPouchUpgrades, ToolKitUpgrades, etc.)
-  if ((item.type === "level" || item.type === "min") && item.flag) {
-    const current = pd[item.flag] ?? 0;
+      if (Data["IsAccepted"] === true) {
+        return "accepted";
+      }
 
-    return current; // ✅ always return the number, unlock is calculated later
-  }
-
-  // Numeric flags (flagInt) — e.g. CaravanTroupeLocation >= 2
-  if (item.type === "flagInt" && item.flag) {
-    const current = pd[item.flag];
-    if (typeof current === "number") {
-      const required = item.value ?? item.required ?? 1;
-      return current >= required;
-    }
-    return false;
-  }
-
-  if (item.type === "journal") {
-    const journalList =
-      pd.EnemyJournalKillData?.list
-      || pd.Journal?.savedData
-      || pd.JournalData?.savedData
-      || root.Journal?.savedData
-      || [];
-
-    const entry = journalList.find((e) => e.Name === item.flag);
-    if (!entry) return false;
-
-    const data = entry.Record || entry.Data || {};
-
-    // Support different conditions
-    if (item.subtype === "kills")
-      return (data.Kills ?? 0) >= (item.required ?? 1);
-    if (item.subtype === "seen") return data.HasBeenSeen === true;
-    if (item.subtype === "unlocked") return data.IsUnlocked === true;
-
-    // fallback
-    return data.HasBeenSeen || (data.Kills ?? 0) > 0;
-  }
-
-  // Relics (Choral Commandments, Weaver Effigies, Mementos, etc.)
-  if (item.type === "relic" && item.flag) {
-    const relicList =
-      save?.Relics?.savedData || save?.playerData?.Relics?.savedData || [];
-
-    const mementoList =
-      save?.MementosDeposited?.savedData
-      || save?.playerData?.MementosDeposited?.savedData
-      || [];
-
-    const combinedList = relicList.concat(mementoList);
-
-    const entry = combinedList.find((e) => e.Name === item.flag);
-    if (!entry) return false;
-
-    const data = entry.Data || {};
-
-    if (data.IsDeposited === true) return "deposited"; // ✅ Green
-    if (data.HasSeenInRelicBoard === true) return "collected"; // 🟡 Yellow
-    if (data.IsCollected === true) return "collected";
-
-    return false;
-  }
-
-  // ⚡ Materium tracking (seen = green, collected = yellow)
-  if (item.type === "materium" && item.flag) {
-    const list =
-      save?.playerData?.MateriumCollected?.savedData
-      || save?.MateriumCollected?.savedData
-      || [];
-
-    const entry = list.find((e) => e.Name === item.flag);
-    if (!entry) return false;
-
-    const data = entry.Data || {};
-
-    // ✅ green if seen in board
-    if (data.HasSeenInRelicBoard === true) return "deposited";
-    // 🟡 yellow if collected but not seen in board
-    if (data.IsCollected === true) return "collected";
-
-    return false;
-  }
-
-  // Devices (Materium, Farsight, etc.)
-  if (item.type === "device") {
-    const scene = String(item.scene || "")
-      .trim()
-      .replace(/\s+/g, "_");
-    const idKey = String(item.flag || "")
-      .trim()
-      .replace(/\s+/g, "_");
-    const depositFlag = String(item.relatedFlag || "").trim();
-
-    // ✅ Green — item deposited
-    if (
-      depositFlag
-      && (save?.playerData?.[depositFlag] === true
-        || save?.[depositFlag] === true)
-    ) {
-      return "deposited";
+      return false;
     }
 
-    // 🟡 Yellow — item collected in scene
-    const sceneFlags =
-      save?.__flags?.[scene]
-      || save?.playerData?.__flags?.[scene]
-      || save?.[scene]
-      || {};
+    // Mask Shards, Heart Pieces etc.
+    case "sceneBool": {
+      const normalizedScene = normalizeStringWithUnderscores(scene ?? "");
+      const normalizedFlag = normalizeStringWithUnderscores(flag ?? "");
 
-    if (sceneFlags[idKey] === true) {
-      return "collected";
+      const sceneFlags = saveDataFlags[normalizedScene];
+      if (isObject(sceneFlags)) {
+        const value = sceneFlags[normalizedFlag];
+        if (value !== undefined) {
+          return value;
+        }
+      }
+
+      return false;
     }
 
-    return false;
-  }
+    case "key": {
+      if (scene === undefined) {
+        return flag === undefined ? false : playerDataExpanded[flag] === true;
+      }
 
-  // Generic fallback
-  if (item.flag && pd[item.flag] !== undefined) {
-    return pd[item.flag];
-  }
+      const sceneFlags = saveDataFlags[scene];
+      return isObject(sceneFlags) && flag !== undefined
+        ? sceneFlags[flag] === true
+        : false;
+    }
 
-  return undefined;
+    // Silk Hearts, Memories etc.
+    case "sceneVisited": {
+      if (item.scene) {
+        const scenes = playerData?.scenesVisited || [];
+        return scenes.includes(item.scene);
+      }
+
+      return false;
+    }
+
+    // Numeric progressions (Needle, ToolPouchUpgrades, ToolKitUpgrades, etc.)
+    case "level":
+    case "min": {
+      // ✅ always return the number, unlock is calculated later
+      return flag === undefined ? 0 : (playerDataExpanded[flag] ?? 0);
+    }
+
+    // e.g. CaravanTroupeLocation >= 2
+    case "flagInt": {
+      const current = flag === undefined ? 0 : playerDataExpanded[flag];
+      return typeof current === "number" ? current >= (required ?? 1) : false;
+    }
+
+    case "journal": {
+      const { list } = playerData.EnemyJournalKillData;
+
+      const entry = list.find((element) => element.Name === item.flag);
+      if (entry === undefined) {
+        return false;
+      }
+
+      const { Record } = entry;
+
+      if (subtype === "kills") {
+        return Record.Kills >= (item.required ?? 1);
+      }
+
+      if (subtype === "seen") {
+        return Record.HasBeenSeen === true;
+      }
+
+      return false;
+    }
+
+    case "relic": {
+      const { Relics, MementosDeposited } = playerData;
+
+      const combinedList = [
+        ...Relics.savedData,
+        ...MementosDeposited.savedData,
+      ];
+
+      const entry = combinedList.find((element) => element.Name === item.flag);
+      if (entry === undefined) {
+        return false;
+      }
+
+      const { Data } = entry;
+
+      if (Data["IsDeposited"] === true) {
+        return "deposited";
+      }
+
+      if (Data["HasSeenInRelicBoard"] === true) {
+        return "collected";
+      }
+
+      if (Data["IsCollected"] === true) {
+        return "collected";
+      }
+
+      return false;
+    }
+
+    case "materium": {
+      const { MateriumCollected } = playerData;
+
+      const entry = MateriumCollected.savedData.find(
+        (element) => element.Name === item.flag,
+      );
+      if (entry === undefined) {
+        return false;
+      }
+
+      const { Data } = entry;
+
+      if (Data["HasSeenInRelicBoard"] === true) {
+        return "deposited";
+      }
+
+      if (Data["IsCollected"] === true) {
+        return "collected";
+      }
+
+      return false;
+    }
+
+    // Materium, Farsight, etc.
+    case "device": {
+      const normalizedScene = normalizeStringWithUnderscores(scene ?? "");
+      const normalizedFlag = normalizeStringWithUnderscores(flag ?? "");
+
+      if (
+        relatedFlag !== undefined
+        && playerDataExpanded[relatedFlag] === true
+      ) {
+        return "deposited";
+      }
+
+      const sceneFlags = saveDataFlags[normalizedScene];
+      if (isObject(sceneFlags) && sceneFlags[normalizedFlag] === true) {
+        return "collected";
+      }
+
+      return false;
+    }
+
+    default: {
+      // In certain cases, the type will be undefined.
+      return flag === undefined ? undefined : playerDataExpanded[flag];
+    }
+  }
 }
 
-function renderGenericGrid({
-  containerId,
-  containerEl,
-  data,
-  spoilerOn,
-  save = currentLoadedSaveFile,
-}) {
-  const container = containerEl || document.getElementById(containerId);
-  const realContainerId = containerId || container?.id || "unknown";
-  const showMissingOnly = missingToggle.checked;
+/**
+ * Renders a grid of items (bosses, relics, tools, etc.) with their unlock states.
+ *
+ * @param {Object} options The rendering options.
+ * @param {HTMLElement} options.containerEl The container element to render the grid onto.
+ * @param {Array<{
+ *   id: string,
+ *   flag: string,
+ *   label: string,
+ *   icon?: string,
+ *   type: string,
+ *   act?: 1 | 2 | 3,
+ *   actColor?: string,
+ *   missable?: boolean,
+ *   required?: number,
+ *   [key: string]: unknown,
+ * }>} options.data Array of items to render.
+ * @param {boolean} options.spoilerOn Whether spoilers are enabled.
+ * @returns {number} The number of items rendered.
+ */
+function renderGenericGrid({ containerEl, data, spoilerOn }) {
+  const realContainerId = containerEl?.id || "unknown";
 
-  container.innerHTML = "";
+  containerEl.innerHTML = "";
 
   // 🔎 Silkshot variants (only one card visible)
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
-  const unlockedSilkVariant = silkVariants.find((v) =>
-    save?.playerData?.Tools?.savedData?.some(
-      (e) => e.Name === v && e.Data?.IsUnlocked,
-    ),
-  );
+  const unlockedSilkVariant = silkVariants.find((silkVariant) => {
+    if (currentLoadedSaveData === undefined) {
+      return false;
+    }
+
+    return currentLoadedSaveData.playerData.Tools.savedData.some(
+      (tool) => tool.Name === silkVariant && tool.Data["IsUnlocked"] === true,
+    );
+  });
 
   // --- Apply mutually exclusive groups (global, relic + quest) ---
   EXCLUSIVE_GROUPS.forEach((group) => {
     const owned = group.find((flag) => {
       // try first as relic
-      let val = resolveSaveValue(save, { type: "relic", flag });
+      let value = getSaveDataValue(
+        currentLoadedSaveData,
+        currentLoadedSaveDataFlags,
+        {
+          type: "relic",
+          flag,
+        },
+      );
+
       // if not a valid relic, try as quest
-      if (!val || val === false)
-        val = resolveSaveValue(save, { type: "quest", flag });
+      if (!value || value === false) {
+        value = getSaveDataValue(
+          currentLoadedSaveData,
+          currentLoadedSaveDataFlags,
+          { type: "quest", flag },
+        );
+      }
 
       return (
-        val === "deposited"
-        || val === "collected"
-        || val === "completed"
-        || val === true
+        value === "deposited"
+        || value === "collected"
+        || value === "completed"
+        || value === true
       );
     });
 
@@ -527,14 +600,18 @@ function renderGenericGrid({
   data.forEach((item) => {
     // Silkshot → show only 1 variant
     if (silkVariants.includes(item.flag)) {
-      if (unlockedSilkVariant && item.flag !== unlockedSilkVariant) return;
-      if (!unlockedSilkVariant && item.flag !== "WebShot Architect") return;
+      if (unlockedSilkVariant && item.flag !== unlockedSilkVariant) {
+        return;
+      }
+      if (!unlockedSilkVariant && item.flag !== "WebShot Architect") {
+        return;
+      }
     }
 
     const div = document.createElement("div");
     div.className = "boss";
 
-    // 🔹 Act label (ACT I / II / III)
+    // Act label (ACT I / II / III)
     if (item.act) {
       const romanActs = { 1: "I", 2: "II", 3: "III" };
       const actLabel = document.createElement("span");
@@ -544,40 +621,66 @@ function renderGenericGrid({
     }
 
     div.id = `${realContainerId}-${item.id}`;
-    div.dataset.flag = item.flag;
+    div.dataset["flag"] = item.flag;
 
     const img = document.createElement("img");
     img.alt = item.label;
 
-    // 🔍 Value from save file (quest can now return "completed" or "accepted")
-    const value = resolveSaveValue(save, item);
+    // Value from save file (quest can now return "completed" or "accepted")
+    const value = getSaveDataValue(
+      currentLoadedSaveData,
+      currentLoadedSaveDataFlags,
+      item,
+    );
 
     let isDone = false;
     let isAccepted = false;
 
-    if (["level", "region-level", "min", "region-min"].includes(item.type)) {
-      isDone = (value ?? 0) >= (item.required ?? 0);
-    } else if (item.type === "collectable") {
-      isDone = (value ?? 0) > 0;
-    } else if (item.type === "quest") {
-      isDone = value === "completed" || value === true;
-      isAccepted = value === "accepted";
-    } else if (item.type === "relic") {
-      isDone = value === "deposited"; // green = delivered
-      isAccepted = value === "collected"; // yellow = found but not deposited
-    } else if (item.type === "materium") {
-      // "deposited" = green (done), "collected" = yellow (accepted)
-      isDone = value === "deposited";
-      isAccepted = value === "collected";
-    } else if (item.type === "device") {
-      isDone = value === "deposited"; // ✅ Green
-      isAccepted = value === "collected"; // 🟡 Yellow
-    } else {
-      isDone = value === true;
+    switch (item.type) {
+      case "level":
+      case "region-level":
+      case "min":
+      case "region-min": {
+        const current = value === undefined ? 0 : Number(value);
+        isDone = current >= (item.required ?? 0);
+        break;
+      }
+
+      case "collectable": {
+        const current = value === undefined ? 0 : Number(value);
+        isDone = current > 0;
+      }
+
+      case "quest": {
+        isDone = value === "completed" || value === true;
+        isAccepted = value === "accepted";
+      }
+
+      case "relic": {
+        isDone = value === "deposited";
+        isAccepted = value === "collected";
+      }
+
+      case "materium": {
+        isDone = value === "deposited";
+        isAccepted = value === "collected";
+      }
+
+      case "device": {
+        isDone = value === "deposited";
+        isAccepted = value === "collected";
+      }
+
+      default: {
+        isDone = value === true;
+      }
     }
 
     // If "only missing" and it's completed → don't render the card at all
-    if (showMissingOnly && isDone) return;
+    const showMissingOnly = missingToggle.checked;
+    if (showMissingOnly && isDone) {
+      return;
+    }
 
     if (item.missable) {
       const warn = document.createElement("span");
@@ -597,7 +700,15 @@ function renderGenericGrid({
 
       // if the item is done, hide missable icon
       const missableIcon = div.querySelector(".missable-icon");
-      if (missableIcon) missableIcon.style.display = "none";
+      if (missableIcon !== null) {
+        assertIs(
+          missableIcon,
+          HTMLSpanElement,
+          'An element with the "missable-icon" class was not a span element.',
+        );
+
+        missableIcon.style.display = "none";
+      }
     } else if (isAccepted) {
       img.src = iconPath;
       div.classList.add("accepted");
@@ -624,89 +735,31 @@ function renderGenericGrid({
     div.appendChild(title);
     div.addEventListener("click", () => showGenericModal(item));
 
-    container.appendChild(div);
+    containerEl.appendChild(div);
     renderedCount++;
   });
 
   return renderedCount;
 }
 
-/** @param { Record<string, unknown> } root */
-function indexFlags(root) {
-  /** @type Record<string, unknown> */
-  const flags = {};
-  const mark = (sceneRaw, idRaw, value) => {
-    if (!sceneRaw || !idRaw) {
-      return;
-    }
-    const scene = String(sceneRaw).trim().replace(/\s+/g, "_");
-    const idKey = String(idRaw)
-      .trim()
-      .replace(/\s+/g, "_")
-      .replace(/[^\w.]/g, "_");
-    if (!flags[scene]) {
-      flags[scene] = {};
-    }
-    flags[scene][idKey] = Boolean(value);
-  };
-
-  function walk(node) {
-    if (Array.isArray(node)) {
-      for (const it of node) walk(it);
-      return;
-    }
-    if (node && typeof node === "object") {
-      const hasScene = "SceneName" in node || "sceneName" in node;
-      const hasId = "ID" in node || "Id" in node || "id" in node;
-      const hasVal = "Value" in node || "value" in node;
-
-      if (hasScene && hasId && hasVal) {
-        const scene = node.SceneName ?? node.sceneName;
-        const id = node.ID ?? node.Id ?? node.id;
-        const val = node.Value ?? node.value;
-        mark(scene, id, val);
-      }
-      for (const k in node) walk(node[k]);
-    }
-  }
-
-  walk(root);
-  root.__flags = flags;
-  return root;
-}
-
 // ---------- FILE HANDLING ----------
-fileInput.addEventListener("change", (e) => {
-  const file = e.target.files && e.target.files[0];
-  if (file) {
-    handleSaveFile(file);
-  }
+fileInput.addEventListener("change", (event) => {
+  const file = fileInput.files?.[0];
+  handleSaveFile(file);
 });
 
-/**
- * @param {string} id
- * @param {string} text
- */
-function safeSetText(id, text) {
-  const el = document.getElementById(id);
-  if (el) {
-    el.textContent = text;
-  }
-}
-
-/** @param { Record<string, unknown> } obj */
-function validateSave(obj) {
-  return obj && typeof obj === "object" && obj["playerData"] !== undefined;
-}
-
 async function updateRawSaveContent() {
-  if (currentLoadedSaveFile === undefined) {
+  if (currentLoadedSaveData === undefined) {
     rawSaveOutput.textContent = "⚠️ No save file loaded.";
     return;
   }
 
   try {
-    rawSaveOutput.textContent = JSON.stringify(currentLoadedSaveFile, null, 2);
+    rawSaveOutput.textContent = JSON.stringify(
+      currentLoadedSaveData,
+      undefined,
+      2,
+    );
   } catch (err) {
     rawSaveOutput.textContent = "❌ Failed to display raw save.";
     console.error(err);
@@ -726,12 +779,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 💾 Download JSON
   downloadRawsaveBtn.addEventListener("click", () => {
-    if (currentLoadedSaveFile === undefined) {
+    if (currentLoadedSaveData === undefined) {
       return showToast("⚠️ No save loaded yet.");
     }
-    const blob = new Blob([JSON.stringify(currentLoadedSaveFile, null, 2)], {
-      type: "application/json",
-    });
+    const blob = new Blob(
+      [JSON.stringify(currentLoadedSaveData, undefined, 2)],
+      {
+        type: "application/json",
+      },
+    );
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -744,12 +800,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentMatch = 0;
   let matches = [];
 
+  /** @param {number} index */
   function scrollToMatch(index) {
     const allMarks = rawSaveOutput.querySelectorAll("mark.search-match");
     allMarks.forEach((m) => m.classList.remove("active-match"));
-    if (allMarks[index - 1]) {
-      allMarks[index - 1].classList.add("active-match");
-      allMarks[index - 1].scrollIntoView({
+    const lastMark = allMarks[index - 1];
+    if (lastMark !== undefined) {
+      lastMark.classList.add("active-match");
+      lastMark.scrollIntoView({
         behavior: "smooth",
         block: "center",
       });
@@ -759,12 +817,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   rawSaveSearch.addEventListener("input", () => {
     const query = rawSaveSearch.value.trim();
-    const jsonText = JSON.stringify(currentLoadedSaveFile || {}, null, 2);
+    const jsonText = JSON.stringify(currentLoadedSaveData || {}, undefined, 2);
     rawSaveOutput.innerHTML = jsonText;
     matches = [];
     currentMatch = 0;
     searchCounter.textContent = "0/0";
-    if (!query) return;
+    if (!query) {
+      return;
+    }
 
     const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const regex = new RegExp(safeQuery, "gi");
@@ -789,22 +849,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   nextMatch.addEventListener("click", () => {
-    if (matches.length === 0) return;
+    if (matches.length === 0) {
+      return;
+    }
     currentMatch = (currentMatch % matches.length) + 1;
     scrollToMatch(currentMatch);
   });
 
   prevMatch.addEventListener("click", () => {
-    if (matches.length === 0) return;
+    if (matches.length === 0) {
+      return;
+    }
     currentMatch = ((currentMatch - 2 + matches.length) % matches.length) + 1;
     scrollToMatch(currentMatch);
   });
 });
 
-/** @param {File} file */
+/** @param {File | undefined } file */
 async function handleSaveFile(file) {
   try {
-    if (!file) {
+    if (file === undefined) {
       showToast("❌ No file selected.");
       uploadOverlay.classList.remove("hidden");
       return;
@@ -814,51 +878,46 @@ async function handleSaveFile(file) {
     const isDat = file.name.toLowerCase().endsWith(".dat");
 
     // 🔍 Decode file
-    /** @type Record<string, unknown> */
-    const saveData = isDat
+    /** @type unknown */
+    const saveDataRaw = isDat
       ? decodeSilksongSave(buffer)
       : JSON.parse(new TextDecoder("utf-8").decode(buffer));
 
-    if (!validateSave(saveData)) {
+    assertObject(
+      saveDataRaw,
+      "Failed to convert the decrypted save file to an object.",
+    );
+
+    const saveData = await parseSilksongSave(saveDataRaw);
+    if (saveData === undefined) {
       showToast("❌ Invalid or corrupted save file");
       uploadOverlay.classList.remove("hidden");
       return;
     }
 
-    rawSaveOutput.textContent = JSON.stringify(saveData, null, 2);
+    rawSaveOutput.textContent = JSON.stringify(saveData, undefined, 2);
 
-    // ✅ Index and save globally
-    currentLoadedSaveFile = indexFlags(saveData);
-    lastLoadedSaveFile = file;
-
-    // 🔘 Show refresh button
-    if (refreshSaveBtn) {
-      refreshSaveBtn.classList.remove("hidden");
-    }
+    // @ts-expect-error The save file is huge and we do not want to specify every property. Instead
+    // of marking the Zod schema as loose, it is simpler to just assign the pre-validation object.
+    currentLoadedSaveData = saveDataRaw;
+    currentLoadedSaveDataFlags = getSaveFileFlags(saveDataRaw);
 
     // --- Update UI statistics ---
-    const completion = saveData.playerData?.completionPercentage ?? 0;
-    const seconds = saveData.playerData?.playTime ?? 0;
+    completionValue.textContent = `${saveData.playerData.completionPercentage}%`;
+
+    const seconds = saveData.playerData.playTime;
     const hours = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60);
-    safeSetText("completionValue", `${completion}%`);
-    safeSetText("playtimeValue", `${hours}h ${mins}m`);
+    playtimeValue.textContent = `${hours}h ${mins}m`;
 
-    const rosaries = saveData.playerData?.geo ?? 0;
-    const shards = saveData.playerData?.ShellShards ?? 0;
-    safeSetText("rosariesValue", String(rosaries));
-    safeSetText("shardsValue", String(shards));
+    rosariesValue.textContent = saveData.playerData.geo.toString();
+    shardsValue.textContent = saveData.playerData.ShellShards.toString();
 
     // --- Detect game mode ---
-    const modeValue = saveData.playerData?.permadeathMode ?? 0;
-    const isSteelSoul =
-      modeValue === 1
-      || saveData.playerData?.isSteelSoulMode === true
-      || saveData.playerData?.SteelSoulMode === true
-      || saveData.playerData?.GameMode === "SteelSoul";
+    const isSteelSoul = saveData.playerData.permadeathMode === 1;
 
     // ✅ Save mode globally (after declaration)
-    currentLoadedSaveFileMode = isSteelSoul ? "steel" : "normal";
+    currentLoadedSaveDataMode = isSteelSoul ? "steel" : "normal";
 
     // 🪶 Show visual banner
     modeBanner.innerHTML = isSteelSoul
@@ -869,25 +928,24 @@ async function handleSaveFile(file) {
 
     // --- Update active tab ---
     const activeElement = document.querySelector(".sidebar-item.is-active");
-    if (activeElement === null) {
-      throw new Error("Failed to get the active element.");
-    }
-    if (!(activeElement instanceof HTMLAnchorElement)) {
-      throw new Error("The active element was not an HTML anchor element.");
-    }
-    const activeTab = activeElement.dataset["tab"];
-    if (activeTab === undefined) {
-      throw new Error(
-        "Failed to get the name of the active tab from the active element.",
-      );
-    }
-    const func = TAB_TO_UPDATE_FUNCTION[activeTab];
-    if (func === undefined) {
-      throw new Error(`Failed to find the function for tab: ${activeTab}`);
-    }
-    func();
+    assertNotNull(activeElement, "Failed to get the active element.");
+    assertIs(
+      activeElement,
+      HTMLAnchorElement,
+      "The active element was not an HTML anchor element.",
+    );
 
-    applyMissingFilter?.();
+    const activeTab = activeElement.dataset["tab"];
+    assertDefined(
+      activeTab,
+      "Failed to get the name of the active tab from the active element.",
+    );
+
+    const func = TAB_TO_UPDATE_FUNCTION[activeTab];
+    assertDefined(func, `Failed to find the function for tab: ${activeTab}`);
+    await func();
+
+    applyMissingFilter();
     showToast("✅ Save file loaded successfully!");
     uploadOverlay.classList.add("hidden");
   } catch (err) {
@@ -896,24 +954,6 @@ async function handleSaveFile(file) {
       "⚠️ Browser permission or file access issue. Please reselect your save file.",
     );
     uploadOverlay.classList.remove("hidden");
-  }
-}
-
-// --- Refresh manuale ---
-async function refreshSaveFile() {
-  try {
-    if (lastLoadedSaveFile === undefined) {
-      showToast("⚠️ No save file loaded yet.");
-      fileInput.click(); // opens file selection
-      return;
-    }
-
-    // 🔄 Reload the same file already in memory
-    showToast("🔄 Reloading save file...");
-    await handleSaveFile(lastLoadedSaveFile);
-  } catch (err) {
-    console.error("[refreshSaveFile]", err);
-    showToast("❌ Failed to refresh save file");
   }
 }
 
@@ -941,33 +981,37 @@ function showToast(message) {
 }
 
 // Handle sidebar clicks
-// Handle sidebar clicks
-document.querySelectorAll(".sidebar-item").forEach((btn) => {
-  if (!(btn instanceof HTMLAnchorElement)) {
-    throw new Error(
-      'An element with a class of "sidebar-item" was not an anchor.',
-    );
-  }
+document.querySelectorAll(".sidebar-item").forEach((anchor) => {
+  assertIs(
+    anchor,
+    HTMLAnchorElement,
+    'An element with a class of "sidebar-item" was not an anchor.',
+  );
 
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
+  anchor.addEventListener("click", async (pointerEvent) => {
+    pointerEvent.preventDefault();
 
     // Remove/add activation class
     document
       .querySelectorAll(".sidebar-item")
       .forEach((i) => i.classList.remove("is-active"));
-    btn.classList.add("is-active");
+    anchor.classList.add("is-active");
 
     // Hide all tabs
     document.querySelectorAll(".tab").forEach((section) => {
       section.classList.add("hidden");
     });
 
-    const selectedTab = btn.dataset["tab"];
-    const activeSection = document.getElementById(`${selectedTab}-section`);
-    if (activeSection) {
-      activeSection.classList.remove("hidden");
-    }
+    const selectedTab = anchor.dataset["tab"];
+    assertDefined(
+      selectedTab,
+      "Failed to find the tab corresponding to an anchor element.",
+    );
+
+    const activeSectionID = `${selectedTab}-section`;
+    const activeSection = document.getElementById(activeSectionID);
+    assertNotNull(activeSection, `Failed to get element: ${activeSectionID}`);
+    activeSection.classList.remove("hidden");
 
     // 🔹 Maintain ACT filter state
     const savedAct = localStorage.getItem("currentActFilter") || "all";
@@ -980,7 +1024,9 @@ document.querySelectorAll(".sidebar-item").forEach((btn) => {
     // Enable/disable home scroll
     document.documentElement.style.overflowY = "auto";
 
-    TAB_TO_UPDATE_FUNCTION[selectedTab]?.(currentActFilter); // <-- apply saved filter
+    const func = TAB_TO_UPDATE_FUNCTION[selectedTab];
+    assertDefined(func, `Failed to find the function for tab: ${selectedTab}`);
+    await func(currentActFilter);
   });
 });
 
@@ -989,9 +1035,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let savedTab = localStorage.getItem("activeTab");
   if (savedTab === null || !VALID_TABS.includes(savedTab)) {
     const firstValidTab = VALID_TABS[0];
-    if (firstValidTab === undefined) {
-      throw new Error("Failed to get the first valid tab.");
-    }
+    assertDefined(firstValidTab, "Failed to get the first valid tab.");
     savedTab = firstValidTab;
   }
 
@@ -1001,7 +1045,11 @@ window.addEventListener("DOMContentLoaded", () => {
   actFilter.value = savedAct;
   currentActFilter = savedAct;
 
-  // 🔹 Synchronize "Show spoilers" state (keeps colors consistent)
+  // 🔹 Restore "Show spoilers" state from localStorage
+  const savedSpoilerState = localStorage.getItem("showSpoilers");
+  if (savedSpoilerState !== null) {
+    spoilerToggle.checked = savedSpoilerState === "true";
+  }
   const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
 
@@ -1028,10 +1076,11 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const func = TAB_TO_UPDATE_FUNCTION[savedTab];
+  assertDefined(func, `Failed to find the function for tab: ${savedTab}`);
 
   // Minimum delay for safety (prevents race with DOM rendering)
-  setTimeout(() => {
-    func(currentActFilter);
+  setTimeout(async () => {
+    await func(currentActFilter);
   }, 50);
 });
 
@@ -1039,16 +1088,6 @@ async function updateAllProgressContent(selectedAct = "all") {
   const spoilerOn = spoilerToggle.checked;
   const showMissingOnly = missingToggle.checked;
   allProgressGrid.innerHTML = "";
-
-  // Load all data files
-  const [mainData, essentialsData, bossesData, completionData, wishesData] =
-    await Promise.all([
-      fetch("data/main.json").then((r) => r.json()),
-      fetch("data/essentials.json").then((r) => r.json()),
-      fetch("data/bosses.json").then((r) => r.json()),
-      fetch("data/completion.json").then((r) => r.json()),
-      fetch("data/wishes.json").then((r) => r.json()),
-    ]);
 
   // Create section headers and render each category
   const categories = [
@@ -1063,11 +1102,10 @@ async function updateAllProgressContent(selectedAct = "all") {
   ];
 
   categories.forEach(({ title, data }) => {
-    if (!Array.isArray(data)) {
-      throw new Error(
-        "The contents of one of the JSON files was not an array.",
-      );
-    }
+    assertArray(
+      data,
+      "The contents of one of the JSON files was not an array.",
+    );
 
     // Create category header
     const categoryHeader = document.createElement("h2");
@@ -1079,54 +1117,71 @@ async function updateAllProgressContent(selectedAct = "all") {
 
     // Render sections within this category
     data.forEach((sectionData) => {
+      assertObject(
+        sectionData,
+        "One of the elements in the JSON array was not an object.",
+      );
+
       const section = document.createElement("div");
       section.className = "main-section-block";
 
       const heading = document.createElement("h3");
       heading.className = "category-title";
-      heading.textContent = sectionData.label;
 
-      const items = sectionData.items ?? [];
-      if (!Array.isArray(items)) {
-        throw new Error(
-          'The contents of the "items" field in a JSON file was not an array.',
-        );
+      const { label } = sectionData;
+      if (typeof label === "string") {
+        heading.textContent = label;
       }
+
+      const items = sectionData["items"] ?? [];
+      assertArray(
+        items,
+        'The contents of the "items" field in a JSON file was not an array.',
+      );
+
       let filteredItems = items.filter(
         (item) =>
           (selectedAct === "all" || Number(item.act) === Number(selectedAct))
           && matchMode(item),
       );
 
-      if (showMissingOnly && currentLoadedSaveFile !== undefined) {
+      if (showMissingOnly && currentLoadedSaveData !== undefined) {
         filteredItems = filteredItems.filter((item) => {
-          const val = resolveSaveValue(currentLoadedSaveFile, item);
+          const value = getSaveDataValue(
+            currentLoadedSaveData,
+            currentLoadedSaveDataFlags,
+            item,
+          );
           if (item.type === "collectable") {
-            return (val ?? 0) === 0;
+            return (value ?? 0) === 0;
           }
 
           if (
             ["level", "min", "region-level", "region-min"].includes(item.type)
           ) {
-            return (val ?? 0) < (item.required ?? 0);
+            return (value ?? 0) < (item.required ?? 0);
           }
 
           if (item.type === "quest") {
-            return val !== "completed" && val !== true;
+            return value !== "completed" && value !== true;
           }
 
-          return val !== true;
+          return value !== true;
         });
       }
 
       // --- Apply mutually exclusive groups (global) ---
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
-          const val = resolveSaveValue(currentLoadedSaveFile, {
-            type: "relic",
-            flag,
-          });
-          return val === "deposited" || val === "collected";
+          const value = getSaveDataValue(
+            currentLoadedSaveData,
+            currentLoadedSaveDataFlags,
+            {
+              type: "relic",
+              flag,
+            },
+          );
+          return value === "deposited" || value === "collected";
         });
         if (owned) {
           filteredItems = filteredItems.filter(
@@ -1137,9 +1192,13 @@ async function updateAllProgressContent(selectedAct = "all") {
 
       // Add act colors
       filteredItems.forEach((item) => {
-        if (item.act === 1) item.actColor = "act-1";
-        else if (item.act === 2) item.actColor = "act-2";
-        else if (item.act === 3) item.actColor = "act-3";
+        if (item.act === 1) {
+          item.actColor = "act-1";
+        } else if (item.act === 2) {
+          item.actColor = "act-2";
+        } else if (item.act === 3) {
+          item.actColor = "act-3";
+        }
       });
 
       // --- Correct count (with exclusive groups) ---
@@ -1151,16 +1210,25 @@ async function updateAllProgressContent(selectedAct = "all") {
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
           // try first as relic
-          let val = resolveSaveValue(currentLoadedSaveFile, {
-            type: "relic",
-            flag,
-          });
-          // if not a valid relic, try as quest
-          if (!val || val === false)
-            val = resolveSaveValue(currentLoadedSaveFile, {
-              type: "quest",
+          let val = getSaveDataValue(
+            currentLoadedSaveData,
+            currentLoadedSaveDataFlags,
+            {
+              type: "relic",
               flag,
-            });
+            },
+          );
+          // if not a valid relic, try as quest
+          if (!val || val === false) {
+            val = getSaveDataValue(
+              currentLoadedSaveData,
+              currentLoadedSaveDataFlags,
+              {
+                type: "quest",
+                flag,
+              },
+            );
+          }
 
           return (
             val === "deposited"
@@ -1178,21 +1246,27 @@ async function updateAllProgressContent(selectedAct = "all") {
       });
 
       filteredItems.forEach((item) => {
-        const val =
-          currentLoadedSaveFile === undefined
+        const value =
+          currentLoadedSaveData === undefined
             ? false
-            : resolveSaveValue(currentLoadedSaveFile, item);
+            : getSaveDataValue(
+                currentLoadedSaveData,
+                currentLoadedSaveDataFlags,
+                item,
+              );
         const isUnlocked =
           item.type === "quest"
-            ? val === "completed" || val === true
+            ? value === "completed" || value === true
             : item.type === "level"
                 || item.type === "min"
                 || item.type === "region-level"
                 || item.type === "region-min"
-              ? (val ?? 0) >= (item.required ?? 0)
+              ? (value ?? 0) >= (item.required ?? 0)
               : item.type === "collectable"
-                ? (val ?? 0) > 0
-                : val === true || val === "collected" || val === "deposited";
+                ? (value ?? 0) > 0
+                : value === true
+                  || value === "collected"
+                  || value === "deposited";
 
         if (item.exclusiveGroup) {
           exclusiveGroups.add(item.exclusiveGroup);
@@ -1232,8 +1306,9 @@ async function updateAllProgressContent(selectedAct = "all") {
         spoilerOn,
       });
 
-      if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
+      if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) {
         return;
+      }
 
       section.appendChild(subgrid);
       allProgressGrid.appendChild(section);
@@ -1304,39 +1379,31 @@ function showGenericModal(data) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 🎯 Refresh Save
-  refreshSaveBtn.addEventListener("click", () => {
-    if (typeof refreshSaveFile === "function") {
-      refreshSaveFile();
-    } else {
-      console.warn("refreshSaveFile() not defined yet.");
-    }
-  });
-
   // 🎬 Info Modal
   closeInfoModal.addEventListener("click", () =>
     infoOverlay.classList.add("hidden"),
   );
   infoOverlay.addEventListener("click", (e) => {
-    if (e.target === infoOverlay) infoOverlay.classList.add("hidden");
+    if (e.target === infoOverlay) {
+      infoOverlay.classList.add("hidden");
+    }
   });
 });
 
-function reRenderActiveTab() {
+async function reRenderActiveTab() {
   const activeElement = document.querySelector(".sidebar-item.is-active");
-  if (activeElement === null) {
-    throw new Error("Failed to get the active element.");
-  }
-  if (!(activeElement instanceof HTMLAnchorElement)) {
-    throw new Error("The active element was not an HTML anchor element.");
-  }
+  assertNotNull(activeElement, "Failed to get the active element.");
+  assertIs(
+    activeElement,
+    HTMLAnchorElement,
+    "The active element was not an HTML anchor element.",
+  );
 
   const activeTab = activeElement.dataset["tab"];
-  if (activeTab === undefined) {
-    throw new Error(
-      "Failed to get the name of the active tab from the active element.",
-    );
-  }
+  assertDefined(
+    activeTab,
+    "Failed to get the name of the active tab from the active element.",
+  );
 
   const currentAct = actFilter.value || "all";
   const showMissingOnly = missingToggle.checked;
@@ -1346,13 +1413,12 @@ function reRenderActiveTab() {
   localStorage.setItem("showMissingOnly", showMissingOnly.toString());
 
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
-  if (func === undefined) {
-    throw new Error(
-      `Failed to find the function corresponding to tab: ${activeTab}`,
-    );
-  }
+  assertDefined(
+    func,
+    `Failed to find the function corresponding to tab: ${activeTab}`,
+  );
 
-  func(currentAct);
+  await func(currentAct);
 }
 
 missingToggle.addEventListener("change", reRenderActiveTab);

@@ -126,9 +126,6 @@
             ><input type="checkbox" id="spoilerToggle" /> Show spoilers</label
           >
           <button id="openUploadModal" class="btn-primary">Upload save</button>
-          <button id="refreshSaveBtn" class="btn-primary hidden">
-            Refresh save
-          </button>
           <input type="file" id="fileInput" accept=".dat" hidden />
         </div>
       </header>
@@ -194,10 +191,6 @@
 
         <!-- ✅ Scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
-        <script type="module">
-          import { decodeSilksongSave } from "./js/SaveDecoder.js";
-          window.decodeSilksongSave = decodeSilksongSave;
-        </script>
         <script type="module" src="./js/script.js"></script>
 
         <div

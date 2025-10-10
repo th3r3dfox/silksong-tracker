@@ -5,16 +5,19 @@ const CSHARP_HEADER = new Uint8Array([
 /** The AES key used by Silksong to encrypt saves. */
 const AES_KEY_STRING = "UKu52ePUBwetZ9wNX88o54dnfKRu0T1l";
 
-/** @type any */
-const { CryptoJS } = window;
+// The Web Crypto API does not support AES-ECB, since it is considered insecure. However, that is
+// what Unity uses, so we use an external library to handle the decryption.
+/** @type {import("crypto-js")} */
+const CryptoJS = window.CryptoJS;
 
 /**
- * 🔹 Removes the header and length prefix from the .dat file
+ * Removes the header and length prefix from the .dat file.
  *
  * @param {Uint8Array} bytes
  */
 function removeHeader(bytes) {
   const withoutHeader = bytes.subarray(CSHARP_HEADER.length, bytes.length - 1);
+
   let lengthCount = 0;
   for (let i = 0; i < 5; i++) {
     lengthCount++;
@@ -23,13 +26,15 @@ function removeHeader(bytes) {
       break;
     }
   }
+
   return withoutHeader.subarray(lengthCount);
 }
 
 /**
- * 🔓 Decodes a Hollow Knight: Silksong .dat save file
+ * Decodes a Hollow Knight: Silksong .dat save file.
  *
  * @param {ArrayBuffer} arrayBuffer
+ * @returns {unknown}
  */
 export function decodeSilksongSave(arrayBuffer) {
   try {
@@ -58,19 +63,9 @@ export function decodeSilksongSave(arrayBuffer) {
     });
 
     const jsonString = CryptoJS.enc.Utf8.stringify(decrypted);
-
-    if (!jsonString || !jsonString.startsWith("{")) {
-      throw new Error(
-        "Invalid or encrypted Silksong save (bad header or AES key)",
-      );
-    }
-
-    const parsed = JSON.parse(jsonString);
-    console.groupEnd();
-    return parsed;
+    return JSON.parse(jsonString);
   } catch (err) {
-    console.error("[Decode] Failed to decode Silksong save:", err);
-    console.groupEnd();
-    throw new Error("Invalid or encrypted Silksong save file");
+    console.error("[Decode] Failed to decode Silksong save file:", err);
+    throw new Error("Failed to decode Silksong save file");
   }
 }

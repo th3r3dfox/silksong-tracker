@@ -2,6 +2,7 @@
 // repository: https://go.microsoft.com/fwlink/?LinkId=827846
 {
   "recommendations": [
+    "dbaeumer.vscode-eslint", // The linter
     "esbenp.prettier-vscode", // The formatter
   ],
 }

@@ -1,3 +1,5 @@
+import { assertIs, assertNotNull } from "./utils.js";
+
 /**
  * Helper function to get an HTML element and throw an error if it does not exist.
  *
@@ -6,11 +8,7 @@
  */
 function getHTMLElement(id) {
   const element = document.getElementById(id);
-
-  if (element === null) {
-    throw new Error(`Failed to get HTML element with id: ${id}`);
-  }
-
+  assertNotNull(element, `Failed to get HTML element with id: ${id}`);
   return element;
 }
 
@@ -23,13 +21,11 @@ function getHTMLElement(id) {
  */
 function getHTMLInputElement(id) {
   const element = getHTMLElement(id);
-
-  if (!(element instanceof HTMLInputElement)) {
-    throw new Error(
-      `The HTML element with an id of "${id}" is not an HTML input element.`,
-    );
-  }
-
+  assertIs(
+    element,
+    HTMLInputElement,
+    `The element with an id of "${id}" is not an input element.`,
+  );
   return element;
 }
 
@@ -42,13 +38,11 @@ function getHTMLInputElement(id) {
  */
 function getHTMLSelectElement(id) {
   const element = getHTMLElement(id);
-
-  if (!(element instanceof HTMLSelectElement)) {
-    throw new Error(
-      `The HTML element with an id of "${id}" is not an HTML select element.`,
-    );
-  }
-
+  assertIs(
+    element,
+    HTMLSelectElement,
+    `The element with an id of "${id}" is not a select element.`,
+  );
   return element;
 }
 
@@ -57,20 +51,23 @@ export const allProgressGrid = getHTMLElement("allprogress-grid");
 export const backToTop = getHTMLElement("backToTop");
 export const closeInfoModal = getHTMLElement("closeInfoModal");
 export const closeUploadModal = getHTMLElement("closeUploadModal");
+export const completionValue = getHTMLElement("completionValue");
 export const copyRawsaveBtn = getHTMLElement("copyRawsaveBtn");
 export const downloadRawsaveBtn = getHTMLElement("downloadRawsaveBtn");
 export const dropzone = getHTMLElement("dropzone");
-export const fileInput = getHTMLElement("fileInput");
+export const fileInput = getHTMLInputElement("fileInput");
 export const infoOverlay = getHTMLElement("info-overlay");
 export const infoContent = getHTMLElement("info-content");
 export const missingToggle = getHTMLInputElement("missingToggle");
 export const modeBanner = getHTMLElement("modeBanner");
 export const nextMatch = getHTMLElement("nextMatch");
 export const openUploadModal = getHTMLElement("openUploadModal");
+export const playtimeValue = getHTMLElement("playtimeValue");
 export const prevMatch = getHTMLElement("prevMatch");
 export const rawSaveOutput = getHTMLElement("rawsave-output");
-export const rawSaveSearch = getHTMLElement("rawsave-search");
-export const refreshSaveBtn = getHTMLElement("refreshSaveBtn");
+export const rawSaveSearch = getHTMLInputElement("rawsave-search");
+export const rosariesValue = getHTMLElement("rosariesValue");
 export const searchCounter = getHTMLElement("searchCounter");
+export const shardsValue = getHTMLElement("shardsValue");
 export const spoilerToggle = getHTMLInputElement("spoilerToggle");
 export const uploadOverlay = getHTMLElement("uploadOverlay");
