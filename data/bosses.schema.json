@@ -62,12 +62,10 @@
                 },
                 "type": {
                   "type": "string",
-                  "description": "Type of item (e.g., 'journal' for journal entries)",
                   "enum": ["journal"]
                 },
                 "subtype": {
                   "type": "string",
-                  "description": "Subtype for tracking (e.g., 'kills' for kill count)",
                   "enum": ["kills", "seen"]
                 },
                 "required": {

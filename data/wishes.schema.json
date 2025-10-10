@@ -1,85 +1,101 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "array",
-  "items": {
-    "type": "object",
-    "required": ["id", "label", "desc", "contrib", "items"],
-    "additionalProperties": false,
-    "properties": {
-      "id": {
-        "type": "string"
-      },
-      "label": {
-        "type": "string"
-      },
-      "desc": {
-        "type": "string"
-      },
-      "contrib": {
-        "type": "number",
-        "description": "Contribution value"
-      },
+  "type": "object",
+  "required": ["$schema", "items"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
       "items": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "required": ["id", "label", "type", "flag", "icon", "description", "link"],
-          "additionalProperties": false,
-          "description": "All properties are required except: category, subtype, required, missable, mode, act",
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "label": {
-              "type": "string"
-            },
-            "type": {
-              "type": "string",
-              "description": "Type of item (e.g., 'quest' for quest entries, 'journal' for journal entries)",
-              "enum": ["quest", "journal"]
-            },
-            "flag": {
-              "type": "string",
-              "description": "The name of the save file flag used to track this wish"
-            },
-            "icon": {
-              "type": "string"
-            },
-            "description": {
-              "type": "string"
-            },
-            "link": {
-              "type": "string",
-              "format": "uri"
-            },
-            "category": {
-              "type": "string",
-              "description": "The section of the save file that contains the flag used to track this wish",
-              "enum": ["Boss"]
-            },
-            "subtype": {
-              "type": "string",
-              "description": "Subtype for tracking (e.g., 'kills' for kill count)",
-              "enum": ["kills", "seen"]
-            },
-            "required": {
-              "type": "integer",
-              "description": "Required count for completion (e.g., number of kills needed)",
-              "minimum": 1
-            },
-            "missable": {
-              "type": "boolean",
-              "description": "Whether this wish can be permanently missed"
-            },
-            "mode": {
-              "type": "string",
-              "enum": ["normal", "steel"],
-              "description": "Game mode requirement (normal or steel soul)"
-            },
-            "act": {
-              "type": "integer",
-              "enum": [1, 2, 3],
-              "description": "The act in which this wish is available"
+        "type": "object",
+        "required": ["id", "label", "desc", "contrib", "items"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          },
+          "contrib": {
+            "type": "number",
+            "description": "Contribution value"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "type",
+                "flag",
+                "icon",
+                "description",
+                "link"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["quest", "journal"]
+                },
+                "flag": {
+                  "type": "string",
+                  "description": "The name of the save file flag used to track this wish"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "category": {
+                  "type": "string",
+                  "description": "The section of the save file that contains the flag used to track this wish",
+                  "enum": ["Boss"]
+                },
+                "subtype": {
+                  "type": "string",
+                  "description": "Subtype for tracking (e.g., 'kills' for kill count)",
+                  "enum": ["kills", "seen"]
+                },
+                "required": {
+                  "type": "integer",
+                  "description": "Required count for completion (e.g., number of kills needed)",
+                  "minimum": 1
+                },
+                "missable": {
+                  "type": "boolean",
+                  "description": "Whether this wish can be permanently missed"
+                },
+                "mode": {
+                  "type": "string",
+                  "enum": ["normal", "steel"],
+                  "description": "Game mode requirement (normal or steel soul)"
+                },
+                "act": {
+                  "type": "integer",
+                  "enum": [1, 2, 3],
+                  "description": "The act in which this wish is available"
+                }
+              }
             }
           }
         }
