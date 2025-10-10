@@ -353,22 +353,10 @@ function getSaveDataValue(saveData, item) {
     case "sceneBool": {
       const scene = normalizeStringWithUnderscores(item.scene ?? "");
       const id = normalizeStringWithUnderscores(item.flag ?? "");
-      console.log("LOL scene:", scene);
-      console.log("LOL id:", id);
-      console.log("LOL:", saveData[scene]);
 
       const value = currentLoadedSaveDataFlags[scene]?.[id];
       if (value !== undefined) {
         return value;
-      }
-
-      const saveScene = saveData[scene];
-      if (saveScene !== undefined) {
-        return (
-          saveScene[item.flag]
-          ?? saveScene[item.flag.replace(/ /g, "_")]
-          ?? false
-        );
       }
 
       return false;
