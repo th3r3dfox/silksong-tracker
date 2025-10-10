@@ -389,26 +389,17 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
     // Numeric progressions (Needle, ToolPouchUpgrades, ToolKitUpgrades, etc.)
     case "level":
     case "min": {
-      if (item.flag) {
-        const current = playerData[item.flag] ?? 0;
-
-        return current; // ✅ always return the number, unlock is calculated later
-      }
-
-      return false;
+      // ✅ always return the number, unlock is calculated later
+      return isKeyOf(flag, playerData) ? playerData[flag] : 0;
     }
 
     // Numeric flags (flagInt) — e.g. CaravanTroupeLocation >= 2
     case "flagInt": {
-      if (item.flag) {
-        const current = playerData[item.flag];
-        if (typeof current === "number") {
-          const required = item.value ?? item.required ?? 1;
-          return current >= required;
-        }
-        return false;
+      const current = playerData[item.flag];
+      if (typeof current === "number") {
+        const required = item.value ?? item.required ?? 1;
+        return current >= required;
       }
-
       return false;
     }
 
@@ -446,39 +437,35 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
 
     // Relics (Choral Commandments, Weaver Effigies, Mementos, etc.)
     case "relic": {
-      if (item.flag) {
-        const relicList =
-          saveData?.Relics?.savedData
-          || saveData?.playerData?.Relics?.savedData
-          || [];
+      const relicList =
+        saveData?.Relics?.savedData
+        || saveData?.playerData?.Relics?.savedData
+        || [];
 
-        const mementoList =
-          saveData?.MementosDeposited?.savedData
-          || saveData?.playerData?.MementosDeposited?.savedData
-          || [];
+      const mementoList =
+        saveData?.MementosDeposited?.savedData
+        || saveData?.playerData?.MementosDeposited?.savedData
+        || [];
 
-        const combinedList = relicList.concat(mementoList);
+      const combinedList = relicList.concat(mementoList);
 
-        const entry = combinedList.find((e) => e.Name === item.flag);
-        if (!entry) {
-          return false;
-        }
-
-        const data = entry.Data || {};
-
-        if (data.IsDeposited === true) {
-          return "deposited"; // ✅ Green
-        }
-
-        if (data.HasSeenInRelicBoard === true) {
-          return "collected"; // 🟡 Yellow
-        }
-
-        if (data.IsCollected === true) {
-          return "collected";
-        }
-
+      const entry = combinedList.find((e) => e.Name === item.flag);
+      if (!entry) {
         return false;
+      }
+
+      const data = entry.Data || {};
+
+      if (data.IsDeposited === true) {
+        return "deposited"; // ✅ Green
+      }
+
+      if (data.HasSeenInRelicBoard === true) {
+        return "collected"; // 🟡 Yellow
+      }
+
+      if (data.IsCollected === true) {
+        return "collected";
       }
 
       return false;
@@ -486,29 +473,25 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
 
     // ⚡ Materium tracking (seen = green, collected = yellow)
     case "materium": {
-      if (item.flag) {
-        const list =
-          saveData?.playerData?.MateriumCollected?.savedData
-          || saveData?.MateriumCollected?.savedData
-          || [];
+      const list =
+        saveData?.playerData?.MateriumCollected?.savedData
+        || saveData?.MateriumCollected?.savedData
+        || [];
 
-        const entry = list.find((e) => e.Name === item.flag);
-        if (!entry) {
-          return false;
-        }
-
-        const data = entry.Data || {};
-
-        // ✅ green if seen in board
-        if (data.HasSeenInRelicBoard === true) {
-          return "deposited";
-        }
-        // 🟡 yellow if collected but not seen in board
-        if (data.IsCollected === true) {
-          return "collected";
-        }
-
+      const entry = list.find((e) => e.Name === item.flag);
+      if (!entry) {
         return false;
+      }
+
+      const data = entry.Data || {};
+
+      // ✅ green if seen in board
+      if (data.HasSeenInRelicBoard === true) {
+        return "deposited";
+      }
+      // 🟡 yellow if collected but not seen in board
+      if (data.IsCollected === true) {
+        return "collected";
       }
 
       return false;
@@ -546,7 +529,7 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
   }
 
   // Generic fallback
-  if (item.flag && playerData[item.flag] !== undefined) {
+  if (flag && playerData[item.flag] !== undefined) {
     return playerData[item.flag];
   }
 
