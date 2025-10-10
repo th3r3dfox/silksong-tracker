@@ -1,5 +1,10 @@
 import { z } from "https://cdn.jsdelivr.net/npm/zod@4/+esm";
-import { assertString, isArray, isObject } from "./utils.js";
+import {
+  assertString,
+  isArray,
+  isObject,
+  normalizeStringWithUnderscores,
+} from "./utils.js";
 
 export const objectWithSavedData = z.object({
   savedData: z.array(
@@ -51,24 +56,21 @@ export function getSaveFileFlags(root) {
   const flags = {};
 
   /**
-   * @param {string} sceneRaw
-   * @param {string} idRaw
+   * @param {string} scene
+   * @param {string} id
    * @param {number | boolean} value
    */
-  function mark(sceneRaw, idRaw, value) {
-    if (!sceneRaw || !idRaw) {
-      return;
-    }
-    const scene = sceneRaw.trim().replace(/\s+/g, "_");
-    const idKey = idRaw
-      .trim()
-      .replace(/\s+/g, "_")
-      .replace(/[^\w.]/g, "_");
+  function mark(scene, id, value) {
+    scene = normalizeStringWithUnderscores(scene);
+    id = normalizeStringWithUnderscores(id);
 
-    if (flags[scene] === undefined) {
-      flags[scene] = {};
+    let flagsScene = flags[scene];
+    if (flagsScene === undefined) {
+      flagsScene = {};
+      flags[scene] = flagsScene;
     }
-    flags[scene][idKey] = Boolean(value);
+
+    flagsScene[id] = Boolean(value);
   }
 
   /** @param {unknown} node */
