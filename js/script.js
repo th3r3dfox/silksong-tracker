@@ -275,8 +275,7 @@ function resolveSaveValue(save, item) {
   switch (type) {
     case "flag": {
       assertString(flag, 'The "flag" property was not a string.');
-      const value = playerData[flag];
-      return typeof value === "string" ? value : undefined;
+      return playerData[flag];
     }
 
     case "collectable": {
