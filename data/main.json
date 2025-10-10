@@ -446,7 +446,6 @@
         "flag": "CaravanTroupeLocation",
         "type": "flagInt",
         "act": 2,
-        "value": 2,
         "description": "Given by the Flea Caravan upon their ascent to the Grand Gate (requires 12 fleas and Last Judge defeated)",
         "link": "https://hollowknight.wiki/w/Spool_Fragment"
       },

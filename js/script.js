@@ -42,7 +42,6 @@ import {
   assertNotNull,
   assertObject,
   assertString,
-  isKeyOf,
   isObject,
   normalizeString,
   normalizeStringWithUnderscores,
@@ -263,7 +262,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * @typedef {{type: string, flag: string, scene?: string}} Item
+ * @typedef {{
+ *   type: string,
+ *   flag: string,
+ *   relatedFlag?: string,
+ *   scene?: string,
+ *   required?: number,
+ *   subtype?: string,
+ * }} Item
  */
 
 /**
@@ -277,12 +283,14 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
   }
 
   const { playerData } = saveData;
-  const { type, flag, scene } = item;
-  const normalizedFlag = normalizeString(flag);
+  /** @type Record<string, unknown> */
+  const playerDataExpanded = playerData;
+
+  const { type, flag, relatedFlag, scene, required, subtype } = item;
 
   switch (type) {
     case "flag": {
-      return isKeyOf(flag, playerData) ? playerData[flag] : undefined;
+      return playerDataExpanded[flag];
     }
 
     case "collectable": {
@@ -304,6 +312,8 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
     case "tool":
     case "toolEquip":
     case "crest": {
+      const normalizedFlag = normalizeString(flag);
+
       /** @param {z.infer<typeof objectWithSavedData>} object */
       function findIn(object) {
         const matchingElement = object.savedData.find(
@@ -329,11 +339,11 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
     // Wishes
     case "quest": {
       const { QuestCompletionData } = playerData;
+      const normalizedFlag = normalizeString(flag);
 
       const entry = QuestCompletionData.savedData.find(
         (e) => normalizeString(e.Name) === normalizedFlag,
       );
-
       if (entry === undefined) {
         return undefined;
       }
@@ -351,7 +361,7 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
       return false;
     }
 
-    // Scene flags (Mask Shards, Heart Pieces ecc.)
+    // Mask Shards, Heart Pieces etc.
     case "sceneBool": {
       const normalizedScene = normalizeStringWithUnderscores(scene ?? "");
       const normalizedFlag = normalizeStringWithUnderscores(flag ?? "");
@@ -369,14 +379,14 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
 
     case "key": {
       if (scene === undefined) {
-        return isKeyOf(flag, playerData) ? playerData[flag] === true : false;
+        return playerDataExpanded[flag] === true;
       }
 
       const sceneFlags = saveDataFlags[scene];
       return isObject(sceneFlags) ? sceneFlags[flag] === true : false;
     }
 
-    // Scene visited (Silk Hearts, Memories etc.)
+    // Silk Hearts, Memories etc.
     case "sceneVisited": {
       if (item.scene) {
         const scenes = playerData?.scenesVisited || [];
@@ -390,124 +400,103 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
     case "level":
     case "min": {
       // ✅ always return the number, unlock is calculated later
-      return isKeyOf(flag, playerData) ? playerData[flag] : 0;
+      return playerDataExpanded[flag] ?? 0;
     }
 
-    // Numeric flags (flagInt) — e.g. CaravanTroupeLocation >= 2
+    // e.g. CaravanTroupeLocation >= 2
     case "flagInt": {
-      const current = playerData[item.flag];
+      const current = playerDataExpanded[flag];
       if (typeof current === "number") {
-        const required = item.value ?? item.required ?? 1;
-        return current >= required;
+        return current >= (required ?? 1);
       }
+
       return false;
     }
 
     case "journal": {
-      const journalList =
-        playerData.EnemyJournalKillData?.list
-        || playerData.Journal?.savedData
-        || playerData.JournalData?.savedData
-        || saveData.Journal?.savedData
-        || [];
+      const { list } = playerData.EnemyJournalKillData;
 
-      const entry = journalList.find((e) => e.Name === item.flag);
-      if (!entry) {
+      const entry = list.find((element) => element.Name === item.flag);
+      if (entry === undefined) {
         return false;
       }
 
-      const data = entry.Record || entry.Data || {};
+      const { Record } = entry;
 
-      // Support different conditions
-      if (item.subtype === "kills") {
-        return (data.Kills ?? 0) >= (item.required ?? 1);
+      if (subtype === "kills") {
+        return Record.Kills >= (item.required ?? 1);
       }
 
-      if (item.subtype === "seen") {
-        return data.HasBeenSeen === true;
-      }
-
-      if (item.subtype === "unlocked") {
-        return data.IsUnlocked === true;
-      }
-
-      // fallback
-      return data.HasBeenSeen || (data.Kills ?? 0) > 0;
-    }
-
-    // Relics (Choral Commandments, Weaver Effigies, Mementos, etc.)
-    case "relic": {
-      const relicList =
-        saveData?.Relics?.savedData
-        || saveData?.playerData?.Relics?.savedData
-        || [];
-
-      const mementoList =
-        saveData?.MementosDeposited?.savedData
-        || saveData?.playerData?.MementosDeposited?.savedData
-        || [];
-
-      const combinedList = relicList.concat(mementoList);
-
-      const entry = combinedList.find((e) => e.Name === item.flag);
-      if (!entry) {
-        return false;
-      }
-
-      const data = entry.Data || {};
-
-      if (data.IsDeposited === true) {
-        return "deposited"; // ✅ Green
-      }
-
-      if (data.HasSeenInRelicBoard === true) {
-        return "collected"; // 🟡 Yellow
-      }
-
-      if (data.IsCollected === true) {
-        return "collected";
+      if (subtype === "seen") {
+        return Record.HasBeenSeen === true;
       }
 
       return false;
     }
 
-    // ⚡ Materium tracking (seen = green, collected = yellow)
-    case "materium": {
-      const list =
-        saveData?.playerData?.MateriumCollected?.savedData
-        || saveData?.MateriumCollected?.savedData
-        || [];
+    case "relic": {
+      const { Relics, MementosDeposited } = playerData;
 
-      const entry = list.find((e) => e.Name === item.flag);
-      if (!entry) {
+      const combinedList = [
+        ...Relics.savedData,
+        ...MementosDeposited.savedData,
+      ];
+
+      const entry = combinedList.find((element) => element.Name === item.flag);
+      if (entry === undefined) {
         return false;
       }
 
-      const data = entry.Data || {};
+      const { Data } = entry;
 
-      // ✅ green if seen in board
-      if (data.HasSeenInRelicBoard === true) {
+      if (Data["IsDeposited"] === true) {
         return "deposited";
       }
-      // 🟡 yellow if collected but not seen in board
-      if (data.IsCollected === true) {
+
+      if (Data["HasSeenInRelicBoard"] === true) {
+        return "collected";
+      }
+
+      if (Data["IsCollected"] === true) {
         return "collected";
       }
 
       return false;
     }
 
-    // Devices (Materium, Farsight, etc.)
+    case "materium": {
+      const { MateriumCollected } = playerData;
+
+      const entry = MateriumCollected.savedData.find(
+        (element) => element.Name === item.flag,
+      );
+      if (entry === undefined) {
+        return false;
+      }
+
+      const { Data } = entry;
+
+      if (Data["HasSeenInRelicBoard"] === true) {
+        return "deposited";
+      }
+
+      if (Data["IsCollected"] === true) {
+        return "collected";
+      }
+
+      return false;
+    }
+
+    // Materium, Farsight, etc.
     case "device": {
       const scene = String(item.scene || "")
         .trim()
         .replace(/\s+/g, "_");
-      const idKey = String(item.flag || "")
+      const id = String(flag || "")
         .trim()
         .replace(/\s+/g, "_");
       const depositFlag = String(item.relatedFlag || "").trim();
 
-      // ✅ Green — item deposited
       if (
         depositFlag
         && (saveData?.playerData?.[depositFlag] === true
@@ -516,11 +505,10 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
         return "deposited";
       }
 
-      // 🟡 Yellow — item collected in scene
       const sceneFlags =
         currentLoadedSaveDataFlags?.[scene] || saveData?.[scene] || {};
 
-      if (sceneFlags[idKey] === true) {
+      if (sceneFlags[id] === true) {
         return "collected";
       }
 

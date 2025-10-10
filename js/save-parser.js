@@ -20,10 +20,24 @@ export const silksongSaveSchema = z.object({
     .object({
       Collectables: objectWithSavedData,
       completionPercentage: z.int(),
+      EnemyJournalKillData: z.object({
+        list: z.array(
+          z.object({
+            Name: z.string(),
+            Record: z.object({
+              Kills: z.int(),
+              HasBeenSeen: z.boolean(),
+            }),
+          }),
+        ),
+      }),
+      MateriumCollected: objectWithSavedData,
+      MementosDeposited: objectWithSavedData,
       geo: z.int(),
       permadeathMode: z.union([z.literal(0), z.literal(1)]),
       playTime: z.number(),
       QuestCompletionData: objectWithSavedData,
+      Relics: objectWithSavedData,
       scenesVisited: z.array(z.string()),
       ShellShards: z.int(),
       ToolEquips: objectWithSavedData,
