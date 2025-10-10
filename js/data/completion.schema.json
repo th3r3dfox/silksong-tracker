@@ -34,9 +34,9 @@
               "required": [
                 "id",
                 "label",
-                "type",
-                "flag",
                 "icon",
+                "flag",
+                "type",
                 "description",
                 "link"
               ],
@@ -48,16 +48,28 @@
                 "label": {
                   "type": "string"
                 },
-                "type": {
+                "icon": {
+                  "type": "string"
+                },
+                "scene": {
                   "type": "string",
-                  "enum": ["quest", "journal"]
+                  "description": "Scene identifier for location-based items"
                 },
                 "flag": {
                   "type": "string",
-                  "description": "The name of the save file flag used to track this wish"
+                  "description": "The name of the save file flag used to track this item"
                 },
-                "icon": {
-                  "type": "string"
+                "relatedFlag": {
+                  "type": "string",
+                  "description": "Related flag for constructed items"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["relic", "materium", "device"]
+                },
+                "act": {
+                  "type": "integer",
+                  "enum": [1, 2, 3]
                 },
                 "description": {
                   "type": "string"
@@ -66,29 +78,13 @@
                   "type": "string",
                   "format": "uri"
                 },
-                "subtype": {
-                  "type": "string",
-                  "description": "Subtype for tracking (e.g., 'kills' for kill count)",
-                  "enum": ["kills", "seen"]
-                },
-                "required": {
-                  "type": "integer",
-                  "description": "Required count for completion (e.g., number of kills needed)",
-                  "minimum": 1
-                },
                 "missable": {
                   "type": "boolean",
-                  "description": "Whether this wish can be permanently missed"
+                  "description": "Whether this item can be permanently missed"
                 },
                 "mode": {
                   "type": "string",
-                  "enum": ["normal", "steel"],
-                  "description": "Game mode requirement (normal or steel soul)"
-                },
-                "act": {
-                  "type": "integer",
-                  "enum": [1, 2, 3],
-                  "description": "The act in which this wish is available"
+                  "enum": ["normal", "steel"]
                 }
               }
             }

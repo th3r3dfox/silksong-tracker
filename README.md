@@ -4,7 +4,7 @@
 
 **Silksong Tracker** is a web-based tool that allows you to analyze and visualize your [_Hollow Knight: Silksong_](https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/) save files. It helps players explore their progress, bosses defeated, items collected, and hidden secrets.
 
-All data is processed **locally in your browser** — your save file is never uploaded or stored.
+All data is processed **locally in your browser** - your save file is never uploaded or stored.
 
 ## Features
 

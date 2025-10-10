@@ -34,14 +34,13 @@
               "required": [
                 "id",
                 "label",
-                "act",
-                "icon",
+                "type",
                 "flag",
+                "icon",
                 "description",
                 "link"
               ],
               "additionalProperties": false,
-              "description": "All properties are required except: type, subtype, required, missable, mode",
               "properties": {
                 "id": {
                   "type": "string"
@@ -49,29 +48,16 @@
                 "label": {
                   "type": "string"
                 },
-                "act": {
-                  "type": "integer",
-                  "enum": [1, 2, 3]
-                },
-                "icon": {
-                  "type": "string"
+                "type": {
+                  "type": "string",
+                  "enum": ["quest", "journal"]
                 },
                 "flag": {
                   "type": "string",
-                  "description": "The name of the save file flag used to track this boss"
+                  "description": "The name of the save file flag used to track this wish"
                 },
-                "type": {
-                  "type": "string",
-                  "enum": ["journal"]
-                },
-                "subtype": {
-                  "type": "string",
-                  "enum": ["kills", "seen"]
-                },
-                "required": {
-                  "type": "integer",
-                  "description": "Required count for completion (e.g., number of kills needed)",
-                  "minimum": 1
+                "icon": {
+                  "type": "string"
                 },
                 "description": {
                   "type": "string"
@@ -80,13 +66,27 @@
                   "type": "string",
                   "format": "uri"
                 },
+                "subtype": {
+                  "type": "string",
+                  "description": "Subtype for tracking (e.g., 'kills' for kill count)",
+                  "enum": ["kills", "seen"]
+                },
+                "required": {
+                  "type": "integer",
+                  "description": "Required count for completion (e.g., number of kills needed)",
+                  "minimum": 1
+                },
                 "missable": {
                   "type": "boolean",
-                  "description": "Whether this boss encounter can be permanently missed"
+                  "description": "Whether this wish can be permanently missed"
                 },
                 "mode": {
                   "type": "string",
                   "enum": ["normal", "steel"]
+                },
+                "act": {
+                  "type": "integer",
+                  "enum": [1, 2, 3]
                 }
               }
             }
