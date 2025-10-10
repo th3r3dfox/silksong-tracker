@@ -1,4 +1,22 @@
-import { lintCommands } from "complete-node";
+import { getFilePathsInDirectory, lintCommands } from "complete-node";
+import path from "path";
+
+const CHECK_JSON_COMMANDS: readonly string[] = await (async () => {
+  const repoRoot = path.join(import.meta.dirname, "..");
+  const dataPath = path.join(repoRoot, "js", "data");
+  const filePaths = await getFilePathsInDirectory(dataPath);
+
+  const jsonFilePaths = filePaths.filter(
+    (filePath) =>
+      filePath.endsWith(".json") && !filePath.endsWith(".schema.json"),
+  );
+
+  return jsonFilePaths.map((jsonFilePath) => {
+    const { name } = path.parse(jsonFilePath);
+    const schemaFilePath = path.join(dataPath, `${name}.schema.json`);
+    return `ajv validate -c ajv-formats -d ${jsonFilePath} -s ${schemaFilePath}`;
+  });
+})();
 
 await lintCommands(import.meta.dirname, [
   // Use TypeScript to type-check the code.
@@ -13,6 +31,6 @@ await lintCommands(import.meta.dirname, [
   // - "--log-level=warn" makes it only output errors.
   "prettier --log-level=warn --check .",
 
-  "ajv validate -c ajv-formats -d ./data/bosses.json -s ./data/bosses.schema.json",
-  "ajv validate -c ajv-formats -d ./data/wishes.json -s ./data/wishes.schema.json",
+  // Ensure that the JSON files match their schemas.
+  ...CHECK_JSON_COMMANDS,
 ]);
