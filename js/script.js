@@ -1268,9 +1268,13 @@ async function updateAllProgressContent(selectedAct = "all") {
 
       // Add act colors
       filteredItems.forEach((item) => {
-        if (item.act === 1) item.actColor = "act-1";
-        else if (item.act === 2) item.actColor = "act-2";
-        else if (item.act === 3) item.actColor = "act-3";
+        if (item.act === 1) {
+          item.actColor = "act-1";
+        } else if (item.act === 2) {
+          item.actColor = "act-2";
+        } else if (item.act === 3) {
+          item.actColor = "act-3";
+        }
       });
 
       // --- Correct count (with exclusive groups) ---
