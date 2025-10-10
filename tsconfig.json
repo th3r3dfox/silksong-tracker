@@ -15,6 +15,9 @@
     // JavaScript files directly.
     "noEmit": true,
 
+    // Needed so that we can import JSON files.
+    "module": "esnext",
+
     // Needed so that TypeScript can find the types for Zod.
     "moduleResolution": "bundler",
     "baseUrl": ".",

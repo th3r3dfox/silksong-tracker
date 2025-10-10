@@ -1,6 +1,11 @@
 // @ts-nocheck
 
 import { z } from "https://cdn.jsdelivr.net/npm/zod@4/+esm";
+import bossesData from "../data/bosses.json" with { type: "json" };
+import completionData from "../data/completion.json" with { type: "json" };
+import essentialsData from "../data/essentials.json" with { type: "json" };
+import mainData from "../data/main.json" with { type: "json" };
+import wishesData from "../data/wishes.json" with { type: "json" };
 import {
   actFilter,
   allProgressGrid,
@@ -1057,16 +1062,6 @@ async function updateAllProgressContent(selectedAct = "all") {
   const spoilerOn = spoilerToggle.checked;
   const showMissingOnly = missingToggle.checked;
   allProgressGrid.innerHTML = "";
-
-  // Load all data files
-  const [mainData, essentialsData, bossesData, completionData, wishesData] =
-    await Promise.all([
-      fetch("data/main.json").then((r) => r.json()),
-      fetch("data/essentials.json").then((r) => r.json()),
-      fetch("data/bosses.json").then((r) => r.json()),
-      fetch("data/completion.json").then((r) => r.json()),
-      fetch("data/wishes.json").then((r) => r.json()),
-    ]);
 
   // Create section headers and render each category
   const categories = [
