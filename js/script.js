@@ -264,9 +264,9 @@ function resolveSaveValue(save, item) {
   if (
     item.type === "flag"
     && item.flag
-    && Object.prototype.hasOwnProperty.call(pd, item.flag)
+    && Object.prototype.hasOwnProperty.call(playerData, item.flag)
   ) {
-    return pd[item.flag];
+    return playerData[item.flag];
   }
 
   // Collectables
