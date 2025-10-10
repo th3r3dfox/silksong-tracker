@@ -5,6 +5,8 @@ const CSHARP_HEADER = new Uint8Array([
 /** The AES key used by Silksong to encrypt saves. */
 const AES_KEY_STRING = "UKu52ePUBwetZ9wNX88o54dnfKRu0T1l";
 
+// The web crypto API does not support AES-ECB, since it is considered insecure. However, that is
+// what Unity uses, so use an external library to handle the decryption.
 /** @type any */
 const { CryptoJS } = window;
 
