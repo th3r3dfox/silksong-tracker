@@ -60,9 +60,6 @@ let currentActFilter = actFilter.value || "all";
 let currentLoadedSaveData;
 
 /** @type Record<string, unknown> | undefined */
-let currentLoadedSaveDataRaw;
-
-/** @type Record<string, unknown> | undefined */
 let currentLoadedSaveDataFlags;
 
 /** @type {"steel" | "normal" | undefined} */
@@ -869,9 +866,9 @@ async function handleSaveFile(file) {
 
     rawSaveOutput.textContent = JSON.stringify(saveData, undefined, 2);
 
-    // Index and save globally
-    currentLoadedSaveData = saveDataRaw; // TODO: Change to "saveData" instead.
-    currentLoadedSaveDataRaw = saveDataRaw;
+    // @ts-expect-error Instead of marking the Zod schema as loose, it is simpler to just assign the
+    // pre-validation object.
+    currentLoadedSaveData = saveDataRaw;
     currentLoadedSaveDataFlags = getSaveFileFlags(saveDataRaw);
 
     // --- Update UI statistics ---
