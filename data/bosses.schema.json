@@ -25,7 +25,7 @@
           },
           "contrib": {
             "type": "number",
-            "description": "Contribution value for the category"
+            "description": "Contribution value"
           },
           "items": {
             "type": "array",
@@ -36,7 +36,6 @@
                 "label",
                 "act",
                 "icon",
-                "category",
                 "flag",
                 "description",
                 "link"
@@ -56,11 +55,6 @@
                 },
                 "icon": {
                   "type": "string"
-                },
-                "category": {
-                  "type": "string",
-                  "enum": ["Boss", "Journal"],
-                  "description": "The section of the save file that contains the flag used to track this boss"
                 },
                 "flag": {
                   "type": "string",
