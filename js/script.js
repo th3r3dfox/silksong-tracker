@@ -526,7 +526,7 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
  *   label: string,
  *   icon?: string,
  *   type: string,
- *   act?: number,
+ *   act?: 1 | 2 | 3,
  *   actColor?: string,
  *   missable?: boolean,
  *   required?: number,
@@ -615,7 +615,7 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     }
 
     div.id = `${realContainerId}-${item.id}`;
-    div.dataset.flag = item.flag;
+    div.dataset["flag"] = item.flag;
 
     const img = document.createElement("img");
     img.alt = item.label;
@@ -630,25 +630,44 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     let isDone = false;
     let isAccepted = false;
 
-    if (["level", "region-level", "min", "region-min"].includes(item.type)) {
-      isDone = (value ?? 0) >= (item.required ?? 0);
-    } else if (item.type === "collectable") {
-      isDone = (value ?? 0) > 0;
-    } else if (item.type === "quest") {
-      isDone = value === "completed" || value === true;
-      isAccepted = value === "accepted";
-    } else if (item.type === "relic") {
-      isDone = value === "deposited"; // green = delivered
-      isAccepted = value === "collected"; // yellow = found but not deposited
-    } else if (item.type === "materium") {
-      // "deposited" = green (done), "collected" = yellow (accepted)
-      isDone = value === "deposited";
-      isAccepted = value === "collected";
-    } else if (item.type === "device") {
-      isDone = value === "deposited"; // ✅ Green
-      isAccepted = value === "collected"; // 🟡 Yellow
-    } else {
-      isDone = value === true;
+    switch (item.type) {
+      case "level":
+      case "region-level":
+      case "min":
+      case "region-min": {
+        const current = value === undefined ? 0 : Number(value);
+        isDone = current >= (item.required ?? 0);
+        break;
+      }
+
+      case "collectable": {
+        const current = value === undefined ? 0 : Number(value);
+        isDone = current > 0;
+      }
+
+      case "quest": {
+        isDone = value === "completed" || value === true;
+        isAccepted = value === "accepted";
+      }
+
+      case "relic": {
+        isDone = value === "deposited";
+        isAccepted = value === "collected";
+      }
+
+      case "materium": {
+        isDone = value === "deposited";
+        isAccepted = value === "collected";
+      }
+
+      case "device": {
+        isDone = value === "deposited";
+        isAccepted = value === "collected";
+      }
+
+      default: {
+        isDone = value === true;
+      }
     }
 
     // If "only missing" and it's completed → don't render the card at all
@@ -779,9 +798,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function scrollToMatch(index) {
     const allMarks = rawSaveOutput.querySelectorAll("mark.search-match");
     allMarks.forEach((m) => m.classList.remove("active-match"));
-    if (allMarks[index - 1]) {
-      allMarks[index - 1].classList.add("active-match");
-      allMarks[index - 1].scrollIntoView({
+    const lastMark = allMarks[index - 1];
+    if (lastMark !== undefined) {
+      lastMark.classList.add("active-match");
+      lastMark.scrollIntoView({
         behavior: "smooth",
         block: "center",
       });
