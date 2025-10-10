@@ -1159,7 +1159,11 @@ window.addEventListener("DOMContentLoaded", () => {
   actFilter.value = savedAct;
   currentActFilter = savedAct;
 
-  // 🔹 Synchronize "Show spoilers" state (keeps colors consistent)
+  // 🔹 Restore "Show spoilers" state from localStorage
+  const savedSpoilerState = localStorage.getItem("showSpoilers");
+  if (savedSpoilerState !== null) {
+    spoilerToggle.checked = savedSpoilerState === "true";
+  }
   const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
 
@@ -1186,6 +1190,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const func = TAB_TO_UPDATE_FUNCTION[savedTab];
+  assertDefined(func, `Failed to find the function for tab: ${savedTab}`);
 
   // Minimum delay for safety (prevents race with DOM rendering)
   setTimeout(() => {
