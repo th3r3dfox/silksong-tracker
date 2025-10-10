@@ -46,7 +46,6 @@ import {
   assertIs,
   assertNotNull,
   assertObject,
-  assertString,
   isObject,
   normalizeString,
   normalizeStringWithUnderscores,
@@ -516,9 +515,28 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
   }
 }
 
+/**
+ * Renders a grid of items (bosses, relics, tools, etc.) with their unlock states.
+ *
+ * @param {Object} options The rendering options.
+ * @param {HTMLElement} options.containerEl The container element to render the grid onto.
+ * @param {Array<{
+ *   id: string,
+ *   flag: string,
+ *   label: string,
+ *   icon?: string,
+ *   type: string,
+ *   act?: number,
+ *   actColor?: string,
+ *   missable?: boolean,
+ *   required?: number,
+ *   [key: string]: unknown,
+ * }>} options.data Array of items to render.
+ * @param {boolean} options.spoilerOn Whether spoilers are enabled.
+ * @returns {number} The number of items rendered.
+ */
 function renderGenericGrid({ containerEl, data, spoilerOn }) {
   const realContainerId = containerEl?.id || "unknown";
-  const showMissingOnly = missingToggle.checked;
 
   containerEl.innerHTML = "";
 
@@ -529,35 +547,16 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
       return false;
     }
 
-    const { playerData } = currentLoadedSaveData;
-    const { Tools } = playerData;
-    assertDefined(Tools, 'The "Tools" property does not exist.');
-    assertObject(Tools, 'The "Tools" property was not an object.');
-
-    const { savedData } = Tools;
-    assertDefined(savedData, 'The "savedData" property does not exist.');
-    assertArray(savedData, 'The "savedData" property was not an array.');
-
-    return savedData.some((tool) => {
-      assertObject(
-        tool,
-        'One of the elements in the "savedData" array was not an object.',
-      );
-
-      const { Name, Data } = tool;
-      assertString(Name, 'The "Name" property was not a string.');
-      assertObject(Data, 'The "Data" property was not an object.');
-
-      const { IsUnlocked } = Data;
-      return Name === silkVariant && IsUnlocked === true;
-    });
+    return currentLoadedSaveData.playerData.Tools.savedData.some(
+      (tool) => tool.Name === silkVariant && tool.Data["IsUnlocked"] === true,
+    );
   });
 
   // --- Apply mutually exclusive groups (global, relic + quest) ---
   EXCLUSIVE_GROUPS.forEach((group) => {
     const owned = group.find((flag) => {
       // try first as relic
-      let val = getSaveDataValue(
+      let value = getSaveDataValue(
         currentLoadedSaveData,
         currentLoadedSaveDataFlags,
         {
@@ -567,8 +566,8 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
       );
 
       // if not a valid relic, try as quest
-      if (!val || val === false) {
-        val = getSaveDataValue(
+      if (!value || value === false) {
+        value = getSaveDataValue(
           currentLoadedSaveData,
           currentLoadedSaveDataFlags,
           { type: "quest", flag },
@@ -576,10 +575,10 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
       }
 
       return (
-        val === "deposited"
-        || val === "collected"
-        || val === "completed"
-        || val === true
+        value === "deposited"
+        || value === "collected"
+        || value === "completed"
+        || value === true
       );
     });
 
@@ -606,7 +605,7 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     const div = document.createElement("div");
     div.className = "boss";
 
-    // 🔹 Act label (ACT I / II / III)
+    // Act label (ACT I / II / III)
     if (item.act) {
       const romanActs = { 1: "I", 2: "II", 3: "III" };
       const actLabel = document.createElement("span");
@@ -621,7 +620,7 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     const img = document.createElement("img");
     img.alt = item.label;
 
-    // 🔍 Value from save file (quest can now return "completed" or "accepted")
+    // Value from save file (quest can now return "completed" or "accepted")
     const value = getSaveDataValue(
       currentLoadedSaveData,
       currentLoadedSaveDataFlags,
@@ -653,6 +652,7 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     }
 
     // If "only missing" and it's completed → don't render the card at all
+    const showMissingOnly = missingToggle.checked;
     if (showMissingOnly && isDone) {
       return;
     }
