@@ -924,7 +924,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /** @param {File | undefined } file */
 async function handleSaveFile(file) {
   try {
-    if (!file) {
+    if (file === undefined) {
       showToast("❌ No file selected.");
       uploadOverlay.classList.remove("hidden");
       return;
