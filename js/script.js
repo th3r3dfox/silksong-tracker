@@ -592,9 +592,7 @@ function resolveSaveValue(save, item) {
 
       // 🟡 Yellow — item collected in scene
       const sceneFlags =
-        currentLoadedSaveFileFlags?.[scene]
-        || save?.[scene]
-        || {};
+        currentLoadedSaveFileFlags?.[scene] || save?.[scene] || {};
 
       if (sceneFlags[idKey] === true) {
         return "collected";
