@@ -357,7 +357,7 @@ function getSaveDataValue(saveData, item) {
       console.log("LOL id:", id);
       console.log("LOL:", saveData[scene]);
 
-      const value = currentLoadedSaveData[scene]?.[id];
+      const value = currentLoadedSaveDataFlags[scene]?.[id];
       if (value !== undefined) {
         return value;
       }
