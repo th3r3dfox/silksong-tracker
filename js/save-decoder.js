@@ -34,6 +34,7 @@ function removeHeader(bytes) {
  * Decodes a Hollow Knight: Silksong .dat save file.
  *
  * @param {ArrayBuffer} arrayBuffer
+ * @returns {unknown}
  */
 export function decodeSilksongSave(arrayBuffer) {
   try {
@@ -63,14 +64,13 @@ export function decodeSilksongSave(arrayBuffer) {
 
     const jsonString = CryptoJS.enc.Utf8.stringify(decrypted);
 
-    if (!jsonString || !jsonString.startsWith("{")) {
+    if (!jsonString.startsWith("{")) {
       throw new Error(
         "Invalid or encrypted Silksong save (bad header or AES key)",
       );
     }
 
-    const parsed = JSON.parse(jsonString);
-    return parsed;
+    return JSON.parse(jsonString);
   } catch (err) {
     console.error("[Decode] Failed to decode Silksong save:", err);
     throw new Error("Invalid or encrypted Silksong save file");
