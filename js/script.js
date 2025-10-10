@@ -866,8 +866,8 @@ async function handleSaveFile(file) {
 
     rawSaveOutput.textContent = JSON.stringify(saveData, undefined, 2);
 
-    // @ts-expect-error Instead of marking the Zod schema as loose, it is simpler to just assign the
-    // pre-validation object.
+    // @ts-expect-error The save file is huge and we do not want to specify every property. Instead
+    // of marking the Zod schema as loose, it is simpler to just assign the pre-validation object.
     currentLoadedSaveData = saveDataRaw;
     currentLoadedSaveDataFlags = getSaveFileFlags(saveDataRaw);
 
