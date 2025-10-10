@@ -1,5 +1,6 @@
 // @ts-nocheck
 
+import { z } from "https://cdn.jsdelivr.net/npm/zod@4/+esm";
 import {
   actFilter,
   allProgressGrid,
@@ -21,7 +22,6 @@ import {
   prevMatch,
   rawSaveOutput,
   rawSaveSearch,
-  refreshSaveBtn,
   rosariesValue,
   searchCounter,
   shardsValue,
@@ -29,7 +29,11 @@ import {
   uploadOverlay,
 } from "./elements.js";
 import { decodeSilksongSave } from "./save-decoder.js";
-import { getSaveFileFlags, parseSilksongSave } from "./save-parser.js";
+import {
+  getSaveFileFlags,
+  parseSilksongSave,
+  silksongSaveSchema,
+} from "./save-parser.js";
 import {
   assertArray,
   assertDefined,
@@ -49,7 +53,7 @@ const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
   : "";
 let currentActFilter = actFilter.value || "all";
 
-/** @type Record<string, unknown> | undefined */
+/** @type z.infer<typeof silksongSaveSchema> | undefined */
 let currentLoadedSaveFile;
 
 /** @type Record<string, unknown> | undefined */
@@ -96,8 +100,6 @@ const EXCLUSIVE_GROUPS = [
 spoilerToggle.addEventListener("change", () => {
   const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
-
-  // Save this state too if you want to keep it on refresh
   localStorage.setItem("showSpoilers", spoilerChecked.toString());
 
   // Use the same filter logic (so it maintains Act + Missing)
@@ -954,12 +956,9 @@ async function handleSaveFile(file) {
     rawSaveOutput.textContent = JSON.stringify(saveData, undefined, 2);
 
     // Index and save globally
-    currentLoadedSaveFile = saveDataRaw; // TODO: Change to `saveData`.
+    currentLoadedSaveFile = saveDataRaw;
     currentLoadedSaveFileFlags = getSaveFileFlags(saveDataRaw);
     lastLoadedSaveFile = file;
-
-    // Show refresh button
-    refreshSaveBtn.classList.remove("hidden");
 
     // --- Update UI statistics ---
     completionValue.textContent = `${saveData.playerData.completionPercentage}%`;
@@ -1013,24 +1012,6 @@ async function handleSaveFile(file) {
       "⚠️ Browser permission or file access issue. Please reselect your save file.",
     );
     uploadOverlay.classList.remove("hidden");
-  }
-}
-
-// --- Refresh manuale ---
-async function refreshSaveFile() {
-  try {
-    if (lastLoadedSaveFile === undefined) {
-      showToast("⚠️ No save file loaded yet.");
-      fileInput.click(); // opens file selection
-      return;
-    }
-
-    // 🔄 Reload the same file already in memory
-    showToast("🔄 Reloading save file...");
-    handleSaveFile(lastLoadedSaveFile);
-  } catch (err) {
-    console.error("[refreshSaveFile]", err);
-    showToast("❌ Failed to refresh save file");
   }
 }
 
@@ -1437,15 +1418,6 @@ function showGenericModal(data) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 🎯 Refresh Save
-  refreshSaveBtn.addEventListener("click", () => {
-    if (typeof refreshSaveFile === "function") {
-      refreshSaveFile();
-    } else {
-      console.warn("refreshSaveFile() not defined yet.");
-    }
-  });
-
   // 🎬 Info Modal
   closeInfoModal.addEventListener("click", () =>
     infoOverlay.classList.add("hidden"),

@@ -66,7 +66,6 @@ export const playtimeValue = getHTMLElement("playtimeValue");
 export const prevMatch = getHTMLElement("prevMatch");
 export const rawSaveOutput = getHTMLElement("rawsave-output");
 export const rawSaveSearch = getHTMLElement("rawsave-search");
-export const refreshSaveBtn = getHTMLElement("refreshSaveBtn");
 export const rosariesValue = getHTMLElement("rosariesValue");
 export const searchCounter = getHTMLElement("searchCounter");
 export const shardsValue = getHTMLElement("shardsValue");
