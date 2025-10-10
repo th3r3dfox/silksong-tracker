@@ -6,7 +6,7 @@ const CSHARP_HEADER = new Uint8Array([
 const AES_KEY_STRING = "UKu52ePUBwetZ9wNX88o54dnfKRu0T1l";
 
 // The Web Crypto API does not support AES-ECB, since it is considered insecure. However, that is
-// what Unity uses, so use an external library to handle the decryption.
+// what Unity uses, so we use an external library to handle the decryption.
 /** @type {import("crypto-js")} */
 const CryptoJS = window.CryptoJS;
 
