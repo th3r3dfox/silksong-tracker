@@ -55,6 +55,8 @@ console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
 );
 
+let tocObserver = null;
+
 const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
   ? "/silksong-tracker"
   : "";
@@ -1094,25 +1096,22 @@ async function updateAllProgressContent(selectedAct = "all") {
   const showMissingOnly = missingToggle.checked;
   allProgressGrid.innerHTML = "";
 
-  // Create section headers and render each category
+  // ✅ Category definitions
   const categories = [
     { title: "Main Progress", data: mainJSON.items },
     { title: "Essential Items", data: essentialsJSON.items },
-    {
-      title: "Bosses",
-      data: bossesJSON.items,
-    },
+    { title: "Bosses", data: bossesJSON.items },
     { title: "Completion", data: completionJSON.items },
     { title: "Wishes", data: wishesJSON.items },
   ];
 
-  categories.forEach(({ title, data }) => {
+  // ✅ Render all categories
+  for (const { title, data } of categories) {
     assertArray(
       data,
       "The contents of one of the JSON files was not an array.",
     );
 
-    // Create category header
     const categoryHeader = document.createElement("h2");
     categoryHeader.className = "category-header";
     categoryHeader.textContent = title;
@@ -1120,71 +1119,54 @@ async function updateAllProgressContent(selectedAct = "all") {
     categoryHeader.style.marginBottom = "1rem";
     allProgressGrid.appendChild(categoryHeader);
 
-    // Render sections within this category
-    data.forEach((sectionData) => {
+    for (const sectionData of data) {
       assertObject(
         sectionData,
         "One of the elements in the JSON array was not an object.",
       );
-
       const section = document.createElement("div");
       section.className = "main-section-block";
 
       const heading = document.createElement("h3");
       heading.className = "category-title";
+      if (typeof sectionData.label === "string")
+        heading.textContent = sectionData.label;
 
-      const { label } = sectionData;
-      if (typeof label === "string") {
-        heading.textContent = label;
-      }
+      let items = sectionData.items ?? [];
+      assertArray(items, 'The "items" field must be an array.');
 
-      const items = sectionData["items"] ?? [];
-      assertArray(
-        items,
-        'The contents of the "items" field in a JSON file was not an array.',
-      );
-
+      // === Filters & Act selection ===
       let filteredItems = items.filter(
         (item) =>
           (selectedAct === "all" || Number(item.act) === Number(selectedAct))
           && matchMode(item),
       );
 
-      if (showMissingOnly && currentLoadedSaveData !== undefined) {
+      if (showMissingOnly && currentLoadedSaveData) {
         filteredItems = filteredItems.filter((item) => {
           const value = getSaveDataValue(
             currentLoadedSaveData,
             currentLoadedSaveDataFlags,
             item,
           );
-          if (item.type === "collectable") {
-            return (value ?? 0) === 0;
-          }
-
+          if (item.type === "collectable") return (value ?? 0) === 0;
           if (
             ["level", "min", "region-level", "region-min"].includes(item.type)
-          ) {
+          )
             return (value ?? 0) < (item.required ?? 0);
-          }
-
-          if (item.type === "quest") {
+          if (item.type === "quest")
             return value !== "completed" && value !== true;
-          }
-
           return value !== true;
         });
       }
 
-      // --- Apply mutually exclusive groups (global) ---
+      // === Apply exclusive groups ===
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
           const value = getSaveDataValue(
             currentLoadedSaveData,
             currentLoadedSaveDataFlags,
-            {
-              type: "relic",
-              flag,
-            },
+            { type: "relic", flag },
           );
           return value === "deposited" || value === "collected";
         });
@@ -1195,61 +1177,17 @@ async function updateAllProgressContent(selectedAct = "all") {
         }
       });
 
-      // Add act colors
+      // === Act colors ===
       filteredItems.forEach((item) => {
-        if (item.act === 1) {
-          item.actColor = "act-1";
-        } else if (item.act === 2) {
-          item.actColor = "act-2";
-        } else if (item.act === 3) {
-          item.actColor = "act-3";
-        }
+        if (item.act === 1) item.actColor = "act-1";
+        else if (item.act === 2) item.actColor = "act-2";
+        else if (item.act === 3) item.actColor = "act-3";
       });
 
-      // --- Correct count (with exclusive groups) ---
+      // === Counting completion ===
       let obtained = 0;
       const exclusiveGroups = new Set();
       const countedGroups = new Set();
-
-      // --- Apply mutually exclusive groups (global, relic + quest) ---
-      EXCLUSIVE_GROUPS.forEach((group) => {
-        const owned = group.find((flag) => {
-          // try first as relic
-          let val = getSaveDataValue(
-            currentLoadedSaveData,
-            currentLoadedSaveDataFlags,
-            {
-              type: "relic",
-              flag,
-            },
-          );
-          // if not a valid relic, try as quest
-          if (!val || val === false) {
-            val = getSaveDataValue(
-              currentLoadedSaveData,
-              currentLoadedSaveDataFlags,
-              {
-                type: "quest",
-                flag,
-              },
-            );
-          }
-
-          return (
-            val === "deposited"
-            || val === "collected"
-            || val === "completed"
-            || val === true
-          );
-        });
-
-        if (owned) {
-          filteredItems = filteredItems.filter(
-            (item) => !group.includes(item.flag) || item.flag === owned,
-          );
-        }
-      });
-
       filteredItems.forEach((item) => {
         const value =
           currentLoadedSaveData === undefined
@@ -1259,13 +1197,11 @@ async function updateAllProgressContent(selectedAct = "all") {
                 currentLoadedSaveDataFlags,
                 item,
               );
+
         const isUnlocked =
           item.type === "quest"
             ? value === "completed" || value === true
-            : item.type === "level"
-                || item.type === "min"
-                || item.type === "region-level"
-                || item.type === "region-min"
+            : ["level", "min", "region-level", "region-min"].includes(item.type)
               ? (value ?? 0) >= (item.required ?? 0)
               : item.type === "collectable"
                 ? (value ?? 0) > 0
@@ -1292,7 +1228,6 @@ async function updateAllProgressContent(selectedAct = "all") {
       count.className = "category-count";
       count.textContent = ` ${obtained}/${total}`;
       heading.appendChild(count);
-
       section.appendChild(heading);
 
       if (sectionData.desc) {
@@ -1311,14 +1246,128 @@ async function updateAllProgressContent(selectedAct = "all") {
         spoilerOn,
       });
 
-      if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) {
-        return;
-      }
+      if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
+        continue;
 
       section.appendChild(subgrid);
       allProgressGrid.appendChild(section);
-    });
+    }
+  }
+
+  // ✅ Build TOC once after all categories are rendered
+  buildDynamicTOC();
+  initScrollSpy();
+}
+
+function buildDynamicTOC() {
+  const tocList = document.getElementById("toc-list");
+  if (!tocList) return;
+  tocList.innerHTML = "";
+
+  const headers = document.querySelectorAll(
+    "#allprogress-grid h2, #allprogress-grid h3",
+  );
+  let currentCategory = null;
+  let currentSubList = null;
+
+  headers.forEach((header) => {
+    const tag = header.tagName.toLowerCase();
+    const text = header.textContent.trim();
+    if (!text) return;
+
+    if (!header.id) {
+      const cleanId = text
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/[^\w\-]/g, "");
+      header.id = `section-${cleanId}`;
+    }
+
+    if (tag === "h2") {
+      const li = document.createElement("li");
+      li.className = "toc-category";
+      li.dataset.manual = "false";
+
+      const a = document.createElement("a");
+      a.href = `#${header.id}`;
+      a.textContent = text;
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = document.getElementById(header.id);
+        if (target)
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        const wasOpen = li.classList.contains("open");
+        document.querySelectorAll(".toc-category").forEach((cat) => {
+          cat.classList.remove("open");
+          cat.querySelector(".toc-sublist")?.classList.add("hidden");
+        });
+        if (!wasOpen) {
+          li.classList.add("open");
+          li.querySelector(".toc-sublist")?.classList.remove("hidden");
+        }
+      });
+
+      li.appendChild(a);
+      currentSubList = document.createElement("ul");
+      currentSubList.className = "toc-sublist hidden";
+      li.appendChild(currentSubList);
+      tocList.appendChild(li);
+      currentCategory = li;
+    } else if (tag === "h3" && currentCategory && currentSubList) {
+      const subLi = document.createElement("li");
+      subLi.className = "toc-item";
+      const a = document.createElement("a");
+      a.href = `#${header.id}`;
+      a.textContent = text;
+      subLi.appendChild(a);
+      currentSubList.appendChild(subLi);
+    }
   });
+}
+
+function initScrollSpy() {
+  const tocLinks = document.querySelectorAll(".toc-item a, .toc-category > a");
+
+  // 🧹 Prevent duplicate observers
+  if (tocObserver) tocObserver.disconnect();
+
+  tocObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.id;
+        const match = document.querySelector(`a[href="#${id}"]`);
+        if (!match) return;
+
+        const parentCategory = match.closest(".toc-category");
+
+        if (entry.isIntersecting) {
+          tocLinks.forEach((link) => link.classList.remove("active"));
+          match.classList.add("active");
+
+          document.querySelectorAll(".toc-category").forEach((cat) => {
+            const sub = cat.querySelector(".toc-sublist");
+            if (cat === parentCategory) {
+              cat.classList.add("open");
+              sub?.classList.remove("hidden");
+            } else {
+              cat.classList.remove("open");
+              sub?.classList.add("hidden");
+            }
+          });
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0.6, // 🔹 Serve almeno il 60% visibile
+      rootMargin: "-10% 0px -40% 0px", // 🔹 Ritarda leggermente il cambio
+    },
+  );
+
+  document
+    .querySelectorAll("#allprogress-grid h2, #allprogress-grid h3")
+    .forEach((section) => tocObserver.observe(section));
 }
 
 function showGenericModal(data) {

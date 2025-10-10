@@ -2534,3 +2534,205 @@ mark.active-match {
     opacity: 1;
   }
 }
+/* === TABLE OF CONTENTS (TOC) === */
+.toc-container {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  width: 260px;
+  background: rgba(17, 17, 18, 0.95);
+  border-left: 2px solid rgba(197, 100, 50, 0.4);
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+  padding: 1.2rem 1.4rem;
+  z-index: 100;
+}
+
+/* Reserve horizontal space for the TOC */
+main {
+  margin-right: 310px;
+}
+
+#allprogress-grid {
+  padding-right: 1.5rem;
+}
+
+/* --- MAIN CATEGORY TITLES --- */
+.toc-category {
+  margin-bottom: 1.25rem;
+}
+
+/* --- CATEGORY HEADER LINK --- */
+.toc-category > a {
+  display: block;
+  cursor: pointer;
+  color: var(--ink-2); /* neutral gray by default */
+  font-family: "TrajanPro", serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 0.5rem;
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+.toc-category > a:hover {
+  color: var(--ink-1); /* bright white on hover */
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.toc-category.open > a,
+.toc-category > a.active {
+  color: #e3b47b; /* soft amber highlight */
+  text-shadow: 0 0 6px rgba(227, 180, 123, 0.3);
+}
+
+/* --- SUBLISTS (secondary sections) --- */
+.toc-sublist {
+  margin-left: 0.9rem;
+  border-left: 1px solid rgba(255, 153, 51, 0.15);
+  padding-left: 0.75rem;
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transition: all 0.25s ease;
+}
+
+/* Hide sublist when closed */
+.toc-sublist.hidden {
+  display: none;
+}
+
+/* --- SUBITEM LINKS --- */
+.toc-item a {
+  display: block;
+  padding: 0.25rem 0.6rem;
+  color: var(--ink-3); /* lighter gray for inactive state */
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.toc-item a:hover {
+  color: var(--ink-1); /* bright white on hover */
+  background: rgba(255, 153, 51, 0.05);
+}
+
+.toc-item a.active {
+  color: var(--accent);
+  background: rgba(197, 100, 50, 0.1);
+}
+
+/* --- EXPAND ANIMATION --- */
+.toc-category.open > .toc-sublist {
+  display: flex;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- CUSTOM SCROLLBAR --- */
+.toc-container::-webkit-scrollbar {
+  width: 6px;
+}
+.toc-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 153, 51, 0.25);
+  border-radius: 10px;
+}
+.toc-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 153, 51, 0.5);
+}
+
+/* --- LINK COLOR OVERRIDES --- */
+/* Override global link styles so TOC colors stay consistent */
+.toc-category > a,
+.toc-item a {
+  color: var(--ink-2) !important;
+  text-shadow: none !important;
+}
+
+.toc-category > a:hover,
+.toc-item a:hover {
+  color: var(--ink-1) !important;
+}
+
+.toc-category.open > a,
+.toc-category > a.active,
+.toc-item a.active {
+  color: #e3b47b !important;
+  text-shadow: 0 0 6px rgba(227, 180, 123, 0.3) !important;
+}
+
+/* === FIX: Banner + Topbar alignment === */
+:root {
+  --topbar-height: 44px;
+  --banner-height: 36px; /* actual height of the golden mode banner */
+}
+
+/* Position TOC exactly below topbar and banner */
+.toc-container {
+  top: calc(var(--topbar-height) + var(--banner-height));
+}
+
+/* Ensure the main content starts below both elements */
+main {
+  padding-top: calc(var(--topbar-height) + var(--banner-height) + 12px);
+}
+
+/* === MODE BANNER  === */
+#modeBanner {
+  position: fixed;
+  top: var(--topbar-height);
+  left: 220px; /* sidebar width */
+  right: 0;
+  z-index: 200; /* above TOC and main content */
+
+  /* Solid dark-gold banner */
+  background: #1b1a18; /* deep dark base */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e6b37b;
+
+  font-family: "TrajanPro", serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 0;
+  text-align: center;
+
+  text-shadow:
+    0 0 6px rgba(230, 179, 123, 0.4),
+    0 0 12px rgba(200, 140, 80, 0.3);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.6),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Optional: Steel mode variant (grayish tone) */
+#modeBanner.steel {
+  background: #202124;
+  color: #ccd5db;
+  text-shadow:
+    0 0 6px #ccd5db,
+    0 0 12px #596066;
+}
+
+.toc-container {
+  top: calc(var(--topbar-height) + var(--banner-height));
+  z-index: 150; /* lower than banner */
+}
