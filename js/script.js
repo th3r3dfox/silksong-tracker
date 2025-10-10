@@ -86,7 +86,7 @@ function matchMode(item) {
   }
 
   // BEFORE loading a save -> show all
-  if (currentLoadedSaveData !== undefined) {
+  if (currentLoadedSaveFile === undefined) {
     return true;
   }
 
