@@ -172,7 +172,9 @@ document.addEventListener("DOMContentLoaded", () => {
   openUploadModal.addEventListener("click", openUploadModalFunc);
   closeUploadModal.addEventListener("click", closeUploadModalFunc);
   uploadOverlay.addEventListener("click", (e) => {
-    if (e.target === uploadOverlay) closeUploadModalFunc();
+    if (e.target === uploadOverlay) {
+      closeUploadModalFunc();
+    }
   });
 
   dropzone.addEventListener("click", () => fileInput.click());
@@ -368,7 +370,9 @@ function resolveSaveValue(save, item) {
       let entry;
       for (const list of questLists) {
         entry = list.find((e) => normalizeString(e.Name) === flagNorm);
-        if (entry) break;
+        if (entry) {
+          break;
+        }
       }
 
       if (!entry) {
@@ -404,7 +408,9 @@ function resolveSaveValue(save, item) {
         .replace(/[^\w.]/g, "_");
 
       const val = root.__flags?.[scene]?.[idKey];
-      if (val !== undefined) return val;
+      if (val !== undefined) {
+        return val;
+      }
 
       if (root[scene]) {
         return (
@@ -467,7 +473,9 @@ function resolveSaveValue(save, item) {
         || [];
 
       const entry = journalList.find((e) => e.Name === item.flag);
-      if (!entry) return false;
+      if (!entry) {
+        return false;
+      }
 
       const data = entry.Record || entry.Data || {};
 
@@ -535,14 +543,20 @@ function resolveSaveValue(save, item) {
           || [];
 
         const entry = list.find((e) => e.Name === item.flag);
-        if (!entry) return false;
+        if (!entry) {
+          return false;
+        }
 
         const data = entry.Data || {};
 
         // ✅ green if seen in board
-        if (data.HasSeenInRelicBoard === true) return "deposited";
+        if (data.HasSeenInRelicBoard === true) {
+          return "deposited";
+        }
         // 🟡 yellow if collected but not seen in board
-        if (data.IsCollected === true) return "collected";
+        if (data.IsCollected === true) {
+          return "collected";
+        }
 
         return false;
       }
@@ -641,8 +655,9 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
         flag,
       });
       // if not a valid relic, try as quest
-      if (!val || val === false)
+      if (!val || val === false) {
         val = resolveSaveValue(currentLoadedSaveFile, { type: "quest", flag });
+      }
 
       return (
         val === "deposited"
@@ -664,8 +679,12 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
   data.forEach((item) => {
     // Silkshot → show only 1 variant
     if (silkVariants.includes(item.flag)) {
-      if (unlockedSilkVariant && item.flag !== unlockedSilkVariant) return;
-      if (!unlockedSilkVariant && item.flag !== "WebShot Architect") return;
+      if (unlockedSilkVariant && item.flag !== unlockedSilkVariant) {
+        return;
+      }
+      if (!unlockedSilkVariant && item.flag !== "WebShot Architect") {
+        return;
+      }
     }
 
     const div = document.createElement("div");
@@ -714,7 +733,9 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     }
 
     // If "only missing" and it's completed → don't render the card at all
-    if (showMissingOnly && isDone) return;
+    if (showMissingOnly && isDone) {
+      return;
+    }
 
     if (item.missable) {
       const warn = document.createElement("span");
@@ -798,7 +819,9 @@ function indexFlags(root) {
   /** @param {Record<string, unknown>} node */
   function walk(node) {
     if (Array.isArray(node)) {
-      for (const it of node) walk(it);
+      for (const it of node) {
+        walk(it);
+      }
       return;
     }
     if (node && typeof node === "object") {
@@ -912,7 +935,9 @@ document.addEventListener("DOMContentLoaded", () => {
     matches = [];
     currentMatch = 0;
     searchCounter.textContent = "0/0";
-    if (!query) return;
+    if (!query) {
+      return;
+    }
 
     const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const regex = new RegExp(safeQuery, "gi");
@@ -937,13 +962,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   nextMatch.addEventListener("click", () => {
-    if (matches.length === 0) return;
+    if (matches.length === 0) {
+      return;
+    }
     currentMatch = (currentMatch % matches.length) + 1;
     scrollToMatch(currentMatch);
   });
 
   prevMatch.addEventListener("click", () => {
-    if (matches.length === 0) return;
+    if (matches.length === 0) {
+      return;
+    }
     currentMatch = ((currentMatch - 2 + matches.length) % matches.length) + 1;
     scrollToMatch(currentMatch);
   });
@@ -1314,11 +1343,12 @@ async function updateAllProgressContent(selectedAct = "all") {
             flag,
           });
           // if not a valid relic, try as quest
-          if (!val || val === false)
+          if (!val || val === false) {
             val = resolveSaveValue(currentLoadedSaveFile, {
               type: "quest",
               flag,
             });
+          }
 
           return (
             val === "deposited"
@@ -1390,8 +1420,9 @@ async function updateAllProgressContent(selectedAct = "all") {
         spoilerOn,
       });
 
-      if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
+      if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) {
         return;
+      }
 
       section.appendChild(subgrid);
       allProgressGrid.appendChild(section);
@@ -1476,7 +1507,9 @@ document.addEventListener("DOMContentLoaded", () => {
     infoOverlay.classList.add("hidden"),
   );
   infoOverlay.addEventListener("click", (e) => {
-    if (e.target === infoOverlay) infoOverlay.classList.add("hidden");
+    if (e.target === infoOverlay) {
+      infoOverlay.classList.add("hidden");
+    }
   });
 });
 

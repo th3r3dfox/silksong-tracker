@@ -15,10 +15,7 @@
     "lint": "prettier --check ."
   },
   "devDependencies": {
-    "complete-tsconfig": "1.3.0",
-    "prettier": "3.6.2",
-    "prettier-plugin-organize-imports": "4.3.0",
-    "prettier-plugin-packagejson": "2.5.19",
+    "complete-lint": "4.1.0",
     "zod": "4.1.12"
   }
 }
