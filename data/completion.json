@@ -499,7 +499,8 @@
         "flag": "Courier Supplies Slave",
         "type": "materium",
         "description": "Given by Tipp & Pill during the Queen's Egg wish",
-        "link": "https://hollowknight.wiki/w/Materium"
+        "link": "https://hollowknight.wiki/w/Materium",
+        "mode": "normal"
       },
       {
         "id": "materium-courier-supplies-mask-maker",
