@@ -44,7 +44,6 @@ import {
   assertString,
   isKeyOf,
   normalizeString,
-  normalizeStringWithUnderscores,
 } from "./utils.js";
 
 console.log(
@@ -262,19 +261,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * @typedef {{type: string, flag: string, scene?: string}} Item
+ * @typedef {{type: string, flag: string}} Item
  */
 
 /**
- * @param {z.infer<typeof silksongSaveSchema> | undefined} saveData
+ * @param {z.infer<typeof silksongSaveSchema> | undefined} save
  * @param {Item} item
  */
-function getSaveDataValue(saveData, item) {
-  if (saveData === undefined) {
+function resolveSaveValue(save, item) {
+  if (save === undefined) {
     return undefined;
   }
 
-  const { playerData } = saveData;
+  const { playerData } = save;
   const { type, flag } = item;
   const normalizedFlag = normalizeString(flag);
 
@@ -351,22 +350,23 @@ function getSaveDataValue(saveData, item) {
 
     // Scene flags (Mask Shards, Heart Pieces ecc.)
     case "sceneBool": {
-      const scene = normalizeStringWithUnderscores(item.scene ?? "");
-      const id = normalizeStringWithUnderscores(item.flag ?? "");
-      console.log("LOL scene:", scene);
-      console.log("LOL id:", id);
-      console.log("LOL:", saveData[scene]);
+      const scene = String(item.scene || "")
+        .trim()
+        .replace(/\s+/g, "_");
+      const idKey = String(item.flag || "")
+        .trim()
+        .replace(/\s+/g, "_")
+        .replace(/[^\w.]/g, "_");
 
-      const value = currentLoadedSaveData[scene]?.[id];
-      if (value !== undefined) {
-        return value;
+      const val = currentLoadedSaveDataFlags?.[scene]?.[idKey];
+      if (val !== undefined) {
+        return val;
       }
 
-      const saveScene = saveData[scene];
-      if (saveScene !== undefined) {
+      if (save[scene]) {
         return (
-          saveScene[item.flag]
-          ?? saveScene[item.flag.replace(/ /g, "_")]
+          save[scene][item.flag]
+          ?? save[scene][item.flag.replace(/ /g, "_")]
           ?? false
         );
       }
@@ -378,14 +378,13 @@ function getSaveDataValue(saveData, item) {
       if (item.scene) {
         return currentLoadedSaveDataFlags?.[item.scene]?.[item.flag] === true;
       }
-
       return playerData[item.flag] === true;
     }
 
     // Scene visited (Silk Hearts, Memories etc.)
     case "sceneVisited": {
       if (item.scene) {
-        const scenes = saveData?.playerData?.scenesVisited || [];
+        const scenes = save?.playerData?.scenesVisited || [];
         return scenes.includes(item.scene);
       }
 
@@ -423,7 +422,7 @@ function getSaveDataValue(saveData, item) {
         playerData.EnemyJournalKillData?.list
         || playerData.Journal?.savedData
         || playerData.JournalData?.savedData
-        || saveData.Journal?.savedData
+        || save.Journal?.savedData
         || [];
 
       const entry = journalList.find((e) => e.Name === item.flag);
@@ -454,13 +453,11 @@ function getSaveDataValue(saveData, item) {
     case "relic": {
       if (item.flag) {
         const relicList =
-          saveData?.Relics?.savedData
-          || saveData?.playerData?.Relics?.savedData
-          || [];
+          save?.Relics?.savedData || save?.playerData?.Relics?.savedData || [];
 
         const mementoList =
-          saveData?.MementosDeposited?.savedData
-          || saveData?.playerData?.MementosDeposited?.savedData
+          save?.MementosDeposited?.savedData
+          || save?.playerData?.MementosDeposited?.savedData
           || [];
 
         const combinedList = relicList.concat(mementoList);
@@ -494,8 +491,8 @@ function getSaveDataValue(saveData, item) {
     case "materium": {
       if (item.flag) {
         const list =
-          saveData?.playerData?.MateriumCollected?.savedData
-          || saveData?.MateriumCollected?.savedData
+          save?.playerData?.MateriumCollected?.savedData
+          || save?.MateriumCollected?.savedData
           || [];
 
         const entry = list.find((e) => e.Name === item.flag);
@@ -533,15 +530,15 @@ function getSaveDataValue(saveData, item) {
       // ✅ Green — item deposited
       if (
         depositFlag
-        && (saveData?.playerData?.[depositFlag] === true
-          || saveData?.[depositFlag] === true)
+        && (save?.playerData?.[depositFlag] === true
+          || save?.[depositFlag] === true)
       ) {
         return "deposited";
       }
 
       // 🟡 Yellow — item collected in scene
       const sceneFlags =
-        currentLoadedSaveDataFlags?.[scene] || saveData?.[scene] || {};
+        currentLoadedSaveDataFlags?.[scene] || save?.[scene] || {};
 
       if (sceneFlags[idKey] === true) {
         return "collected";
@@ -600,14 +597,14 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
   EXCLUSIVE_GROUPS.forEach((group) => {
     const owned = group.find((flag) => {
       // try first as relic
-      let val = getSaveDataValue(currentLoadedSaveData, {
+      let val = resolveSaveValue(currentLoadedSaveData, {
         type: "relic",
         flag,
       });
 
       // if not a valid relic, try as quest
       if (!val || val === false) {
-        val = getSaveDataValue(currentLoadedSaveData, { type: "quest", flag });
+        val = resolveSaveValue(currentLoadedSaveData, { type: "quest", flag });
       }
 
       return (
@@ -657,7 +654,7 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     img.alt = item.label;
 
     // 🔍 Value from save file (quest can now return "completed" or "accepted")
-    const value = getSaveDataValue(currentLoadedSaveData, item);
+    const value = resolveSaveValue(currentLoadedSaveData, item);
 
     let isDone = false;
     let isAccepted = false;
@@ -1162,7 +1159,7 @@ async function updateAllProgressContent(selectedAct = "all") {
 
       if (showMissingOnly && currentLoadedSaveData !== undefined) {
         filteredItems = filteredItems.filter((item) => {
-          const val = getSaveDataValue(currentLoadedSaveData, item);
+          const val = resolveSaveValue(currentLoadedSaveData, item);
           if (item.type === "collectable") {
             return (val ?? 0) === 0;
           }
@@ -1184,7 +1181,7 @@ async function updateAllProgressContent(selectedAct = "all") {
       // --- Apply mutually exclusive groups (global) ---
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
-          const val = getSaveDataValue(currentLoadedSaveData, {
+          const val = resolveSaveValue(currentLoadedSaveData, {
             type: "relic",
             flag,
           });
@@ -1217,13 +1214,13 @@ async function updateAllProgressContent(selectedAct = "all") {
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
           // try first as relic
-          let val = getSaveDataValue(currentLoadedSaveData, {
+          let val = resolveSaveValue(currentLoadedSaveData, {
             type: "relic",
             flag,
           });
           // if not a valid relic, try as quest
           if (!val || val === false) {
-            val = getSaveDataValue(currentLoadedSaveData, {
+            val = resolveSaveValue(currentLoadedSaveData, {
               type: "quest",
               flag,
             });
@@ -1248,7 +1245,7 @@ async function updateAllProgressContent(selectedAct = "all") {
         const val =
           currentLoadedSaveData === undefined
             ? false
-            : getSaveDataValue(currentLoadedSaveData, item);
+            : resolveSaveValue(currentLoadedSaveData, item);
         const isUnlocked =
           item.type === "quest"
             ? val === "completed" || val === true
