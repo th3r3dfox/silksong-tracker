@@ -489,39 +489,29 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
 
     // Materium, Farsight, etc.
     case "device": {
-      const scene = String(item.scene || "")
-        .trim()
-        .replace(/\s+/g, "_");
-      const id = String(flag || "")
-        .trim()
-        .replace(/\s+/g, "_");
-      const depositFlag = String(item.relatedFlag || "").trim();
+      const normalizedScene = normalizeStringWithUnderscores(scene ?? "");
+      const normalizedFlag = normalizeStringWithUnderscores(flag ?? "");
 
       if (
-        depositFlag
-        && (saveData?.playerData?.[depositFlag] === true
-          || saveData?.[depositFlag] === true)
+        relatedFlag !== undefined
+        && playerDataExpanded[relatedFlag] === true
       ) {
         return "deposited";
       }
 
-      const sceneFlags =
-        currentLoadedSaveDataFlags?.[scene] || saveData?.[scene] || {};
-
-      if (sceneFlags[id] === true) {
+      const sceneFlags = saveDataFlags[normalizedScene];
+      if (isObject(sceneFlags) && sceneFlags[normalizedFlag] === true) {
         return "collected";
       }
 
       return false;
     }
-  }
 
-  // Generic fallback
-  if (flag && playerData[item.flag] !== undefined) {
-    return playerData[item.flag];
+    default: {
+      // In certain cases, the type will be undefined.
+      return playerDataExpanded[flag];
+    }
   }
-
-  return undefined;
 }
 
 function renderGenericGrid({ containerEl, data, spoilerOn }) {
