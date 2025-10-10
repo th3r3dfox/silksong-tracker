@@ -54,16 +54,16 @@ const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
 let currentActFilter = actFilter.value || "all";
 
 /** @type z.infer<typeof silksongSaveSchema> | undefined */
-let currentLoadedSaveFile;
+let currentLoadedSaveData;
 
 /** @type Record<string, unknown> | undefined */
-let currentLoadedSaveFileFlags;
+let currentLoadedSaveDataRaw;
+
+/** @type Record<string, unknown> | undefined */
+let currentLoadedSaveDataFlags;
 
 /** @type {"steel" | "normal" | undefined} */
-let currentLoadedSaveFileMode;
-
-/** @type File | undefined */
-let lastLoadedSaveFile;
+let currentLoadedSaveDataMode;
 
 /** @type Record<string, (selectedAct?: string) => Promise<void>> */
 const TAB_TO_UPDATE_FUNCTION = {
@@ -82,12 +82,12 @@ function matchMode(item) {
   }
 
   // BEFORE loading a save -> show all
-  if (currentLoadedSaveFile !== undefined) {
+  if (currentLoadedSaveData !== undefined) {
     return true;
   }
 
   // AFTER loading -> match mode
-  return item["mode"] === currentLoadedSaveFileMode;
+  return item["mode"] === currentLoadedSaveDataMode;
 }
 
 // --- Global mutually exclusive groups ---
@@ -415,7 +415,7 @@ function resolveSaveValue(save, item) {
         .replace(/\s+/g, "_")
         .replace(/[^\w.]/g, "_");
 
-      const val = currentLoadedSaveFileFlags?.[scene]?.[idKey];
+      const val = currentLoadedSaveDataFlags?.[scene]?.[idKey];
       if (val !== undefined) {
         return val;
       }
@@ -431,7 +431,7 @@ function resolveSaveValue(save, item) {
 
     case "key": {
       if (item.scene) {
-        return currentLoadedSaveFileFlags?.[item.scene]?.[item.flag] === true;
+        return currentLoadedSaveDataFlags?.[item.scene]?.[item.flag] === true;
       }
       return playerData[item.flag] === true;
     }
@@ -593,7 +593,7 @@ function resolveSaveValue(save, item) {
 
       // 🟡 Yellow — item collected in scene
       const sceneFlags =
-        currentLoadedSaveFileFlags?.[scene] || save?.[scene] || {};
+        currentLoadedSaveDataFlags?.[scene] || save?.[scene] || {};
 
       if (sceneFlags[idKey] === true) {
         return "collected";
@@ -620,14 +620,11 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
   // 🔎 Silkshot variants (only one card visible)
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
   const unlockedSilkVariant = silkVariants.find((silkVariant) => {
-    if (currentLoadedSaveFile === undefined) {
+    if (currentLoadedSaveData === undefined) {
       return false;
     }
 
-    const { playerData } = currentLoadedSaveFile;
-    assertDefined(playerData, 'The "playerData" property does not exist.');
-    assertObject(playerData, 'The "playerData" property was not an object.');
-
+    const { playerData } = currentLoadedSaveData;
     const { Tools } = playerData;
     assertDefined(Tools, 'The "Tools" property does not exist.');
     assertObject(Tools, 'The "Tools" property was not an object.');
@@ -655,13 +652,13 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
   EXCLUSIVE_GROUPS.forEach((group) => {
     const owned = group.find((flag) => {
       // try first as relic
-      let val = resolveSaveValue(currentLoadedSaveFile, {
+      let val = resolveSaveValue(currentLoadedSaveData, {
         type: "relic",
         flag,
       });
       // if not a valid relic, try as quest
       if (!val || val === false) {
-        val = resolveSaveValue(currentLoadedSaveFile, { type: "quest", flag });
+        val = resolveSaveValue(currentLoadedSaveData, { type: "quest", flag });
       }
 
       return (
@@ -711,7 +708,7 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     img.alt = item.label;
 
     // 🔍 Value from save file (quest can now return "completed" or "accepted")
-    const value = resolveSaveValue(currentLoadedSaveFile, item);
+    const value = resolveSaveValue(currentLoadedSaveData, item);
 
     let isDone = false;
     let isAccepted = false;
@@ -809,14 +806,14 @@ fileInput.addEventListener("change", (event) => {
 });
 
 async function updateRawSaveContent() {
-  if (currentLoadedSaveFile === undefined) {
+  if (currentLoadedSaveData === undefined) {
     rawSaveOutput.textContent = "⚠️ No save file loaded.";
     return;
   }
 
   try {
     rawSaveOutput.textContent = JSON.stringify(
-      currentLoadedSaveFile,
+      currentLoadedSaveData,
       undefined,
       2,
     );
@@ -839,11 +836,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 💾 Download JSON
   downloadRawsaveBtn.addEventListener("click", () => {
-    if (currentLoadedSaveFile === undefined) {
+    if (currentLoadedSaveData === undefined) {
       return showToast("⚠️ No save loaded yet.");
     }
     const blob = new Blob(
-      [JSON.stringify(currentLoadedSaveFile, undefined, 2)],
+      [JSON.stringify(currentLoadedSaveData, undefined, 2)],
       {
         type: "application/json",
       },
@@ -875,7 +872,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   rawSaveSearch.addEventListener("input", () => {
     const query = rawSaveSearch.value.trim();
-    const jsonText = JSON.stringify(currentLoadedSaveFile || {}, undefined, 2);
+    const jsonText = JSON.stringify(currentLoadedSaveData || {}, undefined, 2);
     rawSaveOutput.innerHTML = jsonText;
     matches = [];
     currentMatch = 0;
@@ -956,8 +953,9 @@ async function handleSaveFile(file) {
     rawSaveOutput.textContent = JSON.stringify(saveData, undefined, 2);
 
     // Index and save globally
-    currentLoadedSaveFile = saveDataRaw;
-    currentLoadedSaveFileFlags = getSaveFileFlags(saveDataRaw);
+    currentLoadedSaveData = saveDataRaw; // TODO
+    currentLoadedSaveDataRaw = saveDataRaw;
+    currentLoadedSaveDataFlags = getSaveFileFlags(saveDataRaw);
     lastLoadedSaveFile = file;
 
     // --- Update UI statistics ---
@@ -975,7 +973,7 @@ async function handleSaveFile(file) {
     const isSteelSoul = saveData.playerData.permadeathMode === 1;
 
     // ✅ Save mode globally (after declaration)
-    currentLoadedSaveFileMode = isSteelSoul ? "steel" : "normal";
+    currentLoadedSaveDataMode = isSteelSoul ? "steel" : "normal";
 
     // 🪶 Show visual banner
     modeBanner.innerHTML = isSteelSoul
@@ -1206,9 +1204,9 @@ async function updateAllProgressContent(selectedAct = "all") {
           && matchMode(item),
       );
 
-      if (showMissingOnly && currentLoadedSaveFile !== undefined) {
+      if (showMissingOnly && currentLoadedSaveData !== undefined) {
         filteredItems = filteredItems.filter((item) => {
-          const val = resolveSaveValue(currentLoadedSaveFile, item);
+          const val = resolveSaveValue(currentLoadedSaveData, item);
           if (item.type === "collectable") {
             return (val ?? 0) === 0;
           }
@@ -1230,7 +1228,7 @@ async function updateAllProgressContent(selectedAct = "all") {
       // --- Apply mutually exclusive groups (global) ---
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
-          const val = resolveSaveValue(currentLoadedSaveFile, {
+          const val = resolveSaveValue(currentLoadedSaveData, {
             type: "relic",
             flag,
           });
@@ -1263,13 +1261,13 @@ async function updateAllProgressContent(selectedAct = "all") {
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
           // try first as relic
-          let val = resolveSaveValue(currentLoadedSaveFile, {
+          let val = resolveSaveValue(currentLoadedSaveData, {
             type: "relic",
             flag,
           });
           // if not a valid relic, try as quest
           if (!val || val === false) {
-            val = resolveSaveValue(currentLoadedSaveFile, {
+            val = resolveSaveValue(currentLoadedSaveData, {
               type: "quest",
               flag,
             });
@@ -1292,9 +1290,9 @@ async function updateAllProgressContent(selectedAct = "all") {
 
       filteredItems.forEach((item) => {
         const val =
-          currentLoadedSaveFile === undefined
+          currentLoadedSaveData === undefined
             ? false
-            : resolveSaveValue(currentLoadedSaveFile, item);
+            : resolveSaveValue(currentLoadedSaveData, item);
         const isUnlocked =
           item.type === "quest"
             ? val === "completed" || val === true
