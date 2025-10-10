@@ -12,7 +12,7 @@
   "type": "module",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "prettier --check ."
+    "lint": "prettier --check . && eslint --max-warnings 0 ."
   },
   "devDependencies": {
     "complete-lint": "4.1.0",
