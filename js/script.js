@@ -350,218 +350,238 @@ function resolveSaveValue(save, item) {
 
       return entry?.Data?.IsUnlocked === true;
     }
-  }
 
-  // Quests (Wishes)
-  if (item.type === "quest") {
-    // Possible data lists for compatibility (some dumps use different names)
-    const questLists = [
-      playerData.QuestCompletionData?.savedData,
-      playerData.Quests?.savedData,
-      playerData.QuestsData?.savedData,
-      playerData.QuestData?.savedData,
-    ].filter(Boolean);
+    // Wishes
+    case "quest": {
+      // Possible data lists for compatibility (some dumps use different names)
+      const questLists = [
+        playerData.QuestCompletionData?.savedData,
+        playerData.Quests?.savedData,
+        playerData.QuestsData?.savedData,
+        playerData.QuestData?.savedData,
+      ].filter(Boolean);
 
-    // Normalize the name to avoid case/space issues
-    const flagNorm = normalizeString(item["flag"]);
+      // Normalize the name to avoid case/space issues
+      const flagNorm = normalizeString(item["flag"]);
 
-    // Search in all possible arrays
-    let entry;
-    for (const list of questLists) {
-      entry = list.find((e) => normalizeString(e.Name) === flagNorm);
-      if (entry) break;
-    }
+      // Search in all possible arrays
+      let entry;
+      for (const list of questLists) {
+        entry = list.find((e) => normalizeString(e.Name) === flagNorm);
+        if (entry) break;
+      }
 
-    if (!entry) {
+      if (!entry) {
+        return false;
+      }
+
+      const data = entry.Data || entry.Record || {};
+
+      // 🎯 Quest status
+      if (
+        data.IsCompleted === true
+        || data.Completed === true
+        || data.Complete === true
+      ) {
+        return "completed";
+      }
+
+      if (data.IsAccepted === true || data.Accepted === true) {
+        return "accepted";
+      }
+
       return false;
     }
 
-    const data = entry.Data || entry.Record || {};
+    // Scene flags (Mask Shards, Heart Pieces ecc.)
+    case "sceneBool": {
+      const scene = String(item.scene || "")
+        .trim()
+        .replace(/\s+/g, "_");
+      const idKey = String(item.flag || "")
+        .trim()
+        .replace(/\s+/g, "_")
+        .replace(/[^\w.]/g, "_");
 
-    // 🎯 Quest status
-    if (
-      data.IsCompleted === true
-      || data.Completed === true
-      || data.Complete === true
-    ) {
-      return "completed";
+      const val = root.__flags?.[scene]?.[idKey];
+      if (val !== undefined) return val;
+
+      if (root[scene]) {
+        return (
+          root[scene][item.flag]
+          ?? root[scene][item.flag.replace(/ /g, "_")]
+          ?? false
+        );
+      }
     }
 
-    if (data.IsAccepted === true || data.Accepted === true) {
-      return "accepted";
+    case "key": {
+      if (item.scene) {
+        return root.__flags?.[item.scene]?.[item.flag] === true;
+      }
+      return playerData[item.flag] === true;
     }
 
-    return false;
-  }
+    // Scene visited (Silk Hearts, Memories ecc.)
+    case "sceneVisited": {
+      if (item.scene) {
+        const scenes = save?.playerData?.scenesVisited || [];
+        return scenes.includes(item.scene);
+      }
 
-  // Scene flags (Mask Shards, Heart Pieces ecc.)
-  if (item.type === "sceneBool") {
-    const scene = String(item.scene || "")
-      .trim()
-      .replace(/\s+/g, "_");
-    const idKey = String(item.flag || "")
-      .trim()
-      .replace(/\s+/g, "_")
-      .replace(/[^\w.]/g, "_");
-
-    const val = root.__flags?.[scene]?.[idKey];
-    if (val !== undefined) return val;
-
-    if (root[scene]) {
-      return (
-        root[scene][item.flag]
-        ?? root[scene][item.flag.replace(/ /g, "_")]
-        ?? false
-      );
-    }
-  }
-
-  // Keys
-  if (item.type === "key") {
-    if (item.scene) {
-      return root.__flags?.[item.scene]?.[item.flag] === true;
-    }
-    return playerData[item.flag] === true;
-  }
-
-  // Scene visited (Silk Hearts, Memories ecc.)
-  if (item.type === "sceneVisited" && item.scene) {
-    const scenes = save?.playerData?.scenesVisited || [];
-    return scenes.includes(item.scene);
-  }
-
-  // Numeric progressions (Needle, ToolPouchUpgrades, ToolKitUpgrades, etc.)
-  if ((item.type === "level" || item.type === "min") && item.flag) {
-    const current = playerData[item.flag] ?? 0;
-
-    return current; // ✅ always return the number, unlock is calculated later
-  }
-
-  // Numeric flags (flagInt) — e.g. CaravanTroupeLocation >= 2
-  if (item.type === "flagInt" && item.flag) {
-    const current = playerData[item.flag];
-    if (typeof current === "number") {
-      const required = item.value ?? item.required ?? 1;
-      return current >= required;
-    }
-    return false;
-  }
-
-  if (item.type === "journal") {
-    const journalList =
-      playerData.EnemyJournalKillData?.list
-      || playerData.Journal?.savedData
-      || playerData.JournalData?.savedData
-      || root.Journal?.savedData
-      || [];
-
-    const entry = journalList.find((e) => e.Name === item.flag);
-    if (!entry) return false;
-
-    const data = entry.Record || entry.Data || {};
-
-    // Support different conditions
-    if (item.subtype === "kills") {
-      return (data.Kills ?? 0) >= (item.required ?? 1);
-    }
-
-    if (item.subtype === "seen") {
-      return data.HasBeenSeen === true;
-    }
-
-    if (item.subtype === "unlocked") {
-      return data.IsUnlocked === true;
-    }
-
-    // fallback
-    return data.HasBeenSeen || (data.Kills ?? 0) > 0;
-  }
-
-  // Relics (Choral Commandments, Weaver Effigies, Mementos, etc.)
-  if (item.type === "relic" && item.flag) {
-    const relicList =
-      save?.Relics?.savedData || save?.playerData?.Relics?.savedData || [];
-
-    const mementoList =
-      save?.MementosDeposited?.savedData
-      || save?.playerData?.MementosDeposited?.savedData
-      || [];
-
-    const combinedList = relicList.concat(mementoList);
-
-    const entry = combinedList.find((e) => e.Name === item.flag);
-    if (!entry) {
       return false;
     }
 
-    const data = entry.Data || {};
+    // Numeric progressions (Needle, ToolPouchUpgrades, ToolKitUpgrades, etc.)
+    case "level":
+    case "min": {
+      if (item.flag) {
+        const current = playerData[item.flag] ?? 0;
 
-    if (data.IsDeposited === true) {
-      return "deposited"; // ✅ Green
+        return current; // ✅ always return the number, unlock is calculated later
+      }
+
+      return false;
     }
 
-    if (data.HasSeenInRelicBoard === true) {
-      return "collected"; // 🟡 Yellow
+    // Numeric flags (flagInt) — e.g. CaravanTroupeLocation >= 2
+    case "flagInt": {
+      if (item.flag) {
+        const current = playerData[item.flag];
+        if (typeof current === "number") {
+          const required = item.value ?? item.required ?? 1;
+          return current >= required;
+        }
+        return false;
+      }
+
+      return false;
     }
 
-    if (data.IsCollected === true) {
-      return "collected";
+    case "journal": {
+      const journalList =
+        playerData.EnemyJournalKillData?.list
+        || playerData.Journal?.savedData
+        || playerData.JournalData?.savedData
+        || root.Journal?.savedData
+        || [];
+
+      const entry = journalList.find((e) => e.Name === item.flag);
+      if (!entry) return false;
+
+      const data = entry.Record || entry.Data || {};
+
+      // Support different conditions
+      if (item.subtype === "kills") {
+        return (data.Kills ?? 0) >= (item.required ?? 1);
+      }
+
+      if (item.subtype === "seen") {
+        return data.HasBeenSeen === true;
+      }
+
+      if (item.subtype === "unlocked") {
+        return data.IsUnlocked === true;
+      }
+
+      // fallback
+      return data.HasBeenSeen || (data.Kills ?? 0) > 0;
     }
 
-    return false;
-  }
+    // Relics (Choral Commandments, Weaver Effigies, Mementos, etc.)
+    case "relic": {
+      if (item.flag) {
+        const relicList =
+          save?.Relics?.savedData || save?.playerData?.Relics?.savedData || [];
 
-  // ⚡ Materium tracking (seen = green, collected = yellow)
-  if (item.type === "materium" && item.flag) {
-    const list =
-      save?.playerData?.MateriumCollected?.savedData
-      || save?.MateriumCollected?.savedData
-      || [];
+        const mementoList =
+          save?.MementosDeposited?.savedData
+          || save?.playerData?.MementosDeposited?.savedData
+          || [];
 
-    const entry = list.find((e) => e.Name === item.flag);
-    if (!entry) return false;
+        const combinedList = relicList.concat(mementoList);
 
-    const data = entry.Data || {};
+        const entry = combinedList.find((e) => e.Name === item.flag);
+        if (!entry) {
+          return false;
+        }
 
-    // ✅ green if seen in board
-    if (data.HasSeenInRelicBoard === true) return "deposited";
-    // 🟡 yellow if collected but not seen in board
-    if (data.IsCollected === true) return "collected";
+        const data = entry.Data || {};
 
-    return false;
-  }
+        if (data.IsDeposited === true) {
+          return "deposited"; // ✅ Green
+        }
 
-  // Devices (Materium, Farsight, etc.)
-  if (item.type === "device") {
-    const scene = String(item.scene || "")
-      .trim()
-      .replace(/\s+/g, "_");
-    const idKey = String(item.flag || "")
-      .trim()
-      .replace(/\s+/g, "_");
-    const depositFlag = String(item.relatedFlag || "").trim();
+        if (data.HasSeenInRelicBoard === true) {
+          return "collected"; // 🟡 Yellow
+        }
 
-    // ✅ Green — item deposited
-    if (
-      depositFlag
-      && (save?.playerData?.[depositFlag] === true
-        || save?.[depositFlag] === true)
-    ) {
-      return "deposited";
+        if (data.IsCollected === true) {
+          return "collected";
+        }
+
+        return false;
+      }
+
+      return false;
     }
 
-    // 🟡 Yellow — item collected in scene
-    const sceneFlags =
-      save?.__flags?.[scene]
-      || save?.playerData?.__flags?.[scene]
-      || save?.[scene]
-      || {};
+    // ⚡ Materium tracking (seen = green, collected = yellow)
+    case "materium": {
+      if (item.flag) {
+        const list =
+          save?.playerData?.MateriumCollected?.savedData
+          || save?.MateriumCollected?.savedData
+          || [];
 
-    if (sceneFlags[idKey] === true) {
-      return "collected";
+        const entry = list.find((e) => e.Name === item.flag);
+        if (!entry) return false;
+
+        const data = entry.Data || {};
+
+        // ✅ green if seen in board
+        if (data.HasSeenInRelicBoard === true) return "deposited";
+        // 🟡 yellow if collected but not seen in board
+        if (data.IsCollected === true) return "collected";
+
+        return false;
+      }
+
+      return false;
     }
 
-    return false;
+    // Devices (Materium, Farsight, etc.)
+    case "device": {
+      const scene = String(item.scene || "")
+        .trim()
+        .replace(/\s+/g, "_");
+      const idKey = String(item.flag || "")
+        .trim()
+        .replace(/\s+/g, "_");
+      const depositFlag = String(item.relatedFlag || "").trim();
+
+      // ✅ Green — item deposited
+      if (
+        depositFlag
+        && (save?.playerData?.[depositFlag] === true
+          || save?.[depositFlag] === true)
+      ) {
+        return "deposited";
+      }
+
+      // 🟡 Yellow — item collected in scene
+      const sceneFlags =
+        save?.__flags?.[scene]
+        || save?.playerData?.__flags?.[scene]
+        || save?.[scene]
+        || {};
+
+      if (sceneFlags[idKey] === true) {
+        return "collected";
+      }
+
+      return false;
+    }
   }
 
   // Generic fallback
