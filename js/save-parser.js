@@ -52,7 +52,7 @@ export function getSaveFileFlags(root) {
       .replace(/\s+/g, "_")
       .replace(/[^\w.]/g, "_");
 
-    if (!flags[scene]) {
+    if (flags[scene] === undefined) {
       flags[scene] = {};
     }
     flags[scene][idKey] = Boolean(value);
