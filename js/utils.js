@@ -109,18 +109,6 @@ export function isArray(variable) {
 }
 
 /**
- * From: https://stackoverflow.com/questions/61526746
- *
- * @template {object} T
- * @param {string | number | symbol} key
- * @param {T} target
- * @returns {key is keyof T}
- */
-export function isKeyOf(key, target) {
-  return key in target;
-}
-
-/**
  * Helper function to narrow an unknown value to an object (i.e. a TypeScript record).
  *
  * Under the hood, this checks for `typeof variable === "object"`, `variable !== null`, and
