@@ -12,11 +12,15 @@
   "type": "module",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "prettier --check . && tsc && eslint --max-warnings 0 ."
+    "lint": "tsx ./scripts/lint.ts"
   },
   "devDependencies": {
     "@types/crypto-js": "4.2.2",
+    "ajv-cli": "5.0.0",
+    "ajv-formats": "3.0.1",
     "complete-lint": "4.1.0",
+    "complete-node": "12.2.0",
+    "tsx": "4.20.6",
     "zod": "4.1.12"
   }
 }

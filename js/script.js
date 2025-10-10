@@ -1103,7 +1103,7 @@ async function updateAllProgressContent(selectedAct = "all") {
       data: bossesJSON.items,
     },
     { title: "Completion", data: completionJSON },
-    { title: "Wishes", data: wishesJSON },
+    { title: "Wishes", data: wishesJSON.items },
   ];
 
   categories.forEach(({ title, data }) => {
