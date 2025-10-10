@@ -24,6 +24,7 @@ export const silksongSaveSchema = z.object({
       permadeathMode: z.union([z.literal(0), z.literal(1)]),
       playTime: z.number(),
       QuestCompletionData: objectWithSavedData,
+      scenesVisited: z.array(z.string()),
       ShellShards: z.int(),
       ToolEquips: objectWithSavedData,
       Tools: objectWithSavedData,

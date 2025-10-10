@@ -43,6 +43,7 @@ import {
   assertObject,
   assertString,
   isKeyOf,
+  isObject,
   normalizeString,
   normalizeStringWithUnderscores,
 } from "./utils.js";
@@ -275,7 +276,7 @@ function getSaveDataValue(saveData, item) {
   }
 
   const { playerData } = saveData;
-  const { type, flag } = item;
+  const { type, flag, scene } = item;
   const normalizedFlag = normalizeString(flag);
 
   switch (type) {
@@ -351,29 +352,32 @@ function getSaveDataValue(saveData, item) {
 
     // Scene flags (Mask Shards, Heart Pieces ecc.)
     case "sceneBool": {
-      const scene = normalizeStringWithUnderscores(item.scene ?? "");
-      const id = normalizeStringWithUnderscores(item.flag ?? "");
+      const normalizedScene = normalizeStringWithUnderscores(scene ?? "");
+      const normalizedFlag = normalizeStringWithUnderscores(flag ?? "");
 
-      const value = currentLoadedSaveDataFlags[scene]?.[id];
-      if (value !== undefined) {
-        return value;
+      const sceneFlags = currentLoadedSaveDataFlags?.[normalizedScene];
+      if (isObject(sceneFlags)) {
+        const value = sceneFlags[normalizedFlag];
+        if (value !== undefined) {
+          return value;
+        }
       }
 
       return false;
     }
 
     case "key": {
-      if (item.scene) {
-        return currentLoadedSaveDataFlags?.[item.scene]?.[item.flag] === true;
+      if (scene === undefined) {
+        return playerData[flag] === true;
       }
 
-      return playerData[item.flag] === true;
+      return currentLoadedSaveDataFlags?.[scene]?.[flag] === true;
     }
 
     // Scene visited (Silk Hearts, Memories etc.)
     case "sceneVisited": {
       if (item.scene) {
-        const scenes = saveData?.playerData?.scenesVisited || [];
+        const scenes = playerData?.scenesVisited || [];
         return scenes.includes(item.scene);
       }
 
