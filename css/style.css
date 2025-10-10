@@ -140,7 +140,7 @@ main {
 }
 
 /* ------------------
-   SIDEBAR: QUICK ACTIONS (icone orizzontali)
+   SIDEBAR: QUICK ACTIONS (horizontal icons)
 -------------------*/
 
 .icon-btn {
@@ -210,7 +210,7 @@ main {
 }
 
 /* ------------------
-   SIDEBAR: VOCI
+   SIDEBAR: MENU ITEMS
 -------------------*/
 .sidebar-item {
   display: flex;
@@ -251,7 +251,7 @@ a:hover {
 }
 
 /* ------------------
-   TOPBAR: INPUT E BOTTONI
+   TOPBAR: INPUT AND BUTTONS
 -------------------*/
 
 .topbar {
@@ -363,9 +363,9 @@ a:hover {
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.2;
-  white-space: normal; /* ✅ Permette l'a capo */
-  overflow: visible; /* ✅ Fa vedere tutto */
-  text-overflow: unset; /* ✅ Nessun "..." */
+  white-space: normal; /* ✅ Allows line wrapping */
+  overflow: visible; /* ✅ Shows everything */
+  text-overflow: unset; /* ✅ No "..." */
   text-align: center;
 }
 
@@ -498,7 +498,7 @@ a:hover {
 }
 
 .boss.done {
-  border: 2px solid #2ecc71; /* verde acceso */
+  border: 2px solid #2ecc71; /* bright green */
   box-shadow: 0 0 6px rgba(46, 204, 113, 0.4);
 }
 
@@ -558,8 +558,8 @@ a:hover {
 }
 
 #home-section {
-  position: fixed; /* resta fisso sullo schermo */
-  inset: 0; /* occupa tutto lo schermo */
+  position: fixed; /* stays fixed on screen */
+  inset: 0; /* covers entire screen */
   background-image: url("../assets/icons/sfondo1.PNG");
   background-size: cover;
   background-position: center;
@@ -791,7 +791,7 @@ a:hover {
 .variant-hidden {
   filter: grayscale(1);
   opacity: 0.3;
-  pointer-events: none; /* opzionale, se vuoi disabilitare il click */
+  pointer-events: none; /* optional, if you want to disable click */
 }
 
 .category-contrib {
@@ -1020,7 +1020,7 @@ a:hover {
     box-shadow 0.3s ease;
 }
 
-/* Sfalsamento alternato */
+/* Alternating offset */
 .home-section-block:nth-child(odd) {
   transform: translateY(-25px);
 }
@@ -1089,7 +1089,7 @@ a:hover {
     box-shadow 0.3s ease;
 }
 
-/* Effetto sfalsato */
+/* Staggered effect */
 .home-section-block:nth-child(odd) {
   transform: translateY(-20px);
 }
@@ -1097,13 +1097,13 @@ a:hover {
   transform: translateY(20px);
 }
 
-/* Hover leggero */
+/* Light hover */
 .home-section-block:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 0 35px rgba(255, 255, 255, 0.08);
 }
 
-/* Responsive mobile - torna tutto in colonna */
+/* Responsive mobile - everything in column */
 @media (max-width: 900px) {
   .home-grid {
     flex-direction: column;
@@ -1137,7 +1137,7 @@ a:hover {
   z-index: 1; /* home stays below other sections */
 }
 
-/* Background per le altre tab */
+/* Background for other tabs */
 main {
   background: var(--bg-1);
   min-height: calc(100vh - 44px);
@@ -1218,7 +1218,7 @@ main {
 }
 
 .tribute {
-  grid-column: 1 / -1; /* si estende orizzontalmente per dare importanza */
+  grid-column: 1 / -1; /* spans horizontally for emphasis */
   text-align: center;
 }
 
@@ -1441,7 +1441,7 @@ main {
   box-shadow: 0 0 35px rgba(255, 255, 255, 0.08);
 }
 
-/* posizionamento dinamico */
+/* dynamic positioning */
 .cinematic-left {
   transform: translateY(-30px);
 }
@@ -1545,7 +1545,7 @@ main a:hover,
   letter-spacing: 0.05em;
 }
 
-/* reset di margin auto usati altrove */
+/* reset margin auto used elsewhere */
 #main-section .category-title .category-count,
 #main-section .category-title .category-contrib {
   margin: 0 0 0 0.25rem; /* small space between parts */
@@ -1563,7 +1563,7 @@ main a:hover,
   font-size: 0.8em;
 }
 
-/* --- Checkbox personalizzati --- */
+/* --- Custom checkboxes --- */
 input[type="checkbox"] {
   accent-color: var(--accent);
   cursor: pointer;
@@ -1579,7 +1579,7 @@ input[type="checkbox"] {
   transition: all 0.2s ease;
 }
 
-/* ✅ Quando è attivo (spunta arancione) */
+/* ✅ When active (orange checkmark) */
 input[type="checkbox"]:checked {
   background-color: var(--accent);
   border-color: var(--accent);
@@ -1591,7 +1591,7 @@ input[type="checkbox"]:hover {
   box-shadow: 0 0 4px var(--accent);
 }
 
-/* --- Cursore personalizzato --- */
+/* --- Custom cursor --- */
 html,
 body {
   cursor:
@@ -1610,7 +1610,7 @@ button,
     pointer;
 }
 
-/* --- FIX LAYOUT HOME SU SCHERMI PICCOLI --- */
+/* --- FIX HOME LAYOUT ON SMALL SCREENS --- */
 @media (max-width: 1400px) {
   .main-wrapper {
     margin-left: 240px; /* prevents text from going under sidebar */
@@ -1822,7 +1822,7 @@ main {
 }
 
 .boss.accepted {
-  border: 2px solid #f1c40f; /* giallo oro */
+  border: 2px solid #f1c40f; /* golden yellow */
   box-shadow: 0 0 6px rgba(241, 196, 15, 0.5);
 }
 
@@ -1859,7 +1859,7 @@ main {
   opacity: 0.9;
 }
 
-/* --- Indicatore visivo dell'Atto --- */
+/* --- Act visual indicator --- */
 .boss {
   position: relative;
   margin-top: 26px; /* space for badge above */
@@ -1890,13 +1890,13 @@ main {
   z-index: 5;
 }
 
-/* Hover leggera */
+/* Light hover */
 .act-label:hover {
   transform: translate(-50%, 0) scale(1.05);
   transform-origin: center;
 }
 
-/* 🌈 Colori etichette attive */
+/* 🌈 Active label colors */
 .act-1.act-label {
   color: #ffffff;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
@@ -1910,7 +1910,7 @@ main {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
-/* ⚙️ Quando spoiler è attivo → etichette spente */
+/* ⚙️ When spoiler is active → labels dimmed */
 body.spoiler-on .act-label {
   color: #bdbdbd !important;
   box-shadow: none !important;
@@ -1920,7 +1920,7 @@ body.spoiler-on .act-label {
     opacity 0.3s ease;
 }
 
-/* ✨ Glow morbido e realistico stile Hollow Knight */
+/* ✨ Soft realistic glow Hollow Knight style */
 body.spoiler-on .boss:hover .act-label.act-1 {
   color: #ffffff;
   opacity: 1;
@@ -1993,7 +1993,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   justify-content: center;
 }
 
-/* --- Colorazione dinamica per stato del boss --- */
+/* --- Dynamic coloring for boss state --- */
 .boss.done .act-label {
   color: #ffffff;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
@@ -2023,7 +2023,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   box-shadow: 0 0 8px rgba(186, 255, 181, 0.6);
 }
 
-/* 🔧 FIX: Colori visibili per boss completati */
+/* 🔧 FIX: Visible colors for completed bosses */
 .boss.done .act-label {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
@@ -2045,7 +2045,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   box-shadow: 0 0 8px rgba(159, 255, 159, 0.6);
 }
 
-/*  locked rimangono scuri */
+/*  locked remain dark */
 .boss.locked .act-label {
   color: #666 !important;
   background: rgba(0, 0, 0, 0.4) !important;
@@ -2054,7 +2054,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   opacity: 0.6;
 }
 
-/*  unlocked ma non done: neutri */
+/*  unlocked but not done: neutral */
 .boss.unlocked .act-label {
   color: #ccc;
   background: rgba(255, 255, 255, 0.05);
@@ -2253,7 +2253,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   height: calc(100vh - 160px);
 }
 
-/* Barra comandi fissa */
+/* Fixed command bar */
 .rawsave-header {
   position: sticky;
   top: 0;
@@ -2267,7 +2267,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* Sezione contenuto scrollabile */
+/* Scrollable content section */
 .rawsave-output {
   flex: 1;
   overflow-y: auto;
@@ -2292,7 +2292,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Barra fissa in alto */
+/* Fixed bar at top */
 .rawsave-header {
   position: sticky;
   top: 0;
@@ -2317,14 +2317,14 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   font-size: 1rem;
 }
 
-/* Azioni a destra */
+/* Actions on the right */
 .rawsave-actions {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-/* Input di ricerca */
+/* Search input */
 .rawsave-search {
   background: var(--bg-3);
   border: 1px solid var(--stroke);
@@ -2341,7 +2341,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   border-color: var(--accent);
 }
 
-/* Pulsanti */
+/* Buttons */
 .rawsave-btn {
   background: var(--accent);
   color: var(--bg-1);
@@ -2358,7 +2358,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   background: #e38b48;
 }
 
-/* Contatore risultati */
+/* Results counter */
 .search-counter {
   color: var(--ink-3);
   font-size: 0.8rem;
@@ -2366,7 +2366,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   text-align: center;
 }
 
-/* Contenuto scrollabile */
+/* Scrollable content */
 #rawsave-output {
   flex: 1;
   overflow-y: auto;
@@ -2380,7 +2380,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   position: relative;
 }
 
-/* Evidenziazione ricerca */
+/* Search highlighting */
 mark.search-match {
   background: #ffcb6b4d;
   color: var(--ink-1);
@@ -2503,14 +2503,14 @@ mark.active-match {
   border-radius: 12px;
 }
 
-/* 🪶 Overlay sopra la mappa */
+/* 🪶 Overlay above the map */
 .map-loading-overlay {
   position: absolute;
-  inset: 0; /* copre tutto l'iframe */
+  inset: 0; /* covers entire iframe */
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(10, 10, 10, 0.65); /* leggero scuro trasparente */
+  background: rgba(10, 10, 10, 0.65); /* light transparent dark */
   backdrop-filter: blur(3px);
   z-index: 2;
 }
