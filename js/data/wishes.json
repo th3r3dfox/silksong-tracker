@@ -46,7 +46,7 @@
         },
         {
           "id": "pharlooms-crown-1",
-          "label": "Pharloom’s Crown #1",
+          "label": "Pharloom's Crown #1",
           "type": "quest",
           "flag": "Citadel Ascent",
           "icon": "assets/quest/Seek_Quest_Icon.png",
@@ -55,16 +55,16 @@
         },
         {
           "id": "pharlooms-crown-2",
-          "label": "Pharloom’s Crown #2",
+          "label": "Pharloom's Crown #2",
           "type": "quest",
           "flag": "Citadel Ascent Melodies",
           "icon": "assets/quest/Seek_Quest_Icon.png",
-          "description": "Learn the threefold melody and open the path to the Citadel’s crest.",
+          "description": "Learn the threefold melody and open the path to the Citadel's crest.",
           "link": "https://hollowknight.wiki/w/Acts#Act_2:_Citadel_of_Song"
         },
         {
           "id": "pharlooms-crown-3",
-          "label": "Pharloom’s Crown #3",
+          "label": "Pharloom's Crown #3",
           "type": "quest",
           "flag": "Citadel Ascent Lift",
           "icon": "assets/quest/Seek_Quest_Icon.png",

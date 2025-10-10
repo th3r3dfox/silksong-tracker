@@ -34,9 +34,8 @@
               "required": [
                 "id",
                 "label",
-                "type",
-                "flag",
                 "icon",
+                "type",
                 "description",
                 "link"
               ],
@@ -48,16 +47,38 @@
                 "label": {
                   "type": "string"
                 },
-                "type": {
+                "icon": {
+                  "type": "string"
+                },
+                "scene": {
                   "type": "string",
-                  "enum": ["quest", "journal"]
+                  "description": "Scene identifier for location-based items"
                 },
                 "flag": {
                   "type": "string",
-                  "description": "The name of the save file flag used to track this wish"
+                  "description": "The name of the save file flag used to track this item"
                 },
-                "icon": {
-                  "type": "string"
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "level",
+                    "flag",
+                    "sceneBool",
+                    "quest",
+                    "tool",
+                    "collectable",
+                    "sceneVisited",
+                    "flagInt"
+                  ]
+                },
+                "act": {
+                  "type": "integer",
+                  "enum": [1, 2, 3]
+                },
+                "required": {
+                  "type": "integer",
+                  "description": "Required level for level-based items",
+                  "minimum": 0
                 },
                 "description": {
                   "type": "string"
@@ -66,27 +87,23 @@
                   "type": "string",
                   "format": "uri"
                 },
-                "subtype": {
+                "map": {
                   "type": "string",
-                  "description": "Subtype for tracking (e.g., 'kills' for kill count)",
-                  "enum": ["kills", "seen"]
+                  "description": "Map location or URL"
                 },
-                "required": {
-                  "type": "integer",
-                  "description": "Required count for completion (e.g., number of kills needed)",
-                  "minimum": 1
+                "cost": {
+                  "type": "string"
                 },
-                "missable": {
-                  "type": "boolean",
-                  "description": "Whether this wish can be permanently missed"
+                "obtain": {
+                  "type": "string"
                 },
                 "mode": {
                   "type": "string",
                   "enum": ["normal", "steel"]
                 },
-                "act": {
-                  "type": "integer",
-                  "enum": [1, 2, 3]
+                "exclusiveGroup": {
+                  "type": "string",
+                  "description": "Mutually exclusive group identifier (e.g., for variant items)"
                 }
               }
             }

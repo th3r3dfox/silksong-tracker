@@ -31,15 +31,7 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": [
-                "id",
-                "label",
-                "type",
-                "flag",
-                "icon",
-                "description",
-                "link"
-              ],
+              "required": ["id", "label", "icon", "flag", "type", "link"],
               "additionalProperties": false,
               "properties": {
                 "id": {
@@ -48,16 +40,24 @@
                 "label": {
                   "type": "string"
                 },
-                "type": {
+                "icon": {
+                  "type": "string"
+                },
+                "scene": {
                   "type": "string",
-                  "enum": ["quest", "journal"]
+                  "description": "Scene identifier for location-based items"
                 },
                 "flag": {
                   "type": "string",
-                  "description": "The name of the save file flag used to track this wish"
+                  "description": "The name of the save file flag used to track this item"
                 },
-                "icon": {
-                  "type": "string"
+                "type": {
+                  "type": "string",
+                  "enum": ["flag", "key", "quest", "sceneBool", "flagInt"]
+                },
+                "act": {
+                  "type": "integer",
+                  "enum": [1, 2, 3]
                 },
                 "description": {
                   "type": "string"
@@ -66,27 +66,13 @@
                   "type": "string",
                   "format": "uri"
                 },
-                "subtype": {
+                "map": {
                   "type": "string",
-                  "description": "Subtype for tracking (e.g., 'kills' for kill count)",
-                  "enum": ["kills", "seen"]
+                  "description": "Map URL"
                 },
-                "required": {
-                  "type": "integer",
-                  "description": "Required count for completion (e.g., number of kills needed)",
-                  "minimum": 1
-                },
-                "missable": {
-                  "type": "boolean",
-                  "description": "Whether this wish can be permanently missed"
-                },
-                "mode": {
+                "category": {
                   "type": "string",
-                  "enum": ["normal", "steel"]
-                },
-                "act": {
-                  "type": "integer",
-                  "enum": [1, 2, 3]
+                  "description": "Category grouping for items"
                 }
               }
             }

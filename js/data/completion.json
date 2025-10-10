@@ -240,7 +240,7 @@
           "flag": "Librarian Melody Cylinder",
           "type": "relic",
           "act": 2,
-          "description": "Whispering Vaults: part of the Vaultkeeper’s Melody objective.",
+          "description": "Whispering Vaults: part of the Vaultkeeper's Melody objective.",
           "link": "https://hollowknight.wiki/w/Relics"
         }
       ]
@@ -248,7 +248,7 @@
     {
       "id": "category-materium",
       "label": "Materium",
-      "desc": "Crystallized essences of Pharloom’s forces, gathered to empower tools and relics.",
+      "desc": "Crystallized essences of Pharloom's forces, gathered to empower tools and relics.",
       "contrib": 0,
       "items": [
         {
@@ -700,7 +700,7 @@
           "icon": "assets/completion/Memento_Heros.png",
           "flag": "Memento Garmond",
           "type": "relic",
-          "description": "Awarded by Garmond — a symbol of perseverance through peril.",
+          "description": "Awarded by Garmond - a symbol of perseverance through peril.",
           "link": "https://hollowknight.wiki/w/Memento"
         },
         {
@@ -709,7 +709,7 @@
           "icon": "assets/completion/Memento_Surface.png",
           "flag": "Memento Surface",
           "type": "relic",
-          "description": "Awarded by Garmond — a symbol of perseverance through peril.",
+          "description": "Awarded by Garmond - a symbol of perseverance through peril.",
           "link": "https://hollowknight.wiki/w/Memento"
         },
         {
@@ -768,7 +768,8 @@
           "flag": "Collectable Item Pickup Materium",
           "relatedFlag": "ConstructedMaterium",
           "icon": "assets/completion/Materium_item.png",
-          "description": "The Materium can be found in the upper part of the Memorium. The item must be constructed in the Bellhome in Bellhart before it can be used."
+          "description": "The Materium can be found in the upper part of the Memorium. The item must be constructed in the Bellhome in Bellhart before it can be used.",
+          "link": "https://hollowknight.wiki/w/Materium"
         },
         {
           "id": "misc-farsight",
@@ -778,7 +779,8 @@
           "flag": "Collectable Item Pickup",
           "relatedFlag": "ConstructedFarsight",
           "icon": "assets/completion/Farsight.png",
-          "description": "Found in The Abyss, in the upper east passage of Weavenest Absolom. The item must be constructed in the Bellhome in Bellhart before it can be used."
+          "description": "Found in The Abyss, in the upper east passage of Weavenest Absolom. The item must be constructed in the Bellhome in Bellhart before it can be used.",
+          "link": "https://hollowknight.wiki/w/Farsight"
         }
       ]
     }

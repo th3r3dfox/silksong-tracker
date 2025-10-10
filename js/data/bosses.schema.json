@@ -41,7 +41,6 @@
                 "link"
               ],
               "additionalProperties": false,
-              "description": "All properties are required except: type, subtype, required, missable, mode",
               "properties": {
                 "id": {
                   "type": "string"

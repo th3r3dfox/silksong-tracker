@@ -1103,7 +1103,7 @@ a:hover {
   box-shadow: 0 0 35px rgba(255, 255, 255, 0.08);
 }
 
-/* Responsive mobile — torna tutto in colonna */
+/* Responsive mobile - torna tutto in colonna */
 @media (max-width: 900px) {
   .home-grid {
     flex-direction: column;
@@ -1531,7 +1531,7 @@ main a:hover,
   font-size: 0.8em;
 }
 
-/* MAIN% — centered and compact title */
+/* MAIN% - centered and compact title */
 #main-section .category-title {
   display: block; /* cancel flex if present */
   text-align: center;
@@ -1749,7 +1749,7 @@ html {
 }
 
 /* ------------------
-   WISHES — clean and consistent layout
+   WISHES - clean and consistent layout
 -------------------*/
 #wishes-grid {
   display: flex;
@@ -1798,7 +1798,7 @@ html {
   justify-content: center;
 }
 
-/* Le card usano lo stile .boss globale — niente override */
+/* Le card usano lo stile .boss globale - niente override */
 
 /* Dark scrollbar per main */
 main::-webkit-scrollbar {
@@ -1944,7 +1944,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 }
 
 /* ------------------
-   COMPLETION — consistent layout
+   COMPLETION - consistent layout
 -------------------*/
 #completion-grid {
   display: flex;
@@ -2506,7 +2506,7 @@ mark.active-match {
 /* 🪶 Overlay sopra la mappa */
 .map-loading-overlay {
   position: absolute;
-  inset: 0; /* copre tutto l’iframe */
+  inset: 0; /* copre tutto l'iframe */
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,4 +1,4 @@
-# Silksong Tracker — Technical Documentation
+# Silksong Tracker - Technical Documentation
 
 ## 1. Overview
 
@@ -80,7 +80,7 @@ export const CSHARP_HEADER = new Uint8Array([
 ### 3.3 Data Correlation and Rendering (`script.js`)
 
 Static data from `data/main.json` and `data/bosses.json` defines all trackable items.
-Each JSON entry includes a flag and logic to determine if it’s completed or missing.
+Each JSON entry includes a flag and logic to determine if it's completed or missing.
 
 **Example:**
 
@@ -105,7 +105,7 @@ const value =
 
 Each item is rendered in the grid with its current state (obtained / missing).
 
-## 4. Data Model — `main.json`
+## 4. Data Model - `main.json`
 
 ### 4.1 Category Object
 
@@ -182,7 +182,7 @@ Each top-level category defines a group of related items.
 
 ### 5.1 What Are Flags
 
-Flags are internal variables stored in the Silksong save file that record the player’s progress and actions.
+Flags are internal variables stored in the Silksong save file that record the player's progress and actions.
 Each flag represents a specific state in the game: a collected item, a defeated boss, or a completed quest.
 
 Example of flags inside a decoded save file:
@@ -196,7 +196,7 @@ Example of flags inside a decoded save file:
 }
 ```
 
-These names come directly from the game’s C# code (Unity serialization).
+These names come directly from the game's C# code (Unity serialization).
 When the player performs an action, the game sets the corresponding flag to `true` or updates its value (integer for upgrades).
 
 ### 5.2 How Flags Are Used by the Tracker
@@ -239,13 +239,13 @@ If the flag exists and is `true`, the item is marked as obtained.
 
 ### 5.4 Why Flags Have Readable Names
 
-Flags such as `"Collectable Item Pickup"`, `"Heart Piece"`, or `"Beastfly Hunt"` are not arbitrary —
-they are the exact string identifiers used by the game’s code when saving data.
+Flags such as `"Collectable Item Pickup"`, `"Heart Piece"`, or `"Beastfly Hunt"` are not arbitrary -
+they are the exact string identifiers used by the game's code when saving data.
 
 These names come from:
 
-- Unity’s C# variable names serialized in the `.dat` file;
-- Community reverse-engineering of Silksong’s prototype saves;
+- Unity's C# variable names serialized in the `.dat` file;
+- Community reverse-engineering of Silksong's prototype saves;
 - Empirical testing (comparing flags before and after certain in-game actions).
 
 ### 5.5 Summary
@@ -253,7 +253,7 @@ These names come from:
 | Concept     | Description                                                         |
 | ----------- | ------------------------------------------------------------------- |
 | Flag        | A key stored in the Silksong save representing progress or events.  |
-| Source      | Unity’s internal C# save data structure.                            |
+| Source      | Unity's internal C# save data structure.                            |
 | Used In     | The `flag` field inside `main.json` items.                          |
 | Check Logic | `save[flag]` or `save[scene][flag]` depending on item type.         |
 | Example     | `"Collectable Item Pickup"` → used to detect Everbloom collectable. |
