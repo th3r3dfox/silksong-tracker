@@ -1147,33 +1147,33 @@ async function updateAllProgressContent(selectedAct = "all") {
 
       if (showMissingOnly && currentLoadedSaveData !== undefined) {
         filteredItems = filteredItems.filter((item) => {
-          const val = getSaveDataValue(
+          const value = getSaveDataValue(
             currentLoadedSaveData,
             currentLoadedSaveDataFlags,
             item,
           );
           if (item.type === "collectable") {
-            return (val ?? 0) === 0;
+            return (value ?? 0) === 0;
           }
 
           if (
             ["level", "min", "region-level", "region-min"].includes(item.type)
           ) {
-            return (val ?? 0) < (item.required ?? 0);
+            return (value ?? 0) < (item.required ?? 0);
           }
 
           if (item.type === "quest") {
-            return val !== "completed" && val !== true;
+            return value !== "completed" && value !== true;
           }
 
-          return val !== true;
+          return value !== true;
         });
       }
 
       // --- Apply mutually exclusive groups (global) ---
       EXCLUSIVE_GROUPS.forEach((group) => {
         const owned = group.find((flag) => {
-          const val = getSaveDataValue(
+          const value = getSaveDataValue(
             currentLoadedSaveData,
             currentLoadedSaveDataFlags,
             {
@@ -1181,7 +1181,7 @@ async function updateAllProgressContent(selectedAct = "all") {
               flag,
             },
           );
-          return val === "deposited" || val === "collected";
+          return value === "deposited" || value === "collected";
         });
         if (owned) {
           filteredItems = filteredItems.filter(
@@ -1246,7 +1246,7 @@ async function updateAllProgressContent(selectedAct = "all") {
       });
 
       filteredItems.forEach((item) => {
-        const val =
+        const value =
           currentLoadedSaveData === undefined
             ? false
             : getSaveDataValue(
@@ -1256,15 +1256,17 @@ async function updateAllProgressContent(selectedAct = "all") {
               );
         const isUnlocked =
           item.type === "quest"
-            ? val === "completed" || val === true
+            ? value === "completed" || value === true
             : item.type === "level"
                 || item.type === "min"
                 || item.type === "region-level"
                 || item.type === "region-min"
-              ? (val ?? 0) >= (item.required ?? 0)
+              ? (value ?? 0) >= (item.required ?? 0)
               : item.type === "collectable"
-                ? (val ?? 0) > 0
-                : val === true || val === "collected" || val === "deposited";
+                ? (value ?? 0) > 0
+                : value === true
+                  || value === "collected"
+                  || value === "deposited";
 
         if (item.exclusiveGroup) {
           exclusiveGroups.add(item.exclusiveGroup);
