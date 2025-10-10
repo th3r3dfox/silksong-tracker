@@ -803,7 +803,7 @@ function indexFlags(root) {
 
 // ---------- FILE HANDLING ----------
 fileInput.addEventListener("change", (event) => {
-  const file = event.target?.files && event.target.files[0];
+  const file = fileInput.files?.[0];
   handleSaveFile(file);
 });
 
