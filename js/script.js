@@ -649,26 +649,31 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
       case "collectable": {
         const current = value === undefined ? 0 : Number(value);
         isDone = current > 0;
+        break;
       }
 
       case "quest": {
         isDone = value === "completed" || value === true;
         isAccepted = value === "accepted";
+        break;
       }
 
       case "relic": {
         isDone = value === "deposited";
         isAccepted = value === "collected";
+        break;
       }
 
       case "materium": {
         isDone = value === "deposited";
         isAccepted = value === "collected";
+        break;
       }
 
       case "device": {
         isDone = value === "deposited";
         isAccepted = value === "collected";
+        break;
       }
 
       default: {
