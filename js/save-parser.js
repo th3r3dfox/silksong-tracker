@@ -95,7 +95,7 @@ export function getSaveFileFlags(root) {
         mark(SceneName, ID, Value);
       }
 
-      for (const value in Object.values(node)) {
+      for (const value of Object.values(node)) {
         walk(value);
       }
     }
