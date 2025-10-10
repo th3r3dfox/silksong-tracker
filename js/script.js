@@ -53,9 +53,6 @@ let currentActFilter = actFilter.value || "all";
 /** @type Record<string, unknown> | undefined */
 let currentLoadedSaveFile;
 
-/** @type Record<string, unknown> | undefined */
-let currentLoadedSaveFileFlags;
-
 /** @type {"steel" | "normal" | undefined} */
 let currentLoadedSaveFileMode;
 
@@ -415,7 +412,7 @@ function resolveSaveValue(save, item) {
         .replace(/\s+/g, "_")
         .replace(/[^\w.]/g, "_");
 
-      const val = currentLoadedSaveFileFlags?.[scene]?.[idKey];
+      const val = root.__flags?.[scene]?.[idKey];
       if (val !== undefined) {
         return val;
       }
@@ -431,7 +428,7 @@ function resolveSaveValue(save, item) {
 
     case "key": {
       if (item.scene) {
-        return currentLoadedSaveFileFlags?.[item.scene]?.[item.flag] === true;
+        return root.__flags?.[item.scene]?.[item.flag] === true;
       }
       return playerData[item.flag] === true;
     }
@@ -593,7 +590,8 @@ function resolveSaveValue(save, item) {
 
       // 🟡 Yellow — item collected in scene
       const sceneFlags =
-        currentLoadedSaveFileFlags?.[scene]
+        save?.__flags?.[scene]
+        || save?.playerData?.__flags?.[scene]
         || save?.[scene]
         || {};
 
@@ -805,7 +803,7 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
 }
 
 /** @param {z.infer<typeof silksongSaveSchema>} root */
-function getFlags(root) {
+function indexFlags(root) {
   /** @type Record<string, unknown> */
   const flags = {};
 
@@ -850,7 +848,8 @@ function getFlags(root) {
   }
 
   walk(root);
-  return flags;
+  root.__flags = flags;
+  return root;
 }
 
 // ---------- FILE HANDLING ----------
@@ -1002,8 +1001,7 @@ async function handleSaveFile(file) {
     rawSaveOutput.textContent = JSON.stringify(saveData, undefined, 2);
 
     // Index and save globally
-    currentLoadedSaveFile = saveDataRaw; // TODO: Change to `saveData`.
-    currentLoadedSaveFileFlags = getFlags(saveDataRaw);
+    currentLoadedSaveFile = indexFlags(saveDataRaw); // TODO: Change to `saveData`.
     lastLoadedSaveFile = file;
 
     // Show refresh button
