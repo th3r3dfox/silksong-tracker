@@ -99,6 +99,16 @@ export function assertString(value, msg) {
 }
 
 /**
+ * A wrapper around `Array.isArray` that narrows the type to `unknown[]`.
+ *
+ * @param {unknown} variable
+ * @returns {variable is unknown[]}
+ */
+export function isArray(variable) {
+  return Array.isArray(variable);
+}
+
+/**
  * Helper function to narrow an unknown value to an object (i.e. a TypeScript record).
  *
  * Under the hood, this checks for `typeof variable === "object"`, `variable !== null`, and

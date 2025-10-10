@@ -38,6 +38,8 @@ import {
   assertNotNull,
   assertObject,
   assertString,
+  isArray,
+  isObject,
   normalizeString,
 } from "./utils.js";
 
@@ -806,42 +808,53 @@ function getFlags(root) {
   /** @type Record<string, Record<string, boolean>> */
   const flags = {};
 
-  const mark = (sceneRaw, idRaw, value) => {
+  /**
+   * @param {string} sceneRaw
+   * @param {string} idRaw
+   * @param {number | boolean} value
+   */
+  function mark(sceneRaw, idRaw, value) {
     if (!sceneRaw || !idRaw) {
       return;
     }
-    const scene = String(sceneRaw).trim().replace(/\s+/g, "_");
-    const idKey = String(idRaw)
+    const scene = sceneRaw.trim().replace(/\s+/g, "_");
+    const idKey = idRaw
       .trim()
       .replace(/\s+/g, "_")
       .replace(/[^\w.]/g, "_");
+
     if (!flags[scene]) {
       flags[scene] = {};
     }
     flags[scene][idKey] = Boolean(value);
-  };
+  }
 
-  /** @param {Record<string, unknown>} node */
+  /** @param {unknown} node */
   function walk(node) {
-    if (Array.isArray(node)) {
-      for (const it of node) {
-        walk(it);
+    if (isArray(node)) {
+      for (const element of node) {
+        walk(element);
       }
       return;
     }
-    if (node && typeof node === "object") {
-      const hasScene = "SceneName" in node || "sceneName" in node;
-      const hasId = "ID" in node || "Id" in node || "id" in node;
-      const hasVal = "Value" in node || "value" in node;
 
-      if (hasScene && hasId && hasVal) {
-        const scene = node["SceneName"] ?? node["sceneName"];
-        const id = node["ID"] ?? node["Id"] ?? node["id"];
-        const val = node["Value"] ?? node["value"];
-        mark(scene, id, val);
+    if (isObject(node)) {
+      const { SceneName, ID, Value } = node;
+
+      if (SceneName !== undefined && ID !== undefined && Value !== undefined) {
+        assertString(SceneName, 'The "SceneName" property is not a string.');
+        assertString(ID, 'The "ID" property is not a string.');
+        if (typeof Value !== "number" && typeof Value !== "boolean") {
+          throw new TypeError(
+            `The \"Value\" property has an unknown type of: ${typeof Value}`,
+          );
+        }
+
+        mark(SceneName, ID, Value);
       }
-      for (const k in node) {
-        walk(node[k]);
+
+      for (const value in Object.values(node)) {
+        walk(value);
       }
     }
   }
