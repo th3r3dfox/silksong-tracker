@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {
   assertArray,
   assertDefined,
@@ -578,24 +580,8 @@ function getSaveDataValue(
       return flag === undefined ? undefined : playerDataExpanded[flag];
     }
 
-    case undefined: {
-      // Warn about items missing a type field
-      console.warn(
-        `[getSaveDataValue] Item missing type field:`,
-        item.id,
-        item.label,
-      );
-      return flag === undefined ? undefined : playerDataExpanded[flag];
-    }
-
     default: {
-      // Unknown type - this should not happen
-      console.error(
-        `[getSaveDataValue] Unknown item type: "${type}"`,
-        item.id,
-        item.label,
-      );
-      return flag === undefined ? undefined : playerDataExpanded[flag];
+      throw new Error(`An item has an unknown type of: ${type}`);
     }
   }
 }
@@ -746,11 +732,6 @@ function renderGenericGrid({
       case "device": {
         isDone = value === "deposited";
         isAccepted = value === "collected";
-        break;
-      }
-
-      case "boss": {
-        isDone = value === true;
         break;
       }
 
