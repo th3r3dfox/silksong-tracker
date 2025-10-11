@@ -2871,19 +2871,41 @@ main {
 
 .upgrade-icon {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  background: var(--accent);
-  color: white;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  font-size: 0.75rem;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 4px #000a;
-  z-index: 2;
+  font-family: "TrajanPro", serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: var(--accent);
+  opacity: 0.95;
+  cursor: help;
+  line-height: 1;
+  z-index: 3;
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.7),
+    0 0 8px rgba(224, 123, 49, 0.4),
+    0 0 4px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 0.18s cubic-bezier(0.4, 1.6, 0.6, 1),
+    filter 0.18s cubic-bezier(0.4, 1.6, 0.6, 1),
+    box-shadow 0.18s cubic-bezier(0.4, 1.6, 0.6, 1);
+}
+
+.upgrade-icon:hover {
+  transform: scale(1.18);
+  filter: brightness(1.25) drop-shadow(0 0 2px #e07b31cc);
+  box-shadow: 0 0 2px 1px #e07b3155;
+  text-shadow:
+    0 0 1px #e07b31cc,
+    0 0 2px #fff2,
+    0 0 1px #000a;
+  background: rgba(197, 106, 45, 0.08);
+  border-radius: 30%;
 }
 
 .boss {

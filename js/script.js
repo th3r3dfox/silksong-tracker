@@ -766,6 +766,14 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
       div.appendChild(warn);
     }
 
+    if (item.upgradeOf) {
+      const upg = document.createElement("span");
+      upg.className = "upgrade-icon";
+      upg.title = "Upgraded item";
+      upg.textContent = "↑";
+      div.appendChild(upg);
+    }
+
     // 🖼️ Image and state management
     const iconPath = item.icon || `${BASE_PATH}/assets/icons/${item.id}.png`;
     const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
@@ -810,15 +818,6 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     div.appendChild(img);
     div.appendChild(title);
     div.addEventListener("click", () => showGenericModal(item));
-
-    // 🔺 upgrade icon
-    if (item.upgradeOf) {
-      const upgradeIcon = document.createElement("div");
-      upgradeIcon.className = "upgrade-icon";
-      upgradeIcon.title = `Upgrade of ${item.upgradeOf}`;
-      upgradeIcon.innerHTML = `<i class="fa-solid fa-arrow-up"></i>`;
-      div.appendChild(upgradeIcon);
-    }
 
     containerEl.appendChild(div);
     renderedCount++;
