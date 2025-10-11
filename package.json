@@ -11,8 +11,16 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "build": "vite build",
     "format": "prettier --write .",
-    "lint": "tsx ./scripts/lint.ts"
+    "lint": "tsx ./scripts/lint.ts",
+    "preview": "vite preview",
+    "start": "vite dev"
+  },
+  "dependencies": {
+    "complete-common": "2.6.0",
+    "crypto-js": "4.2.0",
+    "zod": "4.1.12"
   },
   "devDependencies": {
     "@types/crypto-js": "4.2.2",
@@ -21,6 +29,6 @@
     "complete-lint": "4.1.0",
     "complete-node": "12.2.0",
     "tsx": "4.20.6",
-    "zod": "4.1.12"
+    "vite": "7.1.9"
   }
 }

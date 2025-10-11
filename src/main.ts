@@ -1,6 +1,14 @@
 // @ts-nocheck
 
-import { z } from "https://cdn.jsdelivr.net/npm/zod@4/+esm";
+import {
+  assertArray,
+  assertDefined,
+  assertIs,
+  assertNotNull,
+  assertObject,
+  isObject,
+} from "complete-common";
+import { z } from "zod";
 import bossesJSON from "./data/bosses.json" with { type: "json" };
 import completionJSON from "./data/completion.json" with { type: "json" };
 import essentialsJSON from "./data/essentials.json" with { type: "json" };
@@ -34,6 +42,8 @@ import {
   spoilerToggle,
   uploadOverlay,
 } from "./elements.js";
+import type { Item } from "./interfaces/Item.ts";
+import type { Mode } from "./interfaces/Mode.ts";
 import { decodeSilksongSave } from "./save-decoder.js";
 import {
   getSaveFileFlags,
@@ -41,26 +51,13 @@ import {
   parseSilksongSave,
   silksongSaveSchema,
 } from "./save-parser.js";
-import {
-  assertArray,
-  assertDefined,
-  assertIs,
-  assertNotNull,
-  assertObject,
-  isObject,
-  normalizeString,
-  normalizeStringWithUnderscores,
-} from "./utils.js";
+import { normalizeString, normalizeStringWithUnderscores } from "./utils.js";
 
 console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
 );
 
-let tocObserver = null;
-
-const BASE_PATH = window.location.pathname.includes("/silksong-tracker/")
-  ? "/silksong-tracker"
-  : "";
+let tocObserver: IntersectionObserver | undefined;
 
 // --- Act Dropdown Logic (modern multi-select with checkboxes) ---
 const dropdownBtn = actDropdownBtn;
@@ -131,14 +128,9 @@ function getSelectedActs() {
   }
 }
 
-/** @type z.infer<typeof silksongSaveSchema> | undefined */
-let currentLoadedSaveData;
-
-/** @type Record<string, unknown> | undefined */
-let currentLoadedSaveDataFlags;
-
-/** @type {"steel" | "normal" | undefined} */
-let currentLoadedSaveDataMode;
+let currentLoadedSaveData: z.infer<typeof silksongSaveSchema> | undefined;
+let currentLoadedSaveDataFlags: Record<string, unknown> | undefined;
+let currentLoadedSaveDataMode: Mode | undefined;
 
 /** @type Record<string, (selectedAct?: string) => Promise<void>> */
 const TAB_TO_UPDATE_FUNCTION = {
@@ -147,8 +139,7 @@ const TAB_TO_UPDATE_FUNCTION = {
 };
 const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION);
 
-/** @param {Item} item */
-function matchMode(item) {
+function matchMode(item: Item) {
   const { mode } = item;
 
   // no mode -> always visible
@@ -775,8 +766,10 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     }
 
     // 🖼️ Image and state management
-    const iconPath = item.icon || `${BASE_PATH}/assets/icons/${item.id}.png`;
-    const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
+    const prefix = `/silksong-tracker/assets`;
+    const iconPathSuffix = item.icon || `icons/${item.id}.png`;
+    const iconPath = `${prefix}/${iconPathSuffix}`;
+    const lockedPath = `${prefix}/icons/locked.png`;
 
     if (isDone) {
       img.src = iconPath;
@@ -1422,8 +1415,10 @@ function buildDynamicTOC() {
 function initScrollSpy() {
   const tocLinks = document.querySelectorAll(".toc-item a, .toc-category > a");
 
-  // 🧹 Prevent duplicate observers
-  if (tocObserver) tocObserver.disconnect();
+  // Prevent duplicate observers
+  if (tocObserver !== undefined) {
+    tocObserver.disconnect();
+  }
 
   tocObserver = new IntersectionObserver(
     (entries) => {

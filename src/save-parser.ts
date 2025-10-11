@@ -1,10 +1,6 @@
-import { z } from "https://cdn.jsdelivr.net/npm/zod@4/+esm";
-import {
-  assertString,
-  isArray,
-  isObject,
-  normalizeStringWithUnderscores,
-} from "./utils.js";
+import { assertString, isArray, isObject } from "complete-common";
+import { z } from "zod";
+import { normalizeStringWithUnderscores } from "./utils.js";
 
 export const objectWithSavedData = z.object({
   savedData: z.array(
@@ -59,8 +55,7 @@ export const silksongSaveSchema = z.object({
   sceneData: z.object({}).readonly(),
 });
 
-/** @param {Record<string, unknown>} saveFile */
-export async function parseSilksongSave(saveFile) {
+export async function parseSilksongSave(saveFile: Record<string, unknown>) {
   const result = silksongSaveSchema.safeParse(saveFile);
   if (!result.success) {
     const issues = JSON.stringify(result.error.issues, undefined, 2);
@@ -75,19 +70,11 @@ export async function parseSilksongSave(saveFile) {
  * Recursively search through the save file and create a flat map of all "flag-style" entries. This
  * simplifies checking for flags later, since some flags are represented in the raw save file as a
  * boolean and some as an integer.
- *
- * @param {Record<string, unknown>} root
  */
-export function getSaveFileFlags(root) {
-  /** @type Record<string, Record<string, boolean>> */
-  const flags = {};
+export function getSaveFileFlags(root: Record<string, unknown>) {
+  const flags: Record<string, Record<string, boolean>> = {};
 
-  /**
-   * @param {string} scene
-   * @param {string} id
-   * @param {number | boolean} value
-   */
-  function mark(scene, id, value) {
+  function mark(scene: string, id: string, value: number | boolean) {
     scene = normalizeStringWithUnderscores(scene);
     id = normalizeStringWithUnderscores(id);
 
@@ -100,8 +87,7 @@ export function getSaveFileFlags(root) {
     flagsScene[id] = Boolean(value);
   }
 
-  /** @param {unknown} node */
-  function walk(node) {
+  function walk(node: unknown) {
     if (isArray(node)) {
       for (const element of node) {
         walk(element);

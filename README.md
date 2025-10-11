@@ -16,23 +16,47 @@ All data is processed **locally in your browser** - your save file is never uplo
 
 ## How to Use
 
-1. Go to the hosted tracker (if deployed) or open `index.html` locally.
-2. Click **Upload Save** or drag your `.dat` file (e.g., `user1.dat`) into the drop area.
-3. The tracker will decode the save and display progress by category.
+1. Go to [the website for the tracker](https://th3r3dfox.github.io/silksong-tracker/).
+2. Click on the "Upload save" button in the top-right-hand corner.
+3. Click on the box that says "click to browser".
+4. Select your save file.
+5. The tracker will decode the save and display the progress by category.
 
 ## Technical Details
 
-A full explanation of the project architecture, decoding logic, and data model is available here: [docs/TECHNICAL_DOCUMENTATION.md](./docs/TECHNICAL_DOCUMENTATION.md)
+An explanation of the project architecture, decoding logic, and data model is available here: [docs/TECHNICAL_DOCUMENTATION.md](docs/TECHNICAL_DOCUMENTATION.md)
 
-## Contributing
+## Development / Contributing
 
-This project uses [Prettier](https://prettier.io/), an automatic code formatter. First, install [Node.js](https://nodejs.org/en) (if you do not already have it installed). Then, you can run Prettier like this:
+This project is written in [TypeScript](https://www.typescriptlang.org/) and uses [Vite](https://vite.dev/) to bundle all of the code.
+
+### Getting Started
+
+- Install [Git](https://git-scm.com/), if you do not already have it installed.
+- Install [Visual Studio Code](https://code.visualstudio.com/), if you do not already have it installed. (We recommend using Visual Studio Code, but feel free to use a different editor if you know what you are doing.)
+- Install [Node.js](https://nodejs.org/en), if you do not already have it installed.
+- Create a GitHub account and login, if you have not already.
+- [Fork](https://github.com/th3r3dfox/silksong-tracker/fork) this repository.
+- [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) your fork.
+- Open a new shell/termainal and `cd` to the cloned repository directory.
+- Install the JavaScript/TypeScript dependencies:
+  - `npm ci`
+- Start a local version of the website on your computer:
+  - `npm run start`
+
+### Formatting & Linting
+
+This project uses [Prettier](https://prettier.io/), an automatic code formatter, and [ESLint](https://eslint.org/), a code linter. We have a ".vscode/settings.json" file that tells Visual Studio Code to automatically format a file on save. For this to work properly, you have to:
+
+1. Open Visual Studio Code to the repository folder. (File --> Open Folder)
+2. Ensure that you have already installed the JavaScript/TypeScript dependencies with: `npm ci`
+3. Install [the Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for Visual Studio Code.
+4. Install [the ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for Visual Studio Code.
+
+Before submitting [a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests), please make sure that your updated coded passes our lint checks:
 
 ```sh
-cd silksong-tracker
-npm ci # To install the JavaScript dependencies.
-npm lint # To check to see if the codebase is correctly formatted.
-npm format # To automatically format the codebase.
+npm run lint
 ```
 
 ## Credits
@@ -41,4 +65,4 @@ Inspired by [ReznorMichael's](https://github.com/ReznoRMichael) [Hollow Knight S
 
 ## Legal
 
-This is a non-commercial fan project not affiliated with Team Cherry.
+This is a non-commercial fan project. We are not affiliated with [Team Cherry](https://www.teamcherry.com.au/).

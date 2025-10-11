@@ -1,3 +1,8 @@
+// The Web Crypto API does not support AES-ECB, since it is considered insecure. However, that is
+// what Unity uses, so we use the "crypto-js" external library to handle the decryption.
+
+import CryptoJS from "crypto-js";
+
 const CSHARP_HEADER = new Uint8Array([
   0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0,
 ]);
@@ -5,17 +10,8 @@ const CSHARP_HEADER = new Uint8Array([
 /** The AES key used by Silksong to encrypt saves. */
 const AES_KEY_STRING = "UKu52ePUBwetZ9wNX88o54dnfKRu0T1l";
 
-// The Web Crypto API does not support AES-ECB, since it is considered insecure. However, that is
-// what Unity uses, so we use an external library to handle the decryption.
-/** @type {import("crypto-js")} */
-const CryptoJS = window.CryptoJS;
-
-/**
- * Removes the header and length prefix from the .dat file.
- *
- * @param {Uint8Array} bytes
- */
-function removeHeader(bytes) {
+/** Removes the header and length prefix from the .dat file. */
+function removeHeader(bytes: Uint8Array) {
   const withoutHeader = bytes.subarray(CSHARP_HEADER.length, bytes.length - 1);
 
   let lengthCount = 0;
@@ -30,27 +26,22 @@ function removeHeader(bytes) {
   return withoutHeader.subarray(lengthCount);
 }
 
-/**
- * Decodes a Hollow Knight: Silksong .dat save file.
- *
- * @param {ArrayBuffer} arrayBuffer
- * @returns {unknown}
- */
-export function decodeSilksongSave(arrayBuffer) {
+/** Decodes a Hollow Knight: Silksong .dat save file. */
+export function decodeSilksongSave(arrayBuffer: ArrayBuffer): unknown {
   try {
     const bytes = new Uint8Array(arrayBuffer);
 
-    // Step 1: remove Unity/C# header
+    // Step 1: Remove Unity/C# header
     const noHeader = removeHeader(bytes);
 
-    // Step 2: convert to base64 string (chunked for safety)
+    // Step 2: Convert to base64 string (chunked for safety)
     let b64String = "";
     const CHUNK_SIZE = 0x8000;
     for (let i = 0; i < noHeader.length; i += CHUNK_SIZE) {
       b64String += String.fromCharCode(...noHeader.slice(i, i + CHUNK_SIZE));
     }
 
-    // Step 3: decrypt AES ECB PKCS7
+    // Step 3: Decrypt AES ECB PKCS7
     const encryptedWords = CryptoJS.enc.Base64.parse(b64String);
     const cipherParams = CryptoJS.lib.CipherParams.create({
       ciphertext: encryptedWords,
@@ -66,6 +57,6 @@ export function decodeSilksongSave(arrayBuffer) {
     return JSON.parse(jsonString);
   } catch (err) {
     console.error("[Decode] Failed to decode Silksong save file:", err);
-    throw new Error("Failed to decode Silksong save file");
+    throw new Error("Failed to decode the Silksong save file.");
   }
 }

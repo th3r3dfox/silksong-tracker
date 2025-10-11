@@ -13,22 +13,20 @@ The project is entirely client-side, structured as follows:
 ```txt
 silksong-tracker/
 │
-├── index.html               # Main UI and layout
+├── index.html            # Main UI and layout
 │
-├── js/
-│   ├── script.js            # Core logic and rendering
-│   ├── save-decoder.js      # Binary decoding and AES decryption
-│   ├── constants.js         # Unity header and AES key constants
+├── src/
+│   ├── main.js           # Core logic and rendering
+│   ├── save-decoder.js   # Binary decoding and AES decryption
+│   ├── ...
 |   |
 |   └── data/
-|       ├── main.json            # Database of items, upgrades, and skills
-|       └── bosses.json          # Optional boss data
+|       ├── main.json     # Database of items, upgrades, and skills
+|       ├── bosses.json   # Optional boss data
+│       └── ...
 │
-├── css/style.css            # Styles and theme definitions
-├── assets/                  # Icons, fonts, and images
-├── docs/                    # Documentation
-└── README.md                # Documentation
-docs/
+├── public/               # Files copied to the website build output
+└── docs/                 # Documentation
 ```
 
 ## 3. Data Flow
@@ -139,7 +137,7 @@ Each top-level category defines a group of related items.
   "type": "level",
   "required": 1,
   "category": "Needle Upgrades",
-  "icon": "assets/icons/2_Sharpened_Needle.png",
+  "icon": "icons/2_Sharpened_Needle.png",
   "description": "The blade is honed to a fine edge.",
   "cost": "Free",
   "obtain": "The Needle can be upgraded by Pinmaster Plinney",
@@ -266,7 +264,7 @@ These names come from:
   "label": "Everbloom",
   "flag": "Collectable Item Pickup",
   "type": "collectable",
-  "icon": "assets/icons/Everbloom.png",
+  "icon": "icons/Everbloom.png",
   "description": "Return to the Snail Shamans and complete the memory sequence.",
   "link": "https://hollowknight.wiki/w/Everbloom"
 }
