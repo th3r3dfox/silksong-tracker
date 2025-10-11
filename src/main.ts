@@ -57,6 +57,8 @@ console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
 );
 
+const BASE_PATH = "/silksong-tracker/";
+
 let tocObserver: IntersectionObserver | undefined;
 
 // --- Act Dropdown Logic (modern multi-select with checkboxes) ---
@@ -766,7 +768,7 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     }
 
     // 🖼️ Image and state management
-    const prefix = `/silksong-tracker/assets`;
+    const prefix = `${BASE_PATH}/assets`;
     const iconPathSuffix = item.icon || `icons/${item.id}.png`;
     const iconPath = `${prefix}/${iconPathSuffix}`;
     const lockedPath = `${prefix}/icons/locked.png`;
