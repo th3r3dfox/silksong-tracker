@@ -34,7 +34,12 @@ export const silksongSaveSchema = z.object({
       MateriumCollected: objectWithSavedData,
       MementosDeposited: objectWithSavedData,
       geo: z.int(),
-      permadeathMode: z.union([z.literal(0), z.literal(1)]),
+      permadeathMode: z
+        .union([
+          z.union([z.literal(0), z.literal(1), z.literal(2)]), // num
+          z.union([z.literal("Off")]), // string
+        ])
+        .optional(),
       playTime: z.number(),
       QuestCompletionData: objectWithSavedData,
       Relics: objectWithSavedData,
