@@ -2102,30 +2102,6 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   display: none !important;
 }
 
-#modeBanner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.08)
-  );
-  color: #e6b37b;
-  font-family: "TrajanPro", serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  text-shadow:
-    0 0 6px rgba(230, 179, 123, 0.4),
-    0 0 12px rgba(200, 140, 80, 0.3);
-  filter: drop-shadow(0 0 4px rgba(230, 179, 123, 0.3));
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-}
-
 #modeBanner.hidden {
   opacity: 0;
   pointer-events: none;
@@ -2691,32 +2667,6 @@ main {
 }
 
 /* === MODE BANNER  === */
-#modeBanner {
-  position: fixed;
-  top: var(--topbar-height);
-  left: 220px; /* sidebar width */
-  right: 0;
-  z-index: 200; /* above TOC and main content */
-
-  /* Solid dark-gold banner */
-  background: #1b1a18; /* deep dark base */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e6b37b;
-
-  font-family: "TrajanPro", serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 10px 0;
-  text-align: center;
-
-  text-shadow:
-    0 0 6px rgba(230, 179, 123, 0.4),
-    0 0 12px rgba(200, 140, 80, 0.3);
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.6),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
-}
 
 /* Optional: Steel mode variant (grayish tone) */
 #modeBanner.steel {
@@ -2827,16 +2777,6 @@ main {
   z-index: 9999; /* Ensure dropdown is always visible */
 }
 
-/* === Mode banner (fixed below topbar, non-blocking) === */
-#modeBanner {
-  position: fixed;
-  top: var(--topbar-height); /* stays just below topbar */
-  left: 220px; /* aligns with sidebar */
-  right: 0;
-  z-index: 1000; /* below dropdown, above content */
-  pointer-events: none; /* so it never blocks clicks */
-}
-
 /* --- Ensure dropdown always visible above the banner --- */
 .dropdown {
   position: relative;
@@ -2857,16 +2797,6 @@ main {
 #actDropdownMenu {
   position: absolute;
   z-index: 4000; /* visible above everything */
-}
-
-/* --- Mode banner below dropdown but still fixed --- */
-#modeBanner {
-  position: fixed;
-  top: var(--topbar-height);
-  left: 220px;
-  right: 0;
-  z-index: 2000; /* lower than dropdown */
-  pointer-events: none; /* so it never blocks clicks */
 }
 
 .upgrade-icon {
@@ -2910,4 +2840,42 @@ main {
 
 .boss {
   position: relative;
+}
+.topbar {
+  position: relative; /* serve per ancorare il banner */
+}
+
+#modeBanner {
+  position: absolute;
+  top: 6px; /* distanza dal bordo superiore della topbar */
+  left: 14px; /* allineato a sinistra */
+  background: #181715;
+  border: 1px solid #8a6a3a;
+  color: #d7b98a;
+  font-family: "TrajanPro", serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 4px 14px;
+  border-radius: 6px;
+  z-index: 10;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none; /* non blocca i click */
+  display: inline-block;
+  width: auto;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Variante Steel Soul (grigio-blu) */
+#modeBanner.steel {
+  background: #1a1b1c;
+  border: 1px solid #6e7680;
+  color: #ccd5db;
+  text-shadow:
+    0 0 6px #ccd5db,
+    0 0 12px #596066;
+}
+
+#modeBanner:empty {
+  display: none;
 }
