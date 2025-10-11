@@ -1,4 +1,4 @@
-// @ts-nochec
+// @ts-nocheck
 
 import {
   assertArray,
