@@ -1011,7 +1011,7 @@
         }
       ]
     },
-       {
+    {
       "id": "map-pins",
       "label": "Map Pins",
       "desc": "Markers purchased from Shakra to mark key locations across Pharloom.",
