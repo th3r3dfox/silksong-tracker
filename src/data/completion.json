@@ -1055,53 +1055,6 @@
           "description": "Purchased from Shakra. Marks the mysterious transport tubes of Pharloom.",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
           "act": 2
-        }
-      ]
-    },
-    {
-      "id": "map-pins",
-      "label": "Map Pins",
-      "desc": "Markers purchased from Shakra to mark key locations across Pharloom.",
-      "items": [
-        {
-          "id": "pin-bench",
-          "label": "Bench Pin",
-          "type": "flag",
-          "flag": "hasPinBench",
-          "icon": "completion/Bench_Pins.png",
-          "description": "Purchased from Shakra. These pins will mark benches and other rest spots on your map.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
-          "act": 1
-        },
-        {
-          "id": "pin-shop",
-          "label": "Vendor Pins",
-          "type": "flag",
-          "flag": "hasPinShop",
-          "icon": "completion/Vendor_Pins_(Silksong).png",
-          "description": "Purchased from Shakra. These pins will mark vendors on your map.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
-          "act": 1
-        },
-        {
-          "id": "pin-stag",
-          "label": "Bellway Pins",
-          "type": "flag",
-          "flag": "hasPinStag",
-          "icon": "completion/Bellway_Pins.png",
-          "description": "Purchased from Shakra. These pins will mark stations on your map.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
-          "act": 1
-        },
-        {
-          "id": "pin-tube",
-          "label": "Ventrica Pins",
-          "type": "flag",
-          "flag": "hasPinTube",
-          "icon": "completion/Ventrica_Pins.png",
-          "description": "Purchased from Shakra. Marks the mysterious transport tubes of Pharloom.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
-          "act": 2
         },
         {
           "id": "marker-shell",
