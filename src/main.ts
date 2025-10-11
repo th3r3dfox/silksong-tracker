@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-nochec
 
 import {
   assertArray,
@@ -9,7 +9,6 @@ import {
   isObject,
   parseIntSafe,
 } from "complete-common";
-import { z } from "zod";
 import { BASE_PATH } from "./constants.ts";
 import bossesJSON from "./data/bosses.json" with { type: "json" };
 import completionJSON from "./data/completion.json" with { type: "json" };
@@ -49,7 +48,6 @@ import { decodeSilksongSave } from "./save-decoder.ts";
 import {
   getSaveFileFlags,
   parseSilksongSave,
-  silksongSaveSchema,
   type ObjectWithSavedData,
   type SilksongSave,
 } from "./save-parser.js";
@@ -178,7 +176,7 @@ async function updateActFilter() {
   await reRenderActiveTab();
 }
 
-let currentLoadedSaveData: z.infer<typeof silksongSaveSchema> | undefined;
+let currentLoadedSaveData: SilksongSave | undefined;
 let currentLoadedSaveDataFlags: Record<string, unknown> | undefined;
 let currentLoadedSaveDataMode: Mode | undefined;
 
@@ -208,10 +206,9 @@ function matchMode(item: Item) {
   return mode === currentLoadedSaveDataMode;
 }
 
-// --- Global mutually exclusive groups ---
 const EXCLUSIVE_GROUPS = [
   ["Heart Flower", "Heart Coral", "Heart Hunter", "Clover Heart"],
-  ["Huntress Quest", "Huntress Quest Runt"], // broodfest runtfeast
+  ["Huntress Quest", "Huntress Quest Runt"], // Broodfest / Runtfeast
 ];
 
 // ---------- SPOILER TOGGLE ----------
@@ -376,7 +373,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function getSaveDataValue(
-  saveData: SilksongSave,
+  saveData: SilksongSave | undefined,
   saveDataFlags: Record<string, unknown> | undefined,
   item: Item,
 ) {
