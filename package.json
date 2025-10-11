@@ -27,7 +27,7 @@
     "ajv-cli": "5.0.0",
     "ajv-formats": "3.0.1",
     "complete-lint": "4.2.1",
-    "complete-node": "12.2.0",
+    "complete-node": "12.2.1",
     "globby": "15.0.0",
     "tsx": "4.20.6",
     "vite": "7.1.9"
