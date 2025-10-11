@@ -61,7 +61,18 @@
                 },
                 "type": {
                   "type": "string",
-                  "enum": ["flag", "key", "quest", "sceneBool", "flagInt"]
+                  "enum": [
+                    "level",
+                    "flag",
+                    "key",
+                    "quest",
+                    "sceneBool",
+                    "flagInt"
+                  ]
+                },
+                "required": {
+                  "type": "integer",
+                  "description": "Number of required items (for type 'flagInt')"
                 },
                 "act": {
                   "type": "integer",
