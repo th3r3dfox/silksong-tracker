@@ -9,6 +9,7 @@ import {
   isObject,
 } from "complete-common";
 import { z } from "zod";
+import { BASE_PATH } from "./constants";
 import bossesJSON from "./data/bosses.json" with { type: "json" };
 import completionJSON from "./data/completion.json" with { type: "json" };
 import essentialsJSON from "./data/essentials.json" with { type: "json" };
@@ -53,13 +54,15 @@ import {
   type ObjectWithSavedData,
   type SilksongSave,
 } from "./save-parser.js";
-import { normalizeString, normalizeStringWithUnderscores } from "./utils.js";
+import {
+  getIconPath,
+  normalizeString,
+  normalizeStringWithUnderscores,
+} from "./utils.js";
 
 console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
 );
-
-const BASE_PATH = "/silksong-tracker/";
 
 let tocObserver: IntersectionObserver | undefined;
 
@@ -581,24 +584,18 @@ function getSaveDataValue(
 /**
  * Renders a grid of items (bosses, relics, tools, etc.) with their unlock states.
  *
- * @param {Object} options The rendering options.
- * @param {HTMLElement} options.containerEl The container element to render the grid onto.
- * @param {Array<{
- *   id: string,
- *   flag: string,
- *   label: string,
- *   icon?: string,
- *   type: string,
- *   act?: 1 | 2 | 3,
- *   actColor?: string,
- *   missable?: boolean,
- *   required?: number,
- *   [key: string]: unknown,
- * }>} options.data Array of items to render.
- * @param {boolean} options.spoilerOn Whether spoilers are enabled.
- * @returns {number} The number of items rendered.
+ * @returns The number of items rendered.
  */
-function renderGenericGrid({ containerEl, data, spoilerOn }) {
+function renderGenericGrid({
+  containerEl,
+  data,
+  spoilerOn,
+}: {
+  /** The container element to render the grid onto. */
+  containerEl: HTMLElement;
+  data: Item[];
+  spoilerOn: boolean;
+}): number {
   const realContainerId = containerEl?.id || "unknown";
 
   containerEl.innerHTML = "";
@@ -760,11 +757,9 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
       div.appendChild(upg);
     }
 
-    // 🖼️ Image and state management
-    const prefix = `${BASE_PATH}/assets`;
-    const iconPathSuffix = item.icon || `icons/${item.id}.png`;
-    const iconPath = `${prefix}/${iconPathSuffix}`;
-    const lockedPath = `${prefix}/icons/locked.png`;
+    // Image and state management
+    const iconPath = getIconPath(item);
+    const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
 
     if (isDone) {
       img.src = iconPath;
@@ -1453,24 +1448,25 @@ function initScrollSpy() {
     .forEach((section) => tocObserver.observe(section));
 }
 
-function showGenericModal(data) {
-  // ✅ Full path for map (supports both local and external URLs)
-  const mapSrc = data.map
-    ? data.map.startsWith("http")
-      ? data.map
-      : `${BASE_PATH}/${data.map}`
+function showGenericModal(item: Item) {
+  const mapSrc = item.map
+    ? item.map.startsWith("http")
+      ? item.map
+      : `${BASE_PATH}/${item.map}`
     : null;
+
+  const iconPath = getIconPath(item);
 
   infoContent.innerHTML = `
     <button id="modalCloseBtn" class="modal-close">✕</button>
-    <img src="${data.icon}" alt="${data.label}" class="info-image">
-    <h2 class="info-title">${data.label}</h2>
+    <img src="${iconPath}" alt="${item.label}" class="info-image">
+    <h2 class="info-title">${item.label}</h2>
     <p class="info-description">
-      ${data.description || "No description available."}
+      ${item.description || "No description available."}
     </p>
 
-    ${data.obtain ? `<p class="info-extra"><strong>Obtained:</strong> ${data.obtain}</p>` : ""}
-    ${data.cost ? `<p class="info-extra"><strong>Cost:</strong> ${data.cost}</p>` : ""}
+    ${item.obtain ? `<p class="info-extra"><strong>Obtained:</strong> ${item.obtain}</p>` : ""}
+    ${item.cost ? `<p class="info-extra"><strong>Cost:</strong> ${item.cost}</p>` : ""}
 
     ${
       mapSrc
@@ -1494,10 +1490,10 @@ function showGenericModal(data) {
     }
 
     ${
-      data.link
+      item.link
         ? `
       <div class="info-link-wrapper">
-        <a href="${data.link}" target="_blank" class="info-link">More info →</a>
+        <a href="${item.link}" target="_blank" class="info-link">More info →</a>
       </div>
     `
         : ""
