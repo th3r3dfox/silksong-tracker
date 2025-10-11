@@ -77,8 +77,7 @@ export interface KeyItem extends BaseItem {
 export interface JournalItem extends BaseItem {
   readonly type: "journal";
   readonly flag: string;
-  readonly subtype?: "kills" | "seen";
-  readonly required?: number;
+  readonly required: number;
 }
 
 export interface RelicItem extends BaseItem {

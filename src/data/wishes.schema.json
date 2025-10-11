@@ -64,11 +64,6 @@
                   "format": "uri",
                   "pattern": "^[^\\s%]*$"
                 },
-                "subtype": {
-                  "type": "string",
-                  "description": "Subtype for tracking (e.g., 'kills' for kill count)",
-                  "enum": ["kills", "seen"]
-                },
                 "required": {
                   "type": "integer",
                   "description": "Required count for completion (e.g., number of kills needed)",

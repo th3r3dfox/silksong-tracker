@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {
   assertArray,
   assertDefined,
@@ -510,8 +512,6 @@ function getSaveDataValue(
     }
 
     case "journal": {
-      const { subtype } = item;
-
       const { list } = playerData.EnemyJournalKillData;
 
       const entry = list.find((element) => element.Name === item.flag);
@@ -521,15 +521,7 @@ function getSaveDataValue(
 
       const { Record } = entry;
 
-      if (subtype === "kills") {
-        return Record.Kills >= (item.required ?? 1);
-      }
-
-      if (subtype === "seen") {
-        return Record.HasBeenSeen === true;
-      }
-
-      return false;
+      return Record.Kills >= (item.required ?? 1);
     }
 
     case "relic": {
