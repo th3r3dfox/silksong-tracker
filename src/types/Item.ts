@@ -1,8 +1,7 @@
 import type { Act } from "./Act.ts";
 import type { Mode } from "./Mode.ts";
 
-/** Base properties shared by all items. */
-interface BaseItem {
+interface ItemBase {
   readonly id?: string;
   readonly label?: string;
   readonly icon?: string;
@@ -20,101 +19,98 @@ interface BaseItem {
 }
 
 /** Item tracked by a simple flag. */
-export interface FlagItem extends BaseItem {
+export interface ItemFlag extends ItemBase {
   readonly type: "flag";
   readonly flag: string;
 }
 
 /** Item tracked by an integer. */
-export interface FlagIntItem extends BaseItem {
+export interface ItemFlagInt extends ItemBase {
   readonly type: "flagInt";
   readonly flag: string;
 }
 
 /** Item with a required level (e.g., needle upgrades). */
-export interface LevelItem extends BaseItem {
+export interface ItemLevel extends ItemBase {
   readonly type: "level";
   readonly flag: string;
   readonly required: number;
 }
 
-/** Item tracked by scene + flag boolean. */
-export interface SceneBoolItem extends BaseItem {
+export interface ItemSceneBool extends ItemBase {
   readonly type: "sceneBool";
   readonly flag: string;
   readonly scene: string;
 }
 
-/** Item tracked by scene visits. */
-export interface SceneVisitedItem extends BaseItem {
+export interface ItemSceneVisited extends ItemBase {
   readonly type: "sceneVisited";
   readonly scene: string;
 }
 
 /** Tools and equipment. */
-export interface ToolItem extends BaseItem {
+export interface ItemTool extends ItemBase {
   readonly type: "tool";
   readonly flag: string;
 }
 
-export interface CollectableItem extends BaseItem {
+/** We deliberately use the Australian spelling to align with Team Cherry. */
+export interface ItemCollectable extends ItemBase {
   readonly type: "collectable";
   readonly flag: string;
 }
 
-/** Quest items */
-export interface QuestItem extends BaseItem {
+export interface ItemQuest extends ItemBase {
   readonly type: "quest";
   readonly flag: string;
 }
 
-/** Keys */
-export interface KeyItem extends BaseItem {
+export interface ItemKey extends ItemBase {
   readonly type: "key";
   readonly flag: string;
 }
 
-export interface JournalItem extends BaseItem {
+export interface ItemJournal extends ItemBase {
   readonly type: "journal";
   readonly flag: string;
   readonly required: number;
 }
 
-export interface RelicItem extends BaseItem {
+export interface ItemRelic extends ItemBase {
   readonly type: "relic";
   readonly flag: string;
   readonly scene?: string;
 }
 
-export interface MateriumItem extends BaseItem {
+export interface ItemMaterium extends ItemBase {
   readonly type: "materium";
   readonly flag: string;
 }
 
-export interface DeviceItem extends BaseItem {
+export interface ItemDevice extends ItemBase {
   readonly type: "device";
   readonly scene: string;
   readonly flag: string;
   readonly relatedFlag: string;
 }
 
-export interface BossItem extends BaseItem {
+export interface ItemBoss extends ItemBase {
   readonly type: "boss";
   readonly flag: string;
 }
 
 export type Item =
-  | FlagItem
-  | FlagIntItem
-  | LevelItem
-  | SceneBoolItem
-  | SceneVisitedItem
-  | ToolItem
-  | CollectableItem
-  | QuestItem
-  | KeyItem
-  | JournalItem
-  | RelicItem
-  | MateriumItem
-  | DeviceItem
-  | BossItem;
+  | ItemFlag
+  | ItemFlagInt
+  | ItemLevel
+  | ItemSceneBool
+  | ItemSceneVisited
+  | ItemTool
+  | ItemCollectable
+  | ItemQuest
+  | ItemKey
+  | ItemJournal
+  | ItemRelic
+  | ItemMaterium
+  | ItemDevice
+  | ItemBoss;
