@@ -10,11 +10,12 @@ import {
 } from "complete-common";
 import { z } from "zod";
 import { BASE_PATH } from "./constants";
-import bossesJSON from "./data/bosses.json" with { type: "json" };
-import completionJSON from "./data/completion.json" with { type: "json" };
-import essentialsJSON from "./data/essentials.json" with { type: "json" };
-import mainJSON from "./data/main.json" with { type: "json" };
-import wishesJSON from "./data/wishes.json" with { type: "json" };
+import bossesJSONRaw from "./data/bosses.json" with { type: "json" };
+import completionJSONRaw from "./data/completion.json" with { type: "json" };
+import essentialsJSONRaw from "./data/essentials.json" with { type: "json" };
+import mainJSONRaw from "./data/main.json" with { type: "json" };
+import wishesJSONRaw from "./data/wishes.json" with { type: "json" };
+
 import {
   actClearBtn,
   actDropdownBtn,
@@ -44,6 +45,7 @@ import {
   spoilerToggle,
   uploadOverlay,
 } from "./elements.js";
+import type { Category, DataFile } from "./interfaces/Category.ts";
 import type { Item } from "./interfaces/Item.ts";
 import type { Mode } from "./interfaces/Mode.ts";
 import { decodeSilksongSave } from "./save-decoder.js";
@@ -59,6 +61,13 @@ import {
   normalizeString,
   normalizeStringWithUnderscores,
 } from "./utils.js";
+
+// Type-safe JSON imports
+const bossesJSON = bossesJSONRaw as DataFile;
+const completionJSON = completionJSONRaw as DataFile;
+const essentialsJSON = essentialsJSONRaw as DataFile;
+const mainJSON = mainJSONRaw as DataFile;
+const wishesJSON = wishesJSONRaw as DataFile;
 
 console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
@@ -574,8 +583,28 @@ function getSaveDataValue(
       return false;
     }
 
+    case "boss": {
+      // Boss items are simple boolean flags
+      return flag === undefined ? undefined : playerDataExpanded[flag];
+    }
+
+    case undefined: {
+      // Warn about items missing a type field
+      console.warn(
+        `[getSaveDataValue] Item missing type field:`,
+        item.id,
+        item.label,
+      );
+      return flag === undefined ? undefined : playerDataExpanded[flag];
+    }
+
     default: {
-      // In certain cases, the type will be undefined.
+      // Unknown type - this should not happen
+      console.error(
+        `[getSaveDataValue] Unknown item type: "${type}"`,
+        item.id,
+        item.label,
+      );
       return flag === undefined ? undefined : playerDataExpanded[flag];
     }
   }
@@ -727,6 +756,11 @@ function renderGenericGrid({
       case "device": {
         isDone = value === "deposited";
         isAccepted = value === "collected";
+        break;
+      }
+
+      case "boss": {
+        isDone = value === true;
         break;
       }
 
@@ -1190,20 +1224,15 @@ async function updateAllProgressContent(selectedAct = "all") {
     categoryHeader.style.marginBottom = "1rem";
     allProgressGrid.appendChild(categoryHeader);
 
-    for (const sectionData of data) {
-      assertObject(
-        sectionData,
-        "One of the elements in the JSON array was not an object.",
-      );
+    for (const category of data as Category[]) {
       const section = document.createElement("div");
       section.className = "main-section-block";
 
       const heading = document.createElement("h3");
       heading.className = "category-title";
-      if (typeof sectionData.label === "string")
-        heading.textContent = sectionData.label;
+      heading.textContent = category.label;
 
-      let items = sectionData.items ?? [];
+      let items = category.items;
       assertArray(items, 'The "items" field must be an array.');
 
       const selectedActs = getSelectedActs();
@@ -1306,10 +1335,10 @@ async function updateAllProgressContent(selectedAct = "all") {
       heading.appendChild(count);
       section.appendChild(heading);
 
-      if (sectionData.desc) {
+      if (category.desc) {
         const desc = document.createElement("p");
         desc.className = "category-desc";
-        desc.textContent = sectionData.desc;
+        desc.textContent = category.desc;
         section.appendChild(desc);
       }
 

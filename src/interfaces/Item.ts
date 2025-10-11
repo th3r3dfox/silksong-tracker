@@ -98,6 +98,12 @@ export interface DeviceItem extends BaseItem {
   relatedFlag: string;
 }
 
+/** Boss enemies */
+export interface BossItem extends BaseItem {
+  type: "boss";
+  flag: string;
+}
+
 /** Discriminated union of all item types */
 export type Item =
   | FlagItem
@@ -112,4 +118,5 @@ export type Item =
   | JournalItem
   | RelicItem
   | MateriumItem
-  | DeviceItem;
+  | DeviceItem
+  | BossItem;

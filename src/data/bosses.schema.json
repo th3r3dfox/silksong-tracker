@@ -32,6 +32,7 @@
             "items": {
               "type": "object",
               "required": [
+                "type",
                 "id",
                 "label",
                 "act",
@@ -61,7 +62,7 @@
                 },
                 "type": {
                   "type": "string",
-                  "enum": ["journal"]
+                  "enum": ["boss", "journal"]
                 },
                 "subtype": {
                   "type": "string",
