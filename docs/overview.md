@@ -1,4 +1,4 @@
-# Silksong Tracker - Technical Documentation
+# Silksong Tracker - Technical Overview
 
 ## 1. Overview
 
