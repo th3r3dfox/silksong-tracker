@@ -1,0 +1,19 @@
+# See: https://autofix.ci/
+
+name: autofix.ci # This cannot be renamed or else the action will fail.
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  autofix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/workflows/setup
+      - run: npm run format
+      - uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27 # "@v1" does not work.
+        with:
+          commit-message: "chore: format with ESLint & Prettier"
