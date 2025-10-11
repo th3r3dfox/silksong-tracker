@@ -821,7 +821,8 @@
           "flag": "HasMossGrottoMap",
           "icon": "completion/Mosslands_Map.png",
           "description": "Purchase from Shakra. These overgrown caves offer little challenge to a skilled warrior. A place for reflection, perhaps.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
         },
         {
           "id": "map-docks",
@@ -830,7 +831,8 @@
           "flag": "HasDocksMap",
           "icon": "completion/Deep_Docks_Map.png",
           "description": "Purchased from Shakra. These docks, I thought them small when I first passed. Now I feel the structure's true bulk hides below the molten lake.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
         },
         {
           "id": "map-greymoor",
@@ -839,7 +841,8 @@
           "flag": "HasGreymoorMap",
           "icon": "completion/Greymoor_Map.png",
           "description": "Purchased from Shakra. TWide, dim hollows, choked by rag and dust. The bugs who once tended these lands have clearly lost their way.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
         },
         {
           "id": "map-bellhart",
@@ -848,7 +851,8 @@
           "flag": "HasBellhartMap",
           "icon": "completion/Bellhart_Map.png",
           "description": "Purchased from Shakra. A town built within the thick vein of bells that runs through Pharloom's core. One wonders who would craft so many, and for what purpose?",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
         },
         {
           "id": "map-shellwood",
@@ -857,7 +861,8 @@
           "flag": "HasShellwoodMap",
           "icon": "completion/Shellwood_Map.png",
           "description": "Purchased from Shakra. Tangled roads choked beneath bramble and root. The flora is often as deadly as the creatures who call this place home.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
         },
         {
           "id": "map-huntersnest",
@@ -866,7 +871,8 @@
           "flag": "HasHuntersNestMap",
           "icon": "completion/Hunter's_March_Map.png",
           "description": "Purchased from Shakra. Burrowed paths of the red-shells. Their stores and shrines are frequent throughout. These tunnels must grant them swift passage about the fields below.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
         },
         {
           "id": "map-citadelunderstore",
@@ -875,7 +881,8 @@
           "flag": "HasCitadelUnderstoreMap",
           "icon": "completion/Underworks_Map.png",
           "description": "Obtained from a Lore Tablet.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 2
         },
         {
           "id": "map-coral",
@@ -884,7 +891,8 @@
           "flag": "HasCoralMap",
           "icon": "completion/Sands_of_Karak_Map.png",
           "description": "Purchased from Shakra. Crusted heights above those howling steps. Signs suggest great warriors once ruled this winding place, though the sand has eroded much of their mark.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 2
         },
         {
           "id": "map-slab",
@@ -893,7 +901,8 @@
           "flag": "HasSlabMap",
           "icon": "completion/The_Slab_Map.png",
           "description": "Obtained from the shell of a dead bug.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
         },
         {
           "id": "map-peak",
@@ -902,7 +911,8 @@
           "flag": "HasPeakMap",
           "icon": "completion/Mount_Fay_Map.png",
           "description": "Purchased from Shakra. The jagged crest looming over all of Pharloom. Its whipping winds and bitter cold would pierce the strongest shell.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 2
         },
         {
           "id": "map-swamp",
@@ -911,7 +921,8 @@
           "flag": "HasSwampMap",
           "icon": "completion/Bilewater_Map.png",
           "description": "Purchased from Shakra. Swamps born in the Citadel's shadow. There is evidence the waters here once ran clear.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
         },
         {
           "id": "map-clover",
@@ -920,7 +931,8 @@
           "flag": "HasCloverMap",
           "icon": "completion/Verdania_Map.png",
           "description": "Obtained from an abandoned camp",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 2
         },
         {
           "id": "map-abyss",
@@ -929,7 +941,8 @@
           "flag": "HasAbyssMap",
           "icon": "completion/Weavenest_Atla_Map.png",
           "description": "Obtained from a Lore Tablet.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 3
         },
         {
           "id": "map-halls",
@@ -938,7 +951,8 @@
           "flag": "HasHallsMap",
           "icon": "completion/High_Halls_Map.png",
           "description": "Obtained from a map machine.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 2
         },
         {
           "id": "map-cog",
@@ -947,7 +961,8 @@
           "flag": "HasCogMap",
           "icon": "completion/Cogwork_Core_Map.png",
           "description": "Obtained from a mechanism",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 2
         },
         {
           "id": "map-library",
@@ -956,7 +971,8 @@
           "flag": "HasLibraryMap",
           "icon": "completion/Whispering_Vaults_Map.png",
           "description": "Obtained from a map machine.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 2
         },
         {
           "id": "map-cradle",
@@ -965,7 +981,8 @@
           "flag": "HasCradleMap",
           "icon": "completion/The_Cradle_Map.png",
           "description": "Obtained from a map machine in Act 2. Found next to a broken map machine in Act 3.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 2
         },
         {
           "id": "map-arborium",
@@ -974,7 +991,8 @@
           "flag": "HasArboriumMap",
           "icon": "completion/Memorium_Map.png",
           "description": "Obtained from a map machine.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 2
         },
         {
           "id": "map-aqueduct",
@@ -983,7 +1001,8 @@
           "flag": "HasAqueductMap",
           "icon": "completion/Underworks_Map.png",
           "description": "Obtained from a desk.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 2
         },
         {
           "id": "map-weavehome",
@@ -992,7 +1011,8 @@
           "flag": "HasWeavehomeMap",
           "icon": "completion/Weavenest_Atla_Map.png",
           "description": "Obtained from a Lore Tablet",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
         }
       ]
     },
@@ -1009,7 +1029,8 @@
           "flag": "hasPinBench",
           "icon": "completion/Bench_Pins.png",
           "description": "Purchased from Shakra. These pins will mark benches and other rest spots on your map.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "act": 1
         },
         {
           "id": "pin-shop",
@@ -1018,7 +1039,8 @@
           "flag": "hasPinShop",
           "icon": "completion/Vendor_Pins_(Silksong).png",
           "description": "Purchased from Shakra. These pins will mark vendors on your map.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "act": 1
         },
         {
           "id": "pin-stag",
@@ -1027,7 +1049,8 @@
           "flag": "hasPinStag",
           "icon": "completion/Bellway_Pins.png",
           "description": "Purchased from Shakra. These pins will mark stations on your map.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "act": 1
         },
         {
           "id": "pin-tube",
@@ -1036,7 +1059,8 @@
           "flag": "hasPinTube",
           "icon": "completion/Ventrica_Pins.png",
           "description": "Purchased from Shakra. Marks the mysterious transport tubes of Pharloom.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins"
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "act": 2
         }
       ]
     },
