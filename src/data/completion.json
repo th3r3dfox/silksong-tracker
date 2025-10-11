@@ -1058,7 +1058,297 @@
         }
       ]
     },
-
+    {
+      "id": "map-pins",
+      "label": "Map Pins",
+      "desc": "Markers purchased from Shakra to mark key locations across Pharloom.",
+      "items": [
+        {
+          "id": "pin-bench",
+          "label": "Bench Pin",
+          "type": "flag",
+          "flag": "hasPinBench",
+          "icon": "completion/Bench_Pins.png",
+          "description": "Purchased from Shakra. These pins will mark benches and other rest spots on your map.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "act": 1
+        },
+        {
+          "id": "pin-shop",
+          "label": "Vendor Pins",
+          "type": "flag",
+          "flag": "hasPinShop",
+          "icon": "completion/Vendor_Pins_(Silksong).png",
+          "description": "Purchased from Shakra. These pins will mark vendors on your map.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "act": 1
+        },
+        {
+          "id": "pin-stag",
+          "label": "Bellway Pins",
+          "type": "flag",
+          "flag": "hasPinStag",
+          "icon": "completion/Bellway_Pins.png",
+          "description": "Purchased from Shakra. These pins will mark stations on your map.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "act": 1
+        },
+        {
+          "id": "pin-tube",
+          "label": "Ventrica Pins",
+          "type": "flag",
+          "flag": "hasPinTube",
+          "icon": "completion/Ventrica_Pins.png",
+          "description": "Purchased from Shakra. Marks the mysterious transport tubes of Pharloom.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "act": 2
+        },
+        {
+          "id": "marker-shell",
+          "label": "Shell Marker",
+          "type": "flag",
+          "flag": "hasMarker_a",
+          "icon": "completion/Shell_Marker_(Silksong).png",
+          "description": "Purchase from Shakra. These markers I have modelled after the sheen of my own shell. Perhaps you will think of me when you use them.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
+          "act": 1
+        },
+        {
+          "id": "marker-ring",
+          "label": "Ring Marker",
+          "type": "flag",
+          "flag": "hasMarker_b",
+          "icon": "completion/Ring_Marker.png",
+          "description": "Purchase from Shakra. With these I often mark the locations of worthy foes.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
+          "act": 1
+        },
+        {
+          "id": "marker-hunt",
+          "label": "Hunt Marker",
+          "type": "flag",
+          "flag": "hasMarker_c",
+          "icon": "completion/Hunt_Marker.png",
+          "description": "Purchase from Shakra. The shell of the red-hunters makes for a vivid marker indeed.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
+          "act": 1
+        },
+        {
+          "id": "marker-dark",
+          "label": "Dark Marker",
+          "type": "flag",
+          "flag": "hasMarker_d",
+          "icon": "completion/Dark_Marker.png",
+          "description": "Purchase from Shakra. This dark-shell material is cold to the touch, and more resilient than it looks",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
+          "act": 2
+        },
+        {
+          "id": "marker-bronze",
+          "label": "Bronze Marker",
+          "type": "flag",
+          "flag": "hasMarker_e",
+          "icon": "completion/Bronze_Marker.png",
+          "description": "Purchase from Shakra. These I have fashioned from the husks of old bells. A hard task to make, so the cost reflects the extra effort.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
+          "act": 2
+        }
+      ]
+    },
+    {
+      "id": "stag-stations",
+      "label": "Bell Beast Stations",
+      "desc": "Stations unlocked throughout Pharloom that connect distant regions and aid swift travel.",
+      "items": [
+        {
+          "id": "station-bellbeast",
+          "label": "Bone Bottom Station",
+          "type": "flag",
+          "flag": "defeatedBellBeast",
+          "icon": "completion/Bellways.png",
+          "description": "Unlocked after defeating the Bell Beast. Connects the lower Bone Bottom with the rest of Pharloom.",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 1
+        },
+        {
+          "id": "station-docks",
+          "label": "Deep Docks Station",
+          "type": "flag",
+          "flag": "UnlockedDocksStation",
+          "icon": "completion/Bellways.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 1
+        },
+        {
+          "id": "station-boneforest-east",
+          "label": "Far Fields Station",
+          "type": "flag",
+          "flag": "UnlockedBoneforestEastStation",
+          "icon": "completion/Bellways.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 1
+        },
+        {
+          "id": "station-greymoor",
+          "label": "Greymoor Station",
+          "type": "flag",
+          "flag": "UnlockedGreymoorStation",
+          "icon": "completion/Bellways.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 1
+        },
+        {
+          "id": "station-belltown",
+          "label": "Bellhart Station",
+          "type": "flag",
+          "flag": "UnlockedBelltownStation",
+          "icon": "completion/Bellways.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 1
+        },
+        {
+          "id": "station-coraltower",
+          "label": "Blasted Steps Station",
+          "type": "flag",
+          "flag": "UnlockedCoralTowerStation",
+          "icon": "completion/Bellways.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 1
+        },
+        {
+          "id": "station-city",
+          "label": "Grand Bellway Station",
+          "type": "flag",
+          "flag": "UnlockedCityStation",
+          "icon": "completion/Bellways.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 2
+        },
+        {
+          "id": "station-peak",
+          "label": "The Slab Station",
+          "type": "flag",
+          "flag": "UnlockedPeakStation",
+          "icon": "completion/Bellways.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 1
+        },
+        {
+          "id": "station-shellwood",
+          "label": "Shellwood Station",
+          "type": "flag",
+          "flag": "UnlockedShellwoodStation",
+          "icon": "completion/Bellways.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 1
+        },
+        {
+          "id": "station-shadow",
+          "label": "Bilewater Station",
+          "type": "flag",
+          "flag": "UnlockedShadowStation",
+          "icon": "completion/Bellways.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 1
+        },
+        {
+          "id": "station-aqueduct",
+          "label": "Putrefied Ducts Station",
+          "type": "flag",
+          "flag": "UnlockedAqueductStation",
+          "icon": "completion/Bellways.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 2
+        },
+        {
+          "id": "station-marrow",
+          "label": "The Marrow Station",
+          "type": "flag",
+          "flag": "defeatedBellBeast",
+          "icon": "completion/Bellways.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 1
+        }
+      ]
+    },
+    {
+      "id": "ventrica-tubes",
+      "label": "Ventrica Tubes",
+      "desc": "The Ventrica are a system of tubes that run throughout the Citadel and Underworks, which Hornet can use to travel, similar to the Bellways. The Grand Bellway station connects the two systems of travel.",
+      "items": [
+        {
+          "id": "tube-song",
+          "label": "Terminus Tube",
+          "type": "flag",
+          "flag": "UnlockedSongTube",
+          "icon": "completion/Tubeways(ventrica)Map.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 2
+        },
+        {
+          "id": "tube-under",
+          "label": "Underworks Tube",
+          "type": "flag",
+          "flag": "UnlockedUnderTube",
+          "icon": "completion/Tubeways(ventrica)Map.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 2
+        },
+        {
+          "id": "tube-citybellway",
+          "label": "Grand Bellway Tube",
+          "type": "flag",
+          "flag": "UnlockedCityBellwayTube",
+          "icon": "completion/Tubeways(ventrica)Map.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 2
+        },
+        {
+          "id": "tube-hang",
+          "label": "Choral Chambers Tube",
+          "type": "flag",
+          "flag": "UnlockedHangTube",
+          "icon": "completion/Tubeways(ventrica)Map.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 2
+        },
+        {
+          "id": "tube-enclave",
+          "label": "First Shrine Tube",
+          "type": "flag",
+          "flag": "UnlockedEnclaveTube",
+          "icon": "completion/Tubeways(ventrica)Map.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 2
+        },
+        {
+          "id": "tube-arborium",
+          "label": "Memorium Tube",
+          "type": "flag",
+          "flag": "UnlockedArboriumTube",
+          "icon": "completion/Tubeways(ventrica)Map.png",
+          "description": "",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "act": 2
+        }
+      ]
+    },
     {
       "id": "category-misc",
       "label": "Misc Collectables",
