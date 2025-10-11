@@ -1,31 +1,9 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-type ItemType =
-  | "boss"
-  | "collectable"
-  | "crest"
-  | "device"
-  | "flag"
-  | "flagInt"
-  | "journal"
-  | "key"
-  | "level"
-  | "materium"
-  | "min"
-  | "quest"
-  | "region-level"
-  | "region-min"
-  | "relic"
-  | "sceneBool"
-  | "sceneVisited"
-  | "tool"
-  | "toolEquip";
-
-const VALID_TYPES: readonly ItemType[] = [
+const VALID_TYPES = [
   "boss",
   "collectable",
-  "crest",
   "device",
   "flag",
   "flagInt",
@@ -33,16 +11,14 @@ const VALID_TYPES: readonly ItemType[] = [
   "key",
   "level",
   "materium",
-  "min",
   "quest",
-  "region-level",
-  "region-min",
   "relic",
   "sceneBool",
   "sceneVisited",
   "tool",
-  "toolEquip",
 ] as const;
+
+type ItemType = (typeof VALID_TYPES)[number];
 
 interface ValidationResult {
   file: string;

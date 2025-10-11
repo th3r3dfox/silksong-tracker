@@ -32,27 +32,6 @@ export interface LevelItem extends BaseItem {
   required: number;
 }
 
-/** Item with a minimum value requirement */
-export interface MinItem extends BaseItem {
-  type: "min";
-  flag: string;
-  required: number;
-}
-
-/** Item with a required region level */
-export interface RegionLevelItem extends BaseItem {
-  type: "region-level";
-  flag: string;
-  required: number;
-}
-
-/** Item with a minimum region value requirement */
-export interface RegionMinItem extends BaseItem {
-  type: "region-min";
-  flag: string;
-  required: number;
-}
-
 /** Item tracked by scene + flag boolean */
 export interface SceneBoolItem extends BaseItem {
   type: "sceneBool";
@@ -69,12 +48,6 @@ export interface SceneVisitedItem extends BaseItem {
 /** Tools and equipment */
 export interface ToolItem extends BaseItem {
   type: "tool";
-  flag: string;
-}
-
-/** Tool equips */
-export interface ToolEquipItem extends BaseItem {
-  type: "toolEquip";
   flag: string;
 }
 
@@ -142,14 +115,9 @@ export interface BossItem extends BaseItem {
 export type Item =
   | FlagItem
   | LevelItem
-  | MinItem
-  | RegionLevelItem
-  | RegionMinItem
   | SceneBoolItem
   | SceneVisitedItem
   | ToolItem
-  | ToolEquipItem
-  | CrestItem
   | CollectableItem
   | QuestItem
   | KeyItem

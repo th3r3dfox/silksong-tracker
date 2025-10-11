@@ -922,7 +922,7 @@
           "icon": "completion/Bilewater_Map.png",
           "description": "Purchased from Shakra. Swamps born in the Citadel's shadow. There is evidence the waters here once ran clear.",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "act": 2
         },
         {
           "id": "map-clover",
