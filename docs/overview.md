@@ -44,7 +44,6 @@ The Silksong save file is a C# serialized, AES-encrypted, and zlib-compressed bi
 | 1    | `removeHeader(bytes)` | Removes Unity/C# binary header.                        |
 | 2    | Base64 reconstruction | Rebuilds the Base64 string from byte data.             |
 | 3    | AES decryption        | Decrypts using a static key defined in `constants.js`. |
-| 4    | Decompression         | Inflates the zlib data using Pako and parses JSON.     |
 
 **Decoded output example:**
 
@@ -71,8 +70,6 @@ The object is passed to the parser, which validates that it has the correct fiel
 
 Static data from JSON files in the "data" directory define all trackable items. Each JSON entry includes a flag and logic to determine if it completed or missing.
 
-**Example:**
-
 ```json
 {
   "id": "nail1",
@@ -83,7 +80,7 @@ Static data from JSON files in the "data" directory define all trackable items. 
 }
 ```
 
-**Logic in script.js:**
+The JSON is referenced in the TypeScript code:
 
 ```js
 const value =
@@ -205,7 +202,7 @@ Example item:
 
 When a save is decoded, the tracker compares each `flag` in the static JSON data with the decoded `saveData` object.
 
-The key logic (from `script.js`):
+The key logic:
 
 ```js
 const value =
@@ -261,22 +258,7 @@ These names come from:
 }
 ```
 
-## 6. JavaScript Components
-
-| Function                                   | File           | Description                                                 |
-| ------------------------------------------ | -------------- | ----------------------------------------------------------- |
-| `removeHeader(bytes)`                      | SaveDecoder.js | Removes the Unity header bytes.                             |
-| `decodeSilksongSave(fileBytes)`            | SaveDecoder.js | Executes the full decode process (AES → Inflate → JSON).    |
-| `renderGenericGrid({ data, containerId })` | script.js      | Renders items into the UI grid.                             |
-| `switchTab(tabId)`                         | script.js      | Handles tab navigation.                                     |
-| `updateAllProgressContent()`               | script.js      | Loads and renders bosses using async fetch.                 |
-| `getSaveValue(save, item)`                 | script.js      | Resolves correct values for any save flag or nested object. |
-| `getFlags(root)`                           | script.js      | Extracts nested scene flags into a flat reference map.      |
-| `showGenericModal(data)`                   | script.js      | Displays detailed modal with icon, map, and wiki link.      |
-
-## 7. User Interface (`index.html`)
-
-### Layout
+## 6. User Interface (`index.html`)
 
 | Section      | Description                                         |
 | ------------ | --------------------------------------------------- |
@@ -285,18 +267,7 @@ These names come from:
 | Main Wrapper | Displays content for each tab.                      |
 | Overlays     | Upload modal and information modal.                 |
 
-### External Dependencies
-
-| Library      | Purpose            | Source               |
-| ------------ | ------------------ | -------------------- |
-| CryptoJS     | AES decryption     | cdnjs                |
-| Pako.js      | zlib decompression | cdnjs                |
-| Font Awesome | Icons              | cdnjs                |
-| Google Fonts | Typography         | fonts.googleapis.com |
-
-Scripts are loaded as ES6 modules (`type="module"`) for modular imports.
-
-## 8. Security and Privacy
+## 7. Security and Privacy
 
 - 100% client-side execution.
 - No server calls or network requests.
@@ -304,7 +275,7 @@ Scripts are loaded as ES6 modules (`type="module"`) for modular imports.
 - Data exists only in memory during session runtime.
 - Decryption uses well-established open-source libraries.
 
-## 9. Completion Percentage (Planned)
+## 8. Completion Percentage
 
 Each category defines a `contrib` value representing its weight in overall completion.
 A future feature will compute total completion using:
@@ -313,7 +284,7 @@ A future feature will compute total completion using:
 completion% = Σ (completedItems / totalItems) × contrib
 ```
 
-## 10. Adding New Tabs
+## 9. Adding New Tabs
 
 To add a new tab, follow these steps:
 
@@ -339,7 +310,7 @@ const updater = {
 };
 ```
 
-## 11. Async Functions and Modular Structure
+## 10. Async Functions and Modular Structure
 
 All data-loading operations now use **`async/await`** for clarity and better control.
 
@@ -362,13 +333,12 @@ Benefits:
 | Modularity     | Each tab uses a separate async updater.             |
 | Flexibility    | Easier to expand with new content and JSON sources. |
 
-## 12. Technology Stack
+## 11. Technology Stack
 
 | Layer        | Technology                            | Purpose            |
 | ------------ | ------------------------------------- | ------------------ |
 | Front-End    | HTML5, CSS3, Font Awesome             | UI and layout      |
-| Logic        | JavaScript (ES6 Modules, async/await) | Core functionality |
+| Logic        | TypeScript (ES6 Modules, async/await) | Core functionality |
 | Cryptography | CryptoJS                              | AES decryption     |
-| Compression  | Pako.js                               | zlib decompression |
 | Data         | JSON                                  | Static metadata    |
 | Hosting      | GitHub Pages                          | Static hosting     |

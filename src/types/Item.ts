@@ -78,12 +78,6 @@ export interface ToolEquipItem extends BaseItem {
   flag: string;
 }
 
-/** Crests */
-export interface CrestItem extends BaseItem {
-  type: "crest";
-  flag: string;
-}
-
 /** Collectables */
 export interface CollectableItem extends BaseItem {
   type: "collectable";
