@@ -685,7 +685,8 @@
           "flag": "SavedFlea_Dust_09",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         },
         {
           "id": "lost-flea-27",
