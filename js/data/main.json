@@ -1006,6 +1006,18 @@
           "map": ""
         },
         {
+          "id": "red-curveclaw-upgrade",
+          "label": "Curvesickle",
+          "icon": "assets/icons/Curvesickle.png",
+          "flag": "Curve Claws Upgraded",
+          "type": "tool",
+          "act": 3,
+          "description": "Obtained by giving the Curveclaw to a Mottled Skarr Scout in Act 3, in the target practice room above the Far Fields Bellway station.",
+          "link": "https://hollowknight.wiki/w/Curvesickle",
+          "map": "",
+          "upgradeOf": "red-curveclaw"
+        },
+        {
           "id": "red-pimpillo",
           "label": "Pimpillo",
           "icon": "assets/icons/Pimpillo.png",
@@ -1167,9 +1179,21 @@
           "flag": "Mosscreep Tool 1",
           "type": "tool",
           "act": 1,
-          "description": "Reward for completing the Berry Picking Wish. ",
+          "description": "Reward for completing the Berry Picking Wish.",
           "link": "https://hollowknight.wiki/w/Druid%27s_Eye",
           "map": ""
+        },
+        {
+          "id": "blue-druids-eye",
+          "label": "Druid's Eyes",
+          "icon": "assets/icons/Druid's_Eyes.png",
+          "flag": "Mosscreep Tool 2",
+          "type": "tool",
+          "act": 3,
+          "description": "Bring 4 additional Mossberries to Moss Druid after completing the Berry Picking Wish. Replaces the Druid's Eye.",
+          "link": "https://hollowknight.wiki/w/Druid%27s_Eyes",
+          "map": "",
+          "upgradeOf": "blue-druids-eye"
         },
         {
           "id": "blue-magma-bell",

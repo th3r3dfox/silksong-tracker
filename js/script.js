@@ -811,6 +811,15 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
     div.appendChild(title);
     div.addEventListener("click", () => showGenericModal(item));
 
+    // 🔺 upgrade icon
+    if (item.upgradeOf) {
+      const upgradeIcon = document.createElement("div");
+      upgradeIcon.className = "upgrade-icon";
+      upgradeIcon.title = `Upgrade of ${item.upgradeOf}`;
+      upgradeIcon.innerHTML = `<i class="fa-solid fa-arrow-up"></i>`;
+      div.appendChild(upgradeIcon);
+    }
+
     containerEl.appendChild(div);
     renderedCount++;
   });
@@ -1268,7 +1277,12 @@ async function updateAllProgressContent(selectedAct = "all") {
       let obtained = 0;
       const exclusiveGroups = new Set();
       const countedGroups = new Set();
+
       filteredItems.forEach((item) => {
+        if (item.upgradeOf) {
+          return;
+        }
+
         const value =
           currentLoadedSaveData === undefined
             ? false
@@ -1301,8 +1315,8 @@ async function updateAllProgressContent(selectedAct = "all") {
       });
 
       const total =
-        (filteredItems.filter((i) => !i.exclusiveGroup).length || 0)
-        + exclusiveGroups.size;
+        (filteredItems.filter((i) => !i.exclusiveGroup && !i.upgradeOf).length
+          || 0) + exclusiveGroups.size;
 
       const count = document.createElement("span");
       count.className = "category-count";

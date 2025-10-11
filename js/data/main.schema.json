@@ -104,6 +104,10 @@
                 "exclusiveGroup": {
                   "type": "string",
                   "description": "Mutually exclusive group identifier (e.g., for variant items)"
+                },
+                "upgradeOf": {
+                  "type": "string",
+                  "description": "ID of the base item this one upgrades"
                 }
               }
             }
