@@ -387,16 +387,17 @@ function getSaveDataValue(
   const { playerData } = saveData;
   const playerDataExpanded: Record<string, unknown> = playerData;
 
-  const { type, flag, relatedFlag, scene, required, subtype } = item;
+  const { type } = item;
 
   switch (type) {
     case "flag": {
+      const { flag } = item;
       return flag === undefined ? undefined : playerDataExpanded[flag];
     }
 
     case "collectable": {
-      const { Collectables } = playerData;
-      const { savedData } = Collectables;
+      const { flag } = item;
+      const { savedData } = playerData.Collectables;
 
       const entry = savedData.find((element) => {
         return element.Name === flag;
@@ -413,10 +414,7 @@ function getSaveDataValue(
     case "tool":
     case "toolEquip":
     case "crest": {
-      if (flag === undefined) {
-        return undefined;
-      }
-
+      const { flag } = item;
       const normalizedFlag = normalizeString(flag);
 
       function findIn(object: ObjectWithSavedData) {
@@ -442,6 +440,7 @@ function getSaveDataValue(
 
     // Wishes
     case "quest": {
+      const { flag } = item;
       if (flag === undefined) {
         return undefined;
       }
@@ -470,8 +469,10 @@ function getSaveDataValue(
 
     // Mask Shards, Heart Pieces etc.
     case "sceneBool": {
-      const normalizedScene = normalizeStringWithUnderscores(scene ?? "");
-      const normalizedFlag = normalizeStringWithUnderscores(flag ?? "");
+      const { scene, flag } = item;
+
+      const normalizedScene = normalizeStringWithUnderscores(scene);
+      const normalizedFlag = normalizeStringWithUnderscores(flag);
 
       const sceneFlags = saveDataFlags[normalizedScene];
       if (isObject(sceneFlags)) {
@@ -485,6 +486,8 @@ function getSaveDataValue(
     }
 
     case "key": {
+      const { scene, flag } = item;
+
       if (scene === undefined) {
         return flag === undefined ? false : playerDataExpanded[flag] === true;
       }
@@ -508,17 +511,22 @@ function getSaveDataValue(
     // Numeric progressions (Needle, ToolPouchUpgrades, ToolKitUpgrades, etc.)
     case "level":
     case "min": {
+      const { flag } = item;
+
       // ✅ always return the number, unlock is calculated later
-      return flag === undefined ? 0 : (playerDataExpanded[flag] ?? 0);
+      return playerDataExpanded[flag] ?? 0;
     }
 
-    // e.g. CaravanTroupeLocation >= 2
     case "flagInt": {
-      const current = flag === undefined ? 0 : playerDataExpanded[flag];
-      return typeof current === "number" ? current >= (required ?? 1) : false;
+      const { flag } = item;
+
+      const current = playerDataExpanded[flag];
+      return typeof current === "number" ? current >= 1 : false;
     }
 
     case "journal": {
+      const { subtype } = item;
+
       const { list } = playerData.EnemyJournalKillData;
 
       const entry = list.find((element) => element.Name === item.flag);
@@ -594,6 +602,8 @@ function getSaveDataValue(
 
     // Materium, Farsight, etc.
     case "device": {
+      const { scene, flag, relatedFlag } = item;
+
       const normalizedScene = normalizeStringWithUnderscores(scene ?? "");
       const normalizedFlag = normalizeStringWithUnderscores(flag ?? "");
 
@@ -613,6 +623,8 @@ function getSaveDataValue(
     }
 
     case "boss": {
+      const { flag } = item;
+
       // Boss items are simple boolean flags
       return flag === undefined ? undefined : playerDataExpanded[flag];
     }
@@ -654,7 +666,7 @@ function renderGenericGrid({
     );
   });
 
-  // --- Apply mutually exclusive groups (global, relic + quest) ---
+  // Apply mutually exclusive groups (global, relic + quest)
   EXCLUSIVE_GROUPS.forEach((group) => {
     const owned = group.find((flag) => {
       // try first as relic
