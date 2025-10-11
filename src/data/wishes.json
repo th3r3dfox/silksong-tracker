@@ -1,6 +1,6 @@
 {
   "$schema": "./wishes.schema.json",
-  "items": [
+  "categories": [
     {
       "id": "main-quests",
       "label": "Main Wishes",

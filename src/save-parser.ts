@@ -1,3 +1,4 @@
+import type { ReadonlyRecord } from "complete-common";
 import { assertString, isArray, isObject } from "complete-common";
 import { z } from "zod";
 import { normalizeStringWithUnderscores } from "./utils.js";
@@ -10,6 +11,9 @@ export const objectWithSavedData = z.object({
     }),
   ),
 });
+
+export interface ObjectWithSavedData
+  extends z.infer<typeof objectWithSavedData> {}
 
 export const silksongSaveSchema = z.object({
   playerData: z
@@ -55,8 +59,12 @@ export const silksongSaveSchema = z.object({
   sceneData: z.object({}).readonly(),
 });
 
-export async function parseSilksongSave(saveFile: Record<string, unknown>) {
-  const result = silksongSaveSchema.safeParse(saveFile);
+export interface SilksongSave extends z.infer<typeof silksongSaveSchema> {}
+
+export async function parseSilksongSave(
+  saveFile: ReadonlyRecord<string, unknown>,
+): Promise<SilksongSave | undefined> {
+  const result = await silksongSaveSchema.safeParseAsync(saveFile);
   if (!result.success) {
     const issues = JSON.stringify(result.error.issues, undefined, 2);
     console.error(`Failed to parse the save file: ${issues}`);
@@ -71,7 +79,9 @@ export async function parseSilksongSave(saveFile: Record<string, unknown>) {
  * simplifies checking for flags later, since some flags are represented in the raw save file as a
  * boolean and some as an integer.
  */
-export function getSaveFileFlags(root: Record<string, unknown>) {
+export function getSaveFileFlags(
+  root: ReadonlyRecord<string, unknown>,
+): Record<string, Record<string, boolean>> {
   const flags: Record<string, Record<string, boolean>> = {};
 
   function mark(scene: string, id: string, value: number | boolean) {
@@ -103,7 +113,7 @@ export function getSaveFileFlags(root: Record<string, unknown>) {
         assertString(ID, 'The "ID" property is not a string.');
         if (typeof Value !== "number" && typeof Value !== "boolean") {
           throw new TypeError(
-            `The \"Value\" property has an unknown type of: ${typeof Value}`,
+            `The "Value" property has an unknown type of: ${typeof Value}`,
           );
         }
 

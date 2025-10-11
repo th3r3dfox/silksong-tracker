@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "required": ["$schema", "items"],
+  "required": ["$schema", "categories"],
   "additionalProperties": false,
   "properties": {
     "$schema": {
       "type": "string"
     },
-    "items": {
+    "categories": {
       "type": "array",
       "items": {
         "type": "object",
@@ -32,6 +32,7 @@
             "items": {
               "type": "object",
               "required": [
+                "type",
                 "id",
                 "label",
                 "act",
@@ -61,7 +62,7 @@
                 },
                 "type": {
                   "type": "string",
-                  "enum": ["journal"]
+                  "enum": ["boss", "journal"]
                 },
                 "subtype": {
                   "type": "string",

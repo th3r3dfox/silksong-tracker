@@ -9,12 +9,14 @@ import {
   isObject,
 } from "complete-common";
 import { z } from "zod";
+import { BASE_PATH } from "./constants";
 import bossesJSON from "./data/bosses.json" with { type: "json" };
 import completionJSON from "./data/completion.json" with { type: "json" };
 import essentialsJSON from "./data/essentials.json" with { type: "json" };
 import mainJSON from "./data/main.json" with { type: "json" };
 import wishesJSON from "./data/wishes.json" with { type: "json" };
 import {
+  actClearBtn,
   actDropdownBtn,
   actDropdownMenu,
   allProgressGrid,
@@ -42,48 +44,57 @@ import {
   spoilerToggle,
   uploadOverlay,
 } from "./elements.js";
+import type { Category } from "./interfaces/Category.ts";
 import type { Item } from "./interfaces/Item.ts";
 import type { Mode } from "./interfaces/Mode.ts";
 import { decodeSilksongSave } from "./save-decoder.js";
 import {
   getSaveFileFlags,
-  objectWithSavedData,
   parseSilksongSave,
   silksongSaveSchema,
+  type ObjectWithSavedData,
+  type SilksongSave,
 } from "./save-parser.js";
-import { normalizeString, normalizeStringWithUnderscores } from "./utils.js";
+import {
+  getIconPath,
+  normalizeString,
+  normalizeStringWithUnderscores,
+} from "./utils.js";
 
 console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
 );
-
-const BASE_PATH = "/silksong-tracker/";
 
 let tocObserver: IntersectionObserver | undefined;
 
 // --- Act Dropdown Logic (modern multi-select with checkboxes) ---
 const dropdownBtn = actDropdownBtn;
 const dropdownMenu = actDropdownMenu;
-const clearBtn = document.getElementById("actClearBtn");
 
 // Toggle menu visibility
 dropdownBtn.addEventListener("click", () => {
   dropdownMenu.classList.toggle("hidden");
 });
 
-// Close dropdown if user clicks outside
-document.addEventListener("click", (e) => {
-  if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+// Close dropdown if user clicks outside.
+document.addEventListener("click", (event) => {
+  const { target } = event;
+  if (
+    target !== null
+    && target instanceof Node
+    && !dropdownBtn.contains(target)
+    && !dropdownMenu.contains(target)
+  ) {
     dropdownMenu.classList.add("hidden");
   }
 });
 
 // Handle "Select All / Deselect All"
-clearBtn.addEventListener("click", () => {
+actClearBtn.addEventListener("click", () => {
   const checkboxes = dropdownMenu.querySelectorAll("input[type='checkbox']");
   const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
   checkboxes.forEach((cb) => (cb.checked = !allChecked));
-  clearBtn.textContent = allChecked ? "Select All" : "Deselect All";
+  actClearBtn.textContent = allChecked ? "Select All" : "Deselect All";
   updateActFilter();
 });
 
@@ -134,8 +145,10 @@ let currentLoadedSaveData: z.infer<typeof silksongSaveSchema> | undefined;
 let currentLoadedSaveDataFlags: Record<string, unknown> | undefined;
 let currentLoadedSaveDataMode: Mode | undefined;
 
-/** @type Record<string, (selectedAct?: string) => Promise<void>> */
-const TAB_TO_UPDATE_FUNCTION = {
+const TAB_TO_UPDATE_FUNCTION: Record<
+  string,
+  (selectedAct?: string) => Promise<void>
+> = {
   allprogress: updateAllProgressContent,
   rawsave: updateRawSaveContent,
 };
@@ -285,8 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handleSaveFile(firstFile);
   });
 
-  /** @type Record<string, string> */
-  const paths = {
+  const paths: Record<string, string> = {
     windows:
       "%userprofile%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong",
     mac: "~/Library/Application Support/com.teamcherry.hollowsilksong",
@@ -326,31 +338,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/**
- * @typedef {{
- *   type?: string,
- *   flag?: string,
- *   relatedFlag?: string,
- *   scene?: string,
- *   required?: number,
- *   subtype?: string,
- *   mode?: string,
- * }} Item
- */
-
-/**
- * @param {z.infer<typeof silksongSaveSchema> | undefined} saveData
- * @param {Record<string, unknown> | undefined} saveDataFlags
- * @param {Item} item
- */
-function getSaveDataValue(saveData, saveDataFlags, item) {
+function getSaveDataValue(
+  saveData: SilksongSave,
+  saveDataFlags: Record<string, unknown> | undefined,
+  item: Item,
+) {
   if (saveData === undefined || saveDataFlags === undefined) {
     return undefined;
   }
 
   const { playerData } = saveData;
-  /** @type Record<string, unknown> */
-  const playerDataExpanded = playerData;
+  const playerDataExpanded: Record<string, unknown> = playerData;
 
   const { type, flag, relatedFlag, scene, required, subtype } = item;
 
@@ -384,8 +382,7 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
 
       const normalizedFlag = normalizeString(flag);
 
-      /** @param {z.infer<typeof objectWithSavedData>} object */
-      function findIn(object) {
+      function findIn(object: ObjectWithSavedData) {
         const matchingElement = object.savedData.find(
           (element) => normalizeString(element.Name) === normalizedFlag,
         );
@@ -578,9 +575,13 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
       return false;
     }
 
-    default: {
-      // In certain cases, the type will be undefined.
+    case "boss": {
+      // Boss items are simple boolean flags
       return flag === undefined ? undefined : playerDataExpanded[flag];
+    }
+
+    default: {
+      throw new Error(`An item has an unknown type of: ${type}`);
     }
   }
 }
@@ -588,24 +589,18 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
 /**
  * Renders a grid of items (bosses, relics, tools, etc.) with their unlock states.
  *
- * @param {Object} options The rendering options.
- * @param {HTMLElement} options.containerEl The container element to render the grid onto.
- * @param {Array<{
- *   id: string,
- *   flag: string,
- *   label: string,
- *   icon?: string,
- *   type: string,
- *   act?: 1 | 2 | 3,
- *   actColor?: string,
- *   missable?: boolean,
- *   required?: number,
- *   [key: string]: unknown,
- * }>} options.data Array of items to render.
- * @param {boolean} options.spoilerOn Whether spoilers are enabled.
- * @returns {number} The number of items rendered.
+ * @returns The number of items rendered.
  */
-function renderGenericGrid({ containerEl, data, spoilerOn }) {
+function renderGenericGrid({
+  containerEl,
+  data,
+  spoilerOn,
+}: {
+  /** The container element to render the grid onto. */
+  containerEl: HTMLElement;
+  data: Item[];
+  spoilerOn: boolean;
+}): number {
   const realContainerId = containerEl?.id || "unknown";
 
   containerEl.innerHTML = "";
@@ -767,11 +762,9 @@ function renderGenericGrid({ containerEl, data, spoilerOn }) {
       div.appendChild(upg);
     }
 
-    // 🖼️ Image and state management
-    const prefix = `${BASE_PATH}/assets`;
-    const iconPathSuffix = item.icon || `icons/${item.id}.png`;
-    const iconPath = `${prefix}/${iconPathSuffix}`;
-    const lockedPath = `${prefix}/icons/locked.png`;
+    // Image and state management
+    const iconPath = getIconPath(item);
+    const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
 
     if (isDone) {
       img.src = iconPath;
@@ -1179,19 +1172,27 @@ async function updateAllProgressContent(selectedAct = "all") {
   const showMissingOnly = missingToggle.checked;
   allProgressGrid.innerHTML = "";
 
-  // ✅ Category definitions
-  const categories = [
-    { title: "Main Progress", data: mainJSON.items },
-    { title: "Essential Items", data: essentialsJSON.items },
-    { title: "Bosses", data: bossesJSON.items },
-    { title: "Completion", data: completionJSON.items },
-    { title: "Wishes", data: wishesJSON.items },
+  const allCategories: Array<{
+    title: string;
+    categories: Category[];
+  }> = [
+    { title: "Main Progress", categories: mainJSON.categories as Category[] },
+    {
+      title: "Essential Items",
+      categories: essentialsJSON.categories as Category[],
+    },
+    { title: "Bosses", categories: bossesJSON.categories as Category[] },
+    {
+      title: "Completion",
+      categories: completionJSON.categories as Category[],
+    },
+    { title: "Wishes", categories: wishesJSON.categories as Category[] },
   ];
 
   // ✅ Render all categories
-  for (const { title, data } of categories) {
+  for (const { title, categories } of allCategories) {
     assertArray(
-      data,
+      categories,
       "The contents of one of the JSON files was not an array.",
     );
 
@@ -1202,20 +1203,15 @@ async function updateAllProgressContent(selectedAct = "all") {
     categoryHeader.style.marginBottom = "1rem";
     allProgressGrid.appendChild(categoryHeader);
 
-    for (const sectionData of data) {
-      assertObject(
-        sectionData,
-        "One of the elements in the JSON array was not an object.",
-      );
+    for (const category of categories) {
       const section = document.createElement("div");
       section.className = "main-section-block";
 
       const heading = document.createElement("h3");
       heading.className = "category-title";
-      if (typeof sectionData.label === "string")
-        heading.textContent = sectionData.label;
+      heading.textContent = category.label;
 
-      let items = sectionData.items ?? [];
+      let items = category.items;
       assertArray(items, 'The "items" field must be an array.');
 
       const selectedActs = getSelectedActs();
@@ -1318,10 +1314,10 @@ async function updateAllProgressContent(selectedAct = "all") {
       heading.appendChild(count);
       section.appendChild(heading);
 
-      if (sectionData.desc) {
+      if (category.desc) {
         const desc = document.createElement("p");
         desc.className = "category-desc";
-        desc.textContent = sectionData.desc;
+        desc.textContent = category.desc;
         section.appendChild(desc);
       }
 
@@ -1460,24 +1456,25 @@ function initScrollSpy() {
     .forEach((section) => tocObserver.observe(section));
 }
 
-function showGenericModal(data) {
-  // ✅ Full path for map (supports both local and external URLs)
-  const mapSrc = data.map
-    ? data.map.startsWith("http")
-      ? data.map
-      : `${BASE_PATH}/${data.map}`
+function showGenericModal(item: Item) {
+  const mapSrc = item.map
+    ? item.map.startsWith("http")
+      ? item.map
+      : `${BASE_PATH}/${item.map}`
     : null;
+
+  const iconPath = getIconPath(item);
 
   infoContent.innerHTML = `
     <button id="modalCloseBtn" class="modal-close">✕</button>
-    <img src="${data.icon}" alt="${data.label}" class="info-image">
-    <h2 class="info-title">${data.label}</h2>
+    <img src="${iconPath}" alt="${item.label}" class="info-image">
+    <h2 class="info-title">${item.label}</h2>
     <p class="info-description">
-      ${data.description || "No description available."}
+      ${item.description || "No description available."}
     </p>
 
-    ${data.obtain ? `<p class="info-extra"><strong>Obtained:</strong> ${data.obtain}</p>` : ""}
-    ${data.cost ? `<p class="info-extra"><strong>Cost:</strong> ${data.cost}</p>` : ""}
+    ${item.obtain ? `<p class="info-extra"><strong>Obtained:</strong> ${item.obtain}</p>` : ""}
+    ${item.cost ? `<p class="info-extra"><strong>Cost:</strong> ${item.cost}</p>` : ""}
 
     ${
       mapSrc
@@ -1501,10 +1498,10 @@ function showGenericModal(data) {
     }
 
     ${
-      data.link
+      item.link
         ? `
       <div class="info-link-wrapper">
-        <a href="${data.link}" target="_blank" class="info-link">More info →</a>
+        <a href="${item.link}" target="_blank" class="info-link">More info →</a>
       </div>
     `
         : ""
