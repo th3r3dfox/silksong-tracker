@@ -2415,7 +2415,7 @@ mark.active-match {
 .back-to-top {
   position: fixed;
   bottom: 40px;
-  right: 20px;
+  right: 285px;
   display: none;
   border: none;
   background: transparent;
@@ -2842,28 +2842,30 @@ main {
   position: relative;
 }
 .topbar {
-  position: relative; 
+  position: relative;
 }
 
 #modeBanner {
   position: absolute;
-  top: 6px; 
-  left: 14px; 
+  top: 9px;
+  left: 14px;
   background: #181715;
-  border: 1px solid #8a6a3a;
+  border: 2px solid #8a6a3a;
   color: #d7b98a;
   font-family: "TrajanPro", serif;
   font-size: 14px;
+  font-weight: bold;
   letter-spacing: 1px;
   padding: 4px 14px;
   border-radius: 6px;
   z-index: 10;
   text-transform: uppercase;
   white-space: nowrap;
-  pointer-events: none; 
+  pointer-events: none;
   display: inline-block;
   width: auto;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  animation: modeBannerBlink 1.2s infinite alternate;
 }
 
 #modeBanner.steel {
@@ -2873,8 +2875,46 @@ main {
   text-shadow:
     0 0 6px #ccd5db,
     0 0 12px #596066;
+  animation: modeBannerBlinkSteel 1.2s infinite alternate;
+}
+
+@keyframes modeBannerBlink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes modeBannerBlinkSteel {
+  0% {
+    opacity: 1;
+    text-shadow:
+      0 0 6px #ccd5db,
+      0 0 12px #596066;
+  }
+  100% {
+    opacity: 0.6;
+    text-shadow:
+      0 0 12px #ccd5db,
+      0 0 24px #596066;
+  }
 }
 
 #modeBanner:empty {
   display: none;
+}
+
+.category-header {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  background: #181715;
+  border: 2px solid #8a6a3a;
+  border-radius: 12px;
+  padding: 12px;
+  color: #d7b98a;
+  font-family: "TrajanPro", serif;
 }
