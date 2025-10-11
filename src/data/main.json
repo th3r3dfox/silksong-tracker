@@ -1008,7 +1008,7 @@
         {
           "id": "red-curveclaw-upgrade",
           "label": "Curvesickle",
-          "icon": "/assets/icons/Curvesickle.png",
+          "icon": "icons/Curvesickle.png",
           "flag": "Curve Claws Upgraded",
           "type": "tool",
           "act": 3,
@@ -1186,7 +1186,7 @@
         {
           "id": "blue-druids-eye",
           "label": "Druid's Eyes",
-          "icon": "/assets/icons/Druid's_Eyes.png",
+          "icon": "icons/Druid's_Eyes.png",
           "flag": "Mosscreep Tool 2",
           "type": "tool",
           "act": 3,
