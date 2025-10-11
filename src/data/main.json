@@ -5,7 +5,6 @@
       "id": "needle_upgrades",
       "label": "Needle Upgrades",
       "desc": "Upgrades to Hornet's primary weapon, the Needle.",
-      "contrib": 4,
       "items": [
         {
           "id": "nail0",
@@ -76,7 +75,6 @@
       "id": "mask_shards",
       "label": "Mask Shards",
       "desc": "Fragments that increase Hornet's maximum health when collected.",
-      "contrib": 5,
       "items": [
         {
           "id": "mask-shard-1",
@@ -318,7 +316,6 @@
       "id": "silk_spools",
       "label": "Silk Spools",
       "desc": "Fragments that increase Hornet's Silk capacity.",
-      "contrib": 9,
       "items": [
         {
           "id": "spool-fragment-1",
@@ -519,7 +516,6 @@
       "id": "silk_hearts",
       "label": "Silk Hearts",
       "desc": "Boss memories that upgrade Hornet's Silk regeneration.",
-      "contrib": 3,
       "items": [
         {
           "id": "silk-heart-1",
@@ -557,7 +553,6 @@
       "id": "miscellaneous",
       "label": "Miscellaneous",
       "desc": "Special unique unlocks and hidden upgrades.",
-      "contrib": 2,
       "items": [
         {
           "id": "everbloom",
@@ -585,7 +580,6 @@
       "id": "crests",
       "label": "Crests",
       "desc": "Crests are equipment that allows Hornet to change her moveset.",
-      "contrib": 6,
       "items": [
         {
           "id": "crest-hunter",
@@ -663,7 +657,6 @@
       "id": "silk-skills",
       "label": "Silk Skills",
       "desc": "Special combat techniques unlocked through Silk.",
-      "contrib": 6,
       "items": [
         {
           "id": "silkspear",
@@ -731,7 +724,6 @@
       "id": "tool-pouch-upgrades",
       "label": "Tool Pouch Upgrades",
       "desc": "Capacity upgrades for Hornet's tool pouch.",
-      "contrib": 4,
       "items": [
         {
           "id": "tool-pouch-0",
@@ -794,7 +786,6 @@
       "id": "crafting-kit-upgrades",
       "label": "Crafting Kit Upgrades",
       "desc": "Capacity upgrades for Hornet's crafting kit.",
-      "contrib": 4,
       "items": [
         {
           "id": "crafting-kit-0",
@@ -857,7 +848,6 @@
       "id": "abilities",
       "label": "Abilities",
       "desc": "Core abilities that grant Hornet new movement and combat options.",
-      "contrib": 6,
       "items": [
         {
           "id": "ability-swift-step",
@@ -926,7 +916,6 @@
       "id": "red_tools",
       "label": "Red Tools",
       "desc": "Limited use consumable tools that require Shell Shards to be replenished at Benches.",
-      "contrib": 18,
       "items": [
         {
           "id": "red-straight-pin",
@@ -1170,7 +1159,6 @@
       "id": "blue_tools",
       "label": "Blue Tools",
       "desc": "Blue Tools are combat-focused passive tools.",
-      "contrib": 21,
       "items": [
         {
           "id": "blue-druids-eye",
@@ -1422,7 +1410,6 @@
       "id": "yellow_tools",
       "label": "Yellow Tools",
       "desc": "Yellow Tools are miscellaneous passive tools, focused on making exploration and resource gathering easier, or generally providing support instead of offence or defence.",
-      "contrib": 12,
       "items": [
         {
           "id": "yellow-compass",

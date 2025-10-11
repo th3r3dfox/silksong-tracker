@@ -5,7 +5,6 @@
       "id": "main-quests",
       "label": "Main Wishes",
       "desc": "Complete all main storyline quests in Pharloom.",
-      "contrib": 0,
       "items": [
         {
           "id": "citadel-seeker",
@@ -218,7 +217,6 @@
       "id": "wayfarer-quests",
       "label": "Wayfarer Wishes",
       "desc": "Wayfarer Wishes usually involve finding an item or NPC during Hornet's exploration of Pharloom at the request of another NPC. Later in the game, some Wayfarer Wishes will be placed that involve defeating optional bosses.",
-      "contrib": 0,
       "items": [
         {
           "id": "lost-fleas-1",
@@ -427,7 +425,6 @@
       "id": "gather-wishes",
       "label": "Gather Wishes",
       "desc": "Gather Wishes involve exploring a region of the map (or in the case of the Great Taste of Pharloom wish, the entire map) and finding specific items to turn in to an NPC and complete the wish. Collecting the required items usually does not directly involve killing enemies, with some exceptions.",
-      "contrib": 0,
       "items": [
         {
           "id": "berry-picking-1",
@@ -505,7 +502,6 @@
       "id": "hunt-wishes",
       "label": "Hunt Wishes",
       "desc": "Hunt Wishes involve killing normal (or occasionally special) enemies in a specific part of the world and collecting items dropped by them to turn in and complete the wish. The only exception to this is the Dark Hearts wish, which does not require Hornet to collect any items and whose enemy is found all across Pharloom. ",
-      "contrib": 0,
       "items": [
         {
           "id": "garb-of-the-pilgrims",
@@ -626,7 +622,6 @@
       "id": "grand_hunt-wishes",
       "label": "Grand Hunt Wishes",
       "desc": "Grand Hunt Wishes are always accepted from a Wishwall, and involve finding and killing a unique boss enemy and claiming a trophy item from them to turn in and complete the wish. They carry a high reward, either yielding a Heavy Rosary Necklace or a Mask Shard.",
-      "contrib": 0,
       "items": [
         {
           "id": "the-terrible-tyrant",
@@ -675,7 +670,6 @@
       "id": "donate-wishes",
       "label": "Donate Wishes",
       "desc": "Contribute shell shards and rosaries to support rebuilding efforts across Pharloom.",
-      "contrib": 0,
       "items": [
         {
           "id": "bone-bottom-repairs",
@@ -754,7 +748,6 @@
       "id": "delivery-wishes",
       "label": "Delivery Wishes",
       "desc": "Deliver rare and precious items to recipients across Pharloom.",
-      "contrib": 0,
       "items": [
         {
           "id": "delivery-bonebottom",
@@ -839,7 +832,6 @@
       "id": "unique-wishes",
       "label": "Unique Wishes",
       "desc": "Rare and singular wishes tied to special figures and events across Pharloom.",
-      "contrib": 0,
       "items": [
         {
           "id": "bugs-of-pharloom",

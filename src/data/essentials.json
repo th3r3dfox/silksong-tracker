@@ -5,7 +5,6 @@
       "id": "category-cloaks",
       "label": "Cloaks",
       "desc": "The Cloak is an equipment item in Hollow Knight: Silksong.",
-      "contrib": 0,
       "items": [
         {
           "id": "ability-drifters-cloak",
@@ -35,7 +34,6 @@
       "id": "category-keys",
       "label": "Keys",
       "desc": "Important keys used to unlock special areas and progress in Pharloom.",
-      "contrib": 0,
       "items": [
         {
           "id": "key-simple-1",
@@ -154,7 +152,6 @@
       "id": "memory_lockets",
       "label": "Memory Lockets",
       "desc": "Special collectibles found throughout Pharloom that preserve memories of those who came before.",
-      "contrib": 0,
       "items": [
         {
           "id": "memory-locket-1",
@@ -379,7 +376,6 @@
       "id": "category-pale-oils",
       "label": "Pale Oils",
       "desc": "Special refined oils found across Pharloom, often tied to rare quests or hidden vaults.",
-      "contrib": 0,
       "items": [
         {
           "id": "pale-oil-vaults",
@@ -421,7 +417,6 @@
       "id": "category-craftmetal",
       "label": "Craftmetal",
       "desc": "Refined metals used for crafting and upgrading tools throughout Pharloom.",
-      "contrib": 0,
       "items": [
         {
           "id": "craftmetal-bonebottom",
@@ -523,7 +518,6 @@
       "id": "category-fleas",
       "label": "Fleas",
       "desc": "Fleas are fluffy bugs scattered throughout most of Pharloom belonging to the Flea Caravan. They can be found caged, stuck, or resting in precarious locations.",
-      "contrib": 0,
       "items": [
         {
           "id": "lost-flea-1",

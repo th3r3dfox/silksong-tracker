@@ -5,7 +5,6 @@
       "id": "category-relic",
       "label": "Relics",
       "desc": "Items that can be traded to certain NPCs for Rosaries or other services.",
-      "contrib": 0,
       "items": [
         {
           "id": "choral-commandment-1",
@@ -178,7 +177,6 @@
       "id": "category-cylinder",
       "label": "Cylinder",
       "desc": "They are cylinders inscribed with recordings, which may be heard by bringing them to Vaultkeeper Cardinius. Listening to the Sacred Cylinder",
-      "contrib": 0,
       "items": [
         {
           "id": "psalm-cylinder-grindle",
@@ -249,7 +247,6 @@
       "id": "category-materium",
       "label": "Materium",
       "desc": "Crystallized essences of Pharloom's forces, gathered to empower tools and relics.",
-      "contrib": 0,
       "items": [
         {
           "id": "materium-silk",
@@ -690,7 +687,6 @@
       "id": "category-mementos",
       "label": "Mementos",
       "desc": "Keepsakes given by allies or obtained through notable encounters. Some may hold sentimental value.",
-      "contrib": 0,
       "items": [
         {
           "id": "memento-hunter",
@@ -812,7 +808,6 @@
       "id": "category-maps",
       "label": "Maps",
       "desc": "",
-      "contrib": 0,
       "items": [
         {
           "id": "map-mossgrotto",
@@ -1020,7 +1015,6 @@
       "id": "map-pins",
       "label": "Map Pins",
       "desc": "Markers purchased from Shakra to mark key locations across Pharloom.",
-      "contrib": 0,
       "items": [
         {
           "id": "pin-bench",
@@ -1069,7 +1063,6 @@
       "id": "category-misc",
       "label": "Misc Collectables",
       "desc": "Special single-instance items gathered and deposited the Bellhome in Bellhart before it can be used.",
-      "contrib": 0,
       "items": [
         {
           "id": "misc-materium",

@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-nochec
 
 import {
   assertArray,
@@ -685,7 +685,7 @@ function renderGenericGrid(
       );
     });
 
-    if (owned) {
+    if (owned !== undefined) {
       items = items.filter(
         (item) => !group.includes(item.flag) || item.flag === owned,
       );
