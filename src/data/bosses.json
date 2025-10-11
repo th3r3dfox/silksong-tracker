@@ -123,7 +123,6 @@
           "icon": "boss/Garmond_&_Zaza.png",
           "flag": "Garmond_Zaza",
           "type": "journal",
-          "subtype": "kills",
           "required": 1,
           "description": "They can be first met in Greymoor, in a small outcropping to the upper left of the Bellway Station. They can also be seen in Sinner's Road briefly, in the long room right above where Disgraced Chef Lugoli can be found, having beaten a Roachkeeper. In Act 3, they can be found in The Marrow, Mosshome, Far Fields, Greymoor, Sinner's Road, Shellwood, or Blasted Steps. ",
           "link": "https://hollowknight.wiki/w/Garmond_and_Zaza",
@@ -136,7 +135,6 @@
           "icon": "boss/Grand_Mother_Silk.png",
           "flag": "Silk Boss",
           "type": "journal",
-          "subtype": "kills",
           "required": 1,
           "description": "Grand Mother Silk is located at the top of The Cradle which is unlocked after defeating Lace in her second encounter. ",
           "link": "https://hollowknight.wiki/w/Grand_Mother_Silk"
@@ -259,7 +257,6 @@
           "icon": "boss/Plasmified_Zango.png",
           "flag": "Blue Assistant",
           "type": "journal",
-          "subtype": "kills",
           "required": 1,
           "description": "Plasmified Zango can be found in a secret room within western Wormways during Act 3. ",
           "link": "https://hollowknight.wiki/w/Plasmified_Zango"
@@ -291,7 +288,6 @@
           "icon": "boss/Shakra.png",
           "flag": "Shakra",
           "type": "journal",
-          "subtype": "kills",
           "required": 1,
           "description": "Once the Wish Trail's End is completed, Shakra can be met just outside the Greymoor entrance to Bellhart by ringing her post, where she will challenge Hornet to a friendly duel",
           "link": "https://hollowknight.wiki/w/Shakra",
@@ -344,7 +340,6 @@
           "icon": "boss/Summoned_Saviour.png",
           "flag": "Abyss Mass",
           "type": "journal",
-          "subtype": "kills",
           "required": 1,
           "description": "Summoned Saviour can be found southwest of Bonegrave, a sub area of Moss Grotto, behind a breakable wall. It is only accessible in Steel Soul Mode and after finding three resting sites for the A Vassal Lost Task.",
           "link": "https://hollowknight.wiki/w/Summoned_Saviour",
@@ -434,7 +429,6 @@
           "icon": "boss/Lost_Lace.png",
           "flag": "Lost Lace",
           "type": "journal",
-          "subtype": "kills",
           "required": 1,
           "description": "Lost Lace is located in The Abyss, under the vast Void Ocean that lies within. The Everbloom is required to be able to access it.",
           "link": "https://hollowknight.wiki/w/Lost_Lace"

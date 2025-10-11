@@ -481,16 +481,9 @@ function getSaveDataValue(
     }
 
     case "key": {
-      const { scene, flag } = item;
+      const { flag } = item;
 
-      if (scene === undefined) {
-        return flag === undefined ? false : playerDataExpanded[flag] === true;
-      }
-
-      const sceneFlags = saveDataFlags[scene];
-      return isObject(sceneFlags) && flag !== undefined
-        ? sceneFlags[flag] === true
-        : false;
+      return playerDataExpanded[flag] === true;
     }
 
     // Silk Hearts, Memories etc.
@@ -519,8 +512,6 @@ function getSaveDataValue(
     }
 
     case "journal": {
-      const { subtype } = item;
-
       const { list } = playerData.EnemyJournalKillData;
 
       const entry = list.find((element) => element.Name === item.flag);
@@ -530,15 +521,7 @@ function getSaveDataValue(
 
       const { Record } = entry;
 
-      if (subtype === "kills") {
-        return Record.Kills >= (item.required ?? 1);
-      }
-
-      if (subtype === "seen") {
-        return Record.HasBeenSeen === true;
-      }
-
-      return false;
+      return Record.Kills >= (item.required ?? 1);
     }
 
     case "relic": {
@@ -686,21 +669,27 @@ function renderGenericGrid(
     });
 
     if (owned !== undefined) {
-      items = items.filter(
-        (item) => !group.includes(item.flag) || item.flag === owned,
-      );
+      items = items.filter((item) => {
+        const flag = item.type === "sceneVisited" ? undefined : item.flag;
+        if (flag === undefined) {
+          return false;
+        }
+        return !group.includes(flag) || flag === owned;
+      });
     }
   });
 
   let renderedCount = 0;
 
   items.forEach((item) => {
+    const flag = item.type === "sceneVisited" ? undefined : item.flag;
+
     // Silkshot → show only 1 variant
-    if (silkVariants.includes(item.flag)) {
-      if (unlockedSilkVariant && item.flag !== unlockedSilkVariant) {
+    if (flag !== undefined && silkVariants.includes(flag)) {
+      if (unlockedSilkVariant && flag !== unlockedSilkVariant) {
         return;
       }
-      if (!unlockedSilkVariant && item.flag !== "WebShot Architect") {
+      if (!unlockedSilkVariant && flag !== "WebShot Architect") {
         return;
       }
     }
@@ -713,7 +702,8 @@ function renderGenericGrid(
       const romanActs = { 1: "I", 2: "II", 3: "III" };
       const actLabel = document.createElement("span");
       actLabel.className = `act-label act-${item.act}`;
-      actLabel.textContent = `ACT ${romanActs[item.act]}`;
+      const romanAct = romanActs[item.act];
+      actLabel.textContent = `ACT ${romanAct}`;
       div.appendChild(actLabel);
     }
 

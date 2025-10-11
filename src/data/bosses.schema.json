@@ -60,10 +60,6 @@
                   "type": "string",
                   "enum": ["boss", "journal"]
                 },
-                "subtype": {
-                  "type": "string",
-                  "enum": ["kills", "seen"]
-                },
                 "required": {
                   "type": "integer",
                   "description": "Required count for completion (e.g., number of kills needed)",

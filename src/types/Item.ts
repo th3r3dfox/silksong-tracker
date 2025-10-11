@@ -1,3 +1,4 @@
+import type { Act } from "./Act.ts";
 import type { Mode } from "./Mode.ts";
 
 /** Base properties shared by all items. */
@@ -5,7 +6,7 @@ interface BaseItem {
   readonly id?: string;
   readonly label?: string;
   readonly icon?: string;
-  readonly act?: number;
+  readonly act?: Act;
   readonly map?: string;
   readonly missable?: boolean;
   readonly mode?: Mode;
@@ -40,8 +41,8 @@ export interface LevelItem extends BaseItem {
 /** Item tracked by scene + flag boolean. */
 export interface SceneBoolItem extends BaseItem {
   readonly type: "sceneBool";
-  readonly scene: string;
   readonly flag: string;
+  readonly scene: string;
 }
 
 /** Item tracked by scene visits. */
@@ -71,19 +72,17 @@ export interface QuestItem extends BaseItem {
 export interface KeyItem extends BaseItem {
   readonly type: "key";
   readonly flag: string;
-  readonly scene?: string;
 }
 
 export interface JournalItem extends BaseItem {
   readonly type: "journal";
   readonly flag: string;
-  readonly subtype?: "kills" | "seen";
-  readonly required?: number;
+  readonly required: number;
 }
 
 export interface RelicItem extends BaseItem {
   readonly type: "relic";
-  readonly flag?: string;
+  readonly flag: string;
   readonly scene?: string;
 }
 
