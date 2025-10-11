@@ -1518,6 +1518,7 @@ main a:hover,
 }
 
 /* reset margin auto used elsewhere */
+#main-section .category-title .category-count,
 #main-section .category-title {
   margin: 0 0 0 0.25rem; /* small space between parts */
   position: static;
