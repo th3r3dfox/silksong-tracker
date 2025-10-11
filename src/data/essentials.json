@@ -10,7 +10,7 @@
         {
           "id": "ability-drifters-cloak",
           "label": "Drifter's Cloak",
-          "icon": "assets/icons/Drifter's_Cloak.png",
+          "icon": "icons/Drifter's_Cloak.png",
           "flag": "hasBrolly",
           "type": "flag",
           "act": 1,
@@ -21,7 +21,7 @@
         {
           "id": "ability-faydown-cloak",
           "label": "Faydown Cloak",
-          "icon": "assets/icons/Faydown_Drifter's_Cloak.png",
+          "icon": "icons/Faydown_Drifter's_Cloak.png",
           "flag": "hasDoubleJump",
           "type": "flag",
           "act": 2,
@@ -40,7 +40,7 @@
         {
           "id": "key-simple-1",
           "label": "Simple Key #1",
-          "icon": "assets/icons/Simple_Key.png",
+          "icon": "icons/Simple_Key.png",
           "flag": "PurchasedBonebottomFaithToken",
           "type": "key",
           "act": 1,
@@ -50,7 +50,7 @@
         {
           "id": "key-simple-2",
           "label": "Simple Key #2",
-          "icon": "assets/icons/Simple_Key.png",
+          "icon": "icons/Simple_Key.png",
           "flag": "CollectedDustCageKey",
           "type": "key",
           "act": 1,
@@ -60,7 +60,7 @@
         {
           "id": "key-simple-3",
           "label": "Simple Key #3",
-          "icon": "assets/icons/Simple_Key.png",
+          "icon": "icons/Simple_Key.png",
           "flag": "MerchantEnclaveSimpleKey",
           "type": "key",
           "act": 2,
@@ -70,7 +70,7 @@
         {
           "id": "key-simple-4",
           "label": "Simple Key #4",
-          "icon": "assets/icons/Simple_Key.png",
+          "icon": "icons/Simple_Key.png",
           "act": 2,
           "flag": "Collectable_Item_Pickup",
           "scene": "Bellshrine_Coral",
@@ -81,7 +81,7 @@
         {
           "id": "key-gate",
           "label": "Diving Bell Key",
-          "icon": "assets/icons/Diving_Bell_Key.png",
+          "icon": "icons/Diving_Bell_Key.png",
           "flag": "BallowGivenKey",
           "type": "key",
           "act": 3,
@@ -91,7 +91,7 @@
         {
           "id": "key-white",
           "label": "White Key",
-          "icon": "assets/icons/White_Key.png",
+          "icon": "icons/White_Key.png",
           "flag": "collectedWardKey",
           "type": "key",
           "act": 2,
@@ -101,7 +101,7 @@
         {
           "id": "key-surgeon",
           "label": "Surgeon's Key",
-          "icon": "assets/icons/Surgeon's_Key.png",
+          "icon": "icons/Surgeon's_Key.png",
           "flag": "collectedWardBossKey",
           "type": "key",
           "act": 2,
@@ -111,7 +111,7 @@
         {
           "id": "key-apostate",
           "label": "Key of Apostate",
-          "icon": "assets/icons/Key_of_Apostate.png",
+          "icon": "icons/Key_of_Apostate.png",
           "flag": "HasSlabKeyC",
           "type": "key",
           "act": 2,
@@ -121,7 +121,7 @@
         {
           "id": "key-indolent",
           "label": "Key of Indolent",
-          "icon": "assets/icons/Key_of_Indolent.png",
+          "icon": "icons/Key_of_Indolent.png",
           "flag": "HasSlabKeyA",
           "type": "key",
           "act": 1,
@@ -131,7 +131,7 @@
         {
           "id": "key-heretic",
           "label": "Key of Heretic",
-          "icon": "assets/icons/Key_of_Heretic.png",
+          "icon": "icons/Key_of_Heretic.png",
           "flag": "HasSlabKeyB",
           "type": "key",
           "act": 1,
@@ -141,7 +141,7 @@
         {
           "id": "key-architect",
           "label": "Architect's Key",
-          "icon": "assets/icons/Architect's_Key.png",
+          "icon": "icons/Architect's_Key.png",
           "flag": "PurchasedArchitectKey",
           "type": "key",
           "act": 2,
@@ -159,7 +159,7 @@
         {
           "id": "memory-locket-1",
           "label": "Memory Locket 1",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Bone_18",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -170,7 +170,7 @@
         {
           "id": "memory-locket-2",
           "label": "Memory Locket 2",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Ant_20",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -181,7 +181,7 @@
         {
           "id": "memory-locket-3",
           "label": "Memory Locket 3",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "flag": "PurchasedPilgrimsRestMemoryLocket",
           "type": "flag",
           "act": 1,
@@ -191,7 +191,7 @@
         {
           "id": "memory-locket-4",
           "label": "Memory Locket 4",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Greymoor_16",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -202,7 +202,7 @@
         {
           "id": "memory-locket-5",
           "label": "Memory Locket 5",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "flag": "Rock Rollers",
           "type": "quest",
           "act": 1,
@@ -212,7 +212,7 @@
         {
           "id": "memory-locket-6",
           "label": "Memory Locket 6",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "flag": "PurchasedBelltownMemoryLocket",
           "type": "flag",
           "act": 1,
@@ -222,7 +222,7 @@
         {
           "id": "memory-locket-7",
           "label": "Memory Locket 7",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Coral_02",
           "flag": "Collectable Item Pickup (1)",
           "type": "sceneBool",
@@ -233,7 +233,7 @@
         {
           "id": "memory-locket-8",
           "label": "Memory Locket 8",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Crawl_09",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -244,7 +244,7 @@
         {
           "id": "memory-locket-9",
           "label": "Memory Locket 9",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Shadow_20",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -255,7 +255,7 @@
         {
           "id": "memory-locket-10",
           "label": "Memory Locket 10",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Bellway_City",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -266,7 +266,7 @@
         {
           "id": "memory-locket-11",
           "label": "Memory Locket 11",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Under_08",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -277,7 +277,7 @@
         {
           "id": "memory-locket-12",
           "label": "Memory Locket 12",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Dock_13",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -288,7 +288,7 @@
         {
           "id": "memory-locket-13",
           "label": "Memory Locket 13",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Library_08",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -299,7 +299,7 @@
         {
           "id": "memory-locket-14",
           "label": "Memory Locket 14",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Coral_23",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -310,7 +310,7 @@
         {
           "id": "memory-locket-15",
           "label": "Memory Locket 15",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Halfway_01",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -321,7 +321,7 @@
         {
           "id": "memory-locket-16",
           "label": "Memory Locket 16",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Arborium_05",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -332,7 +332,7 @@
         {
           "id": "memory-locket-17",
           "label": "Memory Locket 17",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Slab_Cell_Quiet",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -343,7 +343,7 @@
         {
           "id": "memory-locket-18",
           "label": "Memory Locket 18",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Shadow_27",
           "flag": "Sack Corpse Pickup",
           "type": "sceneBool",
@@ -354,7 +354,7 @@
         {
           "id": "memory-locket-19",
           "label": "Memory Locket 19",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Belltown",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -365,7 +365,7 @@
         {
           "id": "memory-locket-20",
           "label": "Memory Locket 20",
-          "icon": "assets/icons/Memory_Locket.png",
+          "icon": "icons/Memory_Locket.png",
           "scene": "Bone_East_25",
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
@@ -384,7 +384,7 @@
         {
           "id": "pale-oil-vaults",
           "label": "Vaults Pale Oil",
-          "icon": "assets/icons/Pale_Oil.png",
+          "icon": "icons/Pale_Oil.png",
           "category": "Pale Oils",
           "scene": "Library_03",
           "flag": "Collectable Item Pickup",
@@ -396,7 +396,7 @@
         {
           "id": "pale-oil-citadel",
           "label": "Citadel Pale Oil",
-          "icon": "assets/icons/Pale_Oil.png",
+          "icon": "icons/Pale_Oil.png",
           "category": "Pale Oils",
           "type": "quest",
           "flag": "Great Gourmand",
@@ -407,7 +407,7 @@
         {
           "id": "pale-oil-flea-games",
           "label": "Flea Games Pale Oil",
-          "icon": "assets/icons/Pale_Oil.png",
+          "icon": "icons/Pale_Oil.png",
           "category": "Pale Oils",
           "type": "quest",
           "flag": "Flea Games Pre",
@@ -426,7 +426,7 @@
         {
           "id": "craftmetal-bonebottom",
           "label": "Craftmetal #1",
-          "icon": "assets/icons/Craft_Metal.png",
+          "icon": "icons/Craft_Metal.png",
           "category": "Craftmetal",
           "flag": "PurchasedBonebottomToolMetal",
           "type": "flag",
@@ -436,7 +436,7 @@
         {
           "id": "craftmetal-bone-07",
           "label": "Craftmetal #2",
-          "icon": "assets/icons/Craft_Metal.png",
+          "icon": "icons/Craft_Metal.png",
           "category": "Craftmetal",
           "scene": "Bone_07",
           "flag": "Collectable Item Pickup - Tool Metal",
@@ -447,7 +447,7 @@
         {
           "id": "craftmetal-dock-03",
           "label": "Craftmetal #3",
-          "icon": "assets/icons/Craft_Metal.png",
+          "icon": "icons/Craft_Metal.png",
           "category": "Craftmetal",
           "scene": "Dock_03",
           "flag": "Collectable Item Pickup",
@@ -458,7 +458,7 @@
         {
           "id": "craftmetal-coral-32",
           "label": "Craftmetal #4",
-          "icon": "assets/icons/Craft_Metal.png",
+          "icon": "icons/Craft_Metal.png",
           "category": "Craftmetal",
           "scene": "Coral_32",
           "flag": "Collectable Item Pickup - Tool Metal",
@@ -469,7 +469,7 @@
         {
           "id": "craftmetal-merchant-enclave",
           "label": "Craftmetal #5",
-          "icon": "assets/icons/Craft_Metal.png",
+          "icon": "icons/Craft_Metal.png",
           "category": "Craftmetal",
           "flag": "MerchantEnclaveToolMetal",
           "type": "flag",
@@ -479,7 +479,7 @@
         {
           "id": "craftmetal-wisp-05",
           "label": "Craftmetal #6",
-          "icon": "assets/icons/Craft_Metal.png",
+          "icon": "icons/Craft_Metal.png",
           "category": "Craftmetal",
           "scene": "Wisp_05",
           "flag": "Collectable Item Pickup - Tool Metal",
@@ -490,7 +490,7 @@
         {
           "id": "craftmetal-under-19b",
           "label": "Craftmetal #7",
-          "icon": "assets/icons/Craft_Metal.png",
+          "icon": "icons/Craft_Metal.png",
           "category": "Craftmetal",
           "scene": "Under_19b",
           "flag": "Collectable Item Pickup - Tool Metal",
@@ -501,7 +501,7 @@
         {
           "id": "craftmetal-aqueduct-05",
           "label": "Craftmetal #8",
-          "icon": "assets/icons/Craft_Metal.png",
+          "icon": "icons/Craft_Metal.png",
           "category": "Craftmetal",
           "scene": "Aqueduct_05",
           "flag": "Collectable Item Pickup - Tool Metal",
@@ -520,7 +520,7 @@
         {
           "id": "lost-flea-1",
           "label": "Lost Flea #1",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Bone_06",
           "type": "flag",
@@ -530,7 +530,7 @@
         {
           "id": "lost-flea-2",
           "label": "Lost Flea #2",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Dock_16",
           "type": "flag",
@@ -540,7 +540,7 @@
         {
           "id": "lost-flea-3",
           "label": "Lost Flea #3",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Bone_East_05",
           "type": "flag",
@@ -550,7 +550,7 @@
         {
           "id": "lost-flea-17",
           "label": "Lost Flea #4",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Dock_03d",
           "type": "flag",
@@ -560,7 +560,7 @@
         {
           "id": "lost-flea-5",
           "label": "Lost Flea #5",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Ant_03",
           "type": "flag",
@@ -570,7 +570,7 @@
         {
           "id": "lost-flea-4",
           "label": "Lost Flea #6",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Bone_East_17b",
           "type": "flag",
@@ -580,7 +580,7 @@
         {
           "id": "lost-flea-9",
           "label": "Lost Flea #7",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Bone_East_10_Church",
           "type": "flag",
@@ -590,7 +590,7 @@
         {
           "id": "lost-flea-14",
           "label": "Lost Flea #8",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Crawl_06",
           "type": "flag",
@@ -600,7 +600,7 @@
         {
           "id": "lost-flea-6",
           "label": "Lost Flea #9",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Greymoor_15b",
           "type": "flag",
@@ -610,7 +610,7 @@
         {
           "id": "lost-flea-7",
           "label": "Lost Flea #10",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Greymoor_06",
           "type": "flag",
@@ -620,7 +620,7 @@
         {
           "id": "lost-flea-29",
           "label": "Kratt #11",
-          "icon": "assets/icons/Kratt.png",
+          "icon": "icons/Kratt.png",
           "category": "Fleas",
           "flag": "CaravanLechReturnedToCaravan",
           "type": "flag",
@@ -630,7 +630,7 @@
         {
           "id": "lost-flea-13",
           "label": "Lost Flea #12",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Belltown_04",
           "type": "flag",
@@ -640,7 +640,7 @@
         {
           "id": "lost-flea-8",
           "label": "Lost Flea #13",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Shellwood_03",
           "type": "flag",
@@ -650,7 +650,7 @@
         {
           "id": "lost-flea-10",
           "label": "Lost Flea #14",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Coral_35",
           "type": "flag",
@@ -660,7 +660,7 @@
         {
           "id": "lost-flea-11",
           "label": "Lost Flea #15",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Dust_12",
           "type": "flag",
@@ -670,7 +670,7 @@
         {
           "id": "lost-flea-16",
           "label": "Lost Flea #16",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Shadow_28",
           "type": "flag",
@@ -680,7 +680,7 @@
         {
           "id": "lost-flea-12",
           "label": "Lost Flea #17",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Dust_09",
           "type": "flag",
@@ -690,7 +690,7 @@
         {
           "id": "lost-flea-27",
           "label": "Lost Flea #18",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Slab_06",
           "type": "flag",
@@ -700,7 +700,7 @@
         {
           "id": "lost-flea-18",
           "label": "Lost Flea #19",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Under_23",
           "type": "flag",
@@ -710,7 +710,7 @@
         {
           "id": "lost-flea-26",
           "label": "Lost Flea #20",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Under_21",
           "type": "flag",
@@ -720,7 +720,7 @@
         {
           "id": "lost-flea-20",
           "label": "Lost Flea #21",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Song_14",
           "type": "flag",
@@ -730,7 +730,7 @@
         {
           "id": "lost-flea-24",
           "label": "Lost Flea #22",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Song_11",
           "type": "flag",
@@ -740,7 +740,7 @@
         {
           "id": "lost-flea-19",
           "label": "Lost Flea #23",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Shadow_10",
           "type": "flag",
@@ -750,7 +750,7 @@
         {
           "id": "lost-flea-28",
           "label": "Huge Flea #24",
-          "icon": "assets/icons/Huge_Flea.png",
+          "icon": "icons/Huge_Flea.png",
           "category": "Fleas",
           "flag": "tamedGiantFlea",
           "type": "flag",
@@ -760,7 +760,7 @@
         {
           "id": "lost-flea-15",
           "label": "Lost Flea #25",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Slab_Cell",
           "type": "flag",
@@ -770,7 +770,7 @@
         {
           "id": "lost-flea-27",
           "label": "Lost Flea #26",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Slab_06",
           "type": "flag",
@@ -780,7 +780,7 @@
         {
           "id": "lost-flea-22",
           "label": "Lost Flea #27",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Peak_05c",
           "type": "flag",
@@ -790,7 +790,7 @@
         {
           "id": "lost-flea-21",
           "label": "Lost Flea #28",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Coral_24",
           "type": "flag",
@@ -800,7 +800,7 @@
         {
           "id": "lost-flea-30",
           "label": "Vog #29",
-          "icon": "assets/icons/Vog.png",
+          "icon": "icons/Vog.png",
           "category": "Fleas",
           "flag": "MetTroupeHunterWild",
           "type": "flag",
@@ -810,7 +810,7 @@
         {
           "id": "lost-flea-25",
           "label": "Lost Flea #30",
-          "icon": "assets/icons/fleas.png",
+          "icon": "icons/fleas.png",
           "category": "Fleas",
           "flag": "SavedFlea_Library_01",
           "type": "flag",

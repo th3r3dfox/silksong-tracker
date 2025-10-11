@@ -10,7 +10,7 @@
         {
           "id": "choral-commandment-1",
           "label": "Choral Commandment 1",
-          "icon": "assets/completion/Choral_Commandment.png",
+          "icon": "completion/Choral_Commandment.png",
           "scene": "Mosshome",
           "flag": "Seal Chit Aspid_01",
           "type": "relic",
@@ -21,7 +21,7 @@
         {
           "id": "choral-commandment-2",
           "label": "Choral Commandment 2",
-          "icon": "assets/completion/Choral_Commandment.png",
+          "icon": "completion/Choral_Commandment.png",
           "scene": "Whiteward",
           "flag": "Seal Chit Ward Corpse",
           "type": "relic",
@@ -32,7 +32,7 @@
         {
           "id": "choral-commandment-3",
           "label": "Choral Commandment 3",
-          "icon": "assets/completion/Choral_Commandment.png",
+          "icon": "completion/Choral_Commandment.png",
           "scene": "Whiteward",
           "flag": "Seal Chit Silk Siphon",
           "type": "relic",
@@ -43,7 +43,7 @@
         {
           "id": "choral-commandment-4",
           "label": "Choral Commandment 4",
-          "icon": "assets/completion/Choral_Commandment.png",
+          "icon": "completion/Choral_Commandment.png",
           "scene": "Songclave",
           "flag": "Seal Chit City Merchant",
           "type": "relic",
@@ -54,7 +54,7 @@
         {
           "id": "weaver-effigy-1",
           "label": "Weaver Effigy 1",
-          "icon": "assets/completion/Weaver_Effigy.png",
+          "icon": "completion/Weaver_Effigy.png",
           "scene": "Bonetown_upper_room",
           "flag": "Weaver Totem Bonetown_upper_room",
           "type": "relic",
@@ -65,7 +65,7 @@
         {
           "id": "weaver-effigy-2",
           "label": "Weaver Effigy 2",
-          "icon": "assets/completion/Weaver_Effigy.png",
+          "icon": "completion/Weaver_Effigy.png",
           "scene": "Shellwood_Witch_Tunnel",
           "flag": "Weaver Totem Witch",
           "type": "relic",
@@ -76,7 +76,7 @@
         {
           "id": "weaver-effigy-3",
           "label": "Weaver Effigy 3",
-          "icon": "assets/completion/Weaver_Effigy.png",
+          "icon": "completion/Weaver_Effigy.png",
           "scene": "Slab_Bottom",
           "flag": "Weaver Totem Slab_Bottom",
           "type": "relic",
@@ -87,7 +87,7 @@
         {
           "id": "bone-scroll-1",
           "label": "Bone Scroll 1",
-          "icon": "assets/completion/Bone_Scroll.png",
+          "icon": "completion/Bone_Scroll.png",
           "scene": "Greymoor_flooded_corridor",
           "flag": "Bone Record Greymoor_flooded_corridor",
           "type": "relic",
@@ -98,7 +98,7 @@
         {
           "id": "bone-scroll-2",
           "label": "Bone Scroll 2",
-          "icon": "assets/completion/Bone_Scroll.png",
+          "icon": "completion/Bone_Scroll.png",
           "scene": "Bone_East_14",
           "flag": "Bone Record Bone_East_14",
           "type": "relic",
@@ -109,7 +109,7 @@
         {
           "id": "bone-scroll-3",
           "label": "Bone Scroll 3",
-          "icon": "assets/completion/Bone_Scroll.png",
+          "icon": "completion/Bone_Scroll.png",
           "scene": "Understore_Map_Room",
           "flag": "Bone Record Understore_Map_Room",
           "type": "relic",
@@ -120,7 +120,7 @@
         {
           "id": "bone-scroll-4",
           "label": "Bone Scroll 4",
-          "icon": "assets/completion/Bone_Scroll.png",
+          "icon": "completion/Bone_Scroll.png",
           "scene": "Wisp_Top",
           "flag": "Bone Record Wisp Top",
           "type": "relic",
@@ -131,7 +131,7 @@
         {
           "id": "rune-harp-1",
           "label": "Rune Harp 1",
-          "icon": "assets/completion/Rune_Harp.png",
+          "icon": "completion/Rune_Harp.png",
           "scene": "Weave_08",
           "flag": "Weaver Record Weave_08",
           "type": "relic",
@@ -142,7 +142,7 @@
         {
           "id": "rune-harp-2",
           "label": "Rune Harp 2",
-          "icon": "assets/completion/Rune_Harp.png",
+          "icon": "completion/Rune_Harp.png",
           "scene": "Sprint_Challenge",
           "flag": "Weaver Record Sprint_Challenge",
           "type": "relic",
@@ -153,7 +153,7 @@
         {
           "id": "rune-harp-3",
           "label": "Rune Harp 3",
-          "icon": "assets/completion/Rune_Harp.png",
+          "icon": "completion/Rune_Harp.png",
           "scene": "Conductor",
           "flag": "Weaver Record Conductor",
           "type": "relic",
@@ -164,7 +164,7 @@
         {
           "id": "arcane-egg",
           "label": "Arcane Egg",
-          "icon": "assets/completion/Arcane_Egg_Silksong.png",
+          "icon": "completion/Arcane_Egg_Silksong.png",
           "scene": "Abyss_Middle",
           "flag": "Ancient Egg Abyss Middle",
           "type": "relic",
@@ -183,7 +183,7 @@
         {
           "id": "psalm-cylinder-grindle",
           "label": "Psalm Cylinder – Grindle",
-          "icon": "assets/completion/Psalm_Cylinder.png",
+          "icon": "completion/Psalm_Cylinder.png",
           "flag": "Psalm Cylinder Grindle",
           "type": "relic",
           "act": 1,
@@ -193,7 +193,7 @@
         {
           "id": "psalm-cylinder-vaultkeeper",
           "label": "Psalm Cylinder – Vaultkeeper Cardinius Lair",
-          "icon": "assets/completion/Psalm_Cylinder.png",
+          "icon": "completion/Psalm_Cylinder.png",
           "flag": "Psalm Cylinder Librarian",
           "type": "relic",
           "act": 2,
@@ -203,7 +203,7 @@
         {
           "id": "psalm-cylinder-vaults",
           "label": "Psalm Cylinder – Whispering Vaults",
-          "icon": "assets/completion/Psalm_Cylinder.png",
+          "icon": "completion/Psalm_Cylinder.png",
           "scene": "Library_Roof",
           "flag": "Psalm Cylinder Library Roof",
           "type": "relic",
@@ -214,7 +214,7 @@
         {
           "id": "psalm-cylinder-high-halls",
           "label": "Psalm Cylinder – High Halls",
-          "icon": "assets/completion/Psalm_Cylinder.png",
+          "icon": "completion/Psalm_Cylinder.png",
           "scene": "Hang",
           "flag": "Psalm Cylinder Hang",
           "type": "relic",
@@ -225,7 +225,7 @@
         {
           "id": "psalm-cylinder-underworks",
           "label": "Psalm Cylinder – Underworks",
-          "icon": "assets/completion/Psalm_Cylinder.png",
+          "icon": "completion/Psalm_Cylinder.png",
           "scene": "Ward",
           "flag": "Psalm Cylinder Ward",
           "type": "relic",
@@ -236,7 +236,7 @@
         {
           "id": "sacred-cylinder",
           "label": "Sacred Cylinder",
-          "icon": "assets/completion/Sacred_Cylinder.png",
+          "icon": "completion/Sacred_Cylinder.png",
           "flag": "Librarian Melody Cylinder",
           "type": "relic",
           "act": 2,
@@ -254,7 +254,7 @@
         {
           "id": "materium-silk",
           "label": "Silk",
-          "icon": "assets/completion/Silk.png",
+          "icon": "completion/Silk.png",
           "flag": "Silk",
           "type": "materium",
           "description": "Entry unlocked by default",
@@ -263,7 +263,7 @@
         {
           "id": "materium-shell-shard",
           "label": "Shell Shards",
-          "icon": "assets/completion/Shards_large.png",
+          "icon": "completion/Shards_large.png",
           "flag": "Shell Shard",
           "type": "materium",
           "description": "Entry unlocked by default",
@@ -272,7 +272,7 @@
         {
           "id": "materium-rosaries",
           "label": "Rosaries",
-          "icon": "assets/completion/Rosaries_large.png",
+          "icon": "completion/Rosaries_large.png",
           "flag": "Rosary Small",
           "type": "materium",
           "description": "Entry unlocked by default",
@@ -281,7 +281,7 @@
         {
           "id": "materium-shell-rosaries",
           "label": "Shell Rosaries",
-          "icon": "assets/completion/Shell_Rosaries_large.png",
+          "icon": "completion/Shell_Rosaries_large.png",
           "flag": "Rosary Mid",
           "type": "materium",
           "description": "Entry unlocked by default",
@@ -290,7 +290,7 @@
         {
           "id": "materium-pearl-rosaries",
           "label": "Pearl Rosaries",
-          "icon": "assets/completion/Pearl_Rosaries_large.png",
+          "icon": "completion/Pearl_Rosaries_large.png",
           "flag": "Rosary Big",
           "type": "materium",
           "description": "Entry unlocked by default",
@@ -299,7 +299,7 @@
         {
           "id": "materium-mossberry",
           "label": "Mossberry",
-          "icon": "assets/completion/Mossberry.png",
+          "icon": "completion/Mossberry.png",
           "flag": "Mossberry",
           "type": "materium",
           "description": "See Mossberry: How to Acquire",
@@ -308,7 +308,7 @@
         {
           "id": "materium-mossberry-stew",
           "label": "Mossberry Stew",
-          "icon": "assets/completion/Mossberry_Stew.png",
+          "icon": "completion/Mossberry_Stew.png",
           "flag": "Mossberry Stew",
           "type": "materium",
           "description": "Given by Moss Druid during the Great Taste of Pharloom wish",
@@ -317,7 +317,7 @@
         {
           "id": "materium-pilgrim-shawl",
           "label": "Pilgrim Shawl",
-          "icon": "assets/completion/Pilgrim_Shawl.png",
+          "icon": "completion/Pilgrim_Shawl.png",
           "flag": "Pilgrim Rag",
           "type": "materium",
           "description": "Dropped by pilgrim enemies during the Garb of the Pilgrims wish",
@@ -326,7 +326,7 @@
         {
           "id": "materium-smeltstone",
           "label": "Flintstone",
-          "icon": "assets/completion/Flintstone.png",
+          "icon": "completion/Flintstone.png",
           "flag": "Smeltstone",
           "type": "materium",
           "description": "Found in Deep Docks",
@@ -335,7 +335,7 @@
         {
           "id": "materium-rock-roller-item",
           "label": "Flintgem",
-          "icon": "assets/completion/Flintgem.png",
+          "icon": "completion/Flintgem.png",
           "flag": "Rock Roller Item",
           "type": "materium",
           "description": "Dropped by Flintbeetles",
@@ -344,7 +344,7 @@
         {
           "id": "materium-tool-metal",
           "label": "Craftmetal",
-          "icon": "assets/icons/Craft_Metal.png",
+          "icon": "icons/Craft_Metal.png",
           "flag": "Tool Metal",
           "type": "materium",
           "description": "Rare element found naturally within the rock and bone of Pharloom",
@@ -353,7 +353,7 @@
         {
           "id": "materium-common-spine",
           "label": "Spine Core",
-          "icon": "assets/completion/Spine_Core.png",
+          "icon": "completion/Spine_Core.png",
           "flag": "Common Spine",
           "type": "materium",
           "description": "Dropped by Hokers during the Flexile Spines wish",
@@ -362,7 +362,7 @@
         {
           "id": "materium-skull-king-fragment",
           "label": "Crown Fragment",
-          "icon": "assets/completion/Crown_Fragment.png",
+          "icon": "completion/Crown_Fragment.png",
           "flag": "Skull King Fragment",
           "type": "materium",
           "description": "Dropped by Skull Tyrant during the The Terrible Tyrant wish",
@@ -371,7 +371,7 @@
         {
           "id": "materium-beastfly-remains",
           "label": "Horn Fragment",
-          "icon": "assets/completion/Horn_Fragment.png",
+          "icon": "completion/Horn_Fragment.png",
           "flag": "Beastfly Remains",
           "type": "materium",
           "description": "Dropped by Savage Beastfly during the Savage Beastfly wish",
@@ -381,7 +381,7 @@
         {
           "id": "materium-silver-bellclapper",
           "label": "Silver Bell",
-          "icon": "assets/completion/Silver_Bell.png",
+          "icon": "completion/Silver_Bell.png",
           "flag": "Silver Bellclapper",
           "type": "materium",
           "description": "Found throughout Bellhart during the Silver Bells wish",
@@ -390,7 +390,7 @@
         {
           "id": "materium-pale-oil",
           "label": "Pale Oil",
-          "icon": "assets/icons/Pale_Oil.png",
+          "icon": "icons/Pale_Oil.png",
           "flag": "Pale Oil",
           "type": "materium",
           "description": "Bile gland of a rare sylphean slug. Talented pinmasters can use the glistening liquid within to improve a blade's sharpness.",
@@ -399,7 +399,7 @@
         {
           "id": "materium-lifeblood",
           "label": "Plasmium",
-          "icon": "assets/completion/Plasmium.png",
+          "icon": "completion/Plasmium.png",
           "flag": "Lifeblood",
           "type": "materium",
           "description": "Collected using the Needle Phial during the Alchemist's Assistant wish",
@@ -408,7 +408,7 @@
         {
           "id": "materium-plasmium-blood",
           "label": "Plasmified Blood",
-          "icon": "assets/completion/Plasmified_Blood.png",
+          "icon": "completion/Plasmified_Blood.png",
           "flag": "Plasmium Blood",
           "type": "materium",
           "description": "Collected using the Needle Phial during the Advanced Alchemy wish",
@@ -417,7 +417,7 @@
         {
           "id": "materium-crow-feathers",
           "label": "Ragpelt",
-          "icon": "assets/completion/Ragpelt.png",
+          "icon": "completion/Ragpelt.png",
           "flag": "Crow Feathers",
           "type": "materium",
           "description": "Dropped by Craw enemies during the Crawbug Clearing wish",
@@ -426,7 +426,7 @@
         {
           "id": "materium-shell-flower",
           "label": "Pollip Heart",
-          "icon": "assets/completion/Pollip_Heart.png",
+          "icon": "completion/Pollip_Heart.png",
           "flag": "Shell Flower",
           "type": "materium",
           "description": "Core of a flower formed around the body of a consumed Wood Wasp. Secretes a sticky sap that the wasps subsist on.",
@@ -435,7 +435,7 @@
         {
           "id": "materium-roach-corpse-item",
           "label": "Roach Guts",
-          "icon": "assets/completion/Roach_Guts.png",
+          "icon": "completion/Roach_Guts.png",
           "flag": "Roach Corpse Item",
           "type": "materium",
           "description": "Dropped by Muckroachs during the Roach Guts wish",
@@ -444,7 +444,7 @@
         {
           "id": "materium-courier-supplies-generic",
           "label": "Courier's Swag",
-          "icon": "assets/completion/Courier's_Swag.png",
+          "icon": "completion/Courier's_Swag.png",
           "flag": "Courier Supplies Generic",
           "type": "materium",
           "description": "Given by Tipp & Pill during Delivery Wishes",
@@ -453,7 +453,7 @@
         {
           "id": "materium-courier-supplies-slave",
           "label": "Queen's Egg",
-          "icon": "assets/completion/Queen's_Egg.png",
+          "icon": "completion/Queen's_Egg.png",
           "flag": "Courier Supplies Slave",
           "type": "materium",
           "description": "Given by Tipp & Pill during the Queen's Egg wish",
@@ -463,7 +463,7 @@
         {
           "id": "materium-courier-supplies-mask-maker",
           "label": "Liquid Lacquer",
-          "icon": "assets/completion/Liquid_Lacquer.png",
+          "icon": "completion/Liquid_Lacquer.png",
           "flag": "Courier Supplies Mask Maker",
           "type": "materium",
           "description": "Given by Tipp & Pill during the Liquid Lacquer wish",
@@ -472,7 +472,7 @@
         {
           "id": "materium-courier-supplies-gourmand",
           "label": "Courier's Rasher",
-          "icon": "assets/completion/Courier's_Rasher.png",
+          "icon": "completion/Courier's_Rasher.png",
           "flag": "Courier Supplies Gourmand",
           "type": "materium",
           "description": "Given by Tipp & Pill during the Great Taste of Pharloom wish",
@@ -481,7 +481,7 @@
         {
           "id": "materium-vintage-nectar",
           "label": "Vintage Nectar",
-          "icon": "assets/completion/Vintage_Nectar.png",
+          "icon": "completion/Vintage_Nectar.png",
           "flag": "Vintage Nectar",
           "type": "materium",
           "description": "Sold by Creige during the Great Taste of Pharloom wish",
@@ -490,7 +490,7 @@
         {
           "id": "materium-pickled-roach-egg",
           "label": "Pickled Muckmaggot",
-          "icon": "assets/completion/Pickled_Muckmaggot.png",
+          "icon": "completion/Pickled_Muckmaggot.png",
           "flag": "Pickled Roach Egg",
           "type": "materium",
           "description": "Dropped by Disgraced Chef Lugoli",
@@ -499,7 +499,7 @@
         {
           "id": "materium-crustnut",
           "label": "Crustnut",
-          "icon": "assets/completion/Crustnut.png",
+          "icon": "completion/Crustnut.png",
           "flag": "Crustnut",
           "type": "materium",
           "description": "Found in Sands of Karak",
@@ -508,7 +508,7 @@
         {
           "id": "materium-extractor-machine-pins",
           "label": "Steel Spines",
-          "icon": "assets/completion/Steel_Spines.png",
+          "icon": "completion/Steel_Spines.png",
           "flag": "Extractor Machine Pins",
           "type": "materium",
           "description": "Sold by Crull and Benjin during the Infestation Operation wish",
@@ -517,7 +517,7 @@
         {
           "id": "materium-song-pilgrim-cloak",
           "label": "Choir Cloak",
-          "icon": "assets/completion/Choir_Cloak.png",
+          "icon": "completion/Choir_Cloak.png",
           "flag": "Song Pilgrim Cloak",
           "type": "materium",
           "description": "Dropped by pilgrim enemies in The Citadel during the Cloaks of the Choir wish",
@@ -526,7 +526,7 @@
         {
           "id": "materium-magnetite",
           "label": "Magnetite",
-          "icon": "assets/completion/Magnetite.png",
+          "icon": "completion/Magnetite.png",
           "flag": "Magnetite",
           "type": "materium",
           "description": "Found in Brightvein",
@@ -535,7 +535,7 @@
         {
           "id": "materium-broodmother-remains",
           "label": "Broodmother's Eye",
-          "icon": "assets/completion/Broodmother's_Eye.png",
+          "icon": "completion/Broodmother's_Eye.png",
           "flag": "Broodmother Remains",
           "type": "materium",
           "description": "Dropped by Broodmother",
@@ -544,7 +544,7 @@
         {
           "id": "materium-enemy-morsel-seared",
           "label": "Seared Organ",
-          "icon": "assets/completion/Seared_Organ.png",
+          "icon": "completion/Seared_Organ.png",
           "flag": "Enemy Morsel Seared",
           "type": "materium",
           "description": "Meat harvested from a defeated creature. It has been seared in a way that noticeably affects the flavour.",
@@ -553,7 +553,7 @@
         {
           "id": "materium-enemy-morsel-shredded",
           "label": "Shredded Organ",
-          "icon": "assets/completion/Shredded_Organ.png",
+          "icon": "completion/Shredded_Organ.png",
           "flag": "Enemy Morsel Shredded",
           "type": "materium",
           "description": "Meat harvested from a defeated creature. It has been diced into fine chunks.",
@@ -562,7 +562,7 @@
         {
           "id": "materium-enemy-morsel-speared",
           "label": "Skewered Organ",
-          "icon": "assets/completion/Skewered_Organ.png",
+          "icon": "completion/Skewered_Organ.png",
           "flag": "Enemy Morsel Speared",
           "type": "materium",
           "description": "Meat harvested from a defeated creature. It has been cleanly speared through, but is otherwise intact.",
@@ -571,7 +571,7 @@
         {
           "id": "materium-voltstone",
           "label": "Voltridian",
-          "icon": "assets/completion/Voltridian.png",
+          "icon": "completion/Voltridian.png",
           "flag": "Voltstone",
           "type": "materium",
           "description": "Found in Voltnest",
@@ -580,7 +580,7 @@
         {
           "id": "materium-snare-soul-bell-hermit",
           "label": "Hermit's Soul",
-          "icon": "assets/completion/Hermit's_Soul.png",
+          "icon": "completion/Hermit's_Soul.png",
           "flag": "Snare Soul Bell Hermit",
           "type": "materium",
           "description": "Given by Bell Hermit during the Silk & Soul wish",
@@ -589,7 +589,7 @@
         {
           "id": "materium-snare-soul-churchkeeper",
           "label": "Maiden's Soul",
-          "icon": "assets/completion/Maiden's_Soul.png",
+          "icon": "completion/Maiden's_Soul.png",
           "flag": "Snare Soul Churchkeeper",
           "type": "materium",
           "description": "Given by Chapel Maid during the Silk & Soul wish",
@@ -598,7 +598,7 @@
         {
           "id": "materium-snare-soul-swamp-bug",
           "label": "Seeker's Soul",
-          "icon": "assets/completion/Seekers_Soul.png",
+          "icon": "completion/Seekers_Soul.png",
           "flag": "Snare Soul Swamp Bug",
           "type": "materium",
           "description": "Found in Bilewater after defeating Groal the Great",
@@ -607,7 +607,7 @@
         {
           "id": "materium-coral-heart",
           "label": "Encrusted Heart",
-          "icon": "assets/completion/Heart_Coral.png",
+          "icon": "completion/Heart_Coral.png",
           "flag": "Coral Heart",
           "type": "materium",
           "description": "Awarded after defeating Crust King Khann in Coral Tower",
@@ -616,7 +616,7 @@
         {
           "id": "materium-flower-heart",
           "label": "Pollen Heart",
-          "icon": "assets/completion/Heart_Flower.png",
+          "icon": "completion/Heart_Flower.png",
           "flag": "Flower Heart",
           "type": "materium",
           "description": "Awarded after defeating Nyleth in Shellwood",
@@ -625,7 +625,7 @@
         {
           "id": "materium-hunter-heart",
           "label": "Hunter's Heart",
-          "icon": "assets/completion/Heart_Hunter.png",
+          "icon": "completion/Heart_Hunter.png",
           "flag": "Hunter Heart",
           "type": "materium",
           "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields",
@@ -634,7 +634,7 @@
         {
           "id": "materium-clover-heart",
           "label": "Conjoined Heart",
-          "icon": "assets/completion/Heart_Clover.png",
+          "icon": "completion/Heart_Clover.png",
           "flag": "Clover Heart",
           "type": "materium",
           "description": "Awarded after defeating the Clover Dancers in Lost Verdania",
@@ -652,7 +652,7 @@
         {
           "id": "memento-hunter",
           "label": "Hunter's Memento",
-          "icon": "assets/completion/Memento_Hunters.png",
+          "icon": "completion/Memento_Hunters.png",
           "flag": "Hunter Memento",
           "type": "relic",
           "description": "Given by the Hunter upon mastering his trials.",
@@ -661,7 +661,7 @@
         {
           "id": "memento-grey",
           "label": "Grey Memento",
-          "icon": "assets/completion/Memento_Grey.png",
+          "icon": "completion/Memento_Grey.png",
           "flag": "Grey Memento",
           "type": "relic",
           "description": "Received from Grey after completing her personal quest.",
@@ -670,7 +670,7 @@
         {
           "id": "memento-guardian",
           "label": "Guardian's Memento",
-          "icon": "assets/completion/Memento_Guardian.png",
+          "icon": "completion/Memento_Guardian.png",
           "flag": "Memento Seth",
           "type": "relic",
           "description": "A token awarded by the Guardian for triumph in the Flea Games.",
@@ -679,7 +679,7 @@
         {
           "id": "memento-sprintmaster",
           "label": "Sprintmaster's Memento",
-          "icon": "assets/completion/Memento_Sprintmaster.png",
+          "icon": "completion/Memento_Sprintmaster.png",
           "flag": "Sprintmaster Memento",
           "type": "relic",
           "description": "Gifted by the Sprintmaster after proving unmatched agility.",
@@ -688,7 +688,7 @@
         {
           "id": "memento-craw",
           "label": "Craw's Memento",
-          "icon": "assets/completion/Memento_Craw.png",
+          "icon": "completion/Memento_Craw.png",
           "flag": "Crowman Memento",
           "type": "relic",
           "description": "A keepsake found upon aiding Craw, a relic of quiet gratitude.",
@@ -697,7 +697,7 @@
         {
           "id": "memento-heros",
           "label": "Hero's Memento",
-          "icon": "assets/completion/Memento_Heros.png",
+          "icon": "completion/Memento_Heros.png",
           "flag": "Memento Garmond",
           "type": "relic",
           "description": "Awarded by Garmond - a symbol of perseverance through peril.",
@@ -706,7 +706,7 @@
         {
           "id": "memento-surface",
           "label": "Surface Memento",
-          "icon": "assets/completion/Memento_Surface.png",
+          "icon": "completion/Memento_Surface.png",
           "flag": "Memento Surface",
           "type": "relic",
           "description": "Awarded by Garmond - a symbol of perseverance through peril.",
@@ -715,7 +715,7 @@
         {
           "id": "heart-flower",
           "label": "Pollen Heart",
-          "icon": "assets/completion/Heart_Flower.png",
+          "icon": "completion/Heart_Flower.png",
           "flag": "Heart Flower",
           "type": "relic",
           "description": "Awarded after defeating Nyleth in Shellwood.",
@@ -725,7 +725,7 @@
         {
           "id": "heart-coral",
           "label": "Encrusted Heart",
-          "icon": "assets/completion/Heart_Coral.png",
+          "icon": "completion/Heart_Coral.png",
           "flag": "Heart Coral",
           "type": "relic",
           "description": "Awarded after defeating Crust King Khann in Coral Tower.",
@@ -735,7 +735,7 @@
         {
           "id": "heart-hunter",
           "label": "Hunter's Heart",
-          "icon": "assets/completion/Heart_Hunter.png",
+          "icon": "completion/Heart_Hunter.png",
           "flag": "Heart Hunter",
           "type": "relic",
           "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields.",
@@ -745,7 +745,7 @@
         {
           "id": "heart-clover",
           "label": "Conjoined Heart",
-          "icon": "assets/completion/Heart_Clover.png",
+          "icon": "completion/Heart_Clover.png",
           "flag": "Clover Heart",
           "type": "relic",
           "description": "Awarded after defeating the Clover Dancers in Lost Verdania.",
@@ -767,7 +767,7 @@
           "scene": "Arborium_07",
           "flag": "Collectable Item Pickup Materium",
           "relatedFlag": "ConstructedMaterium",
-          "icon": "assets/completion/Materium_item.png",
+          "icon": "completion/Materium_item.png",
           "description": "The Materium can be found in the upper part of the Memorium. The item must be constructed in the Bellhome in Bellhart before it can be used.",
           "link": "https://hollowknight.wiki/w/Materium"
         },
@@ -778,7 +778,7 @@
           "scene": "Abyss_08",
           "flag": "Collectable Item Pickup",
           "relatedFlag": "ConstructedFarsight",
-          "icon": "assets/completion/Farsight.png",
+          "icon": "completion/Farsight.png",
           "description": "Found in The Abyss, in the upper east passage of Weavenest Absolom. The item must be constructed in the Bellhome in Bellhart before it can be used.",
           "link": "https://hollowknight.wiki/w/Farsight"
         }

@@ -1,4 +1,4 @@
-import { assertIs, assertNotNull } from "./utils.js";
+import { assertIs, assertNotNull } from "complete-common";
 
 /**
  * Helper function to get an HTML element and throw an error if it does not exist.

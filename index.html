@@ -3,18 +3,18 @@
   <head>
     <link
       rel="preload"
-      href="assets/fontawesome/css/all.min.css"
+      href="/assets/fontawesome/css/all.min.css"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript
-      ><link rel="stylesheet" href="assets/fontawesome/css/all.min.css"
+      ><link rel="stylesheet" href="/assets/fontawesome/css/all.min.css"
     /></noscript>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Silksong Tracker</title>
-    <link rel="icon" type="image/png" href="assets/misc/favicon.png" />
+    <link rel="icon" type="image/png" href="/assets/misc/favicon.png" />
     <!-- <base href="https://th3r3dfox.github.io/silksong-tracker/"> -->
 
     <!-- 🪶 Social Preview -->
@@ -32,13 +32,13 @@
       property="og:url"
       content="https://th3r3dfox.github.io/silksong-tracker/"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <body>
     <aside class="sidebar">
       <div class="sidebar-header">
         <img
-          src="assets/misc/favicon.png"
+          src="/assets/misc/favicon.png"
           class="logo-icon"
           width="64"
           height="64"
@@ -139,7 +139,7 @@
       <main>
         <!-- Scroll-to-top button -->
         <button id="backToTop" class="back-to-top">
-          <img src="assets/icons/Up_Arrow.png" alt="Back to Top" width="50" />
+          <img src="/assets/icons/Up_Arrow.png" alt="Back to Top" width="50" />
           <span>Top</span>
         </button>
 
@@ -195,8 +195,7 @@
         </section>
 
         <!-- ✅ Scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
-        <script type="module" src="./js/script.js"></script>
+        <script type="module" src="./src/main.ts"></script>
 
         <div
           id="uploadOverlay"

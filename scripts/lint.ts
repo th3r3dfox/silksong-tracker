@@ -3,7 +3,7 @@ import path from "path";
 
 const CHECK_JSON_COMMANDS: readonly string[] = await (async () => {
   const repoRoot = path.join(import.meta.dirname, "..");
-  const dataPath = path.join(repoRoot, "js", "data");
+  const dataPath = path.join(repoRoot, "src", "data");
   const filePaths = await getFilePathsInDirectory(dataPath);
 
   const jsonFilePaths = filePaths.filter(
