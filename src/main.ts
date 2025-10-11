@@ -972,13 +972,11 @@ async function handleSaveFile(file) {
     }
 
     const buffer = await file.arrayBuffer();
-    const isDat = file.name.toLowerCase().endsWith(".dat");
+    const isJSON = file.name.toLowerCase().endsWith(".json");
 
-    // 🔍 Decode file
-    /** @type unknown */
-    const saveDataRaw = isDat
-      ? decodeSilksongSave(buffer)
-      : JSON.parse(new TextDecoder("utf-8").decode(buffer));
+    const saveDataRaw: unknown = isJSON
+      ? JSON.parse(new TextDecoder("utf-8").decode(buffer))
+      : decodeSilksongSave(buffer);
 
     assertObject(
       saveDataRaw,
