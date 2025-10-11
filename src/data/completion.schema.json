@@ -65,7 +65,7 @@
                 },
                 "type": {
                   "type": "string",
-                  "enum": ["relic", "materium", "device"]
+                  "enum": ["relic", "materium", "device", "flag"]
                 },
                 "act": {
                   "type": "integer",
