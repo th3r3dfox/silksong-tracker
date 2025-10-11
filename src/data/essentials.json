@@ -15,7 +15,7 @@
           "type": "flag",
           "act": 1,
           "description": "The Seamstress in the Far Fields will sew an array of spines into Hornet's cloak as a reward for completing the Flexile Spines Wish. Hokers must be attacked in order to collect the 25 necessary Spine Cores.",
-          "link": "https://hollowknight.wiki/w/Drifter%27s_Cloak",
+          "link": "https://hollowknight.wiki/w/Drifter's_Cloak",
           "map": "https://cdn.wikimg.net/en/hkwiki/images/thumb/2/27/Mapshot_SS_Seamstress_01.png/200px-Mapshot_SS_Seamstress_01.png"
         },
         {
@@ -106,7 +106,7 @@
           "type": "key",
           "act": 2,
           "description": "Found on the corpse of a Surgeon in the Whiteward.",
-          "link": "https://hollowknight.wiki/w/Surgeon%27s_Key"
+          "link": "https://hollowknight.wiki/w/Surgeon's_Key"
         },
         {
           "id": "key-apostate",
@@ -146,7 +146,7 @@
           "type": "key",
           "act": 2,
           "description": "Purchased from the Twelfth Architect.",
-          "link": "https://hollowknight.wiki/w/Architect%27s_Key"
+          "link": "https://hollowknight.wiki/w/Architect's_Key"
         }
       ]
     },
@@ -165,7 +165,7 @@
           "type": "sceneBool",
           "act": 1,
           "description": "The Marrow, northeast of the Bellway station",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-2",
@@ -176,7 +176,7 @@
           "type": "sceneBool",
           "act": 1,
           "description": "Hunter's March, below the Chapel of the Beast",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-3",
@@ -186,7 +186,7 @@
           "type": "flag",
           "act": 1,
           "description": "Purchased from Mort in Far Fields for 150 rosaries, or from Grindle in Blasted Steps for 250 rosaries if not purchased before Act 3 begins",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-4",
@@ -197,7 +197,7 @@
           "type": "sceneBool",
           "act": 1,
           "description": "West of the Greymoor Bellway",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-5",
@@ -207,7 +207,7 @@
           "type": "quest",
           "act": 1,
           "description": "Bone Bottom, awarded after completing the Volatile Flintbeetles Wish",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-6",
@@ -217,7 +217,7 @@
           "type": "flag",
           "act": 1,
           "description": "Purchased from Frey in Bellhart for  330  Rosaries",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-7",
@@ -228,7 +228,7 @@
           "type": "sceneBool",
           "act": 1,
           "description": "Blasted Steps",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-8",
@@ -239,7 +239,7 @@
           "type": "sceneBool",
           "act": 1,
           "description": "Southwest Wormways",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-9",
@@ -250,7 +250,7 @@
           "type": "sceneBool",
           "act": 1,
           "description": "Bilewater, in a hidden room northwest of the Bellway",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-10",
@@ -261,7 +261,7 @@
           "type": "sceneBool",
           "act": 2,
           "description": "Above the Grand Bellway, accessed from Exhaust Organ",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-11",
@@ -272,7 +272,7 @@
           "type": "sceneBool",
           "act": 2,
           "description": "Underworks, west of the benches by the confessional",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-12",
@@ -283,7 +283,7 @@
           "type": "sceneBool",
           "act": 2,
           "description": "Deep Docks, west of the diving bell",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-13",
@@ -294,7 +294,7 @@
           "type": "sceneBool",
           "act": 2,
           "description": "Whispering Vaults, below the exit to the outside area",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-14",
@@ -305,7 +305,7 @@
           "type": "sceneBool",
           "act": 2,
           "description": "Southwest Sands of Karak",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-15",
@@ -316,7 +316,7 @@
           "type": "sceneBool",
           "act": 2,
           "description": "Inside of Halfway Home, above the left-hand door",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-16",
@@ -327,7 +327,7 @@
           "type": "sceneBool",
           "act": 2,
           "description": "In the central area of the Memorium",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-17",
@@ -338,7 +338,7 @@
           "type": "sceneBool",
           "act": 2,
           "description": "The Slab, in the shortcut cave between the Bellway area and the upper areas",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-18",
@@ -349,7 +349,7 @@
           "type": "sceneBool",
           "act": 2,
           "description": "Bilewater, held by a corpse in a breakable cocoon just west of the hidden bench. Not visible until the cocoon is broken.",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-19",
@@ -360,7 +360,7 @@
           "type": "sceneBool",
           "act": 3,
           "description": "Bellhart, above the Bellhome",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         },
         {
           "id": "memory-locket-20",
@@ -371,7 +371,7 @@
           "type": "sceneBool",
           "act": 3,
           "description": "Far Fields, east of Skarrsinger Karmelita",
-          "link": "https://hollowknight.wiki/w/Category:Crests_and_Skills#Memory_Lockets"
+          "link": "https://hollowknight.wiki/w/Memory_Locket"
         }
       ]
     },
@@ -431,7 +431,8 @@
           "flag": "PurchasedBonebottomToolMetal",
           "type": "flag",
           "description": "Bought from Pebb in Bone Bottom for 60 Rosaries.",
-          "link": "https://hollowknight.wiki/w/Craft_Metal"
+          "link": "https://hollowknight.wiki/w/Craftmetal",
+          "act": 1
         },
         {
           "id": "craftmetal-bone-07",
@@ -442,7 +443,8 @@
           "flag": "Collectable Item Pickup - Tool Metal",
           "type": "sceneBool",
           "description": "Found by exploding a tunnel of rock in the northeast area of the Marrow, in the large room west of the entrance to Hunter's March.",
-          "link": "https://hollowknight.wiki/w/Craft_Metal"
+          "link": "https://hollowknight.wiki/w/Craftmetal",
+          "act": 1
         },
         {
           "id": "craftmetal-dock-03",
@@ -453,7 +455,8 @@
           "flag": "Collectable Item Pickup",
           "type": "sceneBool",
           "description": "Found in a chest behind the locked door in Deep Docks. It is located at the southwest corner of the bottom-most room that connects to Far Fields. (It is closer to the Far Fields Bellway Station than the Deep Docks Bellway Station.)",
-          "link": "https://hollowknight.wiki/w/Craft_Metal"
+          "link": "https://hollowknight.wiki/w/Craftmetal",
+          "act": 1
         },
         {
           "id": "craftmetal-coral-32",
@@ -464,7 +467,8 @@
           "flag": "Collectable Item Pickup - Tool Metal",
           "type": "sceneBool",
           "description": "Found in the Blasted Steps in a hidden area in the room before the Last Judge by falling down a hole at the east side of the room.",
-          "link": "https://hollowknight.wiki/w/Craft_Metal"
+          "link": "https://hollowknight.wiki/w/Craftmetal",
+          "act": 1
         },
         {
           "id": "craftmetal-merchant-enclave",
@@ -474,7 +478,8 @@
           "flag": "MerchantEnclaveToolMetal",
           "type": "flag",
           "description": "Bought from Jubilana in Songclave for 180 Rosaries after completing the 'The Lost Merchant' Wish.",
-          "link": "https://hollowknight.wiki/w/Craft_Metal"
+          "link": "https://hollowknight.wiki/w/Craftmetal",
+          "act": 2
         },
         {
           "id": "craftmetal-wisp-05",
@@ -485,7 +490,8 @@
           "flag": "Collectable Item Pickup - Tool Metal",
           "type": "sceneBool",
           "description": "Found behind a breakable ceiling in Wisp Thicket.",
-          "link": "https://hollowknight.wiki/w/Craft_Metal"
+          "link": "https://hollowknight.wiki/w/Craftmetal",
+          "act": 2
         },
         {
           "id": "craftmetal-under-19b",
@@ -496,7 +502,8 @@
           "flag": "Collectable Item Pickup - Tool Metal",
           "type": "sceneBool",
           "description": "Found at the end of a tunnel in the eastern Underworks, directly south of where Clawline can be found.",
-          "link": "https://hollowknight.wiki/w/Craft_Metal"
+          "link": "https://hollowknight.wiki/w/Craftmetal",
+          "act": 2
         },
         {
           "id": "craftmetal-aqueduct-05",
@@ -507,7 +514,8 @@
           "flag": "Collectable Item Pickup - Tool Metal",
           "type": "sceneBool",
           "description": "Found at the far eastern end of the Pale Lake in Putrified Ducts.",
-          "link": "https://hollowknight.wiki/w/Craft_Metal"
+          "link": "https://hollowknight.wiki/w/Craftmetal",
+          "act": 2
         }
       ]
     },
@@ -525,7 +533,8 @@
           "flag": "SavedFlea_Bone_06",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-2",
@@ -535,7 +544,8 @@
           "flag": "SavedFlea_Dock_16",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-3",
@@ -545,7 +555,8 @@
           "flag": "SavedFlea_Bone_East_05",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-17",
@@ -555,7 +566,8 @@
           "flag": "SavedFlea_Dock_03d",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         },
         {
           "id": "lost-flea-5",
@@ -565,7 +577,8 @@
           "flag": "SavedFlea_Ant_03",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-4",
@@ -575,7 +588,8 @@
           "flag": "SavedFlea_Bone_East_17b",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-9",
@@ -585,7 +599,8 @@
           "flag": "SavedFlea_Bone_East_10_Church",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-14",
@@ -595,7 +610,8 @@
           "flag": "SavedFlea_Crawl_06",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-6",
@@ -605,7 +621,8 @@
           "flag": "SavedFlea_Greymoor_15b",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-7",
@@ -615,7 +632,8 @@
           "flag": "SavedFlea_Greymoor_06",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-29",
@@ -625,7 +643,8 @@
           "flag": "CaravanLechReturnedToCaravan",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-13",
@@ -635,7 +654,8 @@
           "flag": "SavedFlea_Belltown_04",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-8",
@@ -645,7 +665,8 @@
           "flag": "SavedFlea_Shellwood_03",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-10",
@@ -655,7 +676,8 @@
           "flag": "SavedFlea_Coral_35",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-11",
@@ -665,7 +687,8 @@
           "flag": "SavedFlea_Dust_12",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-16",
@@ -675,7 +698,8 @@
           "flag": "SavedFlea_Shadow_28",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-12",
@@ -686,7 +710,7 @@
           "type": "flag",
           "map": "",
           "link": "https://hollowknight.wiki/w/Flea",
-          "act": 2
+          "act": 1
         },
         {
           "id": "lost-flea-27",
@@ -696,7 +720,8 @@
           "flag": "SavedFlea_Slab_06",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-18",
@@ -706,7 +731,8 @@
           "flag": "SavedFlea_Under_23",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         },
         {
           "id": "lost-flea-26",
@@ -716,7 +742,8 @@
           "flag": "SavedFlea_Under_21",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         },
         {
           "id": "lost-flea-20",
@@ -726,7 +753,8 @@
           "flag": "SavedFlea_Song_14",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         },
         {
           "id": "lost-flea-24",
@@ -736,7 +764,8 @@
           "flag": "SavedFlea_Song_11",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         },
         {
           "id": "lost-flea-19",
@@ -746,7 +775,8 @@
           "flag": "SavedFlea_Shadow_10",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         },
         {
           "id": "lost-flea-28",
@@ -756,7 +786,8 @@
           "flag": "tamedGiantFlea",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         },
         {
           "id": "lost-flea-15",
@@ -766,7 +797,8 @@
           "flag": "SavedFlea_Slab_Cell",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-27",
@@ -776,7 +808,8 @@
           "flag": "SavedFlea_Slab_06",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 1
         },
         {
           "id": "lost-flea-22",
@@ -786,7 +819,8 @@
           "flag": "SavedFlea_Peak_05c",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         },
         {
           "id": "lost-flea-21",
@@ -796,7 +830,8 @@
           "flag": "SavedFlea_Coral_24",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         },
         {
           "id": "lost-flea-30",
@@ -806,7 +841,8 @@
           "flag": "MetTroupeHunterWild",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         },
         {
           "id": "lost-flea-25",
@@ -816,7 +852,8 @@
           "flag": "SavedFlea_Library_01",
           "type": "flag",
           "map": "",
-          "link": "https://hollowknight.wiki/w/Flea"
+          "link": "https://hollowknight.wiki/w/Flea",
+          "act": 2
         }
       ]
     }

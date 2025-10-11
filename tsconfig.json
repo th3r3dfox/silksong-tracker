@@ -15,6 +15,9 @@
     // type-checking.
     "noEmit": true,
 
+    // Vite can handle ".ts" extensions in import statements.
+    "allowImportingTsExtensions": true,
+
     // Needed so that we can import JSON files.
     "module": "esnext",
     "moduleResolution": "bundler",

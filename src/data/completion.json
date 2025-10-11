@@ -16,7 +16,7 @@
           "type": "relic",
           "act": 1,
           "description": "On a high-up ledge. Left from Mosshome.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Choral_Commandment"
         },
         {
           "id": "choral-commandment-2",
@@ -27,7 +27,7 @@
           "type": "relic",
           "act": 2,
           "description": "Top-Left Room of Whiteward.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Choral_Commandment"
         },
         {
           "id": "choral-commandment-3",
@@ -38,7 +38,7 @@
           "type": "relic",
           "act": 3,
           "description": "At the end of a room above the Hidden Passage in Whiteward, easiest to reach via Silk Soar.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Choral_Commandment"
         },
         {
           "id": "choral-commandment-4",
@@ -49,7 +49,7 @@
           "type": "relic",
           "act": 2,
           "description": "Can be purchased from Jubilana (Songclave) for 210 Rosaries. Requires 'The Lost Merchant Wish' completed.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Choral_Commandment"
         },
         {
           "id": "weaver-effigy-1",
@@ -60,7 +60,7 @@
           "type": "relic",
           "act": 1,
           "description": "In a secret room above Bone Bottom. Easiest to reach with Drifter's Cloak and floating down from above.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Weaver_Effigy"
         },
         {
           "id": "weaver-effigy-2",
@@ -71,7 +71,7 @@
           "type": "relic",
           "act": 2,
           "description": "Shellwood Witch Tunnel. Requires Cling Grip.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Weaver_Effigy"
         },
         {
           "id": "weaver-effigy-3",
@@ -82,7 +82,7 @@
           "type": "relic",
           "act": 1,
           "description": "Bottom right of the Slab. Found on a corpse.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Weaver_Effigy"
         },
         {
           "id": "bone-scroll-1",
@@ -93,7 +93,7 @@
           "type": "relic",
           "act": 1,
           "description": "Greymore Secret Room. Swim all the way to the right.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Bone_Scroll"
         },
         {
           "id": "bone-scroll-2",
@@ -104,7 +104,7 @@
           "type": "relic",
           "act": 1,
           "description": "Far Fields secret room. Reachable with Drifter's Cloak.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Bone_Scroll"
         },
         {
           "id": "bone-scroll-3",
@@ -115,7 +115,7 @@
           "type": "relic",
           "act": 2,
           "description": "Left side of Underworks, behind a breakable wall.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Bone_Scroll"
         },
         {
           "id": "bone-scroll-4",
@@ -126,7 +126,7 @@
           "type": "relic",
           "act": 2,
           "description": "Top of Wisp Thicket platform challenge.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Bone_Scroll"
         },
         {
           "id": "rune-harp-1",
@@ -137,7 +137,7 @@
           "type": "relic",
           "act": 1,
           "description": "On a high-up ledge in Weavernest Atla.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Rune_Harp"
         },
         {
           "id": "rune-harp-2",
@@ -148,7 +148,7 @@
           "type": "relic",
           "act": 1,
           "description": "Secret room in Far Fields Weaver nest (Sprint Challenge).",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Rune_Harp"
         },
         {
           "id": "rune-harp-3",
@@ -159,7 +159,7 @@
           "type": "relic",
           "act": 3,
           "description": "Found where Conductor Ballador would be in Act 3.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Rune_Harp"
         },
         {
           "id": "arcane-egg",
@@ -170,7 +170,7 @@
           "type": "relic",
           "act": 3,
           "description": "Behind a platforming sequence in the Abyss.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Arcane_Egg_(Silksong)"
         }
       ]
     },
@@ -182,56 +182,56 @@
       "items": [
         {
           "id": "psalm-cylinder-grindle",
-          "label": "Psalm Cylinder – Grindle",
+          "label": "Psalm Cylinder - Grindle",
           "icon": "completion/Psalm_Cylinder.png",
           "flag": "Psalm Cylinder Grindle",
           "type": "relic",
           "act": 1,
           "description": "Sold by Grindle for 240 Rosaries (Blasted Steps).",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
         },
         {
           "id": "psalm-cylinder-vaultkeeper",
-          "label": "Psalm Cylinder – Vaultkeeper Cardinius Lair",
+          "label": "Psalm Cylinder - Vaultkeeper Cardinius Lair",
           "icon": "completion/Psalm_Cylinder.png",
           "flag": "Psalm Cylinder Librarian",
           "type": "relic",
           "act": 2,
           "description": "Obtained from Vaultkeeper Cardinius in the Whispering Vaults.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
         },
         {
           "id": "psalm-cylinder-vaults",
-          "label": "Psalm Cylinder – Whispering Vaults",
+          "label": "Psalm Cylinder - Whispering Vaults",
           "icon": "completion/Psalm_Cylinder.png",
           "scene": "Library_Roof",
           "flag": "Psalm Cylinder Library Roof",
           "type": "relic",
           "act": 2,
           "description": "At the end of a parkour challenge at the top of the Whispering Vaults. Requires Clawline.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
         },
         {
           "id": "psalm-cylinder-high-halls",
-          "label": "Psalm Cylinder – High Halls",
+          "label": "Psalm Cylinder - High Halls",
           "icon": "completion/Psalm_Cylinder.png",
           "scene": "Hang",
           "flag": "Psalm Cylinder Hang",
           "type": "relic",
           "act": 2,
           "description": "Behind a breakable wall in High Halls. Requires Clawline.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
         },
         {
           "id": "psalm-cylinder-underworks",
-          "label": "Psalm Cylinder – Underworks",
+          "label": "Psalm Cylinder - Underworks",
           "icon": "completion/Psalm_Cylinder.png",
           "scene": "Ward",
           "flag": "Psalm Cylinder Ward",
           "type": "relic",
           "act": 2,
           "description": "Behind a breakable wall at the top of Underworks.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
         },
         {
           "id": "sacred-cylinder",
@@ -241,7 +241,7 @@
           "type": "relic",
           "act": 2,
           "description": "Whispering Vaults: part of the Vaultkeeper's Melody objective.",
-          "link": "https://hollowknight.wiki/w/Relics"
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
         }
       ]
     },
@@ -258,7 +258,8 @@
           "flag": "Silk",
           "type": "materium",
           "description": "Entry unlocked by default",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Materium",
+          "act": 1
         },
         {
           "id": "materium-shell-shard",
@@ -267,7 +268,8 @@
           "flag": "Shell Shard",
           "type": "materium",
           "description": "Entry unlocked by default",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Materium",
+          "act": 1
         },
         {
           "id": "materium-rosaries",
@@ -276,7 +278,8 @@
           "flag": "Rosary Small",
           "type": "materium",
           "description": "Entry unlocked by default",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Materium",
+          "act": 1
         },
         {
           "id": "materium-shell-rosaries",
@@ -285,7 +288,8 @@
           "flag": "Rosary Mid",
           "type": "materium",
           "description": "Entry unlocked by default",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Materium",
+          "act": 1
         },
         {
           "id": "materium-pearl-rosaries",
@@ -294,7 +298,8 @@
           "flag": "Rosary Big",
           "type": "materium",
           "description": "Entry unlocked by default",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Materium",
+          "act": 1
         },
         {
           "id": "materium-mossberry",
@@ -302,8 +307,9 @@
           "icon": "completion/Mossberry.png",
           "flag": "Mossberry",
           "type": "materium",
-          "description": "See Mossberry: How to Acquire",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "description": "Given to Moss Druid during the Berry Picking Wish",
+          "link": "https://hollowknight.wiki/w/Mossberry",
+          "act": 1
         },
         {
           "id": "materium-mossberry-stew",
@@ -312,7 +318,8 @@
           "flag": "Mossberry Stew",
           "type": "materium",
           "description": "Given by Moss Druid during the Great Taste of Pharloom wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Mossberry_Stew",
+          "act": 2
         },
         {
           "id": "materium-pilgrim-shawl",
@@ -321,7 +328,8 @@
           "flag": "Pilgrim Rag",
           "type": "materium",
           "description": "Dropped by pilgrim enemies during the Garb of the Pilgrims wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Pilgrim_Shawl",
+          "act": 1
         },
         {
           "id": "materium-smeltstone",
@@ -330,7 +338,8 @@
           "flag": "Smeltstone",
           "type": "materium",
           "description": "Found in Deep Docks",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Flintstone",
+          "act": 1
         },
         {
           "id": "materium-rock-roller-item",
@@ -339,7 +348,8 @@
           "flag": "Rock Roller Item",
           "type": "materium",
           "description": "Dropped by Flintbeetles",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Flintgem",
+          "act": 1
         },
         {
           "id": "materium-tool-metal",
@@ -348,7 +358,8 @@
           "flag": "Tool Metal",
           "type": "materium",
           "description": "Rare element found naturally within the rock and bone of Pharloom",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Craftmetal",
+          "act": 1
         },
         {
           "id": "materium-common-spine",
@@ -357,7 +368,8 @@
           "flag": "Common Spine",
           "type": "materium",
           "description": "Dropped by Hokers during the Flexile Spines wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Spine_Core",
+          "act": 1
         },
         {
           "id": "materium-skull-king-fragment",
@@ -366,7 +378,8 @@
           "flag": "Skull King Fragment",
           "type": "materium",
           "description": "Dropped by Skull Tyrant during the The Terrible Tyrant wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Crown_Fragment",
+          "act": 1
         },
         {
           "id": "materium-beastfly-remains",
@@ -375,7 +388,8 @@
           "flag": "Beastfly Remains",
           "type": "materium",
           "description": "Dropped by Savage Beastfly during the Savage Beastfly wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Horn_Fragment",
+          "act": 2
         },
 
         {
@@ -385,7 +399,8 @@
           "flag": "Silver Bellclapper",
           "type": "materium",
           "description": "Found throughout Bellhart during the Silver Bells wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Silver_Bell",
+          "act": 1
         },
         {
           "id": "materium-pale-oil",
@@ -394,7 +409,8 @@
           "flag": "Pale Oil",
           "type": "materium",
           "description": "Bile gland of a rare sylphean slug. Talented pinmasters can use the glistening liquid within to improve a blade's sharpness.",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Pale_Oil",
+          "act": 2
         },
         {
           "id": "materium-lifeblood",
@@ -403,7 +419,8 @@
           "flag": "Lifeblood",
           "type": "materium",
           "description": "Collected using the Needle Phial during the Alchemist's Assistant wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Plasmium",
+          "act": 1
         },
         {
           "id": "materium-plasmium-blood",
@@ -412,7 +429,8 @@
           "flag": "Plasmium Blood",
           "type": "materium",
           "description": "Collected using the Needle Phial during the Advanced Alchemy wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Plasmified_Blood",
+          "act": 3
         },
         {
           "id": "materium-crow-feathers",
@@ -421,7 +439,8 @@
           "flag": "Crow Feathers",
           "type": "materium",
           "description": "Dropped by Craw enemies during the Crawbug Clearing wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Ragpelt",
+          "act": 1
         },
         {
           "id": "materium-shell-flower",
@@ -430,7 +449,8 @@
           "flag": "Shell Flower",
           "type": "materium",
           "description": "Core of a flower formed around the body of a consumed Wood Wasp. Secretes a sticky sap that the wasps subsist on.",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Pollip_Heart",
+          "act": 1
         },
         {
           "id": "materium-roach-corpse-item",
@@ -439,7 +459,8 @@
           "flag": "Roach Corpse Item",
           "type": "materium",
           "description": "Dropped by Muckroachs during the Roach Guts wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Roach_Guts",
+          "act": 1
         },
         {
           "id": "materium-courier-supplies-generic",
@@ -448,7 +469,8 @@
           "flag": "Courier Supplies Generic",
           "type": "materium",
           "description": "Given by Tipp & Pill during Delivery Wishes",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Materium",
+          "act": 1
         },
         {
           "id": "materium-courier-supplies-slave",
@@ -458,7 +480,8 @@
           "type": "materium",
           "description": "Given by Tipp & Pill during the Queen's Egg wish",
           "link": "https://hollowknight.wiki/w/Materium",
-          "mode": "normal"
+          "mode": "normal",
+          "act": 1
         },
         {
           "id": "materium-courier-supplies-mask-maker",
@@ -467,7 +490,8 @@
           "flag": "Courier Supplies Mask Maker",
           "type": "materium",
           "description": "Given by Tipp & Pill during the Liquid Lacquer wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Materium",
+          "act": 2
         },
         {
           "id": "materium-courier-supplies-gourmand",
@@ -476,7 +500,8 @@
           "flag": "Courier Supplies Gourmand",
           "type": "materium",
           "description": "Given by Tipp & Pill during the Great Taste of Pharloom wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Courier's_Rasher",
+          "act": 2
         },
         {
           "id": "materium-vintage-nectar",
@@ -485,7 +510,8 @@
           "flag": "Vintage Nectar",
           "type": "materium",
           "description": "Sold by Creige during the Great Taste of Pharloom wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Vintage_Nectar",
+          "act": 2
         },
         {
           "id": "materium-pickled-roach-egg",
@@ -494,7 +520,8 @@
           "flag": "Pickled Roach Egg",
           "type": "materium",
           "description": "Dropped by Disgraced Chef Lugoli",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Pickled_Muckmaggot",
+          "act": 2
         },
         {
           "id": "materium-crustnut",
@@ -503,7 +530,8 @@
           "flag": "Crustnut",
           "type": "materium",
           "description": "Found in Sands of Karak",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Crustnut",
+          "act": 2
         },
         {
           "id": "materium-extractor-machine-pins",
@@ -512,7 +540,8 @@
           "flag": "Extractor Machine Pins",
           "type": "materium",
           "description": "Sold by Crull and Benjin during the Infestation Operation wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Steel_Spines",
+          "act": 2
         },
         {
           "id": "materium-song-pilgrim-cloak",
@@ -521,7 +550,8 @@
           "flag": "Song Pilgrim Cloak",
           "type": "materium",
           "description": "Dropped by pilgrim enemies in The Citadel during the Cloaks of the Choir wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Choir_Cloak",
+          "act": 2
         },
         {
           "id": "materium-magnetite",
@@ -530,7 +560,8 @@
           "flag": "Magnetite",
           "type": "materium",
           "description": "Found in Brightvein",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Magnetite",
+          "act": 3
         },
         {
           "id": "materium-broodmother-remains",
@@ -539,7 +570,8 @@
           "flag": "Broodmother Remains",
           "type": "materium",
           "description": "Dropped by Broodmother",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Broodmother's_Eye",
+          "act": 2
         },
         {
           "id": "materium-enemy-morsel-seared",
@@ -548,7 +580,8 @@
           "flag": "Enemy Morsel Seared",
           "type": "materium",
           "description": "Meat harvested from a defeated creature. It has been seared in a way that noticeably affects the flavour.",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Seared_Organ",
+          "act": 2
         },
         {
           "id": "materium-enemy-morsel-shredded",
@@ -557,7 +590,8 @@
           "flag": "Enemy Morsel Shredded",
           "type": "materium",
           "description": "Meat harvested from a defeated creature. It has been diced into fine chunks.",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Shredded_Organ",
+          "act": 2
         },
         {
           "id": "materium-enemy-morsel-speared",
@@ -566,7 +600,8 @@
           "flag": "Enemy Morsel Speared",
           "type": "materium",
           "description": "Meat harvested from a defeated creature. It has been cleanly speared through, but is otherwise intact.",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Skewered_Organ",
+          "act": 2
         },
         {
           "id": "materium-voltstone",
@@ -575,7 +610,8 @@
           "flag": "Voltstone",
           "type": "materium",
           "description": "Found in Voltnest",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Voltridian",
+          "act": 2
         },
         {
           "id": "materium-snare-soul-bell-hermit",
@@ -583,8 +619,9 @@
           "icon": "completion/Hermit's_Soul.png",
           "flag": "Snare Soul Bell Hermit",
           "type": "materium",
-          "description": "Given by Bell Hermit during the Silk & Soul wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "description": "Given by Bell Hermit during the Silk and Soul wish",
+          "link": "https://hollowknight.wiki/w/Hermit's_Soul",
+          "act": 2
         },
         {
           "id": "materium-snare-soul-churchkeeper",
@@ -592,8 +629,9 @@
           "icon": "completion/Maiden's_Soul.png",
           "flag": "Snare Soul Churchkeeper",
           "type": "materium",
-          "description": "Given by Chapel Maid during the Silk & Soul wish",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "description": "Given by Chapel Maid during the Silk and Soul wish",
+          "link": "https://hollowknight.wiki/w/Maiden's_Soul",
+          "act": 2
         },
         {
           "id": "materium-snare-soul-swamp-bug",
@@ -602,7 +640,8 @@
           "flag": "Snare Soul Swamp Bug",
           "type": "materium",
           "description": "Found in Bilewater after defeating Groal the Great",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Seeker's_Soul",
+          "act": 2
         },
         {
           "id": "materium-coral-heart",
@@ -611,7 +650,8 @@
           "flag": "Coral Heart",
           "type": "materium",
           "description": "Awarded after defeating Crust King Khann in Coral Tower",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Encrusted_Heart",
+          "act": 3
         },
         {
           "id": "materium-flower-heart",
@@ -620,7 +660,8 @@
           "flag": "Flower Heart",
           "type": "materium",
           "description": "Awarded after defeating Nyleth in Shellwood",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Pollen_Heart",
+          "act": 3
         },
         {
           "id": "materium-hunter-heart",
@@ -629,7 +670,8 @@
           "flag": "Hunter Heart",
           "type": "materium",
           "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Hunter's_Heart",
+          "act": 3
         },
         {
           "id": "materium-clover-heart",
@@ -638,7 +680,8 @@
           "flag": "Clover Heart",
           "type": "materium",
           "description": "Awarded after defeating the Clover Dancers in Lost Verdania",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Conjoined_Heart",
+          "act": 3
         }
       ]
     },
@@ -656,7 +699,8 @@
           "flag": "Hunter Memento",
           "type": "relic",
           "description": "Given by the Hunter upon mastering his trials.",
-          "link": "https://hollowknight.wiki/w/Memento"
+          "link": "https://hollowknight.wiki/w/Hunter's_Memento",
+          "act": 1
         },
         {
           "id": "memento-grey",
@@ -665,7 +709,8 @@
           "flag": "Grey Memento",
           "type": "relic",
           "description": "Received from Grey after completing her personal quest.",
-          "link": "https://hollowknight.wiki/w/Memento"
+          "link": "https://hollowknight.wiki/w/Grey_Memento",
+          "act": 3
         },
         {
           "id": "memento-guardian",
@@ -674,25 +719,28 @@
           "flag": "Memento Seth",
           "type": "relic",
           "description": "A token awarded by the Guardian for triumph in the Flea Games.",
-          "link": "https://hollowknight.wiki/w/Memento"
+          "link": "https://hollowknight.wiki/w/Guardian's_Memento",
+          "act": 3
         },
         {
           "id": "memento-sprintmaster",
-          "label": "Sprintmaster's Memento",
+          "label": "Sprintmaster Memento",
           "icon": "completion/Memento_Sprintmaster.png",
           "flag": "Sprintmaster Memento",
           "type": "relic",
           "description": "Gifted by the Sprintmaster after proving unmatched agility.",
-          "link": "https://hollowknight.wiki/w/Memento"
+          "link": "https://hollowknight.wiki/w/Sprintmaster_Memento",
+          "act": 3
         },
         {
           "id": "memento-craw",
-          "label": "Craw's Memento",
+          "label": "Craw Memento",
           "icon": "completion/Memento_Craw.png",
           "flag": "Crowman Memento",
           "type": "relic",
           "description": "A keepsake found upon aiding Craw, a relic of quiet gratitude.",
-          "link": "https://hollowknight.wiki/w/Memento"
+          "link": "https://hollowknight.wiki/w/Craw_Memento",
+          "act": 3
         },
         {
           "id": "memento-heros",
@@ -701,7 +749,8 @@
           "flag": "Memento Garmond",
           "type": "relic",
           "description": "Awarded by Garmond - a symbol of perseverance through peril.",
-          "link": "https://hollowknight.wiki/w/Memento"
+          "link": "https://hollowknight.wiki/w/Hero's_Memento",
+          "act": 3
         },
         {
           "id": "memento-surface",
@@ -710,7 +759,8 @@
           "flag": "Memento Surface",
           "type": "relic",
           "description": "Awarded by Garmond - a symbol of perseverance through peril.",
-          "link": "https://hollowknight.wiki/w/Memento"
+          "link": "https://hollowknight.wiki/w/Surface_Memento",
+          "act": 3
         },
         {
           "id": "heart-flower",
@@ -719,8 +769,9 @@
           "flag": "Heart Flower",
           "type": "relic",
           "description": "Awarded after defeating Nyleth in Shellwood.",
-          "link": "https://hollowknight.wiki/w/Heart",
-          "missable": true
+          "link": "https://hollowknight.wiki/w/Pollen_Heart",
+          "missable": true,
+          "act": 3
         },
         {
           "id": "heart-coral",
@@ -729,8 +780,9 @@
           "flag": "Heart Coral",
           "type": "relic",
           "description": "Awarded after defeating Crust King Khann in Coral Tower.",
-          "link": "https://hollowknight.wiki/w/Heart",
-          "missable": true
+          "link": "https://hollowknight.wiki/w/Encrusted_Heart",
+          "missable": true,
+          "act": 3
         },
         {
           "id": "heart-hunter",
@@ -739,8 +791,9 @@
           "flag": "Heart Hunter",
           "type": "relic",
           "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields.",
-          "link": "https://hollowknight.wiki/w/Heart",
-          "missable": true
+          "link": "https://hollowknight.wiki/w/Hunter's_Heart",
+          "missable": true,
+          "act": 3
         },
         {
           "id": "heart-clover",
@@ -749,8 +802,9 @@
           "flag": "Clover Heart",
           "type": "relic",
           "description": "Awarded after defeating the Clover Dancers in Lost Verdania.",
-          "link": "https://hollowknight.wiki/w/Heart",
-          "missable": true
+          "link": "https://hollowknight.wiki/w/Conjoined_Heart",
+          "missable": true,
+          "act": 3
         }
       ]
     },
@@ -769,7 +823,8 @@
           "relatedFlag": "ConstructedMaterium",
           "icon": "completion/Materium_item.png",
           "description": "The Materium can be found in the upper part of the Memorium. The item must be constructed in the Bellhome in Bellhart before it can be used.",
-          "link": "https://hollowknight.wiki/w/Materium"
+          "link": "https://hollowknight.wiki/w/Materium",
+          "act": 2
         },
         {
           "id": "misc-farsight",
@@ -780,7 +835,8 @@
           "relatedFlag": "ConstructedFarsight",
           "icon": "completion/Farsight.png",
           "description": "Found in The Abyss, in the upper east passage of Weavenest Absolom. The item must be constructed in the Bellhome in Bellhart before it can be used.",
-          "link": "https://hollowknight.wiki/w/Farsight"
+          "link": "https://hollowknight.wiki/w/Farsight",
+          "act": 3
         }
       ]
     }

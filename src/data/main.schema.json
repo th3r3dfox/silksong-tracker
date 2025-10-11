@@ -37,7 +37,8 @@
                 "icon",
                 "type",
                 "description",
-                "link"
+                "link",
+                "act"
               ],
               "additionalProperties": false,
               "properties": {
@@ -85,7 +86,8 @@
                 },
                 "link": {
                   "type": "string",
-                  "format": "uri"
+                  "format": "uri",
+                  "pattern": "^[^\\s%]*$"
                 },
                 "map": {
                   "type": "string",

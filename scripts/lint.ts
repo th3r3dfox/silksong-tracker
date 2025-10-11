@@ -1,5 +1,8 @@
-import { getFilePathsInDirectory, lintCommands } from "complete-node";
+import { getFilePathsInDirectory, lintCommands, readFile } from "complete-node";
+import { globby } from "globby";
 import path from "path";
+
+const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 
 const CHECK_JSON_COMMANDS: readonly string[] = await (async () => {
   const repoRoot = path.join(import.meta.dirname, "..");
@@ -18,6 +21,43 @@ const CHECK_JSON_COMMANDS: readonly string[] = await (async () => {
   });
 })();
 
+async function checkForIllegalCharacters() {
+  const ignoredExtensions = ["otf", "png", "svg", "ttf", "woff2"];
+  const ignoredExtensionsGlob = ignoredExtensions.map(
+    (extension) => `**/*.${extension}`,
+  );
+  const ignore = [...ignoredExtensionsGlob, "scripts/lint.ts"]; // We must also ignore this file.
+  const filePaths = await globby("**", {
+    cwd: REPO_ROOT,
+    absolute: true,
+    gitignore: true,
+    ignore,
+  });
+
+  const fileInfos = await Promise.all(
+    filePaths.map(async (filePath) => {
+      return {
+        filePath,
+        fileContents: await readFile(filePath),
+      };
+    }),
+  );
+
+  const illegalCharacters = ["’", "—", "–"] as const;
+
+  for (const fileInfo of fileInfos) {
+    const { filePath, fileContents } = fileInfo;
+
+    for (const character of illegalCharacters) {
+      if (fileContents.includes(character)) {
+        throw new Error(
+          `The character of "${character}" is illegal in file: ${filePath}`,
+        );
+      }
+    }
+  }
+}
+
 await lintCommands(import.meta.dirname, [
   // Use TypeScript to type-check the code.
   "tsc --noEmit",
@@ -33,4 +73,7 @@ await lintCommands(import.meta.dirname, [
 
   // Ensure that the JSON files satisfy their schemas.
   ...CHECK_JSON_COMMANDS,
+
+  // Ensure that certain characters do not appear in any files.
+  ["check for illegal characters", checkForIllegalCharacters()],
 ]);

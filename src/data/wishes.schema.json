@@ -38,7 +38,8 @@
                 "flag",
                 "icon",
                 "description",
-                "link"
+                "link",
+                "act"
               ],
               "additionalProperties": false,
               "properties": {
@@ -64,7 +65,8 @@
                 },
                 "link": {
                   "type": "string",
-                  "format": "uri"
+                  "format": "uri",
+                  "pattern": "^[^\\s%]*$"
                 },
                 "subtype": {
                   "type": "string",

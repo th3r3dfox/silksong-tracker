@@ -2,9 +2,7 @@
 
 ## 1. Overview
 
-Silksong Tracker is a browser-based web application that analyzes and visualizes save files from _Hollow Knight: Silksong_.
-It decodes encrypted `.dat` files locally in the browser, extracts progression data, and displays it in an interactive interface.
-All operations occur locally, ensuring privacy and data safety.
+Silksong Tracker is a browser-based web application that analyzes and visualizes save files from _Hollow Knight: Silksong_. It decodes encrypted `.dat` files locally in the browser, extracts progression data, and displays it in an interactive interface. All operations occur locally, ensuring privacy and data safety.
 
 ## 2. Architecture
 
@@ -35,17 +33,11 @@ silksong-tracker/
 
 1. The user uploads a `.dat` save file via the “Upload Save” button or drag-and-drop zone.
 2. The file is read using the File API and converted to a `Uint8Array`.
-3. The bytes are passed to the decoder:
-
-```js
-import { decodeSilksongSave } from "./SaveDecoder.js";
-const saveData = decodeSilksongSave(fileBytes);
-```
+3. The bytes are passed to the decoder, which returns a JavaScript object.
 
 ### 3.2 Save Decoding (`SaveDecoder.js`)
 
-The Silksong save file is a C# serialized, AES-encrypted, and zlib-compressed binary.
-Decoding happens in four main steps:
+The Silksong save file is a C# serialized, AES-encrypted, and zlib-compressed binary. Decoding happens in four main steps:
 
 | Step | Function              | Description                                            |
 | ---- | --------------------- | ------------------------------------------------------ |
@@ -54,31 +46,30 @@ Decoding happens in four main steps:
 | 3    | AES decryption        | Decrypts using a static key defined in `constants.js`. |
 | 4    | Decompression         | Inflates the zlib data using Pako and parses JSON.     |
 
-**Example constants (`constants.js`):**
-
-```js
-export const AES_KEY_STRING = "UKu52ePUBwetZ9wNX88o54dnfKRu0T1l";
-export const CSHARP_HEADER = new Uint8Array([
-  0, 1, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 0,
-]);
-```
-
 **Decoded output example:**
 
 ```js
 {
   "hasDash": true,
-  "Heart Piece": { "Dock_08": true, "Weave_05b": false },
-  "Silk Spool": { "Bone_11b": true },
+  "Heart Piece": {
+    "Dock_08": true,
+    "Weave_05b": false
+  },
+  "Silk Spool": {
+    "Bone_11b": true
+  },
   "PlayTime": 17482,
   "Completion": 58.25
 }
 ```
 
-### 3.3 Data Correlation and Rendering (`script.js`)
+### 3.3 Save Parsing
 
-Static data from `data/main.json` and `data/bosses.json` defines all trackable items.
-Each JSON entry includes a flag and logic to determine if it's completed or missing.
+The object is passed to the parser, which validates that it has the correct fields using Zod.
+
+### 3.4 Data Correlation and Rendering
+
+Static data from JSON files in the "data" directory define all trackable items. Each JSON entry includes a flag and logic to determine if it completed or missing.
 
 **Example:**
 

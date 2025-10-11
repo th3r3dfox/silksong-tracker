@@ -1,7 +1,7 @@
 import type { ReadonlyRecord } from "complete-common";
 import { assertString, isArray, isObject } from "complete-common";
 import { z } from "zod";
-import { normalizeStringWithUnderscores } from "./utils.js";
+import { normalizeStringWithUnderscores } from "./utils.ts";
 
 export const objectWithSavedData = z.object({
   savedData: z.array(

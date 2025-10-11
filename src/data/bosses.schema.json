@@ -78,7 +78,8 @@
                 },
                 "link": {
                   "type": "string",
-                  "format": "uri"
+                  "format": "uri",
+                  "pattern": "^[^\\s%]*$"
                 },
                 "missable": {
                   "type": "boolean",

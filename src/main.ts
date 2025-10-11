@@ -7,9 +7,10 @@ import {
   assertNotNull,
   assertObject,
   isObject,
+  parseIntSafe,
 } from "complete-common";
 import { z } from "zod";
-import { BASE_PATH } from "./constants";
+import { BASE_PATH } from "./constants.ts";
 import bossesJSON from "./data/bosses.json" with { type: "json" };
 import completionJSON from "./data/completion.json" with { type: "json" };
 import essentialsJSON from "./data/essentials.json" with { type: "json" };
@@ -44,10 +45,7 @@ import {
   spoilerToggle,
   uploadOverlay,
 } from "./elements.js";
-import type { Category } from "./interfaces/Category.ts";
-import type { Item } from "./interfaces/Item.ts";
-import type { Mode } from "./interfaces/Mode.ts";
-import { decodeSilksongSave } from "./save-decoder.js";
+import { decodeSilksongSave } from "./save-decoder.ts";
 import {
   getSaveFileFlags,
   parseSilksongSave,
@@ -55,6 +53,10 @@ import {
   type ObjectWithSavedData,
   type SilksongSave,
 } from "./save-parser.js";
+import type { Act } from "./types/Act.ts";
+import type { Category } from "./types/Category.ts";
+import type { Item } from "./types/Item.ts";
+import type { Mode } from "./types/Mode.ts";
 import {
   getIconPath,
   normalizeString,
@@ -68,12 +70,10 @@ console.log(
 let tocObserver: IntersectionObserver | undefined;
 
 // --- Act Dropdown Logic (modern multi-select with checkboxes) ---
-const dropdownBtn = actDropdownBtn;
-const dropdownMenu = actDropdownMenu;
 
 // Toggle menu visibility
-dropdownBtn.addEventListener("click", () => {
-  dropdownMenu.classList.toggle("hidden");
+actDropdownBtn.addEventListener("click", () => {
+  actDropdownMenu.classList.toggle("hidden");
 });
 
 // Close dropdown if user clicks outside.
@@ -82,16 +82,18 @@ document.addEventListener("click", (event) => {
   if (
     target !== null
     && target instanceof Node
-    && !dropdownBtn.contains(target)
-    && !dropdownMenu.contains(target)
+    && !actDropdownBtn.contains(target)
+    && !actDropdownMenu.contains(target)
   ) {
-    dropdownMenu.classList.add("hidden");
+    actDropdownMenu.classList.add("hidden");
   }
 });
 
 // Handle "Select All / Deselect All"
 actClearBtn.addEventListener("click", () => {
-  const checkboxes = dropdownMenu.querySelectorAll("input[type='checkbox']");
+  const checkboxes = actDropdownMenu.querySelectorAll<HTMLInputElement>(
+    "input[type='checkbox']",
+  );
   const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
   checkboxes.forEach((cb) => (cb.checked = !allChecked));
   actClearBtn.textContent = allChecked ? "Select All" : "Deselect All";
@@ -99,46 +101,81 @@ actClearBtn.addEventListener("click", () => {
 });
 
 // Update filter when any checkbox changes
-dropdownMenu.querySelectorAll("input[type='checkbox']").forEach((cb) => {
+actDropdownMenu.querySelectorAll("input[type='checkbox']").forEach((cb) => {
   cb.addEventListener("change", updateActFilter);
 });
 
 // Restore state on load
 window.addEventListener("DOMContentLoaded", () => {
-  try {
-    const savedActs = JSON.parse(localStorage.getItem("currentActFilter")) || [
-      1, 2, 3,
-    ];
-    dropdownMenu.querySelectorAll("input[type='checkbox']").forEach((cb) => {
-      cb.checked = savedActs.includes(parseInt(cb.value));
-    });
-  } catch {
-    console.warn("Invalid saved Act filter, resetting to all acts.");
+  const actFilter = getCurrentActFilter();
+  const checkboxesList = actDropdownMenu.querySelectorAll<HTMLInputElement>(
+    "input[type='checkbox']",
+  );
+  const checkboxes = Array.from(checkboxesList);
+
+  for (const checkbox of checkboxes) {
+    const act = parseIntSafe(checkbox.value);
+    assertDefined(act, "Failed to parse an act number from a checkbox.");
+    if (act !== 1 && act !== 2 && act !== 3) {
+      throw new TypeError(`An act checkbox has an invalid value: ${act}`);
+    }
+    checkbox.checked = actFilter.includes(act);
   }
 });
 
-// Core update function
-async function updateActFilter() {
-  const selectedActs = Array.from(
-    dropdownMenu.querySelectorAll("input[type='checkbox']:checked"),
-  ).map((cb) => parseInt(cb.value));
+function getCurrentActFilter(): readonly Act[] {
+  const defaultActFilter = [1, 2, 3] as const;
+  const currentActFilterString = localStorage.getItem("currentActFilter");
+  if (currentActFilterString === null) {
+    return defaultActFilter;
+  }
 
-  // Save selection
-  localStorage.setItem("currentActFilter", JSON.stringify(selectedActs));
+  try {
+    const currentActFilter = JSON.parse(currentActFilterString) as unknown;
+    assertArray(
+      currentActFilter,
+      `The "currentActFilter" value must be an array instead of: ${currentActFilterString}`,
+    );
 
-  console.log("Selected Acts:", selectedActs);
-  await reRenderActiveTab(); // 🔁 Update the active tab immediately
+    const arrayValid = currentActFilter.every((act) => {
+      return act === 1 || act === 2 || act === 3;
+    });
+    if (!arrayValid) {
+      throw new TypeError(
+        `The "currentActFilter" value must be an array of valid acts instead of: ${currentActFilterString}`,
+      );
+    }
+
+    return currentActFilter;
+  } catch (error) {
+    console.warn(error);
+    console.warn(`Defaulting to all acts."`);
+    return defaultActFilter;
+  }
 }
 
-function getSelectedActs() {
-  try {
-    const saved = JSON.parse(localStorage.getItem("currentActFilter")) || [
-      1, 2, 3,
-    ];
-    return Array.isArray(saved) ? saved : [1, 2, 3];
-  } catch {
-    return [1, 2, 3];
-  }
+// Core update function
+async function updateActFilter() {
+  const checkboxesList = actDropdownMenu.querySelectorAll<HTMLInputElement>(
+    "input[type='checkbox']:checked",
+  );
+  const checkboxes = Array.from(checkboxesList);
+  const selectedActs = checkboxes.map((checkbox) => {
+    const { value } = checkbox;
+    const act = parseIntSafe(checkbox.value);
+    assertDefined(act, `Failed to parse the value of a checkbox: ${value}`);
+    if (act !== 1 && act !== 2 && act !== 3) {
+      throw new TypeError(`Invalid act checkbox value: ${value}`);
+    }
+
+    return act;
+  });
+
+  // Save selection
+  const selectedActsString = JSON.stringify(selectedActs);
+  localStorage.setItem("currentActFilter", selectedActsString);
+
+  await reRenderActiveTab();
 }
 
 let currentLoadedSaveData: z.infer<typeof silksongSaveSchema> | undefined;
@@ -749,7 +786,7 @@ function renderGenericGrid({
     if (item.missable) {
       const warn = document.createElement("span");
       warn.className = "missable-icon";
-      warn.title = "Missable item – can be permanently lost";
+      warn.title = "Missable item - can be permanently lost";
       warn.textContent = "!";
       div.appendChild(warn);
     }
@@ -1214,11 +1251,15 @@ async function updateAllProgressContent(selectedAct = "all") {
       let items = category.items;
       assertArray(items, 'The "items" field must be an array.');
 
-      const selectedActs = getSelectedActs();
+      const currentActFilter = getCurrentActFilter(); // TODO
       let filteredItems = items.filter((item) => {
-        if (selectedActs.length === 0 || selectedActs.length === 3)
-          return matchMode(item); // "tutti"
-        return selectedActs.includes(item.act) && matchMode(item);
+        if (currentActFilter.length === 0 || currentActFilter.length === 3) {
+          return matchMode(item); // everyone
+        }
+
+        // TODO: Currently bugged, because every item does not have an act yet.
+        // Delete the above length check afterwards, since it would be superfluous.
+        return currentActFilter.includes(item.act) && matchMode(item);
       });
 
       if (showMissingOnly && currentLoadedSaveData) {
@@ -1547,11 +1588,11 @@ async function reRenderActiveTab() {
   );
 
   // ✅ Get selected acts (supports multi-select)
-  const selectedActs = getSelectedActs();
+  const currentActFilter = getCurrentActFilter();
   const showMissingOnly = missingToggle.checked;
 
   // ✅ Save current state
-  localStorage.setItem("currentActFilter", JSON.stringify(selectedActs));
+  localStorage.setItem("currentActFilter", JSON.stringify(currentActFilter));
   localStorage.setItem("showMissingOnly", showMissingOnly.toString());
 
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
