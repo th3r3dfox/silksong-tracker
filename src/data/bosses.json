@@ -24,7 +24,7 @@
           "icon": "boss/Bell_Eater.png",
           "flag": "bellCentipedeAppeared",
           "description": "Bell Eater can be found in any Bellway Station after the beginning of Act 3. When calling the Bell Beast, the Bell Eater will instead pop its head out of the ground before returning to the Bellways.",
-          "link": "https://hollowknight.wiki/w/bell-eater",
+          "link": "https://hollowknight.wiki/w/Bell_Eater",
           "type": "boss"
         },
         {
@@ -34,7 +34,7 @@
           "icon": "boss/Broodmother.png",
           "flag": "defeatedBroodMother",
           "description": "Broodmother can be found in a cave in the Slab after accepting a Grand Hunt quest in Songclave. ",
-          "link": "https://hollowknight.wiki/w/broodmother",
+          "link": "https://hollowknight.wiki/w/Broodmother",
           "type": "boss"
         },
         {
@@ -54,7 +54,7 @@
           "icon": "boss/Crawfather.png",
           "flag": "defeatedCrowCourt",
           "description": "Crawfather can be found in Greymoor, in the basement of the large building in Craw Lake. Once Hornet obtains the Craw Summons and presents it to the door inside the building, she can head down into the Craw Court.",
-          "link": "https://hollowknight.wiki/w/crawfather",
+          "link": "https://hollowknight.wiki/w/Crawfather",
           "type": "boss"
         },
         {
@@ -64,7 +64,7 @@
           "icon": "boss/Crust_King_Khann.png",
           "flag": "defeatedCoralKing",
           "description": "Crust King Khann can be found atop the Coral Tower after using Elegy of the Deep on his corpse in the west of Sands of Karak. ",
-          "link": "https://hollowknight.wiki/w/crust-king-khann",
+          "link": "https://hollowknight.wiki/w/Crust_King_Khann",
           "type": "boss"
         },
         {
@@ -74,7 +74,7 @@
           "icon": "boss/Disgraced_Chef_Lugoli.png",
           "flag": "defeatedRoachkeeperChef",
           "description": "Eastern end of Sinner's Road, requires Faydown Cloak. ",
-          "link": "https://hollowknight.wiki/w/disgraced-chef-lugoli",
+          "link": "https://hollowknight.wiki/w/Disgraced_Chef_Lugoli",
           "type": "boss"
         },
         {
@@ -84,7 +84,7 @@
           "icon": "boss/Father_of_the_Flame.png",
           "flag": "defeatedWispPyreEffigy",
           "description": "Father of the Flame can be found in Wisp Thicket. ",
-          "link": "https://hollowknight.wiki/w/father-of-the-flame",
+          "link": "https://hollowknight.wiki/w/Father_of_the_Flame",
           "type": "boss"
         },
         {
@@ -94,7 +94,7 @@
           "icon": "boss/First_Sinner.png",
           "flag": "defeatedFirstWeaver",
           "description": "First Sinner can be found in the lower area of the Slab, accessible after obtaining the Key of Apostate. ",
-          "link": "https://hollowknight.wiki/w/first-sinner",
+          "link": "https://hollowknight.wiki/w/First_Sinner",
           "type": "boss"
         },
         {
@@ -104,7 +104,7 @@
           "icon": "boss/Forebrothers_Signis_&_Gron.png",
           "flag": "defeatedDockForemen",
           "description": "Forebrothers Signis & Gron can be found in the southern region of Deep Docks. The route to them is barred by a locked door that can only be opened by hanging on the nearby Clawline hook. Hornet must then navigate across the lower Deep Docks, dodging around Gron's attacks before finally reaching their arena",
-          "link": "https://hollowknight.wiki/w/forebrothers-signis-gron",
+          "link": "https://hollowknight.wiki/w/Forebrothers_Signis_&_Gron",
           "type": "boss"
         },
         {
@@ -114,7 +114,7 @@
           "icon": "boss/Fourth_Chorus.png",
           "flag": "defeatedSongGolem",
           "description": "Fourth Chorus is found in a large central area of the Far Fields. ",
-          "link": "https://hollowknight.wiki/w/fourth-chorus",
+          "link": "https://hollowknight.wiki/w/Fourth_Chorus",
           "type": "boss"
         },
         {
@@ -127,7 +127,7 @@
           "subtype": "kills",
           "required": 1,
           "description": "They can be first met in Greymoor, in a small outcropping to the upper left of the Bellway Station. They can also be seen in Sinner's Road briefly, in the long room right above where Disgraced Chef Lugoli can be found, having beaten a Roachkeeper. In Act 3, they can be found in The Marrow, Mosshome, Far Fields, Greymoor, Sinner's Road, Shellwood, or Blasted Steps. ",
-          "link": "https://hollowknight.wiki/w/garmond-and-zaza",
+          "link": "https://hollowknight.wiki/w/Garmond_and_Zaza",
           "missable": true
         },
         {
@@ -140,7 +140,7 @@
           "subtype": "kills",
           "required": 1,
           "description": "Grand Mother Silk is located at the top of The Cradle which is unlocked after defeating Lace in her second encounter. ",
-          "link": "https://hollowknight.wiki/w/grand-mother-silk"
+          "link": "https://hollowknight.wiki/w/Grand_Mother_Silk"
         },
         {
           "id": "great_conchflies",
@@ -149,7 +149,7 @@
           "icon": "boss/Great_Conchflies.png",
           "flag": "defeatedCoralDrillers",
           "description": "The Great Conchflies can be found below the Blasted Steps Bellway, west of the central tall room, the entrance marked by a blue banner displaying crossed pins. ",
-          "link": "https://hollowknight.wiki/w/great-conchflies",
+          "link": "https://hollowknight.wiki/w/Great_Conchflies",
           "type": "boss"
         },
         {
@@ -159,7 +159,7 @@
           "icon": "boss/Groal_the_Great.png",
           "flag": "DefeatedSwampShaman",
           "description": "Bilehaven, in the upper area of Bilewater.",
-          "link": "https://hollowknight.wiki/w/groal-the-great",
+          "link": "https://hollowknight.wiki/w/Groal_the_Great",
           "type": "boss"
         },
         {
@@ -169,7 +169,7 @@
           "icon": "boss/Gurr_the_Outcast.png",
           "flag": "defeatedAntTrapper",
           "description": "Gurr the Outcast can be found in Far Fields after promising the The Hidden Hunter Wish. ",
-          "link": "https://hollowknight.wiki/w/gurr-the-outcast",
+          "link": "https://hollowknight.wiki/w/Gurr_the_Outcast",
           "type": "boss"
         },
         {
@@ -179,7 +179,7 @@
           "icon": "boss/Lace.png",
           "flag": "defeatedLace1",
           "description": "Lace's first encounter is within the Deep Docks.",
-          "link": "https://hollowknight.wiki/w/lace",
+          "link": "https://hollowknight.wiki/w/Lace",
           "type": "boss"
         },
         {
@@ -189,7 +189,7 @@
           "icon": "boss/Last_Judge.png",
           "flag": "defeatedLastJudge",
           "description": "The Last Judge is located in the north east of the Blasted Steps. All five Bellshrines must be activated before The Last Judge can be fought. ",
-          "link": "https://hollowknight.wiki/w/last-judge",
+          "link": "https://hollowknight.wiki/w/Last_Judge",
           "type": "boss"
         },
         {
@@ -199,7 +199,7 @@
           "icon": "boss/Moorwing.png",
           "flag": "defeatedVampireGnatBoss",
           "description": "It is typically fought at the west edge of Greymoor, guarding the entrance to Bellhart. If skipped, it can later be fought west of the Greymoor Bellway instead. ",
-          "link": "https://hollowknight.wiki/w/moorwing",
+          "link": "https://hollowknight.wiki/w/Moorwing",
           "type": "boss"
         },
         {
@@ -209,7 +209,7 @@
           "icon": "boss/Moss_Mother.png",
           "flag": "defeatedMossMother",
           "description": "Moss Mother is found in the Ruined Chapel, a sub-area of the Moss Grotto, and in a hidden section of Weavenest Atla. One can also be found within Moss Grotto itself, corrupted by Void in Act 3. ",
-          "link": "https://hollowknight.wiki/w/moss-mother",
+          "link": "https://hollowknight.wiki/w/Moss_Mother",
           "type": "boss"
         },
         {
@@ -219,7 +219,7 @@
           "icon": "boss/Nyleth.png",
           "flag": "defeatedFlowerQueen",
           "description": "Nyleth is found in a section behind a breakable wall on the left of the lift shaft of the Grand Gate. To access her, Shrine Guardian Seth must first be defeated.",
-          "link": "https://hollowknight.wiki/w/nyleth",
+          "link": "https://hollowknight.wiki/w/Nyleth",
           "type": "boss"
         },
         {
@@ -229,7 +229,7 @@
           "icon": "boss/Palestag.png",
           "flag": "defeatedWhiteCloverstag",
           "description": "The Palestag can be found in Lost Verdania. ",
-          "link": "https://hollowknight.wiki/w/palestag",
+          "link": "https://hollowknight.wiki/w/Palestag",
           "missable": true,
           "type": "boss"
         },
@@ -240,7 +240,7 @@
           "icon": "boss/Phantom.png",
           "flag": "defeatedPhantom",
           "description": "The Phantom can be found in Exhaust Organ, in Bilewater, accessed through The Mist in Sinner's Road from the west or Bilewater from the east. ",
-          "link": "https://hollowknight.wiki/w/phantom",
+          "link": "https://hollowknight.wiki/w/Phantom",
           "type": "boss"
         },
         {
@@ -250,7 +250,7 @@
           "icon": "boss/Pinstress.png",
           "flag": "PinstressPeakBattleAccepted",
           "description": "Pinstress can be found west of the Great Conchflies boss area in Blasted Steps. From the boss area, travel west. Her floating home will be found near the western edge of a large outdoor area. During Fatal Resolve, she can be found in Mount Fay, in the same area as the bench halfway up the mountain",
-          "link": "https://hollowknight.wiki/w/pinstress",
+          "link": "https://hollowknight.wiki/w/Pinstress",
           "type": "boss"
         },
         {
@@ -263,7 +263,7 @@
           "subtype": "kills",
           "required": 1,
           "description": "Plasmified Zango can be found in a secret room within western Wormways during Act 3. ",
-          "link": "https://hollowknight.wiki/w/plasmified-zango"
+          "link": "https://hollowknight.wiki/w/Plasmified_Zango"
         },
         {
           "id": "savage_beastfly",
@@ -272,7 +272,7 @@
           "icon": "boss/Savage_Beastfly.png",
           "flag": "defeatedBoneFlyerGiant",
           "description": "Savage Beastfly can be found in Hunter's March and in Far Fields, where Fourth Chorus was fought, during the Savage Beastfly Wish. ",
-          "link": "https://hollowknight.wiki/w/savage-beastfly",
+          "link": "https://hollowknight.wiki/w/Savage_Beastfly",
           "type": "boss"
         },
         {
@@ -282,7 +282,7 @@
           "icon": "boss/Second_Sentinel.png",
           "flag": "defeatedSongChevalierBoss",
           "description": "Second Sentinel first appears as a statue in the west portion of the Cogwork Core.",
-          "link": "https://hollowknight.wiki/w/second-sentinel",
+          "link": "https://hollowknight.wiki/w/Second_Sentinel",
           "type": "boss"
         },
         {
@@ -295,7 +295,7 @@
           "subtype": "kills",
           "required": 1,
           "description": "Once the Wish Trail's End is completed, Shakra can be met just outside the Greymoor entrance to Bellhart by ringing her post, where she will challenge Hornet to a friendly duel",
-          "link": "https://hollowknight.wiki/w/shakra",
+          "link": "https://hollowknight.wiki/w/Shakra",
           "missable": true
         },
         {
@@ -305,7 +305,7 @@
           "icon": "boss/Shrine_Guardian_Seth.png",
           "flag": "defeatedSeth",
           "description": "Seth is fought in a hidden area in Grand Gate, accessed through a breakable wall in the lift shaft. After his defeat, he becomes an NPC that will visit Greymoor, Shellwood, Grand Gate (if the Everbloom has not been obtained), and lastly Fleatopia.",
-          "link": "https://hollowknight.wiki/w/shrine-guardian-seth",
+          "link": "https://hollowknight.wiki/w/Shrine_Guardian_Seth",
           "type": "boss"
         },
         {
@@ -315,7 +315,7 @@
           "icon": "boss/Sister_Splinter.png",
           "flag": "defeatedSplinterQueen",
           "description": "Sister Splinter is a boss located at the top of Shellwood. ",
-          "link": "https://hollowknight.wiki/w/sister-splinter",
+          "link": "https://hollowknight.wiki/w/Sister_Splinter",
           "type": "boss"
         },
         {
@@ -325,7 +325,7 @@
           "icon": "boss/Skarrsinger_Karmelita.png",
           "flag": "defeatedAntQueen",
           "description": "Skarrsinger Karmelita is found in the northeast of Far Fields. The path to her starts at her statue in Hunter's March in a hidden passage requiring the Silk Soar skill to enter.",
-          "link": "https://hollowknight.wiki/w/skarrsinger-karmelita",
+          "link": "https://hollowknight.wiki/w/Skarrsinger_Karmelita",
           "type": "boss"
         },
         {
@@ -335,7 +335,7 @@
           "icon": "boss/Skull_Tyrant.png",
           "flag": "skullKingDefeated",
           "description": "Skull Tyrant can be found in The Marrow. A second one may appear in Bone Bottom.",
-          "link": "https://hollowknight.wiki/w/skull-tyrant",
+          "link": "https://hollowknight.wiki/w/Skull_Tyrant",
           "type": "boss"
         },
         {
@@ -358,7 +358,7 @@
           "icon": "boss/The_Unravelled.png",
           "flag": "wardBossDefeated",
           "description": "The Unravelled can be found in a locked room in the south-west of Whiteward, requiring Surgeon's Key to access. ",
-          "link": "https://hollowknight.wiki/w/the-unravelled",
+          "link": "https://hollowknight.wiki/w/The_Unravelled",
           "type": "boss"
         },
         {
@@ -368,7 +368,7 @@
           "icon": "boss/Trobbio.png",
           "flag": "defeatedTrobbio",
           "description": "Trobbio is located in The Stage between Choral Chambers and Whispering Vaults.",
-          "link": "https://hollowknight.wiki/w/trobbio",
+          "link": "https://hollowknight.wiki/w/Trobbio",
           "type": "boss"
         },
         {
@@ -378,7 +378,7 @@
           "icon": "boss/Voltvyrm.png",
           "flag": "defeatedZapCoreEnemy",
           "description": "Voltvyrm is found in Voltnest within Sands of Karak. ",
-          "link": "https://hollowknight.wiki/w/voltvyrm",
+          "link": "https://hollowknight.wiki/w/Voltvyrm",
           "type": "boss"
         },
         {
@@ -398,7 +398,7 @@
           "icon": "boss/Widow.png",
           "flag": "spinnerDefeated",
           "description": "Widow can be found in Bellhart above the town after entering and traversing the Bell Veins area. The entrance is found in the upper right corner of Shellwood, though an additional route - just to the right of Shellwood's right-most bench - can be unlocked after reaching the tunnel above Widow's arena. ",
-          "link": "https://hollowknight.wiki/w/widow",
+          "link": "https://hollowknight.wiki/w/Widow",
           "type": "boss"
         }
       ]
@@ -416,7 +416,7 @@
           "icon": "boss/Clover_Dancers.png",
           "flag": "defeatedCloverDancers",
           "description": "The Clover Dancers are encountered at the very top of Lost Verdania, after collecting 12 memory orbs throughout the map.",
-          "link": "https://hollowknight.wiki/w/clover-dancers",
+          "link": "https://hollowknight.wiki/w/Clover_Dancers",
           "type": "boss"
         },
         {
@@ -426,7 +426,7 @@
           "icon": "boss/Lost_Garmond.png",
           "flag": "garmondBlackThreadDefeated",
           "description": "Lost Garmond can be found in the Blasted Steps, in a room west of the Bellway. He can only be fought during the Hero's Call wish.",
-          "link": "https://hollowknight.wiki/w/lost-garmond",
+          "link": "https://hollowknight.wiki/w/Lost_Garmond",
           "type": "boss"
         },
         {
@@ -439,7 +439,7 @@
           "subtype": "kills",
           "required": 1,
           "description": "Lost Lace is located in The Abyss, under the vast Void Ocean that lies within. The Everbloom is required to be able to access it.",
-          "link": "https://hollowknight.wiki/w/lost-lace"
+          "link": "https://hollowknight.wiki/w/Lost_Lace"
         },
         {
           "id": "raging_conchfly",
@@ -448,7 +448,7 @@
           "icon": "boss/Great_Conchfly.png",
           "flag": "defeatedCoralDrillerSolo",
           "description": "The Raging Conchfly boss can be found in the north-west area of the Sands of Karak.",
-          "link": "https://hollowknight.wiki/w/raging-conchfly",
+          "link": "https://hollowknight.wiki/w/Raging_Conchfly",
           "type": "boss"
         },
         {
@@ -458,7 +458,7 @@
           "icon": "boss/Tormented_Trobbio.png",
           "flag": "defeatedTormentedTrobbio",
           "description": "Tormented Trobbio is located in the Stage, after promising the Pain, Anguish and Misery wish.",
-          "link": "https://hollowknight.wiki/w/tormented-trobbio",
+          "link": "https://hollowknight.wiki/w/Tormented_Trobbio",
           "type": "boss"
         }
       ]

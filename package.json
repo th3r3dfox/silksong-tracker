@@ -18,7 +18,7 @@
     "start": "vite dev"
   },
   "dependencies": {
-    "complete-common": "2.6.0",
+    "complete-common": "2.7.0",
     "crypto-js": "4.2.0",
     "zod": "4.1.12"
   },
@@ -28,6 +28,7 @@
     "ajv-formats": "3.0.1",
     "complete-lint": "4.2.1",
     "complete-node": "12.2.0",
+    "globby": "15.0.0",
     "tsx": "4.20.6",
     "vite": "7.1.9"
   }

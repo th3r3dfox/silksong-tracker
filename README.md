@@ -22,9 +22,9 @@ All data is processed **locally in your browser** - your save file is never uplo
 4. Select your save file.
 5. The tracker will decode the save and display the progress by category.
 
-## Technical Details
+## Technical Overview
 
-An explanation of the project architecture, decoding logic, and data model is available here: [docs/TECHNICAL_DOCUMENTATION.md](docs/TECHNICAL_DOCUMENTATION.md)
+You can read a [technical overview](docs/overview.md) of the project on a separate page.
 
 ## Development / Contributing
 

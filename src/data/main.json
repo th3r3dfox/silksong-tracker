@@ -1083,7 +1083,7 @@
           "type": "tool",
           "act": 2,
           "description": "Found on a crafting table in the southwest of the Underworks.",
-          "link": "https://hollowknight.wiki/w/Delver%27s_Drill",
+          "link": "https://hollowknight.wiki/w/Delver's_Drill",
           "map": ""
         },
         {
@@ -1180,7 +1180,7 @@
           "type": "tool",
           "act": 1,
           "description": "Reward for completing the Berry Picking Wish.",
-          "link": "https://hollowknight.wiki/w/Druid%27s_Eye",
+          "link": "https://hollowknight.wiki/w/Druid's_Eye",
           "map": ""
         },
         {
@@ -1191,7 +1191,7 @@
           "type": "tool",
           "act": 3,
           "description": "Bring 4 additional Mossberries to Moss Druid after completing the Berry Picking Wish. Replaces the Druid's Eye.",
-          "link": "https://hollowknight.wiki/w/Druid%27s_Eyes",
+          "link": "https://hollowknight.wiki/w/Druid's_Eyes",
           "map": "",
           "upgradeOf": "blue-druids-eye"
         },
@@ -1487,7 +1487,7 @@
           "type": "tool",
           "act": 1,
           "description": "Found in the Wormways.",
-          "link": "https://hollowknight.wiki/w/Dead_Bug%27s_Purse",
+          "link": "https://hollowknight.wiki/w/Dead_Bug's_Purse",
           "map": "",
           "mode": "normal"
         },
@@ -1533,7 +1533,7 @@
           "type": "tool",
           "act": 2,
           "description": "Purchased from Jubilana for 350 rosaries. ",
-          "link": "https://hollowknight.wiki/w/Ascendant%27s_Grip",
+          "link": "https://hollowknight.wiki/w/Ascendant's_Grip",
           "map": ""
         },
         {
@@ -1566,7 +1566,7 @@
           "type": "tool",
           "act": 1,
           "description": "Purchased from Grindle for 350 rosaries.",
-          "link": "https://hollowknight.wiki/w/Thief%27s_Mark",
+          "link": "https://hollowknight.wiki/w/Thief's_Mark",
           "map": ""
         }
       ]

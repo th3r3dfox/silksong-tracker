@@ -560,7 +560,7 @@ a:hover {
 #home-section {
   position: fixed; /* stays fixed on screen */
   inset: 0; /* covers entire screen */
-  background-image: url("../icons/sfondo1.PNG");
+  background-image: url("../icons/sfondo1.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

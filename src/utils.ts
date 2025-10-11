@@ -1,5 +1,5 @@
-import { BASE_PATH } from "./constants";
-import type { Item } from "./interfaces/Item";
+import { BASE_PATH } from "./constants.ts";
+import type { Item } from "./types/Item.ts";
 
 /** Helper function to lower case a string, replace all whitespace with a single space, and trim. */
 export function normalizeString(string: string): string {
