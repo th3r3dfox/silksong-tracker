@@ -411,9 +411,7 @@ function getSaveDataValue(
       return Amount ?? 0;
     }
 
-    case "tool":
-    case "toolEquip":
-    case "crest": {
+    case "tool": {
       const { flag } = item;
       const normalizedFlag = normalizeString(flag);
 
@@ -509,8 +507,7 @@ function getSaveDataValue(
     }
 
     // Numeric progressions (Needle, ToolPouchUpgrades, ToolKitUpgrades, etc.)
-    case "level":
-    case "min": {
+    case "level": {
       const { flag } = item;
 
       // ✅ always return the number, unlock is calculated later
@@ -745,10 +742,7 @@ function renderGenericGrid({
     let isAccepted = false;
 
     switch (item.type) {
-      case "level":
-      case "region-level":
-      case "min":
-      case "region-min": {
+      case "level": {
         const current = value === undefined ? 0 : Number(value);
         isDone = current >= (item.required ?? 0);
         break;
@@ -1281,13 +1275,15 @@ async function updateAllProgressContent(selectedAct = "all") {
             currentLoadedSaveDataFlags,
             item,
           );
-          if (item.type === "collectable") return (value ?? 0) === 0;
-          if (
-            ["level", "min", "region-level", "region-min"].includes(item.type)
-          )
+          if (item.type === "collectable") {
+            return (value ?? 0) === 0;
+          }
+          if (item.type === "level") {
             return (value ?? 0) < (item.required ?? 0);
-          if (item.type === "quest")
+          }
+          if (item.type === "quest") {
             return value !== "completed" && value !== true;
+          }
           return value !== true;
         });
       }
@@ -1338,7 +1334,7 @@ async function updateAllProgressContent(selectedAct = "all") {
         const isUnlocked =
           item.type === "quest"
             ? value === "completed" || value === true
-            : ["level", "min", "region-level", "region-min"].includes(item.type)
+            : item.type === "level"
               ? (value ?? 0) >= (item.required ?? 0)
               : item.type === "collectable"
                 ? (value ?? 0) > 0
