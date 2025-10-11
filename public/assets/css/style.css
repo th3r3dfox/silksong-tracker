@@ -560,7 +560,7 @@ a:hover {
 #home-section {
   position: fixed; /* stays fixed on screen */
   inset: 0; /* covers entire screen */
-  background-image: url("../assets/icons/sfondo1.PNG");
+  background-image: url("../icons/sfondo1.PNG");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1595,7 +1595,7 @@ input[type="checkbox"]:hover {
 html,
 body {
   cursor:
-    url("../assets/misc/Cursor_32px.png") 8 8,
+    url("../misc/Cursor_32px.png") 8 8,
     auto;
 }
 
@@ -1606,7 +1606,7 @@ button,
 .sidebar-item,
 .icon-btn {
   cursor:
-    url("../assets/misc/Cursor_32px.png") 8 8,
+    url("../misc/Cursor_32px.png") 8 8,
     pointer;
 }
 
