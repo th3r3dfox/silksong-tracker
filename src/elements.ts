@@ -26,6 +26,7 @@ function getHTMLInputElement(id: string): HTMLInputElement {
   return element;
 }
 
+export const actClearBtn = getHTMLElement("actClearBtn");
 export const actDropdownBtn = getHTMLElement("actDropdownBtn");
 export const actDropdownMenu = getHTMLElement("actDropdownMenu");
 export const allProgressGrid = getHTMLElement("allprogress-grid");

@@ -12,6 +12,9 @@ export const objectWithSavedData = z.object({
   ),
 });
 
+export interface ObjectWithSavedData
+  extends z.infer<typeof objectWithSavedData> {}
+
 export const silksongSaveSchema = z.object({
   playerData: z
     .object({

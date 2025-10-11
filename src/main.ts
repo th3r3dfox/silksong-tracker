@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import {
   assertArray,
   assertDefined,
@@ -15,6 +13,7 @@ import essentialsJSON from "./data/essentials.json" with { type: "json" };
 import mainJSON from "./data/main.json" with { type: "json" };
 import wishesJSON from "./data/wishes.json" with { type: "json" };
 import {
+  actClearBtn,
   actDropdownBtn,
   actDropdownMenu,
   allProgressGrid,
@@ -47,9 +46,10 @@ import type { Mode } from "./interfaces/Mode.ts";
 import { decodeSilksongSave } from "./save-decoder.js";
 import {
   getSaveFileFlags,
-  objectWithSavedData,
   parseSilksongSave,
   silksongSaveSchema,
+  type ObjectWithSavedData,
+  type SilksongSave,
 } from "./save-parser.js";
 import { normalizeString, normalizeStringWithUnderscores } from "./utils.js";
 
@@ -64,26 +64,31 @@ let tocObserver: IntersectionObserver | undefined;
 // --- Act Dropdown Logic (modern multi-select with checkboxes) ---
 const dropdownBtn = actDropdownBtn;
 const dropdownMenu = actDropdownMenu;
-const clearBtn = document.getElementById("actClearBtn");
 
 // Toggle menu visibility
 dropdownBtn.addEventListener("click", () => {
   dropdownMenu.classList.toggle("hidden");
 });
 
-// Close dropdown if user clicks outside
-document.addEventListener("click", (e) => {
-  if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+// Close dropdown if user clicks outside.
+document.addEventListener("click", (event) => {
+  const { target } = event;
+  if (
+    target !== null
+    && target instanceof Node
+    && !dropdownBtn.contains(target)
+    && !dropdownMenu.contains(target)
+  ) {
     dropdownMenu.classList.add("hidden");
   }
 });
 
 // Handle "Select All / Deselect All"
-clearBtn.addEventListener("click", () => {
+actClearBtn.addEventListener("click", () => {
   const checkboxes = dropdownMenu.querySelectorAll("input[type='checkbox']");
   const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
   checkboxes.forEach((cb) => (cb.checked = !allChecked));
-  clearBtn.textContent = allChecked ? "Select All" : "Deselect All";
+  actClearBtn.textContent = allChecked ? "Select All" : "Deselect All";
   updateActFilter();
 });
 
@@ -134,8 +139,10 @@ let currentLoadedSaveData: z.infer<typeof silksongSaveSchema> | undefined;
 let currentLoadedSaveDataFlags: Record<string, unknown> | undefined;
 let currentLoadedSaveDataMode: Mode | undefined;
 
-/** @type Record<string, (selectedAct?: string) => Promise<void>> */
-const TAB_TO_UPDATE_FUNCTION = {
+const TAB_TO_UPDATE_FUNCTION: Record<
+  string,
+  (selectedAct?: string) => Promise<void>
+> = {
   allprogress: updateAllProgressContent,
   rawsave: updateRawSaveContent,
 };
@@ -285,8 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handleSaveFile(firstFile);
   });
 
-  /** @type Record<string, string> */
-  const paths = {
+  const paths: Record<string, string> = {
     windows:
       "%userprofile%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong",
     mac: "~/Library/Application Support/com.teamcherry.hollowsilksong",
@@ -326,31 +332,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/**
- * @typedef {{
- *   type?: string,
- *   flag?: string,
- *   relatedFlag?: string,
- *   scene?: string,
- *   required?: number,
- *   subtype?: string,
- *   mode?: string,
- * }} Item
- */
-
-/**
- * @param {z.infer<typeof silksongSaveSchema> | undefined} saveData
- * @param {Record<string, unknown> | undefined} saveDataFlags
- * @param {Item} item
- */
-function getSaveDataValue(saveData, saveDataFlags, item) {
+function getSaveDataValue(
+  saveData: SilksongSave,
+  saveDataFlags: Record<string, unknown> | undefined,
+  item: Item,
+) {
   if (saveData === undefined || saveDataFlags === undefined) {
     return undefined;
   }
 
   const { playerData } = saveData;
-  /** @type Record<string, unknown> */
-  const playerDataExpanded = playerData;
+  const playerDataExpanded: Record<string, unknown> = playerData;
 
   const { type, flag, relatedFlag, scene, required, subtype } = item;
 
@@ -384,8 +376,7 @@ function getSaveDataValue(saveData, saveDataFlags, item) {
 
       const normalizedFlag = normalizeString(flag);
 
-      /** @param {z.infer<typeof objectWithSavedData>} object */
-      function findIn(object) {
+      function findIn(object: ObjectWithSavedData) {
         const matchingElement = object.savedData.find(
           (element) => normalizeString(element.Name) === normalizedFlag,
         );
