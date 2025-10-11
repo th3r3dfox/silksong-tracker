@@ -894,6 +894,51 @@
           "icon": "completion/Cogwork_Core_Map.png",
           "description": "Obtained from a mechanism",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+        },
+        {
+          "id": "map-library",
+          "label": "Whispering Vaults Map",
+          "type": "flag",
+          "flag": "HasLibraryMap",
+          "icon": "completion/Whispering_Vaults_Map.png",
+          "description": "Obtained from a map machine.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+        },
+        {
+          "id": "map-cradle",
+          "label": "Cradle Map",
+          "type": "flag",
+          "flag": "HasCradleMap",
+          "icon": "completion/The_Cradle_Map.png",
+          "description": "Obtained from a map machine in Act 2. Found next to a broken map machine in Act 3.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+        },
+        {
+          "id": "map-arborium",
+          "label": "Memorium Map",
+          "type": "flag",
+          "flag": "HasArboriumMap",
+          "icon": "completion/Memorium_Map.png",
+          "description": "Obtained from a map machine.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+        },
+        {
+          "id": "map-aqueduct",
+          "label": "Putrefied Ducts Map",
+          "type": "flag",
+          "flag": "HasAqueductMap",
+          "icon": "completion/Underworks_Map.png",
+          "description": "Obtained from a desk.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
+        },
+        {
+          "id": "map-weavehome",
+          "label": "Weavenest Atla Map",
+          "type": "flag",
+          "flag": "HasWeavehomeMap",
+          "icon": "completion/Weavenest_Atla_Map.png",
+          "description": "Obtained from a Lore Tablet",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps"
         }
       ]
     },
