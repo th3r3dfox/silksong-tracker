@@ -98,7 +98,7 @@ export interface DeviceItem extends BaseItem {
   readonly relatedFlag: string;
 }
 
-export interface BossItem extends BaseItem {
+export interface ItemBoss extends BaseItem {
   readonly type: "boss";
   readonly flag: string;
 }
@@ -117,4 +117,4 @@ export type Item =
   | RelicItem
   | MateriumItem
   | DeviceItem
-  | BossItem;
+  | ItemBoss;
