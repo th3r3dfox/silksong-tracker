@@ -1,4 +1,4 @@
-// @ts-nochec
+// @ts-nocheck
 
 import {
   assertArray,
@@ -634,19 +634,14 @@ function getSaveDataValue(
  *
  * @returns The number of items rendered.
  */
-function renderGenericGrid({
-  containerEl,
-  data,
-  spoilerOn,
-}: {
-  /** The container element to render the grid onto. */
-  containerEl: HTMLElement;
-  data: Item[];
-  spoilerOn: boolean;
-}): number {
-  const realContainerId = containerEl?.id || "unknown";
+function renderGenericGrid(
+  containerElement: HTMLElement,
+  items: Item[],
+  spoilerOn: boolean,
+): number {
+  const realContainerId = containerElement?.id || "unknown";
 
-  containerEl.innerHTML = "";
+  containerElement.innerHTML = "";
 
   // 🔎 Silkshot variants (only one card visible)
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
@@ -691,7 +686,7 @@ function renderGenericGrid({
     });
 
     if (owned) {
-      data = data.filter(
+      items = items.filter(
         (item) => !group.includes(item.flag) || item.flag === owned,
       );
     }
@@ -699,7 +694,7 @@ function renderGenericGrid({
 
   let renderedCount = 0;
 
-  data.forEach((item) => {
+  items.forEach((item) => {
     // Silkshot → show only 1 variant
     if (silkVariants.includes(item.flag)) {
       if (unlockedSilkVariant && item.flag !== unlockedSilkVariant) {
@@ -847,7 +842,7 @@ function renderGenericGrid({
     div.appendChild(title);
     div.addEventListener("click", () => showGenericModal(item));
 
-    containerEl.appendChild(div);
+    containerElement.appendChild(div);
     renderedCount++;
   });
 
@@ -1363,11 +1358,7 @@ async function updateAllProgressContent(selectedAct = "all") {
       const subgrid = document.createElement("div");
       subgrid.className = "grid";
 
-      const visible = renderGenericGrid({
-        containerEl: subgrid,
-        data: filteredItems,
-        spoilerOn,
-      });
+      const visible = renderGenericGrid(subgrid, filteredItems, spoilerOn);
 
       if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
         continue;

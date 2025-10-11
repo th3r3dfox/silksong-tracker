@@ -293,23 +293,6 @@ To add a new tab, follow these steps:
 3. Create an async function `updateYourTabContent()` in `script.js` that fetches a JSON file and renders content using `renderGenericGrid`.
 4. Register the new function in the `updater` object used by tab switching and toggles.
 
-Example:
-
-```js
-async function updateCharmsContent() {
-  const response = await fetch("data/charms.json");
-  const charmsData = await response.json();
-  renderGenericGrid({ containerId: "charms-grid", data: charmsData });
-}
-
-const updater = {
-  bosses: updateBossesContent,
-  main: updateMainContent,
-  essentials: updateNewTabContent,
-  charms: updateCharmsContent,
-};
-```
-
 ## 10. Async Functions and Modular Structure
 
 All data-loading operations now use **`async/await`** for clarity and better control.
