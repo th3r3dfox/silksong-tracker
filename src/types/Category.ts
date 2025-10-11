@@ -14,9 +14,6 @@ export interface Category {
   /** Description of what this category contains */
   desc: string;
 
-  /** Contribution value (used for completion tracking) */
-  contrib: number;
-
   /** Array of items within this category */
   items: Item[];
 }

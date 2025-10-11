@@ -1,119 +1,112 @@
 import type { Mode } from "./Mode.ts";
 
-/** Base properties shared by all items */
+/** Base properties shared by all items. */
 interface BaseItem {
-  id?: string;
-  label?: string;
-  icon?: string;
-  act?: number;
-  map?: string;
-  missable?: boolean;
-  mode?: Mode;
-  description?: string;
-  link?: string;
-  cost?: string;
-  obtain?: string;
-  category?: string;
-  exclusiveGroup?: string;
-  upgradeOf?: string;
-  actColor?: string;
+  readonly id?: string;
+  readonly label?: string;
+  readonly icon?: string;
+  readonly act?: number;
+  readonly map?: string;
+  readonly missable?: boolean;
+  readonly mode?: Mode;
+  readonly description?: string;
+  readonly link?: string;
+  readonly cost?: string;
+  readonly obtain?: string;
+  readonly category?: string;
+  readonly exclusiveGroup?: string;
+  readonly upgradeOf?: string;
 }
 
-/** Item tracked by a simple flag */
+/** Item tracked by a simple flag. */
 export interface FlagItem extends BaseItem {
-  type: "flag";
-  flag: string;
+  readonly type: "flag";
+  readonly flag: string;
 }
 
-/** Item with a required level (e.g., needle upgrades) */
+/** Item tracked by an integer. */
+export interface FlagIntItem extends BaseItem {
+  readonly type: "flagInt";
+  readonly flag: string;
+}
+
+/** Item with a required level (e.g., needle upgrades). */
 export interface LevelItem extends BaseItem {
-  type: "level";
-  flag: string;
-  required: number;
+  readonly type: "level";
+  readonly flag: string;
+  readonly required: number;
 }
 
-/** Item tracked by scene + flag boolean */
+/** Item tracked by scene + flag boolean. */
 export interface SceneBoolItem extends BaseItem {
-  type: "sceneBool";
-  scene: string;
-  flag: string;
+  readonly type: "sceneBool";
+  readonly scene: string;
+  readonly flag: string;
 }
 
-/** Item tracked by scene visits */
+/** Item tracked by scene visits. */
 export interface SceneVisitedItem extends BaseItem {
-  type: "sceneVisited";
-  scene: string;
+  readonly type: "sceneVisited";
+  readonly scene: string;
 }
 
-/** Tools and equipment */
+/** Tools and equipment. */
 export interface ToolItem extends BaseItem {
-  type: "tool";
-  flag: string;
+  readonly type: "tool";
+  readonly flag: string;
 }
 
-/** Collectables */
 export interface CollectableItem extends BaseItem {
-  type: "collectable";
-  flag: string;
+  readonly type: "collectable";
+  readonly flag: string;
 }
 
 /** Quest items */
 export interface QuestItem extends BaseItem {
-  type: "quest";
-  flag: string;
+  readonly type: "quest";
+  readonly flag: string;
 }
 
 /** Keys */
 export interface KeyItem extends BaseItem {
-  type: "key";
-  flag: string;
-  scene?: string;
+  readonly type: "key";
+  readonly flag: string;
+  readonly scene?: string;
 }
 
-/** Items with integer flag values */
-export interface FlagIntItem extends BaseItem {
-  type: "flagInt";
-  flag: string;
-}
-
-/** Journal entries with kills tracking */
 export interface JournalItem extends BaseItem {
-  type: "journal";
-  flag: string;
-  subtype?: "kills" | "seen";
-  required?: number;
+  readonly type: "journal";
+  readonly flag: string;
+  readonly subtype?: "kills" | "seen";
+  readonly required?: number;
 }
 
-/** Relics for trading */
 export interface RelicItem extends BaseItem {
-  type: "relic";
-  flag?: string;
-  scene?: string;
+  readonly type: "relic";
+  readonly flag?: string;
+  readonly scene?: string;
 }
 
-/** Materials */
 export interface MateriumItem extends BaseItem {
-  type: "materium";
-  flag: string;
+  readonly type: "materium";
+  readonly flag: string;
 }
 
-/** Special devices */
 export interface DeviceItem extends BaseItem {
-  type: "device";
-  scene: string;
-  flag: string;
-  relatedFlag: string;
+  readonly type: "device";
+  readonly scene: string;
+  readonly flag: string;
+  readonly relatedFlag: string;
 }
 
-/** Boss enemies */
 export interface BossItem extends BaseItem {
-  type: "boss";
-  flag: string;
+  readonly type: "boss";
+  readonly flag: string;
 }
 
-/** Discriminated union of all item types */
 export type Item =
   | FlagItem
+  | FlagIntItem
   | LevelItem
   | SceneBoolItem
   | SceneVisitedItem
@@ -121,7 +114,6 @@ export type Item =
   | CollectableItem
   | QuestItem
   | KeyItem
-  | FlagIntItem
   | JournalItem
   | RelicItem
   | MateriumItem

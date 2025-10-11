@@ -5,7 +5,6 @@
       "id": "category-bosses",
       "label": "Bosses",
       "desc": "Major adversaries encountered throughout Pharloom. Defeating them marks your progress in Hollow Knight: Silksong.",
-      "contrib": 0,
       "items": [
         {
           "id": "bell_beast",
@@ -407,7 +406,6 @@
       "id": "category-boss-variants",
       "label": "Boss Variants",
       "desc": "Major adversaries encountered throughout Pharloom. Defeating them marks your progress in Hollow Knight: Silksong.",
-      "contrib": 0,
       "items": [
         {
           "id": "clover_dancers",

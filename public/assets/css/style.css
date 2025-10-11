@@ -794,16 +794,6 @@ a:hover {
   pointer-events: none; /* optional, if you want to disable click */
 }
 
-.category-contrib {
-  background: #2a2b2e;
-  color: var(--ink-2);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 2px 6px;
-  border-radius: 8px;
-  margin-left: 6px;
-}
-
 .main-section-block h3 {
   text-align: center; /* center the title */
   font-size: 1.6rem; /* slightly larger */
@@ -813,16 +803,6 @@ a:hover {
   justify-content: center;
   align-items: center;
   gap: 8px; /* space between title and percentage */
-}
-
-.category-contrib {
-  background: #333;
-  color: #fff;
-  font-size: 1.1rem; /* larger */
-  font-weight: 700;
-  padding: 4px 12px; /* wider pill */
-  border-radius: 16px; /* more rounded corners */
-  display: inline-block; /* to stay centered next to title */
 }
 
 .category-desc {
@@ -1523,14 +1503,6 @@ main a:hover,
   color: var(--ink-3);
 }
 
-.category-contrib {
-  margin-left: auto;
-  background: var(--bg-3);
-  border-radius: 12px;
-  padding: 2px 6px;
-  font-size: 0.8em;
-}
-
 /* MAIN% - centered and compact title */
 #main-section .category-title {
   display: block; /* cancel flex if present */
@@ -1547,7 +1519,7 @@ main a:hover,
 
 /* reset margin auto used elsewhere */
 #main-section .category-title .category-count,
-#main-section .category-title .category-contrib {
+#main-section .category-title {
   margin: 0 0 0 0.25rem; /* small space between parts */
   position: static;
   display: inline; /* ensures inline centering */
@@ -1555,7 +1527,7 @@ main a:hover,
 }
 
 /* percentage pill */
-#main-section .category-title .category-contrib {
+#main-section .category-title {
   background: var(--bg-3);
   color: var(--ink-2);
   border-radius: 10px;

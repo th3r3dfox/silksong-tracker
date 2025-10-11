@@ -11,7 +11,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "label", "desc", "contrib", "items"],
+        "required": ["id", "label", "desc", "items"],
         "additionalProperties": false,
         "properties": {
           "id": {
@@ -22,10 +22,6 @@
           },
           "desc": {
             "type": "string"
-          },
-          "contrib": {
-            "type": "number",
-            "description": "Contribution value"
           },
           "items": {
             "type": "array",

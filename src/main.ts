@@ -9,7 +9,6 @@ import {
   isObject,
   parseIntSafe,
 } from "complete-common";
-import { z } from "zod";
 import { BASE_PATH } from "./constants.ts";
 import bossesJSON from "./data/bosses.json" with { type: "json" };
 import completionJSON from "./data/completion.json" with { type: "json" };
@@ -49,7 +48,6 @@ import { decodeSilksongSave } from "./save-decoder.ts";
 import {
   getSaveFileFlags,
   parseSilksongSave,
-  silksongSaveSchema,
   type ObjectWithSavedData,
   type SilksongSave,
 } from "./save-parser.js";
@@ -178,7 +176,7 @@ async function updateActFilter() {
   await reRenderActiveTab();
 }
 
-let currentLoadedSaveData: z.infer<typeof silksongSaveSchema> | undefined;
+let currentLoadedSaveData: SilksongSave | undefined;
 let currentLoadedSaveDataFlags: Record<string, unknown> | undefined;
 let currentLoadedSaveDataMode: Mode | undefined;
 
@@ -208,10 +206,9 @@ function matchMode(item: Item) {
   return mode === currentLoadedSaveDataMode;
 }
 
-// --- Global mutually exclusive groups ---
 const EXCLUSIVE_GROUPS = [
   ["Heart Flower", "Heart Coral", "Heart Hunter", "Clover Heart"],
-  ["Huntress Quest", "Huntress Quest Runt"], // broodfest runtfeast
+  ["Huntress Quest", "Huntress Quest Runt"], // Broodfest / Runtfeast
 ];
 
 // ---------- SPOILER TOGGLE ----------
@@ -376,7 +373,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function getSaveDataValue(
-  saveData: SilksongSave,
+  saveData: SilksongSave | undefined,
   saveDataFlags: Record<string, unknown> | undefined,
   item: Item,
 ) {
@@ -637,19 +634,14 @@ function getSaveDataValue(
  *
  * @returns The number of items rendered.
  */
-function renderGenericGrid({
-  containerEl,
-  data,
-  spoilerOn,
-}: {
-  /** The container element to render the grid onto. */
-  containerEl: HTMLElement;
-  data: Item[];
-  spoilerOn: boolean;
-}): number {
-  const realContainerId = containerEl?.id || "unknown";
+function renderGenericGrid(
+  containerElement: HTMLElement,
+  items: Item[],
+  spoilerOn: boolean,
+): number {
+  const realContainerId = containerElement?.id || "unknown";
 
-  containerEl.innerHTML = "";
+  containerElement.innerHTML = "";
 
   // 🔎 Silkshot variants (only one card visible)
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
@@ -693,8 +685,8 @@ function renderGenericGrid({
       );
     });
 
-    if (owned) {
-      data = data.filter(
+    if (owned !== undefined) {
+      items = items.filter(
         (item) => !group.includes(item.flag) || item.flag === owned,
       );
     }
@@ -702,7 +694,7 @@ function renderGenericGrid({
 
   let renderedCount = 0;
 
-  data.forEach((item) => {
+  items.forEach((item) => {
     // Silkshot → show only 1 variant
     if (silkVariants.includes(item.flag)) {
       if (unlockedSilkVariant && item.flag !== unlockedSilkVariant) {
@@ -720,7 +712,7 @@ function renderGenericGrid({
     if (item.act) {
       const romanActs = { 1: "I", 2: "II", 3: "III" };
       const actLabel = document.createElement("span");
-      actLabel.className = `act-label ${item.actColor}`;
+      actLabel.className = `act-label act-${item.act}`;
       actLabel.textContent = `ACT ${romanActs[item.act]}`;
       div.appendChild(actLabel);
     }
@@ -850,7 +842,7 @@ function renderGenericGrid({
     div.appendChild(title);
     div.addEventListener("click", () => showGenericModal(item));
 
-    containerEl.appendChild(div);
+    containerElement.appendChild(div);
     renderedCount++;
   });
 
@@ -1305,13 +1297,6 @@ async function updateAllProgressContent(selectedAct = "all") {
         }
       });
 
-      // === Act colors ===
-      filteredItems.forEach((item) => {
-        if (item.act === 1) item.actColor = "act-1";
-        else if (item.act === 2) item.actColor = "act-2";
-        else if (item.act === 3) item.actColor = "act-3";
-      });
-
       // === Counting completion ===
       let obtained = 0;
       const exclusiveGroups = new Set();
@@ -1373,11 +1358,7 @@ async function updateAllProgressContent(selectedAct = "all") {
       const subgrid = document.createElement("div");
       subgrid.className = "grid";
 
-      const visible = renderGenericGrid({
-        containerEl: subgrid,
-        data: filteredItems,
-        spoilerOn,
-      });
+      const visible = renderGenericGrid(subgrid, filteredItems, spoilerOn);
 
       if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
         continue;
