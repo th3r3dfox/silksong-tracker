@@ -16,7 +16,6 @@ interface BaseItem {
   category?: string;
   exclusiveGroup?: string;
   upgradeOf?: string;
-  actColor?: string;
 }
 
 /** Item tracked by a simple flag */

@@ -720,7 +720,7 @@ function renderGenericGrid({
     if (item.act) {
       const romanActs = { 1: "I", 2: "II", 3: "III" };
       const actLabel = document.createElement("span");
-      actLabel.className = `act-label ${item.actColor}`;
+      actLabel.className = `act-label act-${item.act}`;
       actLabel.textContent = `ACT ${romanActs[item.act]}`;
       div.appendChild(actLabel);
     }
@@ -1303,13 +1303,6 @@ async function updateAllProgressContent(selectedAct = "all") {
             (item) => !group.includes(item.flag) || item.flag === owned,
           );
         }
-      });
-
-      // === Act colors ===
-      filteredItems.forEach((item) => {
-        if (item.act === 1) item.actColor = "act-1";
-        else if (item.act === 2) item.actColor = "act-2";
-        else if (item.act === 3) item.actColor = "act-3";
       });
 
       // === Counting completion ===
