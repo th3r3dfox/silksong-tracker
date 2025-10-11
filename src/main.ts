@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
   backToTop.addEventListener("click", () => {
     main.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "instant",
     });
   });
 });
@@ -917,7 +917,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (lastMark !== undefined) {
       lastMark.classList.add("active-match");
       lastMark.scrollIntoView({
-        behavior: "smooth",
+        behavior: "instant",
         block: "center",
       });
     }
@@ -1419,8 +1419,12 @@ function buildDynamicTOC() {
       a.addEventListener("click", (e) => {
         e.preventDefault();
         const target = document.getElementById(header.id);
-        if (target)
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (target !== null) {
+          target.scrollIntoView({
+            behavior: "instant",
+            block: "start",
+          });
+        }
 
         const wasOpen = li.classList.contains("open");
         document.querySelectorAll(".toc-category").forEach((cat) => {
