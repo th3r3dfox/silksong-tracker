@@ -82,7 +82,7 @@ export interface JournalItem extends BaseItem {
 
 export interface RelicItem extends BaseItem {
   readonly type: "relic";
-  readonly flag?: string;
+  readonly flag: string;
   readonly scene?: string;
 }
 
