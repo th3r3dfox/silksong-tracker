@@ -1,47 +1,27 @@
 import { assertIs, assertNotNull } from "complete-common";
 
-/**
- * Helper function to get an HTML element and throw an error if it does not exist.
- *
- * @param {string} id
- * @returns {HTMLElement}
- */
-function getHTMLElement(id) {
-  const element = document.getElementById(id);
+/** Helper function to get an HTML element and throw an error if it does not exist. */
+function getHTMLElement(id: string): HTMLElement {
+  const element = document.querySelector(`#${id}`);
   assertNotNull(element, `Failed to get HTML element with id: ${id}`);
+  assertIs(
+    element,
+    HTMLElement,
+    `The element with an id of "${id}" is not an HTML element.`,
+  );
   return element;
 }
 
 /**
  * Helper function to get an HTML input element and throw an error if it does not exist or if it is
  * not an intput element.
- *
- * @param {string} id
- * @returns {HTMLInputElement}
  */
-function getHTMLInputElement(id) {
+function getHTMLInputElement(id: string): HTMLInputElement {
   const element = getHTMLElement(id);
   assertIs(
     element,
     HTMLInputElement,
     `The element with an id of "${id}" is not an input element.`,
-  );
-  return element;
-}
-
-/**
- * Helper function to get an HTML select element and throw an error if it does not exist or if it is
- * not an select element.
- *
- * @param {string} id
- * @returns {HTMLSelectElement}
- */
-function getHTMLSelectElement(id) {
-  const element = getHTMLElement(id);
-  assertIs(
-    element,
-    HTMLSelectElement,
-    `The element with an id of "${id}" is not a select element.`,
   );
   return element;
 }

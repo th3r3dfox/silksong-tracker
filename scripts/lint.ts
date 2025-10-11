@@ -31,6 +31,6 @@ await lintCommands(import.meta.dirname, [
   // - "--log-level=warn" makes it only output errors.
   "prettier --log-level=warn --check .",
 
-  // Ensure that the JSON files match their schemas.
+  // Ensure that the JSON files satisfy their schemas.
   ...CHECK_JSON_COMMANDS,
 ]);
