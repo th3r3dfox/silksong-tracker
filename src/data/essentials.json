@@ -1,6 +1,6 @@
 {
   "$schema": "./essentials.schema.json",
-  "items": [
+  "categories": [
     {
       "id": "category-cloaks",
       "label": "Cloaks",

@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import {
   assertArray,
   assertDefined,
@@ -10,12 +8,11 @@ import {
 } from "complete-common";
 import { z } from "zod";
 import { BASE_PATH } from "./constants";
-import bossesJSONRaw from "./data/bosses.json" with { type: "json" };
-import completionJSONRaw from "./data/completion.json" with { type: "json" };
-import essentialsJSONRaw from "./data/essentials.json" with { type: "json" };
-import mainJSONRaw from "./data/main.json" with { type: "json" };
-import wishesJSONRaw from "./data/wishes.json" with { type: "json" };
-
+import bossesJSON from "./data/bosses.json" with { type: "json" };
+import completionJSON from "./data/completion.json" with { type: "json" };
+import essentialsJSON from "./data/essentials.json" with { type: "json" };
+import mainJSON from "./data/main.json" with { type: "json" };
+import wishesJSON from "./data/wishes.json" with { type: "json" };
 import {
   actClearBtn,
   actDropdownBtn,
@@ -45,7 +42,7 @@ import {
   spoilerToggle,
   uploadOverlay,
 } from "./elements.js";
-import type { Category, DataFile } from "./interfaces/Category.ts";
+import type { Category } from "./interfaces/Category.ts";
 import type { Item } from "./interfaces/Item.ts";
 import type { Mode } from "./interfaces/Mode.ts";
 import { decodeSilksongSave } from "./save-decoder.js";
@@ -61,13 +58,6 @@ import {
   normalizeString,
   normalizeStringWithUnderscores,
 } from "./utils.js";
-
-// Type-safe JSON imports
-const bossesJSON = bossesJSONRaw as DataFile;
-const completionJSON = completionJSONRaw as DataFile;
-const essentialsJSON = essentialsJSONRaw as DataFile;
-const mainJSON = mainJSONRaw as DataFile;
-const wishesJSON = wishesJSONRaw as DataFile;
 
 console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
@@ -1201,19 +1191,27 @@ async function updateAllProgressContent(selectedAct = "all") {
   const showMissingOnly = missingToggle.checked;
   allProgressGrid.innerHTML = "";
 
-  // ✅ Category definitions
-  const categories = [
-    { title: "Main Progress", data: mainJSON.items },
-    { title: "Essential Items", data: essentialsJSON.items },
-    { title: "Bosses", data: bossesJSON.items },
-    { title: "Completion", data: completionJSON.items },
-    { title: "Wishes", data: wishesJSON.items },
+  const allCategories: Array<{
+    title: string;
+    categories: Category[];
+  }> = [
+    { title: "Main Progress", categories: mainJSON.categories as Category[] },
+    {
+      title: "Essential Items",
+      categories: essentialsJSON.categories as Category[],
+    },
+    { title: "Bosses", categories: bossesJSON.categories as Category[] },
+    {
+      title: "Completion",
+      categories: completionJSON.categories as Category[],
+    },
+    { title: "Wishes", categories: wishesJSON.categories as Category[] },
   ];
 
   // ✅ Render all categories
-  for (const { title, data } of categories) {
+  for (const { title, categories } of allCategories) {
     assertArray(
-      data,
+      categories,
       "The contents of one of the JSON files was not an array.",
     );
 
@@ -1224,7 +1222,7 @@ async function updateAllProgressContent(selectedAct = "all") {
     categoryHeader.style.marginBottom = "1rem";
     allProgressGrid.appendChild(categoryHeader);
 
-    for (const category of data as Category[]) {
+    for (const category of categories) {
       const section = document.createElement("div");
       section.className = "main-section-block";
 

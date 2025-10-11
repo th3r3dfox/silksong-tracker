@@ -1,6 +1,6 @@
 {
   "$schema": "./completion.schema.json",
-  "items": [
+  "categories": [
     {
       "id": "category-relic",
       "label": "Relics",

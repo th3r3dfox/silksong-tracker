@@ -1,9 +1,8 @@
 import type { Item } from "./Item.ts";
 
 /**
- * A category is a container that groups related items together.
- * Categories appear at the top level of JSON data files and organize
- * items into logical sections (e.g., "Bosses", "Main Wishes", etc.).
+ * A category is a container that groups related items together. Categories appear at the top level
+ * of JSON data files and organize items into logical sections. (e.g. "Bosses", "Main Wishes", etc.)
  */
 export interface Category {
   /** Unique identifier for the category */
@@ -20,15 +19,4 @@ export interface Category {
 
   /** Array of items within this category */
   items: Item[];
-}
-
-/**
- * Structure of a data file containing categories.
- */
-export interface DataFile {
-  /** Optional JSON schema reference */
-  $schema?: string;
-
-  /** Array of categories in this file */
-  items: Category[];
 }

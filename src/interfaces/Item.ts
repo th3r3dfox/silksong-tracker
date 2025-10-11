@@ -3,11 +3,20 @@ import type { Mode } from "./Mode.ts";
 /** Base properties shared by all items */
 interface BaseItem {
   id?: string;
+  label?: string;
   icon?: string;
   act?: number;
   map?: string;
   missable?: boolean;
   mode?: Mode;
+  description?: string;
+  link?: string;
+  cost?: string;
+  obtain?: string;
+  category?: string;
+  exclusiveGroup?: string;
+  upgradeOf?: string;
+  actColor?: string;
 }
 
 /** Item tracked by a simple flag */
@@ -19,6 +28,27 @@ export interface FlagItem extends BaseItem {
 /** Item with a required level (e.g., needle upgrades) */
 export interface LevelItem extends BaseItem {
   type: "level";
+  flag: string;
+  required: number;
+}
+
+/** Item with a minimum value requirement */
+export interface MinItem extends BaseItem {
+  type: "min";
+  flag: string;
+  required: number;
+}
+
+/** Item with a required region level */
+export interface RegionLevelItem extends BaseItem {
+  type: "region-level";
+  flag: string;
+  required: number;
+}
+
+/** Item with a minimum region value requirement */
+export interface RegionMinItem extends BaseItem {
+  type: "region-min";
   flag: string;
   required: number;
 }
@@ -40,8 +70,18 @@ export interface SceneVisitedItem extends BaseItem {
 export interface ToolItem extends BaseItem {
   type: "tool";
   flag: string;
-  upgradeOf?: string;
-  exclusiveGroup?: string;
+}
+
+/** Tool equips */
+export interface ToolEquipItem extends BaseItem {
+  type: "toolEquip";
+  flag: string;
+}
+
+/** Crests */
+export interface CrestItem extends BaseItem {
+  type: "crest";
+  flag: string;
 }
 
 /** Collectables */
@@ -73,8 +113,8 @@ export interface FlagIntItem extends BaseItem {
 export interface JournalItem extends BaseItem {
   type: "journal";
   flag: string;
-  subtype: "kills";
-  required: number;
+  subtype?: "kills" | "seen";
+  required?: number;
 }
 
 /** Relics for trading */
@@ -108,9 +148,14 @@ export interface BossItem extends BaseItem {
 export type Item =
   | FlagItem
   | LevelItem
+  | MinItem
+  | RegionLevelItem
+  | RegionMinItem
   | SceneBoolItem
   | SceneVisitedItem
   | ToolItem
+  | ToolEquipItem
+  | CrestItem
   | CollectableItem
   | QuestItem
   | KeyItem

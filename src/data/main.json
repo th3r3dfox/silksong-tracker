@@ -1,6 +1,6 @@
 {
   "$schema": "./main.schema.json",
-  "items": [
+  "categories": [
     {
       "id": "needle_upgrades",
       "label": "Needle Upgrades",

@@ -1,6 +1,6 @@
 {
   "$schema": "./bosses.schema.json",
-  "items": [
+  "categories": [
     {
       "id": "category-bosses",
       "label": "Bosses",
