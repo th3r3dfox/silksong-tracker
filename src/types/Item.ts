@@ -37,14 +37,12 @@ export interface ItemLevel extends ItemBase {
   readonly required: number;
 }
 
-/** Item tracked by scene + flag boolean. */
 export interface ItemSceneBool extends ItemBase {
   readonly type: "sceneBool";
   readonly flag: string;
   readonly scene: string;
 }
 
-/** Item tracked by scene visits. */
 export interface ItemSceneVisited extends ItemBase {
   readonly type: "sceneVisited";
   readonly scene: string;
@@ -62,13 +60,11 @@ export interface ItemCollectable extends ItemBase {
   readonly flag: string;
 }
 
-/** Quest items */
 export interface ItemQuest extends ItemBase {
   readonly type: "quest";
   readonly flag: string;
 }
 
-/** Keys */
 export interface ItemKey extends ItemBase {
   readonly type: "key";
   readonly flag: string;
