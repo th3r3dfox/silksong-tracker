@@ -2842,13 +2842,13 @@ main {
   position: relative;
 }
 .topbar {
-  position: relative; /* serve per ancorare il banner */
+  position: relative; 
 }
 
 #modeBanner {
   position: absolute;
-  top: 6px; /* distanza dal bordo superiore della topbar */
-  left: 14px; /* allineato a sinistra */
+  top: 6px; 
+  left: 14px; 
   background: #181715;
   border: 1px solid #8a6a3a;
   color: #d7b98a;
@@ -2860,13 +2860,12 @@ main {
   z-index: 10;
   text-transform: uppercase;
   white-space: nowrap;
-  pointer-events: none; /* non blocca i click */
+  pointer-events: none; 
   display: inline-block;
   width: auto;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
-/* Variante Steel Soul (grigio-blu) */
 #modeBanner.steel {
   background: #1a1b1c;
   border: 1px solid #6e7680;
