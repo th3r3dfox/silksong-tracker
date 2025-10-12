@@ -2,1407 +2,1405 @@
   "$schema": "./completion.schema.json",
   "categories": [
     {
-      "label": "Relics",
       "desc": "Items that can be traded to certain NPCs for Rosaries or other services.",
       "items": [
         {
-          "id": "choral-commandment-1",
-          "label": "Choral Commandment 1",
-          "icon": "completion/Choral_Commandment.png",
-          "scene": "Mosshome",
-          "flag": "Seal Chit Aspid_01",
-          "type": "relic",
           "act": 1,
           "description": "On a high-up ledge. Left from Mosshome.",
-          "link": "https://hollowknight.wiki/w/Choral_Commandment"
+          "flag": "Seal Chit Aspid_01",
+          "icon": "completion/Choral_Commandment.png",
+          "id": "choral-commandment-1",
+          "label": "Choral Commandment 1",
+          "link": "https://hollowknight.wiki/w/Choral_Commandment",
+          "scene": "Mosshome",
+          "type": "relic"
         },
         {
-          "id": "choral-commandment-2",
-          "label": "Choral Commandment 2",
-          "icon": "completion/Choral_Commandment.png",
-          "scene": "Whiteward",
-          "flag": "Seal Chit Ward Corpse",
-          "type": "relic",
           "act": 2,
           "description": "Top-Left Room of Whiteward.",
-          "link": "https://hollowknight.wiki/w/Choral_Commandment"
+          "flag": "Seal Chit Ward Corpse",
+          "icon": "completion/Choral_Commandment.png",
+          "id": "choral-commandment-2",
+          "label": "Choral Commandment 2",
+          "link": "https://hollowknight.wiki/w/Choral_Commandment",
+          "scene": "Whiteward",
+          "type": "relic"
         },
         {
-          "id": "choral-commandment-3",
-          "label": "Choral Commandment 3",
-          "icon": "completion/Choral_Commandment.png",
-          "scene": "Whiteward",
-          "flag": "Seal Chit Silk Siphon",
-          "type": "relic",
           "act": 3,
           "description": "At the end of a room above the Hidden Passage in Whiteward, easiest to reach via Silk Soar.",
-          "link": "https://hollowknight.wiki/w/Choral_Commandment"
+          "flag": "Seal Chit Silk Siphon",
+          "icon": "completion/Choral_Commandment.png",
+          "id": "choral-commandment-3",
+          "label": "Choral Commandment 3",
+          "link": "https://hollowknight.wiki/w/Choral_Commandment",
+          "scene": "Whiteward",
+          "type": "relic"
         },
         {
-          "id": "choral-commandment-4",
-          "label": "Choral Commandment 4",
-          "icon": "completion/Choral_Commandment.png",
-          "scene": "Songclave",
-          "flag": "Seal Chit City Merchant",
-          "type": "relic",
           "act": 2,
           "description": "Can be purchased from Jubilana (Songclave) for 210 Rosaries. Requires 'The Lost Merchant Wish' completed.",
-          "link": "https://hollowknight.wiki/w/Choral_Commandment"
+          "flag": "Seal Chit City Merchant",
+          "icon": "completion/Choral_Commandment.png",
+          "id": "choral-commandment-4",
+          "label": "Choral Commandment 4",
+          "link": "https://hollowknight.wiki/w/Choral_Commandment",
+          "scene": "Songclave",
+          "type": "relic"
         },
         {
-          "id": "weaver-effigy-1",
-          "label": "Weaver Effigy 1",
-          "icon": "completion/Weaver_Effigy.png",
-          "scene": "Bonetown_upper_room",
-          "flag": "Weaver Totem Bonetown_upper_room",
-          "type": "relic",
           "act": 1,
           "description": "In a secret room above Bone Bottom. Easiest to reach with Drifter's Cloak and floating down from above.",
-          "link": "https://hollowknight.wiki/w/Weaver_Effigy"
+          "flag": "Weaver Totem Bonetown_upper_room",
+          "icon": "completion/Weaver_Effigy.png",
+          "id": "weaver-effigy-1",
+          "label": "Weaver Effigy 1",
+          "link": "https://hollowknight.wiki/w/Weaver_Effigy",
+          "scene": "Bonetown_upper_room",
+          "type": "relic"
         },
         {
-          "id": "weaver-effigy-2",
-          "label": "Weaver Effigy 2",
-          "icon": "completion/Weaver_Effigy.png",
-          "scene": "Shellwood_Witch_Tunnel",
-          "flag": "Weaver Totem Witch",
-          "type": "relic",
           "act": 2,
           "description": "Shellwood Witch Tunnel. Requires Cling Grip.",
-          "link": "https://hollowknight.wiki/w/Weaver_Effigy"
+          "flag": "Weaver Totem Witch",
+          "icon": "completion/Weaver_Effigy.png",
+          "id": "weaver-effigy-2",
+          "label": "Weaver Effigy 2",
+          "link": "https://hollowknight.wiki/w/Weaver_Effigy",
+          "scene": "Shellwood_Witch_Tunnel",
+          "type": "relic"
         },
         {
-          "id": "weaver-effigy-3",
-          "label": "Weaver Effigy 3",
-          "icon": "completion/Weaver_Effigy.png",
-          "scene": "Slab_Bottom",
-          "flag": "Weaver Totem Slab_Bottom",
-          "type": "relic",
           "act": 1,
           "description": "Bottom right of the Slab. Found on a corpse.",
-          "link": "https://hollowknight.wiki/w/Weaver_Effigy"
+          "flag": "Weaver Totem Slab_Bottom",
+          "icon": "completion/Weaver_Effigy.png",
+          "id": "weaver-effigy-3",
+          "label": "Weaver Effigy 3",
+          "link": "https://hollowknight.wiki/w/Weaver_Effigy",
+          "scene": "Slab_Bottom",
+          "type": "relic"
         },
         {
-          "id": "bone-scroll-1",
-          "label": "Bone Scroll 1",
-          "icon": "completion/Bone_Scroll.png",
-          "scene": "Greymoor_flooded_corridor",
-          "flag": "Bone Record Greymoor_flooded_corridor",
-          "type": "relic",
           "act": 1,
           "description": "Greymore Secret Room. Swim all the way to the right.",
-          "link": "https://hollowknight.wiki/w/Bone_Scroll"
+          "flag": "Bone Record Greymoor_flooded_corridor",
+          "icon": "completion/Bone_Scroll.png",
+          "id": "bone-scroll-1",
+          "label": "Bone Scroll 1",
+          "link": "https://hollowknight.wiki/w/Bone_Scroll",
+          "scene": "Greymoor_flooded_corridor",
+          "type": "relic"
         },
         {
-          "id": "bone-scroll-2",
-          "label": "Bone Scroll 2",
-          "icon": "completion/Bone_Scroll.png",
-          "scene": "Bone_East_14",
-          "flag": "Bone Record Bone_East_14",
-          "type": "relic",
           "act": 1,
           "description": "Far Fields secret room. Reachable with Drifter's Cloak.",
-          "link": "https://hollowknight.wiki/w/Bone_Scroll"
+          "flag": "Bone Record Bone_East_14",
+          "icon": "completion/Bone_Scroll.png",
+          "id": "bone-scroll-2",
+          "label": "Bone Scroll 2",
+          "link": "https://hollowknight.wiki/w/Bone_Scroll",
+          "scene": "Bone_East_14",
+          "type": "relic"
         },
         {
-          "id": "bone-scroll-3",
-          "label": "Bone Scroll 3",
-          "icon": "completion/Bone_Scroll.png",
-          "scene": "Understore_Map_Room",
-          "flag": "Bone Record Understore_Map_Room",
-          "type": "relic",
           "act": 2,
           "description": "Left side of Underworks, behind a breakable wall.",
-          "link": "https://hollowknight.wiki/w/Bone_Scroll"
+          "flag": "Bone Record Understore_Map_Room",
+          "icon": "completion/Bone_Scroll.png",
+          "id": "bone-scroll-3",
+          "label": "Bone Scroll 3",
+          "link": "https://hollowknight.wiki/w/Bone_Scroll",
+          "scene": "Understore_Map_Room",
+          "type": "relic"
         },
         {
-          "id": "bone-scroll-4",
-          "label": "Bone Scroll 4",
-          "icon": "completion/Bone_Scroll.png",
-          "scene": "Wisp_Top",
-          "flag": "Bone Record Wisp Top",
-          "type": "relic",
           "act": 2,
           "description": "Top of Wisp Thicket platform challenge.",
-          "link": "https://hollowknight.wiki/w/Bone_Scroll"
+          "flag": "Bone Record Wisp Top",
+          "icon": "completion/Bone_Scroll.png",
+          "id": "bone-scroll-4",
+          "label": "Bone Scroll 4",
+          "link": "https://hollowknight.wiki/w/Bone_Scroll",
+          "scene": "Wisp_Top",
+          "type": "relic"
         },
         {
-          "id": "rune-harp-1",
-          "label": "Rune Harp 1",
-          "icon": "completion/Rune_Harp.png",
-          "scene": "Weave_08",
-          "flag": "Weaver Record Weave_08",
-          "type": "relic",
           "act": 1,
           "description": "On a high-up ledge in Weavernest Atla.",
-          "link": "https://hollowknight.wiki/w/Rune_Harp"
+          "flag": "Weaver Record Weave_08",
+          "icon": "completion/Rune_Harp.png",
+          "id": "rune-harp-1",
+          "label": "Rune Harp 1",
+          "link": "https://hollowknight.wiki/w/Rune_Harp",
+          "scene": "Weave_08",
+          "type": "relic"
         },
         {
-          "id": "rune-harp-2",
-          "label": "Rune Harp 2",
-          "icon": "completion/Rune_Harp.png",
-          "scene": "Sprint_Challenge",
-          "flag": "Weaver Record Sprint_Challenge",
-          "type": "relic",
           "act": 1,
           "description": "Secret room in Far Fields Weaver nest (Sprint Challenge).",
-          "link": "https://hollowknight.wiki/w/Rune_Harp"
+          "flag": "Weaver Record Sprint_Challenge",
+          "icon": "completion/Rune_Harp.png",
+          "id": "rune-harp-2",
+          "label": "Rune Harp 2",
+          "link": "https://hollowknight.wiki/w/Rune_Harp",
+          "scene": "Sprint_Challenge",
+          "type": "relic"
         },
         {
-          "id": "rune-harp-3",
-          "label": "Rune Harp 3",
-          "icon": "completion/Rune_Harp.png",
-          "scene": "Conductor",
-          "flag": "Weaver Record Conductor",
-          "type": "relic",
           "act": 3,
           "description": "Found where Conductor Ballador would be in Act 3.",
-          "link": "https://hollowknight.wiki/w/Rune_Harp"
+          "flag": "Weaver Record Conductor",
+          "icon": "completion/Rune_Harp.png",
+          "id": "rune-harp-3",
+          "label": "Rune Harp 3",
+          "link": "https://hollowknight.wiki/w/Rune_Harp",
+          "scene": "Conductor",
+          "type": "relic"
         },
         {
-          "id": "arcane-egg",
-          "label": "Arcane Egg",
-          "icon": "completion/Arcane_Egg_Silksong.png",
-          "scene": "Abyss_Middle",
-          "flag": "Ancient Egg Abyss Middle",
-          "type": "relic",
           "act": 3,
           "description": "Behind a platforming sequence in the Abyss.",
-          "link": "https://hollowknight.wiki/w/Arcane_Egg_(Silksong)"
+          "flag": "Ancient Egg Abyss Middle",
+          "icon": "completion/Arcane_Egg_Silksong.png",
+          "id": "arcane-egg",
+          "label": "Arcane Egg",
+          "link": "https://hollowknight.wiki/w/Arcane_Egg_(Silksong)",
+          "scene": "Abyss_Middle",
+          "type": "relic"
         }
-      ]
+      ],
+      "label": "Relics"
     },
     {
-      "label": "Cylinder",
       "desc": "They are cylinders inscribed with recordings, which may be heard by bringing them to Vaultkeeper Cardinius. Listening to the Sacred Cylinder",
       "items": [
         {
-          "id": "psalm-cylinder-grindle",
-          "label": "Psalm Cylinder - Grindle",
-          "icon": "completion/Psalm_Cylinder.png",
-          "flag": "Psalm Cylinder Grindle",
-          "type": "relic",
           "act": 1,
           "description": "Sold by Grindle for 240 Rosaries (Blasted Steps).",
-          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
+          "flag": "Psalm Cylinder Grindle",
+          "icon": "completion/Psalm_Cylinder.png",
+          "id": "psalm-cylinder-grindle",
+          "label": "Psalm Cylinder - Grindle",
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "type": "relic"
         },
         {
-          "id": "psalm-cylinder-vaultkeeper",
-          "label": "Psalm Cylinder - Vaultkeeper Cardinius Lair",
-          "icon": "completion/Psalm_Cylinder.png",
-          "flag": "Psalm Cylinder Librarian",
-          "type": "relic",
           "act": 2,
           "description": "Obtained from Vaultkeeper Cardinius in the Whispering Vaults.",
-          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
+          "flag": "Psalm Cylinder Librarian",
+          "icon": "completion/Psalm_Cylinder.png",
+          "id": "psalm-cylinder-vaultkeeper",
+          "label": "Psalm Cylinder - Vaultkeeper Cardinius Lair",
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "type": "relic"
         },
         {
-          "id": "psalm-cylinder-vaults",
-          "label": "Psalm Cylinder - Whispering Vaults",
-          "icon": "completion/Psalm_Cylinder.png",
-          "scene": "Library_Roof",
-          "flag": "Psalm Cylinder Library Roof",
-          "type": "relic",
           "act": 2,
           "description": "At the end of a parkour challenge at the top of the Whispering Vaults. Requires Clawline.",
-          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
+          "flag": "Psalm Cylinder Library Roof",
+          "icon": "completion/Psalm_Cylinder.png",
+          "id": "psalm-cylinder-vaults",
+          "label": "Psalm Cylinder - Whispering Vaults",
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "scene": "Library_Roof",
+          "type": "relic"
         },
         {
-          "id": "psalm-cylinder-high-halls",
-          "label": "Psalm Cylinder - High Halls",
-          "icon": "completion/Psalm_Cylinder.png",
-          "scene": "Hang",
-          "flag": "Psalm Cylinder Hang",
-          "type": "relic",
           "act": 2,
           "description": "Behind a breakable wall in High Halls. Requires Clawline.",
-          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
+          "flag": "Psalm Cylinder Hang",
+          "icon": "completion/Psalm_Cylinder.png",
+          "id": "psalm-cylinder-high-halls",
+          "label": "Psalm Cylinder - High Halls",
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "scene": "Hang",
+          "type": "relic"
         },
         {
-          "id": "psalm-cylinder-underworks",
-          "label": "Psalm Cylinder - Underworks",
-          "icon": "completion/Psalm_Cylinder.png",
-          "scene": "Ward",
-          "flag": "Psalm Cylinder Ward",
-          "type": "relic",
           "act": 2,
           "description": "Behind a breakable wall at the top of Underworks.",
-          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
+          "flag": "Psalm Cylinder Ward",
+          "icon": "completion/Psalm_Cylinder.png",
+          "id": "psalm-cylinder-underworks",
+          "label": "Psalm Cylinder - Underworks",
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "scene": "Ward",
+          "type": "relic"
         },
         {
-          "id": "sacred-cylinder",
-          "label": "Sacred Cylinder",
-          "icon": "completion/Sacred_Cylinder.png",
-          "flag": "Librarian Melody Cylinder",
-          "type": "relic",
           "act": 2,
           "description": "Whispering Vaults: part of the Vaultkeeper's Melody objective.",
-          "link": "https://hollowknight.wiki/w/Psalm_Cylinder"
+          "flag": "Librarian Melody Cylinder",
+          "icon": "completion/Sacred_Cylinder.png",
+          "id": "sacred-cylinder",
+          "label": "Sacred Cylinder",
+          "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "type": "relic"
         }
-      ]
+      ],
+      "label": "Cylinder"
     },
     {
-      "label": "Materium",
       "desc": "Crystallized essences of Pharloom's forces, gathered to empower tools and relics.",
       "items": [
         {
+          "act": 1,
+          "description": "Entry unlocked by default",
+          "flag": "Silk",
+          "icon": "completion/Silk.png",
           "id": "materium-silk",
           "label": "Silk",
-          "icon": "completion/Silk.png",
-          "flag": "Silk",
-          "type": "materium",
-          "description": "Entry unlocked by default",
           "link": "https://hollowknight.wiki/w/Materium",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Entry unlocked by default",
+          "flag": "Shell Shard",
+          "icon": "completion/Shards_large.png",
           "id": "materium-shell-shard",
           "label": "Shell Shards",
-          "icon": "completion/Shards_large.png",
-          "flag": "Shell Shard",
-          "type": "materium",
-          "description": "Entry unlocked by default",
           "link": "https://hollowknight.wiki/w/Materium",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Entry unlocked by default",
+          "flag": "Rosary Small",
+          "icon": "completion/Rosaries_large.png",
           "id": "materium-rosaries",
           "label": "Rosaries",
-          "icon": "completion/Rosaries_large.png",
-          "flag": "Rosary Small",
-          "type": "materium",
-          "description": "Entry unlocked by default",
           "link": "https://hollowknight.wiki/w/Materium",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Entry unlocked by default",
+          "flag": "Rosary Mid",
+          "icon": "completion/Shell_Rosaries_large.png",
           "id": "materium-shell-rosaries",
           "label": "Shell Rosaries",
-          "icon": "completion/Shell_Rosaries_large.png",
-          "flag": "Rosary Mid",
-          "type": "materium",
-          "description": "Entry unlocked by default",
           "link": "https://hollowknight.wiki/w/Materium",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Entry unlocked by default",
+          "flag": "Rosary Big",
+          "icon": "completion/Pearl_Rosaries_large.png",
           "id": "materium-pearl-rosaries",
           "label": "Pearl Rosaries",
-          "icon": "completion/Pearl_Rosaries_large.png",
-          "flag": "Rosary Big",
-          "type": "materium",
-          "description": "Entry unlocked by default",
           "link": "https://hollowknight.wiki/w/Materium",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Given to Moss Druid during the Berry Picking Wish",
+          "flag": "Mossberry",
+          "icon": "completion/Mossberry.png",
           "id": "materium-mossberry",
           "label": "Mossberry",
-          "icon": "completion/Mossberry.png",
-          "flag": "Mossberry",
-          "type": "materium",
-          "description": "Given to Moss Druid during the Berry Picking Wish",
           "link": "https://hollowknight.wiki/w/Mossberry",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Given by Moss Druid during the Great Taste of Pharloom wish",
+          "flag": "Mossberry Stew",
+          "icon": "completion/Mossberry_Stew.png",
           "id": "materium-mossberry-stew",
           "label": "Mossberry Stew",
-          "icon": "completion/Mossberry_Stew.png",
-          "flag": "Mossberry Stew",
-          "type": "materium",
-          "description": "Given by Moss Druid during the Great Taste of Pharloom wish",
           "link": "https://hollowknight.wiki/w/Mossberry_Stew",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Dropped by pilgrim enemies during the Garb of the Pilgrims wish",
+          "flag": "Pilgrim Rag",
+          "icon": "completion/Pilgrim_Shawl.png",
           "id": "materium-pilgrim-shawl",
           "label": "Pilgrim Shawl",
-          "icon": "completion/Pilgrim_Shawl.png",
-          "flag": "Pilgrim Rag",
-          "type": "materium",
-          "description": "Dropped by pilgrim enemies during the Garb of the Pilgrims wish",
           "link": "https://hollowknight.wiki/w/Pilgrim_Shawl",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Found in Deep Docks",
+          "flag": "Smeltstone",
+          "icon": "completion/Flintstone.png",
           "id": "materium-smeltstone",
           "label": "Flintstone",
-          "icon": "completion/Flintstone.png",
-          "flag": "Smeltstone",
-          "type": "materium",
-          "description": "Found in Deep Docks",
           "link": "https://hollowknight.wiki/w/Flintstone",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Dropped by Flintbeetles",
+          "flag": "Rock Roller Item",
+          "icon": "completion/Flintgem.png",
           "id": "materium-rock-roller-item",
           "label": "Flintgem",
-          "icon": "completion/Flintgem.png",
-          "flag": "Rock Roller Item",
-          "type": "materium",
-          "description": "Dropped by Flintbeetles",
           "link": "https://hollowknight.wiki/w/Flintgem",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Rare element found naturally within the rock and bone of Pharloom",
+          "flag": "Tool Metal",
+          "icon": "icons/Craft_Metal.png",
           "id": "materium-tool-metal",
           "label": "Craftmetal",
-          "icon": "icons/Craft_Metal.png",
-          "flag": "Tool Metal",
-          "type": "materium",
-          "description": "Rare element found naturally within the rock and bone of Pharloom",
           "link": "https://hollowknight.wiki/w/Craftmetal",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Dropped by Hokers during the Flexile Spines wish",
+          "flag": "Common Spine",
+          "icon": "completion/Spine_Core.png",
           "id": "materium-common-spine",
           "label": "Spine Core",
-          "icon": "completion/Spine_Core.png",
-          "flag": "Common Spine",
-          "type": "materium",
-          "description": "Dropped by Hokers during the Flexile Spines wish",
           "link": "https://hollowknight.wiki/w/Spine_Core",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Dropped by Skull Tyrant during the The Terrible Tyrant wish",
+          "flag": "Skull King Fragment",
+          "icon": "completion/Crown_Fragment.png",
           "id": "materium-skull-king-fragment",
           "label": "Crown Fragment",
-          "icon": "completion/Crown_Fragment.png",
-          "flag": "Skull King Fragment",
-          "type": "materium",
-          "description": "Dropped by Skull Tyrant during the The Terrible Tyrant wish",
           "link": "https://hollowknight.wiki/w/Crown_Fragment",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Dropped by Savage Beastfly during the Savage Beastfly wish",
+          "flag": "Beastfly Remains",
+          "icon": "completion/Horn_Fragment.png",
           "id": "materium-beastfly-remains",
           "label": "Horn Fragment",
-          "icon": "completion/Horn_Fragment.png",
-          "flag": "Beastfly Remains",
-          "type": "materium",
-          "description": "Dropped by Savage Beastfly during the Savage Beastfly wish",
           "link": "https://hollowknight.wiki/w/Horn_Fragment",
-          "act": 2
+          "type": "materium"
         },
-
         {
+          "act": 1,
+          "description": "Found throughout Bellhart during the Silver Bells wish",
+          "flag": "Silver Bellclapper",
+          "icon": "completion/Silver_Bell.png",
           "id": "materium-silver-bellclapper",
           "label": "Silver Bell",
-          "icon": "completion/Silver_Bell.png",
-          "flag": "Silver Bellclapper",
-          "type": "materium",
-          "description": "Found throughout Bellhart during the Silver Bells wish",
           "link": "https://hollowknight.wiki/w/Silver_Bell",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Bile gland of a rare sylphean slug. Talented pinmasters can use the glistening liquid within to improve a blade's sharpness.",
+          "flag": "Pale Oil",
+          "icon": "icons/Pale_Oil.png",
           "id": "materium-pale-oil",
           "label": "Pale Oil",
-          "icon": "icons/Pale_Oil.png",
-          "flag": "Pale Oil",
-          "type": "materium",
-          "description": "Bile gland of a rare sylphean slug. Talented pinmasters can use the glistening liquid within to improve a blade's sharpness.",
           "link": "https://hollowknight.wiki/w/Pale_Oil",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Collected using the Needle Phial during the Alchemist's Assistant wish",
+          "flag": "Lifeblood",
+          "icon": "completion/Plasmium.png",
           "id": "materium-lifeblood",
           "label": "Plasmium",
-          "icon": "completion/Plasmium.png",
-          "flag": "Lifeblood",
-          "type": "materium",
-          "description": "Collected using the Needle Phial during the Alchemist's Assistant wish",
           "link": "https://hollowknight.wiki/w/Plasmium",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 3,
+          "description": "Collected using the Needle Phial during the Advanced Alchemy wish",
+          "flag": "Plasmium Blood",
+          "icon": "completion/Plasmified_Blood.png",
           "id": "materium-plasmium-blood",
           "label": "Plasmified Blood",
-          "icon": "completion/Plasmified_Blood.png",
-          "flag": "Plasmium Blood",
-          "type": "materium",
-          "description": "Collected using the Needle Phial during the Advanced Alchemy wish",
           "link": "https://hollowknight.wiki/w/Plasmified_Blood",
-          "act": 3
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Dropped by Craw enemies during the Crawbug Clearing wish",
+          "flag": "Crow Feathers",
+          "icon": "completion/Ragpelt.png",
           "id": "materium-crow-feathers",
           "label": "Ragpelt",
-          "icon": "completion/Ragpelt.png",
-          "flag": "Crow Feathers",
-          "type": "materium",
-          "description": "Dropped by Craw enemies during the Crawbug Clearing wish",
           "link": "https://hollowknight.wiki/w/Ragpelt",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Core of a flower formed around the body of a consumed Wood Wasp. Secretes a sticky sap that the wasps subsist on.",
+          "flag": "Shell Flower",
+          "icon": "completion/Pollip_Heart.png",
           "id": "materium-shell-flower",
           "label": "Pollip Heart",
-          "icon": "completion/Pollip_Heart.png",
-          "flag": "Shell Flower",
-          "type": "materium",
-          "description": "Core of a flower formed around the body of a consumed Wood Wasp. Secretes a sticky sap that the wasps subsist on.",
           "link": "https://hollowknight.wiki/w/Pollip_Heart",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 1,
+          "description": "Dropped by Muckroachs during the Roach Guts wish",
+          "flag": "Roach Corpse Item",
+          "icon": "completion/Roach_Guts.png",
           "id": "materium-roach-corpse-item",
           "label": "Roach Guts",
-          "icon": "completion/Roach_Guts.png",
-          "flag": "Roach Corpse Item",
-          "type": "materium",
-          "description": "Dropped by Muckroachs during the Roach Guts wish",
           "link": "https://hollowknight.wiki/w/Roach_Guts",
-          "act": 1
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Given by Tipp & Pill during Delivery Wishes",
+          "flag": "Courier Supplies Generic",
+          "icon": "completion/Courier's_Swag.png",
           "id": "materium-courier-supplies-generic",
           "label": "Courier's Swag",
-          "icon": "completion/Courier's_Swag.png",
-          "flag": "Courier Supplies Generic",
-          "type": "materium",
-          "description": "Given by Tipp & Pill during Delivery Wishes",
           "link": "https://hollowknight.wiki/w/Materium",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Given by Tipp & Pill during the Queen's Egg wish",
+          "flag": "Courier Supplies Slave",
+          "icon": "completion/Queen's_Egg.png",
           "id": "materium-courier-supplies-slave",
           "label": "Queen's Egg",
-          "icon": "completion/Queen's_Egg.png",
-          "flag": "Courier Supplies Slave",
-          "type": "materium",
-          "description": "Given by Tipp & Pill during the Queen's Egg wish",
           "link": "https://hollowknight.wiki/w/Materium",
           "mode": "normal",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Given by Tipp & Pill during the Liquid Lacquer wish",
+          "flag": "Courier Supplies Mask Maker",
+          "icon": "completion/Liquid_Lacquer.png",
           "id": "materium-courier-supplies-mask-maker",
           "label": "Liquid Lacquer",
-          "icon": "completion/Liquid_Lacquer.png",
-          "flag": "Courier Supplies Mask Maker",
-          "type": "materium",
-          "description": "Given by Tipp & Pill during the Liquid Lacquer wish",
           "link": "https://hollowknight.wiki/w/Materium",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Given by Tipp & Pill during the Great Taste of Pharloom wish",
+          "flag": "Courier Supplies Gourmand",
+          "icon": "completion/Courier's_Rasher.png",
           "id": "materium-courier-supplies-gourmand",
           "label": "Courier's Rasher",
-          "icon": "completion/Courier's_Rasher.png",
-          "flag": "Courier Supplies Gourmand",
-          "type": "materium",
-          "description": "Given by Tipp & Pill during the Great Taste of Pharloom wish",
           "link": "https://hollowknight.wiki/w/Courier's_Rasher",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Sold by Creige during the Great Taste of Pharloom wish",
+          "flag": "Vintage Nectar",
+          "icon": "completion/Vintage_Nectar.png",
           "id": "materium-vintage-nectar",
           "label": "Vintage Nectar",
-          "icon": "completion/Vintage_Nectar.png",
-          "flag": "Vintage Nectar",
-          "type": "materium",
-          "description": "Sold by Creige during the Great Taste of Pharloom wish",
           "link": "https://hollowknight.wiki/w/Vintage_Nectar",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Dropped by Disgraced Chef Lugoli",
+          "flag": "Pickled Roach Egg",
+          "icon": "completion/Pickled_Muckmaggot.png",
           "id": "materium-pickled-roach-egg",
           "label": "Pickled Muckmaggot",
-          "icon": "completion/Pickled_Muckmaggot.png",
-          "flag": "Pickled Roach Egg",
-          "type": "materium",
-          "description": "Dropped by Disgraced Chef Lugoli",
           "link": "https://hollowknight.wiki/w/Pickled_Muckmaggot",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Found in Sands of Karak",
+          "flag": "Crustnut",
+          "icon": "completion/Crustnut.png",
           "id": "materium-crustnut",
           "label": "Crustnut",
-          "icon": "completion/Crustnut.png",
-          "flag": "Crustnut",
-          "type": "materium",
-          "description": "Found in Sands of Karak",
           "link": "https://hollowknight.wiki/w/Crustnut",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Sold by Crull and Benjin during the Infestation Operation wish",
+          "flag": "Extractor Machine Pins",
+          "icon": "completion/Steel_Spines.png",
           "id": "materium-extractor-machine-pins",
           "label": "Steel Spines",
-          "icon": "completion/Steel_Spines.png",
-          "flag": "Extractor Machine Pins",
-          "type": "materium",
-          "description": "Sold by Crull and Benjin during the Infestation Operation wish",
           "link": "https://hollowknight.wiki/w/Steel_Spines",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Dropped by pilgrim enemies in The Citadel during the Cloaks of the Choir wish",
+          "flag": "Song Pilgrim Cloak",
+          "icon": "completion/Choir_Cloak.png",
           "id": "materium-song-pilgrim-cloak",
           "label": "Choir Cloak",
-          "icon": "completion/Choir_Cloak.png",
-          "flag": "Song Pilgrim Cloak",
-          "type": "materium",
-          "description": "Dropped by pilgrim enemies in The Citadel during the Cloaks of the Choir wish",
           "link": "https://hollowknight.wiki/w/Choir_Cloak",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 3,
+          "description": "Found in Brightvein",
+          "flag": "Magnetite",
+          "icon": "completion/Magnetite.png",
           "id": "materium-magnetite",
           "label": "Magnetite",
-          "icon": "completion/Magnetite.png",
-          "flag": "Magnetite",
-          "type": "materium",
-          "description": "Found in Brightvein",
           "link": "https://hollowknight.wiki/w/Magnetite",
-          "act": 3
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Dropped by Broodmother",
+          "flag": "Broodmother Remains",
+          "icon": "completion/Broodmother's_Eye.png",
           "id": "materium-broodmother-remains",
           "label": "Broodmother's Eye",
-          "icon": "completion/Broodmother's_Eye.png",
-          "flag": "Broodmother Remains",
-          "type": "materium",
-          "description": "Dropped by Broodmother",
           "link": "https://hollowknight.wiki/w/Broodmother's_Eye",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Meat harvested from a defeated creature. It has been seared in a way that noticeably affects the flavour.",
+          "flag": "Enemy Morsel Seared",
+          "icon": "completion/Seared_Organ.png",
           "id": "materium-enemy-morsel-seared",
           "label": "Seared Organ",
-          "icon": "completion/Seared_Organ.png",
-          "flag": "Enemy Morsel Seared",
-          "type": "materium",
-          "description": "Meat harvested from a defeated creature. It has been seared in a way that noticeably affects the flavour.",
           "link": "https://hollowknight.wiki/w/Seared_Organ",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Meat harvested from a defeated creature. It has been diced into fine chunks.",
+          "flag": "Enemy Morsel Shredded",
+          "icon": "completion/Shredded_Organ.png",
           "id": "materium-enemy-morsel-shredded",
           "label": "Shredded Organ",
-          "icon": "completion/Shredded_Organ.png",
-          "flag": "Enemy Morsel Shredded",
-          "type": "materium",
-          "description": "Meat harvested from a defeated creature. It has been diced into fine chunks.",
           "link": "https://hollowknight.wiki/w/Shredded_Organ",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Meat harvested from a defeated creature. It has been cleanly speared through, but is otherwise intact.",
+          "flag": "Enemy Morsel Speared",
+          "icon": "completion/Skewered_Organ.png",
           "id": "materium-enemy-morsel-speared",
           "label": "Skewered Organ",
-          "icon": "completion/Skewered_Organ.png",
-          "flag": "Enemy Morsel Speared",
-          "type": "materium",
-          "description": "Meat harvested from a defeated creature. It has been cleanly speared through, but is otherwise intact.",
           "link": "https://hollowknight.wiki/w/Skewered_Organ",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Found in Voltnest",
+          "flag": "Voltstone",
+          "icon": "completion/Voltridian.png",
           "id": "materium-voltstone",
           "label": "Voltridian",
-          "icon": "completion/Voltridian.png",
-          "flag": "Voltstone",
-          "type": "materium",
-          "description": "Found in Voltnest",
           "link": "https://hollowknight.wiki/w/Voltridian",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Given by Bell Hermit during the Silk and Soul wish",
+          "flag": "Snare Soul Bell Hermit",
+          "icon": "completion/Hermit's_Soul.png",
           "id": "materium-snare-soul-bell-hermit",
           "label": "Hermit's Soul",
-          "icon": "completion/Hermit's_Soul.png",
-          "flag": "Snare Soul Bell Hermit",
-          "type": "materium",
-          "description": "Given by Bell Hermit during the Silk and Soul wish",
           "link": "https://hollowknight.wiki/w/Hermit's_Soul",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Given by Chapel Maid during the Silk and Soul wish",
+          "flag": "Snare Soul Churchkeeper",
+          "icon": "completion/Maiden's_Soul.png",
           "id": "materium-snare-soul-churchkeeper",
           "label": "Maiden's Soul",
-          "icon": "completion/Maiden's_Soul.png",
-          "flag": "Snare Soul Churchkeeper",
-          "type": "materium",
-          "description": "Given by Chapel Maid during the Silk and Soul wish",
           "link": "https://hollowknight.wiki/w/Maiden's_Soul",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 2,
+          "description": "Found in Bilewater after defeating Groal the Great",
+          "flag": "Snare Soul Swamp Bug",
+          "icon": "completion/Seekers_Soul.png",
           "id": "materium-snare-soul-swamp-bug",
           "label": "Seeker's Soul",
-          "icon": "completion/Seekers_Soul.png",
-          "flag": "Snare Soul Swamp Bug",
-          "type": "materium",
-          "description": "Found in Bilewater after defeating Groal the Great",
           "link": "https://hollowknight.wiki/w/Seeker's_Soul",
-          "act": 2
+          "type": "materium"
         },
         {
+          "act": 3,
+          "description": "Awarded after defeating Crust King Khann in Coral Tower",
+          "flag": "Coral Heart",
+          "icon": "completion/Heart_Coral.png",
           "id": "materium-coral-heart",
           "label": "Encrusted Heart",
-          "icon": "completion/Heart_Coral.png",
-          "flag": "Coral Heart",
-          "type": "materium",
-          "description": "Awarded after defeating Crust King Khann in Coral Tower",
           "link": "https://hollowknight.wiki/w/Encrusted_Heart",
-          "act": 3
+          "type": "materium"
         },
         {
+          "act": 3,
+          "description": "Awarded after defeating Nyleth in Shellwood",
+          "flag": "Flower Heart",
+          "icon": "completion/Heart_Flower.png",
           "id": "materium-flower-heart",
           "label": "Pollen Heart",
-          "icon": "completion/Heart_Flower.png",
-          "flag": "Flower Heart",
-          "type": "materium",
-          "description": "Awarded after defeating Nyleth in Shellwood",
           "link": "https://hollowknight.wiki/w/Pollen_Heart",
-          "act": 3
+          "type": "materium"
         },
         {
+          "act": 3,
+          "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields",
+          "flag": "Hunter Heart",
+          "icon": "completion/Heart_Hunter.png",
           "id": "materium-hunter-heart",
           "label": "Hunter's Heart",
-          "icon": "completion/Heart_Hunter.png",
-          "flag": "Hunter Heart",
-          "type": "materium",
-          "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields",
           "link": "https://hollowknight.wiki/w/Hunter's_Heart",
-          "act": 3
+          "type": "materium"
         },
         {
+          "act": 3,
+          "description": "Awarded after defeating the Clover Dancers in Lost Verdania",
+          "flag": "Clover Heart",
+          "icon": "completion/Heart_Clover.png",
           "id": "materium-clover-heart",
           "label": "Conjoined Heart",
-          "icon": "completion/Heart_Clover.png",
-          "flag": "Clover Heart",
-          "type": "materium",
-          "description": "Awarded after defeating the Clover Dancers in Lost Verdania",
           "link": "https://hollowknight.wiki/w/Conjoined_Heart",
-          "act": 3
+          "type": "materium"
         }
-      ]
+      ],
+      "label": "Materium"
     },
-
     {
-      "label": "Mementos",
       "desc": "Keepsakes given by allies or obtained through notable encounters. Some may hold sentimental value.",
       "items": [
         {
+          "act": 3,
+          "description": "Given by the Hunter upon mastering his trials.",
+          "flag": "Hunter Memento",
+          "icon": "completion/Memento_Hunters.png",
           "id": "memento-hunter",
           "label": "Hunter's Memento",
-          "icon": "completion/Memento_Hunters.png",
-          "flag": "Hunter Memento",
-          "type": "relic",
-          "description": "Given by the Hunter upon mastering his trials.",
           "link": "https://hollowknight.wiki/w/Hunter's_Memento",
-          "act": 3
+          "type": "relic"
         },
         {
+          "act": 3,
+          "description": "Received from Grey after completing her personal quest.",
+          "flag": "Grey Memento",
+          "icon": "completion/Memento_Grey.png",
           "id": "memento-grey",
           "label": "Grey Memento",
-          "icon": "completion/Memento_Grey.png",
-          "flag": "Grey Memento",
-          "type": "relic",
-          "description": "Received from Grey after completing her personal quest.",
           "link": "https://hollowknight.wiki/w/Grey_Memento",
-          "act": 3
+          "type": "relic"
         },
         {
+          "act": 3,
+          "description": "A token awarded by the Guardian for triumph in the Flea Games.",
+          "flag": "Memento Seth",
+          "icon": "completion/Memento_Guardian.png",
           "id": "memento-guardian",
           "label": "Guardian's Memento",
-          "icon": "completion/Memento_Guardian.png",
-          "flag": "Memento Seth",
-          "type": "relic",
-          "description": "A token awarded by the Guardian for triumph in the Flea Games.",
           "link": "https://hollowknight.wiki/w/Guardian's_Memento",
-          "act": 3
+          "type": "relic"
         },
         {
+          "act": 3,
+          "description": "Gifted by the Sprintmaster after proving unmatched agility.",
+          "flag": "Sprintmaster Memento",
+          "icon": "completion/Memento_Sprintmaster.png",
           "id": "memento-sprintmaster",
           "label": "Sprintmaster Memento",
-          "icon": "completion/Memento_Sprintmaster.png",
-          "flag": "Sprintmaster Memento",
-          "type": "relic",
-          "description": "Gifted by the Sprintmaster after proving unmatched agility.",
           "link": "https://hollowknight.wiki/w/Sprintmaster_Memento",
-          "act": 3
+          "type": "relic"
         },
         {
+          "act": 3,
+          "description": "A keepsake found upon aiding Craw, a relic of quiet gratitude.",
+          "flag": "Crowman Memento",
+          "icon": "completion/Memento_Craw.png",
           "id": "memento-craw",
           "label": "Craw Memento",
-          "icon": "completion/Memento_Craw.png",
-          "flag": "Crowman Memento",
-          "type": "relic",
-          "description": "A keepsake found upon aiding Craw, a relic of quiet gratitude.",
           "link": "https://hollowknight.wiki/w/Craw_Memento",
-          "act": 3
+          "type": "relic"
         },
         {
+          "act": 3,
+          "description": "Awarded by Garmond - a symbol of perseverance through peril.",
+          "flag": "Memento Garmond",
+          "icon": "completion/Memento_Heros.png",
           "id": "memento-heros",
           "label": "Hero's Memento",
-          "icon": "completion/Memento_Heros.png",
-          "flag": "Memento Garmond",
-          "type": "relic",
-          "description": "Awarded by Garmond - a symbol of perseverance through peril.",
           "link": "https://hollowknight.wiki/w/Hero's_Memento",
-          "act": 3
+          "type": "relic"
         },
         {
+          "act": 3,
+          "description": "Awarded by Garmond - a symbol of perseverance through peril.",
+          "flag": "Memento Surface",
+          "icon": "completion/Memento_Surface.png",
           "id": "memento-surface",
           "label": "Surface Memento",
-          "icon": "completion/Memento_Surface.png",
-          "flag": "Memento Surface",
-          "type": "relic",
-          "description": "Awarded by Garmond - a symbol of perseverance through peril.",
           "link": "https://hollowknight.wiki/w/Surface_Memento",
-          "act": 3
+          "type": "relic"
         },
         {
+          "act": 3,
+          "description": "Awarded after defeating Nyleth in Shellwood. (This is missable since you can only get one heart-related memento.)",
+          "flag": "Heart Flower",
+          "icon": "completion/Heart_Flower.png",
           "id": "heart-flower",
           "label": "Pollen Heart",
-          "icon": "completion/Heart_Flower.png",
-          "flag": "Heart Flower",
-          "type": "relic",
-          "description": "Awarded after defeating Nyleth in Shellwood. (This is missable since you can only get one heart-related memento.)",
           "link": "https://hollowknight.wiki/w/Pollen_Heart",
           "missable": true,
-          "act": 3
+          "type": "relic"
         },
         {
+          "act": 3,
+          "description": "Awarded after defeating Crust King Khann in Coral Tower. (This is missable since you can only get one heart-related memento per save file.)",
+          "flag": "Heart Coral",
+          "icon": "completion/Heart_Coral.png",
           "id": "heart-coral",
           "label": "Encrusted Heart",
-          "icon": "completion/Heart_Coral.png",
-          "flag": "Heart Coral",
-          "type": "relic",
-          "description": "Awarded after defeating Crust King Khann in Coral Tower. (This is missable since you can only get one heart-related memento per save file.)",
           "link": "https://hollowknight.wiki/w/Encrusted_Heart",
           "missable": true,
-          "act": 3
+          "type": "relic"
         },
         {
+          "act": 3,
+          "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields. (This is missable since you can only get one heart-related memento per save file.)",
+          "flag": "Heart Hunter",
+          "icon": "completion/Heart_Hunter.png",
           "id": "heart-hunter",
           "label": "Hunter's Heart",
-          "icon": "completion/Heart_Hunter.png",
-          "flag": "Heart Hunter",
-          "type": "relic",
-          "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields. (This is missable since you can only get one heart-related memento per save file.)",
           "link": "https://hollowknight.wiki/w/Hunter's_Heart",
           "missable": true,
-          "act": 3
+          "type": "relic"
         },
         {
+          "act": 3,
+          "description": "Awarded after defeating the Clover Dancers in Lost Verdania. (This is missable since you can only get one heart-related memento per save file.)",
+          "flag": "Clover Heart",
+          "icon": "completion/Heart_Clover.png",
           "id": "heart-clover",
           "label": "Conjoined Heart",
-          "icon": "completion/Heart_Clover.png",
-          "flag": "Clover Heart",
-          "type": "relic",
-          "description": "Awarded after defeating the Clover Dancers in Lost Verdania. (This is missable since you can only get one heart-related memento per save file.)",
           "link": "https://hollowknight.wiki/w/Conjoined_Heart",
           "missable": true,
-          "act": 3
+          "type": "relic"
         }
-      ]
+      ],
+      "label": "Mementos"
     },
     {
-      "label": "Maps",
       "desc": "",
       "items": [
         {
-          "id": "map-mossgrotto",
-          "label": "Mosslands Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchase from Shakra. These overgrown caves offer little challenge to a skilled warrior. A place for reflection, perhaps.",
           "flag": "HasMossGrottoMap",
           "icon": "completion/Mosslands_Map.png",
-          "description": "Purchase from Shakra. These overgrown caves offer little challenge to a skilled warrior. A place for reflection, perhaps.",
+          "id": "map-mossgrotto",
+          "label": "Mosslands Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-docks",
-          "label": "Deep Docks Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchased from Shakra. These docks, I thought them small when I first passed. Now I feel the structure's true bulk hides below the molten lake.",
           "flag": "HasDocksMap",
           "icon": "completion/Deep_Docks_Map.png",
-          "description": "Purchased from Shakra. These docks, I thought them small when I first passed. Now I feel the structure's true bulk hides below the molten lake.",
+          "id": "map-docks",
+          "label": "Deep Docks Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-greymoor",
-          "label": "Greymoor Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchased from Shakra. TWide, dim hollows, choked by rag and dust. The bugs who once tended these lands have clearly lost their way.",
           "flag": "HasGreymoorMap",
           "icon": "completion/Greymoor_Map.png",
-          "description": "Purchased from Shakra. TWide, dim hollows, choked by rag and dust. The bugs who once tended these lands have clearly lost their way.",
+          "id": "map-greymoor",
+          "label": "Greymoor Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-bellhart",
-          "label": "Bellhart Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchased from Shakra. A town built within the thick vein of bells that runs through Pharloom's core. One wonders who would craft so many, and for what purpose?",
           "flag": "HasBellhartMap",
           "icon": "completion/Bellhart_Map.png",
-          "description": "Purchased from Shakra. A town built within the thick vein of bells that runs through Pharloom's core. One wonders who would craft so many, and for what purpose?",
+          "id": "map-bellhart",
+          "label": "Bellhart Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-shellwood",
-          "label": "Shellwood Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchased from Shakra. Tangled roads choked beneath bramble and root. The flora is often as deadly as the creatures who call this place home.",
           "flag": "HasShellwoodMap",
           "icon": "completion/Shellwood_Map.png",
-          "description": "Purchased from Shakra. Tangled roads choked beneath bramble and root. The flora is often as deadly as the creatures who call this place home.",
+          "id": "map-shellwood",
+          "label": "Shellwood Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-huntersnest",
-          "label": "Hunter's March Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchased from Shakra. Burrowed paths of the red-shells. Their stores and shrines are frequent throughout. These tunnels must grant them swift passage about the fields below.",
           "flag": "HasHuntersNestMap",
           "icon": "completion/Hunter's_March_Map.png",
-          "description": "Purchased from Shakra. Burrowed paths of the red-shells. Their stores and shrines are frequent throughout. These tunnels must grant them swift passage about the fields below.",
+          "id": "map-huntersnest",
+          "label": "Hunter's March Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-citadelunderstore",
-          "label": "Underworks Map",
-          "type": "flag",
+          "act": 2,
+          "description": "Obtained from a Lore Tablet.",
           "flag": "HasCitadelUnderstoreMap",
           "icon": "completion/Underworks_Map.png",
-          "description": "Obtained from a Lore Tablet.",
+          "id": "map-citadelunderstore",
+          "label": "Underworks Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "map-coral",
-          "label": "Sands of Karak Map",
-          "type": "flag",
+          "act": 2,
+          "description": "Purchased from Shakra. Crusted heights above those howling steps. Signs suggest great warriors once ruled this winding place, though the sand has eroded much of their mark.",
           "flag": "HasCoralMap",
           "icon": "completion/Sands_of_Karak_Map.png",
-          "description": "Purchased from Shakra. Crusted heights above those howling steps. Signs suggest great warriors once ruled this winding place, though the sand has eroded much of their mark.",
+          "id": "map-coral",
+          "label": "Sands of Karak Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "map-slab",
-          "label": "Slab Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Obtained from the shell of a dead bug.",
           "flag": "HasSlabMap",
           "icon": "completion/The_Slab_Map.png",
-          "description": "Obtained from the shell of a dead bug.",
+          "id": "map-slab",
+          "label": "Slab Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-peak",
-          "label": "Mount Fay Map",
-          "type": "flag",
+          "act": 2,
+          "description": "Purchased from Shakra. The jagged crest looming over all of Pharloom. Its whipping winds and bitter cold would pierce the strongest shell.",
           "flag": "HasPeakMap",
           "icon": "completion/Mount_Fay_Map.png",
-          "description": "Purchased from Shakra. The jagged crest looming over all of Pharloom. Its whipping winds and bitter cold would pierce the strongest shell.",
+          "id": "map-peak",
+          "label": "Mount Fay Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "map-swamp",
-          "label": "Bilewater Map",
-          "type": "flag",
+          "act": 2,
+          "description": "Purchased from Shakra. Swamps born in the Citadel's shadow. There is evidence the waters here once ran clear.",
           "flag": "HasSwampMap",
           "icon": "completion/Bilewater_Map.png",
-          "description": "Purchased from Shakra. Swamps born in the Citadel's shadow. There is evidence the waters here once ran clear.",
+          "id": "map-swamp",
+          "label": "Bilewater Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "map-clover",
-          "label": "Verdania Map",
-          "type": "flag",
+          "act": 2,
+          "description": "Obtained from an abandoned camp",
           "flag": "HasCloverMap",
           "icon": "completion/Verdania_Map.png",
-          "description": "Obtained from an abandoned camp",
+          "id": "map-clover",
+          "label": "Verdania Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "map-abyss",
-          "label": "Abyss Map",
-          "type": "flag",
+          "act": 3,
+          "description": "Obtained from a Lore Tablet.",
           "flag": "HasAbyssMap",
           "icon": "completion/Weavenest_Atla_Map.png",
-          "description": "Obtained from a Lore Tablet.",
+          "id": "map-abyss",
+          "label": "Abyss Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 3
+          "type": "flag"
         },
         {
-          "id": "map-cog",
-          "label": "Cogwork Core Map",
-          "type": "flag",
+          "act": 2,
+          "description": "Obtained from a mechanism",
           "flag": "HasCogMap",
           "icon": "completion/Cogwork_Core_Map.png",
-          "description": "Obtained from a mechanism",
+          "id": "map-cog",
+          "label": "Cogwork Core Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "map-library",
-          "label": "Whispering Vaults Map",
-          "type": "flag",
+          "act": 2,
+          "description": "Obtained from a map machine.",
           "flag": "HasLibraryMap",
           "icon": "completion/Whispering_Vaults_Map.png",
-          "description": "Obtained from a map machine.",
+          "id": "map-library",
+          "label": "Whispering Vaults Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "map-cradle",
-          "label": "Cradle Map",
-          "type": "flag",
+          "act": 2,
+          "description": "Obtained from a map machine in Act 2. Found next to a broken map machine in Act 3.",
           "flag": "HasCradleMap",
           "icon": "completion/The_Cradle_Map.png",
-          "description": "Obtained from a map machine in Act 2. Found next to a broken map machine in Act 3.",
+          "id": "map-cradle",
+          "label": "Cradle Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "map-arborium",
-          "label": "Memorium Map",
-          "type": "flag",
+          "act": 2,
+          "description": "Obtained from a map machine.",
           "flag": "HasArboriumMap",
           "icon": "completion/Memorium_Map.png",
-          "description": "Obtained from a map machine.",
+          "id": "map-arborium",
+          "label": "Memorium Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "map-aqueduct",
-          "label": "Putrefied Ducts Map",
-          "type": "flag",
+          "act": 2,
+          "description": "Obtained from a desk.",
           "flag": "HasAqueductMap",
           "icon": "completion/Underworks_Map.png",
-          "description": "Obtained from a desk.",
+          "id": "map-aqueduct",
+          "label": "Putrefied Ducts Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "map-weavehome",
-          "label": "Weavenest Atla Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Obtained from a Lore Tablet",
           "flag": "HasWeavehomeMap",
           "icon": "completion/Weavenest_Atla_Map.png",
-          "description": "Obtained from a Lore Tablet",
+          "id": "map-weavehome",
+          "label": "Weavenest Atla Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-wilds",
-          "label": "Far Fields Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchase from Shakra. Fierce red-shells nest across these wide caverns. Battle with them is most intense. Impressive are the warriors of Pharloom.",
           "flag": "HasWildsMap",
           "icon": "completion/Far_Fields_Map.png",
-          "description": "Purchase from Shakra. Fierce red-shells nest across these wide caverns. Battle with them is most intense. Impressive are the warriors of Pharloom.",
+          "id": "map-wilds",
+          "label": "Far Fields Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-boneforest",
-          "label": "The Marrow Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchase from Shakra. Crumbling roads built upon the shells of ancient bugs. All of Pharloom rests upon these fragile foundations.",
           "flag": "HasBoneforestMap",
           "icon": "completion/Generic_Map.png",
-          "description": "Purchase from Shakra. Crumbling roads built upon the shells of ancient bugs. All of Pharloom rests upon these fragile foundations.",
+          "id": "map-boneforest",
+          "label": "The Marrow Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-crawl",
-          "label": "Wormways Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchase from Shakra. Worm-ridden caverns, shaking and unstable. There remain faint signs that pilgrims once travelled these tight paths.",
           "flag": "HasCrawlMap",
           "icon": "completion/Wormways_Map.png",
-          "description": "Purchase from Shakra. Worm-ridden caverns, shaking and unstable. There remain faint signs that pilgrims once travelled these tight paths.",
+          "id": "map-crawl",
+          "label": "Wormways Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-judgesteps",
-          "label": "Blasted Steps Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchase from Shakra. Huge caves ascending to Pharloom's Citadel. The roads are slowly being devoured by sand and howling wind.",
           "flag": "HasJudgeStepsMap",
           "icon": "completion/Blasted_Steps_Map.png",
-          "description": "Purchase from Shakra. Huge caves ascending to Pharloom's Citadel. The roads are slowly being devoured by sand and howling wind.",
+          "id": "map-judgesteps",
+          "label": "Blasted Steps Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-dustpens",
-          "label": "Sinners Road Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchase from Shakra. Old roads and passages overrun by roaches and their keepers. The ways are covered thick with filth",
           "flag": "HasDustpensMap",
           "icon": "completion/Sinner's_Road_Map.png",
-          "description": "Purchase from Shakra. Old roads and passages overrun by roaches and their keepers. The ways are covered thick with filth",
+          "id": "map-dustpens",
+          "label": "Sinners Road Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-hang",
-          "label": "High Halls Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Obtained from a map machine",
           "flag": "HasHangMap",
           "icon": "completion/High_Halls_Map.png",
-          "description": "Obtained from a map machine",
+          "id": "map-hang",
+          "label": "High Halls Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-halls",
-          "label": "Choral Chambers Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Obtained from a map machine",
           "flag": "HasHallsMap",
           "icon": "completion/Choral_Chambers_Map.png",
-          "description": "Obtained from a map machine",
+          "id": "map-halls",
+          "label": "Choral Chambers Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-songgate",
-          "label": "Grand Gate Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Obtained from a map machine",
           "flag": "HasSongGateMap",
           "icon": "completion/Choral_Chambers_Map.png",
-          "description": "Obtained from a map machine",
+          "id": "map-songgate",
+          "label": "Grand Gate Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "map-ward",
-          "label": "Whiteward Map",
-          "type": "flag",
+          "act": 1,
+          "description": "Obtained from a map machine",
           "flag": "HasWardMap",
           "icon": "completion/Whiteward_Map.png",
-          "description": "Obtained from a map machine",
+          "id": "map-ward",
+          "label": "Whiteward Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 1
+          "type": "flag"
         }
-      ]
+      ],
+      "label": "Maps"
     },
     {
-      "label": "Map Pins",
       "desc": "Markers purchased from Shakra to mark key locations across Pharloom.",
       "items": [
         {
-          "id": "pin-bench",
-          "label": "Bench Pin",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchased from Shakra. These pins will mark benches and other rest spots on your map.",
           "flag": "hasPinBench",
           "icon": "completion/Bench_Pins.png",
-          "description": "Purchased from Shakra. These pins will mark benches and other rest spots on your map.",
+          "id": "pin-bench",
+          "label": "Bench Pin",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "pin-shop",
-          "label": "Vendor Pins",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchased from Shakra. These pins will mark vendors on your map.",
           "flag": "hasPinShop",
           "icon": "completion/Vendor_Pins_(Silksong).png",
-          "description": "Purchased from Shakra. These pins will mark vendors on your map.",
+          "id": "pin-shop",
+          "label": "Vendor Pins",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "pin-stag",
-          "label": "Bellway Pins",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchased from Shakra. These pins will mark stations on your map.",
           "flag": "hasPinStag",
           "icon": "completion/Bellway_Pins.png",
-          "description": "Purchased from Shakra. These pins will mark stations on your map.",
+          "id": "pin-stag",
+          "label": "Bellway Pins",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "pin-tube",
-          "label": "Ventrica Pins",
-          "type": "flag",
+          "act": 2,
+          "description": "Purchased from Shakra. Marks the mysterious transport tubes of Pharloom.",
           "flag": "hasPinTube",
           "icon": "completion/Ventrica_Pins.png",
-          "description": "Purchased from Shakra. Marks the mysterious transport tubes of Pharloom.",
+          "id": "pin-tube",
+          "label": "Ventrica Pins",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "marker-shell",
-          "label": "Shell Marker",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchase from Shakra. These markers I have modelled after the sheen of my own shell. Perhaps you will think of me when you use them.",
           "flag": "hasMarker_a",
           "icon": "completion/Shell_Marker_(Silksong).png",
-          "description": "Purchase from Shakra. These markers I have modelled after the sheen of my own shell. Perhaps you will think of me when you use them.",
+          "id": "marker-shell",
+          "label": "Shell Marker",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "marker-ring",
-          "label": "Ring Marker",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchase from Shakra. With these I often mark the locations of worthy foes.",
           "flag": "hasMarker_b",
           "icon": "completion/Ring_Marker.png",
-          "description": "Purchase from Shakra. With these I often mark the locations of worthy foes.",
+          "id": "marker-ring",
+          "label": "Ring Marker",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "marker-hunt",
-          "label": "Hunt Marker",
-          "type": "flag",
+          "act": 1,
+          "description": "Purchase from Shakra. The shell of the red-hunters makes for a vivid marker indeed.",
           "flag": "hasMarker_c",
           "icon": "completion/Hunt_Marker.png",
-          "description": "Purchase from Shakra. The shell of the red-hunters makes for a vivid marker indeed.",
+          "id": "marker-hunt",
+          "label": "Hunt Marker",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "marker-dark",
-          "label": "Dark Marker",
-          "type": "flag",
+          "act": 2,
+          "description": "Purchase from Shakra. This dark-shell material is cold to the touch, and more resilient than it looks",
           "flag": "hasMarker_d",
           "icon": "completion/Dark_Marker.png",
-          "description": "Purchase from Shakra. This dark-shell material is cold to the touch, and more resilient than it looks",
+          "id": "marker-dark",
+          "label": "Dark Marker",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "marker-bronze",
-          "label": "Bronze Marker",
-          "type": "flag",
+          "act": 2,
+          "description": "Purchase from Shakra. These I have fashioned from the husks of old bells. A hard task to make, so the cost reflects the extra effort.",
           "flag": "hasMarker_e",
           "icon": "completion/Bronze_Marker.png",
-          "description": "Purchase from Shakra. These I have fashioned from the husks of old bells. A hard task to make, so the cost reflects the extra effort.",
+          "id": "marker-bronze",
+          "label": "Bronze Marker",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
-          "act": 2
+          "type": "flag"
         }
-      ]
+      ],
+      "label": "Map Pins"
     },
     {
-      "label": "Bellway Stations",
       "desc": "Stations unlocked throughout Pharloom that connect distant regions and aid swift travel.",
       "items": [
         {
+          "act": 1,
+          "description": "Unlocked after defeating the Bell Beast. Connects the lower Bone Bottom with the rest of Pharloom.",
+          "flag": "defeatedBellBeast",
+          "icon": "completion/Bellways.png",
           "id": "station-bellbeast",
           "label": "Bone Bottom Station",
-          "type": "flag",
-          "flag": "defeatedBellBeast",
-          "icon": "completion/Bellways.png",
-          "description": "Unlocked after defeating the Bell Beast. Connects the lower Bone Bottom with the rest of Pharloom.",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "station-docks",
-          "label": "Deep Docks Station",
-          "type": "flag",
+          "act": 1,
+          "description": "",
           "flag": "UnlockedDocksStation",
           "icon": "completion/Bellways.png",
-          "description": "",
+          "id": "station-docks",
+          "label": "Deep Docks Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "station-boneforest-east",
-          "label": "Far Fields Station",
-          "type": "flag",
+          "act": 1,
+          "description": "",
           "flag": "UnlockedBoneforestEastStation",
           "icon": "completion/Bellways.png",
-          "description": "",
+          "id": "station-boneforest-east",
+          "label": "Far Fields Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "station-greymoor",
-          "label": "Greymoor Station",
-          "type": "flag",
+          "act": 1,
+          "description": "",
           "flag": "UnlockedGreymoorStation",
           "icon": "completion/Bellways.png",
-          "description": "",
+          "id": "station-greymoor",
+          "label": "Greymoor Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "station-belltown",
-          "label": "Bellhart Station",
-          "type": "flag",
+          "act": 1,
+          "description": "",
           "flag": "UnlockedBelltownStation",
           "icon": "completion/Bellways.png",
-          "description": "",
+          "id": "station-belltown",
+          "label": "Bellhart Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "station-coraltower",
-          "label": "Blasted Steps Station",
-          "type": "flag",
+          "act": 1,
+          "description": "",
           "flag": "UnlockedCoralTowerStation",
           "icon": "completion/Bellways.png",
-          "description": "",
+          "id": "station-coraltower",
+          "label": "Blasted Steps Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "station-city",
-          "label": "Grand Bellway Station",
-          "type": "flag",
+          "act": 2,
+          "description": "",
           "flag": "UnlockedCityStation",
           "icon": "completion/Bellways.png",
-          "description": "",
+          "id": "station-city",
+          "label": "Grand Bellway Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "station-peak",
-          "label": "The Slab Station",
-          "type": "flag",
+          "act": 1,
+          "description": "",
           "flag": "UnlockedPeakStation",
           "icon": "completion/Bellways.png",
-          "description": "",
+          "id": "station-peak",
+          "label": "The Slab Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "station-shellwood",
-          "label": "Shellwood Station",
-          "type": "flag",
+          "act": 1,
+          "description": "",
           "flag": "UnlockedShellwoodStation",
           "icon": "completion/Bellways.png",
-          "description": "",
+          "id": "station-shellwood",
+          "label": "Shellwood Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "station-shadow",
-          "label": "Bilewater Station",
-          "type": "flag",
+          "act": 1,
+          "description": "",
           "flag": "UnlockedShadowStation",
           "icon": "completion/Bellways.png",
-          "description": "",
+          "id": "station-shadow",
+          "label": "Bilewater Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 1
+          "type": "flag"
         },
         {
-          "id": "station-aqueduct",
-          "label": "Putrefied Ducts Station",
-          "type": "flag",
+          "act": 2,
+          "description": "",
           "flag": "UnlockedAqueductStation",
           "icon": "completion/Bellways.png",
-          "description": "",
+          "id": "station-aqueduct",
+          "label": "Putrefied Ducts Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "station-marrow",
-          "label": "The Marrow Station",
-          "type": "flag",
+          "act": 1,
+          "description": "",
           "flag": "defeatedBellBeast",
           "icon": "completion/Bellways.png",
-          "description": "",
+          "id": "station-marrow",
+          "label": "The Marrow Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 1
+          "type": "flag"
         }
-      ]
+      ],
+      "label": "Bellway Stations"
     },
     {
-      "label": "Ventrica Stations",
       "desc": "The Ventrica are a system of tubes that run throughout the Citadel and Underworks, which Hornet can use to travel, similar to the Bellways. The Grand Bellway station connects the two systems of travel.",
       "items": [
         {
-          "id": "tube-song",
-          "label": "Terminus Tube",
-          "type": "flag",
+          "act": 2,
+          "description": "",
           "flag": "UnlockedSongTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
-          "description": "",
+          "id": "tube-song",
+          "label": "Terminus Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "tube-under",
-          "label": "Underworks Tube",
-          "type": "flag",
+          "act": 2,
+          "description": "",
           "flag": "UnlockedUnderTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
-          "description": "",
+          "id": "tube-under",
+          "label": "Underworks Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "tube-citybellway",
-          "label": "Grand Bellway Tube",
-          "type": "flag",
+          "act": 2,
+          "description": "",
           "flag": "UnlockedCityBellwayTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
-          "description": "",
+          "id": "tube-citybellway",
+          "label": "Grand Bellway Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "tube-hang",
-          "label": "Choral Chambers Tube",
-          "type": "flag",
+          "act": 2,
+          "description": "",
           "flag": "UnlockedHangTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
-          "description": "",
+          "id": "tube-hang",
+          "label": "Choral Chambers Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "tube-enclave",
-          "label": "First Shrine Tube",
-          "type": "flag",
+          "act": 2,
+          "description": "",
           "flag": "UnlockedEnclaveTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
-          "description": "",
+          "id": "tube-enclave",
+          "label": "First Shrine Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 2
+          "type": "flag"
         },
         {
-          "id": "tube-arborium",
-          "label": "Memorium Tube",
-          "type": "flag",
+          "act": 2,
+          "description": "",
           "flag": "UnlockedArboriumTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
-          "description": "",
+          "id": "tube-arborium",
+          "label": "Memorium Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "act": 2
+          "type": "flag"
         }
-      ]
+      ],
+      "label": "Ventrica Stations"
     },
     {
-      "label": "Misc Collectables",
       "desc": "Special single-instance items gathered and deposited the Bellhome in Bellhart before it can be used.",
       "items": [
         {
+          "act": 2,
+          "description": "The Materium can be found in the upper part of the Memorium. The item must be constructed in the Bellhome in Bellhart before it can be used.",
+          "flag": "Collectable Item Pickup Materium",
+          "icon": "completion/Materium_item.png",
           "id": "misc-materium",
           "label": "Materium",
-          "type": "device",
-          "scene": "Arborium_07",
-          "flag": "Collectable Item Pickup Materium",
-          "relatedFlag": "ConstructedMaterium",
-          "icon": "completion/Materium_item.png",
-          "description": "The Materium can be found in the upper part of the Memorium. The item must be constructed in the Bellhome in Bellhart before it can be used.",
           "link": "https://hollowknight.wiki/w/Materium",
-          "act": 2
+          "relatedFlag": "ConstructedMaterium",
+          "scene": "Arborium_07",
+          "type": "device"
         },
         {
+          "act": 3,
+          "description": "Found in The Abyss, in the upper east passage of Weavenest Absolom. The item must be constructed in the Bellhome in Bellhart before it can be used.",
+          "flag": "Collectable Item Pickup",
+          "icon": "completion/Farsight.png",
           "id": "misc-farsight",
           "label": "Farsight",
-          "type": "device",
-          "scene": "Abyss_08",
-          "flag": "Collectable Item Pickup",
-          "relatedFlag": "ConstructedFarsight",
-          "icon": "completion/Farsight.png",
-          "description": "Found in The Abyss, in the upper east passage of Weavenest Absolom. The item must be constructed in the Bellhome in Bellhart before it can be used.",
           "link": "https://hollowknight.wiki/w/Farsight",
-          "act": 3
+          "relatedFlag": "ConstructedFarsight",
+          "scene": "Abyss_08",
+          "type": "device"
         }
-      ]
+      ],
+      "label": "Misc Collectables"
     }
   ]
 }

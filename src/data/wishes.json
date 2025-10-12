@@ -2,875 +2,875 @@
   "$schema": "./wishes.schema.json",
   "categories": [
     {
-      "label": "Main Wishes",
       "desc": "Complete all main storyline quests in Pharloom.",
       "items": [
         {
-          "id": "citadel-seeker",
-          "label": "The Great Citadel",
-          "type": "quest",
+          "act": 1,
+          "description": "Ascend through the lands of Pharloom and reach the Citadel at the kingdom's peak. Reach the Citadel. ",
           "flag": "Citadel Seeker",
           "icon": "quest/Seek_Quest_Icon.png",
-          "description": "Ascend through the lands of Pharloom and reach the Citadel at the kingdom's peak. Reach the Citadel. ",
+          "id": "citadel-seeker",
+          "label": "The Great Citadel",
           "link": "https://hollowknight.wiki/w/Acts#The_Great_Citadel",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "threadspun-town",
-          "label": "The Threadspun Town",
-          "type": "quest",
+          "act": 1,
+          "description": "Break the silken curse ensnaring the town of Bellhart. Defeat Widow to free the town of Bellhart. ",
           "flag": "The Threadspun Town",
           "icon": "quest/Save_Quest_Icon.png",
-          "description": "Break the silken curse ensnaring the town of Bellhart. Defeat Widow to free the town of Bellhart. ",
+          "id": "threadspun-town",
+          "label": "The Threadspun Town",
           "link": "https://hollowknight.wiki/w/Acts#The_Threadspun_Town",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "grand-gate",
-          "label": "Grand Gate",
-          "type": "quest",
+          "act": 1,
+          "description": "Awaken the old bells throughout the lands. Journey to the five Bellshrines throughout lower Pharloom and ring them to unlock the Grand Gate",
           "flag": "Grand Gate Bellshrines",
           "icon": "quest/Gate_Quest_Icon.png",
-          "description": "Awaken the old bells throughout the lands. Journey to the five Bellshrines throughout lower Pharloom and ring them to unlock the Grand Gate",
+          "id": "grand-gate",
+          "label": "Grand Gate",
           "link": "https://hollowknight.wiki/w/Acts#Grand_Gate",
           "missable": true,
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "silent-halls",
-          "label": "Silent Halls",
-          "type": "quest",
+          "act": 2,
+          "description": "Venture inside the Citadel and confront the veiled bugs. Confront Lace within the Choral Chambers.",
           "flag": "Citadel Investigate",
           "icon": "quest/Seek_Quest_Icon.png",
-          "description": "Venture inside the Citadel and confront the veiled bugs. Confront Lace within the Choral Chambers.",
+          "id": "silent-halls",
+          "label": "Silent Halls",
           "link": "https://hollowknight.wiki/w/Acts#Silent_Halls",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "pharlooms-crown-1",
-          "label": "Pharloom's Crown #1",
-          "type": "quest",
+          "act": 2,
+          "description": "Scale the Citadel and confront the one who haunts the lands of Pharloom. ",
           "flag": "Citadel Ascent",
           "icon": "quest/Seek_Quest_Icon.png",
-          "description": "Scale the Citadel and confront the one who haunts the lands of Pharloom. ",
+          "id": "pharlooms-crown-1",
+          "label": "Pharloom's Crown #1",
           "link": "https://hollowknight.wiki/w/Acts#Pharloom's_Crown",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "pharlooms-crown-2",
-          "label": "Pharloom's Crown #2",
-          "type": "quest",
+          "act": 2,
+          "description": "Learn the threefold melody and open the path to the Citadel's crest.",
           "flag": "Citadel Ascent Melodies",
           "icon": "quest/Seek_Quest_Icon.png",
-          "description": "Learn the threefold melody and open the path to the Citadel's crest.",
+          "id": "pharlooms-crown-2",
+          "label": "Pharloom's Crown #2",
           "link": "https://hollowknight.wiki/w/Acts#Pharloom's_Crown",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "pharlooms-crown-3",
-          "label": "Pharloom's Crown #3",
-          "type": "quest",
+          "act": 2,
+          "description": "Rise above the Citadel and confront the one who haunts the land of Pharloom.",
           "flag": "Citadel Ascent Lift",
           "icon": "quest/Seek_Quest_Icon.png",
-          "description": "Rise above the Citadel and confront the one who haunts the land of Pharloom.",
+          "id": "pharlooms-crown-3",
+          "label": "Pharloom's Crown #3",
           "link": "https://hollowknight.wiki/w/Acts#Pharloom's_Crown",
-          "act": 2
+          "type": "quest"
         },
         {
+          "act": 2,
+          "description": "Confront the one who haunts the lands of Pharloom. Defeat Grand Mother Silk.",
+          "flag": "Silk Boss",
+          "icon": "quest/Seek_Quest_Icon.png",
           "id": "pale-monarch",
           "label": "Pale Monarch",
-          "flag": "Silk Boss",
-          "type": "journal",
-          "required": 1,
-          "icon": "quest/Seek_Quest_Icon.png",
-          "description": "Confront the one who haunts the lands of Pharloom. Defeat Grand Mother Silk.",
           "link": "https://hollowknight.wiki/w/Acts#Pale_Monarch",
-          "act": 2
+          "required": 1,
+          "type": "journal"
         },
         {
-          "id": "soul-snare",
-          "label": "Soul Snare",
-          "type": "quest",
+          "act": 2,
+          "description": "Scale the Citadel and ensnare its monarch in a deadly trap. Defeat Grand Mother Silk with the Needolin.",
           "flag": "Silk Defeat Snare",
           "icon": "quest/Snare_Quest_Icon.png",
-          "description": "Scale the Citadel and ensnare its monarch in a deadly trap. Defeat Grand Mother Silk with the Needolin.",
+          "id": "soul-snare",
+          "label": "Soul Snare",
           "link": "https://hollowknight.wiki/w/Acts#Soul_Snare",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "after-the-fall",
-          "label": "After the Fall",
-          "type": "quest",
+          "act": 3,
+          "description": "Discover the fate of Pharloom. Escape the Cradle.",
           "flag": "Black Thread Pt0",
           "icon": "quest/Fall_Quest_Icon.png",
-          "description": "Discover the fate of Pharloom. Escape the Cradle.",
+          "id": "after-the-fall",
+          "label": "After the Fall",
           "link": "https://hollowknight.wiki/w/Acts#After_the_Fall",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "awaiting-the-end",
-          "label": "Awaiting the End",
-          "type": "quest",
+          "act": 3,
+          "description": "Confront the caretaker and his family in the Ruined Chapel beside Bone Bottom.",
           "flag": "Black Thread Pt1 Shamans",
           "icon": "quest/Fall_Quest_Icon.png",
-          "description": "Confront the caretaker and his family in the Ruined Chapel beside Bone Bottom.",
+          "id": "awaiting-the-end",
+          "label": "Awaiting the End",
           "link": "https://hollowknight.wiki/w/Acts#Awaiting_the_End",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "beast-in-the-bells",
-          "label": "Beast in the Bells",
-          "type": "quest",
+          "act": 3,
+          "description": "Descend into the Bellway and defeat the hostile creature within.",
           "flag": "Bellbeast Rescue",
           "icon": "quest/Beast_Quest_Icon.png",
-          "description": "Descend into the Bellway and defeat the hostile creature within.",
+          "id": "beast-in-the-bells",
+          "label": "Beast in the Bells",
           "link": "https://hollowknight.wiki/w/Acts#Beast_in_the_Bells",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "the-dark-below-1",
-          "label": "The Dark Below #1",
-          "type": "quest",
+          "act": 3,
+          "description": "In Deep Docks, find a way to descend beneath Pharloom.",
           "flag": "Diving Bell Pt1 Inspect",
           "icon": "quest/Fall_Quest_Icon.png",
-          "description": "In Deep Docks, find a way to descend beneath Pharloom.",
+          "id": "the-dark-below-1",
+          "label": "The Dark Below #1",
           "link": "https://hollowknight.wiki/w/Acts#The_Dark_Below",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "the-dark-below-2",
-          "label": "The Dark Below #2",
-          "type": "quest",
+          "act": 3,
+          "description": "Find aid in the Deep Docks to access its diving bell and descend beneath Pharloom.",
           "flag": "Diving Bell Pt2 Ballow",
           "icon": "quest/Fall_Quest_Icon.png",
-          "description": "Find aid in the Deep Docks to access its diving bell and descend beneath Pharloom.",
+          "id": "the-dark-below-2",
+          "label": "The Dark Below #2",
           "link": "https://hollowknight.wiki/w/Acts#The_Dark_Below",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "the-dark-below-3",
-          "label": "The Dark Below #3",
-          "type": "quest",
+          "act": 3,
+          "description": "Use the diving bell in Deep Docks to descend beneath Pharloom.",
           "flag": "Diving Bell Pt3 Descend",
           "icon": "quest/Fall_Quest_Icon.png",
-          "description": "Use the diving bell in Deep Docks to descend beneath Pharloom.",
+          "id": "the-dark-below-3",
+          "label": "The Dark Below #3",
           "link": "https://hollowknight.wiki/w/Acts#The_Dark_Below",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "the-dark-below-4",
-          "label": "The Dark Below #4",
-          "type": "quest",
+          "act": 3,
+          "description": "Reach the source of the black threads within the Abyss.",
           "flag": "Black Thread Pt2 Abyss",
           "icon": "quest/Fall_Quest_Icon.png",
-          "description": "Reach the source of the black threads within the Abyss.",
+          "id": "the-dark-below-4",
+          "label": "The Dark Below #4",
           "link": "https://hollowknight.wiki/w/Acts#The_Dark_Below",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "return-to-pharloom",
-          "label": "Return to Pharloom",
-          "type": "quest",
+          "act": 3,
+          "description": "Escape the Abyss.",
           "flag": "Black Thread Pt3 Escape",
           "icon": "quest/Fall_Quest_Icon.png",
-          "description": "Escape the Abyss.",
+          "id": "return-to-pharloom",
+          "label": "Return to Pharloom",
           "link": "https://hollowknight.wiki/w/Acts#Return_to_Pharloom",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "spell-seeker",
-          "label": "Spell Seeker",
-          "type": "quest",
+          "act": 3,
+          "description": "Return to the Snail Shamans in the Ruined Chapel beside Bone Bottom.",
           "flag": "Black Thread Pt4 Return",
           "icon": "quest/Fall_Quest_Icon.png",
-          "description": "Return to the Snail Shamans in the Ruined Chapel beside Bone Bottom.",
+          "id": "spell-seeker",
+          "label": "Spell Seeker",
           "link": "https://hollowknight.wiki/w/Acts#Spell_Seeker",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "the-old-hearts",
-          "label": "The Old Hearts",
-          "type": "quest",
+          "act": 3,
+          "description": "Enliven and acquire the old hearts of Pharloom.",
           "flag": "Black Thread Pt5 Heart",
           "icon": "quest/Fall_Quest_Icon.png",
-          "description": "Enliven and acquire the old hearts of Pharloom.",
+          "id": "the-old-hearts",
+          "label": "The Old Hearts",
           "link": "https://hollowknight.wiki/w/Acts#The_Old_Hearts",
-          "act": 3
+          "type": "quest"
         },
         {
+          "act": 3,
+          "description": "Dive into the Void and cut Pharloom free.",
+          "flag": "Lost Lace",
+          "icon": "quest/Finale_Quest_Icon.png",
           "id": "last-dive",
           "label": "Last Dive",
-          "flag": "Lost Lace",
-          "type": "journal",
-          "required": 1,
-          "icon": "quest/Finale_Quest_Icon.png",
-          "description": "Dive into the Void and cut Pharloom free.",
           "link": "https://hollowknight.wiki/w/Acts#Last_Dive",
-          "act": 3
+          "required": 1,
+          "type": "journal"
         }
-      ]
+      ],
+      "label": "Main Wishes"
     },
     {
-      "label": "Wayfarer Wishes",
       "desc": "Wayfarer Wishes usually involve finding an item or NPC during Hornet's exploration of Pharloom at the request of another NPC. Later in the game, some Wayfarer Wishes will be placed that involve defeating optional bosses.",
       "items": [
         {
-          "id": "lost-fleas-1",
-          "label": "The Lost Fleas #1",
-          "type": "quest",
+          "act": 1,
+          "description": "Speak to the fleas before starting their rescue.",
           "flag": "Save the Fleas Pre",
           "icon": "quest/wayfarer.png",
-          "description": "Speak to the fleas before starting their rescue.",
+          "id": "lost-fleas-1",
+          "label": "The Lost Fleas #1",
           "link": "https://hollowknight.wiki/w/The_Lost_Fleas",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "lost-fleas-2",
-          "label": "The Lost Fleas #2",
-          "type": "quest",
+          "act": 1,
+          "description": "Find and save the 5 lost fleas.",
           "flag": "Save the Fleas",
           "icon": "quest/wayfarer.png",
-          "description": "Find and save the 5 lost fleas.",
+          "id": "lost-fleas-2",
+          "label": "The Lost Fleas #2",
           "link": "https://hollowknight.wiki/w/The_Lost_Fleas",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "pinmasters-oil",
-          "label": "Pinmaster's Oil",
-          "type": "quest",
+          "act": 1,
+          "description": "Retrieve pale oil from the Citadel.",
           "flag": "A Pinsmiths Tools",
           "icon": "quest/wayfarer.png",
-          "description": "Retrieve pale oil from the Citadel.",
+          "id": "pinmasters-oil",
+          "label": "Pinmaster's Oil",
           "link": "https://hollowknight.wiki/w/Pinmaster's_Oil",
           "missable": true,
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "my-missing-courier",
-          "label": "My Missing Courier",
-          "type": "quest",
+          "act": 1,
+          "description": "Search for traces of the courier Tipp and track his location.",
           "flag": "Save Courier Short",
           "icon": "quest/wayfarer.png",
-          "description": "Search for traces of the courier Tipp and track his location.",
+          "id": "my-missing-courier",
+          "label": "My Missing Courier",
           "link": "https://hollowknight.wiki/w/My_Missing_Courier",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "my-missing-brother",
-          "label": "My Missing Brother",
-          "type": "quest",
+          "act": 2,
+          "description": "Search for traces of the courier Pill and track his location.",
           "flag": "Save Courier Tall",
           "icon": "quest/wayfarer.png",
-          "description": "Search for traces of the courier Pill and track his location.",
+          "id": "my-missing-brother",
+          "label": "My Missing Brother",
           "link": "https://hollowknight.wiki/w/My_Missing_Brother",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "balm-for-the-wounded",
-          "label": "Balm for the Wounded",
-          "type": "quest",
+          "act": 2,
+          "description": "Search for traces of the pilgrim Sherma and track his location.",
           "flag": "Save Sherma",
           "icon": "quest/wayfarer.png",
-          "description": "Search for traces of the pilgrim Sherma and track his location.",
+          "id": "balm-for-the-wounded",
+          "label": "Balm for the Wounded",
           "link": "https://hollowknight.wiki/w/Balm_for_the_Wounded",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "the-wandering-merchant",
-          "label": "The Wandering Merchant",
-          "type": "quest",
+          "act": 2,
+          "description": "Search for traces of the merchant Jubilana and track her location.",
           "flag": "Save City Merchant",
           "icon": "quest/wayfarer.png",
-          "description": "Search for traces of the merchant Jubilana and track her location.",
+          "id": "the-wandering-merchant",
+          "label": "The Wandering Merchant",
           "link": "https://hollowknight.wiki/w/The_Wandering_Merchant",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "the-lost-merchant",
-          "label": "The Lost Merchant",
-          "type": "quest",
+          "act": 2,
+          "description": "Search for traces of the merchant Jubilana and track her location.",
           "flag": "Save City Merchant Bridge",
           "icon": "quest/wayfarer.png",
-          "description": "Search for traces of the merchant Jubilana and track her location.",
+          "id": "the-lost-merchant",
+          "label": "The Lost Merchant",
           "link": "https://hollowknight.wiki/w/The_Lost_Merchant",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "rite-of-rebirth",
-          "label": "Rite of Rebirth",
-          "type": "quest",
+          "act": 2,
+          "description": "Bind the twisted bud.",
           "flag": "Wood Witch Curse",
           "icon": "quest/wayfarer.png",
-          "description": "Bind the twisted bud.",
+          "id": "rite-of-rebirth",
+          "label": "Rite of Rebirth",
           "link": "https://hollowknight.wiki/w/Rite_of_Rebirth",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "infestation-operation",
-          "label": "Infestation Operation",
-          "type": "quest",
+          "act": 2,
+          "description": "Acquire steel spines from Crull and Benjin in Sinner's Road so Yarnaby can remove the parasite.",
           "flag": "Doctor Curse Cure",
           "icon": "quest/wayfarer.png",
-          "description": "Acquire steel spines from Crull and Benjin in Sinner's Road so Yarnaby can remove the parasite.",
+          "id": "infestation-operation",
+          "label": "Infestation Operation",
           "link": "https://hollowknight.wiki/w/Infestation_Operation",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "trails-end",
-          "label": "Trail's End",
-          "type": "quest",
+          "act": 2,
+          "description": "Search for Shakra and her master in Bilewater.",
           "flag": "Shakra Final Quest",
           "icon": "quest/wayfarer.png",
-          "description": "Search for Shakra and her master in Bilewater.",
+          "id": "trails-end",
+          "label": "Trail's End",
           "link": "https://hollowknight.wiki/w/Trail's_End",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "final-audience",
-          "label": "Final Audience",
-          "type": "quest",
+          "act": 2,
+          "description": "Track the second sentinel by their markers left near Songclave.",
           "flag": "Song Knight",
           "icon": "quest/wayfarer.png",
-          "description": "Track the second sentinel by their markers left near Songclave.",
+          "id": "final-audience",
+          "label": "Final Audience",
           "link": "https://hollowknight.wiki/w/Final_Audience",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "silk-and-soul-1",
-          "label": "Silk and Soul #1",
-          "type": "quest",
+          "act": 2,
+          "description": "Meet with the caretaker in Songclave.",
           "flag": "Soul Snare Pre",
           "icon": "quest/wayfarer.png",
-          "description": "Meet with the caretaker in Songclave.",
+          "id": "silk-and-soul-1",
+          "label": "Silk and Soul #1",
           "link": "https://hollowknight.wiki/w/Silk_and_Soul",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "silk-and-soul-2",
-          "label": "Silk and Soul #2",
-          "type": "quest",
+          "act": 2,
+          "description": "Acquire the necessary components to build a powerful trap.",
           "flag": "Soul Snare",
           "icon": "quest/wayfarer.png",
-          "description": "Acquire the necessary components to build a powerful trap.",
+          "id": "silk-and-soul-2",
+          "label": "Silk and Soul #2",
           "link": "https://hollowknight.wiki/w/Silk_and_Soul",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "fatal-resolve-1",
-          "label": "Fatal Resolve #1",
-          "type": "quest",
+          "act": 3,
+          "description": "Travel to Pinstress's home at the far edge of the Blasted Steps and accept her challenge.",
           "flag": "Pinstress Battle Pre",
           "icon": "quest/wayfarer.png",
-          "description": "Travel to Pinstress's home at the far edge of the Blasted Steps and accept her challenge.",
+          "id": "fatal-resolve-1",
+          "label": "Fatal Resolve #1",
           "link": "https://hollowknight.wiki/w/Fatal_Resolve",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "fatal-resolve-2",
-          "label": "Fatal Resolve #2",
-          "type": "quest",
+          "act": 3,
+          "description": "Find Pinstress on the stormward side of Mount Fay and defeat her in battle.",
           "flag": "Pinstress Battle",
           "icon": "quest/wayfarer.png",
-          "description": "Find Pinstress on the stormward side of Mount Fay and defeat her in battle.",
+          "id": "fatal-resolve-2",
+          "label": "Fatal Resolve #2",
           "link": "https://hollowknight.wiki/w/Fatal_Resolve",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "pain-anguish-and-misery",
-          "label": "Pain, Anguish and Misery",
-          "type": "quest",
+          "act": 3,
+          "description": "Return to the Citadel's stage, beside the Whispering Vaults.",
           "flag": "Tormented Trobbio",
           "icon": "quest/wayfarer.png",
-          "description": "Return to the Citadel's stage, beside the Whispering Vaults.",
+          "id": "pain-anguish-and-misery",
+          "label": "Pain, Anguish and Misery",
           "link": "https://hollowknight.wiki/w/Pain,_Anguish_and_Misery",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "heros-call",
-          "label": "Hero's Call",
-          "type": "quest",
+          "act": 3,
+          "description": "Seek out the distressed bug near the Blasted Steps Bellway.",
           "flag": "Garmond Black Threaded",
           "icon": "quest/wayfarer.png",
-          "description": "Seek out the distressed bug near the Blasted Steps Bellway.",
+          "id": "heros-call",
+          "label": "Hero's Call",
           "link": "https://hollowknight.wiki/w/Hero's_Call",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "ecstasy-of-the-end-1",
-          "label": "Ecstasy of the End #1",
-          "type": "quest",
+          "act": 3,
+          "description": "Speak to Fleamaster Mooshka of Fleatopia.",
           "flag": "Flea Games Pre",
           "icon": "quest/wayfarer.png",
-          "description": "Speak to Fleamaster Mooshka of Fleatopia.",
+          "id": "ecstasy-of-the-end-1",
+          "label": "Ecstasy of the End #1",
           "link": "https://hollowknight.wiki/w/Ecstasy_of_the_End",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "ecstasy-of-the-end-2",
-          "label": "Ecstasy of the End #2",
-          "type": "quest",
+          "act": 3,
+          "description": "Achieve high score in the Flea Games and become Grand Champion.",
           "flag": "Flea Games",
           "icon": "quest/wayfarer.png",
-          "description": "Achieve high score in the Flea Games and become Grand Champion.",
+          "id": "ecstasy-of-the-end-2",
+          "label": "Ecstasy of the End #2",
           "link": "https://hollowknight.wiki/w/Ecstasy_of_the_End",
-          "act": 3
+          "type": "quest"
         }
-      ]
+      ],
+      "label": "Wayfarer Wishes"
     },
     {
-      "label": "Gather Wishes",
       "desc": "Gather Wishes involve exploring a region of the map (or in the case of the Great Taste of Pharloom wish, the entire map) and finding specific items to turn in to an NPC and complete the wish. Collecting the required items usually does not directly involve killing enemies, with some exceptions.",
       "items": [
         {
-          "id": "berry-picking-1",
-          "label": "Berry Picking #1",
-          "type": "quest",
+          "act": 1,
+          "description": "Speak to the druid in Mosshome.",
           "flag": "Mossberry Collection Pre",
           "icon": "quest/Gather.png",
-          "description": "Speak to the druid in Mosshome.",
+          "id": "berry-picking-1",
+          "label": "Berry Picking #1",
           "link": "https://hollowknight.wiki/w/Berry_Picking",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "berry-picking-2",
-          "label": "Berry Picking #2",
-          "type": "quest",
+          "act": 1,
+          "description": "Collect 3 mossberries.",
           "flag": "Mossberry Collection 1",
           "icon": "quest/Gather.png",
-          "description": "Collect 3 mossberries.",
+          "id": "berry-picking-2",
+          "label": "Berry Picking #2",
           "link": "https://hollowknight.wiki/w/Berry_Picking",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "rite-of-the-pollip",
-          "label": "Rite of the Pollip",
-          "type": "quest",
+          "act": 1,
+          "description": "Collect Pollip Hearts from the purple flowers of Shellwood.",
           "flag": "Shell Flowers",
           "icon": "quest/Gather.png",
-          "description": "Collect Pollip Hearts from the purple flowers of Shellwood.",
+          "id": "rite-of-the-pollip",
+          "label": "Rite of the Pollip",
           "link": "https://hollowknight.wiki/w/Rite_of_the_Pollip",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "silver-bells",
-          "label": "Silver Bells",
-          "type": "quest",
+          "act": 1,
+          "description": "Collect silver bells in the Bellvein tunnels above and below Bellhart.",
           "flag": "Shiny Bell Goomba",
           "icon": "quest/Gather.png",
-          "description": "Collect silver bells in the Bellvein tunnels above and below Bellhart.",
+          "id": "silver-bells",
+          "label": "Silver Bells",
           "link": "https://hollowknight.wiki/w/Silver_Bells",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "alchemists-assistant",
-          "label": "Alchemist's Assistant",
-          "type": "quest",
+          "act": 1,
+          "description": "Collect 3 Plasmium Buds in the Lower Wormways.",
           "flag": "Extractor Blue",
           "icon": "quest/Gather.png",
-          "description": "Collect 3 Plasmium Buds in the Lower Wormways.",
+          "id": "alchemists-assistant",
+          "label": "Alchemist's Assistant",
           "link": "https://hollowknight.wiki/w/Alchemist's_Assistant",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "great-taste-of-pharloom",
-          "label": "Great Taste of Pharloom",
-          "type": "quest",
+          "act": 2,
+          "description": "Collect rare delicacies of Pharloom.",
           "flag": "Great Gourmand",
           "icon": "quest/Gather.png",
-          "description": "Collect rare delicacies of Pharloom.",
+          "id": "great-taste-of-pharloom",
+          "label": "Great Taste of Pharloom",
           "link": "https://hollowknight.wiki/w/Great_Taste_of_Pharloom",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "advanced-alchemy",
-          "label": "Advanced Alchemy",
-          "type": "quest",
+          "act": 3,
+          "description": "Collect Plasmified Blood from infected creatures in the Wormways",
           "flag": "Extractor Blue Worms",
           "icon": "quest/Gather.png",
-          "description": "Collect Plasmified Blood from infected creatures in the Wormways",
+          "id": "advanced-alchemy",
+          "label": "Advanced Alchemy",
           "link": "https://hollowknight.wiki/w/Advanced_Alchemy",
-          "act": 3
+          "type": "quest"
         }
-      ]
+      ],
+      "label": "Gather Wishes"
     },
     {
-      "label": "Hunt Wishes",
       "desc": "Hunt Wishes involve killing normal (or occasionally special) enemies in a specific part of the world and collecting items dropped by them to turn in and complete the wish. The only exception to this is the Dark Hearts wish, which does not require Hornet to collect any items and whose enemy is found all across Pharloom. ",
       "items": [
         {
-          "id": "garb-of-the-pilgrims",
-          "label": "Garb of the Pilgrims",
-          "type": "quest",
+          "act": 1,
+          "description": "Hunt haunted pilgrims of Pharloom and collect pilgrim shawls from their bodies.",
           "flag": "Pilgrim Rags",
           "icon": "quest/Hunt_Wishes.png",
-          "description": "Hunt haunted pilgrims of Pharloom and collect pilgrim shawls from their bodies.",
+          "id": "garb-of-the-pilgrims",
+          "label": "Garb of the Pilgrims",
           "link": "https://hollowknight.wiki/w/Garb_of_the_Pilgrims",
           "missable": true,
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "flexile-spines",
-          "label": "Flexile Spines",
-          "type": "quest",
+          "act": 1,
+          "description": "Hunt Hokers in the far fields and collect spine cores.",
           "flag": "Brolly Get",
           "icon": "quest/Hunt_Wishes.png",
-          "description": "Hunt Hokers in the far fields and collect spine cores.",
+          "id": "flexile-spines",
+          "label": "Flexile Spines",
           "link": "https://hollowknight.wiki/w/Flexile_Spines",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "volatile-flintbeetles",
-          "label": "Volatile Flintbeetles",
-          "type": "quest",
+          "act": 1,
+          "description": "Track down Flintbeetles in the Marrow and defeat them to collect flintgems. Flintbeetles can be tracked by their stone-sheddings and aromatic dung.",
           "flag": "Rock Rollers",
           "icon": "quest/Hunt_Wishes.png",
-          "description": "Track down Flintbeetles in the Marrow and defeat them to collect flintgems. Flintbeetles can be tracked by their stone-sheddings and aromatic dung.",
+          "id": "volatile-flintbeetles",
+          "label": "Volatile Flintbeetles",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Hunt_Wishes",
           "missable": true,
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "crawbug-clearing-pre",
-          "label": "Crawbug Clearing #1",
-          "type": "quest",
+          "act": 1,
+          "description": "Speak to Creige of the Halfway Home in Greymoor.",
           "flag": "Crow Feathers Pre",
           "icon": "quest/Hunt_Wishes.png",
-          "description": "Speak to Creige of the Halfway Home in Greymoor.",
+          "id": "crawbug-clearing-pre",
+          "label": "Crawbug Clearing #1",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Hunt_Wishes",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "crawbug-clearing",
-          "label": "Crawbug Clearing #2",
-          "type": "quest",
+          "act": 1,
+          "description": "Hunt Crawbugs in Greymoor and collect their ragpelt.",
           "flag": "Crow Feathers",
           "icon": "quest/Hunt_Wishes.png",
-          "description": "Hunt Crawbugs in Greymoor and collect their ragpelt.",
+          "id": "crawbug-clearing",
+          "label": "Crawbug Clearing #2",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Hunt_Wishes",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "roach-guts",
-          "label": "Roach Guts",
-          "type": "quest",
+          "act": 1,
+          "description": "Hunt the Muckroaches of Sinner's Road and collect roach guts from their bodies.",
           "flag": "Roach Killing",
           "icon": "quest/Hunt_Wishes.png",
-          "description": "Hunt the Muckroaches of Sinner's Road and collect roach guts from their bodies.",
+          "id": "roach-guts",
+          "label": "Roach Guts",
           "link": "https://hollowknight.wiki/w/Roach_Guts_(Wish)",
           "missable": true,
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "fine-pins",
-          "label": "Fine Pins",
-          "type": "quest",
+          "act": 2,
+          "description": "Hunt pin-welding Choirbugs of the Citadel and collect fine pins.",
           "flag": "Fine Pins",
           "icon": "quest/Hunt_Wishes.png",
-          "description": "Hunt pin-welding Choirbugs of the Citadel and collect fine pins.",
+          "id": "fine-pins",
+          "label": "Fine Pins",
           "link": "https://hollowknight.wiki/w/Fine_Pins",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "cloaks-of-the-choir",
-          "label": "Cloaks of the Choir",
-          "type": "quest",
+          "act": 2,
+          "description": "Hunt cloaked Choirbugs of the Citadel and collect choir cloaks from their bodies.",
           "flag": "Song Pilgrim Cloaks",
           "icon": "quest/Hunt_Wishes.png",
-          "description": "Hunt cloaked Choirbugs of the Citadel and collect choir cloaks from their bodies.",
+          "id": "cloaks-of-the-choir",
+          "label": "Cloaks of the Choir",
           "link": "https://hollowknight.wiki/w/Cloaks_of_the_Choir",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "broodfeast",
-          "label": "Broodfeast",
-          "type": "quest",
+          "act": 2,
+          "description": "Use tools to acquire organs of various types so Huntress may feed her brood.",
           "flag": "Huntress Quest",
           "icon": "quest/Hunt_Wishes.png",
-          "description": "Use tools to acquire organs of various types so Huntress may feed her brood.",
+          "id": "broodfeast",
+          "label": "Broodfeast",
           "link": "https://hollowknight.wiki/w/Broodfeast",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "runtfeast",
-          "label": "Runtfeast",
-          "type": "quest",
+          "act": 3,
+          "description": "Use tools to acquire organs of various types so Runt may feed.",
           "flag": "Huntress Quest Runt",
           "icon": "quest/Hunt_Wishes.png",
-          "description": "Use tools to acquire organs of various types so Runt may feed.",
+          "id": "runtfeast",
+          "label": "Runtfeast",
           "link": "https://hollowknight.wiki/w/Runtfeast",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "dark-hearts",
-          "label": "Dark Hearts",
-          "type": "quest",
+          "act": 3,
+          "description": "Destroy void masses throughout Pharloom.",
           "flag": "Destroy Thread Cores",
           "icon": "quest/Hunt_Wishes.png",
-          "description": "Destroy void masses throughout Pharloom.",
+          "id": "dark-hearts",
+          "label": "Dark Hearts",
           "link": "https://hollowknight.wiki/w/Dark_Hearts",
-          "act": 3
+          "type": "quest"
         }
-      ]
+      ],
+      "label": "Hunt Wishes"
     },
     {
-      "label": "Grand Hunt Wishes",
       "desc": "Grand Hunt Wishes are always accepted from a Wishwall, and involve finding and killing a unique boss enemy and claiming a trophy item from them to turn in and complete the wish. They carry a high reward, either yielding a Heavy Rosary Necklace or a Mask Shard.",
       "items": [
         {
-          "id": "the-terrible-tyrant",
-          "label": "The Terrible Tyrant",
-          "type": "quest",
+          "act": 1,
+          "description": "Hunt a Skull Tyrant of the Marrow.",
           "flag": "Skull King",
           "icon": "quest/Grand_Hunt_Quest_Icon.png",
-          "description": "Hunt a Skull Tyrant of the Marrow.",
+          "id": "the-terrible-tyrant",
+          "label": "The Terrible Tyrant",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Grand_Hunt_Wishes",
           "missable": true,
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "savage-beastfly",
-          "label": "Savage Beastfly",
-          "type": "quest",
+          "act": 2,
+          "description": "Track down the savage Beastfly in the Far Fields and defeat it.",
           "flag": "Beastfly Hunt",
           "icon": "quest/Grand_Hunt_Quest_Icon.png",
-          "description": "Track down the savage Beastfly in the Far Fields and defeat it.",
+          "id": "savage-beastfly",
+          "label": "Savage Beastfly",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Grand_Hunt_Wishes",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "the-wailing-mother",
-          "label": "The Wailing Mother",
-          "type": "quest",
+          "act": 2,
+          "description": "Track down the wailing creature in the Slab and slay it.",
           "flag": "Broodmother Hunt",
           "icon": "quest/Grand_Hunt_Quest_Icon.png",
-          "description": "Track down the wailing creature in the Slab and slay it.",
+          "id": "the-wailing-mother",
+          "label": "The Wailing Mother",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Grand_Hunt_Wishes",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "the-hidden-hunter",
-          "label": "The Hidden Hunter",
-          "type": "quest",
+          "act": 3,
+          "description": "Track the one who stole Gilly's keepsake near the Bellshrine between Deep Docks and Far Fields.",
           "flag": "Ant Trapper",
           "icon": "quest/Grand_Hunt_Quest_Icon.png",
-          "description": "Track the one who stole Gilly's keepsake near the Bellshrine between Deep Docks and Far Fields.",
+          "id": "the-hidden-hunter",
+          "label": "The Hidden Hunter",
           "link": "https://hollowknight.wiki/w/The_Hidden_Hunter",
-          "act": 3
+          "type": "quest"
         }
-      ]
+      ],
+      "label": "Grand Hunt Wishes"
     },
     {
-      "label": "Donate Wishes",
       "desc": "Contribute shell shards and rosaries to support rebuilding efforts across Pharloom.",
       "items": [
         {
-          "id": "bone-bottom-repairs",
-          "label": "Bone Bottom Repairs",
-          "type": "quest",
+          "act": 1,
+          "description": "Donate 200 shell shards.",
           "flag": "Building Materials",
           "icon": "quest/donate.png",
-          "description": "Donate 200 shell shards.",
+          "id": "bone-bottom-repairs",
+          "label": "Bone Bottom Repairs",
           "link": "https://hollowknight.wiki/w/Bone_Bottom_Repairs",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "a-lifesaving-bridge",
-          "label": "A Lifesaving Bridge",
-          "type": "quest",
+          "act": 1,
+          "description": "Donate 300 shell shards to aid the building of a bridge.",
           "flag": "Building Materials (Bridge)",
           "icon": "quest/donate.png",
-          "description": "Donate 300 shell shards to aid the building of a bridge.",
+          "id": "a-lifesaving-bridge",
+          "label": "A Lifesaving Bridge",
           "link": "https://hollowknight.wiki/w/A_Lifesaving_Bridge",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "restoration-of-bellhart",
-          "label": "Restoration of Bellhart",
-          "type": "quest",
+          "act": 1,
+          "description": "Donate 250 rosaries to aid the rebuilding of Bellhart.",
           "flag": "Belltown House Start",
           "icon": "quest/donate.png",
-          "description": "Donate 250 rosaries to aid the rebuilding of Bellhart.",
+          "id": "restoration-of-bellhart",
+          "label": "Restoration of Bellhart",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Donate_Wishes",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "an-icon-of-hope",
-          "label": "An Icon of Hope",
-          "type": "quest",
+          "act": 2,
+          "description": "Donate 400 shell shards to aid the construction of an icon of hope.",
           "flag": "Building Materials (Statue)",
           "icon": "quest/donate.png",
-          "description": "Donate 400 shell shards to aid the construction of an icon of hope.",
+          "id": "an-icon-of-hope",
+          "label": "An Icon of Hope",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Donate_Wishes",
           "missable": true,
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "bellharts-glory",
-          "label": "Bellhart's Glory",
-          "type": "quest",
+          "act": 2,
+          "description": "Donate 400 rosaries to complete the rebuilding of Bellhart.",
           "flag": "Belltown House Mid",
           "icon": "quest/donate.png",
-          "description": "Donate 400 rosaries to complete the rebuilding of Bellhart.",
+          "id": "bellharts-glory",
+          "label": "Bellhart's Glory",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Donate_Wishes",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "building-up-songclave",
-          "label": "Building Up Songclave",
-          "type": "quest",
+          "act": 2,
+          "description": "Donate 300 rosaries to aid the growing Songclave.",
           "flag": "Songclave Donation 1",
           "icon": "quest/donate.png",
-          "description": "Donate 300 rosaries to aid the growing Songclave.",
+          "id": "building-up-songclave",
+          "label": "Building Up Songclave",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Donate_Wishes",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "strengthening-songclave",
-          "label": "Strengthening Songclave",
-          "type": "quest",
+          "act": 2,
+          "description": "Donate rosaries to aid the Songclave's residents.",
           "flag": "Songclave Donation 2",
           "icon": "quest/donate.png",
-          "description": "Donate rosaries to aid the Songclave's residents.",
+          "id": "strengthening-songclave",
+          "label": "Strengthening Songclave",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Donate_Wishes",
-          "act": 2
+          "type": "quest"
         }
-      ]
+      ],
+      "label": "Donate Wishes"
     },
     {
-      "label": "Delivery Wishes",
       "desc": "Deliver rare and precious items to recipients across Pharloom.",
       "items": [
         {
-          "id": "delivery-bonebottom",
-          "label": "Bone Bottom Supplies",
-          "type": "quest",
+          "act": 1,
+          "description": "Deliver supplies to the fixer Flick in Bone Bottom.",
           "flag": "Courier Delivery Bonebottom",
           "icon": "quest/Delivery.png",
-          "description": "Deliver supplies to the fixer Flick in Bone Bottom.",
+          "id": "delivery-bonebottom",
+          "label": "Bone Bottom Supplies",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
-          "act": 1,
-          "missable": true
+          "missable": true,
+          "type": "quest"
         },
         {
-          "id": "delivery-pilgrim-rest",
-          "label": "Pilgrim's Rest Supplies",
-          "type": "quest",
+          "act": 1,
+          "description": "Deliver supplies to Mort in Pilgrim's Rest.",
           "flag": "Courier Delivery Pilgrims Rest",
           "icon": "quest/Delivery.png",
-          "description": "Deliver supplies to Mort in Pilgrim's Rest.",
+          "id": "delivery-pilgrim-rest",
+          "label": "Pilgrim's Rest Supplies",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
-          "act": 1,
-          "missable": true
+          "missable": true,
+          "type": "quest"
         },
         {
-          "id": "queens-egg",
-          "label": "Queen's Egg",
-          "type": "quest",
+          "act": 1,
+          "description": "Deliver the Queen's Egg to Styx of Sinner's Road.",
           "flag": "Courier Delivery Dustpens Slave",
           "icon": "quest/Delivery.png",
-          "description": "Deliver the Queen's Egg to Styx of Sinner's Road.",
+          "id": "queens-egg",
+          "label": "Queen's Egg",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
           "mode": "normal",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "delivery-songclade-supplies",
-          "label": "Songclave Supplies",
-          "type": "quest",
+          "act": 2,
+          "description": "Deliver supplies to the Caretaker in Songclave.",
           "flag": "Courier Delivery Songclave",
           "icon": "quest/Delivery.png",
-          "description": "Deliver supplies to the Caretaker in Songclave.",
+          "id": "delivery-songclade-supplies",
+          "label": "Songclave Supplies",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "delivery-songclade-supplies",
-          "label": "Fleatopia Supplies",
-          "type": "quest",
+          "act": 2,
+          "description": "Deliver supplies to the Fleamaster Mooshka in Fleatopia.",
           "flag": "Courier Delivery Fleatopia",
           "icon": "quest/Delivery.png",
-          "description": "Deliver supplies to the Fleamaster Mooshka in Fleatopia.",
+          "id": "delivery-songclade-supplies",
+          "label": "Fleatopia Supplies",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "liquid-lacquer",
-          "label": "Liquid Lacquer",
-          "type": "quest",
+          "act": 2,
+          "description": "Deliver liquid lacquer to the Mask Maker upon Mount Fay.",
           "flag": "Courier Delivery Mask Maker",
           "icon": "quest/Delivery.png",
-          "description": "Deliver liquid lacquer to the Mask Maker upon Mount Fay.",
+          "id": "liquid-lacquer",
+          "label": "Liquid Lacquer",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
-          "act": 2
+          "type": "quest"
         },
         {
-          "id": "survivor-supplies",
-          "label": "Survivor's Camp Supplies",
-          "type": "quest",
+          "act": 3,
+          "description": "Deliver supplies to Flick at the Survivor's Camp.",
           "flag": "Courier Delivery Fixer",
           "icon": "quest/Delivery.png",
-          "description": "Deliver supplies to Flick at the Survivor's Camp.",
+          "id": "survivor-supplies",
+          "label": "Survivor's Camp Supplies",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
-          "act": 3
+          "type": "quest"
         }
-      ]
+      ],
+      "label": "Delivery Wishes"
     },
     {
-      "label": "Unique Wishes",
       "desc": "Rare and singular wishes tied to special figures and events across Pharloom.",
       "items": [
         {
-          "id": "bugs-of-pharloom",
-          "label": "Bugs of Pharloom",
-          "type": "quest",
+          "act": 1,
+          "description": "Defeat the many creatures of Pharloom and fill out the Hunter's Journal.",
           "flag": "Journal",
           "icon": "quest/Learn_Quest_Icon.png",
-          "description": "Defeat the many creatures of Pharloom and fill out the Hunter's Journal.",
+          "id": "bugs-of-pharloom",
+          "label": "Bugs of Pharloom",
           "link": "https://hollowknight.wiki/w/Bugs_of_Pharloom",
-          "act": 1
+          "type": "quest"
         },
         {
-          "id": "fastest-in-pharloom-1",
-          "label": "Fastest in Pharloom #1",
-          "type": "quest",
+          "act": 3,
+          "description": "Meet with the Sprintmaster Swift at the furthest border of the Far Fields.",
           "flag": "Sprintmaster Pre",
           "icon": "quest/Sprint_Quest_Icon.png",
-          "description": "Meet with the Sprintmaster Swift at the furthest border of the Far Fields.",
+          "id": "fastest-in-pharloom-1",
+          "label": "Fastest in Pharloom #1",
           "link": "https://hollowknight.wiki/w/Fastest_in_Pharloom",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "fastest-in-pharloom-2",
-          "label": "Fastest in Pharloom #2",
-          "type": "quest",
+          "act": 3,
+          "description": "Race Sprintmaster Swift to discover Pharloom's fastest bug.",
           "flag": "Sprintmaster Race",
           "icon": "quest/Sprint_Quest_Icon.png",
-          "description": "Race Sprintmaster Swift to discover Pharloom's fastest bug.",
+          "id": "fastest-in-pharloom-2",
+          "label": "Fastest in Pharloom #2",
           "link": "https://hollowknight.wiki/w/Fastest_in_Pharloom",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "passing-of-the-age",
-          "label": "Passing of the Age",
-          "type": "quest",
+          "act": 3,
+          "description": "We speak the wish of the Master Herald, he who signs an Age's end.",
           "flag": "Mr Mushroom",
           "icon": "quest/Witness_Quest_Icon.png",
-          "description": "We speak the wish of the Master Herald, he who signs an Age's end.",
+          "id": "passing-of-the-age",
+          "label": "Passing of the Age",
           "link": "https://hollowknight.wiki/w/Passing_of_the_Age_(Wish)",
-          "act": 3
+          "type": "quest"
         },
         {
-          "id": "a_vassal_lost",
-          "label": "A Vassal Lost",
-          "type": "quest",
+          "act": 1,
+          "description": "Investigate the resting sites marked by Steel Seer Zi to uncover the location of her vassal.",
           "flag": "Steel Sentinel",
           "icon": "quest/Steel_Wish_Art.png",
-          "description": "Investigate the resting sites marked by Steel Seer Zi to uncover the location of her vassal.",
+          "id": "a_vassal_lost",
+          "label": "A Vassal Lost",
           "link": "https://hollowknight.wiki/w/A_Vassal_Lost",
           "mode": "steel",
-          "act": 1
+          "type": "quest"
         }
-      ]
+      ],
+      "label": "Unique Wishes"
     }
   ]
 }
