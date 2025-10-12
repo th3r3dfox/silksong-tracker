@@ -625,23 +625,30 @@ function renderGenericGrid(
 
   // Apply mutually exclusive groups (global, relic + quest).
   for (const group of EXCLUSIVE_GROUPS) {
-    const saveData = currentLoadedSaveData;
-    const saveDataFlags = currentLoadedSaveDataFlags;
+    // eslint-disable-next-line @typescript-eslint/no-loop-func
     const owned = group.find((flag) => {
       // Try first as relic.
-      let value = getSaveDataValue(saveData, saveDataFlags, {
-        ...BASE_DUMMY_ITEM,
-        type: "relic",
-        flag,
-      });
+      let value = getSaveDataValue(
+        currentLoadedSaveData,
+        currentLoadedSaveDataFlags,
+        {
+          ...BASE_DUMMY_ITEM,
+          type: "relic",
+          flag,
+        },
+      );
 
       // If not a valid relic, try as quest.
       if (value === undefined || value === false) {
-        value = getSaveDataValue(saveData, saveDataFlags, {
-          ...BASE_DUMMY_ITEM,
-          type: "quest",
-          flag,
-        });
+        value = getSaveDataValue(
+          currentLoadedSaveData,
+          currentLoadedSaveDataFlags,
+          {
+            ...BASE_DUMMY_ITEM,
+            type: "quest",
+            flag,
+          },
+        );
       }
 
       return (
@@ -1214,11 +1221,14 @@ function updateAllProgressContent() {
         (item) => currentActFilter.includes(item.act) && matchMode(item),
       );
 
-      if (showMissingOnly && currentLoadedSaveData) {
-        const saveData = currentLoadedSaveData;
-        const saveDataFlags = currentLoadedSaveDataFlags;
+      if (showMissingOnly && currentLoadedSaveData !== undefined) {
+        // eslint-disable-next-line @typescript-eslint/no-loop-func
         filteredItems = filteredItems.filter((item) => {
-          const value = getSaveDataValue(saveData, saveDataFlags, item);
+          const value = getSaveDataValue(
+            currentLoadedSaveData,
+            currentLoadedSaveDataFlags,
+            item,
+          );
 
           if (item.type === "collectable") {
             const numberValue = typeof value === "number" ? value : 0;
