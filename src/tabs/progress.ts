@@ -181,6 +181,7 @@ export function updateTabProgress(): void {
 
       const desc = document.createElement("p");
       desc.className = "category-desc";
+      console.log("DESC:", category.desc);
       desc.textContent = category.desc;
       section.append(desc);
 

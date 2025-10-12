@@ -36,7 +36,7 @@
         },
         {
           "act": 2,
-          "description": "Cogwork Dancers are found in Cogwork Core",
+          "description": "Cogwork Dancers are found in Cogwork Core.",
           "flag": "defeatedCogworkDancers",
           "icon": "boss/Cogwork_Dancers.png",
           "id": "cogwork_dancers",
@@ -96,7 +96,7 @@
         },
         {
           "act": 2,
-          "description": "Forebrothers Signis & Gron can be found in the southern region of Deep Docks. The route to them is barred by a locked door that can only be opened by hanging on the nearby Clawline hook. Hornet must then navigate across the lower Deep Docks, dodging around Gron's attacks before finally reaching their arena",
+          "description": "Forebrothers Signis & Gron can be found in the southern region of Deep Docks. The route to them is barred by a locked door that can only be opened by hanging on the nearby Clawline hook. Hornet must then navigate across the lower Deep Docks, dodging around Gron's attacks before finally reaching their arena.",
           "flag": "defeatedDockForemen",
           "icon": "boss/Forebrothers_Signis_&_Gron.png",
           "id": "forebrothers",
@@ -159,7 +159,7 @@
         },
         {
           "act": 3,
-          "description": "Gurr the Outcast can be found in Far Fields after promising the The Hidden Hunter Wish.",
+          "description": "Gurr the Outcast can be found in Far Fields after promising the The Hidden Hunter wish.",
           "flag": "defeatedAntTrapper",
           "icon": "boss/Gurr_the_Outcast.png",
           "id": "gurr_outcast",
@@ -240,7 +240,7 @@
         },
         {
           "act": 3,
-          "description": "Pinstress can be found west of the Great Conchflies boss area in Blasted Steps. From the boss area, travel west. Her floating home will be found near the western edge of a large outdoor area. During Fatal Resolve, she can be found in Mount Fay, in the same area as the bench halfway up the mountain",
+          "description": "Pinstress can be found west of the Great Conchflies boss area in Blasted Steps. From the boss area, travel west. Her floating home will be found near the western edge of a large outdoor area. During Fatal Resolve, she can be found in Mount Fay, in the same area as the bench halfway up the mountain.",
           "flag": "PinstressPeakBattleAccepted",
           "icon": "boss/Pinstress.png",
           "id": "pinstress",
@@ -261,7 +261,7 @@
         },
         {
           "act": 1,
-          "description": "Savage Beastfly can be found in Hunter's March and in Far Fields, where Fourth Chorus was fought, during the Savage Beastfly Wish.",
+          "description": "Savage Beastfly can be found in Hunter's March and in Far Fields, where Fourth Chorus was fought, during the Savage Beastfly wish.",
           "flag": "defeatedBoneFlyerGiant",
           "icon": "boss/Savage_Beastfly.png",
           "id": "savage_beastfly",
@@ -375,7 +375,7 @@
         },
         {
           "act": 3,
-          "description": "Located in a hidden zone inside of Sands of Karak, requiring Silk Soar to reach. They stand vigil like a statue. Using the Needolin wakes them and begins the fight",
+          "description": "Located in a hidden zone inside of Sands of Karak, requiring Silk Soar to reach. They stand vigil like a statue. Using the Needolin wakes them and begins the fight.",
           "flag": "defeatedGreyWarrior",
           "icon": "boss/Watcher_at_the_Edge.png",
           "id": "watcher_edge",

@@ -26,7 +26,7 @@
         },
         {
           "act": 1,
-          "description": "Awaken the old bells throughout the lands. Journey to the five Bellshrines throughout lower Pharloom and ring them to unlock the Grand Gate",
+          "description": "Awaken the old bells throughout the lands. Journey to the five Bellshrines throughout lower Pharloom and ring them to unlock the Grand Gate.",
           "flag": "Grand Gate Bellshrines",
           "icon": "quest/Gate_Quest_Icon.png",
           "id": "grand-gate",
@@ -482,7 +482,7 @@
         },
         {
           "act": 3,
-          "description": "Collect Plasmified Blood from infected creatures in the Wormways",
+          "description": "Collect Plasmified Blood from infected creatures in the Wormways.",
           "flag": "Extractor Blue Worms",
           "icon": "quest/Gather.png",
           "id": "advanced-alchemy",
@@ -660,7 +660,7 @@
       "label": "Grand Hunt Wishes"
     },
     {
-      "desc": "Contribute shell shards and rosaries to support rebuilding efforts across Pharloom.",
+      "desc": "Contribute shell shards and Rosaries to support rebuilding efforts across Pharloom.",
       "items": [
         {
           "act": 1,
@@ -684,7 +684,7 @@
         },
         {
           "act": 1,
-          "description": "Donate 250 rosaries to aid the rebuilding of Bellhart.",
+          "description": "Donate 250 Rosaries to aid the rebuilding of Bellhart.",
           "flag": "Belltown House Start",
           "icon": "quest/donate.png",
           "id": "restoration-of-bellhart",
@@ -705,7 +705,7 @@
         },
         {
           "act": 2,
-          "description": "Donate 400 rosaries to complete the rebuilding of Bellhart.",
+          "description": "Donate 400 Rosaries to complete the rebuilding of Bellhart.",
           "flag": "Belltown House Mid",
           "icon": "quest/donate.png",
           "id": "bellharts-glory",
@@ -715,7 +715,7 @@
         },
         {
           "act": 2,
-          "description": "Donate 300 rosaries to aid the growing Songclave.",
+          "description": "Donate 300 Rosaries to aid the growing Songclave.",
           "flag": "Songclave Donation 1",
           "icon": "quest/donate.png",
           "id": "building-up-songclave",
@@ -725,7 +725,7 @@
         },
         {
           "act": 2,
-          "description": "Donate rosaries to aid the Songclave's residents.",
+          "description": "Donate Rosaries to aid the Songclave's residents.",
           "flag": "Songclave Donation 2",
           "icon": "quest/donate.png",
           "id": "strengthening-songclave",

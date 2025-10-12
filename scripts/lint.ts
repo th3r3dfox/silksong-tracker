@@ -1,3 +1,4 @@
+import { assertObject, assertString, isArray, isObject } from "complete-common";
 import { getFilePathsInDirectory, lintCommands, readFile } from "complete-node";
 import { globby } from "globby";
 import path from "node:path";
@@ -66,35 +67,57 @@ async function checkJSONPropertes() {
   const fileChecks = jsonFilePaths.map(async (jsonFilePath) => {
     const fileContents = await readFile(jsonFilePath);
     const json: unknown = JSON.parse(fileContents);
-
-    checkObjectForWhitespace(json, jsonFilePath, []);
+    assertObject(json, `A JSON file was not an object: ${jsonFilePath}`);
+    checkRecursive(json, jsonFilePath, []);
   });
 
   await Promise.all(fileChecks);
 }
 
-function checkObjectForWhitespace(
+function checkRecursive(
   value: unknown,
   filePath: string,
   propertyPath: ReadonlyArray<string | number>,
 ) {
+  const pathString = propertyPath.length > 0 ? propertyPath.join(".") : "root";
+
   if (typeof value === "string") {
     if (value !== value.trim()) {
-      const pathString =
-        propertyPath.length > 0 ? propertyPath.join(".") : "root";
       throw new Error(
-        `Property at "${pathString}" has leading or trailing whitespace in file: ${filePath}`,
+        `Property "${pathString}" has leading or trailing whitespace in file "${filePath}": ${value}`,
       );
     }
-  } else if (Array.isArray(value)) {
-    for (const [index, item] of (value as readonly unknown[]).entries()) {
-      checkObjectForWhitespace(item, filePath, [...propertyPath, index]);
+
+    if (value.includes("  ")) {
+      throw new Error(
+        `Property "${pathString}" has a double space in file "${filePath}": ${value}`,
+      );
     }
-  } else if (typeof value === "object" && value !== null) {
-    for (const [key, val] of Object.entries(value) as ReadonlyArray<
-      [string, unknown]
-    >) {
-      checkObjectForWhitespace(val, filePath, [...propertyPath, key]);
+  } else if (isArray(value)) {
+    for (const [i, element] of value.entries()) {
+      checkRecursive(element, filePath, [...propertyPath, i]);
+    }
+  } else if (isObject(value)) {
+    for (const [key, val] of Object.entries(value)) {
+      if (key !== key.trim()) {
+        throw new Error(
+          `Key "${pathString}" has leading or trailing whitespace in file "${filePath}": ${key}`,
+        );
+      }
+
+      if (key === "description") {
+        assertString(
+          val,
+          `A "description" property is not a string in file: ${filePath}`,
+        );
+        if (!val.endsWith(".") && !val.endsWith(".)") && !val.endsWith("?")) {
+          throw new Error(
+            `Property "${pathString}" does not end with a period in file "${filePath}": ${val}`,
+          );
+        }
+      }
+
+      checkRecursive(val, filePath, [...propertyPath, key]);
     }
   }
 }
