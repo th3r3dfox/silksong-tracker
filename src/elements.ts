@@ -1,7 +1,7 @@
 import { assertIs, assertNotNull } from "complete-common";
 
 /** Helper function to get an HTML element and throw an error if it does not exist. */
-function getHTMLElement(id: string): HTMLElement {
+export function getHTMLElement(id: string): HTMLElement {
   const element = document.querySelector(`#${id}`);
   assertNotNull(element, `Failed to get HTML element with id: ${id}`);
   assertIs(
@@ -75,4 +75,5 @@ export const searchCounter = getHTMLElement("searchCounter");
 export const shardsValue = getHTMLElement("shardsValue");
 export const sidebarItems = getHTMLElements(document, ".sidebar-item");
 export const spoilerToggle = getHTMLInputElement("spoilerToggle");
+export const tocList = getHTMLElement("toc-list");
 export const uploadOverlay = getHTMLElement("uploadOverlay");

@@ -28,6 +28,7 @@ import {
   downloadRawsaveBtn,
   dropzone,
   fileInput,
+  getHTMLElement,
   getHTMLElements,
   infoContent,
   infoOverlay,
@@ -44,6 +45,7 @@ import {
   shardsValue,
   sidebarItems,
   spoilerToggle,
+  tocList,
   uploadOverlay,
 } from "./elements.ts";
 import { decodeSilksongSave } from "./save-decoder.ts";
@@ -614,7 +616,7 @@ function renderGenericGrid(
   items: readonly Item[],
   spoilerOn: boolean,
 ): number {
-  containerElement.innerHTML = "";
+  containerElement.innerHTML = ""; // eslint-disable-line no-param-reassign
 
   // Silkshot variants (only one card visible).
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
@@ -719,7 +721,7 @@ function renderGenericGrid(
     switch (item.type) {
       case "level": {
         const current = value === undefined ? 0 : Number(value);
-        isDone = current >= (item.required);
+        isDone = current >= item.required;
         break;
       }
 
@@ -1371,13 +1373,9 @@ function getUnlocked(item: Item, value: unknown): boolean {
 }
 
 function buildDynamicTOC() {
-  const tocList = document.getElementById("toc-list");
-  if (!tocList) return;
   tocList.innerHTML = "";
 
-  const headers = document.querySelectorAll(
-    "#allprogress-grid h2, #allprogress-grid h3",
-  );
+  const headers = getHTMLElements(document, "#allprogress-grid h2, #allprogress-grid h3");
 
   let currentCategory: HTMLLIElement;
   let currentSubList: HTMLUListElement;
@@ -1392,8 +1390,8 @@ function buildDynamicTOC() {
     if (header.id === "") {
       const cleanId = text
         .toLowerCase()
-        .replace(/\s+/g, "-")
-        .replace(/[^\w\-]/g, "");
+        .replaceAll(/\s+/g, "-")
+        .replaceAll(/[^\w\-]/g, "");
       header.id = `section-${cleanId}`;
     }
 
@@ -1407,16 +1405,15 @@ function buildDynamicTOC() {
       a.textContent = text;
       a.addEventListener("click", (e) => {
         e.preventDefault();
-        const target = document.getElementById(header.id);
-        if (target !== null) {
-          target.scrollIntoView({
-            behavior: "instant",
-            block: "start",
-          });
-        }
+        const target = getHTMLElement(header.id);
+        target.scrollIntoView({
+          behavior: "instant",
+          block: "start",
+        });
 
         const wasOpen = li.classList.contains("open");
-        document.querySelectorAll(".toc-category").forEach((cat) => {
+        const tocCategories = getHTMLElements(document, ".toc-category")
+        tocCategories.forEach((cat) => {
           cat.classList.remove("open");
           cat.querySelector(".toc-sublist")?.classList.add("hidden");
         });
@@ -1457,7 +1454,7 @@ function initScrollSpy() {
   }
 
   tocObserver = new IntersectionObserver(
-    (entries) => {
+    (entries: readonly IntersectionObserverEntry[]) => {
       for (const entry of entries) {
         const { id } = entry.target;
         const match = document.querySelector(`a[href="#${id}"]`);
@@ -1474,23 +1471,22 @@ function initScrollSpy() {
           match.classList.add("active");
 
           const tocCategories = getHTMLElements(document, ".toc-category");
-          for (const cat of tocCategories) {
-            const sub = cat.querySelector(".toc-sublist");
-            if (cat === parentCategory) {
-              cat.classList.add("open");
-              sub?.classList.remove("hidden");
+          for (const category of tocCategories) {
+            const sublist = category.querySelector(".toc-sublist");
+            if (category === parentCategory) {
+              category.classList.add("open");
+              sublist?.classList.remove("hidden");
             } else {
-              cat.classList.remove("open");
-              sub?.classList.add("hidden");
+              category.classList.remove("open");
+              sublist?.classList.add("hidden");
             }
           }
         }
       }
     },
     {
-      root: null,
-      threshold: 0.6, // 🔹 Serve almeno il 60% visibile
-      rootMargin: "-10% 0px -40% 0px", // 🔹 Ritarda leggermente il cambio
+      threshold: 0.6, // At least 60% visible is required
+      rootMargin: "-10% 0px -40% 0px", // Delays the change slightly
     },
   );
 
@@ -1499,7 +1495,7 @@ function initScrollSpy() {
     "#allprogress-grid h2, #allprogress-grid h3",
   );
   for (const section of headers) {
-    tocObserver?.observe(section);
+    tocObserver.observe(section);
   }
 }
 
