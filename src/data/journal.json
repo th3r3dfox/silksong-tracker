@@ -6,7 +6,7 @@
       "items": [
         {
           "act": 3,
-          "description": "Mossgrub",
+          "description": "Mossgrub.",
           "flag": "MossBone Crawler",
           "icon": "https://cdn.wikimg.net/en/hkwiki/images/3/36/B_Mossgrub.png",
           "id": "mossgrub",
