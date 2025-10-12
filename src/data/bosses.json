@@ -26,7 +26,7 @@
         },
         {
           "act": 2,
-          "description": "Broodmother can be found in a cave in the Slab after accepting the Grand Hunt wish in Songclave. ",
+          "description": "Broodmother can be found in a cave in the Slab after accepting the Grand Hunt wish in Songclave.",
           "flag": "defeatedBroodMother",
           "icon": "boss/Broodmother.png",
           "id": "broodmother",
@@ -36,7 +36,7 @@
         },
         {
           "act": 2,
-          "description": "Cogwork Dancers are found in Cogwork Core ",
+          "description": "Cogwork Dancers are found in Cogwork Core",
           "flag": "defeatedCogworkDancers",
           "icon": "boss/Cogwork_Dancers.png",
           "id": "cogwork_dancers",
@@ -56,7 +56,7 @@
         },
         {
           "act": 3,
-          "description": "Crust King Khann can be found atop the Coral Tower after using Elegy of the Deep on his corpse in the west of Sands of Karak. ",
+          "description": "Crust King Khann can be found atop the Coral Tower after using Elegy of the Deep on his corpse in the west of Sands of Karak.",
           "flag": "defeatedCoralKing",
           "icon": "boss/Crust_King_Khann.png",
           "id": "khann",
@@ -66,7 +66,7 @@
         },
         {
           "act": 2,
-          "description": "Eastern end of Sinner's Road, requires Faydown Cloak. ",
+          "description": "Eastern end of Sinner's Road, requires Faydown Cloak.",
           "flag": "defeatedRoachkeeperChef",
           "icon": "boss/Disgraced_Chef_Lugoli.png",
           "id": "lugoli",
@@ -76,7 +76,7 @@
         },
         {
           "act": 2,
-          "description": "Father of the Flame can be found in Wisp Thicket. ",
+          "description": "Father of the Flame can be found in Wisp Thicket.",
           "flag": "defeatedWispPyreEffigy",
           "icon": "boss/Father_of_the_Flame.png",
           "id": "father_flame",
@@ -86,7 +86,7 @@
         },
         {
           "act": 2,
-          "description": "First Sinner can be found in the lower area of the Slab, accessible after obtaining the Key of Apostate. ",
+          "description": "First Sinner can be found in the lower area of the Slab, accessible after obtaining the Key of Apostate.",
           "flag": "defeatedFirstWeaver",
           "icon": "boss/First_Sinner.png",
           "id": "first_sinner",
@@ -106,7 +106,7 @@
         },
         {
           "act": 1,
-          "description": "Fourth Chorus is found in a large central area of the Far Fields. ",
+          "description": "Fourth Chorus is found in a large central area of the Far Fields.",
           "flag": "defeatedSongGolem",
           "icon": "boss/Fourth_Chorus.png",
           "id": "fourth_chorus",
@@ -116,7 +116,7 @@
         },
         {
           "act": 2,
-          "description": "They can be first met in Greymoor, in a small outcropping to the upper left of the Bellway Station. They can also be seen in Sinner's Road briefly, in the long room right above where Disgraced Chef Lugoli can be found, having beaten a Roachkeeper. In Act 3, they can be found in The Marrow, Mosshome, Far Fields, Greymoor, Sinner's Road, Shellwood, or Blasted Steps. ",
+          "description": "They can be first met in Greymoor, in a small outcropping to the upper left of the Bellway Station. They can also be seen in Sinner's Road briefly, in the long room right above where Disgraced Chef Lugoli can be found, having beaten a Roachkeeper. In Act 3, they can be found in The Marrow, Mosshome, Far Fields, Greymoor, Sinner's Road, Shellwood, or Blasted Steps.",
           "flag": "Garmond_Zaza",
           "icon": "boss/Garmond_&_Zaza.png",
           "id": "garmond_zaza",
@@ -128,7 +128,7 @@
         },
         {
           "act": 2,
-          "description": "Grand Mother Silk is located at the top of The Cradle which is unlocked after defeating Lace in her second encounter. ",
+          "description": "Grand Mother Silk is located at the top of The Cradle which is unlocked after defeating Lace in her second encounter.",
           "flag": "Silk Boss",
           "icon": "boss/Grand_Mother_Silk.png",
           "id": "grand_mother_silk",
@@ -139,7 +139,7 @@
         },
         {
           "act": 1,
-          "description": "The Great Conchflies can be found below the Blasted Steps Bellway, west of the central tall room, the entrance marked by a blue banner displaying crossed pins. ",
+          "description": "The Great Conchflies can be found below the Blasted Steps Bellway, west of the central tall room, the entrance marked by a blue banner displaying crossed pins.",
           "flag": "defeatedCoralDrillers",
           "icon": "boss/Great_Conchflies.png",
           "id": "great_conchflies",
@@ -159,7 +159,7 @@
         },
         {
           "act": 3,
-          "description": "Gurr the Outcast can be found in Far Fields after promising the The Hidden Hunter Wish. ",
+          "description": "Gurr the Outcast can be found in Far Fields after promising the The Hidden Hunter Wish.",
           "flag": "defeatedAntTrapper",
           "icon": "boss/Gurr_the_Outcast.png",
           "id": "gurr_outcast",
@@ -179,7 +179,7 @@
         },
         {
           "act": 1,
-          "description": "The Last Judge is located in the north east of the Blasted Steps. All five Bellshrines must be activated before The Last Judge can be fought. ",
+          "description": "The Last Judge is located in the north east of the Blasted Steps. All five Bellshrines must be activated before The Last Judge can be fought.",
           "flag": "defeatedLastJudge",
           "icon": "boss/Last_Judge.png",
           "id": "last_judge",
@@ -189,7 +189,7 @@
         },
         {
           "act": 1,
-          "description": "It is typically fought at the west edge of Greymoor, guarding the entrance to Bellhart. If skipped, it can later be fought west of the Greymoor Bellway instead. ",
+          "description": "It is typically fought at the west edge of Greymoor, guarding the entrance to Bellhart. If skipped, it can later be fought west of the Greymoor Bellway instead.",
           "flag": "defeatedVampireGnatBoss",
           "icon": "boss/Moorwing.png",
           "id": "moorwing",
@@ -199,7 +199,7 @@
         },
         {
           "act": 1,
-          "description": "Moss Mother is found in the Ruined Chapel, a sub-area of the Moss Grotto, and in a hidden section of Weavenest Atla. One can also be found within Moss Grotto itself, corrupted by Void in Act 3. ",
+          "description": "Moss Mother is found in the Ruined Chapel, a sub-area of the Moss Grotto, and in a hidden section of Weavenest Atla. One can also be found within Moss Grotto itself, corrupted by Void in Act 3.",
           "flag": "defeatedMossMother",
           "icon": "boss/Moss_Mother.png",
           "id": "moss_mother",
@@ -219,7 +219,7 @@
         },
         {
           "act": 3,
-          "description": "The Palestag can be found in Lost Verdania. ",
+          "description": "The Palestag can be found in Lost Verdania. (This is missable if you kill the Clover Dancers before Palestag.)",
           "flag": "defeatedWhiteCloverstag",
           "icon": "boss/Palestag.png",
           "id": "palestag",
@@ -230,7 +230,7 @@
         },
         {
           "act": 1,
-          "description": "The Phantom can be found in Exhaust Organ, in Bilewater, accessed through The Mist in Sinner's Road from the west or Bilewater from the east. ",
+          "description": "The Phantom can be found in Exhaust Organ, in Bilewater, accessed through The Mist in Sinner's Road from the west or Bilewater from the east.",
           "flag": "defeatedPhantom",
           "icon": "boss/Phantom.png",
           "id": "phantom",
@@ -250,7 +250,7 @@
         },
         {
           "act": 3,
-          "description": "Plasmified Zango can be found in a secret room within western Wormways during Act 3. ",
+          "description": "Plasmified Zango can be found in a secret room within western Wormways during Act 3.",
           "flag": "Blue Assistant",
           "icon": "boss/Plasmified_Zango.png",
           "id": "plasmified_zango",
@@ -261,7 +261,7 @@
         },
         {
           "act": 1,
-          "description": "Savage Beastfly can be found in Hunter's March and in Far Fields, where Fourth Chorus was fought, during the Savage Beastfly Wish. ",
+          "description": "Savage Beastfly can be found in Hunter's March and in Far Fields, where Fourth Chorus was fought, during the Savage Beastfly Wish.",
           "flag": "defeatedBoneFlyerGiant",
           "icon": "boss/Savage_Beastfly.png",
           "id": "savage_beastfly",
@@ -281,7 +281,7 @@
         },
         {
           "act": 2,
-          "description": "Once the Wish Trail's End is completed, Shakra can be met just outside the Greymoor entrance to Bellhart by ringing her post, where she will challenge Hornet to a friendly duel",
+          "description": "Once the Wish Trail's End is completed, Shakra can be met just outside the Greymoor entrance to Bellhart by ringing her post, where she will challenge Hornet to a friendly duel.",
           "flag": "Shakra",
           "icon": "boss/Shakra.png",
           "id": "shakra",
@@ -303,7 +303,7 @@
         },
         {
           "act": 1,
-          "description": "Sister Splinter is a boss located at the top of Shellwood. ",
+          "description": "Sister Splinter is a boss located at the top of Shellwood.",
           "flag": "defeatedSplinterQueen",
           "icon": "boss/Sister_Splinter.png",
           "id": "sister_splinter",
@@ -345,7 +345,7 @@
         },
         {
           "act": 2,
-          "description": "The Unravelled can be found in a locked room in the south-west of Whiteward, requiring Surgeon's Key to access. ",
+          "description": "The Unravelled can be found in a locked room in the south-west of Whiteward, requiring Surgeon's Key to access.",
           "flag": "wardBossDefeated",
           "icon": "boss/The_Unravelled.png",
           "id": "the_unravelled",
@@ -365,7 +365,7 @@
         },
         {
           "act": 2,
-          "description": "Voltvyrm is found in Voltnest within Sands of Karak. ",
+          "description": "Voltvyrm is found in Voltnest within Sands of Karak.",
           "flag": "defeatedZapCoreEnemy",
           "icon": "boss/Voltvyrm.png",
           "id": "voltvyrm",
@@ -385,7 +385,7 @@
         },
         {
           "act": 1,
-          "description": "Widow can be found in Bellhart above the town after entering and traversing the Bell Veins area. The entrance is found in the upper right corner of Shellwood, though an additional route - just to the right of Shellwood's right-most bench - can be unlocked after reaching the tunnel above Widow's arena. ",
+          "description": "Widow can be found in Bellhart above the town after entering and traversing the Bell Veins area. The entrance is found in the upper right corner of Shellwood, though an additional route - just to the right of Shellwood's right-most bench - can be unlocked after reaching the tunnel above Widow's arena.",
           "flag": "spinnerDefeated",
           "icon": "boss/Widow.png",
           "id": "widow",

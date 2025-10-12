@@ -122,7 +122,7 @@
         },
         {
           "act": 1,
-          "description": "Centre of Shellwood, At the end of a platforming challenge behind a breakable wall ",
+          "description": "Centre of Shellwood, At the end of a platforming challenge behind a breakable wall",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-5",
@@ -134,7 +134,7 @@
         },
         {
           "act": 1,
-          "description": "East Weavenest Atla, Requires Cling Grip. Behind breakable wall ",
+          "description": "East Weavenest Atla, Requires Cling Grip. Behind breakable wall",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-6",
@@ -1475,7 +1475,7 @@
         },
         {
           "act": 1,
-          "description": " Act 1: Given by Lumble the Lucky after beating his game 10 times.  Act 2: Found beside Lumble the Lucky's corpse in Blasted Steps. Act 3: Purchased from Grindle for 300 rosaries. ",
+          "description": "Act 1: Given by Lumble the Lucky after beating his game 10 times.  Act 2: Found beside Lumble the Lucky's corpse in Blasted Steps. Act 3: Purchased from Grindle for 300 rosaries.",
           "flag": "Magnetite Dice",
           "icon": "icons/Magnetite_Dice.png",
           "id": "yellow-magnetite-dice",
@@ -1497,7 +1497,7 @@
         },
         {
           "act": 2,
-          "description": "Purchased from Jubilana for 350 rosaries. ",
+          "description": "Purchased from Jubilana for 350 rosaries.",
           "flag": "Wallcling",
           "icon": "icons/Ascendants_Grip.png",
           "id": "yellow-ascendants-grip",

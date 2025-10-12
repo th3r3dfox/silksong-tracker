@@ -6,7 +6,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Ascend through the lands of Pharloom and reach the Citadel at the kingdom's peak. Reach the Citadel. ",
+          "description": "Ascend through the lands of Pharloom and reach the Citadel at the kingdom's peak. Reach the Citadel.",
           "flag": "Citadel Seeker",
           "icon": "quest/Seek_Quest_Icon.png",
           "id": "citadel-seeker",
@@ -16,7 +16,7 @@
         },
         {
           "act": 1,
-          "description": "Break the silken curse ensnaring the town of Bellhart. Defeat Widow to free the town of Bellhart. ",
+          "description": "Break the silken curse ensnaring the town of Bellhart. Defeat Widow to free the town of Bellhart.",
           "flag": "The Threadspun Town",
           "icon": "quest/Save_Quest_Icon.png",
           "id": "threadspun-town",
@@ -47,7 +47,7 @@
         },
         {
           "act": 2,
-          "description": "Scale the Citadel and confront the one who haunts the lands of Pharloom. ",
+          "description": "Scale the Citadel and confront the one who haunts the lands of Pharloom.",
           "flag": "Citadel Ascent",
           "icon": "quest/Seek_Quest_Icon.png",
           "id": "pharlooms-crown-1",
@@ -494,7 +494,7 @@
       "label": "Gather Wishes"
     },
     {
-      "desc": "Hunt Wishes involve killing normal (or occasionally special) enemies in a specific part of the world and collecting items dropped by them to turn in and complete the wish. The only exception to this is the Dark Hearts wish, which does not require Hornet to collect any items and whose enemy is found all across Pharloom. ",
+      "desc": "Hunt Wishes involve killing normal (or occasionally special) enemies in a specific part of the world and collecting items dropped by them to turn in and complete the wish. The only exception to this is the Dark Hearts wish, which does not require Hornet to collect any items and whose enemy is found all across Pharloom.",
       "items": [
         {
           "act": 1,
