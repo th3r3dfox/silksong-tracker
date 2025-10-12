@@ -33,8 +33,8 @@ export interface ItemLevel extends ItemBase {
   readonly flag: string;
   readonly required: number;
 
-  readonly cost?: string;
   readonly obtain?: string;
+  readonly cost?: string;
 }
 
 export interface ItemSceneBool extends ItemBase {

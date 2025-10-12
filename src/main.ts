@@ -1,5 +1,3 @@
-// @ts-nochec
-
 import {
   assertArray,
   assertDefined,
@@ -1313,9 +1311,13 @@ async function updateAllProgressContent(selectedAct = "all") {
         }
       });
 
-      const total =
-        (filteredItems.filter((i) => !i.exclusiveGroup && !i.upgradeOf).length
-          || 0) + exclusiveGroups.size;
+      const nonExclusiveItems = filteredItems.filter(
+        (item) =>
+          item.type === "tool"
+          && item.exclusiveGroup === undefined
+          && item.upgradeOf === undefined,
+      );
+      const total = nonExclusiveItems.length + exclusiveGroups.size;
 
       const count = document.createElement("span");
       count.className = "category-count";
@@ -1343,7 +1345,7 @@ async function updateAllProgressContent(selectedAct = "all") {
     }
   }
 
-  // ✅ Build TOC once after all categories are rendered
+  // Build TOC once after all categories are rendered
   buildDynamicTOC();
   initScrollSpy();
 }
@@ -1486,7 +1488,7 @@ function initScrollSpy() {
 
   document
     .querySelectorAll("#allprogress-grid h2, #allprogress-grid h3")
-    .forEach((section) => tocObserver.observe(section));
+    .forEach((section) => tocObserver?.observe(section));
 }
 
 function showGenericModal(item: Item) {
@@ -1506,8 +1508,8 @@ function showGenericModal(item: Item) {
       ${item.description || "No description available."}
     </p>
 
-    ${item.obtain ? `<p class="info-extra"><strong>Obtained:</strong> ${item.obtain}</p>` : ""}
-    ${item.cost ? `<p class="info-extra"><strong>Cost:</strong> ${item.cost}</p>` : ""}
+    ${item.type === "level" && item.obtain !== undefined ? `<p class="info-extra"><strong>Obtained:</strong> ${item.obtain}</p>` : ""}
+    ${item.type === "level" && item.cost !== undefined ? `<p class="info-extra"><strong>Cost:</strong> ${item.cost}</p>` : ""}
 
     ${
       mapSrc
