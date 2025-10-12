@@ -126,8 +126,10 @@ globalThis.addEventListener("DOMContentLoaded", () => {
 });
 
 function getCurrentActFilter(): readonly Act[] {
+  const localStorageKey = "currentActFilter";
+
   const defaultActFilter = [1, 2, 3] as const;
-  const currentActFilterString = localStorage.getItem("currentActFilter");
+  const currentActFilterString = localStorage.getItem(localStorageKey);
   if (currentActFilterString === null) {
     return defaultActFilter;
   }
@@ -136,7 +138,7 @@ function getCurrentActFilter(): readonly Act[] {
     const currentActFilter = JSON.parse(currentActFilterString) as unknown;
     assertArray(
       currentActFilter,
-      `The "currentActFilter" value must be an array instead of: ${currentActFilterString}`,
+      `The "${localStorageKey}" localStorage value must be an array instead of: ${currentActFilterString}`,
     );
 
     const arrayValid = currentActFilter.every(
@@ -144,14 +146,19 @@ function getCurrentActFilter(): readonly Act[] {
     );
     if (!arrayValid) {
       throw new TypeError(
-        `The "currentActFilter" value must be an array of valid acts instead of: ${currentActFilterString}`,
+        `The "${localStorageKey}" localStorage value must be an array of valid acts instead of: ${currentActFilterString}`,
       );
     }
 
     return currentActFilter;
   } catch (error) {
     console.warn(error);
-    console.warn("Defaulting to all acts.");
+    console.warn(
+      `Rewriting the "${localStorageKey}" localStorage value to default.`,
+    );
+    const defaultActFilterString = JSON.stringify(defaultActFilter);
+    localStorage.setItem("currentActFilter", defaultActFilterString);
+
     return defaultActFilter;
   }
 }
@@ -1350,7 +1357,6 @@ function updateAllProgressContent() {
       heading.textContent = category.label;
 
       const { items } = category;
-      assertArray(items, 'The "items" field must be an array.');
 
       const currentActFilter = getCurrentActFilter();
       let filteredItems = items.filter(

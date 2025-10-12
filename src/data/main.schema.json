@@ -11,12 +11,9 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["desc", "id", "items", "label"],
+        "required": ["desc", "items", "label"],
         "additionalProperties": false,
         "properties": {
-          "id": {
-            "type": "string"
-          },
           "label": {
             "type": "string"
           },

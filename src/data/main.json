@@ -2,7 +2,6 @@
   "$schema": "./main.schema.json",
   "categories": [
     {
-      "id": "needle_upgrades",
       "label": "Needle Upgrades",
       "desc": "Upgrades to Hornet's primary weapon, the Needle.",
       "items": [
@@ -72,7 +71,6 @@
       ]
     },
     {
-      "id": "mask_shards",
       "label": "Mask Shards",
       "desc": "Fragments that increase Hornet's maximum health when collected.",
       "items": [
@@ -313,7 +311,6 @@
       ]
     },
     {
-      "id": "silk_spools",
       "label": "Silk Spools",
       "desc": "Fragments that increase Hornet's Silk capacity.",
       "items": [
@@ -513,7 +510,6 @@
       ]
     },
     {
-      "id": "silk_hearts",
       "label": "Silk Hearts",
       "desc": "Boss memories that upgrade Hornet's Silk regeneration.",
       "items": [
@@ -550,7 +546,6 @@
       ]
     },
     {
-      "id": "miscellaneous",
       "label": "Miscellaneous",
       "desc": "Special unique unlocks and hidden upgrades.",
       "items": [
@@ -577,7 +572,6 @@
       ]
     },
     {
-      "id": "crests",
       "label": "Crests",
       "desc": "Crests are equipment that allows Hornet to change her moveset.",
       "items": [
@@ -654,7 +648,6 @@
       ]
     },
     {
-      "id": "silk-skills",
       "label": "Silk Skills",
       "desc": "Special combat techniques unlocked through Silk.",
       "items": [
@@ -721,7 +714,6 @@
       ]
     },
     {
-      "id": "tool-pouch-upgrades",
       "label": "Tool Pouch Upgrades",
       "desc": "Capacity upgrades for Hornet's tool pouch.",
       "items": [
@@ -783,7 +775,6 @@
       ]
     },
     {
-      "id": "crafting-kit-upgrades",
       "label": "Crafting Kit Upgrades",
       "desc": "Capacity upgrades for Hornet's crafting kit.",
       "items": [
@@ -845,7 +836,6 @@
       ]
     },
     {
-      "id": "abilities",
       "label": "Abilities",
       "desc": "Core abilities that grant Hornet new movement and combat options.",
       "items": [
@@ -913,7 +903,6 @@
     },
 
     {
-      "id": "red_tools",
       "label": "Red Tools",
       "desc": "Limited use consumable tools that require Shell Shards to be replenished at Benches.",
       "items": [
@@ -1156,7 +1145,6 @@
     },
 
     {
-      "id": "blue_tools",
       "label": "Blue Tools",
       "desc": "Blue Tools are combat-focused passive tools.",
       "items": [
@@ -1407,7 +1395,6 @@
     },
 
     {
-      "id": "yellow_tools",
       "label": "Yellow Tools",
       "desc": "Yellow Tools are miscellaneous passive tools, focused on making exploration and resource gathering easier, or generally providing support instead of offence or defence.",
       "items": [
