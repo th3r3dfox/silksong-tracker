@@ -66,108 +66,11 @@ The Silksong save file is a C# serialized, AES-encrypted, and zlib-compressed bi
 
 The object is passed to the parser, which validates that it has the correct fields using Zod.
 
-### Data Correlation and Rendering
-
-Static data from JSON files in the "data" directory define all trackable items. Each JSON entry includes a flag and logic to determine if it completed or missing.
-
-```json
-{
-  "id": "nail1",
-  "label": "Sharpened Needle",
-  "flag": "nailUpgrades",
-  "type": "level",
-  "required": 1
-}
-```
-
-The JSON is referenced in the TypeScript code:
-
-```js
-const value =
-  item.type?.startsWith("region") || item.region
-    ? save[item.region]?.[item.flag]
-    : save[item.flag];
-```
-
-Each item is rendered in the grid with its current state (obtained / missing).
-
-## Data Model - `main.json`
-
-### Category Object
-
-Each top-level category defines a group of related items.
-
-```json
-{
-  "id": "mask_shards",
-  "label": "Mask Shards",
-  "desc": "Fragments that increase Hornet's maximum health.",
-  "items": [ ... ]
-}
-```
-
-| Field | Type   | Description                 |
-| ----- | ------ | --------------------------- |
-| id    | string | Unique category identifier. |
-| label | string | Display name.               |
-| desc  | string | Category description.       |
-| items | array  | List of item definitions.   |
-
-### Item Object
-
-```json
-{
-  "id": "nail1",
-  "label": "Sharpened Needle",
-  "flag": "nailUpgrades",
-  "type": "level",
-  "required": 1,
-  "category": "Needle Upgrades",
-  "icon": "icons/2_Sharpened_Needle.png",
-  "description": "The blade is honed to a fine edge.",
-  "cost": "Free",
-  "obtain": "The Needle can be upgraded by Pinmaster Plinney",
-  "link": "https://hollowknight.wiki/w/Needle"
-}
-```
-
-| Field          | Type                | Description                           |
-| -------------- | ------------------- | ------------------------------------- |
-| id             | string              | Unique internal identifier.           |
-| label          | string              | Display name.                         |
-| category       | string              | Category reference.                   |
-| flag           | string              | Key from save data.                   |
-| scene          | string _(optional)_ | Scene context for nested flags.       |
-| type           | string              | Defines logic for completion.         |
-| required       | number _(optional)_ | Minimum value for `level` type.       |
-| value          | number _(optional)_ | Exact match for `flagInt`.            |
-| icon           | string              | Path to icon image.                   |
-| map            | string _(optional)_ | Map image for item location.          |
-| description    | string              | Description for display.              |
-| cost           | string _(optional)_ | Cost or requirement to obtain.        |
-| obtain         | string _(optional)_ | How the item is acquired.             |
-| exclusiveGroup | string _(optional)_ | Group of mutually exclusive variants. |
-| link           | string _(optional)_ | External wiki or documentation URL.   |
-
-### Supported Type Values
-
-| Type         | Meaning                     | Logic                           |
-| ------------ | --------------------------- | ------------------------------- |
-| flag         | Simple boolean flag.        | `save[flag] === true`           |
-| sceneBool    | Boolean nested under scene. | `save[scene]?.[flag] === true`  |
-| sceneVisited | Scene visit marker.         | `save[scene]?.visited === true` |
-| level        | Numeric progression.        | `save[flag] >= required`        |
-| flagInt      | Exact integer match.        | `save[flag] === value`          |
-| quest        | Quest completion flag.      | `Boolean(save[flag])`           |
-| tool         | Equipment or tool obtained. | `Boolean(save[flag])`           |
-| collectable  | Unique collectible.         | `Boolean(save[flag])`           |
-
 ## Flag Recognition Logic
 
 ### What Are Flags
 
-Flags are internal variables stored in the Silksong save file that record the player's progress and actions.
-Each flag represents a specific state in the game: a collected item, a defeated boss, or a completed quest.
+Flags are internal variables stored in the Silksong save file that record the player's progress and actions. Each flag represents a specific state in the game: a collected item, a defeated boss, or a completed quest.
 
 Example of flags inside a decoded save file:
 
@@ -180,8 +83,7 @@ Example of flags inside a decoded save file:
 }
 ```
 
-These names come directly from the game's C# code (Unity serialization).
-When the player performs an action, the game sets the corresponding flag to `true` or updates its value (integer for upgrades).
+These names come directly from the game's C# code (Unity serialization). When the player performs an action, the game sets the corresponding flag to `true` or updates its value (integer for upgrades).
 
 ### How Flags Are Used by the Tracker
 
@@ -231,27 +133,3 @@ These names come from:
 - Unity's C# variable names serialized in the `.dat` file;
 - Community reverse-engineering of Silksong's prototype saves;
 - Empirical testing (comparing flags before and after certain in-game actions).
-
-### Summary
-
-| Concept     | Description                                                         |
-| ----------- | ------------------------------------------------------------------- |
-| Flag        | A key stored in the Silksong save representing progress or events.  |
-| Source      | Unity's internal C# save data structure.                            |
-| Used In     | The `flag` field inside `main.json` items.                          |
-| Check Logic | `save[flag]` or `save[scene][flag]` depending on item type.         |
-| Example     | `"Collectable Item Pickup"` → used to detect Everbloom collectable. |
-
-### Example Definition in `main.json`
-
-```json
-{
-  "id": "everbloom",
-  "label": "Everbloom",
-  "flag": "Collectable Item Pickup",
-  "type": "collectable",
-  "icon": "icons/Everbloom.png",
-  "description": "Return to the Snail Shamans and complete the memory sequence.",
-  "link": "https://hollowknight.wiki/w/Everbloom"
-}
-```

@@ -1,11 +1,10 @@
-// @ts-nocheck
-
 import {
   assertArray,
   assertDefined,
   assertIs,
   assertNotNull,
   assertObject,
+  includes,
   isObject,
   parseIntSafe,
 } from "complete-common";
@@ -19,6 +18,7 @@ import {
   actClearBtn,
   actDropdownBtn,
   actDropdownMenu,
+  actDropdownMenuCheckboxes,
   allProgressGrid,
   backToTop,
   closeInfoModal,
@@ -28,6 +28,8 @@ import {
   downloadRawsaveBtn,
   dropzone,
   fileInput,
+  getHTMLElement,
+  getHTMLElements,
   infoContent,
   infoOverlay,
   missingToggle,
@@ -41,16 +43,14 @@ import {
   rosariesValue,
   searchCounter,
   shardsValue,
+  sidebarItems,
   spoilerToggle,
+  tocList,
   uploadOverlay,
-} from "./elements.js";
+} from "./elements.ts";
 import { decodeSilksongSave } from "./save-decoder.ts";
-import {
-  getSaveFileFlags,
-  parseSilksongSave,
-  type ObjectWithSavedData,
-  type SilksongSave,
-} from "./save-parser.js";
+import type { ObjectWithSavedData, SilksongSave } from "./save-parser.ts";
+import { getSaveFileFlags, parseSilksongSave } from "./save-parser.ts";
 import type { Act } from "./types/Act.ts";
 import type { Category } from "./types/Category.ts";
 import type { Item } from "./types/Item.ts";
@@ -59,7 +59,7 @@ import {
   getIconPath,
   normalizeString,
   normalizeStringWithUnderscores,
-} from "./utils.js";
+} from "./utils.ts";
 
 console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
@@ -67,7 +67,13 @@ console.log(
 
 let tocObserver: IntersectionObserver | undefined;
 
-// --- Act Dropdown Logic (modern multi-select with checkboxes) ---
+const BASE_DUMMY_ITEM = {
+  act: 1,
+  icon: "",
+  id: "",
+  label: "",
+  link: "",
+} as const;
 
 // Toggle menu visibility
 actDropdownBtn.addEventListener("click", () => {
@@ -87,31 +93,29 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Handle "Select All / Deselect All"
+// Handle "Select All / Deselect All".
 actClearBtn.addEventListener("click", () => {
-  const checkboxes = actDropdownMenu.querySelectorAll<HTMLInputElement>(
-    "input[type='checkbox']",
+  const allChecked = actDropdownMenuCheckboxes.every(
+    (checkbox) => checkbox.checked,
   );
-  const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
-  checkboxes.forEach((cb) => (cb.checked = !allChecked));
+  for (const checkbox of actDropdownMenuCheckboxes) {
+    checkbox.checked = !allChecked;
+  }
   actClearBtn.textContent = allChecked ? "Select All" : "Deselect All";
+
   updateActFilter();
 });
 
-// Update filter when any checkbox changes
-actDropdownMenu.querySelectorAll("input[type='checkbox']").forEach((cb) => {
-  cb.addEventListener("change", updateActFilter);
-});
+// Update filter when any checkbox changes.
+for (const checkbox of actDropdownMenuCheckboxes) {
+  checkbox.addEventListener("change", updateActFilter);
+}
 
-// Restore state on load
-window.addEventListener("DOMContentLoaded", () => {
+// Restore state on load.
+globalThis.addEventListener("DOMContentLoaded", () => {
   const actFilter = getCurrentActFilter();
-  const checkboxesList = actDropdownMenu.querySelectorAll<HTMLInputElement>(
-    "input[type='checkbox']",
-  );
-  const checkboxes = Array.from(checkboxesList);
 
-  for (const checkbox of checkboxes) {
+  for (const checkbox of actDropdownMenuCheckboxes) {
     const act = parseIntSafe(checkbox.value);
     assertDefined(act, "Failed to parse an act number from a checkbox.");
     if (act !== 1 && act !== 2 && act !== 3) {
@@ -135,9 +139,9 @@ function getCurrentActFilter(): readonly Act[] {
       `The "currentActFilter" value must be an array instead of: ${currentActFilterString}`,
     );
 
-    const arrayValid = currentActFilter.every((act) => {
-      return act === 1 || act === 2 || act === 3;
-    });
+    const arrayValid = currentActFilter.every(
+      (act) => act === 1 || act === 2 || act === 3,
+    );
     if (!arrayValid) {
       throw new TypeError(
         `The "currentActFilter" value must be an array of valid acts instead of: ${currentActFilterString}`,
@@ -147,18 +151,17 @@ function getCurrentActFilter(): readonly Act[] {
     return currentActFilter;
   } catch (error) {
     console.warn(error);
-    console.warn(`Defaulting to all acts."`);
+    console.warn("Defaulting to all acts.");
     return defaultActFilter;
   }
 }
 
 // Core update function
-async function updateActFilter() {
-  const checkboxesList = actDropdownMenu.querySelectorAll<HTMLInputElement>(
-    "input[type='checkbox']:checked",
+function updateActFilter() {
+  const checkedCheckboxes = actDropdownMenuCheckboxes.filter(
+    (checkbox) => checkbox.checked,
   );
-  const checkboxes = Array.from(checkboxesList);
-  const selectedActs = checkboxes.map((checkbox) => {
+  const selectedActs = checkedCheckboxes.map((checkbox) => {
     const { value } = checkbox;
     const act = parseIntSafe(checkbox.value);
     assertDefined(act, `Failed to parse the value of a checkbox: ${value}`);
@@ -173,58 +176,57 @@ async function updateActFilter() {
   const selectedActsString = JSON.stringify(selectedActs);
   localStorage.setItem("currentActFilter", selectedActsString);
 
-  await reRenderActiveTab();
+  reRenderActiveTab();
 }
 
 let currentLoadedSaveData: SilksongSave | undefined;
 let currentLoadedSaveDataFlags: Record<string, unknown> | undefined;
 let currentLoadedSaveDataMode: Mode | undefined;
 
-const TAB_TO_UPDATE_FUNCTION: Record<
-  string,
-  (selectedAct?: string) => Promise<void>
-> = {
+const TAB_TO_UPDATE_FUNCTION = {
   allprogress: updateAllProgressContent,
   rawsave: updateRawSaveContent,
-};
-const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION);
+} as const;
+const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION) as ReadonlyArray<
+  keyof typeof TAB_TO_UPDATE_FUNCTION
+>;
+const FIRST_VALID_TAB = VALID_TABS[0];
+assertDefined(FIRST_VALID_TAB, "Failed to get the first valid tab.");
 
 function matchMode(item: Item) {
   const { mode } = item;
 
-  // no mode -> always visible
+  // No mode -> always visible.
   if (mode === undefined) {
     return true;
   }
 
-  // BEFORE loading a save -> show all
+  // BEFORE loading a save -> show all.
   if (currentLoadedSaveData === undefined) {
     return true;
   }
 
-  // AFTER loading -> match mode
+  // AFTER loading -> match mode.
   return mode === currentLoadedSaveDataMode;
 }
 
 const EXCLUSIVE_GROUPS = [
   ["Heart Flower", "Heart Coral", "Heart Hunter", "Clover Heart"],
   ["Huntress Quest", "Huntress Quest Runt"], // Broodfest / Runtfeast
-];
+] as const;
 
-// ---------- SPOILER TOGGLE ----------
-spoilerToggle.addEventListener("change", async () => {
+spoilerToggle.addEventListener("change", () => {
   const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
   localStorage.setItem("showSpoilers", spoilerChecked.toString());
-
-  // Use the same filter logic (so it maintains Act + Missing)
-  await reRenderActiveTab();
+  reRenderActiveTab();
 });
 
 function applyMissingFilter() {
   const showMissingOnly = missingToggle.checked;
 
-  document.querySelectorAll(".main-section-block").forEach((section) => {
+  const mainSectionBlocks = getHTMLElements(document, ".main-section-block");
+  for (const section of mainSectionBlocks) {
     assertIs(
       section,
       HTMLDivElement,
@@ -233,7 +235,8 @@ function applyMissingFilter() {
 
     let hasVisible = false;
 
-    section.querySelectorAll(".boss").forEach((div) => {
+    const bosses = getHTMLElements(section, ".boss");
+    for (const div of bosses) {
       assertIs(
         div,
         HTMLDivElement,
@@ -251,14 +254,14 @@ function applyMissingFilter() {
         div.style.display = "";
         hasVisible = true;
       }
-    });
+    }
 
     // Hide the entire section if it has no visible elements.
     section.style.display = hasVisible ? "" : "none";
-  });
+  }
 }
 
-// ---------- Back to top button listener ----------
+// Back to top button listener.
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("main");
   assertNotNull(main, "Failed to get the main element.");
@@ -266,11 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
   main.addEventListener("scroll", () => {
     const scrollPosition = main.scrollTop;
 
-    if (scrollPosition > 300) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
+    backToTop.classList.toggle("show", scrollPosition > 300);
   });
 
   // Scroll back to top.
@@ -299,7 +298,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  dropzone.addEventListener("click", () => fileInput.click());
+  dropzone.addEventListener("click", () => {
+    fileInput.click();
+  });
   dropzone.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -307,20 +308,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  ["dragenter", "dragover"].forEach((evt) =>
-    dropzone.addEventListener(evt, (e) => {
+  for (const type of ["dragenter", "dragover"]) {
+    dropzone.addEventListener(type, (e) => {
       e.preventDefault();
       e.stopPropagation();
       dropzone.classList.add("dragover");
-    }),
-  );
-  ["dragleave", "drop"].forEach((evt) =>
-    dropzone.addEventListener(evt, (e) => {
+    });
+  }
+  for (const type of ["dragleave", "drop"]) {
+    dropzone.addEventListener(type, (e) => {
       e.preventDefault();
       e.stopPropagation();
       dropzone.classList.remove("dragover");
-    }),
-  );
+    });
+  }
   dropzone.addEventListener("drop", (dragEvent) => {
     const { dataTransfer } = dragEvent;
     if (dataTransfer === null) {
@@ -329,24 +330,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const { files } = dataTransfer;
     const firstFile = files[0];
+
+    // We do not have to await this since it is the last operation in the callback.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     handleSaveFile(firstFile);
   });
 
   const paths: Record<string, string> = {
-    windows:
-      "%userprofile%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong",
+    windows: String.raw`%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
     mac: "~/Library/Application Support/com.teamcherry.hollowsilksong",
     linux: "~/.config/unity3d/Team Cherry/Hollow Knight Silksong",
-    steam:
-      "%userprofile%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong",
+    steam: String.raw`%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
   };
 
-  document.querySelectorAll(".pill").forEach((btn) => {
+  const pills = getHTMLElements(document, ".pill");
+  for (const btn of pills) {
     btn.addEventListener("click", () => {
       const key = btn.textContent.trim().toLowerCase();
       const path = paths[key];
 
-      if (!path) {
+      if (path === undefined) {
         if (key === "steam cloud") {
           window.open(
             "https://store.steampowered.com/account/remotestorageapp/?appid=1030300",
@@ -355,7 +358,7 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
-        showToast("❌ No path available for: " + key);
+        showToast(`❌ No path available for: ${key}`);
         return;
       }
 
@@ -364,12 +367,12 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(() => {
           showToast("📋 Path copied to clipboard!");
         })
-        .catch((err) => {
-          console.error("Clipboard error:", err);
+        .catch((error: unknown) => {
+          console.error("Clipboard error:", error);
           showToast("⚠️ Unable to copy path.");
         });
     });
-  });
+  }
 });
 
 function getSaveDataValue(
@@ -389,16 +392,14 @@ function getSaveDataValue(
   switch (type) {
     case "flag": {
       const { flag } = item;
-      return flag === undefined ? undefined : playerDataExpanded[flag];
+      return playerDataExpanded[flag];
     }
 
     case "collectable": {
       const { flag } = item;
       const { savedData } = playerData.Collectables;
 
-      const entry = savedData.find((element) => {
-        return element.Name === flag;
-      });
+      const entry = savedData.find((element) => element.Name === flag);
       if (entry === undefined) {
         return undefined;
       }
@@ -436,9 +437,6 @@ function getSaveDataValue(
     // Wishes
     case "quest": {
       const { flag } = item;
-      if (flag === undefined) {
-        return undefined;
-      }
       const normalizedFlag = normalizeString(flag);
 
       const { QuestCompletionData } = playerData;
@@ -488,19 +486,15 @@ function getSaveDataValue(
 
     // Silk Hearts, Memories etc.
     case "sceneVisited": {
-      if (item.scene) {
-        const scenes = playerData?.scenesVisited || [];
-        return scenes.includes(item.scene);
-      }
-
-      return false;
+      const scenes = playerData.scenesVisited;
+      return scenes.includes(item.scene);
     }
 
     // Numeric progressions (Needle, ToolPouchUpgrades, ToolKitUpgrades, etc.)
     case "level": {
       const { flag } = item;
 
-      // ✅ always return the number, unlock is calculated later
+      // Always return the number, unlock is calculated later.
       return playerDataExpanded[flag] ?? 0;
     }
 
@@ -521,7 +515,7 @@ function getSaveDataValue(
 
       const { Record } = entry;
 
-      return Record.Kills >= (item.required ?? 1);
+      return Record.Kills >= item.required;
     }
 
     case "relic": {
@@ -581,13 +575,10 @@ function getSaveDataValue(
     case "device": {
       const { scene, flag, relatedFlag } = item;
 
-      const normalizedScene = normalizeStringWithUnderscores(scene ?? "");
-      const normalizedFlag = normalizeStringWithUnderscores(flag ?? "");
+      const normalizedScene = normalizeStringWithUnderscores(scene);
+      const normalizedFlag = normalizeStringWithUnderscores(flag);
 
-      if (
-        relatedFlag !== undefined
-        && playerDataExpanded[relatedFlag] === true
-      ) {
+      if (playerDataExpanded[relatedFlag] === true) {
         return "deposited";
       }
 
@@ -602,31 +593,25 @@ function getSaveDataValue(
     case "boss": {
       const { flag } = item;
 
-      // Boss items are simple boolean flags
-      return flag === undefined ? undefined : playerDataExpanded[flag];
-    }
-
-    default: {
-      throw new Error(`An item has an unknown type of: ${type}`);
+      // Boss items are simple boolean flags.
+      return playerDataExpanded[flag];
     }
   }
 }
 
 /**
- * Renders a grid of items (bosses, relics, tools, etc.) with their unlock states.
+ * Renders a grid of items (e.g. bosses, relics, tools, etc.) with their unlock states.
  *
  * @returns The number of items rendered.
  */
 function renderGenericGrid(
   containerElement: HTMLElement,
-  items: Item[],
+  items: readonly Item[],
   spoilerOn: boolean,
 ): number {
-  const realContainerId = containerElement?.id || "unknown";
-
   containerElement.innerHTML = "";
 
-  // 🔎 Silkshot variants (only one card visible)
+  // Silkshot variants (only one card visible).
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
   const unlockedSilkVariant = silkVariants.find((silkVariant) => {
     if (currentLoadedSaveData === undefined) {
@@ -638,25 +623,31 @@ function renderGenericGrid(
     );
   });
 
-  // Apply mutually exclusive groups (global, relic + quest)
-  EXCLUSIVE_GROUPS.forEach((group) => {
+  // Apply mutually exclusive groups (global, relic + quest).
+  for (const group of EXCLUSIVE_GROUPS) {
+    // eslint-disable-next-line @typescript-eslint/no-loop-func
     const owned = group.find((flag) => {
-      // try first as relic
+      // Try first as relic.
       let value = getSaveDataValue(
         currentLoadedSaveData,
         currentLoadedSaveDataFlags,
         {
+          ...BASE_DUMMY_ITEM,
           type: "relic",
           flag,
         },
       );
 
-      // if not a valid relic, try as quest
-      if (!value || value === false) {
+      // If not a valid relic, try as quest.
+      if (value === undefined || value === false) {
         value = getSaveDataValue(
           currentLoadedSaveData,
           currentLoadedSaveDataFlags,
-          { type: "quest", flag },
+          {
+            ...BASE_DUMMY_ITEM,
+            type: "quest",
+            flag,
+          },
         );
       }
 
@@ -674,59 +665,57 @@ function renderGenericGrid(
         if (flag === undefined) {
           return false;
         }
-        return !group.includes(flag) || flag === owned;
+        return !includes(group, flag) || flag === owned;
       });
     }
-  });
+  }
 
   let renderedCount = 0;
 
-  items.forEach((item) => {
+  for (const item of items) {
     const flag = item.type === "sceneVisited" ? undefined : item.flag;
 
-    // Silkshot → show only 1 variant
+    // Silkshot --> show only 1 variant.
     if (flag !== undefined && silkVariants.includes(flag)) {
-      if (unlockedSilkVariant && flag !== unlockedSilkVariant) {
-        return;
+      if (unlockedSilkVariant !== undefined && flag !== unlockedSilkVariant) {
+        continue;
       }
-      if (!unlockedSilkVariant && flag !== "WebShot Architect") {
-        return;
+      if (unlockedSilkVariant === undefined && flag !== "WebShot Architect") {
+        continue;
       }
     }
 
     const div = document.createElement("div");
     div.className = "boss";
 
-    // Act label (ACT I / II / III)
-    if (item.act) {
-      const romanActs = { 1: "I", 2: "II", 3: "III" };
-      const actLabel = document.createElement("span");
-      actLabel.className = `act-label act-${item.act}`;
-      const romanAct = romanActs[item.act];
-      actLabel.textContent = `ACT ${romanAct}`;
-      div.appendChild(actLabel);
-    }
+    // Act label (ACT I / II / III).
+    const romanActs = { 1: "I", 2: "II", 3: "III" };
+    const actLabel = document.createElement("span");
+    actLabel.className = `act-label act-${item.act}`;
+    const romanAct = romanActs[item.act];
+    actLabel.textContent = `ACT ${romanAct}`;
+    div.append(actLabel);
 
-    div.id = `${realContainerId}-${item.id}`;
-    div.dataset["flag"] = item.flag;
+    div.id = `${containerElement.id}-${item.id}`;
+    div.dataset["flag"] = flag;
 
     const img = document.createElement("img");
     img.alt = item.label;
 
-    // Value from save file (quest can now return "completed" or "accepted")
+    // Value from save file (quest can now return "completed" or "accepted").
     const value = getSaveDataValue(
       currentLoadedSaveData,
       currentLoadedSaveDataFlags,
       item,
     );
 
-    let isDone = false;
+    let isDone: boolean;
     let isAccepted = false;
 
     switch (item.type) {
       case "level": {
         const current = value === undefined ? 0 : Number(value);
-        isDone = current >= (item.required ?? 0);
+        isDone = current >= item.required;
         break;
       }
 
@@ -762,32 +751,33 @@ function renderGenericGrid(
 
       default: {
         isDone = value === true;
+        break;
       }
     }
 
-    // If "only missing" and it's completed → don't render the card at all
+    // If "only missing" and it's completed → don't render the card at all.
     const showMissingOnly = missingToggle.checked;
     if (showMissingOnly && isDone) {
-      return;
+      continue;
     }
 
-    if (item.missable) {
+    if (item.missable === true) {
       const warn = document.createElement("span");
       warn.className = "missable-icon";
       warn.title = "Missable item - can be permanently lost";
       warn.textContent = "!";
-      div.appendChild(warn);
+      div.append(warn);
     }
 
-    if (item.upgradeOf) {
+    if (item.type === "tool" && item.upgradeOf !== undefined) {
       const upg = document.createElement("span");
       upg.className = "upgrade-icon";
       upg.title = "Upgraded item";
       upg.textContent = "↑";
-      div.appendChild(upg);
+      div.append(upg);
     }
 
-    // Image and state management
+    // Image and state management.
     const iconPath = getIconPath(item);
     const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
 
@@ -816,36 +806,46 @@ function renderGenericGrid(
       img.src = lockedPath;
       div.classList.add("locked");
 
-      div.addEventListener("mouseenter", () => (img.src = iconPath));
-      div.addEventListener("mouseleave", () => (img.src = lockedPath));
+      div.addEventListener("mouseenter", () => {
+        img.src = iconPath;
+      });
+      div.addEventListener("mouseleave", () => {
+        img.src = lockedPath;
+      });
     }
 
     // Title + modal
     const title = document.createElement("div");
     title.className = "title";
     title.textContent =
-      silkVariants.includes(item.flag) && !unlockedSilkVariant
+      flag !== undefined
+      && silkVariants.includes(flag)
+      && unlockedSilkVariant === undefined
         ? "Silkshot"
         : item.label;
 
-    div.appendChild(img);
-    div.appendChild(title);
-    div.addEventListener("click", () => showGenericModal(item));
+    div.append(img);
+    div.append(title);
+    div.addEventListener("click", () => {
+      showGenericModal(item);
+    });
 
-    containerElement.appendChild(div);
+    containerElement.append(div);
     renderedCount++;
-  });
+  }
 
   return renderedCount;
 }
 
-// ---------- FILE HANDLING ----------
-fileInput.addEventListener("change", (event) => {
+fileInput.addEventListener("change", () => {
   const file = fileInput.files?.[0];
+
+  // We do not have to await this since it is the last operation in the callback.
+  // eslint-disable-next-line @typescript-eslint/no-floating-promises
   handleSaveFile(file);
 });
 
-async function updateRawSaveContent() {
+function updateRawSaveContent() {
   if (currentLoadedSaveData === undefined) {
     rawSaveOutput.textContent = "⚠️ No save file loaded.";
     return;
@@ -857,27 +857,31 @@ async function updateRawSaveContent() {
       undefined,
       2,
     );
-  } catch (err) {
+  } catch (error) {
     rawSaveOutput.textContent = "❌ Failed to display raw save.";
-    console.error(err);
+    console.error(error);
   }
 }
 
-// --- RAWSAVE TOOLS ---
 document.addEventListener("DOMContentLoaded", () => {
-  // 📋 Copy JSON
+  // Copy JSON
   copyRawsaveBtn.addEventListener("click", () => {
-    const text = rawSaveOutput.textContent || "";
+    const text = rawSaveOutput.textContent;
     navigator.clipboard
       .writeText(text)
-      .then(() => showToast("📋 JSON copied to clipboard!"))
-      .catch(() => showToast("⚠️ Copy failed."));
+      .then(() => {
+        showToast("📋 JSON copied to clipboard!");
+      })
+      .catch(() => {
+        showToast("⚠️ Copy failed.");
+      });
   });
 
-  // 💾 Download JSON
+  // Download JSON
   downloadRawsaveBtn.addEventListener("click", () => {
     if (currentLoadedSaveData === undefined) {
-      return showToast("⚠️ No save loaded yet.");
+      showToast("⚠️ No save loaded yet.");
+      return;
     }
     const blob = new Blob(
       [JSON.stringify(currentLoadedSaveData, undefined, 2)],
@@ -893,14 +897,15 @@ document.addEventListener("DOMContentLoaded", () => {
     URL.revokeObjectURL(url);
   });
 
-  // 🔍 Navigable search
+  // Navigable search
   let currentMatch = 0;
-  let matches = [];
+  let matches: number[] = [];
 
-  /** @param {number} index */
-  function scrollToMatch(index) {
-    const allMarks = rawSaveOutput.querySelectorAll("mark.search-match");
-    allMarks.forEach((m) => m.classList.remove("active-match"));
+  function scrollToMatch(index: number) {
+    const allMarks = getHTMLElements(rawSaveOutput, "mark.search-match");
+    for (const m of allMarks) {
+      m.classList.remove("active-match");
+    }
     const lastMark = allMarks[index - 1];
     if (lastMark !== undefined) {
       lastMark.classList.add("active-match");
@@ -914,25 +919,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   rawSaveSearch.addEventListener("input", () => {
     const query = rawSaveSearch.value.trim();
-    const jsonText = JSON.stringify(currentLoadedSaveData || {}, undefined, 2);
+    const jsonText = JSON.stringify(currentLoadedSaveData ?? {}, undefined, 2);
     rawSaveOutput.innerHTML = jsonText;
     matches = [];
     currentMatch = 0;
     searchCounter.textContent = "0/0";
-    if (!query) {
+    if (query === "") {
       return;
     }
 
-    const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const safeQuery = query.replaceAll(/[$()*+.?[\\\]^{|}]/g, String.raw`\$&`);
     const regex = new RegExp(safeQuery, "gi");
 
     let html = "";
     let lastIndex = 0;
-    let match;
+    let match: RegExpExecArray | null;
     while ((match = regex.exec(jsonText)) !== null) {
       html += jsonText.slice(lastIndex, match.index);
       html += `<mark class="search-match">${match[0]}</mark>`;
-      lastIndex = regex.lastIndex;
+      ({ lastIndex } = regex);
       matches.push(match.index);
     }
     html += jsonText.slice(lastIndex);
@@ -962,8 +967,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/** @param {File | undefined } file */
-async function handleSaveFile(file) {
+async function handleSaveFile(file: File | undefined) {
   try {
     if (file === undefined) {
       showToast("❌ No file selected.");
@@ -975,7 +979,7 @@ async function handleSaveFile(file) {
     const isJSON = file.name.toLowerCase().endsWith(".json");
 
     const saveDataRaw: unknown = isJSON
-      ? JSON.parse(new TextDecoder("utf-8").decode(buffer))
+      ? JSON.parse(new TextDecoder("utf8").decode(buffer))
       : decodeSilksongSave(buffer);
 
     assertObject(
@@ -997,7 +1001,7 @@ async function handleSaveFile(file) {
     currentLoadedSaveData = saveDataRaw;
     currentLoadedSaveDataFlags = getSaveFileFlags(saveDataRaw);
 
-    // --- Update UI statistics ---
+    // Update UI statistics.
     completionValue.textContent = `${saveData.playerData.completionPercentage}%`;
 
     const seconds = saveData.playerData.playTime;
@@ -1008,20 +1012,19 @@ async function handleSaveFile(file) {
     rosariesValue.textContent = saveData.playerData.geo.toString();
     shardsValue.textContent = saveData.playerData.ShellShards.toString();
 
-    // --- Detect game mode ---
     const isSteelSoul = saveData.playerData.permadeathMode === 1;
 
-    // ✅ Save mode globally (after declaration)
+    // Save mode globally (after declaration).
     currentLoadedSaveDataMode = isSteelSoul ? "steel" : "normal";
 
-    // 🪶 Show visual banner
+    // Show visual banner.
     modeBanner.innerHTML = isSteelSoul
       ? `<img src="${BASE_PATH}/assets/icons/Steel_Soul_Icon.png" alt="Steel Soul" class="mode-icon"> STEEL SOUL SAVE LOADED`
-      : `NORMAL SAVE LOADED`;
+      : "NORMAL SAVE LOADED";
     modeBanner.classList.remove("hidden");
     modeBanner.classList.toggle("steel", isSteelSoul);
 
-    // --- Update active tab ---
+    // Update active tab.
     const activeElement = document.querySelector(".sidebar-item.is-active");
     assertNotNull(activeElement, "Failed to get the active element.");
     assertIs(
@@ -1035,16 +1038,18 @@ async function handleSaveFile(file) {
       activeTab,
       "Failed to get the name of the active tab from the active element.",
     );
+    if (!includes(VALID_TABS, activeTab)) {
+      throw new TypeError(`The active tab was not valid: ${activeTab}`);
+    }
 
     const func = TAB_TO_UPDATE_FUNCTION[activeTab];
-    assertDefined(func, `Failed to find the function for tab: ${activeTab}`);
-    await func();
+    func();
 
     applyMissingFilter();
     showToast("✅ Save file loaded successfully!");
     uploadOverlay.classList.add("hidden");
-  } catch (err) {
-    console.error("[save] Decode error:", err);
+  } catch (error) {
+    console.error("[save] Decode error:", error);
     showToast(
       "⚠️ Browser permission or file access issue. Please reselect your save file.",
     );
@@ -1052,10 +1057,7 @@ async function handleSaveFile(file) {
   }
 }
 
-/**
- * @param {string} message
- */
-function showToast(message) {
+function showToast(message: string) {
   const toast = document.createElement("div");
   toast.textContent = message;
   toast.style.cssText = `
@@ -1071,87 +1073,67 @@ function showToast(message) {
     z-index: 9999;
     box-shadow: 0 0 6px rgba(0,0,0,0.3);
   `;
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 2500);
+  document.body.append(toast);
+  setTimeout(() => {
+    toast.remove();
+  }, 2500);
 }
 
 // Handle sidebar clicks
-document.querySelectorAll(".sidebar-item").forEach((anchor) => {
+for (const anchor of sidebarItems) {
   assertIs(
     anchor,
     HTMLAnchorElement,
     'An element with a class of "sidebar-item" was not an anchor.',
   );
 
-  anchor.addEventListener("click", async (pointerEvent) => {
+  anchor.addEventListener("click", (pointerEvent) => {
     pointerEvent.preventDefault();
 
     // Remove/add activation class
-    document
-      .querySelectorAll(".sidebar-item")
-      .forEach((i) => i.classList.remove("is-active"));
+    for (const sidebarItem of sidebarItems) {
+      sidebarItem.classList.remove("is-active");
+    }
     anchor.classList.add("is-active");
 
     // Hide all tabs
-    document.querySelectorAll(".tab").forEach((section) => {
+    const tabs = getHTMLElements(document, ".tab");
+    for (const section of tabs) {
       section.classList.add("hidden");
-    });
+    }
 
     const selectedTab = anchor.dataset["tab"];
     assertDefined(
       selectedTab,
       "Failed to find the tab corresponding to an anchor element.",
     );
-
-    const activeSectionID = `${selectedTab}-section`;
-    const activeSection = document.getElementById(activeSectionID);
-    assertNotNull(activeSection, `Failed to get element: ${activeSectionID}`);
-    activeSection.classList.remove("hidden");
-
-    // 🔹 Maintain ACT filter state
-    let savedActs;
-    try {
-      savedActs = JSON.parse(localStorage.getItem("currentActFilter")) || [
-        "all",
-      ];
-      if (!Array.isArray(savedActs)) savedActs = ["all"];
-    } catch {
-      savedActs = ["all"];
+    if (!includes(VALID_TABS, selectedTab)) {
+      throw new Error(`The selected tab was not valid: ${selectedTab}`);
     }
 
-    // 🔹 Save active tab
+    const activeSectionID = `${selectedTab}-section`;
+    const activeSection = getHTMLElement(activeSectionID);
+    activeSection.classList.remove("hidden");
+
     localStorage.setItem("activeTab", selectedTab);
 
     // Enable/disable home scroll
     document.documentElement.style.overflowY = "auto";
 
     const func = TAB_TO_UPDATE_FUNCTION[selectedTab];
-    assertDefined(func, `Failed to find the function for tab: ${selectedTab}`);
-    await func();
+    func();
   });
-});
+}
 
-window.addEventListener("DOMContentLoaded", () => {
-  // 🔹 Restore saved tab and filters
-  let savedTab = localStorage.getItem("activeTab");
-  if (savedTab === null || !VALID_TABS.includes(savedTab)) {
-    const firstValidTab = VALID_TABS[0];
-    assertDefined(firstValidTab, "Failed to get the first valid tab.");
-    savedTab = firstValidTab;
+globalThis.addEventListener("DOMContentLoaded", () => {
+  // Restore saved tab and filters.
+  let activeTab = FIRST_VALID_TAB;
+  const storedActiveTab = localStorage.getItem("activeTab");
+  if (storedActiveTab !== null && includes(VALID_TABS, storedActiveTab)) {
+    activeTab = storedActiveTab;
   }
 
-  const savedAct = localStorage.getItem("currentActFilter") || "all";
-
-  // 🔹 Restore Act filter value
-  let savedActs;
-  try {
-    savedActs = JSON.parse(localStorage.getItem("currentActFilter")) || ["all"];
-    if (!Array.isArray(savedActs)) savedActs = ["all"];
-  } catch {
-    savedActs = ["all"];
-  }
-
-  // 🔹 Restore "Show spoilers" state from localStorage
+  // Restore "Show spoilers" state from localStorage.
   const savedSpoilerState = localStorage.getItem("showSpoilers");
   if (savedSpoilerState !== null) {
     spoilerToggle.checked = savedSpoilerState === "true";
@@ -1159,38 +1141,35 @@ window.addEventListener("DOMContentLoaded", () => {
   const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
 
-  // 🔹 Synchronize "Show only missing" state
+  // Synchronize "Show only missing" state.
   missingToggle.checked = localStorage.getItem("showMissingOnly") === "true";
 
-  // 🔹 Reset tab visibility
-  document
-    .querySelectorAll(".sidebar-item")
-    .forEach((i) => i.classList.remove("is-active"));
-  document
-    .querySelectorAll(".tab")
-    .forEach((section) => section.classList.add("hidden"));
+  // Reset tab visibility.
+  for (const sidebarItem of sidebarItems) {
+    sidebarItem.classList.remove("is-active");
+  }
+  const tabs = getHTMLElements(document, ".tab");
+  for (const section of tabs) {
+    section.classList.add("hidden");
+  }
 
-  // 🔹 Activate saved tab
-  const btn = document.querySelector(`.sidebar-item[data-tab="${savedTab}"]`);
+  // Activate saved tab.
+  const btn = document.querySelector(`.sidebar-item[data-tab="${activeTab}"]`);
   if (btn) {
     btn.classList.add("is-active");
   }
 
-  const activeSection = document.getElementById(`${savedTab}-section`);
-  if (activeSection) {
-    activeSection.classList.remove("hidden");
-  }
+  const activeSection = getHTMLElement(`${activeTab}-section`);
+  activeSection.classList.remove("hidden");
 
-  const func = TAB_TO_UPDATE_FUNCTION[savedTab];
-  assertDefined(func, `Failed to find the function for tab: ${savedTab}`);
+  const func = TAB_TO_UPDATE_FUNCTION[activeTab];
 
-  // Minimum delay for safety (prevents race with DOM rendering)
-  setTimeout(async () => {
-    await func();
-  }, 50);
+  setTimeout(() => {
+    func();
+  }, 50); // Minimum delay for safety (prevents race with DOM rendering).
 });
 
-async function updateAllProgressContent(selectedAct = "all") {
+function updateAllProgressContent() {
   const spoilerOn = spoilerToggle.checked;
   const showMissingOnly = missingToggle.checked;
   allProgressGrid.innerHTML = "";
@@ -1212,7 +1191,7 @@ async function updateAllProgressContent(selectedAct = "all") {
     { title: "Wishes", categories: wishesJSON.categories as Category[] },
   ];
 
-  // ✅ Render all categories
+  // Render all categories.
   for (const { title, categories } of allCategories) {
     assertArray(
       categories,
@@ -1224,7 +1203,7 @@ async function updateAllProgressContent(selectedAct = "all") {
     categoryHeader.textContent = title;
     categoryHeader.style.marginTop = "2rem";
     categoryHeader.style.marginBottom = "1rem";
-    allProgressGrid.appendChild(categoryHeader);
+    allProgressGrid.append(categoryHeader);
 
     for (const category of categories) {
       const section = document.createElement("div");
@@ -1234,65 +1213,73 @@ async function updateAllProgressContent(selectedAct = "all") {
       heading.className = "category-title";
       heading.textContent = category.label;
 
-      let items = category.items;
+      const { items } = category;
       assertArray(items, 'The "items" field must be an array.');
 
-      const currentActFilter = getCurrentActFilter(); // TODO
-      let filteredItems = items.filter((item) => {
-        if (currentActFilter.length === 0 || currentActFilter.length === 3) {
-          return matchMode(item); // everyone
-        }
+      const currentActFilter = getCurrentActFilter();
+      let filteredItems = items.filter(
+        (item) => currentActFilter.includes(item.act) && matchMode(item),
+      );
 
-        // TODO: Currently bugged, because every item does not have an act yet.
-        // Delete the above length check afterwards, since it would be superfluous.
-        return currentActFilter.includes(item.act) && matchMode(item);
-      });
-
-      if (showMissingOnly && currentLoadedSaveData) {
+      if (showMissingOnly && currentLoadedSaveData !== undefined) {
+        // eslint-disable-next-line @typescript-eslint/no-loop-func
         filteredItems = filteredItems.filter((item) => {
           const value = getSaveDataValue(
             currentLoadedSaveData,
             currentLoadedSaveDataFlags,
             item,
           );
+
           if (item.type === "collectable") {
-            return (value ?? 0) === 0;
+            const numberValue = typeof value === "number" ? value : 0;
+            return numberValue === 0;
           }
+
           if (item.type === "level") {
-            return (value ?? 0) < (item.required ?? 0);
+            const numberValue = typeof value === "number" ? value : 0;
+            return numberValue < item.required;
           }
+
           if (item.type === "quest") {
             return value !== "completed" && value !== true;
           }
+
           return value !== true;
         });
       }
 
-      // === Apply exclusive groups ===
-      EXCLUSIVE_GROUPS.forEach((group) => {
+      // Apply exclusive groups.
+      for (const group of EXCLUSIVE_GROUPS) {
+        const saveData = currentLoadedSaveData;
+        const saveDataFlags = currentLoadedSaveDataFlags;
         const owned = group.find((flag) => {
-          const value = getSaveDataValue(
-            currentLoadedSaveData,
-            currentLoadedSaveDataFlags,
-            { type: "relic", flag },
-          );
+          const value = getSaveDataValue(saveData, saveDataFlags, {
+            ...BASE_DUMMY_ITEM,
+            type: "relic",
+            flag,
+          });
           return value === "deposited" || value === "collected";
         });
-        if (owned) {
-          filteredItems = filteredItems.filter(
-            (item) => !group.includes(item.flag) || item.flag === owned,
-          );
-        }
-      });
 
-      // === Counting completion ===
+        if (owned !== undefined) {
+          filteredItems = filteredItems.filter((item) => {
+            const flag = item.type === "sceneVisited" ? undefined : item.flag;
+            if (flag === undefined) {
+              return false;
+            }
+            return !includes(group, flag) || flag === owned;
+          });
+        }
+      }
+
+      // Counting completion.
       let obtained = 0;
       const exclusiveGroups = new Set();
       const countedGroups = new Set();
 
-      filteredItems.forEach((item) => {
-        if (item.upgradeOf) {
-          return;
+      for (const item of filteredItems) {
+        if (item.type === "tool" && item.upgradeOf !== undefined) {
+          continue;
         }
 
         const value =
@@ -1304,136 +1291,153 @@ async function updateAllProgressContent(selectedAct = "all") {
                 item,
               );
 
-        const isUnlocked =
-          item.type === "quest"
-            ? value === "completed" || value === true
-            : item.type === "level"
-              ? (value ?? 0) >= (item.required ?? 0)
-              : item.type === "collectable"
-                ? (value ?? 0) > 0
-                : value === true
-                  || value === "collected"
-                  || value === "deposited";
+        const unlocked = getUnlocked(item, value);
 
-        if (item.exclusiveGroup) {
+        if (item.type === "tool" && item.exclusiveGroup !== undefined) {
           exclusiveGroups.add(item.exclusiveGroup);
-          if (isUnlocked && !countedGroups.has(item.exclusiveGroup)) {
+          if (unlocked && !countedGroups.has(item.exclusiveGroup)) {
             countedGroups.add(item.exclusiveGroup);
             obtained++;
           }
         } else {
-          obtained += isUnlocked ? 1 : 0;
+          obtained += unlocked ? 1 : 0;
         }
-      });
+      }
 
-      const total =
-        (filteredItems.filter((i) => !i.exclusiveGroup && !i.upgradeOf).length
-          || 0) + exclusiveGroups.size;
+      const nonExclusiveItems = filteredItems.filter(
+        (item) =>
+          item.type === "tool"
+          && item.exclusiveGroup === undefined
+          && item.upgradeOf === undefined,
+      );
+      const total = nonExclusiveItems.length + exclusiveGroups.size;
 
       const count = document.createElement("span");
       count.className = "category-count";
       count.textContent = ` ${obtained}/${total}`;
-      heading.appendChild(count);
-      section.appendChild(heading);
+      heading.append(count);
+      section.append(heading);
 
-      if (category.desc) {
-        const desc = document.createElement("p");
-        desc.className = "category-desc";
-        desc.textContent = category.desc;
-        section.appendChild(desc);
-      }
+      const desc = document.createElement("p");
+      desc.className = "category-desc";
+      desc.textContent = category.desc;
+      section.append(desc);
 
       const subgrid = document.createElement("div");
       subgrid.className = "grid";
 
       const visible = renderGenericGrid(subgrid, filteredItems, spoilerOn);
 
-      if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
+      if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) {
         continue;
+      }
 
-      section.appendChild(subgrid);
-      allProgressGrid.appendChild(section);
+      section.append(subgrid);
+      allProgressGrid.append(section);
     }
   }
 
-  // ✅ Build TOC once after all categories are rendered
+  // Build TOC once after all categories are rendered.
   buildDynamicTOC();
   initScrollSpy();
 }
 
+function getUnlocked(item: Item, value: unknown): boolean {
+  if (item.type === "quest") {
+    return value === "completed" || value === true;
+  }
+
+  if (item.type === "level") {
+    const numberValue = typeof value === "number" ? value : 0;
+    return numberValue >= item.required;
+  }
+
+  if (item.type === "collectable") {
+    const numberValue = typeof value === "number" ? value : 0;
+    return numberValue > 0;
+  }
+
+  return value === true || value === "collected" || value === "deposited";
+}
+
 function buildDynamicTOC() {
-  const tocList = document.getElementById("toc-list");
-  if (!tocList) return;
   tocList.innerHTML = "";
 
-  const headers = document.querySelectorAll(
+  const headers = getHTMLElements(
+    document,
     "#allprogress-grid h2, #allprogress-grid h3",
   );
-  let currentCategory = null;
-  let currentSubList = null;
 
-  headers.forEach((header) => {
+  let currentCategory: HTMLLIElement | undefined;
+  let currentSubList: HTMLUListElement | undefined;
+
+  for (const header of headers) {
     const tag = header.tagName.toLowerCase();
     const text = header.textContent.trim();
-    if (!text) return;
+    if (text === "") {
+      continue;
+    }
 
-    if (!header.id) {
+    if (header.id === "") {
       const cleanId = text
         .toLowerCase()
-        .replace(/\s+/g, "-")
-        .replace(/[^\w\-]/g, "");
+        .replaceAll(/\s+/g, "-")
+        .replaceAll(/[^\w-]/g, "");
       header.id = `section-${cleanId}`;
     }
 
     if (tag === "h2") {
       const li = document.createElement("li");
       li.className = "toc-category";
-      li.dataset.manual = "false";
+      li.dataset["manual"] = "false";
 
       const a = document.createElement("a");
       a.href = `#${header.id}`;
       a.textContent = text;
       a.addEventListener("click", (e) => {
         e.preventDefault();
-        const target = document.getElementById(header.id);
-        if (target !== null) {
-          target.scrollIntoView({
-            behavior: "instant",
-            block: "start",
-          });
-        }
+        const target = getHTMLElement(header.id);
+        target.scrollIntoView({
+          behavior: "instant",
+          block: "start",
+        });
 
         const wasOpen = li.classList.contains("open");
-        document.querySelectorAll(".toc-category").forEach((cat) => {
+        const tocCategories = getHTMLElements(document, ".toc-category");
+        for (const cat of tocCategories) {
           cat.classList.remove("open");
           cat.querySelector(".toc-sublist")?.classList.add("hidden");
-        });
+        }
         if (!wasOpen) {
           li.classList.add("open");
           li.querySelector(".toc-sublist")?.classList.remove("hidden");
         }
       });
 
-      li.appendChild(a);
+      li.append(a);
       currentSubList = document.createElement("ul");
       currentSubList.className = "toc-sublist hidden";
-      li.appendChild(currentSubList);
-      tocList.appendChild(li);
+      li.append(currentSubList);
+      tocList.append(li);
       currentCategory = li;
-    } else if (tag === "h3" && currentCategory && currentSubList) {
+    } else if (
+      tag === "h3"
+      && currentCategory !== undefined
+      && currentSubList !== undefined
+    ) {
       const subLi = document.createElement("li");
       subLi.className = "toc-item";
       const a = document.createElement("a");
       a.href = `#${header.id}`;
       a.textContent = text;
-      subLi.appendChild(a);
-      currentSubList.appendChild(subLi);
+      subLi.append(a);
+      currentSubList.append(subLi);
     }
-  });
+  }
 }
 
 function initScrollSpy() {
-  const tocLinks = document.querySelectorAll(".toc-item a, .toc-category > a");
+  const tocLinks = getHTMLElements(document, ".toc-item a, .toc-category > a");
 
   // Prevent duplicate observers
   if (tocObserver !== undefined) {
@@ -1441,49 +1445,60 @@ function initScrollSpy() {
   }
 
   tocObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.id;
+    (entries: readonly IntersectionObserverEntry[]) => {
+      for (const entry of entries) {
+        const { id } = entry.target;
         const match = document.querySelector(`a[href="#${id}"]`);
-        if (!match) return;
+        if (match === null) {
+          continue;
+        }
 
         const parentCategory = match.closest(".toc-category");
 
         if (entry.isIntersecting) {
-          tocLinks.forEach((link) => link.classList.remove("active"));
+          for (const link of tocLinks) {
+            link.classList.remove("active");
+          }
           match.classList.add("active");
 
-          document.querySelectorAll(".toc-category").forEach((cat) => {
-            const sub = cat.querySelector(".toc-sublist");
-            if (cat === parentCategory) {
-              cat.classList.add("open");
-              sub?.classList.remove("hidden");
+          const tocCategories = getHTMLElements(document, ".toc-category");
+          for (const category of tocCategories) {
+            const sublist = category.querySelector(".toc-sublist");
+            if (category === parentCategory) {
+              category.classList.add("open");
+              sublist?.classList.remove("hidden");
             } else {
-              cat.classList.remove("open");
-              sub?.classList.add("hidden");
+              category.classList.remove("open");
+              sublist?.classList.add("hidden");
             }
-          });
+          }
         }
-      });
+      }
     },
     {
-      root: null,
-      threshold: 0.6, // 🔹 Serve almeno il 60% visibile
-      rootMargin: "-10% 0px -40% 0px", // 🔹 Ritarda leggermente il cambio
+      threshold: 0.6, // At least 60% visible is required
+      rootMargin: "-10% 0px -40% 0px", // Delays the change slightly
     },
   );
 
-  document
-    .querySelectorAll("#allprogress-grid h2, #allprogress-grid h3")
-    .forEach((section) => tocObserver.observe(section));
+  const headers = getHTMLElements(
+    document,
+    "#allprogress-grid h2, #allprogress-grid h3",
+  );
+  for (const section of headers) {
+    tocObserver.observe(section);
+  }
 }
 
 function showGenericModal(item: Item) {
-  const mapSrc = item.map
-    ? item.map.startsWith("http")
-      ? item.map
-      : `${BASE_PATH}/${item.map}`
-    : null;
+  let mapSrc: string | undefined;
+  if (item.map === undefined) {
+    mapSrc = undefined;
+  } else if (item.map.startsWith("http")) {
+    mapSrc = item.map;
+  } else {
+    mapSrc = `${BASE_PATH}/${item.map}`;
+  }
 
   const iconPath = getIconPath(item);
 
@@ -1492,15 +1507,16 @@ function showGenericModal(item: Item) {
     <img src="${iconPath}" alt="${item.label}" class="info-image">
     <h2 class="info-title">${item.label}</h2>
     <p class="info-description">
-      ${item.description || "No description available."}
+      ${item.description}
     </p>
 
-    ${item.obtain ? `<p class="info-extra"><strong>Obtained:</strong> ${item.obtain}</p>` : ""}
-    ${item.cost ? `<p class="info-extra"><strong>Cost:</strong> ${item.cost}</p>` : ""}
+    ${item.type === "level" && item.obtain !== undefined ? `<p class="info-extra"><strong>Obtained:</strong> ${item.obtain}</p>` : ""}
+    ${item.type === "level" && item.cost !== undefined ? `<p class="info-extra"><strong>Cost:</strong> ${item.cost}</p>` : ""}
 
     ${
-      mapSrc
-        ? `
+      mapSrc === undefined
+        ? ""
+        : `
 <div class="info-map-wrapper">
   <div class="map-loading-overlay">
     <span class="map-loading-text">Loading map...</span>
@@ -1516,24 +1532,23 @@ function showGenericModal(item: Item) {
 </div>
 
       `
-        : ""
     }
 
     ${
-      item.link
-        ? `
+      item.link === ""
+        ? ""
+        : `
       <div class="info-link-wrapper">
         <a href="${item.link}" target="_blank" class="info-link">More info →</a>
       </div>
     `
-        : ""
     }
   `;
 
   infoOverlay.classList.remove("hidden");
 
-  // 🔧 attach listener to the *newly created* close button
-  const modalCloseBtn = document.getElementById("modalCloseBtn");
+  // Attach listener to the *newly created* close button.
+  const modalCloseBtn = document.querySelector("#modalCloseBtn");
   if (modalCloseBtn) {
     modalCloseBtn.addEventListener("click", () => {
       infoOverlay.classList.add("hidden");
@@ -1542,10 +1557,10 @@ function showGenericModal(item: Item) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 🎬 Info Modal
-  closeInfoModal.addEventListener("click", () =>
-    infoOverlay.classList.add("hidden"),
-  );
+  // Info Modal
+  closeInfoModal.addEventListener("click", () => {
+    infoOverlay.classList.add("hidden");
+  });
   infoOverlay.addEventListener("click", (e) => {
     if (e.target === infoOverlay) {
       infoOverlay.classList.add("hidden");
@@ -1553,7 +1568,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-async function reRenderActiveTab() {
+function reRenderActiveTab() {
   const activeElement = document.querySelector(".sidebar-item.is-active");
   assertNotNull(activeElement, "Failed to get the active element.");
   assertIs(
@@ -1567,23 +1582,20 @@ async function reRenderActiveTab() {
     activeTab,
     "Failed to get the name of the active tab from the active element.",
   );
+  if (!includes(VALID_TABS, activeTab)) {
+    throw new TypeError(`The active tab was not valid: ${activeTab}`);
+  }
 
-  // ✅ Get selected acts (supports multi-select)
+  // Get selected acts (supports multi-select).
   const currentActFilter = getCurrentActFilter();
   const showMissingOnly = missingToggle.checked;
 
-  // ✅ Save current state
+  // Save current state
   localStorage.setItem("currentActFilter", JSON.stringify(currentActFilter));
   localStorage.setItem("showMissingOnly", showMissingOnly.toString());
 
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
-  assertDefined(
-    func,
-    `Failed to find the function corresponding to tab: ${activeTab}`,
-  );
-
-  // ✅ Re-render the currently active tab
-  await func();
+  func();
 }
 
 missingToggle.addEventListener("change", reRenderActiveTab);

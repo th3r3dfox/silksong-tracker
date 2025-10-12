@@ -18,7 +18,5 @@ export function normalizeStringWithUnderscores(string: string): string {
 }
 
 export function getIconPath(item: Item): string {
-  const prefix = `${BASE_PATH}/assets`;
-  const iconPathSuffix = item.icon ?? `icons/${item.id}.png`;
-  return `${prefix}/${iconPathSuffix}`;
+  return `${BASE_PATH}/assets/${item.icon}`;
 }

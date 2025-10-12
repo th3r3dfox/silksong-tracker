@@ -3,27 +3,21 @@
 
 // @ts-check
 
+import { completeConfigBase } from "eslint-config-complete";
 import { defineConfig } from "eslint/config";
 
-export default defineConfig(
-  {
-    rules: {
-      /**
-       * Always requiring curly braces can partially ward against [Apple-style if statement
-       * bugs](https://www.imperialviolet.org/2014/02/22/applebug.html). Additionally, this rule needs
-       * to be set to "all" to [work properly with
-       * Prettier](https://github.com/prettier/eslint-config-prettier#curly).
-       */
-      curly: ["warn", "all"],
-    },
-  },
+export default defineConfig(...completeConfigBase, {
+  rules: {
+    // By default, the upstream "n/file-extension-in-import" rule is enabled to lint for ".js" file
+    // extensions, which is standard practice when writing TypeScript with ECMAScript modules that
+    // will be transpiled to JavaScript. Since we use Vite, we can use ".ts" file extensions, which
+    // is less confusing. However, it does not seem possible to configure
+    // "n/file-extension-in-import" to work with ".ts" file extensions. Thus, we use
+    // "import-x/extensions" instead.
+    "n/file-extension-in-import": "off",
+    "import-x/extensions": ["warn", "ignorePackages", { fix: true }],
 
-  {
-    // By default, ESLint ignores "**/node_modules/" and ".git/":
-    // https://eslint.org/docs/latest/use/configure/ignore#ignoring-files
-    // We also want to ignore:
-    // - The "dist" directory, since it is the idiomatic place for compiled output in TypeScript.
-    // - Minified JavaScript files.
-    ignores: ["**/dist/", "*.min.js"],
+    // This codebase mutates parameters in several places.
+    "no-param-reassign": "off",
   },
-);
+});

@@ -1,6 +1,6 @@
 import { getFilePathsInDirectory, lintCommands, readFile } from "complete-node";
 import { globby } from "globby";
-import path from "path";
+import path from "node:path";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 
@@ -35,12 +35,10 @@ async function checkForIllegalCharacters() {
   });
 
   const fileInfos = await Promise.all(
-    filePaths.map(async (filePath) => {
-      return {
-        filePath,
-        fileContents: await readFile(filePath),
-      };
-    }),
+    filePaths.map(async (filePath) => ({
+      filePath,
+      fileContents: await readFile(filePath),
+    })),
   );
 
   const illegalCharacters = ["’", "—", "–"] as const;
@@ -51,7 +49,7 @@ async function checkForIllegalCharacters() {
     for (const character of illegalCharacters) {
       if (fileContents.includes(character)) {
         throw new Error(
-          `The character of "${character}" is illegal in file: ${filePath}`,
+          `Please remove all "${character}" character(s) in file: ${filePath}`,
         );
       }
     }
@@ -75,5 +73,6 @@ await lintCommands(import.meta.dirname, [
   ...CHECK_JSON_COMMANDS,
 
   // Ensure that certain characters do not appear in any files.
+  // eslint-disable-next-line unicorn/prefer-top-level-await
   ["check for illegal characters", checkForIllegalCharacters()],
 ]);
