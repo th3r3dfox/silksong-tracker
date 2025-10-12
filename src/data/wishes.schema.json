@@ -1,29 +1,64 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "required": ["$schema", "categories"],
   "additionalProperties": false,
   "properties": {
     "$schema": {
       "type": "string"
     },
     "categories": {
-      "type": "array",
       "items": {
-        "type": "object",
-        "required": ["desc", "items", "label"],
         "additionalProperties": false,
         "properties": {
-          "label": {
-            "type": "string"
-          },
           "desc": {
             "type": "string"
           },
           "items": {
-            "type": "array",
             "items": {
-              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "act": {
+                  "enum": [1, 2, 3],
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "flag": {
+                  "description": "The name of the save file flag used to track this wish",
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "link": {
+                  "format": "uri",
+                  "pattern": "^[^\\s%]*$",
+                  "type": "string"
+                },
+                "missable": {
+                  "description": "Whether this wish can be permanently missed",
+                  "type": "boolean"
+                },
+                "mode": {
+                  "enum": ["normal", "steel"],
+                  "type": "string"
+                },
+                "required": {
+                  "description": "Required count for completion (e.g., number of kills needed)",
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "type": {
+                  "enum": ["quest", "journal"],
+                  "type": "string"
+                }
+              },
               "required": [
                 "act",
                 "description",
@@ -34,55 +69,20 @@
                 "link",
                 "type"
               ],
-              "additionalProperties": false,
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "label": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string",
-                  "enum": ["quest", "journal"]
-                },
-                "flag": {
-                  "type": "string",
-                  "description": "The name of the save file flag used to track this wish"
-                },
-                "icon": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "link": {
-                  "type": "string",
-                  "format": "uri",
-                  "pattern": "^[^\\s%]*$"
-                },
-                "required": {
-                  "type": "integer",
-                  "description": "Required count for completion (e.g., number of kills needed)",
-                  "minimum": 1
-                },
-                "missable": {
-                  "type": "boolean",
-                  "description": "Whether this wish can be permanently missed"
-                },
-                "mode": {
-                  "type": "string",
-                  "enum": ["normal", "steel"]
-                },
-                "act": {
-                  "type": "integer",
-                  "enum": [1, 2, 3]
-                }
-              }
-            }
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "label": {
+            "type": "string"
           }
-        }
-      }
+        },
+        "required": ["desc", "items", "label"],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "required": ["$schema", "categories"],
+  "type": "object"
 }

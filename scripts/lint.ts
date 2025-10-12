@@ -64,6 +64,7 @@ await lintCommands(import.meta.dirname, [
   // Use ESLint to lint the code.
   // - "--max-warnings 0" makes warnings fail, since we set all ESLint errors to warnings.
   "eslint --max-warnings 0 .",
+  "eslint --max-warnings 0 --config eslint.config.json.mjs .",
 
   // Use Prettier to check formatting.
   // - "--log-level=warn" makes it only output errors.
