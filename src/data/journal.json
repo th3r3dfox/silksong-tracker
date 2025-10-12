@@ -6,7 +6,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Mossgrub",
+          "description": "Mossgrub.",
           "flag": "MossBone Crawler",
           "icon": "journal/Mossgrub.png",
           "id": "mossgrub",
@@ -17,7 +17,7 @@
         },
         {
           "act": 1,
-          "description": "Massive Mossgrub",
+          "description": "Massive Mossgrub.",
           "flag": "MossBone Crawler Fat",
           "icon": "journal/Massive_Mossgrub.png",
           "id": "massive-mossgrub",
@@ -28,7 +28,7 @@
         },
         {
           "act": 1,
-          "description": "Mossmir",
+          "description": "Mossmir.",
           "flag": "MossBone Fly",
           "icon": "journal/Mossmir.png",
           "id": "mossmir",
@@ -39,7 +39,7 @@
         },
         {
           "act": 1,
-          "description": "Moss Mother",
+          "description": "Moss Mother.",
           "flag": "Mossbone Mother",
           "icon": "journal/Moss_Mother.png",
           "id": "moss-mother",
@@ -50,7 +50,7 @@
         },
         {
           "act": 1,
-          "description": "Aknid",
+          "description": "Aknid.",
           "flag": "Aspid Collector",
           "icon": "journal/Aknid.png",
           "id": "aknid",
@@ -61,7 +61,7 @@
         },
         {
           "act": 1,
-          "description": "Skull Scuttler",
+          "description": "Skull Scuttler.",
           "flag": "Bone Goomba",
           "icon": "journal/Skull_Scuttler.png",
           "id": "skull-scuttler",
@@ -72,7 +72,7 @@
         },
         {
           "act": 1,
-          "description": "Skullwing",
+          "description": "Skullwing.",
           "flag": "Bone Goomba Bounce Fly",
           "icon": "journal/Skullwing.png",
           "id": "skullwing",
@@ -83,7 +83,7 @@
         },
         {
           "act": 1,
-          "description": "Skull Brute",
+          "description": "Skull Brute.",
           "flag": "Bone Goomba Large",
           "icon": "journal/Skull_Brute.png",
           "id": "skull-brute",
@@ -94,7 +94,7 @@
         },
         {
           "act": 1,
-          "description": "Skull Tyrant",
+          "description": "Skull Tyrant.",
           "flag": "Skull King",
           "icon": "journal/Skull_Tyrant.png",
           "id": "skull-tyrant",
@@ -105,7 +105,7 @@
         },
         {
           "act": 1,
-          "description": "Kilik",
+          "description": "Kilik.",
           "flag": "Bone Crawler",
           "icon": "journal/Kilik.png",
           "id": "kilik",
@@ -116,7 +116,7 @@
         },
         {
           "act": 1,
-          "description": "Beastfly",
+          "description": "Beastfly.",
           "flag": "Bone Flyer",
           "icon": "journal/Beastfly.png",
           "id": "beastfly",
@@ -127,7 +127,7 @@
         },
         {
           "act": 1,
-          "description": "Savage Beastfly",
+          "description": "Savage Beastfly.",
           "flag": "Bone Flyer Giant",
           "icon": "journal/Savage_Beastfly.png",
           "id": "savage-beastfly",
@@ -138,7 +138,7 @@
         },
         {
           "act": 1,
-          "description": "Caranid",
+          "description": "Caranid.",
           "flag": "Bone Circler",
           "icon": "journal/Caranid.png",
           "id": "caranid",
@@ -149,7 +149,7 @@
         },
         {
           "act": 1,
-          "description": "Vicious Caranid",
+          "description": "Vicious Caranid.",
           "flag": "Bone Circler Vicious",
           "icon": "journal/Vicious_Caranid.png",
           "id": "vicious-caranid",
@@ -160,7 +160,7 @@
         },
         {
           "act": 1,
-          "description": "Hardbone Hopper",
+          "description": "Hardbone Hopper.",
           "flag": "Bone Hopper",
           "icon": "journal/Hardbone_Hopper.png",
           "id": "hardbone-hopper",
@@ -171,7 +171,7 @@
         },
         {
           "act": 1,
-          "description": "Hardbone Elder",
+          "description": "Hardbone Elder.",
           "flag": "Bone Hopper Giant",
           "icon": "journal/Hardbone_Elder.png",
           "id": "hardbone-elder",
@@ -182,7 +182,7 @@
         },
         {
           "act": 1,
-          "description": "Tarmite",
+          "description": "Tarmite.",
           "flag": "Bone Spitter",
           "icon": "journal/Tarmite.png",
           "id": "tarmite",
@@ -193,7 +193,7 @@
         },
         {
           "act": 1,
-          "description": "Mawling",
+          "description": "Mawling.",
           "flag": "Bone Roller",
           "icon": "journal/Mawling.png",
           "id": "mawling",
@@ -204,7 +204,7 @@
         },
         {
           "act": 1,
-          "description": "Marrowmaw",
+          "description": "Marrowmaw.",
           "flag": "Bone Thumper",
           "icon": "journal/Marrowmaw.png",
           "id": "marrowmaw",
@@ -215,7 +215,7 @@
         },
         {
           "act": 1,
-          "description": "Hoker",
+          "description": "Hoker.",
           "flag": "Spine Floater",
           "icon": "journal/Hoker.png",
           "id": "hoker",
@@ -226,7 +226,7 @@
         },
         {
           "act": 1,
-          "description": "Flintbeetle",
+          "description": "Flintbeetle.",
           "flag": "Rock Roller",
           "icon": "journal/Flintbeetle.png",
           "id": "flintbeetle",
@@ -237,7 +237,7 @@
         },
         {
           "act": 1,
-          "description": "Rhinogrund",
+          "description": "Rhinogrund.",
           "flag": "Rhino",
           "icon": "journal/Rhinogrund.png",
           "id": "rhinogrund",
@@ -248,7 +248,7 @@
         },
         {
           "act": 1,
-          "description": "Gromling",
+          "description": "Gromling.",
           "flag": "Crypt Worm",
           "icon": "journal/Gromling.png",
           "id": "gromling",
@@ -259,7 +259,7 @@
         },
         {
           "act": 1,
-          "description": "Grom",
+          "description": "Grom.",
           "flag": "Bone Worm",
           "icon": "journal/Grom.png",
           "id": "grom",
@@ -270,7 +270,7 @@
         },
         {
           "act": 1,
-          "description": "Bell Beast",
+          "description": "Bell Beast.",
           "flag": "Bone Beast",
           "icon": "journal/Bell_Beast.png",
           "id": "bell-beast",
@@ -281,7 +281,7 @@
         },
         {
           "act": 1,
-          "description": "Pilgrim Groveller",
+          "description": "Pilgrim Groveller.",
           "flag": "Pilgrim 13",
           "icon": "journal/Pilgrim_Groveller.png",
           "id": "pilgrim-groveller",
@@ -292,7 +292,7 @@
         },
         {
           "act": 1,
-          "description": "Pilgrim Pouncer",
+          "description": "Pilgrim Pouncer.",
           "flag": "Pilgrim 11",
           "icon": "journal/Pilgrim_Pouncer.png",
           "id": "pilgrim-pouncer",
@@ -303,7 +303,7 @@
         },
         {
           "act": 1,
-          "description": "Pilgrim Hornfly",
+          "description": "Pilgrim Hornfly.",
           "flag": "Pilgrim 14",
           "icon": "journal/Pilgrim_Hornfly.png",
           "id": "pilgrim-hornfly",
@@ -314,7 +314,7 @@
         },
         {
           "act": 1,
-          "description": "Pilgrim Hulk",
+          "description": "Pilgrim Hulk.",
           "flag": "Pilgrim 12",
           "icon": "journal/Pilgrim_Hulk.png",
           "id": "pilgrim-hulk",
@@ -325,7 +325,7 @@
         },
         {
           "act": 1,
-          "description": "Pilgrim Bellbearer",
+          "description": "Pilgrim Bellbearer.",
           "flag": "Pilgrim Bell Thrower",
           "icon": "journal/Pilgrim_Bellbearer.png",
           "id": "pilgrim-bellbearer",
@@ -336,7 +336,7 @@
         },
         {
           "act": 1,
-          "description": "Winged Pilgrim",
+          "description": "Winged Pilgrim.",
           "flag": "Pilgrim Fly",
           "icon": "journal/Winged_Pilgrim.png",
           "id": "winged-pilgrim",
@@ -347,7 +347,7 @@
         },
         {
           "act": 1,
-          "description": "Elder Pilgrim",
+          "description": "Elder Pilgrim.",
           "flag": "Pilgrim 15",
           "icon": "journal/Elder_Pilgrim.png",
           "id": "elder-pilgrim",
@@ -358,7 +358,7 @@
         },
         {
           "act": 1,
-          "description": "Winged Pilgrim Bellbearer",
+          "description": "Winged Pilgrim Bellbearer.",
           "flag": "Pilgrim Bellthrower Fly",
           "icon": "journal/Winged_Pilgrim_Bellbearer.png",
           "id": "winged-pilgrim-bellbearer",
@@ -369,7 +369,7 @@
         },
         {
           "act": 1,
-          "description": "Pilgrim Hiker",
+          "description": "Pilgrim Hiker.",
           "flag": "Pilgrim Hiker",
           "icon": "journal/Pilgrim_Hiker.png",
           "id": "pilgrim-hiker",
@@ -380,7 +380,7 @@
         },
         {
           "act": 1,
-          "description": "Pilgrim Guide",
+          "description": "Pilgrim Guide.",
           "flag": "Pilgrim StaffWielder",
           "icon": "journal/Pilgrim_Guide.png",
           "id": "pilgrim-guide",
@@ -391,7 +391,7 @@
         },
         {
           "act": 1,
-          "description": "Overgrown Pilgrim",
+          "description": "Overgrown Pilgrim.",
           "flag": "Pilgrim Moss Spitter",
           "icon": "journal/Overgrown_Pilgrim.png",
           "id": "overgrown-pilgrim",
@@ -402,7 +402,7 @@
         },
         {
           "act": 1,
-          "description": "Covetous Pilgrim",
+          "description": "Covetous Pilgrim.",
           "flag": "Rosary Pilgrim",
           "icon": "journal/Covetous_Pilgrim.png",
           "id": "covetous-pilgrim",
@@ -413,7 +413,7 @@
         },
         {
           "act": 1,
-          "description": "Snitchfly",
+          "description": "Snitchfly.",
           "flag": "Rosary Thief",
           "icon": "journal/Snitchfly.png",
           "id": "snitchfly",
@@ -424,7 +424,7 @@
         },
         {
           "act": 1,
-          "description": "Lavalug",
+          "description": "Lavalug.",
           "flag": "Tar Slug",
           "icon": "journal/Lavalug.png",
           "id": "lavalug",
@@ -435,7 +435,7 @@
         },
         {
           "act": 1,
-          "description": "Lavalarga",
+          "description": "Lavalarga.",
           "flag": "Tar Slug Huge",
           "icon": "journal/Lavalarga.png",
           "id": "lavalarga",
@@ -446,7 +446,7 @@
         },
         {
           "act": 1,
-          "description": "Smelt Shoveller",
+          "description": "Smelt Shoveller.",
           "flag": "Dock Worker",
           "icon": "journal/Smelt_Shoveller.png",
           "id": "smelt-shoveller",
@@ -457,7 +457,7 @@
         },
         {
           "act": 1,
-          "description": "Flintstone Flyer",
+          "description": "Flintstone Flyer.",
           "flag": "Dock Flyer",
           "icon": "journal/Flintstone_Flyer.png",
           "id": "flintstone-flyer",
@@ -468,7 +468,7 @@
         },
         {
           "act": 1,
-          "description": "Flintflame Flyer",
+          "description": "Flintflame Flyer.",
           "flag": "Dock Bomber",
           "icon": "journal/Flintflame_Flyer.png",
           "id": "flintflame-flyer",
@@ -479,7 +479,7 @@
         },
         {
           "act": 1,
-          "description": "Smokerock Sifter",
+          "description": "Smokerock Sifter.",
           "flag": "Shield Dock Worker",
           "icon": "journal/Smokerock_Sifter.png",
           "id": "smokerock-sifter",
@@ -490,7 +490,7 @@
         },
         {
           "act": 1,
-          "description": "Deep Diver",
+          "description": "Deep Diver.",
           "flag": "Dock Charger",
           "icon": "journal/Deep_Diver.png",
           "id": "deep-diver",
@@ -501,7 +501,7 @@
         },
         {
           "act": 1,
-          "description": "Forebrothers Signis & Gron",
+          "description": "Forebrothers Signis & Gron.",
           "flag": "Dock Guard Thrower",
           "icon": "journal/Forebrothers_Signis_&_Gron.png",
           "id": "forebrothers-signis-&-gron",
@@ -512,7 +512,7 @@
         },
         {
           "act": 1,
-          "description": "Cragglite",
+          "description": "Cragglite.",
           "flag": "Small Crab",
           "icon": "journal/Cragglite.png",
           "id": "cragglite",
@@ -523,7 +523,7 @@
         },
         {
           "act": 1,
-          "description": "Craggler",
+          "description": "Craggler.",
           "flag": "Roof Crab",
           "icon": "journal/Craggler.png",
           "id": "craggler",
@@ -534,7 +534,7 @@
         },
         {
           "act": 1,
-          "description": "Brushflit",
+          "description": "Brushflit.",
           "flag": "Fields Flock Flyers",
           "icon": "journal/Brushflit.png",
           "id": "brushflit",
@@ -545,7 +545,7 @@
         },
         {
           "act": 1,
-          "description": "Fertid",
+          "description": "Fertid.",
           "flag": "Fields Goomba",
           "icon": "journal/Fertid.png",
           "id": "fertid",
@@ -556,7 +556,7 @@
         },
         {
           "act": 1,
-          "description": "Flapping Fertid",
+          "description": "Flapping Fertid.",
           "flag": "Fields Flyer",
           "icon": "journal/Flapping_Fertid.png",
           "id": "flapping-fertid",
@@ -567,7 +567,7 @@
         },
         {
           "act": 1,
-          "description": "Fourth Chorus",
+          "description": "Fourth Chorus.",
           "flag": "Song Golem",
           "icon": "journal/Fourth_Chorus.png",
           "id": "fourth-chorus",
@@ -578,7 +578,7 @@
         },
         {
           "act": 1,
-          "description": "Skarrlid",
+          "description": "Skarrlid.",
           "flag": "Bone Hunter Tiny",
           "icon": "journal/Skarrlid.png",
           "id": "skarrlid",
@@ -589,7 +589,7 @@
         },
         {
           "act": 1,
-          "description": "Skarrwing",
+          "description": "Skarrwing.",
           "flag": "Bone Hunter Buzzer",
           "icon": "journal/Skarrwing.png",
           "id": "skarrwing",
@@ -600,7 +600,7 @@
         },
         {
           "act": 1,
-          "description": "Skarr Scout",
+          "description": "Skarr Scout.",
           "flag": "Bone Hunter Child",
           "icon": "journal/Skarr_Scout.png",
           "id": "skarr-scout",
@@ -611,7 +611,7 @@
         },
         {
           "act": 1,
-          "description": "Skarr Stalker",
+          "description": "Skarr Stalker.",
           "flag": "Bone Hunter",
           "icon": "journal/Skarr_Stalker.png",
           "id": "skarr-stalker",
@@ -622,7 +622,7 @@
         },
         {
           "act": 1,
-          "description": "Spear Skarr",
+          "description": "Spear Skarr.",
           "flag": "Bone Hunter Fly",
           "icon": "journal/Spear_Skarr.png",
           "id": "spear-skarr",
@@ -633,7 +633,7 @@
         },
         {
           "act": 1,
-          "description": "Skarrgard",
+          "description": "Skarrgard.",
           "flag": "Bone Hunter Throw",
           "icon": "journal/Skarrgard.png",
           "id": "skarrgard",
@@ -644,7 +644,7 @@
         },
         {
           "act": 1,
-          "description": "Gurr the Outcast",
+          "description": "Gurr the Outcast.",
           "flag": "Bone Hunter Trapper",
           "icon": "journal/Gurr_the_Outcast.png",
           "id": "gurr-the-outcast",
@@ -655,7 +655,7 @@
         },
         {
           "act": 1,
-          "description": "Last Claw",
+          "description": "Last Claw.",
           "flag": "Bone Hunter Chief",
           "icon": "journal/Last_Claw.png",
           "id": "last-claw",
@@ -666,7 +666,7 @@
         },
         {
           "act": 1,
-          "description": "Skarrsinger Karmelita",
+          "description": "Skarrsinger Karmelita.",
           "flag": "Hunter Queen",
           "icon": "journal/Skarrsinger_Karmelita.png",
           "id": "skarrsinger-karmelita",
@@ -677,7 +677,7 @@
         },
         {
           "act": 1,
-          "description": "Mite",
+          "description": "Mite.",
           "flag": "Mite",
           "icon": "journal/Mite.png",
           "id": "mite",
@@ -688,7 +688,7 @@
         },
         {
           "act": 1,
-          "description": "Fluttermite",
+          "description": "Fluttermite.",
           "flag": "Mitefly",
           "icon": "journal/Fluttermite.png",
           "id": "fluttermite",
@@ -699,7 +699,7 @@
         },
         {
           "act": 1,
-          "description": "Mitemother",
+          "description": "Mitemother.",
           "flag": "Gnat Giant",
           "icon": "journal/Mitemother.png",
           "id": "mitemother",
@@ -710,7 +710,7 @@
         },
         {
           "act": 1,
-          "description": "Dreg Catcher",
+          "description": "Dreg Catcher.",
           "flag": "Farmer Catcher",
           "icon": "journal/Dreg_Catcher.png",
           "id": "dreg-catcher",
@@ -721,7 +721,7 @@
         },
         {
           "act": 1,
-          "description": "Silk Snipper",
+          "description": "Silk Snipper.",
           "flag": "Farmer Scissors",
           "icon": "journal/Silk_Snipper.png",
           "id": "silk-snipper",
@@ -732,7 +732,7 @@
         },
         {
           "act": 1,
-          "description": "Thread Raker",
+          "description": "Thread Raker.",
           "flag": "Farmer Centipede",
           "icon": "journal/Thread_Raker.png",
           "id": "thread-raker",
@@ -743,7 +743,7 @@
         },
         {
           "act": 1,
-          "description": "Moorwing",
+          "description": "Moorwing.",
           "flag": "Vampire Gnat",
           "icon": "journal/Moorwing.png",
           "id": "moorwing",
@@ -754,7 +754,7 @@
         },
         {
           "act": 1,
-          "description": "Wisp",
+          "description": "Wisp.",
           "flag": "Wisp",
           "icon": "journal/Wisp.png",
           "id": "wisp",
@@ -765,7 +765,7 @@
         },
         {
           "act": 1,
-          "description": "Burning Bug",
+          "description": "Burning Bug.",
           "flag": "Farmer Wisp",
           "icon": "journal/Burning_Bug.png",
           "id": "burning-bug",
@@ -776,7 +776,7 @@
         },
         {
           "act": 1,
-          "description": "Father of the Flame",
+          "description": "Father of the Flame.",
           "flag": "Wisp Pyre Effigy",
           "icon": "journal/Father_of_the_Flame.png",
           "id": "father-of-the-flame",
@@ -787,7 +787,7 @@
         },
         {
           "act": 1,
-          "description": "Craw",
+          "description": "Craw.",
           "flag": "Crow",
           "icon": "journal/Craw.png",
           "id": "craw",
@@ -798,7 +798,7 @@
         },
         {
           "act": 1,
-          "description": "Tallcraw",
+          "description": "Tallcraw.",
           "flag": "Crowman",
           "icon": "journal/Tallcraw.png",
           "id": "tallcraw",
@@ -809,7 +809,7 @@
         },
         {
           "act": 1,
-          "description": "Squatcraw",
+          "description": "Squatcraw.",
           "flag": "Crowman Dagger",
           "icon": "journal/Squatcraw.png",
           "id": "squatcraw",
@@ -820,7 +820,7 @@
         },
         {
           "act": 1,
-          "description": "Craw Juror",
+          "description": "Craw Juror.",
           "flag": "Crowman Juror Tiny",
           "icon": "journal/Craw_Juror.png",
           "id": "craw-juror",
@@ -831,7 +831,7 @@
         },
         {
           "act": 1,
-          "description": "Tallcraw Juror",
+          "description": "Tallcraw Juror.",
           "flag": "Crowman Juror",
           "icon": "journal/Tallcraw_Juror.png",
           "id": "tallcraw-juror",
@@ -842,7 +842,7 @@
         },
         {
           "act": 1,
-          "description": "Squatcraw Juror",
+          "description": "Squatcraw Juror.",
           "flag": "Crowman Dagger Juror",
           "icon": "journal/Squatcraw_Juror.png",
           "id": "squatcraw-juror",
@@ -853,7 +853,7 @@
         },
         {
           "act": 1,
-          "description": "Crawfather",
+          "description": "Crawfather.",
           "flag": "Crawfather",
           "icon": "journal/Crawfather.png",
           "id": "crawfather",
@@ -864,7 +864,7 @@
         },
         {
           "act": 1,
-          "description": "Muckmaggot",
+          "description": "Muckmaggot.",
           "flag": "Maggots",
           "icon": "journal/Muckmaggot.png",
           "id": "muckmaggot",
@@ -875,7 +875,7 @@
         },
         {
           "act": 1,
-          "description": "Slubberlug",
+          "description": "Slubberlug.",
           "flag": "Dustroach Pollywog",
           "icon": "journal/Slubberlug.png",
           "id": "slubberlug",
@@ -886,7 +886,7 @@
         },
         {
           "act": 1,
-          "description": "Muckroach",
+          "description": "Muckroach.",
           "flag": "Dustroach",
           "icon": "journal/Muckroach.png",
           "id": "muckroach",
@@ -897,7 +897,7 @@
         },
         {
           "act": 1,
-          "description": "Bloatroach",
+          "description": "Bloatroach.",
           "flag": "Bloat Roach",
           "icon": "journal/Bloatroach.png",
           "id": "bloatroach",
@@ -908,7 +908,7 @@
         },
         {
           "act": 1,
-          "description": "Roachcatcher",
+          "description": "Roachcatcher.",
           "flag": "Roachfeeder Short",
           "icon": "journal/Roachcatcher.png",
           "id": "roachcatcher",
@@ -919,7 +919,7 @@
         },
         {
           "act": 1,
-          "description": "Roachfeeder",
+          "description": "Roachfeeder.",
           "flag": "Roachfeeder Tall",
           "icon": "journal/Roachfeeder.png",
           "id": "roachfeeder",
@@ -930,7 +930,7 @@
         },
         {
           "act": 1,
-          "description": "Roachkeeper",
+          "description": "Roachkeeper.",
           "flag": "Roachkeeper",
           "icon": "journal/Roachkeeper.png",
           "id": "roachkeeper",
@@ -941,7 +941,7 @@
         },
         {
           "act": 1,
-          "description": "Roachserver",
+          "description": "Roachserver.",
           "flag": "Roachkeeper Chef Tiny",
           "icon": "journal/Roachserver.png",
           "id": "roachserver",
@@ -952,7 +952,7 @@
         },
         {
           "act": 1,
-          "description": "Disgraced Chef Lugoli",
+          "description": "Disgraced Chef Lugoli.",
           "flag": "Roachkeeper Chef",
           "icon": "journal/Disgraced_Chef_Lugoli.png",
           "id": "disgraced-chef-lugoli",
@@ -963,7 +963,7 @@
         },
         {
           "act": 1,
-          "description": "Wraith",
+          "description": "Wraith.",
           "flag": "Wraith",
           "icon": "journal/Wraith.png",
           "id": "wraith",
@@ -974,7 +974,7 @@
         },
         {
           "act": 1,
-          "description": "Mothleaf Lagnia",
+          "description": "Mothleaf Lagnia.",
           "flag": "Swamp Drifter",
           "icon": "journal/Mothleaf_Lagnia.png",
           "id": "mothleaf-lagnia",
@@ -985,7 +985,7 @@
         },
         {
           "act": 1,
-          "description": "Miremite",
+          "description": "Miremite.",
           "flag": "Swamp Goomba",
           "icon": "journal/Miremite.png",
           "id": "miremite",
@@ -996,7 +996,7 @@
         },
         {
           "act": 1,
-          "description": "Swamp Squit",
+          "description": "Swamp Squit.",
           "flag": "Swamp Mosquito",
           "icon": "journal/Swamp_Squit.png",
           "id": "swamp-squit",
@@ -1007,7 +1007,7 @@
         },
         {
           "act": 1,
-          "description": "Spit Squit",
+          "description": "Spit Squit.",
           "flag": "Swamp Mosquito Skinny",
           "icon": "journal/Spit_Squit.png",
           "id": "spit-squit",
@@ -1018,7 +1018,7 @@
         },
         {
           "act": 1,
-          "description": "Stilkin",
+          "description": "Stilkin.",
           "flag": "Swamp Muckman",
           "icon": "journal/Stilkin.png",
           "id": "stilkin",
@@ -1029,7 +1029,7 @@
         },
         {
           "act": 1,
-          "description": "Stilkin Trapper",
+          "description": "Stilkin Trapper.",
           "flag": "Swamp Muckman Tall",
           "icon": "journal/Stilkin_Trapper.png",
           "id": "stilkin-trapper",
@@ -1040,7 +1040,7 @@
         },
         {
           "act": 1,
-          "description": "Groal the Great",
+          "description": "Groal the Great.",
           "flag": "Swamp Shaman",
           "icon": "journal/Groal_the_Great.png",
           "id": "groal-the-great",
@@ -1051,7 +1051,7 @@
         },
         {
           "act": 1,
-          "description": "Barnak",
+          "description": "Barnak.",
           "flag": "Swamp Barnacle",
           "icon": "journal/Barnak.png",
           "id": "barnak",
@@ -1062,7 +1062,7 @@
         },
         {
           "act": 1,
-          "description": "Ductsucker",
+          "description": "Ductsucker.",
           "flag": "Swamp Ductsucker",
           "icon": "journal/Ductsucker.png",
           "id": "ductsucker",
@@ -1073,7 +1073,7 @@
         },
         {
           "act": 1,
-          "description": "Pond Skipper",
+          "description": "Pond Skipper.",
           "flag": "Pond Skater",
           "icon": "journal/Pond_Skipper.png",
           "id": "pond-skipper",
@@ -1084,7 +1084,7 @@
         },
         {
           "act": 1,
-          "description": "Pondcatcher",
+          "description": "Pondcatcher.",
           "flag": "Pilgrim Fisher",
           "icon": "journal/Pondcatcher.png",
           "id": "pondcatcher",
@@ -1095,7 +1095,7 @@
         },
         {
           "act": 1,
-          "description": "Shellwood Gnat",
+          "description": "Shellwood Gnat.",
           "flag": "Shellwood Gnat",
           "icon": "journal/Shellwood_Gnat.png",
           "id": "shellwood-gnat",
@@ -1106,7 +1106,7 @@
         },
         {
           "act": 1,
-          "description": "Wood Wasp",
+          "description": "Wood Wasp.",
           "flag": "Shellwood Wasp",
           "icon": "journal/Wood_Wasp.png",
           "id": "wood-wasp",
@@ -1117,7 +1117,7 @@
         },
         {
           "act": 1,
-          "description": "Splinter",
+          "description": "Splinter.",
           "flag": "Stick Insect",
           "icon": "journal/Splinter.png",
           "id": "splinter",
@@ -1128,7 +1128,7 @@
         },
         {
           "act": 1,
-          "description": "Splinterhorn",
+          "description": "Splinterhorn.",
           "flag": "Stick Insect Charger",
           "icon": "journal/Splinterhorn.png",
           "id": "splinterhorn",
@@ -1139,7 +1139,7 @@
         },
         {
           "act": 1,
-          "description": "Splinterbark",
+          "description": "Splinterbark.",
           "flag": "Stick Insect Flyer",
           "icon": "journal/Splinterbark.png",
           "id": "splinterbark",
@@ -1150,7 +1150,7 @@
         },
         {
           "act": 1,
-          "description": "Sister Splinter",
+          "description": "Sister Splinter.",
           "flag": "Splinter Queen",
           "icon": "journal/Sister_Splinter.png",
           "id": "sister-splinter",
@@ -1161,7 +1161,7 @@
         },
         {
           "act": 1,
-          "description": "Phacia",
+          "description": "Phacia.",
           "flag": "Flower Drifter",
           "icon": "journal/Phacia.png",
           "id": "phacia",
@@ -1172,7 +1172,7 @@
         },
         {
           "act": 1,
-          "description": "Pollenica",
+          "description": "Pollenica.",
           "flag": "Bloom Shooter",
           "icon": "journal/Pollenica.png",
           "id": "pollenica",
@@ -1183,7 +1183,7 @@
         },
         {
           "act": 1,
-          "description": "Gahlia",
+          "description": "Gahlia.",
           "flag": "Bloom Puncher",
           "icon": "journal/Gahlia.png",
           "id": "gahlia",
@@ -1194,7 +1194,7 @@
         },
         {
           "act": 1,
-          "description": "Shrine Guardian Seth",
+          "description": "Shrine Guardian Seth.",
           "flag": "Seth",
           "icon": "journal/Shrine_Guardian_Seth.png",
           "id": "shrine-guardian-seth",
@@ -1205,7 +1205,7 @@
         },
         {
           "act": 1,
-          "description": "Nyleth",
+          "description": "Nyleth.",
           "flag": "Flower Queen",
           "icon": "journal/Nyleth.png",
           "id": "nyleth",
@@ -1216,7 +1216,7 @@
         },
         {
           "act": 1,
-          "description": "Furm",
+          "description": "Furm.",
           "flag": "Bell Goomba",
           "icon": "journal/Furm.png",
           "id": "furm",
@@ -1227,7 +1227,7 @@
         },
         {
           "act": 1,
-          "description": "Winged Furm",
+          "description": "Winged Furm.",
           "flag": "Bell Fly",
           "icon": "journal/Winged_Furm.png",
           "id": "winged-furm",
@@ -1238,7 +1238,7 @@
         },
         {
           "act": 1,
-          "description": "Pharlid",
+          "description": "Pharlid.",
           "flag": "Blade Spider",
           "icon": "journal/Pharlid.png",
           "id": "pharlid",
@@ -1249,7 +1249,7 @@
         },
         {
           "act": 1,
-          "description": "Pharlid Diver",
+          "description": "Pharlid Diver.",
           "flag": "Blade Spider Hang",
           "icon": "journal/Pharlid_Diver.png",
           "id": "pharlid-diver",
@@ -1260,7 +1260,7 @@
         },
         {
           "act": 1,
-          "description": "Shardillard",
+          "description": "Shardillard.",
           "flag": "Shell Fossil Mimic",
           "icon": "journal/Shardillard.png",
           "id": "shardillard",
@@ -1271,7 +1271,7 @@
         },
         {
           "act": 1,
-          "description": "Sandcarver",
+          "description": "Sandcarver.",
           "flag": "Sand Centipede",
           "icon": "journal/Sandcarver.png",
           "id": "sandcarver",
@@ -1282,7 +1282,7 @@
         },
         {
           "act": 1,
-          "description": "Squirrm",
+          "description": "Squirrm.",
           "flag": "Coral Judge Child",
           "icon": "journal/Squirrm.png",
           "id": "squirrm",
@@ -1293,7 +1293,7 @@
         },
         {
           "act": 1,
-          "description": "Judge",
+          "description": "Judge.",
           "flag": "Coral Judge",
           "icon": "journal/Judge.png",
           "id": "judge",
@@ -1304,7 +1304,7 @@
         },
         {
           "act": 1,
-          "description": "Last Judge",
+          "description": "Last Judge.",
           "flag": "Last Judge",
           "icon": "journal/Last_Judge.png",
           "id": "last-judge",
@@ -1315,7 +1315,7 @@
         },
         {
           "act": 1,
-          "description": "Coral Furm",
+          "description": "Coral Furm.",
           "flag": "Coral Spike Goomba",
           "icon": "journal/Coral_Furm.png",
           "id": "coral-furm",
@@ -1326,7 +1326,7 @@
         },
         {
           "act": 1,
-          "description": "Driznit",
+          "description": "Driznit.",
           "flag": "Coral Conch Shooter",
           "icon": "journal/Driznit.png",
           "id": "driznit",
@@ -1337,7 +1337,7 @@
         },
         {
           "act": 1,
-          "description": "Driznarga",
+          "description": "Driznarga.",
           "flag": "Coral Conch Shooter Heavy",
           "icon": "journal/Driznarga.png",
           "id": "driznarga",
@@ -1348,7 +1348,7 @@
         },
         {
           "act": 1,
-          "description": "Pokenabbin",
+          "description": "Pokenabbin.",
           "flag": "Coral Conch Stabber",
           "icon": "journal/Pokenabbin.png",
           "id": "pokenabbin",
@@ -1359,7 +1359,7 @@
         },
         {
           "act": 1,
-          "description": "Conchfly",
+          "description": "Conchfly.",
           "flag": "Coral Conch Driller",
           "icon": "journal/Conchfly.png",
           "id": "conchfly",
@@ -1370,7 +1370,7 @@
         },
         {
           "act": 1,
-          "description": "Great Conchfly",
+          "description": "Great Conchfly.",
           "flag": "Coral Conch Driller Giant",
           "icon": "journal/Great_Conchfly.png",
           "id": "great-conchfly",
@@ -1381,7 +1381,7 @@
         },
         {
           "act": 1,
-          "description": "Crustcrawler",
+          "description": "Crustcrawler.",
           "flag": "Coral Goombas",
           "icon": "journal/Crustcrawler.png",
           "id": "crustcrawler",
@@ -1392,7 +1392,7 @@
         },
         {
           "act": 1,
-          "description": "Crustcrag",
+          "description": "Crustcrag.",
           "flag": "Coral Goomba Large",
           "icon": "journal/Crustcrag.png",
           "id": "crustcrag",
@@ -1403,7 +1403,7 @@
         },
         {
           "act": 1,
-          "description": "Kai",
+          "description": "Kai.",
           "flag": "Coral Swimmer Fat",
           "icon": "journal/Kai.png",
           "id": "kai",
@@ -1414,7 +1414,7 @@
         },
         {
           "act": 1,
-          "description": "Spinebeak Kai",
+          "description": "Spinebeak Kai.",
           "flag": "Poke Swimmer",
           "icon": "journal/Spinebeak_Kai.png",
           "id": "spinebeak-kai",
@@ -1425,7 +1425,7 @@
         },
         {
           "act": 1,
-          "description": "Steelspine Kai",
+          "description": "Steelspine Kai.",
           "flag": "Spike Swimmer",
           "icon": "journal/Steelspine_Kai.png",
           "id": "steelspine-kai",
@@ -1436,7 +1436,7 @@
         },
         {
           "act": 1,
-          "description": "Yuma",
+          "description": "Yuma.",
           "flag": "Coral Swimmer Small",
           "icon": "journal/Yuma.png",
           "id": "yuma",
@@ -1447,7 +1447,7 @@
         },
         {
           "act": 1,
-          "description": "Yumama",
+          "description": "Yumama.",
           "flag": "Coral Big Jellyfish",
           "icon": "journal/Yumama.png",
           "id": "yumama",
@@ -1458,7 +1458,7 @@
         },
         {
           "act": 1,
-          "description": "Karaka",
+          "description": "Karaka.",
           "flag": "Coral Warrior",
           "icon": "journal/Karaka.png",
           "id": "karaka",
@@ -1469,7 +1469,7 @@
         },
         {
           "act": 1,
-          "description": "Kakri",
+          "description": "Kakri.",
           "flag": "Coral Flyer",
           "icon": "journal/Kakri.png",
           "id": "kakri",
@@ -1480,7 +1480,7 @@
         },
         {
           "act": 1,
-          "description": "Yago",
+          "description": "Yago.",
           "flag": "Coral Flyer Throw",
           "icon": "journal/Yago.png",
           "id": "yago",
@@ -1491,7 +1491,7 @@
         },
         {
           "act": 1,
-          "description": "Karak Gor",
+          "description": "Karak Gor.",
           "flag": "Coral Brawler",
           "icon": "journal/Karak_Gor.png",
           "id": "karak-gor",
@@ -1502,7 +1502,7 @@
         },
         {
           "act": 1,
-          "description": "Alita",
+          "description": "Alita.",
           "flag": "Coral Hunter",
           "icon": "journal/Alita.png",
           "id": "alita",
@@ -1513,7 +1513,7 @@
         },
         {
           "act": 1,
-          "description": "Corrcrust Karaka",
+          "description": "Corrcrust Karaka.",
           "flag": "Coral Bubble Brute",
           "icon": "journal/Corrcrust_Karaka.png",
           "id": "corrcrust-karaka",
@@ -1524,7 +1524,7 @@
         },
         {
           "act": 1,
-          "description": "Crust King Khann",
+          "description": "Crust King Khann.",
           "flag": "Coral King",
           "icon": "journal/Crust_King_Khann.png",
           "id": "crust-king-khann",
@@ -1535,7 +1535,7 @@
         },
         {
           "act": 1,
-          "description": "Watcher at the Edge",
+          "description": "Watcher at the Edge.",
           "flag": "Coral Warrior Grey",
           "icon": "journal/Watcher_at_the_Edge.png",
           "id": "watcher-at-the-edge",
@@ -1546,7 +1546,7 @@
         },
         {
           "act": 1,
-          "description": "Voltvyrm",
+          "description": "Voltvyrm.",
           "flag": "Zap Core Enemy",
           "icon": "journal/Voltvyrm.png",
           "id": "voltvyrm",
@@ -1557,7 +1557,7 @@
         },
         {
           "act": 1,
-          "description": "Drapefly",
+          "description": "Drapefly.",
           "flag": "Citadel Bat",
           "icon": "journal/Drapefly.png",
           "id": "drapefly",
@@ -1568,7 +1568,7 @@
         },
         {
           "act": 1,
-          "description": "Drapelord",
+          "description": "Drapelord.",
           "flag": "Citadel Bat Large",
           "icon": "journal/Drapelord.png",
           "id": "drapelord",
@@ -1579,7 +1579,7 @@
         },
         {
           "act": 1,
-          "description": "Drapemite",
+          "description": "Drapemite.",
           "flag": "Mite Heavy",
           "icon": "journal/Drapemite.png",
           "id": "drapemite",
@@ -1590,7 +1590,7 @@
         },
         {
           "act": 1,
-          "description": "Giant Drapemite",
+          "description": "Giant Drapemite.",
           "flag": "Understore Mite Giant",
           "icon": "journal/Giant_Drapemite.png",
           "id": "giant-drapemite",
@@ -1601,7 +1601,7 @@
         },
         {
           "act": 1,
-          "description": "Underworker",
+          "description": "Underworker.",
           "flag": "Understore Small",
           "icon": "journal/Underworker.png",
           "id": "underworker",
@@ -1612,7 +1612,7 @@
         },
         {
           "act": 1,
-          "description": "Underscrub",
+          "description": "Underscrub.",
           "flag": "Pilgrim 13 Understore",
           "icon": "journal/Underscrub.png",
           "id": "underscrub",
@@ -1623,7 +1623,7 @@
         },
         {
           "act": 1,
-          "description": "Undersweep",
+          "description": "Undersweep.",
           "flag": "Pilgrim Staff Understore",
           "icon": "journal/Undersweep.png",
           "id": "undersweep",
@@ -1634,7 +1634,7 @@
         },
         {
           "act": 1,
-          "description": "Underpoke",
+          "description": "Underpoke.",
           "flag": "Understore Poker",
           "icon": "journal/Underpoke.png",
           "id": "underpoke",
@@ -1645,7 +1645,7 @@
         },
         {
           "act": 1,
-          "description": "Underloft",
+          "description": "Underloft.",
           "flag": "Understore Thrower",
           "icon": "journal/Underloft.png",
           "id": "underloft",
@@ -1656,7 +1656,7 @@
         },
         {
           "act": 1,
-          "description": "Undercrank",
+          "description": "Undercrank.",
           "flag": "Understore Heavy",
           "icon": "journal/Undercrank.png",
           "id": "undercrank",
@@ -1667,7 +1667,7 @@
         },
         {
           "act": 1,
-          "description": "Envoy",
+          "description": "Envoy.",
           "flag": "Song Pilgrim 11",
           "icon": "journal/Envoy.png",
           "id": "envoy",
@@ -1678,7 +1678,7 @@
         },
         {
           "act": 1,
-          "description": "Choir Pouncer",
+          "description": "Choir Pouncer.",
           "flag": "Pilgrim 11 Song",
           "icon": "journal/Choir_Pouncer.png",
           "id": "choir-pouncer",
@@ -1689,7 +1689,7 @@
         },
         {
           "act": 1,
-          "description": "Choir Hornhead",
+          "description": "Choir Hornhead.",
           "flag": "Pilgrim 12 Song",
           "icon": "journal/Choir_Hornhead.png",
           "id": "choir-hornhead",
@@ -1700,7 +1700,7 @@
         },
         {
           "act": 1,
-          "description": "Choir Bellbearer",
+          "description": "Choir Bellbearer.",
           "flag": "Pilgrim 13 Song",
           "icon": "journal/Choir_Bellbearer.png",
           "id": "choir-bellbearer",
@@ -1711,7 +1711,7 @@
         },
         {
           "act": 1,
-          "description": "Choir Flyer",
+          "description": "Choir Flyer.",
           "flag": "Pilgrim 14 Song",
           "icon": "journal/Choir_Flyer.png",
           "id": "choir-flyer",
@@ -1722,7 +1722,7 @@
         },
         {
           "act": 1,
-          "description": "Choir Elder",
+          "description": "Choir Elder.",
           "flag": "Pilgrim Stomper Song",
           "icon": "journal/Choir_Elder.png",
           "id": "choir-elder",
@@ -1733,7 +1733,7 @@
         },
         {
           "act": 1,
-          "description": "Choristor",
+          "description": "Choristor.",
           "flag": "Song Pilgrim 13",
           "icon": "journal/Choristor.png",
           "id": "choristor",
@@ -1744,7 +1744,7 @@
         },
         {
           "act": 1,
-          "description": "Reed",
+          "description": "Reed.",
           "flag": "Song Reed",
           "icon": "journal/Reed.png",
           "id": "reed",
@@ -1755,7 +1755,7 @@
         },
         {
           "act": 1,
-          "description": "Grand Reed",
+          "description": "Grand Reed.",
           "flag": "Song Reed Grand",
           "icon": "journal/Grand_Reed.png",
           "id": "grand-reed",
@@ -1766,7 +1766,7 @@
         },
         {
           "act": 1,
-          "description": "Choir Clapper",
+          "description": "Choir Clapper.",
           "flag": "Song Heavy Sentry",
           "icon": "journal/Choir_Clapper.png",
           "id": "choir-clapper",
@@ -1777,7 +1777,7 @@
         },
         {
           "act": 1,
-          "description": "Clawmaiden",
+          "description": "Clawmaiden.",
           "flag": "Song Handmaiden",
           "icon": "journal/Clawmaiden.png",
           "id": "clawmaiden",
@@ -1788,7 +1788,7 @@
         },
         {
           "act": 1,
-          "description": "Memoria",
+          "description": "Memoria.",
           "flag": "Arborium Keeper",
           "icon": "journal/Memoria.png",
           "id": "memoria",
@@ -1799,7 +1799,7 @@
         },
         {
           "act": 1,
-          "description": "Minister",
+          "description": "Minister.",
           "flag": "Song Administrator",
           "icon": "journal/Minister.png",
           "id": "minister",
@@ -1810,7 +1810,7 @@
         },
         {
           "act": 1,
-          "description": "Maestro",
+          "description": "Maestro.",
           "flag": "Song Pilgrim Maestro",
           "icon": "journal/Maestro.png",
           "id": "maestro",
@@ -1821,7 +1821,7 @@
         },
         {
           "act": 1,
-          "description": "Second Sentinel",
+          "description": "Second Sentinel.",
           "flag": "Song Knight",
           "icon": "journal/Second_Sentinel.png",
           "id": "second-sentinel",
@@ -1832,7 +1832,7 @@
         },
         {
           "act": 1,
-          "description": "Dreg Husk",
+          "description": "Dreg Husk.",
           "flag": "Song Threaded Husk",
           "icon": "journal/Dreg_Husk.png",
           "id": "dreg-husk",
@@ -1843,7 +1843,7 @@
         },
         {
           "act": 1,
-          "description": "Dregwheel",
+          "description": "Dregwheel.",
           "flag": "Song Threaded Husk Spin",
           "icon": "journal/Dregwheel.png",
           "id": "dregwheel",
@@ -1854,7 +1854,7 @@
         },
         {
           "act": 1,
-          "description": "Surgeon",
+          "description": "Surgeon.",
           "flag": "Song Pilgrim 12",
           "icon": "journal/Surgeon.png",
           "id": "surgeon",
@@ -1865,7 +1865,7 @@
         },
         {
           "act": 1,
-          "description": "Mortician",
+          "description": "Mortician.",
           "flag": "Song Creeper",
           "icon": "journal/Mortician.png",
           "id": "mortician",
@@ -1876,7 +1876,7 @@
         },
         {
           "act": 1,
-          "description": "The Unravelled",
+          "description": "The Unravelled.",
           "flag": "Conductor Boss",
           "icon": "journal/The_Unravelled.png",
           "id": "the-unravelled",
@@ -1887,7 +1887,7 @@
         },
         {
           "act": 1,
-          "description": "Cogwork Underfly",
+          "description": "Cogwork Underfly.",
           "flag": "Understore Automaton",
           "icon": "journal/Cogwork_Underfly.png",
           "id": "cogwork-underfly",
@@ -1898,7 +1898,7 @@
         },
         {
           "act": 1,
-          "description": "Cogwork Hauler",
+          "description": "Cogwork Hauler.",
           "flag": "Understore Automaton EX",
           "icon": "journal/Cogwork_Hauler.png",
           "id": "cogwork-hauler",
@@ -1909,7 +1909,7 @@
         },
         {
           "act": 1,
-          "description": "Cogwork Crawler",
+          "description": "Cogwork Crawler.",
           "flag": "Song Automaton Goomba",
           "icon": "journal/Cogwork_Crawler.png",
           "id": "cogwork-crawler",
@@ -1920,7 +1920,7 @@
         },
         {
           "act": 1,
-          "description": "Cogworker",
+          "description": "Cogworker.",
           "flag": "Song Automaton Fly",
           "icon": "journal/Cogworker.png",
           "id": "cogworker",
@@ -1931,7 +1931,7 @@
         },
         {
           "act": 1,
-          "description": "Cogwork Spine",
+          "description": "Cogwork Spine.",
           "flag": "Song Automaton Fly Spike",
           "icon": "journal/Cogwork_Spine.png",
           "id": "cogwork-spine",
@@ -1942,7 +1942,7 @@
         },
         {
           "act": 1,
-          "description": "Cogwork Choirbug",
+          "description": "Cogwork Choirbug.",
           "flag": "Song Automaton 11",
           "icon": "journal/Cogwork_Choirbug.png",
           "id": "cogwork-choirbug",
@@ -1953,7 +1953,7 @@
         },
         {
           "act": 1,
-          "description": "Cogwork Cleanser",
+          "description": "Cogwork Cleanser.",
           "flag": "Song Automaton 12",
           "icon": "journal/Cogwork_Cleanser.png",
           "id": "cogwork-cleanser",
@@ -1964,7 +1964,7 @@
         },
         {
           "act": 1,
-          "description": "Cogwork Defender",
+          "description": "Cogwork Defender.",
           "flag": "Song Automaton Shield",
           "icon": "journal/Cogwork_Defender.png",
           "id": "cogwork-defender",
@@ -1975,7 +1975,7 @@
         },
         {
           "act": 1,
-          "description": "Cogwork Clapper",
+          "description": "Cogwork Clapper.",
           "flag": "Song Automaton Ball",
           "icon": "journal/Cogwork_Clapper.png",
           "id": "cogwork-clapper",
@@ -1986,7 +1986,7 @@
         },
         {
           "act": 1,
-          "description": "Cogwork Dancers",
+          "description": "Cogwork Dancers.",
           "flag": "Clockwork Dancer",
           "icon": "journal/Cogwork_Dancers.png",
           "id": "cogwork-dancers",
@@ -1997,7 +1997,7 @@
         },
         {
           "act": 1,
-          "description": "Vaultborn",
+          "description": "Vaultborn.",
           "flag": "Song Scholar Acolyte",
           "icon": "journal/Vaultborn.png",
           "id": "vaultborn",
@@ -2008,7 +2008,7 @@
         },
         {
           "act": 1,
-          "description": "Lampbearer",
+          "description": "Lampbearer.",
           "flag": "Lightbearer",
           "icon": "journal/Lampbearer.png",
           "id": "lampbearer",
@@ -2019,7 +2019,7 @@
         },
         {
           "act": 1,
-          "description": "Scrollreader",
+          "description": "Scrollreader.",
           "flag": "Scrollkeeper",
           "icon": "journal/Scrollreader.png",
           "id": "scrollreader",
@@ -2030,7 +2030,7 @@
         },
         {
           "act": 1,
-          "description": "Vaultkeeper",
+          "description": "Vaultkeeper.",
           "flag": "Scholar",
           "icon": "journal/Vaultkeeper.png",
           "id": "vaultkeeper",
@@ -2041,7 +2041,7 @@
         },
         {
           "act": 1,
-          "description": "Trobbio",
+          "description": "Trobbio.",
           "flag": "Trobbio",
           "icon": "journal/Trobbio.png",
           "id": "trobbio",
@@ -2052,7 +2052,7 @@
         },
         {
           "act": 1,
-          "description": "Tormented Trobbio",
+          "description": "Tormented Trobbio.",
           "flag": "Tormented Trobbio",
           "icon": "journal/Tormented_Trobbio.png",
           "id": "tormented-trobbio",
@@ -2063,7 +2063,7 @@
         },
         {
           "act": 1,
-          "description": "Penitent",
+          "description": "Penitent.",
           "flag": "Slab Prisoner Leaper New",
           "icon": "journal/Penitent.png",
           "id": "penitent",
@@ -2074,7 +2074,7 @@
         },
         {
           "act": 1,
-          "description": "Puny Penitent",
+          "description": "Puny Penitent.",
           "flag": "Slab Prisoner Fly New",
           "icon": "journal/Puny_Penitent.png",
           "id": "puny-penitent",
@@ -2085,7 +2085,7 @@
         },
         {
           "act": 1,
-          "description": "Freshfly",
+          "description": "Freshfly.",
           "flag": "Slab Fly Small Fresh",
           "icon": "journal/Freshfly.png",
           "id": "freshfly",
@@ -2096,7 +2096,7 @@
         },
         {
           "act": 1,
-          "description": "Scabfly",
+          "description": "Scabfly.",
           "flag": "Slab Fly Small",
           "icon": "journal/Scabfly.png",
           "id": "scabfly",
@@ -2107,7 +2107,7 @@
         },
         {
           "act": 1,
-          "description": "Guardfly",
+          "description": "Guardfly.",
           "flag": "Slab Fly Mid",
           "icon": "journal/Guardfly.png",
           "id": "guardfly",
@@ -2118,7 +2118,7 @@
         },
         {
           "act": 1,
-          "description": "Wardenfly",
+          "description": "Wardenfly.",
           "flag": "Slab Fly Large",
           "icon": "journal/Wardenfly.png",
           "id": "wardenfly",
@@ -2129,7 +2129,7 @@
         },
         {
           "act": 1,
-          "description": "Broodmother",
+          "description": "Broodmother.",
           "flag": "Slab Fly Broodmother",
           "icon": "journal/Broodmother.png",
           "id": "broodmother",
@@ -2140,7 +2140,7 @@
         },
         {
           "act": 1,
-          "description": "Driftlin",
+          "description": "Driftlin.",
           "flag": "Peaks Drifter",
           "icon": "journal/Driftlin.png",
           "id": "driftlin",
@@ -2151,7 +2151,7 @@
         },
         {
           "act": 1,
-          "description": "Mnemonid",
+          "description": "Mnemonid.",
           "flag": "Crystal Drifter",
           "icon": "journal/Mnemonid.png",
           "id": "mnemonid",
@@ -2162,7 +2162,7 @@
         },
         {
           "act": 1,
-          "description": "Mnemonord",
+          "description": "Mnemonord.",
           "flag": "Crystal Drifter Giant",
           "icon": "journal/Mnemonord.png",
           "id": "mnemonord",
@@ -2173,7 +2173,7 @@
         },
         {
           "act": 1,
-          "description": "Servitor Ignim",
+          "description": "Servitor Ignim.",
           "flag": "Weaver Servitor",
           "icon": "journal/Servitor_Ignim.png",
           "id": "servitor-ignim",
@@ -2184,7 +2184,7 @@
         },
         {
           "act": 1,
-          "description": "Servitor Boran",
+          "description": "Servitor Boran.",
           "flag": "Weaver Servitor Large",
           "icon": "journal/Servitor_Boran.png",
           "id": "servitor-boran",
@@ -2195,7 +2195,7 @@
         },
         {
           "act": 1,
-          "description": "Winged Lifeseed",
+          "description": "Winged Lifeseed.",
           "flag": "Lifeblood Fly",
           "icon": "journal/Winged_Lifeseed.png",
           "id": "winged-lifeseed",
@@ -2206,7 +2206,7 @@
         },
         {
           "act": 1,
-          "description": "Plasmid",
+          "description": "Plasmid.",
           "flag": "Bone Worm BlueBlood",
           "icon": "journal/Plasmid.png",
           "id": "plasmid",
@@ -2217,7 +2217,7 @@
         },
         {
           "act": 1,
-          "description": "Plasmidas",
+          "description": "Plasmidas.",
           "flag": "Bone Worm BlueTurret",
           "icon": "journal/Plasmidas.png",
           "id": "plasmidas",
@@ -2228,7 +2228,7 @@
         },
         {
           "act": 1,
-          "description": "Plasmified Zango",
+          "description": "Plasmified Zango.",
           "flag": "Blue Assistant",
           "icon": "journal/Plasmified_Zango.png",
           "id": "plasmified-zango",
@@ -2239,7 +2239,7 @@
         },
         {
           "act": 1,
-          "description": "Leaf Glider",
+          "description": "Leaf Glider.",
           "flag": "Lilypad Fly",
           "icon": "journal/Leaf_Glider.png",
           "id": "leaf-glider",
@@ -2250,7 +2250,7 @@
         },
         {
           "act": 1,
-          "description": "Leaf Roller",
+          "description": "Leaf Roller.",
           "flag": "Grass Goomba",
           "icon": "journal/Leaf_Roller.png",
           "id": "leaf-roller",
@@ -2261,7 +2261,7 @@
         },
         {
           "act": 1,
-          "description": "Pendra",
+          "description": "Pendra.",
           "flag": "Hornet Dragonfly",
           "icon": "journal/Pendra.png",
           "id": "pendra",
@@ -2272,7 +2272,7 @@
         },
         {
           "act": 1,
-          "description": "Pendragor",
+          "description": "Pendragor.",
           "flag": "Dragonfly Large",
           "icon": "journal/Pendragor.png",
           "id": "pendragor",
@@ -2283,7 +2283,7 @@
         },
         {
           "act": 1,
-          "description": "Nuphar",
+          "description": "Nuphar.",
           "flag": "Lilypad Trap",
           "icon": "journal/Nuphar.png",
           "id": "nuphar",
@@ -2294,7 +2294,7 @@
         },
         {
           "act": 1,
-          "description": "Cloverstag",
+          "description": "Cloverstag.",
           "flag": "Cloverstag",
           "icon": "journal/Cloverstag.png",
           "id": "cloverstag",
@@ -2305,7 +2305,7 @@
         },
         {
           "act": 1,
-          "description": "Palestag",
+          "description": "Palestag.",
           "flag": "Cloverstag White",
           "icon": "journal/Palestag.png",
           "id": "palestag",
@@ -2316,7 +2316,7 @@
         },
         {
           "act": 1,
-          "description": "Kindanir",
+          "description": "Kindanir.",
           "flag": "Grasshopper Child",
           "icon": "journal/Kindanir.png",
           "id": "kindanir",
@@ -2327,7 +2327,7 @@
         },
         {
           "act": 1,
-          "description": "Verdanir",
+          "description": "Verdanir.",
           "flag": "Grasshopper Slasher",
           "icon": "journal/Verdanir.png",
           "id": "verdanir",
@@ -2338,7 +2338,7 @@
         },
         {
           "act": 1,
-          "description": "Escalion",
+          "description": "Escalion.",
           "flag": "Grasshopper Fly",
           "icon": "journal/Escalion.png",
           "id": "escalion",
@@ -2349,7 +2349,7 @@
         },
         {
           "act": 1,
-          "description": "Clover Dancers",
+          "description": "Clover Dancers.",
           "flag": "Clover Dancer",
           "icon": "journal/Clover_Dancers.png",
           "id": "clover-dancers",
@@ -2360,7 +2360,7 @@
         },
         {
           "act": 1,
-          "description": "Shadow Creeper",
+          "description": "Shadow Creeper.",
           "flag": "Abyss Crawler",
           "icon": "journal/Shadow_Creeper.png",
           "id": "shadow-creeper",
@@ -2371,7 +2371,7 @@
         },
         {
           "act": 1,
-          "description": "Shadow Charger",
+          "description": "Shadow Charger.",
           "flag": "Abyss Crawler Large",
           "icon": "journal/Shadow_Charger.png",
           "id": "shadow-charger",
@@ -2382,7 +2382,7 @@
         },
         {
           "act": 1,
-          "description": "Gloomsac",
+          "description": "Gloomsac.",
           "flag": "Gloomfly",
           "icon": "journal/Gloomsac.png",
           "id": "gloomsac",
@@ -2393,7 +2393,7 @@
         },
         {
           "act": 1,
-          "description": "Gargant Gloom",
+          "description": "Gargant Gloom.",
           "flag": "Gloom Beast",
           "icon": "journal/Gargant_Gloom.png",
           "id": "gargant-gloom",
@@ -2404,7 +2404,7 @@
         },
         {
           "act": 1,
-          "description": "Void Tendrils",
+          "description": "Void Tendrils.",
           "flag": "Void Tendrils",
           "icon": "journal/Void_Tendrils.png",
           "id": "void-tendrils",
@@ -2415,7 +2415,7 @@
         },
         {
           "act": 1,
-          "description": "Void Mass",
+          "description": "Void Mass.",
           "flag": "Black Thread Core",
           "icon": "journal/Void_Mass.png",
           "id": "void-mass",
@@ -2426,7 +2426,7 @@
         },
         {
           "act": 1,
-          "description": "Summoned Saviour",
+          "description": "Summoned Saviour.",
           "flag": "Abyss Mass",
           "icon": "journal/Summoned_Saviour.png",
           "id": "summoned-saviour",
@@ -2437,7 +2437,7 @@
         },
         {
           "act": 1,
-          "description": "Wingmould",
+          "description": "Wingmould.",
           "flag": "White Palace Fly",
           "icon": "journal/Wingmould.png",
           "id": "wingmould",
@@ -2448,7 +2448,7 @@
         },
         {
           "act": 1,
-          "description": "Garpid",
+          "description": "Garpid.",
           "flag": "Centipede Trap",
           "icon": "journal/Garpid.png",
           "id": "garpid",
@@ -2459,7 +2459,7 @@
         },
         {
           "act": 1,
-          "description": "Imoba",
+          "description": "Imoba.",
           "flag": "Spike Lazy Flyer",
           "icon": "journal/Imoba.png",
           "id": "imoba",
@@ -2470,7 +2470,7 @@
         },
         {
           "act": 1,
-          "description": "Skrill",
+          "description": "Skrill.",
           "flag": "Surface Scuttler",
           "icon": "journal/Skrill.png",
           "id": "skrill",
@@ -2481,7 +2481,7 @@
         },
         {
           "act": 1,
-          "description": "Bell Eater",
+          "description": "Bell Eater.",
           "flag": "Giant Centipede",
           "icon": "journal/Bell_Eater.png",
           "id": "bell-eater",
@@ -2492,7 +2492,7 @@
         },
         {
           "act": 1,
-          "description": "Huge Flea",
+          "description": "Huge Flea.",
           "flag": "Giant Flea",
           "icon": "journal/Huge_Flea.png",
           "id": "huge-flea",
@@ -2503,7 +2503,7 @@
         },
         {
           "act": 1,
-          "description": "Shakra",
+          "description": "Shakra.",
           "flag": "Shakra",
           "icon": "journal/Shakra.png",
           "id": "shakra",
@@ -2514,7 +2514,7 @@
         },
         {
           "act": 1,
-          "description": "Garmond & Zaza",
+          "description": "Garmond & Zaza.",
           "flag": "Garmond_Zaza",
           "icon": "journal/Garmond_&_Zaza.png",
           "id": "garmond-&-zaza",
@@ -2525,7 +2525,7 @@
         },
         {
           "act": 1,
-          "description": "Lost Garmond",
+          "description": "Lost Garmond.",
           "flag": "Garmond",
           "icon": "journal/Lost_Garmond.png",
           "id": "lost-garmond",
@@ -2536,7 +2536,7 @@
         },
         {
           "act": 1,
-          "description": "Pinstress",
+          "description": "Pinstress.",
           "flag": "Pinstress Boss",
           "icon": "journal/Pinstress.png",
           "id": "pinstress",
@@ -2547,7 +2547,7 @@
         },
         {
           "act": 1,
-          "description": "Widow",
+          "description": "Widow.",
           "flag": "Spinner Boss",
           "icon": "journal/Widow.png",
           "id": "widow",
@@ -2558,7 +2558,7 @@
         },
         {
           "act": 1,
-          "description": "First Sinner",
+          "description": "First Sinner.",
           "flag": "First Weaver",
           "icon": "journal/First_Sinner.png",
           "id": "first-sinner",
@@ -2569,7 +2569,7 @@
         },
         {
           "act": 1,
-          "description": "Phantom",
+          "description": "Phantom.",
           "flag": "Phantom",
           "icon": "journal/Phantom.png",
           "id": "phantom",
@@ -2580,7 +2580,7 @@
         },
         {
           "act": 1,
-          "description": "Lace",
+          "description": "Lace.",
           "flag": "Lace",
           "icon": "journal/Lace.png",
           "id": "lace",
@@ -2591,7 +2591,7 @@
         },
         {
           "act": 1,
-          "description": "Grand Mother Silk",
+          "description": "Grand Mother Silk.",
           "flag": "Silk Boss",
           "icon": "journal/Grand_Mother_Silk.png",
           "id": "grand-mother-silk",
@@ -2602,7 +2602,7 @@
         },
         {
           "act": 1,
-          "description": "Lost Lace",
+          "description": "Lost Lace.",
           "flag": "Lost Lace",
           "icon": "journal/Lost_Lace.png",
           "id": "lost-lace",
