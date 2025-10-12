@@ -101,14 +101,14 @@ actClearBtn.addEventListener("click", () => {
   }
   actClearBtn.textContent = allChecked ? "Select All" : "Deselect All";
 
-  // We do not have to await the function since it is the last operation in the callback.
+  // We do not have to await this since it is the last operation in the callback.
   // eslint-disable-next-line @typescript-eslint/no-floating-promises
   updateActFilter();
 });
 
 // Update filter when any checkbox changes.
 for (const checkbox of actDropdownMenuCheckboxes) {
-  // We do not have to await the function since it is the last operation in the callback.
+  // We do not have to await this since it is the last operation in the callback.
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
   checkbox.addEventListener("change", updateActFilter);
 }
@@ -217,14 +217,14 @@ const EXCLUSIVE_GROUPS = [
   ["Huntress Quest", "Huntress Quest Runt"], // Broodfest / Runtfeast
 ] as const;
 
-// ---------- SPOILER TOGGLE ----------
-spoilerToggle.addEventListener("change", async () => {
+spoilerToggle.addEventListener("change", () => {
   const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
   localStorage.setItem("showSpoilers", spoilerChecked.toString());
 
-  // Use the same filter logic (so it maintains Act + Missing)
-  await reRenderActiveTab();
+  // We do not have to await this since it is the last operation in the callback.
+  // eslint-disable-next-line @typescript-eslint/no-floating-promises
+  reRenderActiveTab();
 });
 
 function applyMissingFilter() {
@@ -335,6 +335,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const { files } = dataTransfer;
     const firstFile = files[0];
+
+    // We do not have to await this since it is the last operation in the callback.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     handleSaveFile(firstFile);
   });
 
@@ -369,7 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(() => {
           showToast("📋 Path copied to clipboard!");
         })
-        .catch((error) => {
+        .catch((error: unknown) => {
           console.error("Clipboard error:", error);
           showToast("⚠️ Unable to copy path.");
         });
@@ -394,7 +397,7 @@ function getSaveDataValue(
   switch (type) {
     case "flag": {
       const { flag } = item;
-      return flag === undefined ? undefined : playerDataExpanded[flag];
+      return playerDataExpanded[flag];
     }
 
     case "collectable": {
@@ -439,9 +442,6 @@ function getSaveDataValue(
     // Wishes
     case "quest": {
       const { flag } = item;
-      if (flag === undefined) {
-        return undefined;
-      }
       const normalizedFlag = normalizeString(flag);
 
       const { QuestCompletionData } = playerData;
@@ -491,19 +491,15 @@ function getSaveDataValue(
 
     // Silk Hearts, Memories etc.
     case "sceneVisited": {
-      if (item.scene) {
-        const scenes = playerData?.scenesVisited || [];
-        return scenes.includes(item.scene);
-      }
-
-      return false;
+      const scenes = playerData.scenesVisited;
+      return scenes.includes(item.scene);
     }
 
     // Numeric progressions (Needle, ToolPouchUpgrades, ToolKitUpgrades, etc.)
     case "level": {
       const { flag } = item;
 
-      // ✅ always return the number, unlock is calculated later
+      // Always return the number, unlock is calculated later.
       return playerDataExpanded[flag] ?? 0;
     }
 
@@ -524,7 +520,7 @@ function getSaveDataValue(
 
       const { Record } = entry;
 
-      return Record.Kills >= (item.required ?? 1);
+      return Record.Kills >= item.required;
     }
 
     case "relic": {
@@ -584,13 +580,10 @@ function getSaveDataValue(
     case "device": {
       const { scene, flag, relatedFlag } = item;
 
-      const normalizedScene = normalizeStringWithUnderscores(scene ?? "");
-      const normalizedFlag = normalizeStringWithUnderscores(flag ?? "");
+      const normalizedScene = normalizeStringWithUnderscores(scene);
+      const normalizedFlag = normalizeStringWithUnderscores(flag);
 
-      if (
-        relatedFlag !== undefined
-        && playerDataExpanded[relatedFlag] === true
-      ) {
+      if (playerDataExpanded[relatedFlag] === true) {
         return "deposited";
       }
 
@@ -1134,7 +1127,7 @@ for (const anchor of sidebarItems) {
 
     const func = TAB_TO_UPDATE_FUNCTION[selectedTab];
 
-    // We do not have to await the function since it is the last operation in the callback.
+    // We do not have to await this since it is the last operation in the callback.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     func();
   });
@@ -1182,7 +1175,7 @@ globalThis.addEventListener("DOMContentLoaded", () => {
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
 
   setTimeout(() => {
-    // We do not have to await the function since it is the last operation in the callback.
+    // We do not have to await this since it is the last operation in the callback.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     func();
   }, 50); // Minimum delay for safety (prevents race with DOM rendering).
@@ -1571,7 +1564,7 @@ function showGenericModal(item: Item) {
 
   infoOverlay.classList.remove("hidden");
 
-  // attach listener to the *newly created* close button
+  // Attach listener to the *newly created* close button.
   const modalCloseBtn = document.querySelector("#modalCloseBtn");
   if (modalCloseBtn) {
     modalCloseBtn.addEventListener("click", () => {
@@ -1610,17 +1603,17 @@ async function reRenderActiveTab() {
     throw new TypeError(`The active tab was not valid: ${activeTab}`);
   }
 
-  // ✅ Get selected acts (supports multi-select)
+  // Get selected acts (supports multi-select).
   const currentActFilter = getCurrentActFilter();
   const showMissingOnly = missingToggle.checked;
 
-  // ✅ Save current state
+  // Save current state
   localStorage.setItem("currentActFilter", JSON.stringify(currentActFilter));
   localStorage.setItem("showMissingOnly", showMissingOnly.toString());
 
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
 
-  // ✅ Re-render the currently active tab
+  // Re-render the currently active tab.
   await func();
 }
 
