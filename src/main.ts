@@ -598,31 +598,25 @@ function getSaveDataValue(
     case "boss": {
       const { flag } = item;
 
-      // Boss items are simple boolean flags
-      return flag === undefined ? undefined : playerDataExpanded[flag];
-    }
-
-    default: {
-      throw new Error(`An item has an unknown type of: ${type}`);
+      // Boss items are simple boolean flags.
+      return playerDataExpanded[flag];
     }
   }
 }
 
 /**
- * Renders a grid of items (bosses, relics, tools, etc.) with their unlock states.
+ * Renders a grid of items (e.g. bosses, relics, tools, etc.) with their unlock states.
  *
  * @returns The number of items rendered.
  */
 function renderGenericGrid(
   containerElement: HTMLElement,
-  items: Item[],
+  items: readonly Item[],
   spoilerOn: boolean,
 ): number {
-  const realContainerId = containerElement?.id || "unknown";
-
   containerElement.innerHTML = "";
 
-  // 🔎 Silkshot variants (only one card visible)
+  // Silkshot variants (only one card visible).
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
   const unlockedSilkVariant = silkVariants.find((silkVariant) => {
     if (currentLoadedSaveData === undefined) {
@@ -634,10 +628,10 @@ function renderGenericGrid(
     );
   });
 
-  // Apply mutually exclusive groups (global, relic + quest)
+  // Apply mutually exclusive groups (global, relic + quest).
   for (const group of EXCLUSIVE_GROUPS) {
     const owned = group.find((flag) => {
-      // try first as relic
+      // Try first as relic.
       let value = getSaveDataValue(
         currentLoadedSaveData,
         currentLoadedSaveDataFlags,
@@ -648,7 +642,7 @@ function renderGenericGrid(
         },
       );
 
-      // if not a valid relic, try as quest
+      // If not a valid relic, try as quest.
       if (!value || value === false) {
         value = getSaveDataValue(
           currentLoadedSaveData,
@@ -685,7 +679,7 @@ function renderGenericGrid(
   for (const item of items) {
     const flag = item.type === "sceneVisited" ? undefined : item.flag;
 
-    // Silkshot → show only 1 variant
+    // Silkshot → show only 1 variant.
     if (flag !== undefined && silkVariants.includes(flag)) {
       if (unlockedSilkVariant && flag !== unlockedSilkVariant) {
         continue;
@@ -698,36 +692,34 @@ function renderGenericGrid(
     const div = document.createElement("div");
     div.className = "boss";
 
-    // Act label (ACT I / II / III)
-    if (item.act) {
-      const romanActs = { 1: "I", 2: "II", 3: "III" };
-      const actLabel = document.createElement("span");
-      actLabel.className = `act-label act-${item.act}`;
-      const romanAct = romanActs[item.act];
-      actLabel.textContent = `ACT ${romanAct}`;
-      div.append(actLabel);
-    }
+    // Act label (ACT I / II / III).
+    const romanActs = { 1: "I", 2: "II", 3: "III" };
+    const actLabel = document.createElement("span");
+    actLabel.className = `act-label act-${item.act}`;
+    const romanAct = romanActs[item.act];
+    actLabel.textContent = `ACT ${romanAct}`;
+    div.append(actLabel);
 
-    div.id = `${realContainerId}-${item.id}`;
+    div.id = `${containerElement.id}-${item.id}`;
     div.dataset["flag"] = flag;
 
     const img = document.createElement("img");
-    img.alt = item.label ?? "";
+    img.alt = item.label;
 
-    // Value from save file (quest can now return "completed" or "accepted")
+    // Value from save file (quest can now return "completed" or "accepted").
     const value = getSaveDataValue(
       currentLoadedSaveData,
       currentLoadedSaveDataFlags,
       item,
     );
 
-    let isDone = false;
+    let isDone: boolean;
     let isAccepted = false;
 
     switch (item.type) {
       case "level": {
         const current = value === undefined ? 0 : Number(value);
-        isDone = current >= (item.required ?? 0);
+        isDone = current >= (item.required);
         break;
       }
 
@@ -763,16 +755,17 @@ function renderGenericGrid(
 
       default: {
         isDone = value === true;
+        break;
       }
     }
 
-    // If "only missing" and it's completed → don't render the card at all
+    // If "only missing" and it's completed → don't render the card at all.
     const showMissingOnly = missingToggle.checked;
     if (showMissingOnly && isDone) {
       continue;
     }
 
-    if (item.missable) {
+    if (item.missable === true) {
       const warn = document.createElement("span");
       warn.className = "missable-icon";
       warn.title = "Missable item - can be permanently lost";
@@ -788,7 +781,7 @@ function renderGenericGrid(
       div.append(upg);
     }
 
-    // Image and state management
+    // Image and state management.
     const iconPath = getIconPath(item);
     const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
 
