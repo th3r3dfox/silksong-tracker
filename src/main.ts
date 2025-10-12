@@ -1371,8 +1371,9 @@ function buildDynamicTOC() {
   const headers = document.querySelectorAll(
     "#allprogress-grid h2, #allprogress-grid h3",
   );
-  let currentCategory = null;
-  let currentSubList = null;
+
+  let currentCategory: HTMLLIElement;
+  let currentSubList: HTMLUListElement;
 
   headers.forEach((header) => {
     const tag = header.tagName.toLowerCase();
@@ -1422,7 +1423,11 @@ function buildDynamicTOC() {
       li.appendChild(currentSubList);
       tocList.appendChild(li);
       currentCategory = li;
-    } else if (tag === "h3" && currentCategory && currentSubList) {
+    } else if (
+      tag === "h3"
+      && currentCategory !== undefined
+      && currentSubList !== undefined
+    ) {
       const subLi = document.createElement("li");
       subLi.className = "toc-item";
       const a = document.createElement("a");
