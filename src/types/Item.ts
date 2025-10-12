@@ -2,10 +2,11 @@ import type { Act } from "./Act.ts";
 import type { Mode } from "./Mode.ts";
 
 interface ItemBase {
-  readonly id?: string;
+  readonly id: string;
+  readonly act: Act;
+
   readonly label?: string;
   readonly icon?: string;
-  readonly act?: Act;
   readonly map?: string;
   readonly missable?: boolean;
   readonly mode?: Mode;

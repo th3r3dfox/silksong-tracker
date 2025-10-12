@@ -648,6 +648,7 @@ function renderGenericGrid(
         {
           type: "relic",
           flag,
+          id: "dummy-value",
         },
       );
 
@@ -656,7 +657,11 @@ function renderGenericGrid(
         value = getSaveDataValue(
           currentLoadedSaveData,
           currentLoadedSaveDataFlags,
-          { type: "quest", flag },
+          {
+            type: "quest",
+            flag,
+            id: "dummy-value",
+          },
         );
       }
 
@@ -824,9 +829,9 @@ function renderGenericGrid(
     const title = document.createElement("div");
     title.className = "title";
     title.textContent =
-      silkVariants.includes(item.flag) && !unlockedSilkVariant
+      flag !== undefined && silkVariants.includes(flag) && !unlockedSilkVariant
         ? "Silkshot"
-        : item.label;
+        : (item.label ?? "");
 
     div.appendChild(img);
     div.appendChild(title);
@@ -897,8 +902,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentMatch = 0;
   let matches = [];
 
-  /** @param {number} index */
-  function scrollToMatch(index) {
+  function scrollToMatch(index: number) {
     const allMarks = rawSaveOutput.querySelectorAll("mark.search-match");
     allMarks.forEach((m) => m.classList.remove("active-match"));
     const lastMark = allMarks[index - 1];
@@ -962,8 +966,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/** @param {File | undefined } file */
-async function handleSaveFile(file) {
+async function handleSaveFile(file: File | undefined) {
   try {
     if (file === undefined) {
       showToast("❌ No file selected.");
@@ -1052,10 +1055,7 @@ async function handleSaveFile(file) {
   }
 }
 
-/**
- * @param {string} message
- */
-function showToast(message) {
+function showToast(message: string) {
   const toast = document.createElement("div");
   toast.textContent = message;
   toast.style.cssText = `
@@ -1108,17 +1108,6 @@ document.querySelectorAll(".sidebar-item").forEach((anchor) => {
     assertNotNull(activeSection, `Failed to get element: ${activeSectionID}`);
     activeSection.classList.remove("hidden");
 
-    // 🔹 Maintain ACT filter state
-    let savedActs;
-    try {
-      savedActs = JSON.parse(localStorage.getItem("currentActFilter")) || [
-        "all",
-      ];
-      if (!Array.isArray(savedActs)) savedActs = ["all"];
-    } catch {
-      savedActs = ["all"];
-    }
-
     // 🔹 Save active tab
     localStorage.setItem("activeTab", selectedTab);
 
@@ -1138,17 +1127,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const firstValidTab = VALID_TABS[0];
     assertDefined(firstValidTab, "Failed to get the first valid tab.");
     savedTab = firstValidTab;
-  }
-
-  const savedAct = localStorage.getItem("currentActFilter") || "all";
-
-  // 🔹 Restore Act filter value
-  let savedActs;
-  try {
-    savedActs = JSON.parse(localStorage.getItem("currentActFilter")) || ["all"];
-    if (!Array.isArray(savedActs)) savedActs = ["all"];
-  } catch {
-    savedActs = ["all"];
   }
 
   // 🔹 Restore "Show spoilers" state from localStorage
@@ -1239,12 +1217,6 @@ async function updateAllProgressContent(selectedAct = "all") {
 
       const currentActFilter = getCurrentActFilter(); // TODO
       let filteredItems = items.filter((item) => {
-        if (currentActFilter.length === 0 || currentActFilter.length === 3) {
-          return matchMode(item); // everyone
-        }
-
-        // TODO: Currently bugged, because every item does not have an act yet.
-        // Delete the above length check afterwards, since it would be superfluous.
         return currentActFilter.includes(item.act) && matchMode(item);
       });
 
