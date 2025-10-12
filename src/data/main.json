@@ -995,7 +995,7 @@
         },
         {
           "act": 1,
-          "description": "Crafted in a hidden room in northwest Greymoor for 1 Craftmetal",
+          "description": "Crafted in a hidden room in northwest Greymoor for 1 Craftmetal.",
           "flag": "Pimpilo",
           "icon": "icons/Pimpillo.png",
           "id": "red-pimpillo",
@@ -1192,7 +1192,7 @@
         },
         {
           "act": 1,
-          "description": "Reward for completing the Rite of the Pollip Wish",
+          "description": "Reward for completing the Rite of the Pollip wish.",
           "flag": "Poison Pouch",
           "icon": "icons/Pollip_Pouch.png",
           "id": "blue-pollip-pouch",
@@ -1258,7 +1258,7 @@
         },
         {
           "act": 2,
-          "description": "Bought from Jubilana for 720 Rosaries",
+          "description": "Bought from Jubilana for 720 Rosaries.",
           "flag": "Spool Extender",
           "icon": "icons/Spool_Extender.png",
           "id": "blue-spool-extender",
@@ -1346,7 +1346,7 @@
         },
         {
           "act": 2,
-          "description": "Reward for completing either the Broodfeast or Runtfeast Wishes",
+          "description": "Reward for completing the Broodfeast wish or the Runtfeast wish.",
           "flag": "Longneedle",
           "icon": "icons/Longclaw.png",
           "id": "blue-longclaw",
@@ -1475,7 +1475,7 @@
         },
         {
           "act": 1,
-          "description": "Act 1: Given by Lumble the Lucky after beating his game 10 times.  Act 2: Found beside Lumble the Lucky's corpse in Blasted Steps. Act 3: Purchased from Grindle for 300 Rosaries.",
+          "description": "Act 1: Given by Lumble the Lucky after beating his game 10 times. Act 2: Found beside Lumble the Lucky's corpse in Blasted Steps. Act 3: Purchased from Grindle for 300 Rosaries.",
           "flag": "Magnetite Dice",
           "icon": "icons/Magnetite_Dice.png",
           "id": "yellow-magnetite-dice",
