@@ -616,7 +616,7 @@ function renderGenericGrid(
   items: readonly Item[],
   spoilerOn: boolean,
 ): number {
-  containerElement.innerHTML = ""; // eslint-disable-line no-param-reassign
+  containerElement.innerHTML = "";
 
   // Silkshot variants (only one card visible).
   const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
@@ -1375,16 +1375,19 @@ function getUnlocked(item: Item, value: unknown): boolean {
 function buildDynamicTOC() {
   tocList.innerHTML = "";
 
-  const headers = getHTMLElements(document, "#allprogress-grid h2, #allprogress-grid h3");
+  const headers = getHTMLElements(
+    document,
+    "#allprogress-grid h2, #allprogress-grid h3",
+  );
 
   let currentCategory: HTMLLIElement;
   let currentSubList: HTMLUListElement;
 
-  headers.forEach((header) => {
+  for (const header of headers) {
     const tag = header.tagName.toLowerCase();
     const text = header.textContent.trim();
     if (text === "") {
-      return;
+      continue;
     }
 
     if (header.id === "") {
@@ -1412,22 +1415,22 @@ function buildDynamicTOC() {
         });
 
         const wasOpen = li.classList.contains("open");
-        const tocCategories = getHTMLElements(document, ".toc-category")
-        tocCategories.forEach((cat) => {
+        const tocCategories = getHTMLElements(document, ".toc-category");
+        for (const cat of tocCategories) {
           cat.classList.remove("open");
           cat.querySelector(".toc-sublist")?.classList.add("hidden");
-        });
+        }
         if (!wasOpen) {
           li.classList.add("open");
           li.querySelector(".toc-sublist")?.classList.remove("hidden");
         }
       });
 
-      li.appendChild(a);
+      li.append(a);
       currentSubList = document.createElement("ul");
       currentSubList.className = "toc-sublist hidden";
-      li.appendChild(currentSubList);
-      tocList.appendChild(li);
+      li.append(currentSubList);
+      tocList.append(li);
       currentCategory = li;
     } else if (
       tag === "h3"
@@ -1439,10 +1442,10 @@ function buildDynamicTOC() {
       const a = document.createElement("a");
       a.href = `#${header.id}`;
       a.textContent = text;
-      subLi.appendChild(a);
-      currentSubList.appendChild(subLi);
+      subLi.append(a);
+      currentSubList.append(subLi);
     }
-  });
+  }
 }
 
 function initScrollSpy() {
