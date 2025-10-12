@@ -2,7 +2,6 @@
   "$schema": "./completion.schema.json",
   "categories": [
     {
-      "id": "category-relic",
       "label": "Relics",
       "desc": "Items that can be traded to certain NPCs for Rosaries or other services.",
       "items": [
@@ -174,7 +173,6 @@
       ]
     },
     {
-      "id": "category-cylinder",
       "label": "Cylinder",
       "desc": "They are cylinders inscribed with recordings, which may be heard by bringing them to Vaultkeeper Cardinius. Listening to the Sacred Cylinder",
       "items": [
@@ -244,7 +242,6 @@
       ]
     },
     {
-      "id": "category-materium",
       "label": "Materium",
       "desc": "Crystallized essences of Pharloom's forces, gathered to empower tools and relics.",
       "items": [
@@ -684,7 +681,6 @@
     },
 
     {
-      "id": "category-mementos",
       "label": "Mementos",
       "desc": "Keepsakes given by allies or obtained through notable encounters. Some may hold sentimental value.",
       "items": [
@@ -805,7 +801,6 @@
       ]
     },
     {
-      "id": "category-maps",
       "label": "Maps",
       "desc": "",
       "items": [
@@ -1092,7 +1087,6 @@
       ]
     },
     {
-      "id": "map-pins",
       "label": "Map Pins",
       "desc": "Markers purchased from Shakra to mark key locations across Pharloom.",
       "items": [
@@ -1189,7 +1183,6 @@
       ]
     },
     {
-      "id": "stag-stations",
       "label": "Bellway Stations",
       "desc": "Stations unlocked throughout Pharloom that connect distant regions and aid swift travel.",
       "items": [
@@ -1316,8 +1309,7 @@
       ]
     },
     {
-      "id": "ventrica-tubes",
-      "label": "Ventrica Tubes",
+      "label": "Ventrica Stations",
       "desc": "The Ventrica are a system of tubes that run throughout the Citadel and Underworks, which Hornet can use to travel, similar to the Bellways. The Grand Bellway station connects the two systems of travel.",
       "items": [
         {
@@ -1383,7 +1375,6 @@
       ]
     },
     {
-      "id": "category-misc",
       "label": "Misc Collectables",
       "desc": "Special single-instance items gathered and deposited the Bellhome in Bellhart before it can be used.",
       "items": [

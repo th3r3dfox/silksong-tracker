@@ -5,7 +5,6 @@ import type { Item } from "./Item.ts";
  * of JSON data files and organize items into logical sections. (e.g. "Bosses", "Main Wishes", etc.)
  */
 export interface Category {
-  id: string;
   label: string;
   desc: string;
   items: Item[];

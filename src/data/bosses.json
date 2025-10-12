@@ -2,7 +2,6 @@
   "$schema": "./bosses.schema.json",
   "categories": [
     {
-      "id": "category-bosses",
       "label": "Bosses",
       "desc": "Major adversaries encountered throughout Pharloom. Defeating them marks your progress in Hollow Knight: Silksong.",
       "items": [
@@ -398,7 +397,6 @@
       ]
     },
     {
-      "id": "category-boss-variants",
       "label": "Boss Variants",
       "desc": "Major adversaries encountered throughout Pharloom. Defeating them marks your progress in Hollow Knight: Silksong.",
       "items": [
