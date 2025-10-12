@@ -90,7 +90,7 @@ export function getStoredActFilter(): readonly Act[] {
   }
 
   try {
-    const currentActFilter = JSON.parse(currentActFilterString) as unknown;
+    const currentActFilter: unknown = JSON.parse(currentActFilterString);
     assertArray(
       currentActFilter,
       `The "${localStorageKey}" localStorage value must be an array instead of: ${currentActFilterString}`,

@@ -43,7 +43,7 @@
         },
         {
           "act": 2,
-          "cost": "450 rosaries + Pale Oil x1",
+          "cost": "450 Rosaries + Pale Oil x1",
           "description": "The highly refined blade reveals its hivesteel banding.",
           "flag": "nailUpgrades",
           "icon": "icons/4_Hivesteel_Needle.png",
@@ -56,7 +56,7 @@
         },
         {
           "act": 3,
-          "cost": "680 rosaries + Pale Oil x1",
+          "cost": "680 Rosaries + Pale Oil x1",
           "description": "The Hivesteel blade has been sharpened to its ultimate form.",
           "flag": "nailUpgrades",
           "icon": "icons/5_Pale_Steel_Needle.png",
@@ -75,7 +75,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Can be bought from Pebb for 300 rosaries, If the mask shard is not bought from Pebb before Act 3 begins, the shard will be moved to Grindle's shop in Blasted Steps for 320 rosaries",
+          "description": "Can be bought from Pebb for 300 Rosaries. If the mask shard is not bought from Pebb before Act 3 begins, the shard will be moved to Grindle's shop in Blasted Steps for 320 Rosaries.",
           "flag": "PurchasedBonebottomHeartPiece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-1",
@@ -86,7 +86,7 @@
         },
         {
           "act": 1,
-          "description": "Lower Wormways accessed through Mosshome, Behind a breakable wall, just in front of the door requiring a Simple Key",
+          "description": "In lower Wormways, accessed through Mosshome. Behind a breakable wall, just in front of the door requiring a Simple Key.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-2",
@@ -98,7 +98,7 @@
         },
         {
           "act": 1,
-          "description": "A passageway between the Marrow and Deep Docks, Accessed from The Marrow. Cling Grip recommended",
+          "description": "In a passageway between the Marrow and Deep Docks. Accessed from The Marrow. Cling Grip recommended.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-3",
@@ -110,7 +110,7 @@
         },
         {
           "act": 1,
-          "description": "Area above Seamstress's home in Far Fields, Requires Drifter's Cloak",
+          "description": "In the area above Seamstress's home in Far Fields. Requires Drifter's Cloak.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-4",
@@ -122,7 +122,7 @@
         },
         {
           "act": 1,
-          "description": "Centre of Shellwood, At the end of a platforming challenge behind a breakable wall ",
+          "description": "In centre of Shellwood. At the end of a platforming challenge behind a breakable wall.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-5",
@@ -134,7 +134,7 @@
         },
         {
           "act": 1,
-          "description": "East Weavenest Atla, Requires Cling Grip. Behind breakable wall ",
+          "description": "In east Weavenest Atla. Requires Cling Grip. Behind breakable wall.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-6",
@@ -146,7 +146,7 @@
         },
         {
           "act": 2,
-          "description": "Sold by Jubilana in Songclave for  750 rosaries, Complete the The Wandering Merchant Wish",
+          "description": "Sold by Jubilana in Songclave for 750 Rosaries. Complete The Wandering Merchant wish.",
           "flag": "MerchantEnclaveShellFragment",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-7",
@@ -157,7 +157,7 @@
         },
         {
           "act": 2,
-          "description": "West Cogwork Core past enemy gauntlet, Accessible after defeating the Cogwork Dancers",
+          "description": "In west Cogwork Core past an enemy gauntlet. Accessible after defeating the Cogwork Dancers.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-8",
@@ -169,7 +169,7 @@
         },
         {
           "act": 2,
-          "description": "Behind moving box puzzle in central Whispering Vaults",
+          "description": "Behind moving box puzzle in central Whispering Vaults.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-9",
@@ -181,7 +181,7 @@
         },
         {
           "act": 2,
-          "description": "Reward for completing the Savage Beastfly Wish, Defeat Fourth Chorus and Savage Beastfly in Hunter's March, enter Songclave",
+          "description": "Reward for completing the Savage Beastfly wish. Defeat Fourth Chorus and Savage Beastfly in Hunter's March and enter Songclave.",
           "flag": "Beastfly Hunt",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-10",
@@ -192,7 +192,7 @@
         },
         {
           "act": 2,
-          "description": "Inside bone building in east Far Fields, Requires Clawline and Drifter's Cloak",
+          "description": "Inside bone building in east Far Fields. Requires Clawline and Drifter's Cloak.",
           "flag": "Heart Piece (1)",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-11",
@@ -204,7 +204,7 @@
         },
         {
           "act": 2,
-          "description": "Southwest Mount Fay, west of the bench, Requires Faydown Cloak",
+          "description": "In southwest Mount Fay. West of the bench. Requires Faydown Cloak.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-12",
@@ -216,7 +216,7 @@
         },
         {
           "act": 2,
-          "description": "Northeast part of the Slab, Requires Key of Apostate and Faydown Cloak. Challenge can be skipped with Silk Soar",
+          "description": "In the northeast part of the Slab. Requires Key of Apostate and Faydown Cloak. Challenge can be skipped with Silk Soar.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-13",
@@ -228,7 +228,7 @@
         },
         {
           "act": 2,
-          "description": "East Bilewater, in a hallway filled with Slubberlugs",
+          "description": "In east Bilewater, in a hallway filled with Slubberlugs.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-14",
@@ -240,7 +240,7 @@
         },
         {
           "act": 2,
-          "description": "East Wisp Thicket, Requires Faydown Cloak.",
+          "description": "In east Wisp Thicket. Requires Faydown Cloak.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-15",
@@ -252,7 +252,7 @@
         },
         {
           "act": 2,
-          "description": "West Blasted Steps, Requires Clawline and Faydown Cloak. Challenge can be skipped with Silk Soar",
+          "description": "In west Blasted Steps. Requires Clawline and Faydown Cloak. Challenge can be skipped with Silk Soar.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-16",
@@ -264,7 +264,7 @@
         },
         {
           "act": 3,
-          "description": "Brightvein Requires Silk Soar",
+          "description": "In Brightvein. Requires Silk Soar.",
           "flag": "Heart Piece",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-17",
@@ -276,7 +276,7 @@
         },
         {
           "act": 3,
-          "description": "East Far Fields, Reward from the Sprintmaster Fastest in Pharloom wish",
+          "description": "In east Far Fields. Reward from the Sprintmaster Fastest in Pharloom wish.",
           "flag": "Sprintmaster Race",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-18",
@@ -287,7 +287,7 @@
         },
         {
           "act": 3,
-          "description": "Bellhart Wishwall, Reward from Dark Hearts wish",
+          "description": "In Bellhart Wishwall. Reward from Dark Hearts wish.",
           "flag": "Destroy Thread Cores",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-19",
@@ -298,7 +298,7 @@
         },
         {
           "act": 3,
-          "description": "Bellhart Wishwall, Reward from The Hidden Hunter wish",
+          "description": "In Bellhart Wishwall. Reward from The Hidden Hunter wish.",
           "flag": "Ant Trapper",
           "icon": "icons/MaskShard.png",
           "id": "mask-shard-20",
@@ -315,7 +315,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Bone Bottom",
+          "description": "In Bone Bottom.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-1",
@@ -326,7 +326,7 @@
         },
         {
           "act": 1,
-          "description": "Central section of Deep Docks. Take the southwest exit from Forge Daughter's location",
+          "description": "In the central section of Deep Docks. Take the southwest exit from Forge Daughter's location.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-2",
@@ -337,7 +337,7 @@
         },
         {
           "act": 1,
-          "description": "In Greymoor, above Shakra's bench",
+          "description": "In Greymoor, above Shakra's bench.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-3",
@@ -348,7 +348,7 @@
         },
         {
           "act": 1,
-          "description": "After completing the Wish 'My Missing Courier', Frey in Bellhart sells this for 270 rosaries",
+          "description": "After completing the My Missing Courier wish, Frey in Bellhart sells this for 270 Rosaries.",
           "flag": "PurchasedBelltownSpoolSegment",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-4",
@@ -358,7 +358,7 @@
         },
         {
           "act": 1,
-          "description": "In a passage in Weavenest Atla",
+          "description": "In a passage in Weavenest Atla.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-5",
@@ -369,7 +369,7 @@
         },
         {
           "act": 1,
-          "description": "In The Slab",
+          "description": "In The Slab.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-6",
@@ -380,7 +380,7 @@
         },
         {
           "act": 2,
-          "description": "At the top of the Grand Gate",
+          "description": "At the top of the Grand Gate.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-7",
@@ -391,7 +391,7 @@
         },
         {
           "act": 2,
-          "description": "Central section of the Underworks",
+          "description": "In the central section of the Underworks.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-8",
@@ -402,7 +402,7 @@
         },
         {
           "act": 2,
-          "description": "Given by the Flea Caravan upon their ascent to the Grand Gate (requires 12 fleas and Last Judge defeated)",
+          "description": "Given by the Flea Caravan upon their ascent to the Grand Gate. (Requires 12 fleas and Last Judge defeated.)",
           "flag": "CaravanTroupeLocation",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-9",
@@ -412,7 +412,7 @@
         },
         {
           "act": 2,
-          "description": "In Whiteward",
+          "description": "In Whiteward.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-10",
@@ -423,7 +423,7 @@
         },
         {
           "act": 2,
-          "description": "Southeast section of the lower Cogwork Core",
+          "description": "In the southeast section of the lower Cogwork Core.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-11",
@@ -434,7 +434,7 @@
         },
         {
           "act": 2,
-          "description": "Lower right section of the Underworks",
+          "description": "In the lower right section of the Underworks.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-12",
@@ -445,7 +445,7 @@
         },
         {
           "act": 2,
-          "description": "Given by Sherma after completing the Wish 'Balm For The Wounded'",
+          "description": "Given by Sherma after completing the the Balm For The Wounded wish.",
           "flag": "Save Sherma",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-13",
@@ -455,7 +455,7 @@
         },
         {
           "act": 2,
-          "description": "Sold by Jubilana for 500 rosaries after 'The Lost Merchant' wish",
+          "description": "Sold by Jubilana for 500 Rosaries after The Lost Merchant wish.",
           "flag": "MerchantEnclaveSpoolPiece",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-14",
@@ -465,7 +465,7 @@
         },
         {
           "act": 2,
-          "description": "Southeast section of Deep Docks",
+          "description": "In the southeast section of Deep Docks.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-15",
@@ -476,7 +476,7 @@
         },
         {
           "act": 2,
-          "description": "In High Halls, highest point in the left vertical room",
+          "description": "In High Halls, highest point in the left vertical room.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-16",
@@ -487,7 +487,7 @@
         },
         {
           "act": 2,
-          "description": "In the western section of the Memorium",
+          "description": "In the western section of the Memorium.",
           "flag": "Silk Spool",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-17",
@@ -498,7 +498,7 @@
         },
         {
           "act": 2,
-          "description": "Sold by Grindle for 680 rosaries",
+          "description": "Sold by Grindle for 680 Rosaries.",
           "flag": "purchasedGrindleSpoolPiece",
           "icon": "icons/Spool_Fragment.png",
           "id": "spool-fragment-18",
@@ -801,7 +801,7 @@
         },
         {
           "act": 1,
-          "description": "Reward for completing the Crawbug Clearing Wish.",
+          "description": "Reward for completing the Crawbug Clearing wish.",
           "flag": "Crow Feathers Pre",
           "icon": "icons/Crafting_Kit.png",
           "id": "crafting-kit-2",
@@ -928,7 +928,7 @@
         },
         {
           "act": 1,
-          "description": "Purchased from Forge Daughter in Deep Docks for  140 Rosaries and 1 Craftmetal.",
+          "description": "Purchased from Forge Daughter in Deep Docks for 140 Rosaries and 1 Craftmetal.",
           "flag": "sting shard",
           "icon": "icons/Sting_Shard.png",
           "id": "red-sting-shard",
@@ -939,7 +939,7 @@
         },
         {
           "act": 1,
-          "description": "Reward for completing the Roach Guts Wish",
+          "description": "Reward for completing the Roach Guts wish.",
           "flag": "Tack",
           "icon": "icons/Tacks.png",
           "id": "red-tacks",
@@ -950,7 +950,7 @@
         },
         {
           "act": 1,
-          "description": "Reward for completing the Trail's End Wish.",
+          "description": "Reward for completing the Trail's End wish.",
           "flag": "Shakra Ring",
           "icon": "icons/Throwing_Ring.png",
           "id": "red-throwing-ring",
@@ -972,7 +972,7 @@
         },
         {
           "act": 1,
-          "description": "Purchased from Mottled Skarr in Hunter's March for  140 Rosaries. Alternatively, if Mottled Skarr is dead it can be found locked behind a gauntlet north of his original location.",
+          "description": "Purchased from Mottled Skarr in Hunter's March for 140 Rosaries. Alternatively, if Mottled Skarr is dead, it can be found locked behind a gauntlet north of his original location.",
           "flag": "Curve Claws",
           "icon": "icons/Curveclaw.png",
           "id": "red-curveclaw",
@@ -995,7 +995,7 @@
         },
         {
           "act": 1,
-          "description": "Crafted in a hidden room in northwest Greymoor for 1 CraftMetal",
+          "description": "Crafted in a hidden room in northwest Greymoor for 1 Craftmetal.",
           "flag": "Pimpilo",
           "icon": "icons/Pimpillo.png",
           "id": "red-pimpillo",
@@ -1006,7 +1006,7 @@
         },
         {
           "act": 2,
-          "description": "Obtained by repairing the Ruined Tool found in Weavenest Murglin. Repairing at Twelfth Architect for 140 Rosaries and 1 CraftMetal provides this variant.",
+          "description": "Obtained by repairing the Ruined Tool found in Weavenest Murglin. Repairing at Twelfth Architect for 140 Rosaries and 1 Craftmetal provides this variant.",
           "exclusiveGroup": "bomb-variant",
           "flag": "WebShot Architect",
           "icon": "icons/Silkshot_Architect.png",
@@ -1018,7 +1018,7 @@
         },
         {
           "act": 2,
-          "description": "Obtained by repairing the Ruined Tool found in Weavenest Murglin. Repairing at Forge Daughter for 240 Rosaries and 1 CraftMetal provides this variant.",
+          "description": "Obtained by repairing the Ruined Tool found in Weavenest Murglin. Repairing at Forge Daughter for 240 Rosaries and 1 Craftmetal provides this variant.",
           "exclusiveGroup": "bomb-variant",
           "flag": "WebShot Forge",
           "icon": "icons/Silkshot_Forge.png",
@@ -1030,7 +1030,7 @@
         },
         {
           "act": 2,
-          "description": "Obtained by repairing the Ruined Tool found in Weavenest Murglin. Repairing at a room near the peak of Mount Fay for 1 CraftMetal provides this variant.",
+          "description": "Obtained by repairing the Ruined Tool found in Weavenest Murglin. Repairing at a room near the peak of Mount Fay for 1 Craftmetal provides this variant.",
           "exclusiveGroup": "bomb-variant",
           "flag": "WebShot Weaver",
           "icon": "icons/Silkshot_Weaver.png",
@@ -1064,7 +1064,7 @@
         },
         {
           "act": 2,
-          "description": "Purchased at Twelfth Architect for 360 rosaries and 1 CraftMetal.",
+          "description": "Purchased at Twelfth Architect for 360 Rosaries and 1 Craftmetal.",
           "flag": "Cogwork Saw",
           "icon": "icons/Cogwork_Wheel.png",
           "id": "red-cogwork-wheel",
@@ -1086,7 +1086,7 @@
         },
         {
           "act": 2,
-          "description": "Crafted in a room in High Halls for 1 CraftMetal.",
+          "description": "Crafted in a room in High Halls for 1 Craftmetal.",
           "flag": "Cogwork Flier",
           "icon": "icons/Cogfly.png",
           "id": "red-cogfly",
@@ -1119,7 +1119,7 @@
         },
         {
           "act": 1,
-          "description": "Reward for completing the Alchemist's Assistant Wish.",
+          "description": "Reward for completing the Alchemist's Assistant wish.",
           "flag": "Lifeblood Syringe",
           "icon": "icons/Plasmium_Phial.png",
           "id": "red-plasmium-phial",
@@ -1130,7 +1130,7 @@
         },
         {
           "act": 1,
-          "description": "Obtained from the Flea Caravan after completing the The Lost Fleas Wish.",
+          "description": "Obtained from the Flea Caravan after completing the The Lost Fleas wish.",
           "flag": "Flea Brew",
           "icon": "icons/Flea_Brew.png",
           "id": "red-flea-brew",
@@ -1147,7 +1147,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Reward for completing the Berry Picking Wish.",
+          "description": "Reward for completing the Berry Picking wish.",
           "flag": "Mosscreep Tool 1",
           "icon": "icons/Druids_Eye.png",
           "id": "blue-druids-eye",
@@ -1158,7 +1158,7 @@
         },
         {
           "act": 3,
-          "description": "Bring 4 additional Mossberries to Moss Druid after completing the Berry Picking Wish. Replaces the Druid's Eye.",
+          "description": "Bring 4 additional Mossberries to Moss Druid after completing the Berry Picking wish. Replaces the Druid's Eye.",
           "flag": "Mosscreep Tool 2",
           "icon": "icons/Druid's_Eyes.png",
           "id": "blue-druids-eye",
@@ -1170,7 +1170,7 @@
         },
         {
           "act": 1,
-          "description": "Purchased from Forge Daughter for 110 rosaries and 1 CraftMetal.",
+          "description": "Purchased from Forge Daughter for 110 Rosaries and 1 Craftmetal.",
           "flag": "Lava Charm",
           "icon": "icons/Magma_Bell.png",
           "id": "blue-magma-bell",
@@ -1192,7 +1192,7 @@
         },
         {
           "act": 1,
-          "description": "Reward for completing the Rite of the Pollip Wish",
+          "description": "Reward for completing the Rite of the Pollip wish.",
           "flag": "Poison Pouch",
           "icon": "icons/Pollip_Pouch.png",
           "id": "blue-pollip-pouch",
@@ -1203,7 +1203,7 @@
         },
         {
           "act": 1,
-          "description": "Purchased from Mottled Skarr for 260 rosaries. Can also be found next to his body if he died before it was purchased.",
+          "description": "Purchased from Mottled Skarr for 260 Rosaries. Can also be found next to his body if he died before it was purchased.",
           "flag": "Fractured Mask",
           "icon": "icons/Fractured_Mask.png",
           "id": "blue-fractured-mask",
@@ -1214,7 +1214,7 @@
         },
         {
           "act": 1,
-          "description": "Purchased from Frey for 880 rosaries after completing the My Missing Courier Wish.",
+          "description": "Purchased from Frey for 880 Rosaries after completing the My Missing Courier wish.",
           "flag": "Multibind",
           "icon": "icons/Multibinder.png",
           "id": "blue-multibinder",
@@ -1236,7 +1236,7 @@
         },
         {
           "act": 2,
-          "description": "Purchased from Twelfth Architect for 230 rosaries and 1 CraftMetal.",
+          "description": "Purchased from Twelfth Architect for 230 Rosaries and 1 Craftmetal.",
           "flag": "Brolly Spike",
           "icon": "icons/Sawtooth_Circlet.png",
           "id": "blue-sawtooth-circlet",
@@ -1258,7 +1258,7 @@
         },
         {
           "act": 2,
-          "description": "Bought from Jubilana for 720 Rosaries",
+          "description": "Bought from Jubilana for 720 Rosaries.",
           "flag": "Spool Extender",
           "icon": "icons/Spool_Extender.png",
           "id": "blue-spool-extender",
@@ -1269,7 +1269,7 @@
         },
         {
           "act": 2,
-          "description": "Reward for completing the Final Audience Wish.",
+          "description": "Reward for completing the Final Audience wish.",
           "flag": "Reserve Bind",
           "icon": "icons/Reserve_Bind.png",
           "id": "blue-reserve-bind",
@@ -1346,7 +1346,7 @@
         },
         {
           "act": 2,
-          "description": "Reward for completing either the Broodfeast or Runtfeast Wishes",
+          "description": "Reward for completing the Broodfeast wish or the Runtfeast wish.",
           "flag": "Longneedle",
           "icon": "icons/Longclaw.png",
           "id": "blue-longclaw",
@@ -1396,7 +1396,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Purchased from Shakra for 70 rosaries.",
+          "description": "Purchased from Shakra for 70 Rosaries.",
           "flag": "Compass",
           "icon": "icons/Compass.png",
           "id": "yellow-compass",
@@ -1418,7 +1418,7 @@
         },
         {
           "act": 1,
-          "description": "Purchased from Pebb for 120 rosaries, or from Grindle for 220 rosaries during Act 3.",
+          "description": "Purchased from Pebb for 120 Rosaries, or from Grindle for 220 Rosaries during Act 3.",
           "flag": "Rosary Magnet",
           "icon": "icons/Magnetite_Brooch.png",
           "id": "yellow-magnetite-brooch",
@@ -1429,7 +1429,7 @@
         },
         {
           "act": 1,
-          "description": "Purchased from Mort for 160 rosaries. In Act 3 it can be found next to his body if it has not been purchased yet.",
+          "description": "Purchased from Mort for 160 Rosaries. In Act 3 it can be found next to his body if it has not been purchased yet.",
           "flag": "Weighted Anklet",
           "icon": "icons/Weighted_Belt.png",
           "id": "yellow-weighted-belt",
@@ -1475,7 +1475,7 @@
         },
         {
           "act": 1,
-          "description": " Act 1: Given by Lumble the Lucky after beating his game 10 times.  Act 2: Found beside Lumble the Lucky's corpse in Blasted Steps. Act 3: Purchased from Grindle for 300 rosaries. ",
+          "description": "Act 1: Given by Lumble the Lucky after beating his game 10 times. Act 2: Found beside Lumble the Lucky's corpse in Blasted Steps. Act 3: Purchased from Grindle for 300 Rosaries.",
           "flag": "Magnetite Dice",
           "icon": "icons/Magnetite_Dice.png",
           "id": "yellow-magnetite-dice",
@@ -1486,7 +1486,7 @@
         },
         {
           "act": 2,
-          "description": "Purchased from Twelfth Architect for 140 rosaries and 1 CraftMetal.",
+          "description": "Purchased from Twelfth Architect for 140 Rosaries and 1 Craftmetal.",
           "flag": "Scuttlebrace",
           "icon": "icons/Scuttlebrace.png",
           "id": "yellow-scuttlebrace",
@@ -1497,7 +1497,7 @@
         },
         {
           "act": 2,
-          "description": "Purchased from Jubilana for 350 rosaries. ",
+          "description": "Purchased from Jubilana for 350 Rosaries.",
           "flag": "Wallcling",
           "icon": "icons/Ascendants_Grip.png",
           "id": "yellow-ascendants-grip",
@@ -1508,7 +1508,7 @@
         },
         {
           "act": 2,
-          "description": "Purchased from Jubilana for 320 rosaries after completing the The Lost Merchant Wish.",
+          "description": "Purchased from Jubilana for 320 Rosaries after completing the The Lost Merchant wish.",
           "flag": "Musician Charm",
           "icon": "icons/Spider_Strings.png",
           "id": "yellow-spider-strings",
@@ -1530,7 +1530,7 @@
         },
         {
           "act": 1,
-          "description": "Purchased from Grindle for 350 rosaries.",
+          "description": "Purchased from Grindle for 350 Rosaries.",
           "flag": "Thief Charm",
           "icon": "icons/Thiefs_Mark.png",
           "id": "yellow-thiefs-mark",

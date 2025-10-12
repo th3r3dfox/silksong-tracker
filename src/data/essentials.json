@@ -17,7 +17,7 @@
         },
         {
           "act": 1,
-          "description": "The Seamstress in the Far Fields will sew an array of spines into Hornet's cloak as a reward for completing the Flexile Spines Wish. Hokers must be attacked in order to collect the 25 necessary Spine Cores.",
+          "description": "The Seamstress in the Far Fields will sew an array of spines into Hornet's cloak as a reward for completing the Flexile Spines wish. Hokers must be attacked in order to collect the 25 necessary Spine Cores.",
           "flag": "hasBrolly",
           "icon": "icons/Drifter's_Cloak.png",
           "id": "ability-drifters-cloak",
@@ -164,7 +164,7 @@
       "items": [
         {
           "act": 1,
-          "description": "The Marrow, northeast of the Bellway station",
+          "description": "The Marrow, northeast of the Bellway station.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-1",
@@ -175,7 +175,7 @@
         },
         {
           "act": 1,
-          "description": "Hunter's March, below the Chapel of the Beast",
+          "description": "Hunter's March, below the Chapel of the Beast.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-2",
@@ -186,7 +186,7 @@
         },
         {
           "act": 1,
-          "description": "Purchased from Mort in Far Fields for 150 rosaries, or from Grindle in Blasted Steps for 250 rosaries if not purchased before Act 3 begins",
+          "description": "Purchased from Mort in Far Fields for 150 Rosaries, or from Grindle in Blasted Steps for 250 Rosaries if not purchased before Act 3 begins.",
           "flag": "PurchasedPilgrimsRestMemoryLocket",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-3",
@@ -196,7 +196,7 @@
         },
         {
           "act": 1,
-          "description": "West of the Greymoor Bellway",
+          "description": "West of the Greymoor Bellway.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-4",
@@ -207,7 +207,7 @@
         },
         {
           "act": 1,
-          "description": "Bone Bottom, awarded after completing the Volatile Flintbeetles Wish",
+          "description": "Bone Bottom, awarded after completing the Volatile Flintbeetles wish.",
           "flag": "Rock Rollers",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-5",
@@ -217,7 +217,7 @@
         },
         {
           "act": 1,
-          "description": "Purchased from Frey in Bellhart for  330  Rosaries",
+          "description": "Purchased from Frey in Bellhart for 330 Rosaries.",
           "flag": "PurchasedBelltownMemoryLocket",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-6",
@@ -227,7 +227,7 @@
         },
         {
           "act": 1,
-          "description": "Blasted Steps",
+          "description": "In Blasted Steps.",
           "flag": "Collectable Item Pickup (1)",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-7",
@@ -238,7 +238,7 @@
         },
         {
           "act": 1,
-          "description": "Southwest Wormways",
+          "description": "In southwest Wormways.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-8",
@@ -249,7 +249,7 @@
         },
         {
           "act": 1,
-          "description": "Bilewater, in a hidden room northwest of the Bellway",
+          "description": "Bilewater, in a hidden room northwest of the Bellway.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-9",
@@ -260,7 +260,7 @@
         },
         {
           "act": 2,
-          "description": "Above the Grand Bellway, accessed from Exhaust Organ",
+          "description": "Above the Grand Bellway, accessed from Exhaust Organ.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-10",
@@ -271,7 +271,7 @@
         },
         {
           "act": 2,
-          "description": "Underworks, west of the benches by the confessional",
+          "description": "In Underworks, west of the benches by the confessional.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-11",
@@ -282,7 +282,7 @@
         },
         {
           "act": 2,
-          "description": "Deep Docks, west of the diving bell",
+          "description": "In Deep Docks, west of the diving bell.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-12",
@@ -293,7 +293,7 @@
         },
         {
           "act": 2,
-          "description": "Whispering Vaults, below the exit to the outside area",
+          "description": "In Whispering Vaults, below the exit to the outside area.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-13",
@@ -304,7 +304,7 @@
         },
         {
           "act": 2,
-          "description": "Southwest Sands of Karak",
+          "description": "In the southwest Sands of Karak.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-14",
@@ -315,7 +315,7 @@
         },
         {
           "act": 2,
-          "description": "Inside of Halfway Home, above the left-hand door",
+          "description": "Inside of Halfway Home, above the left-hand door.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-15",
@@ -326,7 +326,7 @@
         },
         {
           "act": 2,
-          "description": "In the central area of the Memorium",
+          "description": "In the central area of the Memorium.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-16",
@@ -337,7 +337,7 @@
         },
         {
           "act": 2,
-          "description": "The Slab, in the shortcut cave between the Bellway area and the upper areas",
+          "description": "In The Slab, in the shortcut cave between the Bellway area and the upper areas.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-17",
@@ -359,7 +359,7 @@
         },
         {
           "act": 3,
-          "description": "Bellhart, above the Bellhome",
+          "description": "Bellhart, above the Bellhome.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-19",
@@ -370,7 +370,7 @@
         },
         {
           "act": 3,
-          "description": "Far Fields, east of Skarrsinger Karmelita",
+          "description": "In Far Fields, east of Skarrsinger Karmelita.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
           "id": "memory-locket-20",
@@ -388,7 +388,7 @@
         {
           "act": 2,
           "category": "Pale Oils",
-          "description": "Located in northeast Choral Chambers, accessed through the adjoining room in Whispering Vaults",
+          "description": "Located in northeast Choral Chambers, accessed through the adjoining room in Whispering Vaults.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Pale_Oil.png",
           "id": "pale-oil-vaults",
@@ -400,7 +400,7 @@
         {
           "act": 2,
           "category": "Pale Oils",
-          "description": "Reward for completing the 'Great Taste of Pharloom' Wish.",
+          "description": "Reward for completing the Great Taste of Pharloom wish.",
           "flag": "Great Gourmand",
           "icon": "icons/Pale_Oil.png",
           "id": "pale-oil-citadel",
@@ -411,7 +411,7 @@
         {
           "act": 3,
           "category": "Pale Oils",
-          "description": "Reward for completing the 'Ecstasy of the End' Wish.",
+          "description": "Reward for completing the Ecstasy of the End wish.",
           "flag": "Flea Games Pre",
           "icon": "icons/Pale_Oil.png",
           "id": "pale-oil-flea-games",
@@ -475,7 +475,7 @@
         {
           "act": 2,
           "category": "Craftmetal",
-          "description": "Bought from Jubilana in Songclave for 180 Rosaries after completing the 'The Lost Merchant' Wish.",
+          "description": "Bought from Jubilana in Songclave for 180 Rosaries after completing the The Lost Merchant wish.",
           "flag": "MerchantEnclaveToolMetal",
           "icon": "icons/Craft_Metal.png",
           "id": "craftmetal-merchant-enclave",
