@@ -23,10 +23,11 @@
     "zod": "4.1.12"
   },
   "devDependencies": {
+    "@eslint/json": "0.13.2",
     "@types/crypto-js": "4.2.2",
     "ajv-cli": "5.0.0",
     "ajv-formats": "3.0.1",
-    "complete-lint": "4.2.4",
+    "complete-lint": "4.2.6",
     "complete-node": "12.2.1",
     "globby": "15.0.0",
     "tsx": "4.20.6",
