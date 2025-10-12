@@ -1271,9 +1271,13 @@ async function updateAllProgressContent(selectedAct = "all") {
         });
 
         if (owned !== undefined) {
-          filteredItems = filteredItems.filter(
-            (item) => !group.includes(item.flag) || item.flag === owned,
-          );
+          filteredItems = filteredItems.filter((item) => {
+            const flag = item.type === "sceneVisited" ? undefined : item.flag;
+            if (flag === undefined) {
+              return false;
+            }
+            return !group.includes(flag) || flag === owned;
+          });
         }
       });
 
@@ -1298,7 +1302,7 @@ async function updateAllProgressContent(selectedAct = "all") {
 
         const unlocked = getUnlocked(item, value);
 
-        if (item.exclusiveGroup) {
+        if (item.type === "tool" && item.exclusiveGroup) {
           exclusiveGroups.add(item.exclusiveGroup);
           if (unlocked && !countedGroups.has(item.exclusiveGroup)) {
             countedGroups.add(item.exclusiveGroup);
@@ -1391,7 +1395,7 @@ function buildDynamicTOC() {
     if (tag === "h2") {
       const li = document.createElement("li");
       li.className = "toc-category";
-      li.dataset.manual = "false";
+      li.dataset["manual"] = "false";
 
       const a = document.createElement("a");
       a.href = `#${header.id}`;
