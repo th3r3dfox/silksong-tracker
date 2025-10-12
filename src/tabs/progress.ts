@@ -507,7 +507,7 @@ function renderGenericGrid(
 
       case "journal": {
         const current = typeof value === "number" ? value : 0;
-        const required = item.required ?? 1;
+        const { required } = item;
         isDone = current >= required;
         isAccepted = current > 0 && current < required;
         break;
