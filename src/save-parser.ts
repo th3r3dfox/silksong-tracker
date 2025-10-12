@@ -94,8 +94,8 @@ export function getSaveFileFlags(
   const flags: Record<string, Record<string, boolean>> = {};
 
   function mark(scene: string, id: string, value: number | boolean) {
-    scene = normalizeStringWithUnderscores(scene); // eslint-disable-line no-param-reassign
-    id = normalizeStringWithUnderscores(id); // eslint-disable-line no-param-reassign
+    scene = normalizeStringWithUnderscores(scene);
+    id = normalizeStringWithUnderscores(id);
 
     let flagsScene = flags[scene];
     if (flagsScene === undefined) {

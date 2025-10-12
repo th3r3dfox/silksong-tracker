@@ -625,29 +625,23 @@ function renderGenericGrid(
 
   // Apply mutually exclusive groups (global, relic + quest).
   for (const group of EXCLUSIVE_GROUPS) {
+    const saveData = currentLoadedSaveData;
+    const saveDataFlags = currentLoadedSaveDataFlags;
     const owned = group.find((flag) => {
       // Try first as relic.
-      let value = getSaveDataValue(
-        currentLoadedSaveData,
-        currentLoadedSaveDataFlags,
-        {
-          ...BASE_DUMMY_ITEM,
-          type: "relic",
-          flag,
-        },
-      );
+      let value = getSaveDataValue(saveData, saveDataFlags, {
+        ...BASE_DUMMY_ITEM,
+        type: "relic",
+        flag,
+      });
 
       // If not a valid relic, try as quest.
-      if (!value || value === false) {
-        value = getSaveDataValue(
-          currentLoadedSaveData,
-          currentLoadedSaveDataFlags,
-          {
-            ...BASE_DUMMY_ITEM,
-            type: "quest",
-            flag,
-          },
-        );
+      if (value === undefined || value === false) {
+        value = getSaveDataValue(saveData, saveDataFlags, {
+          ...BASE_DUMMY_ITEM,
+          type: "quest",
+          flag,
+        });
       }
 
       return (
@@ -1221,12 +1215,10 @@ function updateAllProgressContent() {
       );
 
       if (showMissingOnly && currentLoadedSaveData) {
+        const saveData = currentLoadedSaveData;
+        const saveDataFlags = currentLoadedSaveDataFlags;
         filteredItems = filteredItems.filter((item) => {
-          const value = getSaveDataValue(
-            currentLoadedSaveData,
-            currentLoadedSaveDataFlags,
-            item,
-          );
+          const value = getSaveDataValue(saveData, saveDataFlags, item);
 
           if (item.type === "collectable") {
             const numberValue = typeof value === "number" ? value : 0;
@@ -1248,16 +1240,14 @@ function updateAllProgressContent() {
 
       // Apply exclusive groups.
       for (const group of EXCLUSIVE_GROUPS) {
+        const saveData = currentLoadedSaveData;
+        const saveDataFlags = currentLoadedSaveDataFlags;
         const owned = group.find((flag) => {
-          const value = getSaveDataValue(
-            currentLoadedSaveData,
-            currentLoadedSaveDataFlags,
-            {
-              ...BASE_DUMMY_ITEM,
-              type: "relic",
-              flag,
-            },
-          );
+          const value = getSaveDataValue(saveData, saveDataFlags, {
+            ...BASE_DUMMY_ITEM,
+            type: "relic",
+            flag,
+          });
           return value === "deposited" || value === "collected";
         });
 
@@ -1491,12 +1481,14 @@ function initScrollSpy() {
 }
 
 function showGenericModal(item: Item) {
-  const mapSrc =
-    item.map === undefined
-      ? undefined
-      : item.map.startsWith("http")
-        ? item.map
-        : `${BASE_PATH}/${item.map}`;
+  let mapSrc: string | undefined;
+  if (item.map === undefined) {
+    mapSrc = undefined;
+  } else if (item.map.startsWith("http")) {
+    mapSrc = item.map;
+  } else {
+    mapSrc = `${BASE_PATH}/${item.map}`;
+  }
 
   const iconPath = getIconPath(item);
 
