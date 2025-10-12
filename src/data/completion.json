@@ -246,7 +246,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Entry unlocked by default",
+          "description": "Entry unlocked by default.",
           "flag": "Silk",
           "icon": "completion/Silk.png",
           "id": "materium-silk",
@@ -256,7 +256,7 @@
         },
         {
           "act": 1,
-          "description": "Entry unlocked by default",
+          "description": "Entry unlocked by default.",
           "flag": "Shell Shard",
           "icon": "completion/Shards_large.png",
           "id": "materium-shell-shard",
@@ -266,7 +266,7 @@
         },
         {
           "act": 1,
-          "description": "Entry unlocked by default",
+          "description": "Entry unlocked by default.",
           "flag": "Rosary Small",
           "icon": "completion/Rosaries_large.png",
           "id": "materium-rosaries",
@@ -276,7 +276,7 @@
         },
         {
           "act": 1,
-          "description": "Entry unlocked by default",
+          "description": "Entry unlocked by default.",
           "flag": "Rosary Mid",
           "icon": "completion/Shell_Rosaries_large.png",
           "id": "materium-shell-rosaries",
@@ -286,7 +286,7 @@
         },
         {
           "act": 1,
-          "description": "Entry unlocked by default",
+          "description": "Entry unlocked by default.",
           "flag": "Rosary Big",
           "icon": "completion/Pearl_Rosaries_large.png",
           "id": "materium-pearl-rosaries",
@@ -296,7 +296,7 @@
         },
         {
           "act": 1,
-          "description": "Given to Moss Druid during the Berry Picking Wish",
+          "description": "Given to Moss Druid during the Berry Picking wish.",
           "flag": "Mossberry",
           "icon": "completion/Mossberry.png",
           "id": "materium-mossberry",
@@ -306,7 +306,7 @@
         },
         {
           "act": 2,
-          "description": "Given by Moss Druid during the Great Taste of Pharloom wish",
+          "description": "Given by Moss Druid during the Great Taste of Pharloom wish.",
           "flag": "Mossberry Stew",
           "icon": "completion/Mossberry_Stew.png",
           "id": "materium-mossberry-stew",
@@ -316,7 +316,7 @@
         },
         {
           "act": 1,
-          "description": "Dropped by pilgrim enemies during the Garb of the Pilgrims wish",
+          "description": "Dropped by pilgrim enemies during the Garb of the Pilgrims wish.",
           "flag": "Pilgrim Rag",
           "icon": "completion/Pilgrim_Shawl.png",
           "id": "materium-pilgrim-shawl",
@@ -326,7 +326,7 @@
         },
         {
           "act": 1,
-          "description": "Found in Deep Docks",
+          "description": "Found in Deep Docks.",
           "flag": "Smeltstone",
           "icon": "completion/Flintstone.png",
           "id": "materium-smeltstone",
@@ -336,7 +336,7 @@
         },
         {
           "act": 1,
-          "description": "Dropped by Flintbeetles",
+          "description": "Dropped by Flintbeetles.",
           "flag": "Rock Roller Item",
           "icon": "completion/Flintgem.png",
           "id": "materium-rock-roller-item",
@@ -346,7 +346,7 @@
         },
         {
           "act": 1,
-          "description": "Rare element found naturally within the rock and bone of Pharloom",
+          "description": "Rare element found naturally within the rock and bone of Pharloom.",
           "flag": "Tool Metal",
           "icon": "icons/Craft_Metal.png",
           "id": "materium-tool-metal",
@@ -356,7 +356,7 @@
         },
         {
           "act": 1,
-          "description": "Dropped by Hokers during the Flexile Spines wish",
+          "description": "Dropped by Hokers during the Flexile Spines wish.",
           "flag": "Common Spine",
           "icon": "completion/Spine_Core.png",
           "id": "materium-common-spine",
@@ -366,7 +366,7 @@
         },
         {
           "act": 1,
-          "description": "Dropped by Skull Tyrant during the The Terrible Tyrant wish",
+          "description": "Dropped by Skull Tyrant during the The Terrible Tyrant wish.",
           "flag": "Skull King Fragment",
           "icon": "completion/Crown_Fragment.png",
           "id": "materium-skull-king-fragment",
@@ -376,7 +376,7 @@
         },
         {
           "act": 2,
-          "description": "Dropped by Savage Beastfly during the Savage Beastfly wish",
+          "description": "Dropped by Savage Beastfly during the Savage Beastfly wish.",
           "flag": "Beastfly Remains",
           "icon": "completion/Horn_Fragment.png",
           "id": "materium-beastfly-remains",
@@ -386,7 +386,7 @@
         },
         {
           "act": 1,
-          "description": "Found throughout Bellhart during the Silver Bells wish",
+          "description": "Found throughout Bellhart during the Silver Bells wish.",
           "flag": "Silver Bellclapper",
           "icon": "completion/Silver_Bell.png",
           "id": "materium-silver-bellclapper",
@@ -406,7 +406,7 @@
         },
         {
           "act": 1,
-          "description": "Collected using the Needle Phial during the Alchemist's Assistant wish",
+          "description": "Collected using the Needle Phial during the Alchemist's Assistant wish.",
           "flag": "Lifeblood",
           "icon": "completion/Plasmium.png",
           "id": "materium-lifeblood",
@@ -416,7 +416,7 @@
         },
         {
           "act": 3,
-          "description": "Collected using the Needle Phial during the Advanced Alchemy wish",
+          "description": "Collected using the Needle Phial during the Advanced Alchemy wish.",
           "flag": "Plasmium Blood",
           "icon": "completion/Plasmified_Blood.png",
           "id": "materium-plasmium-blood",
@@ -426,7 +426,7 @@
         },
         {
           "act": 1,
-          "description": "Dropped by Craw enemies during the Crawbug Clearing wish",
+          "description": "Dropped by Craw enemies during the Crawbug Clearing wish.",
           "flag": "Crow Feathers",
           "icon": "completion/Ragpelt.png",
           "id": "materium-crow-feathers",
@@ -446,7 +446,7 @@
         },
         {
           "act": 1,
-          "description": "Dropped by Muckroachs during the Roach Guts wish",
+          "description": "Dropped by Muckroachs during the Roach Guts wish.",
           "flag": "Roach Corpse Item",
           "icon": "completion/Roach_Guts.png",
           "id": "materium-roach-corpse-item",
@@ -456,7 +456,7 @@
         },
         {
           "act": 2,
-          "description": "Given by Tipp & Pill during Delivery Wishes",
+          "description": "Given by Tipp & Pill during Delivery Wishes.",
           "flag": "Courier Supplies Generic",
           "icon": "completion/Courier's_Swag.png",
           "id": "materium-courier-supplies-generic",
@@ -466,7 +466,7 @@
         },
         {
           "act": 2,
-          "description": "Given by Tipp & Pill during the Queen's Egg wish",
+          "description": "Given by Tipp & Pill during the Queen's Egg wish.",
           "flag": "Courier Supplies Slave",
           "icon": "completion/Queen's_Egg.png",
           "id": "materium-courier-supplies-slave",
@@ -477,7 +477,7 @@
         },
         {
           "act": 2,
-          "description": "Given by Tipp & Pill during the Liquid Lacquer wish",
+          "description": "Given by Tipp & Pill during the Liquid Lacquer wish.",
           "flag": "Courier Supplies Mask Maker",
           "icon": "completion/Liquid_Lacquer.png",
           "id": "materium-courier-supplies-mask-maker",
@@ -487,7 +487,7 @@
         },
         {
           "act": 2,
-          "description": "Given by Tipp & Pill during the Great Taste of Pharloom wish",
+          "description": "Given by Tipp & Pill during the Great Taste of Pharloom wish.",
           "flag": "Courier Supplies Gourmand",
           "icon": "completion/Courier's_Rasher.png",
           "id": "materium-courier-supplies-gourmand",
@@ -497,7 +497,7 @@
         },
         {
           "act": 2,
-          "description": "Sold by Creige during the Great Taste of Pharloom wish",
+          "description": "Sold by Creige during the Great Taste of Pharloom wish.",
           "flag": "Vintage Nectar",
           "icon": "completion/Vintage_Nectar.png",
           "id": "materium-vintage-nectar",
@@ -507,7 +507,7 @@
         },
         {
           "act": 2,
-          "description": "Dropped by Disgraced Chef Lugoli",
+          "description": "Dropped by Disgraced Chef Lugoli.",
           "flag": "Pickled Roach Egg",
           "icon": "completion/Pickled_Muckmaggot.png",
           "id": "materium-pickled-roach-egg",
@@ -517,7 +517,7 @@
         },
         {
           "act": 2,
-          "description": "Found in Sands of Karak",
+          "description": "Found in Sands of Karak.",
           "flag": "Crustnut",
           "icon": "completion/Crustnut.png",
           "id": "materium-crustnut",
@@ -527,7 +527,7 @@
         },
         {
           "act": 2,
-          "description": "Sold by Crull and Benjin during the Infestation Operation wish",
+          "description": "Sold by Crull and Benjin during the Infestation Operation wish.",
           "flag": "Extractor Machine Pins",
           "icon": "completion/Steel_Spines.png",
           "id": "materium-extractor-machine-pins",
@@ -537,7 +537,7 @@
         },
         {
           "act": 2,
-          "description": "Dropped by pilgrim enemies in The Citadel during the Cloaks of the Choir wish",
+          "description": "Dropped by pilgrim enemies in The Citadel during the Cloaks of the Choir wish.",
           "flag": "Song Pilgrim Cloak",
           "icon": "completion/Choir_Cloak.png",
           "id": "materium-song-pilgrim-cloak",
@@ -547,7 +547,7 @@
         },
         {
           "act": 3,
-          "description": "Found in Brightvein",
+          "description": "Found in Brightvein.",
           "flag": "Magnetite",
           "icon": "completion/Magnetite.png",
           "id": "materium-magnetite",
@@ -557,7 +557,7 @@
         },
         {
           "act": 2,
-          "description": "Dropped by Broodmother",
+          "description": "Dropped by Broodmother.",
           "flag": "Broodmother Remains",
           "icon": "completion/Broodmother's_Eye.png",
           "id": "materium-broodmother-remains",
@@ -597,7 +597,7 @@
         },
         {
           "act": 2,
-          "description": "Found in Voltnest",
+          "description": "Found in Voltnest.",
           "flag": "Voltstone",
           "icon": "completion/Voltridian.png",
           "id": "materium-voltstone",
@@ -607,7 +607,7 @@
         },
         {
           "act": 2,
-          "description": "Given by Bell Hermit during the Silk and Soul wish",
+          "description": "Given by Bell Hermit during the Silk and Soul wish.",
           "flag": "Snare Soul Bell Hermit",
           "icon": "completion/Hermit's_Soul.png",
           "id": "materium-snare-soul-bell-hermit",
@@ -617,7 +617,7 @@
         },
         {
           "act": 2,
-          "description": "Given by Chapel Maid during the Silk and Soul wish",
+          "description": "Given by Chapel Maid during the Silk and Soul wish.",
           "flag": "Snare Soul Churchkeeper",
           "icon": "completion/Maiden's_Soul.png",
           "id": "materium-snare-soul-churchkeeper",
@@ -627,7 +627,7 @@
         },
         {
           "act": 2,
-          "description": "Found in Bilewater after defeating Groal the Great",
+          "description": "Found in Bilewater after defeating Groal the Great.",
           "flag": "Snare Soul Swamp Bug",
           "icon": "completion/Seekers_Soul.png",
           "id": "materium-snare-soul-swamp-bug",
@@ -637,7 +637,7 @@
         },
         {
           "act": 3,
-          "description": "Awarded after defeating Crust King Khann in Coral Tower",
+          "description": "Awarded after defeating Crust King Khann in Coral Tower.",
           "flag": "Coral Heart",
           "icon": "completion/Heart_Coral.png",
           "id": "materium-coral-heart",
@@ -647,7 +647,7 @@
         },
         {
           "act": 3,
-          "description": "Awarded after defeating Nyleth in Shellwood",
+          "description": "Awarded after defeating Nyleth in Shellwood.",
           "flag": "Flower Heart",
           "icon": "completion/Heart_Flower.png",
           "id": "materium-flower-heart",
@@ -657,7 +657,7 @@
         },
         {
           "act": 3,
-          "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields",
+          "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields.",
           "flag": "Hunter Heart",
           "icon": "completion/Heart_Hunter.png",
           "id": "materium-hunter-heart",
@@ -667,7 +667,7 @@
         },
         {
           "act": 3,
-          "description": "Awarded after defeating the Clover Dancers in Lost Verdania",
+          "description": "Awarded after defeating the Clover Dancers in Lost Verdania.",
           "flag": "Clover Heart",
           "icon": "completion/Heart_Clover.png",
           "id": "materium-clover-heart",
@@ -799,7 +799,7 @@
       "label": "Mementos"
     },
     {
-      "desc": "",
+      "desc": "Maps have to be obtained before an area will appear on the in-game map.",
       "items": [
         {
           "act": 1,
@@ -913,7 +913,7 @@
         },
         {
           "act": 2,
-          "description": "Obtained from an abandoned camp",
+          "description": "Obtained from an abandoned camp.",
           "flag": "HasCloverMap",
           "icon": "completion/Verdania_Map.png",
           "id": "map-clover",
@@ -933,7 +933,7 @@
         },
         {
           "act": 2,
-          "description": "Obtained from a mechanism",
+          "description": "Obtained from a mechanism.",
           "flag": "HasCogMap",
           "icon": "completion/Cogwork_Core_Map.png",
           "id": "map-cog",
@@ -983,7 +983,7 @@
         },
         {
           "act": 1,
-          "description": "Obtained from a Lore Tablet",
+          "description": "Obtained from a Lore Tablet.",
           "flag": "HasWeavehomeMap",
           "icon": "completion/Weavenest_Atla_Map.png",
           "id": "map-weavehome",
@@ -1033,7 +1033,7 @@
         },
         {
           "act": 1,
-          "description": "Purchase from Shakra. Old roads and passages overrun by roaches and their keepers. The ways are covered thick with filth",
+          "description": "Purchase from Shakra. Old roads and passages overrun by roaches and their keepers. The ways are covered thick with filth.",
           "flag": "HasDustpensMap",
           "icon": "completion/Sinner's_Road_Map.png",
           "id": "map-dustpens",
@@ -1043,7 +1043,7 @@
         },
         {
           "act": 1,
-          "description": "Obtained from a map machine",
+          "description": "Obtained from a map machine.",
           "flag": "HasHangMap",
           "icon": "completion/High_Halls_Map.png",
           "id": "map-hang",
@@ -1053,7 +1053,7 @@
         },
         {
           "act": 1,
-          "description": "Obtained from a map machine",
+          "description": "Obtained from a map machine.",
           "flag": "HasHallsMap",
           "icon": "completion/Choral_Chambers_Map.png",
           "id": "map-halls",
@@ -1063,7 +1063,7 @@
         },
         {
           "act": 1,
-          "description": "Obtained from a map machine",
+          "description": "Obtained from a map machine.",
           "flag": "HasSongGateMap",
           "icon": "completion/Choral_Chambers_Map.png",
           "id": "map-songgate",
@@ -1073,7 +1073,7 @@
         },
         {
           "act": 1,
-          "description": "Obtained from a map machine",
+          "description": "Obtained from a map machine.",
           "flag": "HasWardMap",
           "icon": "completion/Whiteward_Map.png",
           "id": "map-ward",
@@ -1159,7 +1159,7 @@
         },
         {
           "act": 2,
-          "description": "Purchase from Shakra. This dark-shell material is cold to the touch, and more resilient than it looks",
+          "description": "Purchase from Shakra. This dark-shell material is cold to the touch, and more resilient than it looks.",
           "flag": "hasMarker_d",
           "icon": "completion/Dark_Marker.png",
           "id": "marker-dark",
@@ -1195,7 +1195,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedDocksStation",
           "icon": "completion/Bellways.png",
           "id": "station-docks",
@@ -1205,7 +1205,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedBoneforestEastStation",
           "icon": "completion/Bellways.png",
           "id": "station-boneforest-east",
@@ -1215,7 +1215,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedGreymoorStation",
           "icon": "completion/Bellways.png",
           "id": "station-greymoor",
@@ -1225,7 +1225,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedBelltownStation",
           "icon": "completion/Bellways.png",
           "id": "station-belltown",
@@ -1235,7 +1235,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedCoralTowerStation",
           "icon": "completion/Bellways.png",
           "id": "station-coraltower",
@@ -1245,7 +1245,7 @@
         },
         {
           "act": 2,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedCityStation",
           "icon": "completion/Bellways.png",
           "id": "station-city",
@@ -1255,7 +1255,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedPeakStation",
           "icon": "completion/Bellways.png",
           "id": "station-peak",
@@ -1265,7 +1265,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedShellwoodStation",
           "icon": "completion/Bellways.png",
           "id": "station-shellwood",
@@ -1275,7 +1275,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedShadowStation",
           "icon": "completion/Bellways.png",
           "id": "station-shadow",
@@ -1285,7 +1285,7 @@
         },
         {
           "act": 2,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedAqueductStation",
           "icon": "completion/Bellways.png",
           "id": "station-aqueduct",
@@ -1295,7 +1295,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "defeatedBellBeast",
           "icon": "completion/Bellways.png",
           "id": "station-marrow",
@@ -1311,7 +1311,7 @@
       "items": [
         {
           "act": 2,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedSongTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-song",
@@ -1321,7 +1321,7 @@
         },
         {
           "act": 2,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedUnderTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-under",
@@ -1331,7 +1331,7 @@
         },
         {
           "act": 2,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedCityBellwayTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-citybellway",
@@ -1341,7 +1341,7 @@
         },
         {
           "act": 2,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedHangTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-hang",
@@ -1351,7 +1351,7 @@
         },
         {
           "act": 2,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedEnclaveTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-enclave",
@@ -1361,7 +1361,7 @@
         },
         {
           "act": 2,
-          "description": "",
+          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedArboriumTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-arborium",
