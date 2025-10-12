@@ -51,7 +51,7 @@ async function checkForIllegalCharacters() {
     for (const character of illegalCharacters) {
       if (fileContents.includes(character)) {
         throw new Error(
-          `The character of "${character}" is illegal in file: ${filePath}`,
+          `Please remove all "${character}" character(s) in file: ${filePath}`,
         );
       }
     }
