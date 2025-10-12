@@ -760,7 +760,7 @@
           "icon": "completion/Heart_Flower.png",
           "flag": "Heart Flower",
           "type": "relic",
-          "description": "Awarded after defeating Nyleth in Shellwood.",
+          "description": "Awarded after defeating Nyleth in Shellwood. (This is missable since you can only get one heart-related memento.)",
           "link": "https://hollowknight.wiki/w/Pollen_Heart",
           "missable": true,
           "act": 3
@@ -771,7 +771,7 @@
           "icon": "completion/Heart_Coral.png",
           "flag": "Heart Coral",
           "type": "relic",
-          "description": "Awarded after defeating Crust King Khann in Coral Tower.",
+          "description": "Awarded after defeating Crust King Khann in Coral Tower. (This is missable since you can only get one heart-related memento per save file.)",
           "link": "https://hollowknight.wiki/w/Encrusted_Heart",
           "missable": true,
           "act": 3
@@ -782,7 +782,7 @@
           "icon": "completion/Heart_Hunter.png",
           "flag": "Heart Hunter",
           "type": "relic",
-          "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields.",
+          "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields. (This is missable since you can only get one heart-related memento per save file.)",
           "link": "https://hollowknight.wiki/w/Hunter's_Heart",
           "missable": true,
           "act": 3
@@ -793,7 +793,7 @@
           "icon": "completion/Heart_Clover.png",
           "flag": "Clover Heart",
           "type": "relic",
-          "description": "Awarded after defeating the Clover Dancers in Lost Verdania.",
+          "description": "Awarded after defeating the Clover Dancers in Lost Verdania. (This is missable since you can only get one heart-related memento per save file.)",
           "link": "https://hollowknight.wiki/w/Conjoined_Heart",
           "missable": true,
           "act": 3
