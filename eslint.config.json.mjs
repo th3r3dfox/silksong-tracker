@@ -15,6 +15,8 @@ export default defineConfig({
   },
   files: ["src/data/*.json"],
   language: "json/json",
+
+  // https://github.com/eslint/json?tab=readme-ov-file#rules
   rules: {
     "json/no-duplicate-keys": "error",
     "json/no-empty-keys": "error",
