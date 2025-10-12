@@ -239,15 +239,14 @@ export function getSaveDataValue(
 
     case "journal": {
       const { list } = playerData.EnemyJournalKillData;
-
       const entry = list.find((element) => element.Name === item.flag);
       if (entry === undefined) {
-        return false;
+        return 0; // invece di false
       }
 
       const { Record } = entry;
-
-      return Record.Kills >= item.required;
+      const { Kills } = Record;
+      return Kills;
     }
 
     case "relic": {
