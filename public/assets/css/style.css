@@ -2893,11 +2893,11 @@ main {
 
 .map-wrapper {
   position: relative;
-  overflow: hidden; /* impedisce scroll e mantiene l’immagine dentro */
+  overflow: hidden; 
   width: 100%;
-  height: calc(100vh - 180px); /* o qualsiasi altezza ti serve */
+  height: calc(100vh - 180px); 
   cursor: grab;
-  background-color: #000; /* opzionale */
+  background-color: #000; 
 }
 
 .map-wrapper img {
@@ -2908,5 +2908,5 @@ main {
   transform: translate(-50%, -50%) scale(1);
   transition: transform 0.05s linear;
   user-select: none;
-  pointer-events: none; /* evita trascinamento di default */
+  pointer-events: none;
 }
