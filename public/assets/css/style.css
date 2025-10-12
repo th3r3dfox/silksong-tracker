@@ -170,27 +170,6 @@ main {
   gap: 12px;
   margin-bottom: 24px;
 }
-.sidebar-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  font-size: 1.1rem;
-  background: transparent;
-  color: #ccc;
-  border: 1px solid #444;
-  border-radius: 8px;
-  text-decoration: none;
-  transition:
-    background 0.2s,
-    border-color 0.2s;
-}
-.sidebar-icon:hover {
-  background: #2c2c2c;
-  color: #fff;
-  border-color: #666;
-}
 
 /* Divider + section title */
 .sidebar-divider {
@@ -1805,18 +1784,18 @@ main {
   flex-wrap: wrap;
 }
 
-.act-filter {
+#act-filter {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.act-filter label {
+#act-filter label {
   font-weight: 600;
   color: var(--ink-2);
 }
 
-.act-filter select {
+#act-filter select {
   background: var(--bg-3);
   border: 1px solid var(--stroke);
   color: var(--ink-1);
@@ -2743,8 +2722,8 @@ main {
 }
 
 /* === Dropdown always above everything === */
-#actDropdownBtn,
-#actDropdownMenu {
+#act-dropdown-button,
+#act-dropdown-menu {
   position: relative;
   z-index: 9999; /* Ensure dropdown is always visible */
 }
@@ -2755,7 +2734,7 @@ main {
   z-index: 3000; /* create local stacking context */
 }
 
-#actDropdownMenu {
+#act-dropdown-menu {
   position: absolute;
   z-index: 4000; /* above banner */
 }
@@ -2766,7 +2745,7 @@ main {
   z-index: 3000;
 }
 
-#actDropdownMenu {
+#act-dropdown-menu {
   position: absolute;
   z-index: 4000; /* visible above everything */
 }
