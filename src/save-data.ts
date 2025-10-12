@@ -245,8 +245,8 @@ export function getSaveDataValue(
       }
 
       const { Record } = entry;
-      const kills = Record?.Kills ?? 0;
-      return kills;
+      const { Kills } = Record;
+      return Kills;
     }
 
     case "relic": {
