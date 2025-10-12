@@ -6,23 +6,23 @@
       "items": [
         {
           "act": 1,
-          "description": "Mossgrub.",
+          "description": "Mossgrubs are enemies in Hollow Knight: Silksong. They are crawling, caterpillar-like creatures that are covered in spikes.",
           "flag": "MossBone Crawler",
           "icon": "journal/Mossgrub.png",
           "id": "mossgrub",
           "label": "Mossgrub",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Mossgrub",
           "required": 25,
           "type": "journal"
         },
         {
           "act": 1,
-          "description": "Massive Mossgrub.",
+          "description": "They are enormous Mossgrubs with two horn-like spikes on their heads.",
           "flag": "MossBone Crawler Fat",
           "icon": "journal/Massive_Mossgrub.png",
           "id": "massive-mossgrub",
           "label": "Massive Mossgrub",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Massive_Mossgrub",
           "required": 3,
           "type": "journal"
         },
@@ -33,7 +33,7 @@
           "icon": "journal/Mossmir.png",
           "id": "mossmir",
           "label": "Mossmir",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Mossmir",
           "required": 21,
           "type": "journal"
         },
@@ -44,7 +44,7 @@
           "icon": "journal/Moss_Mother.png",
           "id": "moss-mother",
           "label": "Moss Mother",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Moss_Mother",
           "required": 3,
           "type": "journal"
         },
@@ -55,7 +55,7 @@
           "icon": "journal/Aknid.png",
           "id": "aknid",
           "label": "Aknid",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Aknid",
           "required": 15,
           "type": "journal"
         },
@@ -66,7 +66,7 @@
           "icon": "journal/Skull_Scuttler.png",
           "id": "skull-scuttler",
           "label": "Skull Scuttler",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Skull_Scuttler",
           "required": 35,
           "type": "journal"
         },
@@ -77,7 +77,7 @@
           "icon": "journal/Skullwing.png",
           "id": "skullwing",
           "label": "Skullwing",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Skullwing",
           "required": 15,
           "type": "journal"
         },
@@ -88,7 +88,7 @@
           "icon": "journal/Skull_Brute.png",
           "id": "skull-brute",
           "label": "Skull Brute",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Skull_Brute",
           "required": 15,
           "type": "journal"
         },
@@ -99,7 +99,7 @@
           "icon": "journal/Skull_Tyrant.png",
           "id": "skull-tyrant",
           "label": "Skull Tyrant",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Skull_Tyrant",
           "required": 1,
           "type": "journal"
         },
@@ -110,7 +110,7 @@
           "icon": "journal/Kilik.png",
           "id": "kilik",
           "label": "Kilik",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Kilik",
           "required": 25,
           "type": "journal"
         },
@@ -121,7 +121,7 @@
           "icon": "journal/Beastfly.png",
           "id": "beastfly",
           "label": "Beastfly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Beastfly",
           "required": 31,
           "type": "journal"
         },
@@ -132,7 +132,7 @@
           "icon": "journal/Savage_Beastfly.png",
           "id": "savage-beastfly",
           "label": "Savage Beastfly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Savage_Beastfly",
           "required": 2,
           "type": "journal"
         },
@@ -143,7 +143,7 @@
           "icon": "journal/Caranid.png",
           "id": "caranid",
           "label": "Caranid",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Caranid",
           "required": 25,
           "type": "journal"
         },
@@ -154,7 +154,7 @@
           "icon": "journal/Vicious_Caranid.png",
           "id": "vicious-caranid",
           "label": "Vicious Caranid",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Vicious_Caranid",
           "required": 15,
           "type": "journal"
         },
@@ -165,7 +165,7 @@
           "icon": "journal/Hardbone_Hopper.png",
           "id": "hardbone-hopper",
           "label": "Hardbone Hopper",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Hardbone_Hopper",
           "required": 21,
           "type": "journal"
         },
@@ -176,7 +176,7 @@
           "icon": "journal/Hardbone_Elder.png",
           "id": "hardbone-elder",
           "label": "Hardbone Elder",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Hardbone_Elder",
           "required": 11,
           "type": "journal"
         },
@@ -187,7 +187,7 @@
           "icon": "journal/Tarmite.png",
           "id": "tarmite",
           "label": "Tarmite",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Tarmite",
           "required": 11,
           "type": "journal"
         },
@@ -198,7 +198,7 @@
           "icon": "journal/Mawling.png",
           "id": "mawling",
           "label": "Mawling",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Mawling",
           "required": 31,
           "type": "journal"
         },
@@ -209,7 +209,7 @@
           "icon": "journal/Marrowmaw.png",
           "id": "marrowmaw",
           "label": "Marrowmaw",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Marrowmaw",
           "required": 8,
           "type": "journal"
         },
@@ -220,7 +220,7 @@
           "icon": "journal/Hoker.png",
           "id": "hoker",
           "label": "Hoker",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Hoker",
           "required": 15,
           "type": "journal"
         },
@@ -231,7 +231,7 @@
           "icon": "journal/Flintbeetle.png",
           "id": "flintbeetle",
           "label": "Flintbeetle",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Flintbeetle",
           "required": 3,
           "type": "journal"
         },
@@ -242,7 +242,7 @@
           "icon": "journal/Rhinogrund.png",
           "id": "rhinogrund",
           "label": "Rhinogrund",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Rhinogrund",
           "required": 2,
           "type": "journal"
         },
@@ -253,7 +253,7 @@
           "icon": "journal/Gromling.png",
           "id": "gromling",
           "label": "Gromling",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Gromling",
           "required": 25,
           "type": "journal"
         },
@@ -264,7 +264,7 @@
           "icon": "journal/Grom.png",
           "id": "grom",
           "label": "Grom",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Grom",
           "required": 11,
           "type": "journal"
         },
@@ -275,7 +275,7 @@
           "icon": "journal/Bell_Beast.png",
           "id": "bell-beast",
           "label": "Bell Beast",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Bell_Beast",
           "required": 1,
           "type": "journal"
         },
@@ -286,7 +286,7 @@
           "icon": "journal/Pilgrim_Groveller.png",
           "id": "pilgrim-groveller",
           "label": "Pilgrim Groveller",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pilgrim_Groveller",
           "required": 35,
           "type": "journal"
         },
@@ -297,7 +297,7 @@
           "icon": "journal/Pilgrim_Pouncer.png",
           "id": "pilgrim-pouncer",
           "label": "Pilgrim Pouncer",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pilgrim_Pouncer",
           "required": 35,
           "type": "journal"
         },
@@ -308,7 +308,7 @@
           "icon": "journal/Pilgrim_Hornfly.png",
           "id": "pilgrim-hornfly",
           "label": "Pilgrim Hornfly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pilgrim_Hornfly",
           "required": 15,
           "type": "journal"
         },
@@ -319,7 +319,7 @@
           "icon": "journal/Pilgrim_Hulk.png",
           "id": "pilgrim-hulk",
           "label": "Pilgrim Hulk",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pilgrim_Hulk",
           "required": 11,
           "type": "journal"
         },
@@ -330,7 +330,7 @@
           "icon": "journal/Pilgrim_Bellbearer.png",
           "id": "pilgrim-bellbearer",
           "label": "Pilgrim Bellbearer",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pilgrim_Bellbearer",
           "required": 11,
           "type": "journal"
         },
@@ -341,7 +341,7 @@
           "icon": "journal/Winged_Pilgrim.png",
           "id": "winged-pilgrim",
           "label": "Winged Pilgrim",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Winged_Pilgrim",
           "required": 25,
           "type": "journal"
         },
@@ -352,7 +352,7 @@
           "icon": "journal/Elder_Pilgrim.png",
           "id": "elder-pilgrim",
           "label": "Elder Pilgrim",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Elder_Pilgrim",
           "required": 5,
           "type": "journal"
         },
@@ -363,7 +363,7 @@
           "icon": "journal/Winged_Pilgrim_Bellbearer.png",
           "id": "winged-pilgrim-bellbearer",
           "label": "Winged Pilgrim Bellbearer",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Winged_Pilgrim_Bellbearer",
           "required": 11,
           "type": "journal"
         },
@@ -374,7 +374,7 @@
           "icon": "journal/Pilgrim_Hiker.png",
           "id": "pilgrim-hiker",
           "label": "Pilgrim Hiker",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pilgrim_Hiker",
           "required": 11,
           "type": "journal"
         },
@@ -385,7 +385,7 @@
           "icon": "journal/Pilgrim_Guide.png",
           "id": "pilgrim-guide",
           "label": "Pilgrim Guide",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pilgrim_Guide",
           "required": 15,
           "type": "journal"
         },
@@ -396,7 +396,7 @@
           "icon": "journal/Overgrown_Pilgrim.png",
           "id": "overgrown-pilgrim",
           "label": "Overgrown Pilgrim",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Overgrown_Pilgrim",
           "required": 21,
           "type": "journal"
         },
@@ -407,7 +407,7 @@
           "icon": "journal/Covetous_Pilgrim.png",
           "id": "covetous-pilgrim",
           "label": "Covetous Pilgrim",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Covetous_Pilgrim",
           "required": 2,
           "type": "journal"
         },
@@ -418,7 +418,7 @@
           "icon": "journal/Snitchfly.png",
           "id": "snitchfly",
           "label": "Snitchfly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Snitchfly",
           "required": 4,
           "type": "journal"
         },
@@ -429,7 +429,7 @@
           "icon": "journal/Lavalug.png",
           "id": "lavalug",
           "label": "Lavalug",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Lavalug",
           "required": 12,
           "type": "journal"
         },
@@ -440,7 +440,7 @@
           "icon": "journal/Lavalarga.png",
           "id": "lavalarga",
           "label": "Lavalarga",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Lavalarga",
           "required": 8,
           "type": "journal"
         },
@@ -451,7 +451,7 @@
           "icon": "journal/Smelt_Shoveller.png",
           "id": "smelt-shoveller",
           "label": "Smelt Shoveller",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Smelt_Shoveller",
           "required": 25,
           "type": "journal"
         },
@@ -462,7 +462,7 @@
           "icon": "journal/Flintstone_Flyer.png",
           "id": "flintstone-flyer",
           "label": "Flintstone Flyer",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Flintstone_Flyer",
           "required": 25,
           "type": "journal"
         },
@@ -473,7 +473,7 @@
           "icon": "journal/Flintflame_Flyer.png",
           "id": "flintflame-flyer",
           "label": "Flintflame Flyer",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Flintflame_Flyer",
           "required": 11,
           "type": "journal"
         },
@@ -484,7 +484,7 @@
           "icon": "journal/Smokerock_Sifter.png",
           "id": "smokerock-sifter",
           "label": "Smokerock Sifter",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Smokerock_Sifter",
           "required": 11,
           "type": "journal"
         },
@@ -495,7 +495,7 @@
           "icon": "journal/Deep_Diver.png",
           "id": "deep-diver",
           "label": "Deep Diver",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Deep_Diver",
           "required": 5,
           "type": "journal"
         },
@@ -506,7 +506,7 @@
           "icon": "journal/Forebrothers_Signis_&_Gron.png",
           "id": "forebrothers-signis-&-gron",
           "label": "Forebrothers Signis & Gron",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Forebrothers_Signis_&_Gron",
           "required": 1,
           "type": "journal"
         },
@@ -517,7 +517,7 @@
           "icon": "journal/Cragglite.png",
           "id": "cragglite",
           "label": "Cragglite",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cragglite",
           "required": 3,
           "type": "journal"
         },
@@ -528,7 +528,7 @@
           "icon": "journal/Craggler.png",
           "id": "craggler",
           "label": "Craggler",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Craggler",
           "required": 1,
           "type": "journal"
         },
@@ -539,7 +539,7 @@
           "icon": "journal/Brushflit.png",
           "id": "brushflit",
           "label": "Brushflit",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Brushflit",
           "required": 15,
           "type": "journal"
         },
@@ -550,7 +550,7 @@
           "icon": "journal/Fertid.png",
           "id": "fertid",
           "label": "Fertid",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Fertid",
           "required": 25,
           "type": "journal"
         },
@@ -561,7 +561,7 @@
           "icon": "journal/Flapping_Fertid.png",
           "id": "flapping-fertid",
           "label": "Flapping Fertid",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Flapping_Fertid",
           "required": 21,
           "type": "journal"
         },
@@ -572,7 +572,7 @@
           "icon": "journal/Fourth_Chorus.png",
           "id": "fourth-chorus",
           "label": "Fourth Chorus",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Fourth_Chorus",
           "required": 1,
           "type": "journal"
         },
@@ -583,7 +583,7 @@
           "icon": "journal/Skarrlid.png",
           "id": "skarrlid",
           "label": "Skarrlid",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Skarrlid",
           "required": 25,
           "type": "journal"
         },
@@ -594,7 +594,7 @@
           "icon": "journal/Skarrwing.png",
           "id": "skarrwing",
           "label": "Skarrwing",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Skarrwing",
           "required": 31,
           "type": "journal"
         },
@@ -605,7 +605,7 @@
           "icon": "journal/Skarr_Scout.png",
           "id": "skarr-scout",
           "label": "Skarr Scout",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Skarr_Scout",
           "required": 21,
           "type": "journal"
         },
@@ -616,7 +616,7 @@
           "icon": "journal/Skarr_Stalker.png",
           "id": "skarr-stalker",
           "label": "Skarr Stalker",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Skarr_Stalker",
           "required": 15,
           "type": "journal"
         },
@@ -627,7 +627,7 @@
           "icon": "journal/Spear_Skarr.png",
           "id": "spear-skarr",
           "label": "Spear Skarr",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Spear_Skarr",
           "required": 11,
           "type": "journal"
         },
@@ -638,7 +638,7 @@
           "icon": "journal/Skarrgard.png",
           "id": "skarrgard",
           "label": "Skarrgard",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Skarrgard",
           "required": 2,
           "type": "journal"
         },
@@ -649,7 +649,7 @@
           "icon": "journal/Gurr_the_Outcast.png",
           "id": "gurr-the-outcast",
           "label": "Gurr the Outcast",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Gurr_the_Outcast",
           "required": 1,
           "type": "journal"
         },
@@ -660,7 +660,7 @@
           "icon": "journal/Last_Claw.png",
           "id": "last-claw",
           "label": "Last Claw",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Last_Claw",
           "required": 6,
           "type": "journal"
         },
@@ -671,7 +671,7 @@
           "icon": "journal/Skarrsinger_Karmelita.png",
           "id": "skarrsinger-karmelita",
           "label": "Skarrsinger Karmelita",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Skarrsinger_Karmelita",
           "required": 1,
           "type": "journal"
         },
@@ -682,7 +682,7 @@
           "icon": "journal/Mite.png",
           "id": "mite",
           "label": "Mite",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Mite",
           "required": 31,
           "type": "journal"
         },
@@ -693,7 +693,7 @@
           "icon": "journal/Fluttermite.png",
           "id": "fluttermite",
           "label": "Fluttermite",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Fluttermite",
           "required": 25,
           "type": "journal"
         },
@@ -704,7 +704,7 @@
           "icon": "journal/Mitemother.png",
           "id": "mitemother",
           "label": "Mitemother",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Mitemother",
           "required": 11,
           "type": "journal"
         },
@@ -715,7 +715,7 @@
           "icon": "journal/Dreg_Catcher.png",
           "id": "dreg-catcher",
           "label": "Dreg Catcher",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Dreg_Catcher",
           "required": 21,
           "type": "journal"
         },
@@ -726,7 +726,7 @@
           "icon": "journal/Silk_Snipper.png",
           "id": "silk-snipper",
           "label": "Silk Snipper",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Silk_Snipper",
           "required": 25,
           "type": "journal"
         },
@@ -737,7 +737,7 @@
           "icon": "journal/Thread_Raker.png",
           "id": "thread-raker",
           "label": "Thread Raker",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Thread_Raker",
           "required": 15,
           "type": "journal"
         },
@@ -748,7 +748,7 @@
           "icon": "journal/Moorwing.png",
           "id": "moorwing",
           "label": "Moorwing",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Moorwing",
           "required": 1,
           "type": "journal"
         },
@@ -759,7 +759,7 @@
           "icon": "journal/Wisp.png",
           "id": "wisp",
           "label": "Wisp",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Wisp",
           "required": 15,
           "type": "journal"
         },
@@ -770,7 +770,7 @@
           "icon": "journal/Burning_Bug.png",
           "id": "burning-bug",
           "label": "Burning Bug",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Burning_Bug",
           "required": 8,
           "type": "journal"
         },
@@ -781,7 +781,7 @@
           "icon": "journal/Father_of_the_Flame.png",
           "id": "father-of-the-flame",
           "label": "Father of the Flame",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Father_of_the_Flame",
           "required": 1,
           "type": "journal"
         },
@@ -792,7 +792,7 @@
           "icon": "journal/Craw.png",
           "id": "craw",
           "label": "Craw",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Craw",
           "required": 25,
           "type": "journal"
         },
@@ -803,7 +803,7 @@
           "icon": "journal/Tallcraw.png",
           "id": "tallcraw",
           "label": "Tallcraw",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Tallcraw",
           "required": 21,
           "type": "journal"
         },
@@ -814,7 +814,7 @@
           "icon": "journal/Squatcraw.png",
           "id": "squatcraw",
           "label": "Squatcraw",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Squatcraw",
           "required": 15,
           "type": "journal"
         },
@@ -825,7 +825,7 @@
           "icon": "journal/Craw_Juror.png",
           "id": "craw-juror",
           "label": "Craw Juror",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Craw_Juror",
           "required": 15,
           "type": "journal"
         },
@@ -836,7 +836,7 @@
           "icon": "journal/Tallcraw_Juror.png",
           "id": "tallcraw-juror",
           "label": "Tallcraw Juror",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Tallcraw_Juror",
           "required": 11,
           "type": "journal"
         },
@@ -847,7 +847,7 @@
           "icon": "journal/Squatcraw_Juror.png",
           "id": "squatcraw-juror",
           "label": "Squatcraw Juror",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Squatcraw_Juror",
           "required": 8,
           "type": "journal"
         },
@@ -858,7 +858,7 @@
           "icon": "journal/Crawfather.png",
           "id": "crawfather",
           "label": "Crawfather",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Crawfather",
           "required": 1,
           "type": "journal"
         },
@@ -869,7 +869,7 @@
           "icon": "journal/Muckmaggot.png",
           "id": "muckmaggot",
           "label": "Muckmaggot",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Muckmaggot",
           "required": 81,
           "type": "journal"
         },
@@ -880,7 +880,7 @@
           "icon": "journal/Slubberlug.png",
           "id": "slubberlug",
           "label": "Slubberlug",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Slubberlug",
           "required": 12,
           "type": "journal"
         },
@@ -891,7 +891,7 @@
           "icon": "journal/Muckroach.png",
           "id": "muckroach",
           "label": "Muckroach",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Muckroach",
           "required": 21,
           "type": "journal"
         },
@@ -902,7 +902,7 @@
           "icon": "journal/Bloatroach.png",
           "id": "bloatroach",
           "label": "Bloatroach",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Bloatroach",
           "required": 12,
           "type": "journal"
         },
@@ -913,7 +913,7 @@
           "icon": "journal/Roachcatcher.png",
           "id": "roachcatcher",
           "label": "Roachcatcher",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Roachcatcher",
           "required": 21,
           "type": "journal"
         },
@@ -924,7 +924,7 @@
           "icon": "journal/Roachfeeder.png",
           "id": "roachfeeder",
           "label": "Roachfeeder",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Roachfeeder",
           "required": 21,
           "type": "journal"
         },
@@ -935,7 +935,7 @@
           "icon": "journal/Roachkeeper.png",
           "id": "roachkeeper",
           "label": "Roachkeeper",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Roachkeeper",
           "required": 11,
           "type": "journal"
         },
@@ -946,7 +946,7 @@
           "icon": "journal/Roachserver.png",
           "id": "roachserver",
           "label": "Roachserver",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Roachserver",
           "required": 11,
           "type": "journal"
         },
@@ -957,7 +957,7 @@
           "icon": "journal/Disgraced_Chef_Lugoli.png",
           "id": "disgraced-chef-lugoli",
           "label": "Disgraced Chef Lugoli",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Disgraced_Chef_Lugoli",
           "required": 1,
           "type": "journal"
         },
@@ -968,7 +968,7 @@
           "icon": "journal/Wraith.png",
           "id": "wraith",
           "label": "Wraith",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Wraith",
           "required": 11,
           "type": "journal"
         },
@@ -979,7 +979,7 @@
           "icon": "journal/Mothleaf_Lagnia.png",
           "id": "mothleaf-lagnia",
           "label": "Mothleaf Lagnia",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Mothleaf_Lagnia",
           "required": 25,
           "type": "journal"
         },
@@ -990,7 +990,7 @@
           "icon": "journal/Miremite.png",
           "id": "miremite",
           "label": "Miremite",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Miremite",
           "required": 21,
           "type": "journal"
         },
@@ -1001,7 +1001,7 @@
           "icon": "journal/Swamp_Squit.png",
           "id": "swamp-squit",
           "label": "Swamp Squit",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Swamp_Squit",
           "required": 31,
           "type": "journal"
         },
@@ -1012,7 +1012,7 @@
           "icon": "journal/Spit_Squit.png",
           "id": "spit-squit",
           "label": "Spit Squit",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Spit_Squit",
           "required": 21,
           "type": "journal"
         },
@@ -1023,7 +1023,7 @@
           "icon": "journal/Stilkin.png",
           "id": "stilkin",
           "label": "Stilkin",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Stilkin",
           "required": 15,
           "type": "journal"
         },
@@ -1034,7 +1034,7 @@
           "icon": "journal/Stilkin_Trapper.png",
           "id": "stilkin-trapper",
           "label": "Stilkin Trapper",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Stilkin_Trapper",
           "required": 12,
           "type": "journal"
         },
@@ -1045,7 +1045,7 @@
           "icon": "journal/Groal_the_Great.png",
           "id": "groal-the-great",
           "label": "Groal the Great",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Groal_the_Great",
           "required": 1,
           "type": "journal"
         },
@@ -1056,7 +1056,7 @@
           "icon": "journal/Barnak.png",
           "id": "barnak",
           "label": "Barnak",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Barnak",
           "required": 8,
           "type": "journal"
         },
@@ -1067,7 +1067,7 @@
           "icon": "journal/Ductsucker.png",
           "id": "ductsucker",
           "label": "Ductsucker",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Ductsucker",
           "required": 6,
           "type": "journal"
         },
@@ -1078,7 +1078,7 @@
           "icon": "journal/Pond_Skipper.png",
           "id": "pond-skipper",
           "label": "Pond Skipper",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pond_Skipper",
           "required": 15,
           "type": "journal"
         },
@@ -1089,7 +1089,7 @@
           "icon": "journal/Pondcatcher.png",
           "id": "pondcatcher",
           "label": "Pondcatcher",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pondcatcher",
           "required": 21,
           "type": "journal"
         },
@@ -1100,7 +1100,7 @@
           "icon": "journal/Shellwood_Gnat.png",
           "id": "shellwood-gnat",
           "label": "Shellwood Gnat",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Shellwood_Gnat",
           "required": 15,
           "type": "journal"
         },
@@ -1111,7 +1111,7 @@
           "icon": "journal/Wood_Wasp.png",
           "id": "wood-wasp",
           "label": "Wood Wasp",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Wood_Wasp",
           "required": 12,
           "type": "journal"
         },
@@ -1122,7 +1122,7 @@
           "icon": "journal/Splinter.png",
           "id": "splinter",
           "label": "Splinter",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Splinter",
           "required": 12,
           "type": "journal"
         },
@@ -1133,7 +1133,7 @@
           "icon": "journal/Splinterhorn.png",
           "id": "splinterhorn",
           "label": "Splinterhorn",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Splinterhorn",
           "required": 11,
           "type": "journal"
         },
@@ -1144,7 +1144,7 @@
           "icon": "journal/Splinterbark.png",
           "id": "splinterbark",
           "label": "Splinterbark",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Splinterbark",
           "required": 11,
           "type": "journal"
         },
@@ -1155,7 +1155,7 @@
           "icon": "journal/Sister_Splinter.png",
           "id": "sister-splinter",
           "label": "Sister Splinter",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Sister_Splinter",
           "required": 1,
           "type": "journal"
         },
@@ -1166,7 +1166,7 @@
           "icon": "journal/Phacia.png",
           "id": "phacia",
           "label": "Phacia",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Phacia",
           "required": 25,
           "type": "journal"
         },
@@ -1177,7 +1177,7 @@
           "icon": "journal/Pollenica.png",
           "id": "pollenica",
           "label": "Pollenica",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pollenica",
           "required": 11,
           "type": "journal"
         },
@@ -1188,7 +1188,7 @@
           "icon": "journal/Gahlia.png",
           "id": "gahlia",
           "label": "Gahlia",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Gahlia",
           "required": 21,
           "type": "journal"
         },
@@ -1199,7 +1199,7 @@
           "icon": "journal/Shrine_Guardian_Seth.png",
           "id": "shrine-guardian-seth",
           "label": "Shrine Guardian Seth",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Shrine_Guardian_Seth",
           "required": 1,
           "type": "journal"
         },
@@ -1210,7 +1210,7 @@
           "icon": "journal/Nyleth.png",
           "id": "nyleth",
           "label": "Nyleth",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Nyleth",
           "required": 1,
           "type": "journal"
         },
@@ -1221,7 +1221,7 @@
           "icon": "journal/Furm.png",
           "id": "furm",
           "label": "Furm",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Furm",
           "required": 25,
           "type": "journal"
         },
@@ -1232,7 +1232,7 @@
           "icon": "journal/Winged_Furm.png",
           "id": "winged-furm",
           "label": "Winged Furm",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Winged_Furm",
           "required": 12,
           "type": "journal"
         },
@@ -1243,7 +1243,7 @@
           "icon": "journal/Pharlid.png",
           "id": "pharlid",
           "label": "Pharlid",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pharlid",
           "required": 21,
           "type": "journal"
         },
@@ -1254,7 +1254,7 @@
           "icon": "journal/Pharlid_Diver.png",
           "id": "pharlid-diver",
           "label": "Pharlid Diver",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pharlid_Diver",
           "required": 11,
           "type": "journal"
         },
@@ -1265,7 +1265,7 @@
           "icon": "journal/Shardillard.png",
           "id": "shardillard",
           "label": "Shardillard",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Shardillard",
           "required": 3,
           "type": "journal"
         },
@@ -1276,7 +1276,7 @@
           "icon": "journal/Sandcarver.png",
           "id": "sandcarver",
           "label": "Sandcarver",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Sandcarver",
           "required": 41,
           "type": "journal"
         },
@@ -1287,7 +1287,7 @@
           "icon": "journal/Squirrm.png",
           "id": "squirrm",
           "label": "Squirrm",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Squirrm",
           "required": 4,
           "type": "journal"
         },
@@ -1298,7 +1298,7 @@
           "icon": "journal/Judge.png",
           "id": "judge",
           "label": "Judge",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Judge",
           "required": 15,
           "type": "journal"
         },
@@ -1309,7 +1309,7 @@
           "icon": "journal/Last_Judge.png",
           "id": "last-judge",
           "label": "Last Judge",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Last_Judge",
           "required": 1,
           "type": "journal"
         },
@@ -1320,7 +1320,7 @@
           "icon": "journal/Coral_Furm.png",
           "id": "coral-furm",
           "label": "Coral Furm",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Coral_Furm",
           "required": 15,
           "type": "journal"
         },
@@ -1331,7 +1331,7 @@
           "icon": "journal/Driznit.png",
           "id": "driznit",
           "label": "Driznit",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Driznit",
           "required": 25,
           "type": "journal"
         },
@@ -1342,7 +1342,7 @@
           "icon": "journal/Driznarga.png",
           "id": "driznarga",
           "label": "Driznarga",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Driznarga",
           "required": 14,
           "type": "journal"
         },
@@ -1353,7 +1353,7 @@
           "icon": "journal/Pokenabbin.png",
           "id": "pokenabbin",
           "label": "Pokenabbin",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pokenabbin",
           "required": 16,
           "type": "journal"
         },
@@ -1364,7 +1364,7 @@
           "icon": "journal/Conchfly.png",
           "id": "conchfly",
           "label": "Conchfly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Conchfly",
           "required": 8,
           "type": "journal"
         },
@@ -1375,7 +1375,7 @@
           "icon": "journal/Great_Conchfly.png",
           "id": "great-conchfly",
           "label": "Great Conchfly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Great_Conchfly",
           "required": 2,
           "type": "journal"
         },
@@ -1386,7 +1386,7 @@
           "icon": "journal/Crustcrawler.png",
           "id": "crustcrawler",
           "label": "Crustcrawler",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Crustcrawler",
           "required": 11,
           "type": "journal"
         },
@@ -1397,7 +1397,7 @@
           "icon": "journal/Crustcrag.png",
           "id": "crustcrag",
           "label": "Crustcrag",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Crustcrag",
           "required": 6,
           "type": "journal"
         },
@@ -1408,7 +1408,7 @@
           "icon": "journal/Kai.png",
           "id": "kai",
           "label": "Kai",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Kai",
           "required": 11,
           "type": "journal"
         },
@@ -1419,7 +1419,7 @@
           "icon": "journal/Spinebeak_Kai.png",
           "id": "spinebeak-kai",
           "label": "Spinebeak Kai",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Spinebeak_Kai",
           "required": 11,
           "type": "journal"
         },
@@ -1430,7 +1430,7 @@
           "icon": "journal/Steelspine_Kai.png",
           "id": "steelspine-kai",
           "label": "Steelspine Kai",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Steelspine_Kai",
           "required": 15,
           "type": "journal"
         },
@@ -1441,7 +1441,7 @@
           "icon": "journal/Yuma.png",
           "id": "yuma",
           "label": "Yuma",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Yuma",
           "required": 16,
           "type": "journal"
         },
@@ -1452,7 +1452,7 @@
           "icon": "journal/Yumama.png",
           "id": "yumama",
           "label": "Yumama",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Yumama",
           "required": 3,
           "type": "journal"
         },
@@ -1463,7 +1463,7 @@
           "icon": "journal/Karaka.png",
           "id": "karaka",
           "label": "Karaka",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Karaka",
           "required": 11,
           "type": "journal"
         },
@@ -1474,7 +1474,7 @@
           "icon": "journal/Kakri.png",
           "id": "kakri",
           "label": "Kakri",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Kakri",
           "required": 11,
           "type": "journal"
         },
@@ -1485,7 +1485,7 @@
           "icon": "journal/Yago.png",
           "id": "yago",
           "label": "Yago",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Yago",
           "required": 12,
           "type": "journal"
         },
@@ -1496,7 +1496,7 @@
           "icon": "journal/Karak_Gor.png",
           "id": "karak-gor",
           "label": "Karak Gor",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Karak_Gor",
           "required": 8,
           "type": "journal"
         },
@@ -1507,7 +1507,7 @@
           "icon": "journal/Alita.png",
           "id": "alita",
           "label": "Alita",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Alita",
           "required": 6,
           "type": "journal"
         },
@@ -1518,7 +1518,7 @@
           "icon": "journal/Corrcrust_Karaka.png",
           "id": "corrcrust-karaka",
           "label": "Corrcrust Karaka",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Corrcrust_Karaka",
           "required": 6,
           "type": "journal"
         },
@@ -1529,7 +1529,7 @@
           "icon": "journal/Crust_King_Khann.png",
           "id": "crust-king-khann",
           "label": "Crust King Khann",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Crust_King_Khann",
           "required": 1,
           "type": "journal"
         },
@@ -1540,7 +1540,7 @@
           "icon": "journal/Watcher_at_the_Edge.png",
           "id": "watcher-at-the-edge",
           "label": "Watcher at the Edge",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Watcher_at_the_Edge",
           "required": 1,
           "type": "journal"
         },
@@ -1551,7 +1551,7 @@
           "icon": "journal/Voltvyrm.png",
           "id": "voltvyrm",
           "label": "Voltvyrm",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Voltvyrm",
           "required": 1,
           "type": "journal"
         },
@@ -1562,7 +1562,7 @@
           "icon": "journal/Drapefly.png",
           "id": "drapefly",
           "label": "Drapefly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Drapefly",
           "required": 31,
           "type": "journal"
         },
@@ -1573,7 +1573,7 @@
           "icon": "journal/Drapelord.png",
           "id": "drapelord",
           "label": "Drapelord",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Drapelord",
           "required": 4,
           "type": "journal"
         },
@@ -1584,7 +1584,7 @@
           "icon": "journal/Drapemite.png",
           "id": "drapemite",
           "label": "Drapemite",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Drapemite",
           "required": 21,
           "type": "journal"
         },
@@ -1595,7 +1595,7 @@
           "icon": "journal/Giant_Drapemite.png",
           "id": "giant-drapemite",
           "label": "Giant Drapemite",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Giant_Drapemite",
           "required": 6,
           "type": "journal"
         },
@@ -1606,7 +1606,7 @@
           "icon": "journal/Underworker.png",
           "id": "underworker",
           "label": "Underworker",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Underworker",
           "required": 15,
           "type": "journal"
         },
@@ -1617,7 +1617,7 @@
           "icon": "journal/Underscrub.png",
           "id": "underscrub",
           "label": "Underscrub",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Underscrub",
           "required": 21,
           "type": "journal"
         },
@@ -1628,7 +1628,7 @@
           "icon": "journal/Undersweep.png",
           "id": "undersweep",
           "label": "Undersweep",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Undersweep",
           "required": 11,
           "type": "journal"
         },
@@ -1639,7 +1639,7 @@
           "icon": "journal/Underpoke.png",
           "id": "underpoke",
           "label": "Underpoke",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Underpoke",
           "required": 25,
           "type": "journal"
         },
@@ -1650,7 +1650,7 @@
           "icon": "journal/Underloft.png",
           "id": "underloft",
           "label": "Underloft",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Underloft",
           "required": 25,
           "type": "journal"
         },
@@ -1661,7 +1661,7 @@
           "icon": "journal/Undercrank.png",
           "id": "undercrank",
           "label": "Undercrank",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Undercrank",
           "required": 4,
           "type": "journal"
         },
@@ -1672,7 +1672,7 @@
           "icon": "journal/Envoy.png",
           "id": "envoy",
           "label": "Envoy",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Envoy",
           "required": 21,
           "type": "journal"
         },
@@ -1683,7 +1683,7 @@
           "icon": "journal/Choir_Pouncer.png",
           "id": "choir-pouncer",
           "label": "Choir Pouncer",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Choir_Pouncer",
           "required": 31,
           "type": "journal"
         },
@@ -1694,7 +1694,7 @@
           "icon": "journal/Choir_Hornhead.png",
           "id": "choir-hornhead",
           "label": "Choir Hornhead",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Choir_Hornhead",
           "required": 15,
           "type": "journal"
         },
@@ -1705,7 +1705,7 @@
           "icon": "journal/Choir_Bellbearer.png",
           "id": "choir-bellbearer",
           "label": "Choir Bellbearer",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Choir_Bellbearer",
           "required": 25,
           "type": "journal"
         },
@@ -1716,7 +1716,7 @@
           "icon": "journal/Choir_Flyer.png",
           "id": "choir-flyer",
           "label": "Choir Flyer",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Choir_Flyer",
           "required": 21,
           "type": "journal"
         },
@@ -1727,7 +1727,7 @@
           "icon": "journal/Choir_Elder.png",
           "id": "choir-elder",
           "label": "Choir Elder",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Choir_Elder",
           "required": 6,
           "type": "journal"
         },
@@ -1738,7 +1738,7 @@
           "icon": "journal/Choristor.png",
           "id": "choristor",
           "label": "Choristor",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Choristor",
           "required": 25,
           "type": "journal"
         },
@@ -1749,7 +1749,7 @@
           "icon": "journal/Reed.png",
           "id": "reed",
           "label": "Reed",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Reed",
           "required": 31,
           "type": "journal"
         },
@@ -1760,7 +1760,7 @@
           "icon": "journal/Grand_Reed.png",
           "id": "grand-reed",
           "label": "Grand Reed",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Grand_Reed",
           "required": 12,
           "type": "journal"
         },
@@ -1771,7 +1771,7 @@
           "icon": "journal/Choir_Clapper.png",
           "id": "choir-clapper",
           "label": "Choir Clapper",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Choir_Clapper",
           "required": 3,
           "type": "journal"
         },
@@ -1782,7 +1782,7 @@
           "icon": "journal/Clawmaiden.png",
           "id": "clawmaiden",
           "label": "Clawmaiden",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Clawmaiden",
           "required": 11,
           "type": "journal"
         },
@@ -1793,7 +1793,7 @@
           "icon": "journal/Memoria.png",
           "id": "memoria",
           "label": "Memoria",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Memoria",
           "required": 2,
           "type": "journal"
         },
@@ -1804,7 +1804,7 @@
           "icon": "journal/Minister.png",
           "id": "minister",
           "label": "Minister",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Minister",
           "required": 15,
           "type": "journal"
         },
@@ -1815,7 +1815,7 @@
           "icon": "journal/Maestro.png",
           "id": "maestro",
           "label": "Maestro",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Maestro",
           "required": 6,
           "type": "journal"
         },
@@ -1826,7 +1826,7 @@
           "icon": "journal/Second_Sentinel.png",
           "id": "second-sentinel",
           "label": "Second Sentinel",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Second_Sentinel",
           "required": 1,
           "type": "journal"
         },
@@ -1837,7 +1837,7 @@
           "icon": "journal/Dreg_Husk.png",
           "id": "dreg-husk",
           "label": "Dreg Husk",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Dreg_Husk",
           "required": 8,
           "type": "journal"
         },
@@ -1848,7 +1848,7 @@
           "icon": "journal/Dregwheel.png",
           "id": "dregwheel",
           "label": "Dregwheel",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Dregwheel",
           "required": 8,
           "type": "journal"
         },
@@ -1859,7 +1859,7 @@
           "icon": "journal/Surgeon.png",
           "id": "surgeon",
           "label": "Surgeon",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Surgeon",
           "required": 3,
           "type": "journal"
         },
@@ -1870,7 +1870,7 @@
           "icon": "journal/Mortician.png",
           "id": "mortician",
           "label": "Mortician",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Mortician",
           "required": 11,
           "type": "journal"
         },
@@ -1881,7 +1881,7 @@
           "icon": "journal/The_Unravelled.png",
           "id": "the-unravelled",
           "label": "The Unravelled",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/The_Unravelled",
           "required": 1,
           "type": "journal"
         },
@@ -1892,7 +1892,7 @@
           "icon": "journal/Cogwork_Underfly.png",
           "id": "cogwork-underfly",
           "label": "Cogwork Underfly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cogwork_Underfly",
           "required": 25,
           "type": "journal"
         },
@@ -1903,7 +1903,7 @@
           "icon": "journal/Cogwork_Hauler.png",
           "id": "cogwork-hauler",
           "label": "Cogwork Hauler",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cogwork_Hauler",
           "required": 12,
           "type": "journal"
         },
@@ -1914,7 +1914,7 @@
           "icon": "journal/Cogwork_Crawler.png",
           "id": "cogwork-crawler",
           "label": "Cogwork Crawler",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cogwork_Crawler",
           "required": 15,
           "type": "journal"
         },
@@ -1925,7 +1925,7 @@
           "icon": "journal/Cogworker.png",
           "id": "cogworker",
           "label": "Cogworker",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cogworker",
           "required": 15,
           "type": "journal"
         },
@@ -1936,7 +1936,7 @@
           "icon": "journal/Cogwork_Spine.png",
           "id": "cogwork-spine",
           "label": "Cogwork Spine",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cogwork_Spine",
           "required": 11,
           "type": "journal"
         },
@@ -1947,7 +1947,7 @@
           "icon": "journal/Cogwork_Choirbug.png",
           "id": "cogwork-choirbug",
           "label": "Cogwork Choirbug",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cogwork_Choirbug",
           "required": 21,
           "type": "journal"
         },
@@ -1958,7 +1958,7 @@
           "icon": "journal/Cogwork_Cleanser.png",
           "id": "cogwork-cleanser",
           "label": "Cogwork Cleanser",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cogwork_Cleanser",
           "required": 12,
           "type": "journal"
         },
@@ -1969,7 +1969,7 @@
           "icon": "journal/Cogwork_Defender.png",
           "id": "cogwork-defender",
           "label": "Cogwork Defender",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cogwork_Defender",
           "required": 8,
           "type": "journal"
         },
@@ -1980,7 +1980,7 @@
           "icon": "journal/Cogwork_Clapper.png",
           "id": "cogwork-clapper",
           "label": "Cogwork Clapper",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cogwork_Clapper",
           "required": 1,
           "type": "journal"
         },
@@ -1991,7 +1991,7 @@
           "icon": "journal/Cogwork_Dancers.png",
           "id": "cogwork-dancers",
           "label": "Cogwork Dancers",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cogwork_Dancers",
           "required": 1,
           "type": "journal"
         },
@@ -2002,7 +2002,7 @@
           "icon": "journal/Vaultborn.png",
           "id": "vaultborn",
           "label": "Vaultborn",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Vaultborn",
           "required": 21,
           "type": "journal"
         },
@@ -2013,7 +2013,7 @@
           "icon": "journal/Lampbearer.png",
           "id": "lampbearer",
           "label": "Lampbearer",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Lampbearer",
           "required": 21,
           "type": "journal"
         },
@@ -2024,7 +2024,7 @@
           "icon": "journal/Scrollreader.png",
           "id": "scrollreader",
           "label": "Scrollreader",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Scrollreader",
           "required": 15,
           "type": "journal"
         },
@@ -2035,7 +2035,7 @@
           "icon": "journal/Vaultkeeper.png",
           "id": "vaultkeeper",
           "label": "Vaultkeeper",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Vaultkeeper",
           "required": 11,
           "type": "journal"
         },
@@ -2046,7 +2046,7 @@
           "icon": "journal/Trobbio.png",
           "id": "trobbio",
           "label": "Trobbio",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Trobbio",
           "required": 1,
           "type": "journal"
         },
@@ -2057,7 +2057,7 @@
           "icon": "journal/Tormented_Trobbio.png",
           "id": "tormented-trobbio",
           "label": "Tormented Trobbio",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Tormented_Trobbio",
           "required": 1,
           "type": "journal"
         },
@@ -2068,7 +2068,7 @@
           "icon": "journal/Penitent.png",
           "id": "penitent",
           "label": "Penitent",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Penitent",
           "required": 8,
           "type": "journal"
         },
@@ -2079,7 +2079,7 @@
           "icon": "journal/Puny_Penitent.png",
           "id": "puny-penitent",
           "label": "Puny Penitent",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Puny_Penitent",
           "required": 6,
           "type": "journal"
         },
@@ -2090,7 +2090,7 @@
           "icon": "journal/Freshfly.png",
           "id": "freshfly",
           "label": "Freshfly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Freshfly",
           "required": 21,
           "type": "journal"
         },
@@ -2101,7 +2101,7 @@
           "icon": "journal/Scabfly.png",
           "id": "scabfly",
           "label": "Scabfly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Scabfly",
           "required": 15,
           "type": "journal"
         },
@@ -2112,7 +2112,7 @@
           "icon": "journal/Guardfly.png",
           "id": "guardfly",
           "label": "Guardfly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Guardfly",
           "required": 11,
           "type": "journal"
         },
@@ -2123,7 +2123,7 @@
           "icon": "journal/Wardenfly.png",
           "id": "wardenfly",
           "label": "Wardenfly",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Wardenfly",
           "required": 8,
           "type": "journal"
         },
@@ -2134,7 +2134,7 @@
           "icon": "journal/Broodmother.png",
           "id": "broodmother",
           "label": "Broodmother",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Broodmother",
           "required": 1,
           "type": "journal"
         },
@@ -2145,7 +2145,7 @@
           "icon": "journal/Driftlin.png",
           "id": "driftlin",
           "label": "Driftlin",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Driftlin",
           "required": 21,
           "type": "journal"
         },
@@ -2156,7 +2156,7 @@
           "icon": "journal/Mnemonid.png",
           "id": "mnemonid",
           "label": "Mnemonid",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Mnemonid",
           "required": 11,
           "type": "journal"
         },
@@ -2167,7 +2167,7 @@
           "icon": "journal/Mnemonord.png",
           "id": "mnemonord",
           "label": "Mnemonord",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Mnemonord",
           "required": 3,
           "type": "journal"
         },
@@ -2178,7 +2178,7 @@
           "icon": "journal/Servitor_Ignim.png",
           "id": "servitor-ignim",
           "label": "Servitor Ignim",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Servitor_Ignim",
           "required": 8,
           "type": "journal"
         },
@@ -2189,7 +2189,7 @@
           "icon": "journal/Servitor_Boran.png",
           "id": "servitor-boran",
           "label": "Servitor Boran",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Servitor_Boran",
           "required": 5,
           "type": "journal"
         },
@@ -2200,7 +2200,7 @@
           "icon": "journal/Winged_Lifeseed.png",
           "id": "winged-lifeseed",
           "label": "Winged Lifeseed",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Winged_Lifeseed",
           "required": 8,
           "type": "journal"
         },
@@ -2211,7 +2211,7 @@
           "icon": "journal/Plasmid.png",
           "id": "plasmid",
           "label": "Plasmid",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Plasmid",
           "required": 15,
           "type": "journal"
         },
@@ -2222,7 +2222,7 @@
           "icon": "journal/Plasmidas.png",
           "id": "plasmidas",
           "label": "Plasmidas",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Plasmidas",
           "required": 6,
           "type": "journal"
         },
@@ -2233,7 +2233,7 @@
           "icon": "journal/Plasmified_Zango.png",
           "id": "plasmified-zango",
           "label": "Plasmified Zango",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Plasmified_Zango",
           "required": 1,
           "type": "journal"
         },
@@ -2244,7 +2244,7 @@
           "icon": "journal/Leaf_Glider.png",
           "id": "leaf-glider",
           "label": "Leaf Glider",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Leaf_Glider",
           "required": 12,
           "type": "journal"
         },
@@ -2255,7 +2255,7 @@
           "icon": "journal/Leaf_Roller.png",
           "id": "leaf-roller",
           "label": "Leaf Roller",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Leaf_Roller",
           "required": 11,
           "type": "journal"
         },
@@ -2266,7 +2266,7 @@
           "icon": "journal/Pendra.png",
           "id": "pendra",
           "label": "Pendra",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pendra",
           "required": 11,
           "type": "journal"
         },
@@ -2277,7 +2277,7 @@
           "icon": "journal/Pendragor.png",
           "id": "pendragor",
           "label": "Pendragor",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pendragor",
           "required": 11,
           "type": "journal"
         },
@@ -2288,7 +2288,7 @@
           "icon": "journal/Nuphar.png",
           "id": "nuphar",
           "label": "Nuphar",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Nuphar",
           "required": 6,
           "type": "journal"
         },
@@ -2299,7 +2299,7 @@
           "icon": "journal/Cloverstag.png",
           "id": "cloverstag",
           "label": "Cloverstag",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Cloverstag",
           "required": 11,
           "type": "journal"
         },
@@ -2310,7 +2310,7 @@
           "icon": "journal/Palestag.png",
           "id": "palestag",
           "label": "Palestag",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Palestag",
           "required": 1,
           "type": "journal"
         },
@@ -2321,7 +2321,7 @@
           "icon": "journal/Kindanir.png",
           "id": "kindanir",
           "label": "Kindanir",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Kindanir",
           "required": 11,
           "type": "journal"
         },
@@ -2332,7 +2332,7 @@
           "icon": "journal/Verdanir.png",
           "id": "verdanir",
           "label": "Verdanir",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Verdanir",
           "required": 11,
           "type": "journal"
         },
@@ -2343,7 +2343,7 @@
           "icon": "journal/Escalion.png",
           "id": "escalion",
           "label": "Escalion",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Escalion",
           "required": 11,
           "type": "journal"
         },
@@ -2354,7 +2354,7 @@
           "icon": "journal/Clover_Dancers.png",
           "id": "clover-dancers",
           "label": "Clover Dancers",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Clover_Dancers",
           "required": 1,
           "type": "journal"
         },
@@ -2365,7 +2365,7 @@
           "icon": "journal/Shadow_Creeper.png",
           "id": "shadow-creeper",
           "label": "Shadow Creeper",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Shadow_Creeper",
           "required": 16,
           "type": "journal"
         },
@@ -2376,7 +2376,7 @@
           "icon": "journal/Shadow_Charger.png",
           "id": "shadow-charger",
           "label": "Shadow Charger",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Shadow_Charger",
           "required": 6,
           "type": "journal"
         },
@@ -2387,7 +2387,7 @@
           "icon": "journal/Gloomsac.png",
           "id": "gloomsac",
           "label": "Gloomsac",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Gloomsac",
           "required": 15,
           "type": "journal"
         },
@@ -2398,7 +2398,7 @@
           "icon": "journal/Gargant_Gloom.png",
           "id": "gargant-gloom",
           "label": "Gargant Gloom",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Gargant_Gloom",
           "required": 4,
           "type": "journal"
         },
@@ -2409,7 +2409,7 @@
           "icon": "journal/Void_Tendrils.png",
           "id": "void-tendrils",
           "label": "Void Tendrils",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Void_Tendrils",
           "required": 1,
           "type": "journal"
         },
@@ -2420,7 +2420,7 @@
           "icon": "journal/Void_Mass.png",
           "id": "void-mass",
           "label": "Void Mass",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Void_Mass",
           "required": 8,
           "type": "journal"
         },
@@ -2431,7 +2431,7 @@
           "icon": "journal/Summoned_Saviour.png",
           "id": "summoned-saviour",
           "label": "Summoned Saviour",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Summoned_Saviour",
           "required": 1,
           "type": "journal"
         },
@@ -2442,7 +2442,7 @@
           "icon": "journal/Wingmould.png",
           "id": "wingmould",
           "label": "Wingmould",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Wingmould",
           "required": 11,
           "type": "journal"
         },
@@ -2453,7 +2453,7 @@
           "icon": "journal/Garpid.png",
           "id": "garpid",
           "label": "Garpid",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Garpid",
           "required": 31,
           "type": "journal"
         },
@@ -2464,7 +2464,7 @@
           "icon": "journal/Imoba.png",
           "id": "imoba",
           "label": "Imoba",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Imoba",
           "required": 4,
           "type": "journal"
         },
@@ -2475,7 +2475,7 @@
           "icon": "journal/Skrill.png",
           "id": "skrill",
           "label": "Skrill",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Skrill",
           "required": 11,
           "type": "journal"
         },
@@ -2486,7 +2486,7 @@
           "icon": "journal/Bell_Eater.png",
           "id": "bell-eater",
           "label": "Bell Eater",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Bell_Eater",
           "required": 1,
           "type": "journal"
         },
@@ -2497,7 +2497,7 @@
           "icon": "journal/Huge_Flea.png",
           "id": "huge-flea",
           "label": "Huge Flea",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Huge_Flea",
           "required": 1,
           "type": "journal"
         },
@@ -2508,7 +2508,7 @@
           "icon": "journal/Shakra.png",
           "id": "shakra",
           "label": "Shakra",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Shakra",
           "required": 1,
           "type": "journal"
         },
@@ -2519,7 +2519,7 @@
           "icon": "journal/Garmond_&_Zaza.png",
           "id": "garmond-&-zaza",
           "label": "Garmond & Zaza",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Garmond_&_Zaza",
           "required": 1,
           "type": "journal"
         },
@@ -2530,7 +2530,7 @@
           "icon": "journal/Lost_Garmond.png",
           "id": "lost-garmond",
           "label": "Lost Garmond",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Lost_Garmond",
           "required": 1,
           "type": "journal"
         },
@@ -2541,7 +2541,7 @@
           "icon": "journal/Pinstress.png",
           "id": "pinstress",
           "label": "Pinstress",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Pinstress",
           "required": 1,
           "type": "journal"
         },
@@ -2552,7 +2552,7 @@
           "icon": "journal/Widow.png",
           "id": "widow",
           "label": "Widow",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Widow",
           "required": 1,
           "type": "journal"
         },
@@ -2563,7 +2563,7 @@
           "icon": "journal/First_Sinner.png",
           "id": "first-sinner",
           "label": "First Sinner",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/First_Sinner",
           "required": 1,
           "type": "journal"
         },
@@ -2574,7 +2574,7 @@
           "icon": "journal/Phantom.png",
           "id": "phantom",
           "label": "Phantom",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Phantom",
           "required": 1,
           "type": "journal"
         },
@@ -2585,7 +2585,7 @@
           "icon": "journal/Lace.png",
           "id": "lace",
           "label": "Lace",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Lace",
           "required": 2,
           "type": "journal"
         },
@@ -2596,7 +2596,7 @@
           "icon": "journal/Grand_Mother_Silk.png",
           "id": "grand-mother-silk",
           "label": "Grand Mother Silk",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Grand_Mother_Silk",
           "required": 1,
           "type": "journal"
         },
@@ -2607,7 +2607,7 @@
           "icon": "journal/Lost_Lace.png",
           "id": "lost-lace",
           "label": "Lost Lace",
-          "link": "",
+          "link": "https://hollowknight.wiki/w/Lost_Lace",
           "required": 1,
           "type": "journal"
         }
