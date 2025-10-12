@@ -11,7 +11,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "label", "desc", "items"],
+        "required": ["desc", "id", "items", "label"],
         "additionalProperties": false,
         "properties": {
           "id": {
@@ -28,13 +28,13 @@
             "items": {
               "type": "object",
               "required": [
+                "act",
+                "description",
+                "icon",
                 "id",
                 "label",
-                "icon",
-                "type",
-                "description",
                 "link",
-                "act"
+                "type"
               ],
               "additionalProperties": false,
               "properties": {

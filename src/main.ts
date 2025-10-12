@@ -708,10 +708,10 @@ function renderGenericGrid(
     }
 
     div.id = `${realContainerId}-${item.id}`;
-    div.dataset["flag"] = item.flag;
+    div.dataset["flag"] = flag;
 
     const img = document.createElement("img");
-    img.alt = item.label;
+    img.alt = item.label ?? "";
 
     // Value from save file (quest can now return "completed" or "accepted")
     const value = getSaveDataValue(
