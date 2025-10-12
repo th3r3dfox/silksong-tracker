@@ -2890,3 +2890,23 @@ main {
   color: #d7b98a;
   font-family: "TrajanPro", serif;
 }
+
+.map-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 180px);
+  cursor: grab;
+  background-color: #000;
+}
+
+.map-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.05s linear;
+  user-select: none;
+  pointer-events: none;
+}
