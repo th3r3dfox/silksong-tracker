@@ -26,16 +26,6 @@ function getHTMLInputElement(id: string): HTMLInputElement {
   return element;
 }
 
-function getCheckboxes(element: HTMLElement): readonly HTMLInputElement[] {
-  const checkboxesList = element.querySelectorAll<HTMLInputElement>(
-    "input[type='checkbox']",
-  );
-
-  // The spread operator does not convert to an array.
-  // eslint-disable-next-line unicorn/prefer-spread
-  return Array.from(checkboxesList);
-}
-
 export function getHTMLElements(
   parentElement: Document | Element,
   selector: string,
@@ -47,10 +37,6 @@ export function getHTMLElements(
   return Array.from(nodeListOfElement);
 }
 
-export const actClearBtn = getHTMLElement("actClearBtn");
-export const actDropdownBtn = getHTMLElement("actDropdownBtn");
-export const actDropdownMenu = getHTMLElement("actDropdownMenu");
-export const actDropdownMenuCheckboxes = getCheckboxes(actDropdownMenu);
 export const allProgressGrid = getHTMLElement("allprogress-grid");
 export const backToTop = getHTMLElement("backToTop");
 export const closeInfoModal = getHTMLElement("closeInfoModal");
