@@ -103,15 +103,11 @@ actClearBtn.addEventListener("click", () => {
   }
   actClearBtn.textContent = allChecked ? "Select All" : "Deselect All";
 
-  // We do not have to await this since it is the last operation in the callback.
-  // eslint-disable-next-line @typescript-eslint/no-floating-promises
   updateActFilter();
 });
 
 // Update filter when any checkbox changes.
 for (const checkbox of actDropdownMenuCheckboxes) {
-  // We do not have to await this since it is the last operation in the callback.
-  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   checkbox.addEventListener("change", updateActFilter);
 }
 
@@ -161,7 +157,7 @@ function getCurrentActFilter(): readonly Act[] {
 }
 
 // Core update function
-async function updateActFilter() {
+function updateActFilter() {
   const checkedCheckboxes = actDropdownMenuCheckboxes.filter(
     (checkbox) => checkbox.checked,
   );
@@ -180,7 +176,7 @@ async function updateActFilter() {
   const selectedActsString = JSON.stringify(selectedActs);
   localStorage.setItem("currentActFilter", selectedActsString);
 
-  await reRenderActiveTab();
+  reRenderActiveTab();
 }
 
 let currentLoadedSaveData: SilksongSave | undefined;
@@ -223,9 +219,6 @@ spoilerToggle.addEventListener("change", () => {
   const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
   localStorage.setItem("showSpoilers", spoilerChecked.toString());
-
-  // We do not have to await this since it is the last operation in the callback.
-  // eslint-disable-next-line @typescript-eslint/no-floating-promises
   reRenderActiveTab();
 });
 
@@ -681,12 +674,12 @@ function renderGenericGrid(
   for (const item of items) {
     const flag = item.type === "sceneVisited" ? undefined : item.flag;
 
-    // Silkshot → show only 1 variant.
+    // Silkshot --> show only 1 variant.
     if (flag !== undefined && silkVariants.includes(flag)) {
-      if (unlockedSilkVariant && flag !== unlockedSilkVariant) {
+      if (unlockedSilkVariant !== undefined && flag !== unlockedSilkVariant) {
         continue;
       }
-      if (!unlockedSilkVariant && flag !== "WebShot Architect") {
+      if (unlockedSilkVariant === undefined && flag !== "WebShot Architect") {
         continue;
       }
     }
@@ -812,17 +805,23 @@ function renderGenericGrid(
       img.src = lockedPath;
       div.classList.add("locked");
 
-      div.addEventListener("mouseenter", () => (img.src = iconPath));
-      div.addEventListener("mouseleave", () => (img.src = lockedPath));
+      div.addEventListener("mouseenter", () => {
+        img.src = iconPath;
+      });
+      div.addEventListener("mouseleave", () => {
+        img.src = lockedPath;
+      });
     }
 
     // Title + modal
     const title = document.createElement("div");
     title.className = "title";
     title.textContent =
-      flag !== undefined && silkVariants.includes(flag) && !unlockedSilkVariant
+      flag !== undefined
+      && silkVariants.includes(flag)
+      && unlockedSilkVariant === undefined
         ? "Silkshot"
-        : (item.label ?? "");
+        : item.label;
 
     div.append(img);
     div.append(title);
@@ -837,13 +836,15 @@ function renderGenericGrid(
   return renderedCount;
 }
 
-// ---------- FILE HANDLING ----------
-fileInput.addEventListener("change", (event) => {
+fileInput.addEventListener("change", () => {
   const file = fileInput.files?.[0];
+
+  // We do not have to await this since it is the last operation in the callback.
+  // eslint-disable-next-line @typescript-eslint/no-floating-promises
   handleSaveFile(file);
 });
 
-async function updateRawSaveContent() {
+function updateRawSaveContent() {
   if (currentLoadedSaveData === undefined) {
     rawSaveOutput.textContent = "⚠️ No save file loaded.";
     return;
@@ -861,11 +862,10 @@ async function updateRawSaveContent() {
   }
 }
 
-// --- RAWSAVE TOOLS ---
 document.addEventListener("DOMContentLoaded", () => {
-  // 📋 Copy JSON
+  // Copy JSON
   copyRawsaveBtn.addEventListener("click", () => {
-    const text = rawSaveOutput.textContent || "";
+    const text = rawSaveOutput.textContent;
     navigator.clipboard
       .writeText(text)
       .then(() => {
@@ -876,7 +876,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  // 💾 Download JSON
+  // Download JSON
   downloadRawsaveBtn.addEventListener("click", () => {
     if (currentLoadedSaveData === undefined) {
       showToast("⚠️ No save loaded yet.");
@@ -896,9 +896,9 @@ document.addEventListener("DOMContentLoaded", () => {
     URL.revokeObjectURL(url);
   });
 
-  // 🔍 Navigable search
+  // Navigable search
   let currentMatch = 0;
-  let matches = [];
+  let matches: number[] = [];
 
   function scrollToMatch(index: number) {
     const allMarks = getHTMLElements(rawSaveOutput, "mark.search-match");
@@ -918,12 +918,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   rawSaveSearch.addEventListener("input", () => {
     const query = rawSaveSearch.value.trim();
-    const jsonText = JSON.stringify(currentLoadedSaveData || {}, undefined, 2);
+    const jsonText = JSON.stringify(currentLoadedSaveData ?? {}, undefined, 2);
     rawSaveOutput.innerHTML = jsonText;
     matches = [];
     currentMatch = 0;
     searchCounter.textContent = "0/0";
-    if (!query) {
+    if (query === "") {
       return;
     }
 
@@ -932,11 +932,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let html = "";
     let lastIndex = 0;
-    let match;
+    let match: RegExpExecArray | null;
     while ((match = regex.exec(jsonText)) !== null) {
       html += jsonText.slice(lastIndex, match.index);
       html += `<mark class="search-match">${match[0]}</mark>`;
-      lastIndex = regex.lastIndex;
+      ({ lastIndex } = regex);
       matches.push(match.index);
     }
     html += jsonText.slice(lastIndex);
@@ -978,7 +978,7 @@ async function handleSaveFile(file: File | undefined) {
     const isJSON = file.name.toLowerCase().endsWith(".json");
 
     const saveDataRaw: unknown = isJSON
-      ? JSON.parse(new TextDecoder("utf-8").decode(buffer))
+      ? JSON.parse(new TextDecoder("utf8").decode(buffer))
       : decodeSilksongSave(buffer);
 
     assertObject(
@@ -1042,7 +1042,7 @@ async function handleSaveFile(file: File | undefined) {
     }
 
     const func = TAB_TO_UPDATE_FUNCTION[activeTab];
-    await func();
+    func();
 
     applyMissingFilter();
     showToast("✅ Save file loaded successfully!");
@@ -1111,8 +1111,7 @@ for (const anchor of sidebarItems) {
     }
 
     const activeSectionID = `${selectedTab}-section`;
-    const activeSection = document.getElementById(activeSectionID);
-    assertNotNull(activeSection, `Failed to get element: ${activeSectionID}`);
+    const activeSection = getHTMLElement(activeSectionID);
     activeSection.classList.remove("hidden");
 
     localStorage.setItem("activeTab", selectedTab);
@@ -1121,9 +1120,6 @@ for (const anchor of sidebarItems) {
     document.documentElement.style.overflowY = "auto";
 
     const func = TAB_TO_UPDATE_FUNCTION[selectedTab];
-
-    // We do not have to await this since it is the last operation in the callback.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     func();
   });
 }
@@ -1162,21 +1158,17 @@ globalThis.addEventListener("DOMContentLoaded", () => {
     btn.classList.add("is-active");
   }
 
-  const activeSection = document.getElementById(`${activeTab}-section`);
-  if (activeSection) {
-    activeSection.classList.remove("hidden");
-  }
+  const activeSection = getHTMLElement(`${activeTab}-section`);
+  activeSection.classList.remove("hidden");
 
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
 
   setTimeout(() => {
-    // We do not have to await this since it is the last operation in the callback.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     func();
   }, 50); // Minimum delay for safety (prevents race with DOM rendering).
 });
 
-async function updateAllProgressContent(selectedAct = "all") {
+function updateAllProgressContent() {
   const spoilerOn = spoilerToggle.checked;
   const showMissingOnly = missingToggle.checked;
   allProgressGrid.innerHTML = "";
@@ -1198,7 +1190,7 @@ async function updateAllProgressContent(selectedAct = "all") {
     { title: "Wishes", categories: wishesJSON.categories as Category[] },
   ];
 
-  // ✅ Render all categories
+  // Render all categories.
   for (const { title, categories } of allCategories) {
     assertArray(
       categories,
@@ -1220,7 +1212,7 @@ async function updateAllProgressContent(selectedAct = "all") {
       heading.className = "category-title";
       heading.textContent = category.label;
 
-      let { items } = category;
+      const { items } = category;
       assertArray(items, 'The "items" field must be an array.');
 
       const currentActFilter = getCurrentActFilter();
@@ -1243,8 +1235,7 @@ async function updateAllProgressContent(selectedAct = "all") {
 
           if (item.type === "level") {
             const numberValue = typeof value === "number" ? value : 0;
-            const required = item.required ?? 0;
-            return numberValue < required;
+            return numberValue < item.required;
           }
 
           if (item.type === "quest") {
@@ -1255,7 +1246,7 @@ async function updateAllProgressContent(selectedAct = "all") {
         });
       }
 
-      // === Apply exclusive groups ===
+      // Apply exclusive groups.
       for (const group of EXCLUSIVE_GROUPS) {
         const owned = group.find((flag) => {
           const value = getSaveDataValue(
@@ -1281,13 +1272,13 @@ async function updateAllProgressContent(selectedAct = "all") {
         }
       }
 
-      // === Counting completion ===
+      // Counting completion.
       let obtained = 0;
       const exclusiveGroups = new Set();
       const countedGroups = new Set();
 
       for (const item of filteredItems) {
-        if (item.type === "tool" && item.upgradeOf) {
+        if (item.type === "tool" && item.upgradeOf !== undefined) {
           continue;
         }
 
@@ -1302,7 +1293,7 @@ async function updateAllProgressContent(selectedAct = "all") {
 
         const unlocked = getUnlocked(item, value);
 
-        if (item.type === "tool" && item.exclusiveGroup) {
+        if (item.type === "tool" && item.exclusiveGroup !== undefined) {
           exclusiveGroups.add(item.exclusiveGroup);
           if (unlocked && !countedGroups.has(item.exclusiveGroup)) {
             countedGroups.add(item.exclusiveGroup);
@@ -1327,12 +1318,10 @@ async function updateAllProgressContent(selectedAct = "all") {
       heading.append(count);
       section.append(heading);
 
-      if (category.desc) {
-        const desc = document.createElement("p");
-        desc.className = "category-desc";
-        desc.textContent = category.desc;
-        section.append(desc);
-      }
+      const desc = document.createElement("p");
+      desc.className = "category-desc";
+      desc.textContent = category.desc;
+      section.append(desc);
 
       const subgrid = document.createElement("div");
       subgrid.className = "grid";
@@ -1348,7 +1337,7 @@ async function updateAllProgressContent(selectedAct = "all") {
     }
   }
 
-  // Build TOC once after all categories are rendered
+  // Build TOC once after all categories are rendered.
   buildDynamicTOC();
   initScrollSpy();
 }
@@ -1360,8 +1349,7 @@ function getUnlocked(item: Item, value: unknown): boolean {
 
   if (item.type === "level") {
     const numberValue = typeof value === "number" ? value : 0;
-    const required = item.required ?? 0;
-    return numberValue >= required;
+    return numberValue >= item.required;
   }
 
   if (item.type === "collectable") {
@@ -1380,8 +1368,8 @@ function buildDynamicTOC() {
     "#allprogress-grid h2, #allprogress-grid h3",
   );
 
-  let currentCategory: HTMLLIElement;
-  let currentSubList: HTMLUListElement;
+  let currentCategory: HTMLLIElement | undefined;
+  let currentSubList: HTMLUListElement | undefined;
 
   for (const header of headers) {
     const tag = header.tagName.toLowerCase();
@@ -1394,7 +1382,7 @@ function buildDynamicTOC() {
       const cleanId = text
         .toLowerCase()
         .replaceAll(/\s+/g, "-")
-        .replaceAll(/[^\w\-]/g, "");
+        .replaceAll(/[^\w-]/g, "");
       header.id = `section-${cleanId}`;
     }
 
@@ -1503,11 +1491,12 @@ function initScrollSpy() {
 }
 
 function showGenericModal(item: Item) {
-  const mapSrc = item.map
-    ? item.map.startsWith("http")
-      ? item.map
-      : `${BASE_PATH}/${item.map}`
-    : null;
+  const mapSrc =
+    item.map === undefined
+      ? undefined
+      : item.map.startsWith("http")
+        ? item.map
+        : `${BASE_PATH}/${item.map}`;
 
   const iconPath = getIconPath(item);
 
@@ -1516,15 +1505,16 @@ function showGenericModal(item: Item) {
     <img src="${iconPath}" alt="${item.label}" class="info-image">
     <h2 class="info-title">${item.label}</h2>
     <p class="info-description">
-      ${item.description || "No description available."}
+      ${item.description}
     </p>
 
     ${item.type === "level" && item.obtain !== undefined ? `<p class="info-extra"><strong>Obtained:</strong> ${item.obtain}</p>` : ""}
     ${item.type === "level" && item.cost !== undefined ? `<p class="info-extra"><strong>Cost:</strong> ${item.cost}</p>` : ""}
 
     ${
-      mapSrc
-        ? `
+      mapSrc === undefined
+        ? ""
+        : `
 <div class="info-map-wrapper">
   <div class="map-loading-overlay">
     <span class="map-loading-text">Loading map...</span>
@@ -1540,17 +1530,16 @@ function showGenericModal(item: Item) {
 </div>
 
       `
-        : ""
     }
 
     ${
-      item.link
-        ? `
+      item.link === ""
+        ? ""
+        : `
       <div class="info-link-wrapper">
         <a href="${item.link}" target="_blank" class="info-link">More info →</a>
       </div>
     `
-        : ""
     }
   `;
 
@@ -1577,7 +1566,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-async function reRenderActiveTab() {
+function reRenderActiveTab() {
   const activeElement = document.querySelector(".sidebar-item.is-active");
   assertNotNull(activeElement, "Failed to get the active element.");
   assertIs(
@@ -1606,7 +1595,7 @@ async function reRenderActiveTab() {
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
 
   // Re-render the currently active tab.
-  await func();
+  func();
 }
 
 missingToggle.addEventListener("change", reRenderActiveTab);

@@ -17,6 +17,7 @@ export default defineConfig(...completeConfigBase, {
     "n/file-extension-in-import": "off",
     "import-x/extensions": ["warn", "ignorePackages", { fix: true }],
 
+    // This codebase mutates parameters in several places.
     "no-param-reassign": "off",
   },
 });
