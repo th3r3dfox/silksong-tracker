@@ -1595,8 +1595,6 @@ function reRenderActiveTab() {
   localStorage.setItem("showMissingOnly", showMissingOnly.toString());
 
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
-
-  // Re-render the currently active tab.
   func();
 }
 
