@@ -641,14 +641,22 @@ function renderGenericGrid(
   // Apply mutually exclusive groups (global, relic + quest)
   EXCLUSIVE_GROUPS.forEach((group) => {
     const owned = group.find((flag) => {
+      const item = {
+        flag,
+        act: 1,
+        icon: "",
+        id: "",
+        label: "",
+        link: "",
+      } as const;
+
       // try first as relic
       let value = getSaveDataValue(
         currentLoadedSaveData,
         currentLoadedSaveDataFlags,
         {
+          ...item,
           type: "relic",
-          flag,
-          id: "dummy-value",
         },
       );
 
@@ -658,9 +666,8 @@ function renderGenericGrid(
           currentLoadedSaveData,
           currentLoadedSaveDataFlags,
           {
+            ...item,
             type: "quest",
-            flag,
-            id: "dummy-value",
           },
         );
       }
@@ -1227,15 +1234,22 @@ async function updateAllProgressContent(selectedAct = "all") {
             currentLoadedSaveDataFlags,
             item,
           );
+
           if (item.type === "collectable") {
-            return (value ?? 0) === 0;
+            const numberValue = typeof value === "number" ? value : 0;
+            return numberValue === 0;
           }
+
           if (item.type === "level") {
-            return (value ?? 0) < (item.required ?? 0);
+            const numberValue = typeof value === "number" ? value : 0;
+            const required = item.required ?? 0;
+            return numberValue < required;
           }
+
           if (item.type === "quest") {
             return value !== "completed" && value !== true;
           }
+
           return value !== true;
         });
       }

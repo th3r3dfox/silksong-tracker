@@ -2,21 +2,17 @@ import type { Act } from "./Act.ts";
 import type { Mode } from "./Mode.ts";
 
 interface ItemBase {
-  readonly id: string;
   readonly act: Act;
+  readonly icon: string;
+  readonly id: string;
+  readonly label: string;
+  readonly link: string;
 
-  readonly label?: string;
-  readonly icon?: string;
   readonly map?: string;
   readonly missable?: boolean;
   readonly mode?: Mode;
   readonly description?: string;
-  readonly link?: string;
-  readonly cost?: string;
-  readonly obtain?: string;
   readonly category?: string;
-  readonly exclusiveGroup?: string;
-  readonly upgradeOf?: string;
 }
 
 /** Item tracked by a simple flag. */
@@ -36,6 +32,9 @@ export interface ItemLevel extends ItemBase {
   readonly type: "level";
   readonly flag: string;
   readonly required: number;
+
+  readonly cost?: string;
+  readonly obtain?: string;
 }
 
 export interface ItemSceneBool extends ItemBase {
@@ -53,6 +52,9 @@ export interface ItemSceneVisited extends ItemBase {
 export interface ItemTool extends ItemBase {
   readonly type: "tool";
   readonly flag: string;
+
+  readonly exclusiveGroup?: string;
+  readonly upgradeOf?: string;
 }
 
 /** We deliberately use the Australian spelling to align with Team Cherry. */
