@@ -1274,6 +1274,8 @@ function updateAllProgressContent() {
 
       // Counting completion.
       let obtained = 0;
+      let total = 0;
+
       const exclusiveGroups = new Set();
       const countedGroups = new Set();
 
@@ -1302,20 +1304,17 @@ function updateAllProgressContent() {
         } else {
           obtained += unlocked ? 1 : 0;
         }
+
+        total++;
       }
 
-      const nonExclusiveItems = filteredItems.filter(
-        (item) =>
-          item.type === "tool"
-          && item.exclusiveGroup === undefined
-          && item.upgradeOf === undefined,
-      );
-      const total = nonExclusiveItems.length + exclusiveGroups.size;
+      total = total - countedGroups.size + exclusiveGroups.size;
 
       const count = document.createElement("span");
       count.className = "category-count";
       count.textContent = ` ${obtained}/${total}`;
       heading.append(count);
+
       section.append(heading);
 
       const desc = document.createElement("p");
