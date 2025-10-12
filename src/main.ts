@@ -153,7 +153,7 @@ function getCurrentActFilter(): readonly Act[] {
     return currentActFilter;
   } catch (error) {
     console.warn(error);
-    console.warn('Defaulting to all acts."');
+    console.warn("Defaulting to all acts.");
     return defaultActFilter;
   }
 }
@@ -313,15 +313,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  for (const evt of ["dragenter", "dragover"]) {
-    dropzone.addEventListener(evt, (e) => {
+  for (const type of ["dragenter", "dragover"]) {
+    dropzone.addEventListener(type, (e) => {
       e.preventDefault();
       e.stopPropagation();
       dropzone.classList.add("dragover");
     });
   }
-  for (const evt of ["dragleave", "drop"]) {
-    dropzone.addEventListener(evt, (e) => {
+  for (const type of ["dragleave", "drop"]) {
+    dropzone.addEventListener(type, (e) => {
       e.preventDefault();
       e.stopPropagation();
       dropzone.classList.remove("dragover");
@@ -339,10 +339,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const paths: Record<string, string> = {
-    windows: String.raw`%userprofile%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
+    windows: String.raw`%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
     mac: "~/Library/Application Support/com.teamcherry.hollowsilksong",
     linux: "~/.config/unity3d/Team Cherry/Hollow Knight Silksong",
-    steam: String.raw`%userprofile%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
+    steam: String.raw`%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
   };
 
   const pills = getHTMLElements(document, ".pill");
@@ -1475,7 +1475,7 @@ function initScrollSpy() {
       for (const entry of entries) {
         const { id } = entry.target;
         const match = document.querySelector(`a[href="#${id}"]`);
-        if (!match) {
+        if (match === null) {
           continue;
         }
 
@@ -1571,7 +1571,7 @@ function showGenericModal(item: Item) {
 
   infoOverlay.classList.remove("hidden");
 
-  // 🔧 attach listener to the *newly created* close button
+  // attach listener to the *newly created* close button
   const modalCloseBtn = document.querySelector("#modalCloseBtn");
   if (modalCloseBtn) {
     modalCloseBtn.addEventListener("click", () => {
@@ -1581,7 +1581,7 @@ function showGenericModal(item: Item) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 🎬 Info Modal
+  // Info Modal
   closeInfoModal.addEventListener("click", () => {
     infoOverlay.classList.add("hidden");
   });
