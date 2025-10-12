@@ -4,6 +4,7 @@ import {
   assertIs,
   assertNotNull,
   assertObject,
+  includes,
   isObject,
   parseIntSafe,
 } from "complete-common";
@@ -17,6 +18,7 @@ import {
   actClearBtn,
   actDropdownBtn,
   actDropdownMenu,
+  actDropdownMenuCheckboxes,
   allProgressGrid,
   backToTop,
   closeInfoModal,
@@ -26,6 +28,7 @@ import {
   downloadRawsaveBtn,
   dropzone,
   fileInput,
+  getHTMLElements,
   infoContent,
   infoOverlay,
   missingToggle,
@@ -39,16 +42,13 @@ import {
   rosariesValue,
   searchCounter,
   shardsValue,
+  sidebarItems,
   spoilerToggle,
   uploadOverlay,
 } from "./elements.ts";
 import { decodeSilksongSave } from "./save-decoder.ts";
-import {
-  getSaveFileFlags,
-  parseSilksongSave,
-  type ObjectWithSavedData,
-  type SilksongSave,
-} from "./save-parser.ts";
+import type { ObjectWithSavedData, SilksongSave } from "./save-parser.ts";
+import { getSaveFileFlags, parseSilksongSave } from "./save-parser.ts";
 import type { Act } from "./types/Act.ts";
 import type { Category } from "./types/Category.ts";
 import type { Item } from "./types/Item.ts";
@@ -73,8 +73,6 @@ const BASE_DUMMY_ITEM = {
   link: "",
 } as const;
 
-// Act Dropdown Logic (modern multi-select with checkboxes)
-
 // Toggle menu visibility
 actDropdownBtn.addEventListener("click", () => {
   actDropdownMenu.classList.toggle("hidden");
@@ -93,31 +91,33 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Handle "Select All / Deselect All"
+// Handle "Select All / Deselect All".
 actClearBtn.addEventListener("click", () => {
-  const checkboxes = actDropdownMenu.querySelectorAll<HTMLInputElement>(
-    "input[type='checkbox']",
+  const allChecked = actDropdownMenuCheckboxes.every(
+    (checkbox) => checkbox.checked,
   );
-  const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
-  checkboxes.forEach((cb) => (cb.checked = !allChecked));
+  for (const checkbox of actDropdownMenuCheckboxes) {
+    checkbox.checked = !allChecked;
+  }
   actClearBtn.textContent = allChecked ? "Select All" : "Deselect All";
+
+  // We do not have to await the function since it is the last operation in the callback.
+  // eslint-disable-next-line @typescript-eslint/no-floating-promises
   updateActFilter();
 });
 
-// Update filter when any checkbox changes
-actDropdownMenu.querySelectorAll("input[type='checkbox']").forEach((cb) => {
-  cb.addEventListener("change", updateActFilter);
-});
+// Update filter when any checkbox changes.
+for (const checkbox of actDropdownMenuCheckboxes) {
+  // We do not have to await the function since it is the last operation in the callback.
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
+  checkbox.addEventListener("change", updateActFilter);
+}
 
-// Restore state on load
-window.addEventListener("DOMContentLoaded", () => {
+// Restore state on load.
+globalThis.addEventListener("DOMContentLoaded", () => {
   const actFilter = getCurrentActFilter();
-  const checkboxesList = actDropdownMenu.querySelectorAll<HTMLInputElement>(
-    "input[type='checkbox']",
-  );
-  const checkboxes = Array.from(checkboxesList);
 
-  for (const checkbox of checkboxes) {
+  for (const checkbox of actDropdownMenuCheckboxes) {
     const act = parseIntSafe(checkbox.value);
     assertDefined(act, "Failed to parse an act number from a checkbox.");
     if (act !== 1 && act !== 2 && act !== 3) {
@@ -141,9 +141,9 @@ function getCurrentActFilter(): readonly Act[] {
       `The "currentActFilter" value must be an array instead of: ${currentActFilterString}`,
     );
 
-    const arrayValid = currentActFilter.every((act) => {
-      return act === 1 || act === 2 || act === 3;
-    });
+    const arrayValid = currentActFilter.every(
+      (act) => act === 1 || act === 2 || act === 3,
+    );
     if (!arrayValid) {
       throw new TypeError(
         `The "currentActFilter" value must be an array of valid acts instead of: ${currentActFilterString}`,
@@ -153,18 +153,17 @@ function getCurrentActFilter(): readonly Act[] {
     return currentActFilter;
   } catch (error) {
     console.warn(error);
-    console.warn(`Defaulting to all acts."`);
+    console.warn('Defaulting to all acts."');
     return defaultActFilter;
   }
 }
 
 // Core update function
 async function updateActFilter() {
-  const checkboxesList = actDropdownMenu.querySelectorAll<HTMLInputElement>(
-    "input[type='checkbox']:checked",
+  const checkedCheckboxes = actDropdownMenuCheckboxes.filter(
+    (checkbox) => checkbox.checked,
   );
-  const checkboxes = Array.from(checkboxesList);
-  const selectedActs = checkboxes.map((checkbox) => {
+  const selectedActs = checkedCheckboxes.map((checkbox) => {
     const { value } = checkbox;
     const act = parseIntSafe(checkbox.value);
     assertDefined(act, `Failed to parse the value of a checkbox: ${value}`);
@@ -186,36 +185,37 @@ let currentLoadedSaveData: SilksongSave | undefined;
 let currentLoadedSaveDataFlags: Record<string, unknown> | undefined;
 let currentLoadedSaveDataMode: Mode | undefined;
 
-const TAB_TO_UPDATE_FUNCTION: Record<
-  string,
-  (selectedAct?: string) => Promise<void>
-> = {
+const TAB_TO_UPDATE_FUNCTION = {
   allprogress: updateAllProgressContent,
   rawsave: updateRawSaveContent,
-};
-const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION);
+} as const;
+const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION) as ReadonlyArray<
+  keyof typeof TAB_TO_UPDATE_FUNCTION
+>;
+const FIRST_VALID_TAB = VALID_TABS[0];
+assertDefined(FIRST_VALID_TAB, "Failed to get the first valid tab.");
 
 function matchMode(item: Item) {
   const { mode } = item;
 
-  // no mode -> always visible
+  // No mode -> always visible.
   if (mode === undefined) {
     return true;
   }
 
-  // BEFORE loading a save -> show all
+  // BEFORE loading a save -> show all.
   if (currentLoadedSaveData === undefined) {
     return true;
   }
 
-  // AFTER loading -> match mode
+  // AFTER loading -> match mode.
   return mode === currentLoadedSaveDataMode;
 }
 
 const EXCLUSIVE_GROUPS = [
   ["Heart Flower", "Heart Coral", "Heart Hunter", "Clover Heart"],
   ["Huntress Quest", "Huntress Quest Runt"], // Broodfest / Runtfeast
-];
+] as const;
 
 // ---------- SPOILER TOGGLE ----------
 spoilerToggle.addEventListener("change", async () => {
@@ -230,7 +230,8 @@ spoilerToggle.addEventListener("change", async () => {
 function applyMissingFilter() {
   const showMissingOnly = missingToggle.checked;
 
-  document.querySelectorAll(".main-section-block").forEach((section) => {
+  const mainSectionBlocks = getHTMLElements(document, ".main-section-block");
+  for (const section of mainSectionBlocks) {
     assertIs(
       section,
       HTMLDivElement,
@@ -239,7 +240,8 @@ function applyMissingFilter() {
 
     let hasVisible = false;
 
-    section.querySelectorAll(".boss").forEach((div) => {
+    const bosses = getHTMLElements(section, ".boss");
+    for (const div of bosses) {
       assertIs(
         div,
         HTMLDivElement,
@@ -257,14 +259,14 @@ function applyMissingFilter() {
         div.style.display = "";
         hasVisible = true;
       }
-    });
+    }
 
     // Hide the entire section if it has no visible elements.
     section.style.display = hasVisible ? "" : "none";
-  });
+  }
 }
 
-// ---------- Back to top button listener ----------
+// Back to top button listener.
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("main");
   assertNotNull(main, "Failed to get the main element.");
@@ -272,11 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
   main.addEventListener("scroll", () => {
     const scrollPosition = main.scrollTop;
 
-    if (scrollPosition > 300) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
+    backToTop.classList.toggle("show", scrollPosition > 300);
   });
 
   // Scroll back to top.
@@ -305,7 +303,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  dropzone.addEventListener("click", () => fileInput.click());
+  dropzone.addEventListener("click", () => {
+    fileInput.click();
+  });
   dropzone.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -313,20 +313,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  ["dragenter", "dragover"].forEach((evt) =>
+  for (const evt of ["dragenter", "dragover"]) {
     dropzone.addEventListener(evt, (e) => {
       e.preventDefault();
       e.stopPropagation();
       dropzone.classList.add("dragover");
-    }),
-  );
-  ["dragleave", "drop"].forEach((evt) =>
+    });
+  }
+  for (const evt of ["dragleave", "drop"]) {
     dropzone.addEventListener(evt, (e) => {
       e.preventDefault();
       e.stopPropagation();
       dropzone.classList.remove("dragover");
-    }),
-  );
+    });
+  }
   dropzone.addEventListener("drop", (dragEvent) => {
     const { dataTransfer } = dragEvent;
     if (dataTransfer === null) {
@@ -339,20 +339,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const paths: Record<string, string> = {
-    windows:
-      "%userprofile%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong",
+    windows: String.raw`%userprofile%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
     mac: "~/Library/Application Support/com.teamcherry.hollowsilksong",
     linux: "~/.config/unity3d/Team Cherry/Hollow Knight Silksong",
-    steam:
-      "%userprofile%\\AppData\\LocalLow\\Team Cherry\\Hollow Knight Silksong",
+    steam: String.raw`%userprofile%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
   };
 
-  document.querySelectorAll(".pill").forEach((btn) => {
+  const pills = getHTMLElements(document, ".pill");
+  for (const btn of pills) {
     btn.addEventListener("click", () => {
       const key = btn.textContent.trim().toLowerCase();
       const path = paths[key];
 
-      if (!path) {
+      if (path === undefined) {
         if (key === "steam cloud") {
           window.open(
             "https://store.steampowered.com/account/remotestorageapp/?appid=1030300",
@@ -361,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
-        showToast("❌ No path available for: " + key);
+        showToast(`❌ No path available for: ${key}`);
         return;
       }
 
@@ -370,12 +369,12 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(() => {
           showToast("📋 Path copied to clipboard!");
         })
-        .catch((err) => {
-          console.error("Clipboard error:", err);
+        .catch((error) => {
+          console.error("Clipboard error:", error);
           showToast("⚠️ Unable to copy path.");
         });
     });
-  });
+  }
 });
 
 function getSaveDataValue(
@@ -402,9 +401,7 @@ function getSaveDataValue(
       const { flag } = item;
       const { savedData } = playerData.Collectables;
 
-      const entry = savedData.find((element) => {
-        return element.Name === flag;
-      });
+      const entry = savedData.find((element) => element.Name === flag);
       if (entry === undefined) {
         return undefined;
       }
@@ -645,7 +642,7 @@ function renderGenericGrid(
   });
 
   // Apply mutually exclusive groups (global, relic + quest)
-  EXCLUSIVE_GROUPS.forEach((group) => {
+  for (const group of EXCLUSIVE_GROUPS) {
     const owned = group.find((flag) => {
       // try first as relic
       let value = getSaveDataValue(
@@ -685,23 +682,23 @@ function renderGenericGrid(
         if (flag === undefined) {
           return false;
         }
-        return !group.includes(flag) || flag === owned;
+        return !includes(group, flag) || flag === owned;
       });
     }
-  });
+  }
 
   let renderedCount = 0;
 
-  items.forEach((item) => {
+  for (const item of items) {
     const flag = item.type === "sceneVisited" ? undefined : item.flag;
 
     // Silkshot → show only 1 variant
     if (flag !== undefined && silkVariants.includes(flag)) {
       if (unlockedSilkVariant && flag !== unlockedSilkVariant) {
-        return;
+        continue;
       }
       if (!unlockedSilkVariant && flag !== "WebShot Architect") {
-        return;
+        continue;
       }
     }
 
@@ -715,7 +712,7 @@ function renderGenericGrid(
       actLabel.className = `act-label act-${item.act}`;
       const romanAct = romanActs[item.act];
       actLabel.textContent = `ACT ${romanAct}`;
-      div.appendChild(actLabel);
+      div.append(actLabel);
     }
 
     div.id = `${realContainerId}-${item.id}`;
@@ -779,7 +776,7 @@ function renderGenericGrid(
     // If "only missing" and it's completed → don't render the card at all
     const showMissingOnly = missingToggle.checked;
     if (showMissingOnly && isDone) {
-      return;
+      continue;
     }
 
     if (item.missable) {
@@ -787,7 +784,7 @@ function renderGenericGrid(
       warn.className = "missable-icon";
       warn.title = "Missable item - can be permanently lost";
       warn.textContent = "!";
-      div.appendChild(warn);
+      div.append(warn);
     }
 
     if (item.type === "tool" && item.upgradeOf !== undefined) {
@@ -795,7 +792,7 @@ function renderGenericGrid(
       upg.className = "upgrade-icon";
       upg.title = "Upgraded item";
       upg.textContent = "↑";
-      div.appendChild(upg);
+      div.append(upg);
     }
 
     // Image and state management
@@ -839,13 +836,15 @@ function renderGenericGrid(
         ? "Silkshot"
         : (item.label ?? "");
 
-    div.appendChild(img);
-    div.appendChild(title);
-    div.addEventListener("click", () => showGenericModal(item));
+    div.append(img);
+    div.append(title);
+    div.addEventListener("click", () => {
+      showGenericModal(item);
+    });
 
-    containerElement.appendChild(div);
+    containerElement.append(div);
     renderedCount++;
-  });
+  }
 
   return renderedCount;
 }
@@ -868,9 +867,9 @@ async function updateRawSaveContent() {
       undefined,
       2,
     );
-  } catch (err) {
+  } catch (error) {
     rawSaveOutput.textContent = "❌ Failed to display raw save.";
-    console.error(err);
+    console.error(error);
   }
 }
 
@@ -881,14 +880,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const text = rawSaveOutput.textContent || "";
     navigator.clipboard
       .writeText(text)
-      .then(() => showToast("📋 JSON copied to clipboard!"))
-      .catch(() => showToast("⚠️ Copy failed."));
+      .then(() => {
+        showToast("📋 JSON copied to clipboard!");
+      })
+      .catch(() => {
+        showToast("⚠️ Copy failed.");
+      });
   });
 
   // 💾 Download JSON
   downloadRawsaveBtn.addEventListener("click", () => {
     if (currentLoadedSaveData === undefined) {
-      return showToast("⚠️ No save loaded yet.");
+      showToast("⚠️ No save loaded yet.");
+      return;
     }
     const blob = new Blob(
       [JSON.stringify(currentLoadedSaveData, undefined, 2)],
@@ -909,8 +913,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let matches = [];
 
   function scrollToMatch(index: number) {
-    const allMarks = rawSaveOutput.querySelectorAll("mark.search-match");
-    allMarks.forEach((m) => m.classList.remove("active-match"));
+    const allMarks = getHTMLElements(rawSaveOutput, "mark.search-match");
+    for (const m of allMarks) {
+      m.classList.remove("active-match");
+    }
     const lastMark = allMarks[index - 1];
     if (lastMark !== undefined) {
       lastMark.classList.add("active-match");
@@ -933,7 +939,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const safeQuery = query.replaceAll(/[$()*+.?[\\\]^{|}]/g, String.raw`\$&`);
     const regex = new RegExp(safeQuery, "gi");
 
     let html = "";
@@ -1006,7 +1012,7 @@ async function handleSaveFile(file: File | undefined) {
     currentLoadedSaveData = saveDataRaw;
     currentLoadedSaveDataFlags = getSaveFileFlags(saveDataRaw);
 
-    // --- Update UI statistics ---
+    // Update UI statistics.
     completionValue.textContent = `${saveData.playerData.completionPercentage}%`;
 
     const seconds = saveData.playerData.playTime;
@@ -1017,20 +1023,19 @@ async function handleSaveFile(file: File | undefined) {
     rosariesValue.textContent = saveData.playerData.geo.toString();
     shardsValue.textContent = saveData.playerData.ShellShards.toString();
 
-    // --- Detect game mode ---
     const isSteelSoul = saveData.playerData.permadeathMode === 1;
 
-    // ✅ Save mode globally (after declaration)
+    // Save mode globally (after declaration).
     currentLoadedSaveDataMode = isSteelSoul ? "steel" : "normal";
 
-    // 🪶 Show visual banner
+    // Show visual banner.
     modeBanner.innerHTML = isSteelSoul
       ? `<img src="${BASE_PATH}/assets/icons/Steel_Soul_Icon.png" alt="Steel Soul" class="mode-icon"> STEEL SOUL SAVE LOADED`
-      : `NORMAL SAVE LOADED`;
+      : "NORMAL SAVE LOADED";
     modeBanner.classList.remove("hidden");
     modeBanner.classList.toggle("steel", isSteelSoul);
 
-    // --- Update active tab ---
+    // Update active tab.
     const activeElement = document.querySelector(".sidebar-item.is-active");
     assertNotNull(activeElement, "Failed to get the active element.");
     assertIs(
@@ -1044,16 +1049,18 @@ async function handleSaveFile(file: File | undefined) {
       activeTab,
       "Failed to get the name of the active tab from the active element.",
     );
+    if (!includes(VALID_TABS, activeTab)) {
+      throw new TypeError(`The active tab was not valid: ${activeTab}`);
+    }
 
     const func = TAB_TO_UPDATE_FUNCTION[activeTab];
-    assertDefined(func, `Failed to find the function for tab: ${activeTab}`);
     await func();
 
     applyMissingFilter();
     showToast("✅ Save file loaded successfully!");
     uploadOverlay.classList.add("hidden");
-  } catch (err) {
-    console.error("[save] Decode error:", err);
+  } catch (error) {
+    console.error("[save] Decode error:", error);
     showToast(
       "⚠️ Browser permission or file access issue. Please reselect your save file.",
     );
@@ -1077,65 +1084,71 @@ function showToast(message: string) {
     z-index: 9999;
     box-shadow: 0 0 6px rgba(0,0,0,0.3);
   `;
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 2500);
+  document.body.append(toast);
+  setTimeout(() => {
+    toast.remove();
+  }, 2500);
 }
 
 // Handle sidebar clicks
-document.querySelectorAll(".sidebar-item").forEach((anchor) => {
+for (const anchor of sidebarItems) {
   assertIs(
     anchor,
     HTMLAnchorElement,
     'An element with a class of "sidebar-item" was not an anchor.',
   );
 
-  anchor.addEventListener("click", async (pointerEvent) => {
+  anchor.addEventListener("click", (pointerEvent) => {
     pointerEvent.preventDefault();
 
     // Remove/add activation class
-    document
-      .querySelectorAll(".sidebar-item")
-      .forEach((i) => i.classList.remove("is-active"));
+    for (const sidebarItem of sidebarItems) {
+      sidebarItem.classList.remove("is-active");
+    }
     anchor.classList.add("is-active");
 
     // Hide all tabs
-    document.querySelectorAll(".tab").forEach((section) => {
+    const tabs = getHTMLElements(document, ".tab");
+    for (const section of tabs) {
       section.classList.add("hidden");
-    });
+    }
 
     const selectedTab = anchor.dataset["tab"];
     assertDefined(
       selectedTab,
       "Failed to find the tab corresponding to an anchor element.",
     );
+    if (!includes(VALID_TABS, selectedTab)) {
+      throw new Error(`The selected tab was not valid: ${selectedTab}`);
+    }
 
     const activeSectionID = `${selectedTab}-section`;
     const activeSection = document.getElementById(activeSectionID);
     assertNotNull(activeSection, `Failed to get element: ${activeSectionID}`);
     activeSection.classList.remove("hidden");
 
-    // 🔹 Save active tab
     localStorage.setItem("activeTab", selectedTab);
 
     // Enable/disable home scroll
     document.documentElement.style.overflowY = "auto";
 
     const func = TAB_TO_UPDATE_FUNCTION[selectedTab];
-    assertDefined(func, `Failed to find the function for tab: ${selectedTab}`);
-    await func();
-  });
-});
 
-window.addEventListener("DOMContentLoaded", () => {
-  // 🔹 Restore saved tab and filters
-  let savedTab = localStorage.getItem("activeTab");
-  if (savedTab === null || !VALID_TABS.includes(savedTab)) {
-    const firstValidTab = VALID_TABS[0];
-    assertDefined(firstValidTab, "Failed to get the first valid tab.");
-    savedTab = firstValidTab;
+    // We do not have to await the function since it is the last operation in the callback.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    func();
+  });
+}
+
+globalThis.addEventListener("DOMContentLoaded", () => {
+  // Restore saved tab and filters.
+  let activeTab = FIRST_VALID_TAB;
+  const storedActiveTab = localStorage.getItem("activeTab");
+  if (storedActiveTab !== null && includes(VALID_TABS, storedActiveTab)) {
+    activeTab = storedActiveTab;
   }
 
-  // 🔹 Restore "Show spoilers" state from localStorage
+  // Restore "Show spoilers" state from localStorage.
   const savedSpoilerState = localStorage.getItem("showSpoilers");
   if (savedSpoilerState !== null) {
     spoilerToggle.checked = savedSpoilerState === "true";
@@ -1143,35 +1156,36 @@ window.addEventListener("DOMContentLoaded", () => {
   const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
 
-  // 🔹 Synchronize "Show only missing" state
+  // Synchronize "Show only missing" state.
   missingToggle.checked = localStorage.getItem("showMissingOnly") === "true";
 
-  // 🔹 Reset tab visibility
-  document
-    .querySelectorAll(".sidebar-item")
-    .forEach((i) => i.classList.remove("is-active"));
-  document
-    .querySelectorAll(".tab")
-    .forEach((section) => section.classList.add("hidden"));
+  // Reset tab visibility.
+  for (const sidebarItem of sidebarItems) {
+    sidebarItem.classList.remove("is-active");
+  }
+  const tabs = getHTMLElements(document, ".tab");
+  for (const section of tabs) {
+    section.classList.add("hidden");
+  }
 
-  // 🔹 Activate saved tab
-  const btn = document.querySelector(`.sidebar-item[data-tab="${savedTab}"]`);
+  // Activate saved tab.
+  const btn = document.querySelector(`.sidebar-item[data-tab="${activeTab}"]`);
   if (btn) {
     btn.classList.add("is-active");
   }
 
-  const activeSection = document.getElementById(`${savedTab}-section`);
+  const activeSection = document.getElementById(`${activeTab}-section`);
   if (activeSection) {
     activeSection.classList.remove("hidden");
   }
 
-  const func = TAB_TO_UPDATE_FUNCTION[savedTab];
-  assertDefined(func, `Failed to find the function for tab: ${savedTab}`);
+  const func = TAB_TO_UPDATE_FUNCTION[activeTab];
 
-  // Minimum delay for safety (prevents race with DOM rendering)
-  setTimeout(async () => {
-    await func();
-  }, 50);
+  setTimeout(() => {
+    // We do not have to await the function since it is the last operation in the callback.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    func();
+  }, 50); // Minimum delay for safety (prevents race with DOM rendering).
 });
 
 async function updateAllProgressContent(selectedAct = "all") {
@@ -1208,7 +1222,7 @@ async function updateAllProgressContent(selectedAct = "all") {
     categoryHeader.textContent = title;
     categoryHeader.style.marginTop = "2rem";
     categoryHeader.style.marginBottom = "1rem";
-    allProgressGrid.appendChild(categoryHeader);
+    allProgressGrid.append(categoryHeader);
 
     for (const category of categories) {
       const section = document.createElement("div");
@@ -1218,13 +1232,13 @@ async function updateAllProgressContent(selectedAct = "all") {
       heading.className = "category-title";
       heading.textContent = category.label;
 
-      let items = category.items;
+      let { items } = category;
       assertArray(items, 'The "items" field must be an array.');
 
       const currentActFilter = getCurrentActFilter();
-      let filteredItems = items.filter((item) => {
-        return currentActFilter.includes(item.act) && matchMode(item);
-      });
+      let filteredItems = items.filter(
+        (item) => currentActFilter.includes(item.act) && matchMode(item),
+      );
 
       if (showMissingOnly && currentLoadedSaveData) {
         filteredItems = filteredItems.filter((item) => {
@@ -1254,7 +1268,7 @@ async function updateAllProgressContent(selectedAct = "all") {
       }
 
       // === Apply exclusive groups ===
-      EXCLUSIVE_GROUPS.forEach((group) => {
+      for (const group of EXCLUSIVE_GROUPS) {
         const owned = group.find((flag) => {
           const value = getSaveDataValue(
             currentLoadedSaveData,
@@ -1274,19 +1288,19 @@ async function updateAllProgressContent(selectedAct = "all") {
             if (flag === undefined) {
               return false;
             }
-            return !group.includes(flag) || flag === owned;
+            return !includes(group, flag) || flag === owned;
           });
         }
-      });
+      }
 
       // === Counting completion ===
       let obtained = 0;
       const exclusiveGroups = new Set();
       const countedGroups = new Set();
 
-      filteredItems.forEach((item) => {
+      for (const item of filteredItems) {
         if (item.type === "tool" && item.upgradeOf) {
-          return;
+          continue;
         }
 
         const value =
@@ -1309,7 +1323,7 @@ async function updateAllProgressContent(selectedAct = "all") {
         } else {
           obtained += unlocked ? 1 : 0;
         }
-      });
+      }
 
       const nonExclusiveItems = filteredItems.filter(
         (item) =>
@@ -1322,14 +1336,14 @@ async function updateAllProgressContent(selectedAct = "all") {
       const count = document.createElement("span");
       count.className = "category-count";
       count.textContent = ` ${obtained}/${total}`;
-      heading.appendChild(count);
-      section.appendChild(heading);
+      heading.append(count);
+      section.append(heading);
 
       if (category.desc) {
         const desc = document.createElement("p");
         desc.className = "category-desc";
         desc.textContent = category.desc;
-        section.appendChild(desc);
+        section.append(desc);
       }
 
       const subgrid = document.createElement("div");
@@ -1337,11 +1351,12 @@ async function updateAllProgressContent(selectedAct = "all") {
 
       const visible = renderGenericGrid(subgrid, filteredItems, spoilerOn);
 
-      if (filteredItems.length === 0 || (showMissingOnly && visible === 0))
+      if (filteredItems.length === 0 || (showMissingOnly && visible === 0)) {
         continue;
+      }
 
-      section.appendChild(subgrid);
-      allProgressGrid.appendChild(section);
+      section.append(subgrid);
+      allProgressGrid.append(section);
     }
   }
 
@@ -1384,9 +1399,11 @@ function buildDynamicTOC() {
   headers.forEach((header) => {
     const tag = header.tagName.toLowerCase();
     const text = header.textContent.trim();
-    if (!text) return;
+    if (text === "") {
+      return;
+    }
 
-    if (!header.id) {
+    if (header.id === "") {
       const cleanId = text
         .toLowerCase()
         .replace(/\s+/g, "-")
@@ -1446,7 +1463,7 @@ function buildDynamicTOC() {
 }
 
 function initScrollSpy() {
-  const tocLinks = document.querySelectorAll(".toc-item a, .toc-category > a");
+  const tocLinks = getHTMLElements(document, ".toc-item a, .toc-category > a");
 
   // Prevent duplicate observers
   if (tocObserver !== undefined) {
@@ -1455,18 +1472,23 @@ function initScrollSpy() {
 
   tocObserver = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.id;
+      for (const entry of entries) {
+        const { id } = entry.target;
         const match = document.querySelector(`a[href="#${id}"]`);
-        if (!match) return;
+        if (!match) {
+          continue;
+        }
 
         const parentCategory = match.closest(".toc-category");
 
         if (entry.isIntersecting) {
-          tocLinks.forEach((link) => link.classList.remove("active"));
+          for (const link of tocLinks) {
+            link.classList.remove("active");
+          }
           match.classList.add("active");
 
-          document.querySelectorAll(".toc-category").forEach((cat) => {
+          const tocCategories = getHTMLElements(document, ".toc-category");
+          for (const cat of tocCategories) {
             const sub = cat.querySelector(".toc-sublist");
             if (cat === parentCategory) {
               cat.classList.add("open");
@@ -1475,9 +1497,9 @@ function initScrollSpy() {
               cat.classList.remove("open");
               sub?.classList.add("hidden");
             }
-          });
+          }
         }
-      });
+      }
     },
     {
       root: null,
@@ -1486,9 +1508,13 @@ function initScrollSpy() {
     },
   );
 
-  document
-    .querySelectorAll("#allprogress-grid h2, #allprogress-grid h3")
-    .forEach((section) => tocObserver?.observe(section));
+  const headers = getHTMLElements(
+    document,
+    "#allprogress-grid h2, #allprogress-grid h3",
+  );
+  for (const section of headers) {
+    tocObserver?.observe(section);
+  }
 }
 
 function showGenericModal(item: Item) {
@@ -1546,7 +1572,7 @@ function showGenericModal(item: Item) {
   infoOverlay.classList.remove("hidden");
 
   // 🔧 attach listener to the *newly created* close button
-  const modalCloseBtn = document.getElementById("modalCloseBtn");
+  const modalCloseBtn = document.querySelector("#modalCloseBtn");
   if (modalCloseBtn) {
     modalCloseBtn.addEventListener("click", () => {
       infoOverlay.classList.add("hidden");
@@ -1556,9 +1582,9 @@ function showGenericModal(item: Item) {
 
 document.addEventListener("DOMContentLoaded", () => {
   // 🎬 Info Modal
-  closeInfoModal.addEventListener("click", () =>
-    infoOverlay.classList.add("hidden"),
-  );
+  closeInfoModal.addEventListener("click", () => {
+    infoOverlay.classList.add("hidden");
+  });
   infoOverlay.addEventListener("click", (e) => {
     if (e.target === infoOverlay) {
       infoOverlay.classList.add("hidden");
@@ -1580,6 +1606,9 @@ async function reRenderActiveTab() {
     activeTab,
     "Failed to get the name of the active tab from the active element.",
   );
+  if (!includes(VALID_TABS, activeTab)) {
+    throw new TypeError(`The active tab was not valid: ${activeTab}`);
+  }
 
   // ✅ Get selected acts (supports multi-select)
   const currentActFilter = getCurrentActFilter();
@@ -1590,10 +1619,6 @@ async function reRenderActiveTab() {
   localStorage.setItem("showMissingOnly", showMissingOnly.toString());
 
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
-  assertDefined(
-    func,
-    `Failed to find the function corresponding to tab: ${activeTab}`,
-  );
 
   // ✅ Re-render the currently active tab
   await func();

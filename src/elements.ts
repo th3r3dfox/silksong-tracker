@@ -26,9 +26,31 @@ function getHTMLInputElement(id: string): HTMLInputElement {
   return element;
 }
 
+function getCheckboxes(element: HTMLElement): readonly HTMLInputElement[] {
+  const checkboxesList = element.querySelectorAll<HTMLInputElement>(
+    "input[type='checkbox']",
+  );
+
+  // The spread operator does not convert to an array.
+  // eslint-disable-next-line unicorn/prefer-spread
+  return Array.from(checkboxesList);
+}
+
+export function getHTMLElements(
+  parentElement: Document | Element,
+  selector: string,
+): readonly Element[] {
+  const nodeListOfElement = parentElement.querySelectorAll(selector);
+
+  // The spread operator does not convert to an array.
+  // eslint-disable-next-line unicorn/prefer-spread
+  return Array.from(nodeListOfElement);
+}
+
 export const actClearBtn = getHTMLElement("actClearBtn");
 export const actDropdownBtn = getHTMLElement("actDropdownBtn");
 export const actDropdownMenu = getHTMLElement("actDropdownMenu");
+export const actDropdownMenuCheckboxes = getCheckboxes(actDropdownMenu);
 export const allProgressGrid = getHTMLElement("allprogress-grid");
 export const backToTop = getHTMLElement("backToTop");
 export const closeInfoModal = getHTMLElement("closeInfoModal");
@@ -51,5 +73,6 @@ export const rawSaveSearch = getHTMLInputElement("rawsave-search");
 export const rosariesValue = getHTMLElement("rosariesValue");
 export const searchCounter = getHTMLElement("searchCounter");
 export const shardsValue = getHTMLElement("shardsValue");
+export const sidebarItems = getHTMLElements(document, ".sidebar-item");
 export const spoilerToggle = getHTMLInputElement("spoilerToggle");
 export const uploadOverlay = getHTMLElement("uploadOverlay");
