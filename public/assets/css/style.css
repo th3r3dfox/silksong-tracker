@@ -2893,11 +2893,11 @@ main {
 
 .map-wrapper {
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   width: 100%;
-  height: calc(100vh - 180px); 
+  height: calc(100vh - 180px);
   cursor: grab;
-  background-color: #000; 
+  background-color: #000;
 }
 
 .map-wrapper img {

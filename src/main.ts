@@ -205,7 +205,7 @@ function updateMapContent() {
     img.style.transform = `translate(-50%, -50%) translate(${translateX}px, ${translateY}px) scale(${scale})`;
   };
 
-  // Keep panning centered  prevent image from leaving screen.
+  // Keep panning centered prevent image from leaving screen.
   const clampPan = () => {
     const rect = wrapper.getBoundingClientRect();
 
