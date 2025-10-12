@@ -1784,18 +1784,18 @@ main {
   flex-wrap: wrap;
 }
 
-.act-filter {
+#act-filter {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.act-filter label {
+#act-filter label {
   font-weight: 600;
   color: var(--ink-2);
 }
 
-.act-filter select {
+#act-filter select {
   background: var(--bg-3);
   border: 1px solid var(--stroke);
   color: var(--ink-1);
@@ -2722,8 +2722,8 @@ main {
 }
 
 /* === Dropdown always above everything === */
-#actDropdownBtn,
-#actDropdownMenu {
+#act-dropdown-button,
+#act-dropdown-menu {
   position: relative;
   z-index: 9999; /* Ensure dropdown is always visible */
 }
@@ -2734,7 +2734,7 @@ main {
   z-index: 3000; /* create local stacking context */
 }
 
-#actDropdownMenu {
+#act-dropdown-menu {
   position: absolute;
   z-index: 4000; /* above banner */
 }
@@ -2745,7 +2745,7 @@ main {
   z-index: 3000;
 }
 
-#actDropdownMenu {
+#act-dropdown-menu {
   position: absolute;
   z-index: 4000; /* visible above everything */
 }

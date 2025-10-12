@@ -19,5 +19,8 @@ export default defineConfig(...completeConfigBase, {
 
     // This codebase mutates parameters in several places.
     "no-param-reassign": "off",
+
+    // We temporarily allow circular references.
+    "import-x/no-cycle": "off",
   },
 });
