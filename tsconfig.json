@@ -22,8 +22,8 @@
     "module": "esnext",
     "moduleResolution": "bundler",
 
-    // Specifies the compilation target. The default is "es5". We need to change this because we
-    // iterate over `Uint8Array<ArrayBufferLike>` in "save-decoder.js".
-    "target": "es2015",
+    // Needed to support the `cause` property in the `Error` constructor.
+    "target": "ES2022",
+    "lib": ["DOM", "ES2022"],
   },
 }

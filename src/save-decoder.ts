@@ -12,12 +12,13 @@ const AES_KEY_STRING = "UKu52ePUBwetZ9wNX88o54dnfKRu0T1l";
 
 /** Removes the header and length prefix from the .dat file. */
 function removeHeader(bytes: Uint8Array) {
-  const withoutHeader = bytes.subarray(CSHARP_HEADER.length, bytes.length - 1);
+  const withoutHeader = bytes.subarray(CSHARP_HEADER.length, -1);
 
   let lengthCount = 0;
   for (let i = 0; i < 5; i++) {
     lengthCount++;
     const byte = withoutHeader[i];
+    // eslint-disable-next-line no-bitwise
     if (byte !== undefined && (byte & 0x80) === 0) {
       break;
     }
@@ -32,13 +33,15 @@ export function decodeSilksongSave(arrayBuffer: ArrayBuffer): unknown {
     const bytes = new Uint8Array(arrayBuffer);
 
     // Step 1: Remove Unity/C# header
-    const noHeader = removeHeader(bytes);
+    const bytesWithoutHeader = removeHeader(bytes);
 
     // Step 2: Convert to base64 string (chunked for safety)
     let b64String = "";
-    const CHUNK_SIZE = 0x8000;
-    for (let i = 0; i < noHeader.length; i += CHUNK_SIZE) {
-      b64String += String.fromCharCode(...noHeader.slice(i, i + CHUNK_SIZE));
+    const CHUNK_SIZE = 0x80_00;
+    for (let i = 0; i < bytesWithoutHeader.length; i += CHUNK_SIZE) {
+      b64String += String.fromCodePoint(
+        ...bytesWithoutHeader.slice(i, i + CHUNK_SIZE),
+      );
     }
 
     // Step 3: Decrypt AES ECB PKCS7
@@ -55,8 +58,10 @@ export function decodeSilksongSave(arrayBuffer: ArrayBuffer): unknown {
 
     const jsonString = CryptoJS.enc.Utf8.stringify(decrypted);
     return JSON.parse(jsonString);
-  } catch (err) {
-    console.error("[Decode] Failed to decode Silksong save file:", err);
-    throw new Error("Failed to decode the Silksong save file.");
+  } catch (error) {
+    console.error("[Decode] Failed to decode Silksong save file:", error);
+    throw new Error("Failed to decode the Silksong save file.", {
+      cause: error,
+    });
   }
 }

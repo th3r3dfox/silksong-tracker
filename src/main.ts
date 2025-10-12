@@ -41,14 +41,14 @@ import {
   shardsValue,
   spoilerToggle,
   uploadOverlay,
-} from "./elements.js";
+} from "./elements.ts";
 import { decodeSilksongSave } from "./save-decoder.ts";
 import {
   getSaveFileFlags,
   parseSilksongSave,
   type ObjectWithSavedData,
   type SilksongSave,
-} from "./save-parser.js";
+} from "./save-parser.ts";
 import type { Act } from "./types/Act.ts";
 import type { Category } from "./types/Category.ts";
 import type { Item } from "./types/Item.ts";
@@ -57,7 +57,7 @@ import {
   getIconPath,
   normalizeString,
   normalizeStringWithUnderscores,
-} from "./utils.js";
+} from "./utils.ts";
 
 console.log(
   "No cost too great. No mind to think. No will to break. No voice to cry suffering.",
@@ -73,7 +73,7 @@ const BASE_DUMMY_ITEM = {
   link: "",
 } as const;
 
-// --- Act Dropdown Logic (modern multi-select with checkboxes) ---
+// Act Dropdown Logic (modern multi-select with checkboxes)
 
 // Toggle menu visibility
 actDropdownBtn.addEventListener("click", () => {

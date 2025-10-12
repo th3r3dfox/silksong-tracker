@@ -12,6 +12,8 @@ export const objectWithSavedData = z.object({
   ),
 });
 
+// We use `interface` over a `type` for cleaner type hovers.
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface ObjectWithSavedData
   extends z.infer<typeof objectWithSavedData> {}
 
@@ -64,6 +66,8 @@ export const silksongSaveSchema = z.object({
   sceneData: z.object({}).readonly(),
 });
 
+// We use `interface` over a `type` for cleaner type hovers.
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface SilksongSave extends z.infer<typeof silksongSaveSchema> {}
 
 export async function parseSilksongSave(
@@ -90,8 +94,8 @@ export function getSaveFileFlags(
   const flags: Record<string, Record<string, boolean>> = {};
 
   function mark(scene: string, id: string, value: number | boolean) {
-    scene = normalizeStringWithUnderscores(scene);
-    id = normalizeStringWithUnderscores(id);
+    scene = normalizeStringWithUnderscores(scene); // eslint-disable-line no-param-reassign
+    id = normalizeStringWithUnderscores(id); // eslint-disable-line no-param-reassign
 
     let flagsScene = flags[scene];
     if (flagsScene === undefined) {
