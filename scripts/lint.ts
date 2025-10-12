@@ -142,6 +142,8 @@ await lintCommands(import.meta.dirname, [
   // Ensure that certain characters do not appear in any files.
   // eslint-disable-next-line unicorn/prefer-top-level-await
   ["check for illegal characters", checkForIllegalCharacters()],
+
+  // Ensure that the JSON files adhere to certain quality standards.
   // eslint-disable-next-line unicorn/prefer-top-level-await
   ["check JSON properties", checkJSONPropertes()],
 ]);
