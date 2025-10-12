@@ -1,98 +1,98 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Silksong Tracker - Bosses or Journal Category File",
-  "type": "object",
-  "required": ["$schema", "categories"],
   "additionalProperties": false,
   "properties": {
     "$schema": {
       "type": "string"
     },
     "categories": {
-      "type": "array",
       "items": {
-        "type": "object",
-        "required": ["label", "desc", "items"],
         "additionalProperties": false,
         "properties": {
-          "label": {
-            "type": "string",
-            "description": "Visible section title (e.g. 'Main Bosses')"
-          },
           "desc": {
-            "type": "string",
-            "description": "Optional description text shown under the title"
+            "description": "Optional description text shown under the title",
+            "type": "string"
           },
           "items": {
-            "type": "array",
             "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "label",
-                "type",
-                "act",
-                "flag",
-                "icon",
-                "link",
-                "description"
-              ],
               "additionalProperties": false,
               "properties": {
-                "id": {
-                  "type": "string",
-                  "description": "Internal unique identifier"
-                },
-                "label": {
-                  "type": "string",
-                  "description": "Display name of the boss or journal entry"
+                "act": {
+                  "description": "The act number (I, II, III)",
+                  "enum": [1, 2, 3],
+                  "type": "integer"
                 },
                 "description": {
                   "type": "string"
                 },
-                "act": {
-                  "type": "integer",
-                  "enum": [1, 2, 3],
-                  "description": "The act number (I, II, III)"
-                },
                 "flag": {
-                  "type": "string",
-                  "description": "Name of the save flag used to track completion"
+                  "description": "Name of the save flag used to track completion",
+                  "type": "string"
                 },
                 "icon": {
-                  "type": "string",
-                  "description": "Path to the icon image (relative or absolute)"
+                  "description": "Path to the icon image (relative or absolute)",
+                  "type": "string"
+                },
+                "id": {
+                  "description": "Internal unique identifier",
+                  "type": "string"
+                },
+                "label": {
+                  "description": "Display name of the boss or journal entry",
+                  "type": "string"
                 },
                 "link": {
-                  "type": "string",
+                  "description": "Optional link for more info",
                   "format": "uri",
                   "pattern": "^[^\\s%]*$",
-                  "description": "Optional link for more info"
-                },
-                "type": {
-                  "type": "string",
-                  "enum": ["boss", "journal"],
-                  "description": "Defines whether this entry is a boss or journal entry"
+                  "type": "string"
                 },
                 "missable": {
-                  "type": "boolean",
-                  "description": "Whether this entry can be permanently missed"
+                  "description": "Whether this entry can be permanently missed",
+                  "type": "boolean"
                 },
                 "mode": {
-                  "type": "string",
+                  "description": "Game mode restriction",
                   "enum": ["normal", "steel"],
-                  "description": "Game mode restriction"
+                  "type": "string"
                 },
                 "required": {
-                  "type": "integer",
+                  "description": "Required count for completion (optional)",
                   "minimum": 1,
-                  "description": "Required count for completion (optional)"
+                  "type": "integer"
+                },
+                "type": {
+                  "description": "Defines whether this entry is a boss or journal entry",
+                  "enum": ["boss", "journal"],
+                  "type": "string"
                 }
-              }
-            }
+              },
+              "required": [
+                "act",
+                "description",
+                "flag",
+                "icon",
+                "id",
+                "label",
+                "link",
+                "type"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "label": {
+            "description": "Visible section title (e.g. 'Main Bosses')",
+            "type": "string"
           }
-        }
-      }
+        },
+        "required": ["desc", "items", "label"],
+        "type": "object"
+      },
+      "type": "array"
     }
-  }
+  },
+  "required": ["$schema", "categories"],
+  "title": "Silksong Tracker - Bosses or Journal Category File",
+  "type": "object"
 }
