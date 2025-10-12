@@ -467,7 +467,7 @@
           "type": "materium",
           "description": "Given by Tipp & Pill during Delivery Wishes",
           "link": "https://hollowknight.wiki/w/Materium",
-          "act": 1
+          "act": 2
         },
         {
           "id": "materium-courier-supplies-slave",
@@ -478,7 +478,7 @@
           "description": "Given by Tipp & Pill during the Queen's Egg wish",
           "link": "https://hollowknight.wiki/w/Materium",
           "mode": "normal",
-          "act": 1
+          "act": 2
         },
         {
           "id": "materium-courier-supplies-mask-maker",
@@ -696,7 +696,7 @@
           "type": "relic",
           "description": "Given by the Hunter upon mastering his trials.",
           "link": "https://hollowknight.wiki/w/Hunter's_Memento",
-          "act": 1
+          "act": 3
         },
         {
           "id": "memento-grey",
@@ -940,16 +940,6 @@
           "act": 3
         },
         {
-          "id": "map-halls",
-          "label": "High Halls Map",
-          "type": "flag",
-          "flag": "HasHallsMap",
-          "icon": "completion/High_Halls_Map.png",
-          "description": "Obtained from a map machine.",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "act": 2
-        },
-        {
           "id": "map-cog",
           "label": "Cogwork Core Map",
           "type": "flag",
@@ -1006,6 +996,96 @@
           "flag": "HasWeavehomeMap",
           "icon": "completion/Weavenest_Atla_Map.png",
           "description": "Obtained from a Lore Tablet",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
+        },
+        {
+          "id": "map-wilds",
+          "label": "Far Fields Map",
+          "type": "flag",
+          "flag": "HasWildsMap",
+          "icon": "completion/Far_Fields_Map.png",
+          "description": "Purchase from Shakra. Fierce red-shells nest across these wide caverns. Battle with them is most intense. Impressive are the warriors of Pharloom.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
+        },
+        {
+          "id": "map-boneforest",
+          "label": "The Marrow Map",
+          "type": "flag",
+          "flag": "HasBoneforestMap",
+          "icon": "completion/Generic_Map.png",
+          "description": "Purchase from Shakra. Crumbling roads built upon the shells of ancient bugs. All of Pharloom rests upon these fragile foundations.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
+        },
+        {
+          "id": "map-crawl",
+          "label": "Wormways Map",
+          "type": "flag",
+          "flag": "HasCrawlMap",
+          "icon": "completion/Wormways_Map.png",
+          "description": "Purchase from Shakra. Worm-ridden caverns, shaking and unstable. There remain faint signs that pilgrims once travelled these tight paths.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
+        },
+        {
+          "id": "map-judgesteps",
+          "label": "Blasted Steps Map",
+          "type": "flag",
+          "flag": "HasJudgeStepsMap",
+          "icon": "completion/Blasted_Steps_Map.png",
+          "description": "Purchase from Shakra. Huge caves ascending to Pharloom's Citadel. The roads are slowly being devoured by sand and howling wind.",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
+        },
+        {
+          "id": "map-dustpens",
+          "label": "Sinners Road Map",
+          "type": "flag",
+          "flag": "HasDustpensMap",
+          "icon": "completion/Sinner's_Road_Map.png",
+          "description": "Purchase from Shakra. Old roads and passages overrun by roaches and their keepers. The ways are covered thick with filth",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
+        },
+        {
+          "id": "map-hang",
+          "label": "High Halls Map",
+          "type": "flag",
+          "flag": "HasHangMap",
+          "icon": "completion/High_Halls_Map.png",
+          "description": "Obtained from a map machine",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
+        },
+        {
+          "id": "map-halls",
+          "label": "Choral Chambers Map",
+          "type": "flag",
+          "flag": "HasHallsMap",
+          "icon": "completion/Choral_Chambers_Map.png",
+          "description": "Obtained from a map machine",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
+        },
+        {
+          "id": "map-songgate",
+          "label": "Grand Gate Map",
+          "type": "flag",
+          "flag": "HasSongGateMap",
+          "icon": "completion/Choral_Chambers_Map.png",
+          "description": "Obtained from a map machine",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "act": 1
+        },
+        {
+          "id": "map-ward",
+          "label": "Whiteward Map",
+          "type": "flag",
+          "flag": "HasWardMap",
+          "icon": "completion/Whiteward_Map.png",
+          "description": "Obtained from a map machine",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
           "act": 1
         }

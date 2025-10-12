@@ -755,7 +755,6 @@
           "icon": "quest/Delivery.png",
           "description": "Deliver supplies to the fixer Flick in Bone Bottom.",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
-          "mode": "normal",
           "act": 1,
           "missable": true
         },
@@ -767,7 +766,6 @@
           "icon": "quest/Delivery.png",
           "description": "Deliver supplies to Mort in Pilgrim's Rest.",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
-          "mode": "normal",
           "act": 1,
           "missable": true
         },
@@ -790,7 +788,6 @@
           "icon": "quest/Delivery.png",
           "description": "Deliver supplies to the Caretaker in Songclave.",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
-          "mode": "normal",
           "act": 2
         },
         {
@@ -801,7 +798,6 @@
           "icon": "quest/Delivery.png",
           "description": "Deliver supplies to the Fleamaster Mooshka in Fleatopia.",
           "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
-          "mode": "normal",
           "act": 2
         },
         {
