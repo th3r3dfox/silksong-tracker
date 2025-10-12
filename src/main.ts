@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-nochec
 
 import {
   assertArray,
@@ -66,6 +66,14 @@ console.log(
 );
 
 let tocObserver: IntersectionObserver | undefined;
+
+const BASE_DUMMY_ITEM = {
+  act: 1,
+  icon: "",
+  id: "",
+  label: "",
+  link: "",
+} as const;
 
 // --- Act Dropdown Logic (modern multi-select with checkboxes) ---
 
@@ -641,22 +649,14 @@ function renderGenericGrid(
   // Apply mutually exclusive groups (global, relic + quest)
   EXCLUSIVE_GROUPS.forEach((group) => {
     const owned = group.find((flag) => {
-      const item = {
-        flag,
-        act: 1,
-        icon: "",
-        id: "",
-        label: "",
-        link: "",
-      } as const;
-
       // try first as relic
       let value = getSaveDataValue(
         currentLoadedSaveData,
         currentLoadedSaveDataFlags,
         {
-          ...item,
+          ...BASE_DUMMY_ITEM,
           type: "relic",
+          flag,
         },
       );
 
@@ -666,8 +666,9 @@ function renderGenericGrid(
           currentLoadedSaveData,
           currentLoadedSaveDataFlags,
           {
-            ...item,
+            ...BASE_DUMMY_ITEM,
             type: "quest",
+            flag,
           },
         );
       }
@@ -791,7 +792,7 @@ function renderGenericGrid(
       div.appendChild(warn);
     }
 
-    if (item.upgradeOf) {
+    if (item.type === "tool" && item.upgradeOf !== undefined) {
       const upg = document.createElement("span");
       upg.className = "upgrade-icon";
       upg.title = "Upgraded item";
@@ -1222,7 +1223,7 @@ async function updateAllProgressContent(selectedAct = "all") {
       let items = category.items;
       assertArray(items, 'The "items" field must be an array.');
 
-      const currentActFilter = getCurrentActFilter(); // TODO
+      const currentActFilter = getCurrentActFilter();
       let filteredItems = items.filter((item) => {
         return currentActFilter.includes(item.act) && matchMode(item);
       });
@@ -1260,11 +1261,16 @@ async function updateAllProgressContent(selectedAct = "all") {
           const value = getSaveDataValue(
             currentLoadedSaveData,
             currentLoadedSaveDataFlags,
-            { type: "relic", flag },
+            {
+              ...BASE_DUMMY_ITEM,
+              type: "relic",
+              flag,
+            },
           );
           return value === "deposited" || value === "collected";
         });
-        if (owned) {
+
+        if (owned !== undefined) {
           filteredItems = filteredItems.filter(
             (item) => !group.includes(item.flag) || item.flag === owned,
           );
@@ -1277,7 +1283,7 @@ async function updateAllProgressContent(selectedAct = "all") {
       const countedGroups = new Set();
 
       filteredItems.forEach((item) => {
-        if (item.upgradeOf) {
+        if (item.type === "tool" && item.upgradeOf) {
           return;
         }
 
@@ -1290,25 +1296,16 @@ async function updateAllProgressContent(selectedAct = "all") {
                 item,
               );
 
-        const isUnlocked =
-          item.type === "quest"
-            ? value === "completed" || value === true
-            : item.type === "level"
-              ? (value ?? 0) >= (item.required ?? 0)
-              : item.type === "collectable"
-                ? (value ?? 0) > 0
-                : value === true
-                  || value === "collected"
-                  || value === "deposited";
+        const unlocked = getUnlocked(item, value);
 
         if (item.exclusiveGroup) {
           exclusiveGroups.add(item.exclusiveGroup);
-          if (isUnlocked && !countedGroups.has(item.exclusiveGroup)) {
+          if (unlocked && !countedGroups.has(item.exclusiveGroup)) {
             countedGroups.add(item.exclusiveGroup);
             obtained++;
           }
         } else {
-          obtained += isUnlocked ? 1 : 0;
+          obtained += unlocked ? 1 : 0;
         }
       });
 
@@ -1345,6 +1342,25 @@ async function updateAllProgressContent(selectedAct = "all") {
   // ✅ Build TOC once after all categories are rendered
   buildDynamicTOC();
   initScrollSpy();
+}
+
+function getUnlocked(item: Item, value: unknown): boolean {
+  if (item.type === "quest") {
+    return value === "completed" || value === true;
+  }
+
+  if (item.type === "level") {
+    const numberValue = typeof value === "number" ? value : 0;
+    const required = item.required ?? 0;
+    return numberValue >= required;
+  }
+
+  if (item.type === "collectable") {
+    const numberValue = typeof value === "number" ? value : 0;
+    return numberValue > 0;
+  }
+
+  return value === true || value === "collected" || value === "deposited";
 }
 
 function buildDynamicTOC() {
