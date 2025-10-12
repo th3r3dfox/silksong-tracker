@@ -170,27 +170,6 @@ main {
   gap: 12px;
   margin-bottom: 24px;
 }
-.sidebar-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  font-size: 1.1rem;
-  background: transparent;
-  color: #ccc;
-  border: 1px solid #444;
-  border-radius: 8px;
-  text-decoration: none;
-  transition:
-    background 0.2s,
-    border-color 0.2s;
-}
-.sidebar-icon:hover {
-  background: #2c2c2c;
-  color: #fff;
-  border-color: #666;
-}
 
 /* Divider + section title */
 .sidebar-divider {

@@ -8,6 +8,7 @@ import {
   isObject,
   parseIntSafe,
 } from "complete-common";
+import { actDropdownBtn } from "./components/act-filter.ts";
 import { BASE_PATH } from "./constants.ts";
 import bossesJSON from "./data/bosses.json" with { type: "json" };
 import completionJSON from "./data/completion.json" with { type: "json" };
@@ -16,7 +17,6 @@ import mainJSON from "./data/main.json" with { type: "json" };
 import wishesJSON from "./data/wishes.json" with { type: "json" };
 import {
   actClearBtn,
-  actDropdownBtn,
   actDropdownMenu,
   actDropdownMenuCheckboxes,
   allProgressGrid,

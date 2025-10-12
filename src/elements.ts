@@ -48,7 +48,6 @@ export function getHTMLElements(
 }
 
 export const actClearBtn = getHTMLElement("actClearBtn");
-export const actDropdownBtn = getHTMLElement("actDropdownBtn");
 export const actDropdownMenu = getHTMLElement("actDropdownMenu");
 export const actDropdownMenuCheckboxes = getCheckboxes(actDropdownMenu);
 export const allProgressGrid = getHTMLElement("allprogress-grid");
