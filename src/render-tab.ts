@@ -5,12 +5,14 @@ import {
   includes,
 } from "complete-common";
 import { getHTMLElements, missingToggle } from "./elements.ts";
-import { updateAllProgressContent } from "./tabs/progress.ts";
-import { updateRawSaveContent } from "./tabs/raw-save.ts";
+import { updateTabMap } from "./tabs/map.ts";
+import { updateTabProgress } from "./tabs/progress.ts";
+import { updateTabRawSave } from "./tabs/raw-save.ts";
 
 const TAB_TO_UPDATE_FUNCTION = {
-  allprogress: updateAllProgressContent,
-  rawsave: updateRawSaveContent,
+  allprogress: updateTabProgress,
+  rawsave: updateTabRawSave,
+  map: updateTabMap,
 } as const;
 export const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION) as ReadonlyArray<
   keyof typeof TAB_TO_UPDATE_FUNCTION

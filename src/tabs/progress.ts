@@ -41,7 +41,7 @@ const BASE_DUMMY_ITEM = {
 
 let tocObserver: IntersectionObserver | undefined;
 
-export function updateAllProgressContent(): void {
+export function updateTabProgress(): void {
   const spoilerOn = spoilerToggle.checked;
   const showMissingOnly = missingToggle.checked;
   allProgressGrid.innerHTML = "";

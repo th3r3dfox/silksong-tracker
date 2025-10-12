@@ -1,7 +1,7 @@
 import { rawSaveOutput } from "../elements.ts";
 import { getSaveData } from "../save-data.ts";
 
-export function updateRawSaveContent(): void {
+export function updateTabRawSave(): void {
   const saveData = getSaveData();
 
   if (saveData === undefined) {
