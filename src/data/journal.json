@@ -1,0 +1,22 @@
+{
+  "$schema": "./journal.schema.json",
+  "categories": [
+    {
+      "desc": "Major adversaries encountered throughout Pharloom. Defeating them marks your progress in Hollow Knight: Silksong.",
+      "items": [
+        {
+          "act": 3,
+          "description": "Mossgrub",
+          "flag": "MossBone Crawler",
+          "icon": "https://cdn.wikimg.net/en/hkwiki/images/3/36/B_Mossgrub.png",
+          "id": "mossgrub",
+          "label": "Mossgrub",
+          "link": "https://hollowknight.wiki/w/Mossgrub",
+          "required": 1000,
+          "type": "journal"
+        }
+      ],
+      "label": "Journal"
+    }
+  ]
+}

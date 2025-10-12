@@ -4,6 +4,7 @@ import { BASE_PATH } from "../constants.ts";
 import bossesJSON from "../data/bosses.json" with { type: "json" };
 import completionJSON from "../data/completion.json" with { type: "json" };
 import essentialsJSON from "../data/essentials.json" with { type: "json" };
+import journalJSON from "../data/journal.json" with { type: "json" };
 import mainJSON from "../data/main.json" with { type: "json" };
 import wishesJSON from "../data/wishes.json" with { type: "json" };
 import {
@@ -61,6 +62,7 @@ export function updateTabProgress(): void {
       categories: completionJSON.categories as Category[],
     },
     { title: "Wishes", categories: wishesJSON.categories as Category[] },
+    { title: "Journal", categories: journalJSON.categories as Category[] },
   ];
 
   // Render all categories.
@@ -500,6 +502,14 @@ function renderGenericGrid(
       case "device": {
         isDone = value === "deposited";
         isAccepted = value === "collected";
+        break;
+      }
+
+      case "journal": {
+        const current = typeof value === "number" ? value : 0;
+        const { required } = item;
+        isDone = current >= required;
+        isAccepted = current > 0 && current < required;
         break;
       }
 
