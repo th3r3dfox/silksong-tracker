@@ -48,11 +48,11 @@
                   "description": "Whether this item can be permanently missed",
                   "type": "boolean"
                 },
-                "obtain": {
-                  "type": "string"
-                },
                 "mode": {
                   "enum": ["normal", "steel"],
+                  "type": "string"
+                },
+                "obtain": {
                   "type": "string"
                 },
                 "relatedFlag": {
