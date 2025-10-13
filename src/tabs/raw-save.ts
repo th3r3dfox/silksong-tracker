@@ -5,7 +5,7 @@ export function updateTabRawSave(): void {
   const saveData = getSaveData();
 
   if (saveData === undefined) {
-    rawSaveOutput.textContent = "⚠️ No save file loaded.";
+    rawSaveOutput.textContent = "No save file loaded.";
   }
 
   try {

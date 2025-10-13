@@ -1,9 +1,30 @@
-import { assertObject, assertString, isArray, isObject } from "complete-common";
+import {
+  assertObject,
+  assertString,
+  includes,
+  isArray,
+  isASCII,
+  isObject,
+  ReadonlyMap,
+} from "complete-common";
 import { getFilePathsInDirectory, lintCommands, readFile } from "complete-node";
 import { globby } from "globby";
 import path from "node:path";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
+
+/**
+ * In general, we want to keep non-standard characters out of the codebase. Only certain files are
+ * allowed to have non-ASCII characters.
+ */
+const ALLOWED_UNICODE_MAP = new ReadonlyMap<string, readonly string[]>([
+  ["index.html", ["◀", "▶", "✕"]],
+  ["main.ts", ["📋", "❌"]],
+  ["overview.md", ["│", "├", "└", "─"]],
+  ["progress.ts", ["✕", "↑"]],
+  ["raw-save.ts", ["❌"]],
+  ["save-data.ts", ["✅", "❌"]],
+]);
 
 async function getDataJSONFilePaths(): Promise<readonly string[]> {
   const repoRoot = path.join(import.meta.dirname, "..");
@@ -46,16 +67,18 @@ async function checkForIllegalCharacters() {
     })),
   );
 
-  const illegalCharacters = ["’", "—", "–"] as const;
-
   for (const fileInfo of fileInfos) {
     const { filePath, fileContents } = fileInfo;
 
-    for (const character of illegalCharacters) {
-      if (fileContents.includes(character)) {
-        throw new Error(
-          `Please remove all "${character}" character(s) in file: ${filePath}`,
-        );
+    if (!isASCII(fileContents)) {
+      const fileName = path.basename(filePath);
+      const allowedEmoji = ALLOWED_UNICODE_MAP.get(fileName) ?? [];
+      for (const character of fileContents) {
+        if (!isASCII(character) && !includes(allowedEmoji, character)) {
+          throw new Error(
+            `The character of "${character}" is not allowed in file "${filePath}". Please remove it. Alternatively, if this character is needed, add it to the unicode whitelist in the "lint.ts" file.`,
+          );
+        }
       }
     }
   }

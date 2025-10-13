@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch((error: unknown) => {
           console.error("Clipboard error:", error);
-          showToast("⚠️ Unable to copy path.");
+          showToast("❌ Unable to copy path.");
         });
     });
   }
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
         showToast("📋 JSON copied to clipboard!");
       })
       .catch(() => {
-        showToast("⚠️ Copy failed.");
+        showToast("❌ Copy failed.");
       });
   });
 
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const saveData = getSaveData();
 
     if (saveData === undefined) {
-      showToast("⚠️ No save loaded yet.");
+      showToast("❌ No save loaded yet.");
       return;
     }
     const saveDataString = JSON.stringify(saveData, undefined, 2);
