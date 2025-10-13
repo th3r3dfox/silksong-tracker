@@ -12,8 +12,7 @@
           "id": "ability-hunters-cloak",
           "label": "Hunter's Cloak",
           "link": "https://hollowknight.wiki/w/Hunter's_Cloak",
-          "required": 0,
-          "type": "level"
+          "type": "flag"
         },
         {
           "act": 1,
@@ -24,8 +23,7 @@
           "label": "Drifter's Cloak",
           "link": "https://hollowknight.wiki/w/Drifter's_Cloak",
           "map": "https://cdn.wikimg.net/en/hkwiki/images/thumb/2/27/Mapshot_SS_Seamstress_01.png/200px-Mapshot_SS_Seamstress_01.png",
-          "required": 0,
-          "type": "level"
+          "type": "flag"
         },
         {
           "act": 2,
@@ -36,8 +34,7 @@
           "label": "Faydown Cloak",
           "link": "https://hollowknight.wiki/w/Faydown_Cloak",
           "map": "https://cdn.wikimg.net/en/hkwiki/images/thumb/7/79/Mapshot_SS_Fayforn.png/140px-Mapshot_SS_Fayforn.png",
-          "required": 0,
-          "type": "level"
+          "type": "flag"
         }
       ],
       "label": "Cloaks"
