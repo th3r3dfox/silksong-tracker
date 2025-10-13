@@ -10,6 +10,7 @@ import { getHTMLElement } from "../elements.ts";
 import { renderActiveTab } from "../render-tab.ts";
 import type { Act } from "../types/Act.ts";
 
+const LOCAL_STORAGE_KEY = "actsDropdown";
 const DEFAULT_ACT_FILTER = [1, 2, 3] as const;
 
 const actsDropdownButton = getHTMLElement("acts-dropdown-button");
@@ -63,38 +64,32 @@ export function initActsDropdown(): void {
   // Update the filter when any checkbox changes.
   for (const checkboxInfo of checkboxInfos) {
     const { checkbox } = checkboxInfo;
-    checkbox.addEventListener("change", updateActFilter);
+    checkbox.addEventListener("change", onChangeCheckbox);
   }
 
-  // When the page is loaded, restore the previous state from `localStorage`.
-  globalThis.addEventListener("DOMContentLoaded", () => {
-    const actFilter = getStoredActFilter();
-
-    for (const checkboxInfo of checkboxInfos) {
-      const { act, checkbox } = checkboxInfo;
-      checkbox.checked = actFilter.includes(act);
-    }
-  });
+  // Restore the previous state of the checkboxes from `localStorage`.
+  const actFilter = getStoredActFilter();
+  for (const checkboxInfo of checkboxInfos) {
+    const { act, checkbox } = checkboxInfo;
+    checkbox.checked = actFilter.includes(act);
+  }
 }
 
-/** Executed when a UI checkbox is changed. */
-function updateActFilter() {
+function onChangeCheckbox() {
   const selectedActs = checkboxInfos
     .filter((checkboxInfo) => checkboxInfo.checkbox.checked)
     .map((checkboxInfo) => checkboxInfo.act);
 
   // Save selection
   const selectedActsString = JSON.stringify(selectedActs);
-  localStorage.setItem("currentActFilter", selectedActsString);
+  localStorage.setItem(LOCAL_STORAGE_KEY, selectedActsString);
 
   renderActiveTab();
 }
 
 /** If there is not a stored value, this function will return the default value. */
 export function getStoredActFilter(): readonly Act[] {
-  const localStorageKey = "actFilter";
-
-  const actFilterString = localStorage.getItem(localStorageKey);
+  const actFilterString = localStorage.getItem(LOCAL_STORAGE_KEY);
   if (actFilterString === null) {
     return DEFAULT_ACT_FILTER;
   }
@@ -103,7 +98,7 @@ export function getStoredActFilter(): readonly Act[] {
     const currentActFilter: unknown = JSON.parse(actFilterString);
     assertArray(
       currentActFilter,
-      `The "${localStorageKey}" localStorage value must be an array instead of: ${actFilterString}`,
+      `The "${LOCAL_STORAGE_KEY}" localStorage value must be an array instead of: ${actFilterString}`,
     );
 
     const arrayValid = currentActFilter.every((act) =>
@@ -111,7 +106,7 @@ export function getStoredActFilter(): readonly Act[] {
     );
     if (!arrayValid) {
       throw new TypeError(
-        `The "${localStorageKey}" localStorage value must be an array of valid acts instead of: ${actFilterString}`,
+        `The "${LOCAL_STORAGE_KEY}" localStorage value must be an array of valid acts instead of: ${actFilterString}`,
       );
     }
 
@@ -119,10 +114,10 @@ export function getStoredActFilter(): readonly Act[] {
   } catch (error) {
     console.warn(error);
     console.warn(
-      `Rewriting the "${localStorageKey}" localStorage value to default.`,
+      `Rewriting the "${LOCAL_STORAGE_KEY}" localStorage value to default.`,
     );
     const defaultActFilterString = JSON.stringify(DEFAULT_ACT_FILTER);
-    localStorage.setItem("currentActFilter", defaultActFilterString);
+    localStorage.setItem(LOCAL_STORAGE_KEY, defaultActFilterString);
 
     return DEFAULT_ACT_FILTER;
   }
