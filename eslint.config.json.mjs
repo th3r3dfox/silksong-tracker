@@ -15,7 +15,7 @@ export default defineConfig([
       json: ESLintPluginJSON,
     },
 
-    files: ["src/data/*.json"],
+    files: ["**/*.json"],
     language: "json/json",
 
     // https://github.com/eslint/json?tab=readme-ov-file#rules
