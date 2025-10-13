@@ -1,1 +1,1 @@
-export const BASE_PATH = "/silksong-tracker/";
+export const BASE_PATH = "/silksong-tracker";
