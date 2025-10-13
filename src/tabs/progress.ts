@@ -153,12 +153,12 @@ export function updateTabProgress(): void {
             return false;
           }
 
-          // If something in the group is owned → keep only that one.
+          // If something in the group is owned keep only that one.
           if (owned !== undefined) {
             return !includes(group, flag) || flag === owned;
           }
 
-          // If nothing owned → keep only the first defined variant (default).
+          // If nothing owned keep only the first defined variant (default).
           const defaultFlag = group[0];
           return !includes(group, flag) || flag === defaultFlag;
         });
