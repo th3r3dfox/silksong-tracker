@@ -29,6 +29,9 @@
                   "description": "Name of the save flag used to track completion",
                   "type": "string"
                 },
+                "hornetDescription": {
+                  "type": "string"
+                },
                 "icon": {
                   "description": "Path to the icon image (relative or absolute)",
                   "type": "string"
@@ -71,6 +74,7 @@
                 "act",
                 "description",
                 "flag",
+                "hornetDescription",
                 "icon",
                 "id",
                 "label",
