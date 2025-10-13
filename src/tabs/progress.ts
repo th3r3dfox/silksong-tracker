@@ -41,6 +41,7 @@ const BASE_DUMMY_ITEM = {
 } as const;
 
 let tocObserver: IntersectionObserver | undefined;
+let isManualScroll = false; // prevent observer interference
 
 export function updateTabProgress(): void {
   const spoilerOn = showSpoilers.checked;
@@ -621,34 +622,45 @@ function initScrollSpy() {
     tocObserver.disconnect();
   }
 
+  const updateTocState = (targetId: string) => {
+    const match = document.querySelector(`a[href="#${targetId}"]`);
+    if (!match) {
+      return;
+    }
+
+    const parentCategory = match.closest(".toc-category");
+
+    // Update active link
+    for (const link of tocLinks) {
+      link.classList.remove("active");
+    }
+    match.classList.add("active");
+
+    // Update category visibility
+    const tocCategories = getHTMLElements(document, ".toc-category");
+    for (const category of tocCategories) {
+      const sublist = category.querySelector(".toc-sublist");
+      if (category === parentCategory) {
+        category.classList.add("open");
+        sublist?.classList.remove("hidden");
+      } else {
+        category.classList.remove("open");
+        sublist?.classList.add("hidden");
+      }
+    }
+  };
+
+  // Create IntersectionObserver for automatic scroll highlighting.
   tocObserver = new IntersectionObserver(
     (entries: readonly IntersectionObserverEntry[]) => {
+      if (isManualScroll) {
+        return;
+      } // Skip updates during manual scroll
+
       for (const entry of entries) {
-        const { id } = entry.target;
-        const match = document.querySelector(`a[href="#${id}"]`);
-        if (match === null) {
-          continue;
-        }
-
-        const parentCategory = match.closest(".toc-category");
-
         if (entry.isIntersecting) {
-          for (const link of tocLinks) {
-            link.classList.remove("active");
-          }
-          match.classList.add("active");
-
-          const tocCategories = getHTMLElements(document, ".toc-category");
-          for (const category of tocCategories) {
-            const sublist = category.querySelector(".toc-sublist");
-            if (category === parentCategory) {
-              category.classList.add("open");
-              sublist?.classList.remove("hidden");
-            } else {
-              category.classList.remove("open");
-              sublist?.classList.add("hidden");
-            }
-          }
+          updateTocState(entry.target.id);
+          break;
         }
       }
     },
@@ -658,6 +670,41 @@ function initScrollSpy() {
     },
   );
 
+  const handleTocClick = (event: Event) => {
+    event.preventDefault();
+
+    const href = (event.currentTarget as HTMLAnchorElement).getAttribute(
+      "href",
+    );
+    if (href === null || !href.startsWith("#")) {
+      return;
+    }
+
+    const targetId = href.replace("#", "");
+    const targetElement = document.querySelector<HTMLElement>(`#${targetId}`); // adding # to get by id
+    if (!targetElement) {
+      return;
+    }
+
+    // Prevent observer from overriding click highlight.
+    isManualScroll = true;
+    updateTocState(targetId);
+
+    targetElement.scrollIntoView({ behavior: "instant" });
+
+    // Re-enable observer slightly after scroll completes.
+    setTimeout(() => {
+      isManualScroll = false;
+    }, 800); // adjust if your scroll is slower/faster
+  };
+
+  // Attach click listeners
+  for (const link of tocLinks) {
+    link.removeEventListener("click", handleTocClick); // Prevent duplicate
+    link.addEventListener("click", handleTocClick);
+  }
+
+  // Observe all headers
   const headers = getHTMLElements(
     document,
     "#allprogress-grid h2, #allprogress-grid h3",
