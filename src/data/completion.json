@@ -1090,7 +1090,7 @@
         {
           "act": 1,
           "cost": "50",
-          "description": "Writing implement for recording one's travels. Can be used to update any acquired maps. ",
+          "description": "Writing implement for recording one's travels. Can be used to update any acquired maps.",
           "flag": "QuillState",
           "icon": "completion/Quill_White.png",
           "id": "QuillState_1",
@@ -1115,7 +1115,7 @@
         {
           "act": 3,
           "cost": "Free",
-          "description": "Writing implement for recording one's travels. Can be used to update any acquired maps. ",
+          "description": "Writing implement for recording one's travels. Can be used to update any acquired maps.",
           "flag": "QuillState",
           "icon": "completion/Quill_Purple.png",
           "id": "QuillState_3",
