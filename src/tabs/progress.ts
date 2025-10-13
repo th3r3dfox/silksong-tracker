@@ -1,6 +1,7 @@
 import { assertArray, assertIs, includes } from "complete-common";
 import { getStoredActFilter } from "../components/acts-dropdown.ts";
 import { showOnlyMissing } from "../components/show-only-missing.ts";
+import { showSpoilers } from "../components/show-spoilers.ts";
 import { BASE_PATH } from "../constants.ts";
 import bossesJSON from "../data/bosses.json" with { type: "json" };
 import completionJSON from "../data/completion.json" with { type: "json" };
@@ -14,7 +15,6 @@ import {
   getHTMLElements,
   infoContent,
   infoOverlay,
-  spoilerToggle,
   tocList,
 } from "../elements.ts";
 import {
@@ -43,7 +43,7 @@ const BASE_DUMMY_ITEM = {
 let tocObserver: IntersectionObserver | undefined;
 
 export function updateTabProgress(): void {
-  const spoilerOn = spoilerToggle.checked;
+  const spoilerOn = showSpoilers.checked;
   const showMissingOnly = showOnlyMissing.checked;
   allProgressGrid.innerHTML = "";
 
