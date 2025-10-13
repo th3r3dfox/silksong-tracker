@@ -4,7 +4,8 @@ import {
   assertNotNull,
   includes,
 } from "complete-common";
-import { getHTMLElements, missingToggle } from "./elements.ts";
+import { showOnlyMissing } from "./components/show-only-missing.ts";
+import { getHTMLElements } from "./elements.ts";
 import { updateTabMap } from "./tabs/map.ts";
 import { updateTabProgress } from "./tabs/progress.ts";
 import { updateTabRawSave } from "./tabs/raw-save.ts";
@@ -45,7 +46,7 @@ export function renderActiveTab(): void {
 }
 
 function applyMissingFilter() {
-  const showMissingOnly = missingToggle.checked;
+  const showMissingOnly = showOnlyMissing.checked;
 
   const mainSectionBlocks = getHTMLElements(document, ".main-section-block");
   for (const section of mainSectionBlocks) {
