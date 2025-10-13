@@ -9,7 +9,7 @@
       "items": {
         "additionalProperties": false,
         "properties": {
-          "desc": {
+          "description": {
             "type": "string"
           },
           "items": {
@@ -77,7 +77,7 @@
             "type": "string"
           }
         },
-        "required": ["desc", "items", "label"],
+        "required": ["description", "items", "label"],
         "type": "object"
       },
       "type": "array"

@@ -2,7 +2,7 @@
   "$schema": "./completion.schema.json",
   "categories": [
     {
-      "desc": "Items that can be traded to certain NPCs for Rosaries or other services.",
+      "description": "Items that can be traded to certain NPCs for Rosaries or other services.",
       "items": [
         {
           "act": 1,
@@ -173,7 +173,7 @@
       "label": "Relics"
     },
     {
-      "desc": "They are cylinders inscribed with recordings, which may be heard by bringing them to Vaultkeeper Cardinius. Listening to the Sacred Cylinder",
+      "description": "They are cylinders inscribed with recordings, which may be heard by bringing them to Vaultkeeper Cardinius.",
       "items": [
         {
           "act": 1,
@@ -242,7 +242,7 @@
       "label": "Cylinder"
     },
     {
-      "desc": "Crystallized essences of Pharloom's forces, gathered to empower tools and relics.",
+      "description": "Crystallized essences of Pharloom's forces, gathered to empower tools and relics.",
       "items": [
         {
           "act": 1,
@@ -679,7 +679,7 @@
       "label": "Materium"
     },
     {
-      "desc": "Keepsakes given by allies or obtained through notable encounters. Some may hold sentimental value.",
+      "description": "Keepsakes given by allies or obtained through notable encounters. Some may hold sentimental value.",
       "items": [
         {
           "act": 3,
@@ -799,7 +799,7 @@
       "label": "Mementos"
     },
     {
-      "desc": "Maps have to be obtained before an area will appear on the in-game map.",
+      "description": "Maps have to be obtained before an area will appear on the in-game map.",
       "items": [
         {
           "act": 1,
@@ -1085,7 +1085,7 @@
       "label": "Maps"
     },
     {
-      "desc": "Writing implement for recording one's travels. Can be used to update any acquired maps.",
+      "description": "Writing implement for recording one's travels. Can be used to update any acquired maps.",
       "items": [
         {
           "act": 1,
@@ -1162,7 +1162,7 @@
       "label": "Maps and Quills"
     },
     {
-      "desc": "Markers purchased from Shakra to mark key locations across Pharloom.",
+      "description": "Markers purchased from Shakra to mark key locations across Pharloom.",
       "items": [
         {
           "act": 1,
@@ -1258,7 +1258,7 @@
       "label": "Map Pins"
     },
     {
-      "desc": "Stations unlocked throughout Pharloom that connect distant regions and aid swift travel.",
+      "description": "Stations unlocked throughout Pharloom that connect distant regions and aid swift travel.",
       "items": [
         {
           "act": 1,
@@ -1384,7 +1384,7 @@
       "label": "Bellway Stations"
     },
     {
-      "desc": "The Ventrica are a system of tubes that run throughout the Citadel and Underworks, which Hornet can use to travel, similar to the Bellways. The Grand Bellway station connects the two systems of travel.",
+      "description": "The Ventrica are a system of tubes that run throughout the Citadel and Underworks, which Hornet can use to travel, similar to the Bellways. The Grand Bellway station connects the two systems of travel.",
       "items": [
         {
           "act": 2,
@@ -1450,7 +1450,7 @@
       "label": "Ventrica Stations"
     },
     {
-      "desc": "Special single-instance items gathered and deposited the Bellhome in Bellhart before it can be used.",
+      "description": "Special single-instance items gathered and deposited the Bellhome in Bellhart before it can be used.",
       "items": [
         {
           "act": 2,

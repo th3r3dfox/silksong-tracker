@@ -1,12 +1,11 @@
-import {
-  assertDefined,
-  assertIs,
-  assertNotNull,
-  includes,
-} from "complete-common";
+import { assertNotNull } from "complete-common";
 import { initActsDropdown } from "./components/acts-dropdown.ts";
 import { initShowOnlyMissing } from "./components/show-only-missing.ts";
 import { initShowSpoilers } from "./components/show-spoilers.ts";
+import {
+  getStoredActiveTab,
+  initSidebarItems,
+} from "./components/sidebar-items.ts";
 import { initUploadSave } from "./components/upload-save.ts";
 import {
   backToTop,
@@ -24,10 +23,9 @@ import {
   rawSaveOutput,
   rawSaveSearch,
   searchCounter,
-  sidebarItems,
   uploadOverlay,
 } from "./elements.ts";
-import { renderActiveTab, VALID_TABS } from "./render-tab.ts";
+import { renderActiveTab } from "./render-tab.ts";
 import { getSaveData, handleSaveFile } from "./save-data.ts";
 import { showToast } from "./utils.ts";
 
@@ -36,14 +34,19 @@ function main() {
   // order.
   document.addEventListener("DOMContentLoaded", () => {
     initComponents();
+    renderActiveTab();
   });
 }
 
 function initComponents() {
+  // Top-nav
   initActsDropdown();
   initShowOnlyMissing();
   initShowSpoilers();
   initUploadSave();
+
+  // Left-nav
+  initSidebarItems();
 }
 
 // Back to top button listener.
@@ -268,84 +271,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Handle sidebar clicks
-for (const anchor of sidebarItems) {
-  assertIs(
-    anchor,
-    HTMLAnchorElement,
-    'An element with a class of "sidebar-item" was not an anchor.',
-  );
-
-  anchor.addEventListener("click", (pointerEvent) => {
-    pointerEvent.preventDefault();
-
-    // Remove/add activation class
-    for (const sidebarItem of sidebarItems) {
-      sidebarItem.classList.remove("is-active");
-    }
-    anchor.classList.add("is-active");
-
-    // Hide all tabs
-    const tabs = getHTMLElements(document, ".tab");
-    for (const section of tabs) {
-      section.classList.add("hidden");
-    }
-
-    const selectedTab = anchor.dataset["tab"];
-    assertDefined(
-      selectedTab,
-      "Failed to find the tab corresponding to an anchor element.",
-    );
-    if (!includes(VALID_TABS, selectedTab)) {
-      throw new Error(`The selected tab was not valid: ${selectedTab}`);
-    }
-
-    const activeSectionID = `${selectedTab}-section`;
-    const activeSection = getHTMLElement(activeSectionID);
-    activeSection.classList.remove("hidden");
-
-    localStorage.setItem("activeTab", selectedTab);
-
-    // Enable/disable home scroll
-    document.documentElement.style.overflowY = "auto";
-
-    renderActiveTab();
-  });
-}
-
-const FIRST_VALID_TAB = VALID_TABS[0];
-assertDefined(FIRST_VALID_TAB, "Failed to get the first valid tab.");
-
-globalThis.addEventListener("DOMContentLoaded", () => {
-  // Restore saved tab and filters.
-  let activeTab = FIRST_VALID_TAB;
-  const storedActiveTab = localStorage.getItem("activeTab");
-  if (storedActiveTab !== null && includes(VALID_TABS, storedActiveTab)) {
-    activeTab = storedActiveTab;
-  }
-
-  // Reset tab visibility.
-  for (const sidebarItem of sidebarItems) {
-    sidebarItem.classList.remove("is-active");
-  }
+document.addEventListener("DOMContentLoaded", () => {
   const tabs = getHTMLElements(document, ".tab");
   for (const section of tabs) {
     section.classList.add("hidden");
   }
 
   // Activate saved tab.
-  const btn = document.querySelector(`.sidebar-item[data-tab="${activeTab}"]`);
-  if (btn) {
-    btn.classList.add("is-active");
-  }
-
+  const activeTab = getStoredActiveTab();
   const activeSection = getHTMLElement(`${activeTab}-section`);
   activeSection.classList.remove("hidden");
 
-  renderActiveTab();
-});
-
-document.addEventListener("DOMContentLoaded", () => {
   // Info Modal
   closeInfoModal.addEventListener("click", () => {
     infoOverlay.classList.add("hidden");

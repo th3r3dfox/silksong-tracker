@@ -2,7 +2,7 @@
   "$schema": "./wishes.schema.json",
   "categories": [
     {
-      "desc": "Complete all main storyline quests in Pharloom.",
+      "description": "Complete all main storyline quests in Pharloom.",
       "items": [
         {
           "act": 1,
@@ -211,7 +211,7 @@
       "label": "Main Wishes"
     },
     {
-      "desc": "Wayfarer Wishes usually involve finding an item or NPC during Hornet's exploration of Pharloom at the request of another NPC. Later in the game, some Wayfarer Wishes will be placed that involve defeating optional bosses.",
+      "description": "Wayfarer Wishes usually involve finding an item or NPC during Hornet's exploration of Pharloom at the request of another NPC. Later in the game, some Wayfarer Wishes will be placed that involve defeating optional bosses.",
       "items": [
         {
           "act": 1,
@@ -418,7 +418,7 @@
       "label": "Wayfarer Wishes"
     },
     {
-      "desc": "Gather Wishes involve exploring a region of the map (or in the case of the Great Taste of Pharloom wish, the entire map) and finding specific items to turn in to an NPC and complete the wish. Collecting the required items usually does not directly involve killing enemies, with some exceptions.",
+      "description": "Gather Wishes involve exploring a region of the map (or in the case of the Great Taste of Pharloom wish, the entire map) and finding specific items to turn in to an NPC and complete the wish. Collecting the required items usually does not directly involve killing enemies, with some exceptions.",
       "items": [
         {
           "act": 1,
@@ -494,7 +494,7 @@
       "label": "Gather Wishes"
     },
     {
-      "desc": "Hunt Wishes involve killing normal (or occasionally special) enemies in a specific part of the world and collecting items dropped by them to turn in and complete the wish. The only exception to this is the Dark Hearts wish, which does not require Hornet to collect any items and whose enemy is found all across Pharloom.",
+      "description": "Hunt Wishes involve killing normal (or occasionally special) enemies in a specific part of the world and collecting items dropped by them to turn in and complete the wish. The only exception to this is the Dark Hearts wish, which does not require Hornet to collect any items and whose enemy is found all across Pharloom.",
       "items": [
         {
           "act": 1,
@@ -613,7 +613,7 @@
       "label": "Hunt Wishes"
     },
     {
-      "desc": "Grand Hunt Wishes are always accepted from a Wishwall, and involve finding and killing a unique boss enemy and claiming a trophy item from them to turn in and complete the wish. They carry a high reward, either yielding a Heavy Rosary Necklace or a Mask Shard.",
+      "description": "Grand Hunt Wishes are always accepted from a Wishwall, and involve finding and killing a unique boss enemy and claiming a trophy item from them to turn in and complete the wish. They carry a high reward, either yielding a Heavy Rosary Necklace or a Mask Shard.",
       "items": [
         {
           "act": 1,
@@ -660,7 +660,7 @@
       "label": "Grand Hunt Wishes"
     },
     {
-      "desc": "Contribute shell shards and Rosaries to support rebuilding efforts across Pharloom.",
+      "description": "Contribute shell shards and Rosaries to support rebuilding efforts across Pharloom.",
       "items": [
         {
           "act": 1,
@@ -737,7 +737,7 @@
       "label": "Donate Wishes"
     },
     {
-      "desc": "Deliver rare and precious items to recipients across Pharloom.",
+      "description": "Deliver rare and precious items to recipients across Pharloom.",
       "items": [
         {
           "act": 1,
@@ -816,7 +816,7 @@
       "label": "Delivery Wishes"
     },
     {
-      "desc": "Rare and singular wishes tied to special figures and events across Pharloom.",
+      "description": "Rare and singular wishes tied to special figures and events across Pharloom.",
       "items": [
         {
           "act": 1,

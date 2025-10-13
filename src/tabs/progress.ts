@@ -183,8 +183,8 @@ export function updateTabProgress(): void {
       section.append(heading);
 
       const desc = document.createElement("p");
-      desc.className = "category-desc";
-      desc.textContent = category.desc;
+      desc.className = "category-description";
+      desc.textContent = category.description;
       section.append(desc);
 
       const subgrid = document.createElement("div");
