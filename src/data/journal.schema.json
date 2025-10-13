@@ -25,11 +25,11 @@
                 "description": {
                   "type": "string"
                 },
-                "hornetDescription": {
-                  "type": "string"
-                },
                 "flag": {
                   "description": "Name of the save flag used to track completion",
+                  "type": "string"
+                },
+                "hornetDescription": {
                   "type": "string"
                 },
                 "icon": {
