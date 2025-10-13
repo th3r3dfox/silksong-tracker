@@ -9,7 +9,7 @@
       "items": {
         "additionalProperties": false,
         "properties": {
-          "desc": {
+          "description": {
             "description": "Optional description text shown under the title",
             "type": "string"
           },
@@ -90,7 +90,7 @@
             "type": "string"
           }
         },
-        "required": ["desc", "items", "label"],
+        "required": ["description", "items", "label"],
         "type": "object"
       },
       "type": "array"

@@ -4,6 +4,7 @@ import {
   includes,
   isArray,
   isASCII,
+  isFirstLetterCapitalized,
   isObject,
   ReadonlyMap,
 } from "complete-common";
@@ -131,6 +132,12 @@ function checkRecursive(
       if (key.includes("-")) {
         throw new Error(
           `Key "${pathString}" has a hyphen in file "${filePath}": ${key}`,
+        );
+      }
+
+      if (isFirstLetterCapitalized(key)) {
+        throw new Error(
+          `Key "${pathString}" starts with a capital letter in file "${filePath}": ${key}`,
         );
       }
 

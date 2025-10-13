@@ -2,7 +2,7 @@
   "$schema": "./journal.schema.json",
   "categories": [
     {
-      "desc": "Major adversaries encountered throughout Pharloom. Defeating them marks your progress in Hollow Knight: Silksong.",
+      "description": "Major adversaries encountered throughout Pharloom. Defeating them marks your progress in Hollow Knight: Silksong.",
       "items": [
         {
           "act": 1,
