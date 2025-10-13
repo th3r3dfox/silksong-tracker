@@ -7,8 +7,8 @@
         {
           "act": 1,
           "description": "Fur covered crawler with a series of sharp spikes along its back.",
-          "hornetDescription": "If not for the spikes, I would think it an appealing bug.",
           "flag": "MossBone Crawler",
+          "hornetDescription": "If not for the spikes, I would think it an appealing bug.",
           "icon": "journal/Mossgrub.png",
           "id": "mossgrub",
           "label": "Mossgrub",
@@ -19,8 +19,8 @@
         {
           "act": 1,
           "description": "Unnaturally overgrown Mossgrub, bred within the Citadel's Memorium.",
-          "hornetDescription": "So close to a perfect furred form... If only they'd been able to breed out the spines.",
           "flag": "MossBone Crawler Fat",
+          "hornetDescription": "So close to a perfect furred form... If only they'd been able to breed out the spines.",
           "icon": "journal/Massive_Mossgrub.png",
           "id": "massive-mossgrub",
           "label": "Massive Mossgrub",
@@ -31,8 +31,8 @@
         {
           "act": 1,
           "description": "Small fluttering creature capable of defending itself with its small stinger.",
-          "hornetDescription": "This bug is soft and clumsy, but to its fortune its home caves seem relatively free of effective predators. I wonder why that is.",
           "flag": "MossBone Fly",
+          "hornetDescription": "This bug is soft and clumsy, but to its fortune its home caves seem relatively free of effective predators. I wonder why that is.",
           "icon": "journal/Mossmir.png",
           "id": "mossmir",
           "label": "Mossmir",
@@ -43,8 +43,8 @@
         {
           "act": 1,
           "description": "Adult Mossmir with a fully developed stinger and hardened hide.",
-          "hornetDescription": "Motherhood is an instinct that can push creatures beyond what seems their natural limits. It turns even weaker beasts like these into formidable foes.",
           "flag": "Mossbone Mother",
+          "hornetDescription": "Motherhood is an instinct that can push creatures beyond what seems their natural limits. It turns even weaker beasts like these into formidable foes.",
           "icon": "journal/Moss_Mother.png",
           "id": "moss-mother",
           "label": "Moss Mother",
@@ -55,8 +55,8 @@
         {
           "act": 1,
           "description": "Winged insect that feeds upon moss and lichen in the caves above Bone Bottom.",
-          "hornetDescription": "In its natural state it would avoid potential predators, but Pharloom's Haunting now compels it to aggression. Fortunately, its jaws are ill-suited for combat.",
           "flag": "Aspid Collector",
+          "hornetDescription": "In its natural state it would avoid potential predators, but Pharloom's Haunting now compels it to aggression. Fortunately, its jaws are ill-suited for combat.",
           "icon": "journal/Aknid.png",
           "id": "aknid",
           "label": "Aknid",
@@ -67,8 +67,8 @@
         {
           "act": 1,
           "description": "Small, soft bug that uses the hard skulls of the Marrow for protection and disguise.",
-          "hornetDescription": "In every land, creatures find new and surprising ways to disguise themselves. One must be wary always.",
           "flag": "Bone Goomba",
+          "hornetDescription": "In every land, creatures find new and surprising ways to disguise themselves. One must be wary always.",
           "icon": "journal/Skull_Scuttler.png",
           "id": "skull-scuttler",
           "label": "Skull Scuttler",
@@ -79,8 +79,8 @@
         {
           "act": 1,
           "description": "Airborne relative of the grounded Skull Scuttler, found only in the Marrow's deepest, hottest caves.",
-          "hornetDescription": "Such feeble creatures could only survive thanks to the rarity of predators in these super-heated caverns.",
           "flag": "Bone Goomba Bounce Fly",
+          "hornetDescription": "Such feeble creatures could only survive thanks to the rarity of predators in these super-heated caverns.",
           "icon": "journal/Skullwing.png",
           "id": "skullwing",
           "label": "Skullwing",
@@ -91,8 +91,8 @@
         {
           "act": 1,
           "description": "Soft bug beneath a huge, horned skull. Charges at intruders to protect its territory and its smaller companions.",
-          "hornetDescription": "Either its size has made it fearless or the Haunting has removed its sense of self-preservation.",
           "flag": "Bone Goomba Large",
+          "hornetDescription": "Either its size has made it fearless or the Haunting has removed its sense of self-preservation.",
           "icon": "journal/Skull_Brute.png",
           "id": "skull-brute",
           "label": "Skull Brute",
@@ -103,8 +103,8 @@
         {
           "act": 1,
           "description": "Rare, enormous Skull Scuttler. The Marrow's largest predator, and the most feared for its ferocious temperament.",
-          "hornetDescription": "Though surely fierce, the skull it bears looks taken from an even larger beast. If not for the bones as proof, I would scarcely believe bugs could grow to such scale.",
           "flag": "Skull King",
+          "hornetDescription": "Though surely fierce, the skull it bears looks taken from an even larger beast. If not for the bones as proof, I would scarcely believe bugs could grow to such scale.",
           "icon": "journal/Skull_Tyrant.png",
           "id": "skull-tyrant",
           "label": "Skull Tyrant",
@@ -115,8 +115,8 @@
         {
           "act": 1,
           "description": "Small bony bug that favours dark tunnels. Can expand its spiked carapace to ward against attacking predators.",
-          "hornetDescription": "I am fond of simple, effective traps such as this bug's extendable spikes. An unwary predator would be skewered clean through.",
           "flag": "Bone Crawler",
+          "hornetDescription": "I am fond of simple, effective traps such as this bug's extendable spikes. An unwary predator would be skewered clean through.",
           "icon": "journal/Kilik.png",
           "id": "kilik",
           "label": "Kilik",
@@ -127,8 +127,8 @@
         {
           "act": 1,
           "description": "Aggressive fly of Pharloom's lowlands. Rams prey with its hardbone mask.",
-          "hornetDescription": "Dancing around this simple creature as it charges back and forth is the sort of game I delighted in as a child. Alas, I now have more pressing matters to attend to.",
           "flag": "Bone Flyer",
+          "hornetDescription": "Dancing around this simple creature as it charges back and forth is the sort of game I delighted in as a child. Alas, I now have more pressing matters to attend to.",
           "icon": "journal/Beastfly.png",
           "id": "beastfly",
           "label": "Beastfly",
@@ -139,8 +139,8 @@
         {
           "act": 1,
           "description": "Angered, adult Beastfly with a weighty body and a thickened hardshell mask.",
-          "hornetDescription": "Civilisation encroaches from this kingdom's crown, but the lowlands are still ruled by great beasts. Its roar stirs something deep within me, some primal instinct.",
           "flag": "Bone Flyer Giant",
+          "hornetDescription": "Civilisation encroaches from this kingdom's crown, but the lowlands are still ruled by great beasts. Its roar stirs something deep within me, some primal instinct.",
           "icon": "journal/Savage_Beastfly.png",
           "id": "savage-beastfly",
           "label": "Savage Beastfly",
@@ -151,8 +151,8 @@
         {
           "act": 1,
           "description": "Common winged bug of the lowlands. Generally docile, but will attack if threats come close.",
-          "hornetDescription": "Their plump, round shape makes them well-suited for target practice. Difficult to resist testing my aim on them...",
           "flag": "Bone Circler",
+          "hornetDescription": "Their plump, round shape makes them well-suited for target practice. Difficult to resist testing my aim on them...",
           "icon": "journal/Caranid.png",
           "id": "caranid",
           "label": "Caranid",
@@ -163,8 +163,8 @@
         {
           "act": 1,
           "description": "Aggressive winged bug of the lowlands. When angered, it rapidly whips its bladed tail as a weapon.",
-          "hornetDescription": "Its wings are quite small compared to its bulk. Perhaps it uses the warm air of these fiery lands to help stay airborne. Clever, if so.",
           "flag": "Bone Circler Vicious",
+          "hornetDescription": "Its wings are quite small compared to its bulk. Perhaps it uses the warm air of these fiery lands to help stay airborne. Clever, if so.",
           "icon": "journal/Vicious_Caranid.png",
           "id": "vicious-caranid",
           "label": "Vicious Caranid",
@@ -175,8 +175,8 @@
         {
           "act": 1,
           "description": "Grazing creature with sharp senses that nimbly retreats from danger.",
-          "hornetDescription": "Despite the Haunting of its shell, it has not been overcome with aggression. Its desire to flee remains too strong.",
           "flag": "Bone Hopper",
+          "hornetDescription": "Despite the Haunting of its shell, it has not been overcome with aggression. Its desire to flee remains too strong.",
           "icon": "journal/Hardbone_Hopper.png",
           "id": "hardbone-hopper",
           "label": "Hardbone Hopper",
@@ -187,8 +187,8 @@
         {
           "act": 1,
           "description": "Tall creature with sharp senses. Defends its herd with powerful legs and a sharp-tipped mask.",
-          "hornetDescription": "There is surprising strength hidden in their thin, elegant limbs. It would be a pleasure to ride upon it...",
           "flag": "Bone Hopper Giant",
+          "hornetDescription": "There is surprising strength hidden in their thin, elegant limbs. It would be a pleasure to ride upon it...",
           "icon": "journal/Hardbone_Elder.png",
           "id": "hardbone-elder",
           "label": "Hardbone Elder",
@@ -199,8 +199,8 @@
         {
           "act": 1,
           "description": "Flying bone mite that lives near magma. Roasts its prey by spitting scorching tar.",
-          "hornetDescription": "Its sticky spit would no doubt make a useful crafting material if moulded fresh. Unfortunately, I cannot stop to experiment.",
           "flag": "Bone Spitter",
+          "hornetDescription": "Its sticky spit would no doubt make a useful crafting material if moulded fresh. Unfortunately, I cannot stop to experiment.",
           "icon": "journal/Tarmite.png",
           "id": "tarmite",
           "label": "Tarmite",
@@ -211,8 +211,8 @@
         {
           "act": 1,
           "description": "Young, bony bug that can curl its body to form a ball.",
-          "hornetDescription": "Their rough, ridged shell grips tight to any surface. Even walls and roofs become pathways for these nimble bugs.",
           "flag": "Bone Roller",
+          "hornetDescription": "Their rough, ridged shell grips tight to any surface. Even walls and roofs become pathways for these nimble bugs.",
           "icon": "journal/Mawling.png",
           "id": "mawling",
           "label": "Mawling",
@@ -223,8 +223,8 @@
         {
           "act": 1,
           "description": "Giant roller of the lowlands. Its ridged hide will crush smaller creatures beneath it.",
-          "hornetDescription": "Sheer bulk makes for an effective weapon, but requires much sustenance. This creature would have spent most of its time eating. An acceptable life for some.",
           "flag": "Bone Thumper",
+          "hornetDescription": "Sheer bulk makes for an effective weapon, but requires much sustenance. This creature would have spent most of its time eating. An acceptable life for some.",
           "icon": "journal/Marrowmaw.png",
           "id": "marrowmaw",
           "label": "Marrowmaw",
@@ -235,8 +235,8 @@
         {
           "act": 1,
           "description": "Spine-shooting drifter of the lowlands.",
-          "hornetDescription": "Whatever admiration I had for its fleecy down is spoilt by its disturbing mask... and its steely spines.",
           "flag": "Spine Floater",
+          "hornetDescription": "Whatever admiration I had for its fleecy down is spoilt by its disturbing mask... and its steely spines.",
           "icon": "journal/Hoker.png",
           "id": "hoker",
           "label": "Hoker",
@@ -247,8 +247,8 @@
         {
           "act": 1,
           "description": "Rarely seen beetle that spends most of its life nestled deep in bone and rock. The Flintgems on its shell excrete an explosive powder.",
-          "hornetDescription": "Its bright gems could be used to make beautiful, but short-lived jewellery. An amusing idea for a gift... or a trap.",
           "flag": "Rock Roller",
+          "hornetDescription": "Its bright gems could be used to make beautiful, but short-lived jewellery. An amusing idea for a gift... or a trap.",
           "icon": "journal/Flintbeetle.png",
           "id": "flintbeetle",
           "label": "Flintbeetle",
@@ -259,8 +259,8 @@
         {
           "act": 1,
           "description": "Long-horned beast of Pharloom's lowlands. Relies on its horn both to impale and to wrench the ground beneath it, flinging dangerous debris.",
-          "hornetDescription": "Certain tools and skills can pierce its defences. I should adjust my strategy as needed.",
           "flag": "Rhino",
+          "hornetDescription": "Certain tools and skills can pierce its defences. I should adjust my strategy as needed.",
           "icon": "journal/Rhinogrund.png",
           "id": "rhinogrund",
           "label": "Rhinogrund",
@@ -271,8 +271,8 @@
         {
           "act": 1,
           "description": "Young masked worm that delights in ambushing intruders within its tunnels.",
-          "hornetDescription": "A frustrating fiend. They flee beneath the bone whenever I try to strike them down.",
           "flag": "Crypt Worm",
+          "hornetDescription": "A frustrating fiend. They flee beneath the bone whenever I try to strike them down.",
           "icon": "journal/Gromling.png",
           "id": "gromling",
           "label": "Gromling",
@@ -283,8 +283,8 @@
         {
           "act": 1,
           "description": "Burrowing worm that uses its many blunted teeth to dig through even the hardest bone.",
-          "hornetDescription": "They ceaselessly churn through rock and bone without ever seeming to rest. Do they have a destination? Or are they compelled to dig forever deeper?",
           "flag": "Bone Worm",
+          "hornetDescription": "They ceaselessly churn through rock and bone without ever seeming to rest. Do they have a destination? Or are they compelled to dig forever deeper?",
           "icon": "journal/Grom.png",
           "id": "grom",
           "label": "Grom",
@@ -295,8 +295,8 @@
         {
           "act": 1,
           "description": "Huge, hardbone bug that lives within and travels through the veins of old bells across Pharloom.",
-          "hornetDescription": "This one has allied themself with me, either as thanks for their saving or respect for one judged as equal. Whichever the reason, their fellowship is welcome.",
           "flag": "Bone Beast",
+          "hornetDescription": "This one has allied themself with me, either as thanks for their saving or respect for one judged as equal. Whichever the reason, their fellowship is welcome.",
           "icon": "journal/Bell_Beast.png",
           "id": "bell-beast",
           "label": "Bell Beast",
@@ -307,8 +307,8 @@
         {
           "act": 1,
           "description": "Basic bug of Pharloom, laid low upon the ground.",
-          "hornetDescription": "Taken by Pharloom's Haunting, the bug is now capable of little more than prayer and aggression.",
           "flag": "Pilgrim 03",
+          "hornetDescription": "Taken by Pharloom's Haunting, the bug is now capable of little more than prayer and aggression.",
           "icon": "journal/Pilgrim_Groveller.png",
           "id": "pilgrim-groveller",
           "label": "Pilgrim Groveller",
@@ -319,8 +319,8 @@
         {
           "act": 1,
           "description": "Agile bug of Pharloom, its higher functions have been lost to the Haunting.",
-          "hornetDescription": "With a softer shell than most, they would have relied on their athleticism to survive.",
           "flag": "Pilgrim 01",
+          "hornetDescription": "With a softer shell than most, they would have relied on their athleticism to survive.",
           "icon": "journal/Pilgrim_Pouncer.png",
           "id": "pilgrim-pouncer",
           "label": "Pilgrim Pouncer",
@@ -331,8 +331,8 @@
         {
           "act": 1,
           "description": "Short pilgrim that uses their long horn to launch upon threats.",
-          "hornetDescription": "Birth equipped this one well. In its assault it becomes its own projectile.",
           "flag": "Pilgrim 04",
+          "hornetDescription": "Birth equipped this one well. In its assault it becomes its own projectile.",
           "icon": "journal/Pilgrim_Hornfly.png",
           "id": "pilgrim-hornfly",
           "label": "Pilgrim Hornfly",
@@ -343,8 +343,8 @@
         {
           "act": 1,
           "description": "Sturdy bug lost to the Haunting. Rolls at threats with no care for its own discomfort.",
-          "hornetDescription": "A rare built bug within these ailing lands. Most pilgrims' shells seem small by comparison. What nourishment did they discover to grow so large?",
           "flag": "Pilgrim 02",
+          "hornetDescription": "A rare built bug within these ailing lands. Most pilgrims' shells seem small by comparison. What nourishment did they discover to grow so large?",
           "icon": "journal/Pilgrim_Hulk.png",
           "id": "pilgrim-hulk",
           "label": "Pilgrim Hulk",
@@ -355,8 +355,8 @@
         {
           "act": 1,
           "description": "Common bug wielding a set of old bells. The bug will fling the bells at anyone it deems still free.",
-          "hornetDescription": "Their bells would once have rung with hope and mirth, lifting the spirits of any climbing companions. Sadly, those instruments have turned purely to combative use.",
           "flag": "Pilgrim Bell Thrower",
+          "hornetDescription": "Their bells would once have rung with hope and mirth, lifting the spirits of any climbing companions. Sadly, those instruments have turned purely to combative use.",
           "icon": "journal/Pilgrim_Bellbearer.png",
           "id": "pilgrim-bellbearer",
           "label": "Pilgrim Bellbearer",
@@ -367,8 +367,8 @@
         {
           "act": 1,
           "description": "Short-horned bug born with underdeveloped wings.",
-          "hornetDescription": "Flight it possesses, but only just. It may lift from the stone, but those sad wings would never carry it far.",
           "flag": "Pilgrim Fly",
+          "hornetDescription": "Flight it possesses, but only just. It may lift from the stone, but those sad wings would never carry it far.",
           "icon": "journal/Winged_Pilgrim.png",
           "id": "winged-pilgrim",
           "label": "Winged Pilgrim",
@@ -379,8 +379,8 @@
         {
           "act": 1,
           "description": "Thick-set bug consumed by haunted thread. Uses their solid frame to crush others.",
-          "hornetDescription": "A lucky bug to be able to grow old. Pharloom's roads take most much earlier.",
           "flag": "Pilgrim 05",
+          "hornetDescription": "A lucky bug to be able to grow old. Pharloom's roads take most much earlier.",
           "icon": "journal/Elder_Pilgrim.png",
           "id": "elder-pilgrim",
           "label": "Elder Pilgrim",
@@ -391,8 +391,8 @@
         {
           "act": 1,
           "description": "Pilgrim endowed with large wings, carrying a brace of iron bells.",
-          "hornetDescription": "On uneven terrain their union of flight and range can prove a challenge even for me.",
           "flag": "Pilgrim Bellthrower Fly",
+          "hornetDescription": "On uneven terrain their union of flight and range can prove a challenge even for me.",
           "icon": "journal/Winged_Pilgrim_Bellbearer.png",
           "id": "winged-pilgrim-bellbearer",
           "label": "Winged Pilgrim Bellbearer",
@@ -403,8 +403,8 @@
         {
           "act": 1,
           "description": "Hard-shelled bug with a climber's pin. Their pin, once aid, has become a weapon, though the bug is unrefined in its use.",
-          "hornetDescription": "A bug once frail, pushed by twisted thread beyond its mortal limits.",
           "flag": "Pilgrim Hiker",
+          "hornetDescription": "A bug once frail, pushed by twisted thread beyond its mortal limits.",
           "icon": "journal/Pilgrim_Hiker.png",
           "id": "pilgrim-hiker",
           "label": "Pilgrim Hiker",
@@ -415,8 +415,8 @@
         {
           "act": 1,
           "description": "Old pilgrim carrying a heavy iron bell staff.",
-          "hornetDescription": "The large bell seems to signify them as once leader of a climbing troupe, though the Haunting has erased that former authority.",
           "flag": "Pilgrim StaffWielder",
+          "hornetDescription": "The large bell seems to signify them as once leader of a climbing troupe, though the Haunting has erased that former authority.",
           "icon": "journal/Pilgrim_Guide.png",
           "id": "pilgrim-guide",
           "label": "Pilgrim Guide",
@@ -427,8 +427,8 @@
         {
           "act": 1,
           "description": "Aged pilgrim, overgrown with lichen and moss.",
-          "hornetDescription": "The moss looks to grow even inside their stomach, which the pilgrim spits at foes in compressed gobs. A foul form of offence.",
           "flag": "Pilgrim Moss Spitter",
+          "hornetDescription": "The moss looks to grow even inside their stomach, which the pilgrim spits at foes in compressed gobs. A foul form of offence.",
           "icon": "journal/Overgrown_Pilgrim.png",
           "id": "overgrown-pilgrim",
           "label": "Overgrown Pilgrim",
@@ -439,8 +439,8 @@
         {
           "act": 1,
           "description": "Strong bug replete with rosaries. If angered they will whip their strings in a ceaseless onslaught.",
-          "hornetDescription": "Is this abundance a sign of purity or greed? The way faith is measured in this land is curious indeed.",
           "flag": "Rosary Pilgrim",
+          "hornetDescription": "Is this abundance a sign of purity or greed? The way faith is measured in this land is curious indeed.",
           "icon": "journal/Covetous_Pilgrim.png",
           "id": "covetous-pilgrim",
           "label": "Covetous Pilgrim",
@@ -451,8 +451,8 @@
         {
           "act": 1,
           "description": "Pernicious looter found all over Pharloom.",
-          "hornetDescription": "While these bothersome bugs are left free to forage, no loose rosary or trinket is safe.",
           "flag": "Rosary Thief",
+          "hornetDescription": "While these bothersome bugs are left free to forage, no loose rosary or trinket is safe.",
           "icon": "journal/Snitchfly.png",
           "id": "snitchfly",
           "label": "Snitchfly",
@@ -463,8 +463,8 @@
         {
           "act": 1,
           "description": "Sticky mollusc that defends itself by spraying burning fluid from growths on its back.",
-          "hornetDescription": "What seems at first a purely defensive mechanism may also be necessary to rid this creature of excess heat.",
           "flag": "Tar Slug",
+          "hornetDescription": "What seems at first a purely defensive mechanism may also be necessary to rid this creature of excess heat.",
           "icon": "journal/Lavalug.png",
           "id": "lavalug",
           "label": "Lavalug",
@@ -475,8 +475,8 @@
         {
           "act": 1,
           "description": "Fully grown mollusc able to unleash a gushing torrent of burning fluid from its back.",
-          "hornetDescription": "To survive while storing so much searing fluid within... Before I would have believed it impossible, but Pharloom is home to many marvels.",
           "flag": "Tar Slug Huge",
+          "hornetDescription": "To survive while storing so much searing fluid within... Before I would have believed it impossible, but Pharloom is home to many marvels.",
           "icon": "journal/Lavalarga.png",
           "id": "lavalarga",
           "label": "Lavalarga",
@@ -487,8 +487,8 @@
         {
           "act": 1,
           "description": "Low level worker lost to Pharloom's Haunting. Instinct keeps them at their task, though in much simpler fashion than before.",
-          "hornetDescription": "This kingdom appears more advanced in metalwork than my own ever was, in great part due to the natural heat source at its base. Working in such an environment is an impressive feat.",
           "flag": "Dock Worker",
+          "hornetDescription": "This kingdom appears more advanced in metalwork than my own ever was, in great part due to the natural heat source at its base. Working in such an environment is an impressive feat.",
           "icon": "journal/Smelt_Shoveller.png",
           "id": "smelt-shoveller",
           "label": "Smelt Shoveller",
@@ -499,8 +499,8 @@
         {
           "act": 1,
           "description": "Aerial worker lost to Pharloom's Haunting. Bears a pouch full with flintstone which they will fling at intruders.",
-          "hornetDescription": "That incendiary material they carry is a natural wonder, with many potential applications. What a waste to carelessly throw it at me whenever I pass by.",
           "flag": "Dock Flyer",
+          "hornetDescription": "That incendiary material they carry is a natural wonder, with many potential applications. What a waste to carelessly throw it at me whenever I pass by.",
           "icon": "journal/Flintstone_Flyer.png",
           "id": "flintstone-flyer",
           "label": "Flintstone Flyer",
@@ -511,8 +511,8 @@
         {
           "act": 1,
           "description": "Brave worker carrying unstable flintflame and wearing a heavy bell to protect against potential ignition.",
-          "hornetDescription": "Theirs would be a high risk life, followed by a short, searing end.",
           "flag": "Dock Bomber",
+          "hornetDescription": "Theirs would be a high risk life, followed by a short, searing end.",
           "icon": "journal/Flintflame_Flyer.png",
           "id": "flintflame-flyer",
           "label": "Flintflame Flyer",
@@ -523,8 +523,8 @@
         {
           "act": 1,
           "description": "Cymbal bearing worker of the Deep Docks. Pans the hauls of smokerock to find traces of more precious minerals.",
-          "hornetDescription": "The Haunting has stolen some important part of these bugs, yet still they attempt their former task. Until, that is, they sense my presence...",
           "flag": "Shield Dock Worker",
+          "hornetDescription": "The Haunting has stolen some important part of these bugs, yet still they attempt their former task. Until, that is, they sense my presence...",
           "icon": "journal/Smokerock_Sifter.png",
           "id": "smokerock-sifter",
           "label": "Smokerock Sifter",
@@ -535,8 +535,8 @@
         {
           "act": 1,
           "description": "Bell-clad bug responsible for mining the deeper, treacherous depths below their docks.",
-          "hornetDescription": "Their heavier bells armour them well against my strikes, but against that oppressive heat... can they help at all?",
           "flag": "Dock Charger",
+          "hornetDescription": "Their heavier bells armour them well against my strikes, but against that oppressive heat... can they help at all?",
           "icon": "journal/Deep_Diver.png",
           "id": "deep-diver",
           "label": "Deep Diver",
@@ -547,8 +547,8 @@
         {
           "act": 1,
           "description": "Elder overseers of the Deep Docks, responsible for the oversight and punishment of lesser workers.",
-          "hornetDescription": "Lost in the madness of the Haunting, they still commanded the endless excavation of their caves.",
           "flag": "Dock Guard Thrower",
+          "hornetDescription": "Lost in the madness of the Haunting, they still commanded the endless excavation of their caves.",
           "icon": "journal/Forebrothers_Signis_&_Gron.png",
           "id": "forebrothers-signis-&-gron",
           "label": "Forebrothers Signis & Gron",
@@ -559,8 +559,8 @@
         {
           "act": 1,
           "description": "Infant form of the more formidable Craggler.",
-          "hornetDescription": "If left to grow, these young bugs will fight for dominance until only one remains.",
           "flag": "Small Crab",
+          "hornetDescription": "If left to grow, these young bugs will fight for dominance until only one remains.",
           "icon": "journal/Cragglite.png",
           "id": "cragglite",
           "label": "Cragglite",
@@ -571,8 +571,8 @@
         {
           "act": 1,
           "description": "Thick-plated scuttler that prefers high places.",
-          "hornetDescription": "Holds an extensive supply of searing acid in a layered sack within its shell. The acid rains from its mouth upon any creature it sees as food.",
           "flag": "Roof Crab",
+          "hornetDescription": "Holds an extensive supply of searing acid in a layered sack within its shell. The acid rains from its mouth upon any creature it sees as food.",
           "icon": "journal/Craggler.png",
           "id": "craggler",
           "label": "Craggler",
@@ -583,8 +583,8 @@
         {
           "act": 1,
           "description": "Tiny, timid creatures that huddle in flocks and flee at the first hint of danger.",
-          "hornetDescription": "They call out to warn their fellows at the smallest sense of threat. A successful hunt here means staying silent and hidden right up until the decisive strike.",
           "flag": "Fields Flock Flyers",
+          "hornetDescription": "They call out to warn their fellows at the smallest sense of threat. A successful hunt here means staying silent and hidden right up until the decisive strike.",
           "icon": "journal/Brushflit.png",
           "id": "brushflit",
           "label": "Brushflit",
@@ -595,8 +595,8 @@
         {
           "act": 1,
           "description": "Skittish scrambler of the Far Fields. Its antennae resemble stalks of grass to aid in camouflage.",
-          "hornetDescription": "It has no means to defend itself. Its only hope for survival is to be mistaken for a plant.",
           "flag": "Fields Goomba",
+          "hornetDescription": "It has no means to defend itself. Its only hope for survival is to be mistaken for a plant.",
           "icon": "journal/Fertid.png",
           "id": "fertid",
           "label": "Fertid",
@@ -607,8 +607,8 @@
         {
           "act": 1,
           "description": "Docile bug whose wings mimic the grasses of the Far Fields. A common snack for larger predators.",
-          "hornetDescription": "When roosting, it would look convincingly plant-like. In flight, its bulbous body quickly ruins the ruse.",
           "flag": "Fields Flyer",
+          "hornetDescription": "When roosting, it would look convincingly plant-like. In flight, its bulbous body quickly ruins the ruse.",
           "icon": "journal/Flapping_Fertid.png",
           "id": "flapping-fertid",
           "label": "Flapping Fertid",
@@ -619,8 +619,8 @@
         {
           "act": 1,
           "description": "Towering iron automaton, driven by rotor and cog.",
-          "hornetDescription": "A terrifying achievement of Pharloom, to build a construct so large and yet so nimble.",
           "flag": "Song Golem",
+          "hornetDescription": "A terrifying achievement of Pharloom, to build a construct so large and yet so nimble.",
           "icon": "journal/Fourth_Chorus.png",
           "id": "fourth-chorus",
           "label": "Fourth Chorus",
@@ -631,8 +631,8 @@
         {
           "act": 1,
           "description": "Small burrowing ant, servant to the larger Skarr.",
-          "hornetDescription": "These bugs work mainly as finders and foragers for the warriors of their tribe. Combat has not long been their nature.",
           "flag": "Bone Hunter Tiny",
+          "hornetDescription": "These bugs work mainly as finders and foragers for the warriors of their tribe. Combat has not long been their nature.",
           "icon": "journal/Skarrlid.png",
           "id": "skarrlid",
           "label": "Skarrlid",
@@ -643,8 +643,8 @@
         {
           "act": 1,
           "description": "Darting predator that clings fast to roofs and outcrops, often summoned to aid its larger companions.",
-          "hornetDescription": "They would make effective hunting companions, though even without the Haunting I suspect their loyalty would always remain to their clan.",
           "flag": "Bone Hunter Buzzer",
+          "hornetDescription": "They would make effective hunting companions, though even without the Haunting I suspect their loyalty would always remain to their clan.",
           "icon": "journal/Skarrwing.png",
           "id": "skarrwing",
           "label": "Skarrwing",
@@ -655,8 +655,8 @@
         {
           "act": 1,
           "description": "Young ant hunter wielding sickles carved from teeth. Will often call for aid if danger comes close.",
-          "hornetDescription": "Despite their youth, they are impressive opponents. It seems likely their tribe were trained for combat from birth.",
           "flag": "Bone Hunter Child",
+          "hornetDescription": "Despite their youth, they are impressive opponents. It seems likely their tribe were trained for combat from birth.",
           "icon": "journal/Skarr_Scout.png",
           "id": "skarr-scout",
           "label": "Skarr Scout",
@@ -667,8 +667,8 @@
         {
           "act": 1,
           "description": "Skilled ant hunter bearing blade and armour fashioned from bone.",
-          "hornetDescription": "Fierce, strong and disciplined... yet these qualities do not protect them from the Haunting. Is such a fate inevitable in these lands?",
           "flag": "Bone Hunter",
+          "hornetDescription": "Fierce, strong and disciplined... yet these qualities do not protect them from the Haunting. Is such a fate inevitable in these lands?",
           "icon": "journal/Skarr_Stalker.png",
           "id": "skarr-stalker",
           "label": "Skarr Stalker",
@@ -679,8 +679,8 @@
         {
           "act": 1,
           "description": "Winged ant hunter that strikes from the air with its bone lance.",
-          "hornetDescription": "In my youth, I envied all bugs with wings. I even fancied I might grow a pair... I have since learned better. Accept the limitations of one's body... and augment with tools as needed.",
           "flag": "Bone Hunter Fly",
+          "hornetDescription": "In my youth, I envied all bugs with wings. I even fancied I might grow a pair... I have since learned better. Accept the limitations of one's body... and augment with tools as needed.",
           "icon": "journal/Spear_Skarr.png",
           "id": "spear-skarr",
           "label": "Spear Skarr",
@@ -691,8 +691,8 @@
         {
           "act": 1,
           "description": "Huge ant hunter tasked to protect the stores and passages of its tribe.",
-          "hornetDescription": "Theirs is the perfect shell for their duty, a wall of a warrior and an adept fighter. If I hope to claim their treasures, I must bring my best.",
           "flag": "Bone Hunter Throw",
+          "hornetDescription": "Theirs is the perfect shell for their duty, a wall of a warrior and an adept fighter. If I hope to claim their treasures, I must bring my best.",
           "icon": "journal/Skarrgard.png",
           "id": "skarrgard",
           "label": "Skarrgard",
@@ -703,8 +703,8 @@
         {
           "act": 1,
           "description": "Huge, yet stealthy Skarr. An expert trapper and master of the undergrowth.",
-          "hornetDescription": "His tracks and traps... It should have been obvious from the start, this old hunter sought to draw me in. But what reason drove him to test himself so brutally? That answer I suspect I shall never know.",
           "flag": "Bone Hunter Trapper",
+          "hornetDescription": "His tracks and traps... It should have been obvious from the start, this old hunter sought to draw me in. But what reason drove him to test himself so brutally? That answer I suspect I shall never know.",
           "icon": "journal/Gurr_the_Outcast.png",
           "id": "gurr-the-outcast",
           "label": "Gurr the Outcast",
@@ -715,8 +715,8 @@
         {
           "act": 1,
           "description": "Elite former hunter acting as the final line of defence before their mother.",
-          "hornetDescription": "Their skill once saw them chosen, and I can plainly see why. They would have lived and trained only for this duty.",
           "flag": "Bone Hunter Chief",
+          "hornetDescription": "Their skill once saw them chosen, and I can plainly see why. They would have lived and trained only for this duty.",
           "icon": "journal/Last_Claw.png",
           "id": "last-claw",
           "label": "Last Claw",
@@ -727,8 +727,8 @@
         {
           "act": 1,
           "description": "Song queen of the Skarr and their most talented warrior.",
-          "hornetDescription": "This graceful ruler once possessed skill to rival my own. At her youthful peak, her voice united all Skarr in her service.",
           "flag": "Hunter Queen",
+          "hornetDescription": "This graceful ruler once possessed skill to rival my own. At her youthful peak, her voice united all Skarr in her service.",
           "icon": "journal/Skarrsinger_Karmelita.png",
           "id": "skarrsinger-karmelita",
           "label": "Skarrsinger Karmelita",
@@ -739,8 +739,8 @@
         {
           "act": 1,
           "description": "Verminous pest, common throughout the dark corners of Greymoor.",
-          "hornetDescription": "Individually they offer little challenge, but their numbers are surely vast, and most remain hidden.",
           "flag": "Mite",
+          "hornetDescription": "Individually they offer little challenge, but their numbers are surely vast, and most remain hidden.",
           "icon": "journal/Mite.png",
           "id": "mite",
           "label": "Mite",
@@ -751,8 +751,8 @@
         {
           "act": 1,
           "description": "Airborne pest, less common than its grounded siblings. Attacks with sharp fangs if agitated.",
-          "hornetDescription": "Similar bugs would gnaw away at unguarded food supplies in my homeland. As a child, I would hunt them, eager to make use of myself and test my skills.",
           "flag": "Mitefly",
+          "hornetDescription": "Similar bugs would gnaw away at unguarded food supplies in my homeland. As a child, I would hunt them, eager to make use of myself and test my skills.",
           "icon": "journal/Fluttermite.png",
           "id": "fluttermite",
           "label": "Fluttermite",
@@ -763,8 +763,8 @@
         {
           "act": 1,
           "description": "Aged female mite, grown larger and stronger than most of its kin.",
-          "hornetDescription": "Poor of sight but possessing a keen sense of smell, it uses its bulk to charge at foreign scents. Remaining fierce so far into old age is an admirable trait.",
           "flag": "Gnat Giant",
+          "hornetDescription": "Poor of sight but possessing a keen sense of smell, it uses its bulk to charge at foreign scents. Remaining fierce so far into old age is an admirable trait.",
           "icon": "journal/Mitemother.png",
           "id": "mitemother",
           "label": "Mitemother",
@@ -775,8 +775,8 @@
         {
           "act": 1,
           "description": "Bug charged to catch dregs of Silk that fall from the Citadel. Will attack with its staff if provoked.",
-          "hornetDescription": "These bugs look to have spent every waking moment at their work. Grim, endless labour in service of the unseen Citadel above.",
           "flag": "Farmer Catcher",
+          "hornetDescription": "These bugs look to have spent every waking moment at their work. Grim, endless labour in service of the unseen Citadel above.",
           "icon": "journal/Dreg_Catcher.png",
           "id": "dreg-catcher",
           "label": "Dreg Catcher",
@@ -787,8 +787,8 @@
         {
           "act": 1,
           "description": "Scissor-wielding bug charged to cut and spool fallen dregs of Silk for return to the Citadel above.",
-          "hornetDescription": "Is it the Haunting that drove them to cackling madness, or was their unending toil the cause even before that?",
           "flag": "Farmer Scissors",
+          "hornetDescription": "Is it the Haunting that drove them to cackling madness, or was their unending toil the cause even before that?",
           "icon": "journal/Silk_Snipper.png",
           "id": "silk-snipper",
           "label": "Silk Snipper",
@@ -799,8 +799,8 @@
         {
           "act": 1,
           "description": "Tall bug charged to pile Silk dregs in preparation for respooling. Their sharp rake now doubles equally well as a stabbing weapon.",
-          "hornetDescription": "Theirs seems a sad, grueling task, serving their lifetime for a Citadel unseen.",
           "flag": "Farmer Centipede",
+          "hornetDescription": "Theirs seems a sad, grueling task, serving their lifetime for a Citadel unseen.",
           "icon": "journal/Thread_Raker.png",
           "id": "thread-raker",
           "label": "Thread Raker",
@@ -811,8 +811,8 @@
         {
           "act": 1,
           "description": "Winged mite-beast, bred large to catch workers who once tried to flee their tasks.",
-          "hornetDescription": "With its wranglers long dead, the Moorwing stalked the towers of Greymoor, feasting on passing pilgrims and tenders alike.",
           "flag": "Vampire Gnat",
+          "hornetDescription": "With its wranglers long dead, the Moorwing stalked the towers of Greymoor, feasting on passing pilgrims and tenders alike.",
           "icon": "journal/Moorwing.png",
           "id": "moorwing",
           "label": "Moorwing",
@@ -823,8 +823,8 @@
         {
           "act": 1,
           "description": "Short-lived sprite born of flickering flame.",
-          "hornetDescription": "To live only a single, bright moment... What would one feel? Is it glorious, or only despair? Or could it be both, mixed equal?",
           "flag": "Wisp",
+          "hornetDescription": "To live only a single, bright moment... What would one feel? Is it glorious, or only despair? Or could it be both, mixed equal?",
           "icon": "journal/Wisp.png",
           "id": "wisp",
           "label": "Wisp",
@@ -835,8 +835,8 @@
         {
           "act": 1,
           "description": "Many-legged insect fanatically obsessed with flame.",
-          "hornetDescription": "These ones somehow learnt to call and guide the scorching Wisps that share their thicket. Whether through dominance or reverence is unclear.",
           "flag": "Farmer Wisp",
+          "hornetDescription": "These ones somehow learnt to call and guide the scorching Wisps that share their thicket. Whether through dominance or reverence is unclear.",
           "icon": "journal/Burning_Bug.png",
           "id": "burning-bug",
           "label": "Burning Bug",
@@ -847,8 +847,8 @@
         {
           "act": 1,
           "description": "Totem and god, built and worshipped by the Burning Bugs.",
-          "hornetDescription": "The remains of an aged bug were housed at the pyre's heart. The structure suggested they wished for immolation. If so, I have seen their wish granted.",
           "flag": "Wisp Pyre Effigy",
+          "hornetDescription": "The remains of an aged bug were housed at the pyre's heart. The structure suggested they wished for immolation. If so, I have seen their wish granted.",
           "icon": "journal/Father_of_the_Flame.png",
           "id": "father-of-the-flame",
           "label": "Father of the Flame",
@@ -859,8 +859,8 @@
         {
           "act": 1,
           "description": "Screeching scavenger that roosts high in caverns and preys on passing pilgrims.",
-          "hornetDescription": "By this swooping menace, a simple bug could be easily overcome. More dangerous still, they rarely attack alone.",
           "flag": "Crow",
+          "hornetDescription": "By this swooping menace, a simple bug could be easily overcome. More dangerous still, they rarely attack alone.",
           "icon": "journal/Craw.png",
           "id": "craw",
           "label": "Craw",
@@ -871,8 +871,8 @@
         {
           "act": 1,
           "description": "Rag-winged adult crawbug bearing a scavenged pin.",
-          "hornetDescription": "Far more hostile than their younger companions but seemingly less likely to roam far from their nest.",
           "flag": "Crowman",
+          "hornetDescription": "Far more hostile than their younger companions but seemingly less likely to roam far from their nest.",
           "icon": "journal/Tallcraw.png",
           "id": "tallcraw",
           "label": "Tallcraw",
@@ -883,8 +883,8 @@
         {
           "act": 1,
           "description": "Stout adult crawbug bearing several short pins.",
-          "hornetDescription": "A cowardly sort. They will try to remain at range to throw their sharp weapons. Best to rush them down and cut quick.",
           "flag": "Crowman Dagger",
+          "hornetDescription": "A cowardly sort. They will try to remain at range to throw their sharp weapons. Best to rush them down and cut quick.",
           "icon": "journal/Squatcraw.png",
           "id": "squatcraw",
           "label": "Squatcraw",
@@ -895,8 +895,8 @@
         {
           "act": 1,
           "description": "Screeching scavenger dyed black in mourning at their land's collapse.",
-          "hornetDescription": "Weak, afraid, and aware of the imminent end. I understand their desperation, but my death will not prevent the coming fall.",
           "flag": "Crowman Juror Tiny",
+          "hornetDescription": "Weak, afraid, and aware of the imminent end. I understand their desperation, but my death will not prevent the coming fall.",
           "icon": "journal/Craw_Juror.png",
           "id": "craw-juror",
           "label": "Craw Juror",
@@ -907,8 +907,8 @@
         {
           "act": 1,
           "description": "Elder crawbug serving in a sacred ceremony.",
-          "hornetDescription": "Curiosity saw me answer their summons, but I shall not allow them to stall me long. I must work fast to fix my grand mistake.",
           "flag": "Crowman Juror",
+          "hornetDescription": "Curiosity saw me answer their summons, but I shall not allow them to stall me long. I must work fast to fix my grand mistake.",
           "icon": "journal/Tallcraw_Juror.png",
           "id": "tallcraw-juror",
           "label": "Tallcraw Juror",
@@ -919,8 +919,8 @@
         {
           "act": 1,
           "description": "Short elder crawbug eagerly serving in their court.",
-          "hornetDescription": "They seek to slay their only chance at survival. Alas, any words would fall useless. I have only my blade to offer response.",
           "flag": "Crowman Dagger Juror",
+          "hornetDescription": "They seek to slay their only chance at survival. Alas, any words would fall useless. I have only my blade to offer response.",
           "icon": "journal/Squatcraw_Juror.png",
           "id": "squatcraw-juror",
           "label": "Squatcraw Juror",
@@ -931,8 +931,8 @@
         {
           "act": 1,
           "description": "Lord and justice of Pharloom's craws. Delivers death to condemned bugs with his steel-plated beak.",
-          "hornetDescription": "Did he recognise my part played in this land's void-strung state? If so, perhaps his judgment was not unfair. To these bugs I have brought much destruction.",
           "flag": "Crawfather",
+          "hornetDescription": "Did he recognise my part played in this land's void-strung state? If so, perhaps his judgment was not unfair. To these bugs I have brought much destruction.",
           "icon": "journal/Crawfather.png",
           "id": "crawfather",
           "label": "Crawfather",
@@ -943,8 +943,8 @@
         {
           "act": 1,
           "description": "Mindless infant larva, coated in thick slime.",
-          "hornetDescription": "They cling fast to the shells of other bugs, destroying any hope for concentration or comfort.",
           "flag": "Maggots",
+          "hornetDescription": "They cling fast to the shells of other bugs, destroying any hope for concentration or comfort.",
           "icon": "journal/Muckmaggot.png",
           "id": "muckmaggot",
           "label": "Muckmaggot",
@@ -955,8 +955,8 @@
         {
           "act": 1,
           "description": "Younger form of a Muckroach. Attacks prey by leaping from the water and snapping with its flexible jaws.",
-          "hornetDescription": "These creatures look to have been bred deliberately in watery pens. If they are food to be, their scent suggests they must taste vile.",
           "flag": "Dustroach Pollywog",
+          "hornetDescription": "These creatures look to have been bred deliberately in watery pens. If they are food to be, their scent suggests they must taste vile.",
           "icon": "journal/Slubberlug.png",
           "id": "slubberlug",
           "label": "Slubberlug",
@@ -967,8 +967,8 @@
         {
           "act": 1,
           "description": "Starved pack bug with an insatiable appetite. Despite their tough hide and pungent meat, roaches breed rapidly so are sometimes farmed for food.",
-          "hornetDescription": "A revolting creature. My shell itches at their presence. In the pens where their numbers grow vast, I am forever on edge.",
           "flag": "Dustroach",
+          "hornetDescription": "A revolting creature. My shell itches at their presence. In the pens where their numbers grow vast, I am forever on edge.",
           "icon": "journal/Muckroach.png",
           "id": "muckroach",
           "label": "Muckroach",
@@ -979,8 +979,8 @@
         {
           "act": 1,
           "description": "Obese offshoot of Muckroaches, born of the Citadel's exhaust smog. The winged roach's sagging stomach is filled with sizzling bile.",
-          "hornetDescription": "Its form is absurd... Surely it should not be able to hold itself in the air? The noxious gases in its stomach must provide its levity.",
           "flag": "Bloat Roach",
+          "hornetDescription": "Its form is absurd... Surely it should not be able to hold itself in the air? The noxious gases in its stomach must provide its levity.",
           "icon": "journal/Bloatroach.png",
           "id": "bloatroach",
           "label": "Bloatroach",
@@ -991,8 +991,8 @@
         {
           "act": 1,
           "description": "Short, nimble bug who uses barbed bolas to keep beasts corralled and caged.",
-          "hornetDescription": "Their throwing weapon is well-suited to the wide caverns they inhabit. These sly little bugs must have a keen claw for crafting.",
           "flag": "Roachfeeder Short",
+          "hornetDescription": "Their throwing weapon is well-suited to the wide caverns they inhabit. These sly little bugs must have a keen claw for crafting.",
           "icon": "journal/Roachcatcher.png",
           "id": "roachcatcher",
           "label": "Roachcatcher",
@@ -1003,8 +1003,8 @@
         {
           "act": 1,
           "description": "Tall roach tender charged to feed Muckroaches on a lean diet of maggot gruel.",
-          "hornetDescription": "The feeder's curled pin looks designed to keep ravenous roaches at bay, and the tender from turning into the meal.",
           "flag": "Roachfeeder Tall",
+          "hornetDescription": "The feeder's curled pin looks designed to keep ravenous roaches at bay, and the tender from turning into the meal.",
           "icon": "journal/Roachfeeder.png",
           "id": "roachfeeder",
           "label": "Roachfeeder",
@@ -1015,8 +1015,8 @@
         {
           "act": 1,
           "description": "Grizzled older roach tender weighted with a lasso of heavy chain.",
-          "hornetDescription": "Though their mind is largely lost their skill with a chain has not been forgotten. Does the Haunting eternally bind a bug to the task it had in life?",
           "flag": "Roachkeeper",
+          "hornetDescription": "Though their mind is largely lost their skill with a chain has not been forgotten. Does the Haunting eternally bind a bug to the task it had in life?",
           "icon": "journal/Roachkeeper.png",
           "id": "roachkeeper",
           "label": "Roachkeeper",
@@ -1027,8 +1027,8 @@
         {
           "act": 1,
           "description": "Brutish cook responsible for dicing Muckroach meat into edible portions.",
-          "hornetDescription": "Could their actions be called skill? I see only a crude mangling of meat. Yet I wonder, before the Haunting snared their minds was it any different?",
           "flag": "Roachkeeper Chef Tiny",
+          "hornetDescription": "Could their actions be called skill? I see only a crude mangling of meat. Yet I wonder, before the Haunting snared their minds was it any different?",
           "icon": "journal/Roachserver.png",
           "id": "roachserver",
           "label": "Roachserver",
@@ -1039,8 +1039,8 @@
         {
           "act": 1,
           "description": "Once exulted chef, exiled from the Citadel for repeated culinary crimes.",
-          "hornetDescription": "Returned to their home caves, this chef continued to devise delicacies too repulsive for any bug still sane.",
           "flag": "Roachkeeper Chef",
+          "hornetDescription": "Returned to their home caves, this chef continued to devise delicacies too repulsive for any bug still sane.",
           "icon": "journal/Disgraced_Chef_Lugoli.png",
           "id": "disgraced-chef-lugoli",
           "label": "Disgraced Chef Lugoli",
@@ -1051,8 +1051,8 @@
         {
           "act": 1,
           "description": "Anguished spectre of lingering thread. Despite its ephemeral nature, strong strikes can dispel the Wraith for a time.",
-          "hornetDescription": "Not a bug but a projection of another's will cast in smog and Silk.",
           "flag": "Wraith",
+          "hornetDescription": "Not a bug but a projection of another's will cast in smog and Silk.",
           "icon": "journal/Wraith.png",
           "id": "wraith",
           "label": "Wraith",
@@ -1063,8 +1063,8 @@
         {
           "act": 1,
           "description": "A rare, calmer bug of Bilewater, survives its hazardous surroundings by hiding as a plant.",
-          "hornetDescription": "This one is pretty, but not as soft as first it seems. The plant it mimics is flaked and coarse, and the bug's coat shares similar texture.",
           "flag": "Swamp Drifter",
+          "hornetDescription": "This one is pretty, but not as soft as first it seems. The plant it mimics is flaked and coarse, and the bug's coat shares similar texture.",
           "icon": "journal/Mothleaf_Lagnia.png",
           "id": "mothleaf-lagnia",
           "label": "Mothleaf Lagnia",
@@ -1075,8 +1075,8 @@
         {
           "act": 1,
           "description": "Crawling insect with a sizzling bile sack in its abdomen.",
-          "hornetDescription": "The threat of its exploding rear is an effective deterrent to predators, but the slightest jolt or fall can cause its premature end.",
           "flag": "Swamp Goomba",
+          "hornetDescription": "The threat of its exploding rear is an effective deterrent to predators, but the slightest jolt or fall can cause its premature end.",
           "icon": "journal/Miremite.png",
           "id": "miremite",
           "label": "Miremite",
@@ -1087,8 +1087,8 @@
         {
           "act": 1,
           "description": "Plentiful pest with a sharp proboscis and a belly full of bile.",
-          "hornetDescription": "More dangerous in the moment of its explosive and corrosive death than it ever was in life.",
           "flag": "Swamp Mosquito",
+          "hornetDescription": "More dangerous in the moment of its explosive and corrosive death than it ever was in life.",
           "icon": "journal/Swamp_Squit.png",
           "id": "swamp-squit",
           "label": "Swamp Squit",
@@ -1099,8 +1099,8 @@
         {
           "act": 1,
           "description": "Hovering pest with a hollowed proboscis able to spit gobs of sizzling bile.",
-          "hornetDescription": "To subsist on the sickly water in this fetid environment it spits out the most toxic elements. Over generations, this former survival technique has turned into an effective hunting tool.",
           "flag": "Swamp Mosquito Skinny",
+          "hornetDescription": "To subsist on the sickly water in this fetid environment it spits out the most toxic elements. Over generations, this former survival technique has turned into an effective hunting tool.",
           "icon": "journal/Spit_Squit.png",
           "id": "spit-squit",
           "label": "Spit Squit",
@@ -1111,8 +1111,8 @@
         {
           "act": 1,
           "description": "Cunning bug that hunts with darts fashioned from stake and bile.",
-          "hornetDescription": "They know well their domain, lurking in wait in its byways and bogs, always ready to pounce.",
           "flag": "Swamp Muckman",
+          "hornetDescription": "They know well their domain, lurking in wait in its byways and bogs, always ready to pounce.",
           "icon": "journal/Stilkin.png",
           "id": "stilkin",
           "label": "Stilkin",
@@ -1123,8 +1123,8 @@
         {
           "act": 1,
           "description": "Trap setting bug carrying a pouch of sharpened long-stakes.",
-          "hornetDescription": "More bother than the bug themself are the countless traps they have already laid throughout their caves.",
           "flag": "Swamp Muckman Tall",
+          "hornetDescription": "More bother than the bug themself are the countless traps they have already laid throughout their caves.",
           "icon": "journal/Stilkin_Trapper.png",
           "id": "stilkin-trapper",
           "label": "Stilkin Trapper",
@@ -1135,8 +1135,8 @@
         {
           "act": 1,
           "description": "Chief and chaplain of the Stilkin, forever raging against the Citadel that chokes their caves and sees them suffer.",
-          "hornetDescription": "This one's strength was much enhanced by stolen soul. They are not the first who tried to hoard it, or to mould it towards such violent ends.",
           "flag": "Swamp Shaman",
+          "hornetDescription": "This one's strength was much enhanced by stolen soul. They are not the first who tried to hoard it, or to mould it towards such violent ends.",
           "icon": "journal/Groal_the_Great.png",
           "id": "groal-the-great",
           "label": "Groal the Great",
@@ -1147,8 +1147,8 @@
         {
           "act": 1,
           "description": "Toothy growth that lives on cave roofs. Wraps wayward bugs with its long tongue and drags them up to be consumed.",
-          "hornetDescription": "Hiding its tongue amongst fronds so similar... There is impressive style to this one's trickery.",
           "flag": "Swamp Barnacle",
+          "hornetDescription": "Hiding its tongue amongst fronds so similar... There is impressive style to this one's trickery.",
           "icon": "journal/Barnak.png",
           "id": "barnak",
           "label": "Barnak",
@@ -1159,8 +1159,8 @@
         {
           "act": 1,
           "description": "Suction creature surviving on the thick slime that coats its caves.",
-          "hornetDescription": "This mindless bug seems to sense only through its tendrils, yet despite that simplicity it still poses a serious threat.",
           "flag": "Swamp Ductsucker",
+          "hornetDescription": "This mindless bug seems to sense only through its tendrils, yet despite that simplicity it still poses a serious threat.",
           "icon": "journal/Ductsucker.png",
           "id": "ductsucker",
           "label": "Ductsucker",
@@ -1171,8 +1171,8 @@
         {
           "act": 1,
           "description": "Hard-shelled insect common upon the surface of Shellwood Pond. Once a staple food for passing pilgrims.",
-          "hornetDescription": "The way they skate along the water's surface is so elegant. Surely it is a skill that can be learned? When time permits, I should attempt the task.",
           "flag": "Pond Skater",
+          "hornetDescription": "The way they skate along the water's surface is so elegant. Surely it is a skill that can be learned? When time permits, I should attempt the task.",
           "icon": "journal/Pond_Skipper.png",
           "id": "pond-skipper",
           "label": "Pond Skipper",
@@ -1183,8 +1183,8 @@
         {
           "act": 1,
           "description": "Old catcher over Shellwood Pond, bearing a longpin and stricken by the Haunting.",
-          "hornetDescription": "Once a hunter purely for food, now they hunt unthinking and unending.",
           "flag": "Pilgrim Fisher",
+          "hornetDescription": "Once a hunter purely for food, now they hunt unthinking and unending.",
           "icon": "journal/Pondcatcher.png",
           "id": "pondcatcher",
           "label": "Pondcatcher",
@@ -1195,8 +1195,8 @@
         {
           "act": 1,
           "description": "Tiny, soft creature that armours itself using the hard, hollow growths of Shellwood.",
-          "hornetDescription": "If the woody hide is shattered, the bug will still bravely, foolishly try to attack.",
           "flag": "Shellwood Gnat",
+          "hornetDescription": "If the woody hide is shattered, the bug will still bravely, foolishly try to attack.",
           "icon": "journal/Shellwood_Gnat.png",
           "id": "shellwood-gnat",
           "label": "Shellwood Gnat",
@@ -1207,8 +1207,8 @@
         {
           "act": 1,
           "description": "Pointed, darting insect that builds a hardy hive from Shellwood's dried bark.",
-          "hornetDescription": "Destroying the hives will limit their presence in the wood. Useful to me now, as I pass along the branches. Dangerous in time for the wood's order. Even a small disruption can tip a fragile balance.",
           "flag": "Shellwood Wasp",
+          "hornetDescription": "Destroying the hives will limit their presence in the wood. Useful to me now, as I pass along the branches. Dangerous in time for the wood's order. Even a small disruption can tip a fragile balance.",
           "icon": "journal/Wood_Wasp.png",
           "id": "wood-wasp",
           "label": "Wood Wasp",
@@ -1219,8 +1219,8 @@
         {
           "act": 1,
           "description": "Insect formed to imitate a branch, capable of remaining perfectly still for long periods, but unexpectedly swift when roused.",
-          "hornetDescription": "Avoiding their ambush is a good test of my senses, and my ability to rapidly retaliate.",
           "flag": "Stick Insect",
+          "hornetDescription": "Avoiding their ambush is a good test of my senses, and my ability to rapidly retaliate.",
           "icon": "journal/Splinter.png",
           "id": "splinter",
           "label": "Splinter",
@@ -1231,8 +1231,8 @@
         {
           "act": 1,
           "description": "Insect formed to imitate a branch, born with sharp, retractable horns atop its head.",
-          "hornetDescription": "Its shell gives it the advantage of surprise, but also forces it into a slender, brittle shape that cannot withstand a heavy attack.",
           "flag": "Stick Insect Charger",
+          "hornetDescription": "Its shell gives it the advantage of surprise, but also forces it into a slender, brittle shape that cannot withstand a heavy attack.",
           "icon": "journal/Splinterhorn.png",
           "id": "splinterhorn",
           "label": "Splinterhorn",
@@ -1243,8 +1243,8 @@
         {
           "act": 1,
           "description": "Winged insect with a flaky shell that perfectly mimics its environment.",
-          "hornetDescription": "Its assault... like a young bug's toy turned deadly. Could I, in time, fashion a spinning tool to match?",
           "flag": "Stick Insect Flyer",
+          "hornetDescription": "Its assault... like a young bug's toy turned deadly. Could I, in time, fashion a spinning tool to match?",
           "icon": "journal/Splinterbark.png",
           "id": "splinterbark",
           "label": "Splinterbark",
@@ -1255,8 +1255,8 @@
         {
           "act": 1,
           "description": "Imposing old insect nesting in the heights of Shellwood. Her command of twig and branch ensured no pilgrim ever survived within her territory.",
-          "hornetDescription": "This one lived long and fed much. The wood will be much safer for their slaying.",
           "flag": "Splinter Queen",
+          "hornetDescription": "This one lived long and fed much. The wood will be much safer for their slaying.",
           "icon": "journal/Sister_Splinter.png",
           "id": "sister-splinter",
           "label": "Sister Splinter",
@@ -1267,8 +1267,8 @@
         {
           "act": 1,
           "description": "Drifting bug disguised as a flower. Disperses crackling clouds of pollen if threatened.",
-          "hornetDescription": "Quite a beautiful creature. In my own kingdom's court, it would have been highly favoured as an ornamental pet.",
           "flag": "Flower Drifter",
+          "hornetDescription": "Quite a beautiful creature. In my own kingdom's court, it would have been highly favoured as an ornamental pet.",
           "icon": "journal/Phacia.png",
           "id": "phacia",
           "label": "Phacia",
@@ -1279,8 +1279,8 @@
         {
           "act": 1,
           "description": "Floral foe that reacts instinctively to movement nearby. Spits pellets of crackling pollen that burst on impact.",
-          "hornetDescription": "What exceptional senses it possesses. It detects me with ease, even when not a single sound is made.",
           "flag": "Bloom Shooter",
+          "hornetDescription": "What exceptional senses it possesses. It detects me with ease, even when not a single sound is made.",
           "icon": "journal/Pollenica.png",
           "id": "pollenica",
           "label": "Pollenica",
@@ -1291,8 +1291,8 @@
         {
           "act": 1,
           "description": "Floral foe with a core shaped to mimic a mask. The core can be thrust forth to bludgeon unwary bugs.",
-          "hornetDescription": "The false mask alone is frightening enough to scare away smaller pests.",
           "flag": "Bloom Puncher",
+          "hornetDescription": "The false mask alone is frightening enough to scare away smaller pests.",
           "icon": "journal/Gahlia.png",
           "id": "gahlia",
           "label": "Gahlia",
@@ -1303,8 +1303,8 @@
         {
           "act": 1,
           "description": "Eternal defender of Shellwood Shrine. His pin and cymbal show many marks of their use.",
-          "hornetDescription": "He offered fair warning and challenge, a duel in the purest sense. I admire his honour, and his skill.",
           "flag": "Seth",
+          "hornetDescription": "He offered fair warning and challenge, a duel in the purest sense. I admire his honour, and his skill.",
           "icon": "journal/Shrine_Guardian_Seth.png",
           "id": "shrine-guardian-seth",
           "label": "Shrine Guardian Seth",
@@ -1315,8 +1315,8 @@
         {
           "act": 1,
           "description": "Ancient heart of Shellwood, connected to all its living things.",
-          "hornetDescription": "Her presence would once have maintained the wood's fragile order, allowing the safe passage of bugs across its branches.",
           "flag": "Flower Queen",
+          "hornetDescription": "Her presence would once have maintained the wood's fragile order, allowing the safe passage of bugs across its branches.",
           "icon": "journal/Nyleth.png",
           "id": "nyleth",
           "label": "Nyleth",
@@ -1327,8 +1327,8 @@
         {
           "act": 1,
           "description": "Burrower that nests in the Bellvein and seeks out hard bells to protects its soft body.",
-          "hornetDescription": "I would very much like to feel their soft fur, if only they weren't so hostile.",
           "flag": "Bell Goomba",
+          "hornetDescription": "I would very much like to feel their soft fur, if only they weren't so hostile.",
           "icon": "journal/Furm.png",
           "id": "furm",
           "label": "Furm",
@@ -1339,8 +1339,8 @@
         {
           "act": 1,
           "description": "Furred bug beneath a heavy bell. It has grown too large to burrow, but in maturing has developed small wings.",
-          "hornetDescription": "Huge and soft, a fantastic combination ruined by their haunted aggression.",
           "flag": "Bell Fly",
+          "hornetDescription": "Huge and soft, a fantastic combination ruined by their haunted aggression.",
           "icon": "journal/Winged_Furm.png",
           "id": "winged-furm",
           "label": "Winged Furm",
@@ -1351,8 +1351,8 @@
         {
           "act": 1,
           "description": "Small arachnid found in many crevices and caves throughout Pharloom.",
-          "hornetDescription": "Something in their assault reminds me of my own skill, though their talents are born purely of instinct. My technique is formed from hard training.",
           "flag": "Blade Spider",
+          "hornetDescription": "Something in their assault reminds me of my own skill, though their talents are born purely of instinct. My technique is formed from hard training.",
           "icon": "journal/Pharlid.png",
           "id": "pharlid",
           "label": "Pharlid",
@@ -1363,8 +1363,8 @@
         {
           "act": 1,
           "description": "Arachnid that nestles within dark holes in cavern roofs. Pounces on prey from far above.",
-          "hornetDescription": "A smart hunter learns to wait long in ambush, always ready to strike the first blow.",
           "flag": "Blade Spider Hang",
+          "hornetDescription": "A smart hunter learns to wait long in ambush, always ready to strike the first blow.",
           "icon": "journal/Pharlid_Diver.png",
           "id": "pharlid-diver",
           "label": "Pharlid Diver",
@@ -1375,8 +1375,8 @@
         {
           "act": 1,
           "description": "Devious ambusher that poses as a fossil.",
-          "hornetDescription": "Once roused, the bug will crash its steely shell into walls, floors and foes.",
           "flag": "Shell Fossil Mimic",
+          "hornetDescription": "Once roused, the bug will crash its steely shell into walls, floors and foes.",
           "icon": "journal/Shardillard.png",
           "id": "shardillard",
           "label": "Shardillard",
@@ -1387,8 +1387,8 @@
         {
           "act": 1,
           "description": "Shell plated worm that lives beneath pools of shifting sand.",
-          "hornetDescription": "Bursts forth at movement sensed close, and will consume any object or bug careless enough to fall into its maw.",
           "flag": "Sand Centipede",
+          "hornetDescription": "Bursts forth at movement sensed close, and will consume any object or bug careless enough to fall into its maw.",
           "icon": "journal/Sandcarver.png",
           "id": "sandcarver",
           "label": "Sandcarver",
@@ -1399,8 +1399,8 @@
         {
           "act": 1,
           "description": "Wriggling young grub that lives in darkness.",
-          "hornetDescription": "If allowed the opportunity, these creatures will grow into a form larger and more oppressive.",
           "flag": "Coral Judge Child",
+          "hornetDescription": "If allowed the opportunity, these creatures will grow into a form larger and more oppressive.",
           "icon": "journal/Squirrm.png",
           "id": "squirrm",
           "label": "Squirrm",
@@ -1411,8 +1411,8 @@
         {
           "act": 1,
           "description": "Gilded guardian of the Blasted Steps, bearing a cymbal and mallet.",
-          "hornetDescription": "They remorselessly eliminate any pilgrim or passerby deemed impure to their sight. The countless husks, strewn on paths beside them, tell of their conclusive decisions.",
           "flag": "Coral Judge",
+          "hornetDescription": "They remorselessly eliminate any pilgrim or passerby deemed impure to their sight. The countless husks, strewn on paths beside them, tell of their conclusive decisions.",
           "icon": "journal/Judge.png",
           "id": "judge",
           "label": "Judge",
@@ -1423,8 +1423,8 @@
         {
           "act": 1,
           "description": "Final arbiter of the Blasted Steps, tasked to ensure only the sinless ever step beyond the Grand Gate.",
-          "hornetDescription": "The huge Judge likely stood through countless generations, never defeated, never wavering in their charge.",
           "flag": "Last Judge",
+          "hornetDescription": "The huge Judge likely stood through countless generations, never defeated, never wavering in their charge.",
           "icon": "journal/Last_Judge.png",
           "id": "last-judge",
           "label": "Last Judge",
@@ -1435,8 +1435,8 @@
         {
           "act": 1,
           "description": "Dark-furred bug protecting itself with a spiked coral nut.",
-          "hornetDescription": "Its fur is thick and silky. Sadly, lost to its Haunting, I shall never safely be able to touch it.",
           "flag": "Coral Spike Goomba",
+          "hornetDescription": "Its fur is thick and silky. Sadly, lost to its Haunting, I shall never safely be able to touch it.",
           "icon": "journal/Coral_Furm.png",
           "id": "coral-furm",
           "label": "Coral Furm",
@@ -1447,8 +1447,8 @@
         {
           "act": 1,
           "description": "Nesting creature that fuses its face with sharpened coral.",
-          "hornetDescription": "It is easy to be caught off-guard by the ricocheting trajectory of its flung mask, especially in tight corners.",
           "flag": "Coral Conch Shooter",
+          "hornetDescription": "It is easy to be caught off-guard by the ricocheting trajectory of its flung mask, especially in tight corners.",
           "icon": "journal/Driznit.png",
           "id": "driznit",
           "label": "Driznit",
@@ -1459,8 +1459,8 @@
         {
           "act": 1,
           "description": "Large male Driznit, ferocious and territorial. Fires its heavy coral mask at intruders.",
-          "hornetDescription": "A fine shot with its sharp mask. Its aggression has no ill effect on its aim.",
           "flag": "Coral Conch Shooter Heavy",
+          "hornetDescription": "A fine shot with its sharp mask. Its aggression has no ill effect on its aim.",
           "icon": "journal/Driznarga.png",
           "id": "driznarga",
           "label": "Driznarga",
@@ -1471,8 +1471,8 @@
         {
           "act": 1,
           "description": "Drifting creature with a wide coral mask and hard proboscis to stab its prey.",
-          "hornetDescription": "Passively waits for prey to blunder into its path. A technique that should not necessarily be derided. Whatever is effective is best.",
           "flag": "Coral Conch Stabber",
+          "hornetDescription": "Passively waits for prey to blunder into its path. A technique that should not necessarily be derided. Whatever is effective is best.",
           "icon": "journal/Pokenabbin.png",
           "id": "pokenabbin",
           "label": "Pokenabbin",
@@ -1483,8 +1483,8 @@
         {
           "act": 1,
           "description": "Small bug that crafts a shell of sharpened coral. Spins its shell at rapid speed to cut through crust and bone.",
-          "hornetDescription": "The way it darts in and out of the ground has an almost playful quality to it. An amusing and effective way to ambush prey.",
           "flag": "Coral Conch Driller",
+          "hornetDescription": "The way it darts in and out of the ground has an almost playful quality to it. An amusing and effective way to ambush prey.",
           "icon": "journal/Conchfly.png",
           "id": "conchfly",
           "label": "Conchfly",
@@ -1495,8 +1495,8 @@
         {
           "act": 1,
           "description": "Elder Conchfly crowned with a huge coral horn. Once partnered with a mate, they will rarely be seen alone.",
-          "hornetDescription": "To pair with another is a base instinct, and one that brings some bugs great joy. I once sought similar union, but of my own mates none could match my lifespan.",
           "flag": "Coral Conch Driller Giant",
+          "hornetDescription": "To pair with another is a base instinct, and one that brings some bugs great joy. I once sought similar union, but of my own mates none could match my lifespan.",
           "icon": "journal/Great_Conchfly.png",
           "id": "great-conchfly",
           "label": "Great Conchfly",
@@ -1507,8 +1507,8 @@
         {
           "act": 1,
           "description": "Soft-shelled scrambler encased in coral.",
-          "hornetDescription": "Hidden amongst their tower's matching crust, these smaller bugs would have survived and thrived.",
           "flag": "Coral Goombas",
+          "hornetDescription": "Hidden amongst their tower's matching crust, these smaller bugs would have survived and thrived.",
           "icon": "journal/Crustcrawler.png",
           "id": "crustcrawler",
           "label": "Crustcrawler",
@@ -1519,8 +1519,8 @@
         {
           "act": 1,
           "description": "Coral hulk with a dense shell, bred to immense size by the Citadel's Memorium.",
-          "hornetDescription": "Nature distorted... This bug was born tiny and mild. The Citadel deformed it in futile hope it may sustain.",
           "flag": "Coral Goomba Large",
+          "hornetDescription": "Nature distorted... This bug was born tiny and mild. The Citadel deformed it in futile hope it may sustain.",
           "icon": "journal/Crustcrag.png",
           "id": "crustcrag",
           "label": "Crustcrag",
@@ -1531,8 +1531,8 @@
         {
           "act": 1,
           "description": "Plump, plentiful drifter of a coral past.",
-          "hornetDescription": "They once teemed around their tower, in numbers immense. It is a rare chance to witness such a bountiful display of life.",
           "flag": "Coral Swimmer Fat",
+          "hornetDescription": "They once teemed around their tower, in numbers immense. It is a rare chance to witness such a bountiful display of life.",
           "icon": "journal/Kai.png",
           "id": "kai",
           "label": "Kai",
@@ -1543,8 +1543,8 @@
         {
           "act": 1,
           "description": "Steel horned floater, able to defend itself and its companions.",
-          "hornetDescription": "A critical member of the larger flock. Without them present the Kai would be fast driven to extinction by larger predators.",
           "flag": "Poke Swimmer",
+          "hornetDescription": "A critical member of the larger flock. Without them present the Kai would be fast driven to extinction by larger predators.",
           "icon": "journal/Spinebeak_Kai.png",
           "id": "spinebeak-kai",
           "label": "Spinebeak Kai",
@@ -1555,8 +1555,8 @@
         {
           "act": 1,
           "description": "Toughened Kai capable of extending sharp spikes from within its shellsack.",
-          "hornetDescription": "Seeming soft, but hiding a sharp surprise. Any larger predator attempting a bite would learn a pointed and painful lesson.",
           "flag": "Spike Swimmer",
+          "hornetDescription": "Seeming soft, but hiding a sharp surprise. Any larger predator attempting a bite would learn a pointed and painful lesson.",
           "icon": "journal/Steelspine_Kai.png",
           "id": "steelspine-kai",
           "label": "Steelspine Kai",
@@ -1567,8 +1567,8 @@
         {
           "act": 1,
           "description": "Gelatinous coral drifter of simple mind and placid demeanour.",
-          "hornetDescription": "A creature at its most basic. This one is no threat to me, or any other.",
           "flag": "Coral Swimmer Small",
+          "hornetDescription": "A creature at its most basic. This one is no threat to me, or any other.",
           "icon": "journal/Yuma.png",
           "id": "yuma",
           "label": "Yuma",
@@ -1579,8 +1579,8 @@
         {
           "act": 1,
           "description": "Large, gelatinous drifter. Chases away threats by hurling its bulk around.",
-          "hornetDescription": "When defeated, it splits into many smaller forms. Yet another remarkable creature of this land before the monarch.",
           "flag": "Coral Big Jellyfish",
+          "hornetDescription": "When defeated, it splits into many smaller forms. Yet another remarkable creature of this land before the monarch.",
           "icon": "journal/Yumama.png",
           "id": "yumama",
           "label": "Yumama",
@@ -1591,8 +1591,8 @@
         {
           "act": 1,
           "description": "Staunch and skilled bladebug of a once flourishing land lost to time.",
-          "hornetDescription": "The core member of a powerful order, trained fearless and faithful. Theirs was a kingdom of warriors, one built upon their blades.",
           "flag": "Coral Warrior",
+          "hornetDescription": "The core member of a powerful order, trained fearless and faithful. Theirs was a kingdom of warriors, one built upon their blades.",
           "icon": "journal/Karaka.png",
           "id": "karaka",
           "label": "Karaka",
@@ -1603,8 +1603,8 @@
         {
           "act": 1,
           "description": "Lithe, winged scouts frequently paired with their heavier brethren.",
-          "hornetDescription": "Its training resembles my own, favouring fast strikes and rapid movement. Once a hunter, perhaps?",
           "flag": "Coral Flyer",
+          "hornetDescription": "Its training resembles my own, favouring fast strikes and rapid movement. Once a hunter, perhaps?",
           "icon": "journal/Kakri.png",
           "id": "kakri",
           "label": "Kakri",
@@ -1615,8 +1615,8 @@
         {
           "act": 1,
           "description": "Wide-masked aerial attacker trained to act as support for its grounded companions while remaining at range.",
-          "hornetDescription": "Not a frontline force, but in my assault upon their tower all emerge to see me stilled.",
           "flag": "Coral Flyer Throw",
+          "hornetDescription": "Not a frontline force, but in my assault upon their tower all emerge to see me stilled.",
           "icon": "journal/Yago.png",
           "id": "yago",
           "label": "Yago",
@@ -1627,8 +1627,8 @@
         {
           "act": 1,
           "description": "Heavy, hard-shelled charger relying on weight and strength.",
-          "hornetDescription": "Far tougher for being matched inside their encrusted domain. They must have lived their whole lives within their tower, to command it so.",
           "flag": "Coral Brawler",
+          "hornetDescription": "Far tougher for being matched inside their encrusted domain. They must have lived their whole lives within their tower, to command it so.",
           "icon": "journal/Karak_Gor.png",
           "id": "karak-gor",
           "label": "Karak Gor",
@@ -1639,8 +1639,8 @@
         {
           "act": 1,
           "description": "Leaping hunter of a bygone age. The swiftest of their sect, deftly skilled with spinning foreblades.",
-          "hornetDescription": "In contests of speed against strength, I have seen the swift more often triumphant, a lesson I have taken to my own heart.",
           "flag": "Coral Hunter",
+          "hornetDescription": "In contests of speed against strength, I have seen the swift more often triumphant, a lesson I have taken to my own heart.",
           "icon": "journal/Alita.png",
           "id": "alita",
           "label": "Alita",
@@ -1651,8 +1651,8 @@
         {
           "act": 1,
           "description": "Overgrown elder, able to spawn burning bubbles from within its coral-cased shell.",
-          "hornetDescription": "This bug's fusion with the crust-growth... It seems intentional, though I imagine the union is far from comfortable.",
           "flag": "Coral Bubble Brute",
+          "hornetDescription": "This bug's fusion with the crust-growth... It seems intentional, though I imagine the union is far from comfortable.",
           "icon": "journal/Corrcrust_Karaka.png",
           "id": "corrcrust-karaka",
           "label": "Corrcrust Karaka",
@@ -1663,8 +1663,8 @@
         {
           "act": 1,
           "description": "Hardened warrior lord of a bygone age, able to command the coral crust to his bidding.",
-          "hornetDescription": "For his stern stewardship his legions seemed utterly loyal. For less combative bugs his would have been a hard rule.",
           "flag": "Coral King",
+          "hornetDescription": "For his stern stewardship his legions seemed utterly loyal. For less combative bugs his would have been a hard rule.",
           "icon": "journal/Crust_King_Khann.png",
           "id": "crust-king-khann",
           "label": "Crust King Khann",
@@ -1675,8 +1675,8 @@
         {
           "act": 1,
           "description": "Old warrior guarding the border of their domain, stiffened by time and awoken by song.",
-          "hornetDescription": "They held long at their vigil, far beyond the age of their brethren, yet still when roused they swung their blade with remarkable ease.",
           "flag": "Coral Warrior Grey",
+          "hornetDescription": "They held long at their vigil, far beyond the age of their brethren, yet still when roused they swung their blade with remarkable ease.",
           "icon": "journal/Watcher_at_the_Edge.png",
           "id": "watcher-at-the-edge",
           "label": "Watcher at the Edge",
@@ -1687,8 +1687,8 @@
         {
           "act": 1,
           "description": "Coiled nest of charged worms. Assaults intruders with bolts of crackling electricity.",
-          "hornetDescription": "Barely a bug, and possessing only basic thought, yet instinct alone proved enough to turn it deadly.",
           "flag": "Zap Core Enemy",
+          "hornetDescription": "Barely a bug, and possessing only basic thought, yet instinct alone proved enough to turn it deadly.",
           "icon": "journal/Voltvyrm.png",
           "id": "voltvyrm",
           "label": "Voltvyrm",
@@ -1699,8 +1699,8 @@
         {
           "act": 1,
           "description": "Erratic, flying pest that nests in rags and curtains.",
-          "hornetDescription": "Like fabric somehow sprung to life. Its pelt is perfectly matched to the rags it infests.",
           "flag": "Citadel Bat",
+          "hornetDescription": "Like fabric somehow sprung to life. Its pelt is perfectly matched to the rags it infests.",
           "icon": "journal/Drapefly.png",
           "id": "drapefly",
           "label": "Drapefly",
@@ -1711,8 +1711,8 @@
         {
           "act": 1,
           "description": "Elder Drapefly grown big from age and consumption. Its heavy body allows it to hit much harder than its younger companions.",
-          "hornetDescription": "Greed will always see some bugs swell above their kin.",
           "flag": "Citadel Bat Large",
+          "hornetDescription": "Greed will always see some bugs swell above their kin.",
           "icon": "journal/Drapelord.png",
           "id": "drapelord",
           "label": "Drapelord",
@@ -1723,8 +1723,8 @@
         {
           "act": 1,
           "description": "Cloth-covered crawler with sharpened forelimbs. Lives and breeds in dark places.",
-          "hornetDescription": "Pharloom's structures seem almost built for them. The endless corners and cracks, so perfect for mites to burrow and nest.",
           "flag": "Mite Heavy",
+          "hornetDescription": "Pharloom's structures seem almost built for them. The endless corners and cracks, so perfect for mites to burrow and nest.",
           "icon": "journal/Drapemite.png",
           "id": "drapemite",
           "label": "Drapemite",
@@ -1735,8 +1735,8 @@
         {
           "act": 1,
           "description": "Full-sized mite of the Citadel cloaked in an old curtain.",
-          "hornetDescription": "Few creatures of that Silk stricken place would find nourishment enough to grow so large.",
           "flag": "Understore Mite Giant",
+          "hornetDescription": "Few creatures of that Silk stricken place would find nourishment enough to grow so large.",
           "icon": "journal/Giant_Drapemite.png",
           "id": "giant-drapemite",
           "label": "Giant Drapemite",
@@ -1747,8 +1747,8 @@
         {
           "act": 1,
           "description": "Feeble servant of the Underworks with a long twistpin and hard shell.",
-          "hornetDescription": "With all the refuse collapsing throughout their domain, the worker's stiff shell would be essential if they held any hope to survive.",
           "flag": "Understore Small",
+          "hornetDescription": "With all the refuse collapsing throughout their domain, the worker's stiff shell would be essential if they held any hope to survive.",
           "icon": "journal/Underworker.png",
           "id": "underworker",
           "label": "Underworker",
@@ -1759,8 +1759,8 @@
         {
           "act": 1,
           "description": "Drained yet dedicated labourer, wielding a coarse steel brush.",
-          "hornetDescription": "That they ever hoped to keep their domain clean... What futility.",
           "flag": "Pilgrim 03 Understore",
+          "hornetDescription": "That they ever hoped to keep their domain clean... What futility.",
           "icon": "journal/Underscrub.png",
           "id": "underscrub",
           "label": "Underscrub",
@@ -1771,8 +1771,8 @@
         {
           "act": 1,
           "description": "Uses their steel-bristled pin to scrub the soot from vents and pipes.",
-          "hornetDescription": "Their sharp cleaning implement is as filthy as the rest of the place. They only layer grime on grime.",
           "flag": "Pilgrim Staff Understore",
+          "hornetDescription": "Their sharp cleaning implement is as filthy as the rest of the place. They only layer grime on grime.",
           "icon": "journal/Undersweep.png",
           "id": "undersweep",
           "label": "Undersweep",
@@ -1783,8 +1783,8 @@
         {
           "act": 1,
           "description": "Drained worker on the verge of collapse. Consumed by the Haunting, they continue to work far beyond their mortal limits.",
-          "hornetDescription": "They toiled incessantly for the Citadel, their shells bent and greyed, and now the kingdom's curse means not even death can relieve them.",
           "flag": "Understore Poker",
+          "hornetDescription": "They toiled incessantly for the Citadel, their shells bent and greyed, and now the kingdom's curse means not even death can relieve them.",
           "icon": "journal/Underpoke.png",
           "id": "underpoke",
           "label": "Underpoke",
@@ -1795,8 +1795,8 @@
         {
           "act": 1,
           "description": "Exhausted bug, grown sickly from the smog of the Underworks. The worker's twistpins, once tools of repair, now serve as spun projectiles.",
-          "hornetDescription": "The cost of so much grandeur... Did I peer closely enough into the foundations of my own kingdom?",
           "flag": "Understore Thrower",
+          "hornetDescription": "The cost of so much grandeur... Did I peer closely enough into the foundations of my own kingdom?",
           "icon": "journal/Underloft.png",
           "id": "underloft",
           "label": "Underloft",
@@ -1807,8 +1807,8 @@
         {
           "act": 1,
           "description": "Heavy, hard-shelled worker, forever repairing the Citadel's crumbling Underworks.",
-          "hornetDescription": "There seem no ranks in their domain, yet this one has risen above the rest. A station likely gained through intimidation and thuggery.",
           "flag": "Understore Heavy",
+          "hornetDescription": "There seem no ranks in their domain, yet this one has risen above the rest. A station likely gained through intimidation and thuggery.",
           "icon": "journal/Undercrank.png",
           "id": "undercrank",
           "label": "Undercrank",
@@ -1819,8 +1819,8 @@
         {
           "act": 1,
           "description": "Guide and ofttimes leader within the Citadel's Choir.",
-          "hornetDescription": "Bugs like these crossed the caves to bring me to Pharloom. I cut down many before my capture. Then I had thought them minded and cunning. Now I can see the singular will that haunts them all.",
           "flag": "Song Pilgrim 01",
+          "hornetDescription": "Bugs like these crossed the caves to bring me to Pharloom. I cut down many before my capture. Then I had thought them minded and cunning. Now I can see the singular will that haunts them all.",
           "icon": "journal/Envoy.png",
           "id": "envoy",
           "label": "Envoy",
@@ -1831,8 +1831,8 @@
         {
           "act": 1,
           "description": "Agile bug, and one of few hardy pilgrims to have reached the Citadel.",
-          "hornetDescription": "Once one of Pharloom's favoured bugs, and yet their domain and their shells would have been the first to fall to the Haunting.",
           "flag": "Pilgrim 01 Song",
+          "hornetDescription": "Once one of Pharloom's favoured bugs, and yet their domain and their shells would have been the first to fall to the Haunting.",
           "icon": "journal/Choir_Pouncer.png",
           "id": "choir-pouncer",
           "label": "Choir Pouncer",
@@ -1843,8 +1843,8 @@
         {
           "act": 1,
           "description": "Full-grown former pilgrim serving the Citadel.",
-          "hornetDescription": "Did this one grow large thanks to the Citadel's excess, or was its formidable size the reason it ever survived to reach this place?",
           "flag": "Pilgrim 02 Song",
+          "hornetDescription": "Did this one grow large thanks to the Citadel's excess, or was its formidable size the reason it ever survived to reach this place?",
           "icon": "journal/Choir_Hornhead.png",
           "id": "choir-hornhead",
           "label": "Choir Hornhead",
@@ -1855,8 +1855,8 @@
         {
           "act": 1,
           "description": "Winged devout of the Citadel, carrying a brace of gilded bells.",
-          "hornetDescription": "Pharloom proves often the effectiveness of bells as weapons. Never before had I considered them as such.",
           "flag": "Pilgrim 03 Song",
+          "hornetDescription": "Pharloom proves often the effectiveness of bells as weapons. Never before had I considered them as such.",
           "icon": "journal/Choir_Bellbearer.png",
           "id": "choir-bellbearer",
           "label": "Choir Bellbearer",
@@ -1867,8 +1867,8 @@
         {
           "act": 1,
           "description": "Aerial bug of the Citadel, unarmed but for its short horn.",
-          "hornetDescription": "For this bug to have survived Pharloom's climb it must have teamed with stouter companions. I cannot imagine it succeeding alone.",
           "flag": "Pilgrim 04 Song",
+          "hornetDescription": "For this bug to have survived Pharloom's climb it must have teamed with stouter companions. I cannot imagine it succeeding alone.",
           "icon": "journal/Choir_Flyer.png",
           "id": "choir-flyer",
           "label": "Choir Flyer",
@@ -1879,8 +1879,8 @@
         {
           "act": 1,
           "description": "Aged former pilgrim. Uses their wings to position above threats and crush them under their large shell.",
-          "hornetDescription": "Time allowed their shell to grow thick, all the better for battering their targets.",
           "flag": "Pilgrim Stomper Song",
+          "hornetDescription": "Time allowed their shell to grow thick, all the better for battering their targets.",
           "icon": "journal/Choir_Elder.png",
           "id": "choir-elder",
           "label": "Choir Elder",
@@ -1891,8 +1891,8 @@
         {
           "act": 1,
           "description": "Disciple of the Choir, elevated above other pilgrims, and forced to cowl their face forever more.",
-          "hornetDescription": "Their use of a pin shows hard training. Their use of Silk, unfurled from a spool held close, shows skill far beyond standard bugs.",
           "flag": "Song Pilgrim 03",
+          "hornetDescription": "Their use of a pin shows hard training. Their use of Silk, unfurled from a spool held close, shows skill far beyond standard bugs.",
           "icon": "journal/Choristor.png",
           "id": "choristor",
           "label": "Choristor",
@@ -1903,8 +1903,8 @@
         {
           "act": 1,
           "description": "Disciple of the Choir, charged to maintain its perfect order, by sharp pin if necessary.",
-          "hornetDescription": "A form well suited for combat, lithe and fast. No surprise it seems to rank so high amongst its cult.",
           "flag": "Song Reed",
+          "hornetDescription": "A form well suited for combat, lithe and fast. No surprise it seems to rank so high amongst its cult.",
           "icon": "journal/Reed.png",
           "id": "reed",
           "label": "Reed",
@@ -1915,8 +1915,8 @@
         {
           "act": 1,
           "description": "High standing insect of the Choir, bearing a bow. This elite Reed has been trained and fed beyond its smaller fellows.",
-          "hornetDescription": "This bug bears a spool of Silk, which they flail to attack. Though somewhat crude, theirs is a technique much reminiscent of Weavers. I wonder who taught them such a use?",
           "flag": "Song Reed Grand",
+          "hornetDescription": "This bug bears a spool of Silk, which they flail to attack. Though somewhat crude, theirs is a technique much reminiscent of Weavers. I wonder who taught them such a use?",
           "icon": "journal/Grand_Reed.png",
           "id": "grand-reed",
           "label": "Grand Reed",
@@ -1927,8 +1927,8 @@
         {
           "act": 1,
           "description": "Mighty percussive disciple of the Choir, wielding a mallet and a Silk spool to wrap and enhance their attacks.",
-          "hornetDescription": "There is no finesse in its use of Silk. It consumes its slim supply only to amplify its force.",
           "flag": "Song Heavy Sentry",
+          "hornetDescription": "There is no finesse in its use of Silk. It consumes its slim supply only to amplify its force.",
           "icon": "journal/Choir_Clapper.png",
           "id": "choir-clapper",
           "label": "Choir Clapper",
@@ -1939,8 +1939,8 @@
         {
           "act": 1,
           "description": "Puppet servant of the Citadel, suspended on strings of Silk. An early form of automaton, requiring extensive Silk to maintain its service.",
-          "hornetDescription": "If given a chance, this one will steal Silk from any significant source, including my own shell.",
           "flag": "Song Handmaiden",
+          "hornetDescription": "If given a chance, this one will steal Silk from any significant source, including my own shell.",
           "icon": "journal/Clawmaiden.png",
           "id": "clawmaiden",
           "label": "Clawmaiden",
@@ -1951,8 +1951,8 @@
         {
           "act": 1,
           "description": "Learned disciple of the Choir charged to maintain the Citadel's Memorium.",
-          "hornetDescription": "From the outset, theirs was a hopeless task. Those wild lands could never be replicated within a space so artificial.",
           "flag": "Arborium Keeper",
+          "hornetDescription": "From the outset, theirs was a hopeless task. Those wild lands could never be replicated within a space so artificial.",
           "icon": "journal/Memoria.png",
           "id": "memoria",
           "label": "Memoria",
@@ -1963,8 +1963,8 @@
         {
           "act": 1,
           "description": "Gold ranked disciple of the Choir and direct servant to the Citadel's Conductors.",
-          "hornetDescription": "The lethality of these bugs is unexpected. Their bodies were never built for combat. The Haunting has altered their nature dramatically.",
           "flag": "Song Administrator",
+          "hornetDescription": "The lethality of these bugs is unexpected. Their bodies were never built for combat. The Haunting has altered their nature dramatically.",
           "icon": "journal/Minister.png",
           "id": "minister",
           "label": "Minister",
@@ -1975,8 +1975,8 @@
         {
           "act": 1,
           "description": "Choir commander of the High Halls, able to summon and command cogflies at a flick of their baton.",
-          "hornetDescription": "Once they summoned song from their subjects. Now they rise only to command an end to those unstrung.",
           "flag": "Song Pilgrim Maestro",
+          "hornetDescription": "Once they summoned song from their subjects. Now they rise only to command an end to those unstrung.",
           "icon": "journal/Maestro.png",
           "id": "maestro",
           "label": "Maestro",
@@ -1987,8 +1987,8 @@
         {
           "act": 1,
           "description": "Cogwork knight of Pharloom, once protector of its pilgrims, and master of the scissor blade.",
-          "hornetDescription": "The talent and intelligence of this construct goes far beyond others I have witnessed. They seem less built as a tool to serve than an attempt at life itself.",
           "flag": "Song Knight",
+          "hornetDescription": "The talent and intelligence of this construct goes far beyond others I have witnessed. They seem less built as a tool to serve than an attempt at life itself.",
           "icon": "journal/Second_Sentinel.png",
           "id": "second-sentinel",
           "label": "Second Sentinel",
@@ -1999,8 +1999,8 @@
         {
           "act": 1,
           "description": "Remains of a Citadel bug possessed by Silk dregs. The husk will lash out wildly with the many sharp pins caught inside its thread.",
-          "hornetDescription": "There is old anguish bound upon these threads, the result of countless cruel procedures.",
           "flag": "Song Threaded Husk",
+          "hornetDescription": "There is old anguish bound upon these threads, the result of countless cruel procedures.",
           "icon": "journal/Dreg_Husk.png",
           "id": "dreg-husk",
           "label": "Dreg Husk",
@@ -2011,8 +2011,8 @@
         {
           "act": 1,
           "description": "Shell of a small bug possessed by Silk dregs. The husk will stretch its Silk to form a crude, crushing wheel.",
-          "hornetDescription": "Living Silk commanding a dead shell... An affront to nature, and one all too common across Pharloom.",
           "flag": "Song Threaded Husk Spin",
+          "hornetDescription": "Living Silk commanding a dead shell... An affront to nature, and one all too common across Pharloom.",
           "icon": "journal/Dregwheel.png",
           "id": "dregwheel",
           "label": "Dregwheel",
@@ -2023,8 +2023,8 @@
         {
           "act": 1,
           "description": "Cruel physician of Whiteward, responsible for operations and modifications on the Citadel's bugs.",
-          "hornetDescription": "Their procedures with Silk may have prolonged life within the Citadel, but they unknowingly gifted many minds to the monarch.",
           "flag": "Song Pilgrim 02",
+          "hornetDescription": "Their procedures with Silk may have prolonged life within the Citadel, but they unknowingly gifted many minds to the monarch.",
           "icon": "journal/Surgeon.png",
           "id": "surgeon",
           "label": "Surgeon",
@@ -2035,8 +2035,8 @@
         {
           "act": 1,
           "description": "Altered servant of the Citadel's Whiteward, responsible for the cremation of husks and the recycling of Silk from their shells.",
-          "hornetDescription": "It lies low to the ground, perhaps out of reverence for its task, but can spring up suddenly to attack. Its shear makes for a deadly weapon with surprising reach.",
           "flag": "Song Creeper",
+          "hornetDescription": "It lies low to the ground, perhaps out of reverence for its task, but can spring up suddenly to attack. Its shear makes for a deadly weapon with surprising reach.",
           "icon": "journal/Mortician.png",
           "id": "mortician",
           "label": "Mortician",
@@ -2047,8 +2047,8 @@
         {
           "act": 1,
           "description": "Tormented will of countless husks made manifest in a pit of Silk dregs.",
-          "hornetDescription": "The souls of so many bugs, obsessed with Silk, consumed by it. Their pain shall forever remain in that pit. Even I do not possess strength enough to cleanse it.",
           "flag": "Conductor Boss",
+          "hornetDescription": "The souls of so many bugs, obsessed with Silk, consumed by it. Their pain shall forever remain in that pit. Even I do not possess strength enough to cleanse it.",
           "icon": "journal/The_Unravelled.png",
           "id": "the-unravelled",
           "label": "The Unravelled",
@@ -2059,8 +2059,8 @@
         {
           "act": 1,
           "description": "Small automaton built to work, without complaint, in the scorching heat of the Underworks' Cauldron.",
-          "hornetDescription": "It is no wonder these constructs were cast. No mortal bug would last long inside that scorching place. Even my shell struggles to withstand its heat.",
           "flag": "Understore Automaton",
+          "hornetDescription": "It is no wonder these constructs were cast. No mortal bug would last long inside that scorching place. Even my shell struggles to withstand its heat.",
           "icon": "journal/Cogwork_Underfly.png",
           "id": "cogwork-underfly",
           "label": "Cogwork Underfly",
@@ -2071,8 +2071,8 @@
         {
           "act": 1,
           "description": "Small automaton with a shielded shell, intended to carry loads of dangerous flintflame.",
-          "hornetDescription": "Born and built only to work until time stiffens its limbs. Perhaps it is mercy this construct knows nothing of the freedom it lacks.",
           "flag": "Understore Automaton EX",
+          "hornetDescription": "Born and built only to work until time stiffens its limbs. Perhaps it is mercy this construct knows nothing of the freedom it lacks.",
           "icon": "journal/Cogwork_Hauler.png",
           "id": "cogwork-hauler",
           "label": "Cogwork Hauler",
@@ -2083,8 +2083,8 @@
         {
           "act": 1,
           "description": "Automaton built in the shape of a scuttling bug. Its back contains retractable pins, intended to cut song cylinders free of any obstruction.",
-          "hornetDescription": "Its form is certainly based on bugs found outside the Citadel. In my own craftwork, I too often look to nature for inspiration.",
           "flag": "Song Automaton Goomba",
+          "hornetDescription": "Its form is certainly based on bugs found outside the Citadel. In my own craftwork, I too often look to nature for inspiration.",
           "icon": "journal/Cogwork_Crawler.png",
           "id": "cogwork-crawler",
           "label": "Cogwork Crawler",
@@ -2095,8 +2095,8 @@
         {
           "act": 1,
           "description": "Flighted automaton, responsible for repairing and extending the Core.",
-          "hornetDescription": "More effective an opponent than would be guessed. The precarity of its winding domain can make even its simple assault a challenge.",
           "flag": "Song Automaton Fly",
+          "hornetDescription": "More effective an opponent than would be guessed. The precarity of its winding domain can make even its simple assault a challenge.",
           "icon": "journal/Cogworker.png",
           "id": "cogworker",
           "label": "Cogworker",
@@ -2107,8 +2107,8 @@
         {
           "act": 1,
           "description": "Spherical, winged automaton housing many sharp spikes.",
-          "hornetDescription": "I cannot decipher its function to the greater Core. Is it built for defence? If so, its passivity seems far from optimal.",
           "flag": "Song Automaton Fly Spike",
+          "hornetDescription": "I cannot decipher its function to the greater Core. Is it built for defence? If so, its passivity seems far from optimal.",
           "icon": "journal/Cogwork_Spine.png",
           "id": "cogwork-spine",
           "label": "Cogwork Spine",
@@ -2119,8 +2119,8 @@
         {
           "act": 1,
           "description": "Bug forged of iron, rotor and cog. The automaton works tirelessly to maintain the Core that houses it.",
-          "hornetDescription": "Its core is filled with fine mechanisms, but that alone should not produce such a convincing mimic of life. Silk must also be used to animate this artifice, though exactly how I am not sure.",
           "flag": "Song Automaton 01",
+          "hornetDescription": "Its core is filled with fine mechanisms, but that alone should not produce such a convincing mimic of life. Silk must also be used to animate this artifice, though exactly how I am not sure.",
           "icon": "journal/Cogwork_Choirbug.png",
           "id": "cogwork-choirbug",
           "label": "Cogwork Choirbug",
@@ -2131,8 +2131,8 @@
         {
           "act": 1,
           "description": "Steam shooting automaton, forged to clean the Cogwork Core and keep it free of infestation.",
-          "hornetDescription": "An inspired use of steam. I must remember its construction when designing future tools.",
           "flag": "Song Automaton 02",
+          "hornetDescription": "An inspired use of steam. I must remember its construction when designing future tools.",
           "icon": "journal/Cogwork_Cleanser.png",
           "id": "cogwork-cleanser",
           "label": "Cogwork Cleanser",
@@ -2143,8 +2143,8 @@
         {
           "act": 1,
           "description": "Cogwork construct forged primarily for the Core's protection. Bears a shield and poke-pin, and possesses a lethal understanding of their use.",
-          "hornetDescription": "It has no true mind, and yet fights effectively, adjusting its strategy to my movements. Where exactly are its thoughts written?",
           "flag": "Song Automaton Shield",
+          "hornetDescription": "It has no true mind, and yet fights effectively, adjusting its strategy to my movements. Where exactly are its thoughts written?",
           "icon": "journal/Cogwork_Defender.png",
           "id": "cogwork-defender",
           "label": "Cogwork Defender",
@@ -2155,8 +2155,8 @@
         {
           "act": 1,
           "description": "Rare automaton intended to perform the ringing of bells and cymbals in the depths of the Core.",
-          "hornetDescription": "I have not yet seen the bell this automaton is designed to ring, nor do I ever wish to hear it. Such a clamour would no doubt be unpleasant to experience.",
           "flag": "Song Automaton Ball",
+          "hornetDescription": "I have not yet seen the bell this automaton is designed to ring, nor do I ever wish to hear it. Such a clamour would no doubt be unpleasant to experience.",
           "icon": "journal/Cogwork_Clapper.png",
           "id": "cogwork-clapper",
           "label": "Cogwork Clapper",
@@ -2167,8 +2167,8 @@
         {
           "act": 1,
           "description": "Automatons of impeccable construction, welcoming entrants to their chamber with a display of deadly dance.",
-          "hornetDescription": "Two cogwork bugs, and yet the soul seemed singular? A sad, yet masterful imitation of life, imbued inside shells of iron.",
           "flag": "Clockwork Dancer",
+          "hornetDescription": "Two cogwork bugs, and yet the soul seemed singular? A sad, yet masterful imitation of life, imbued inside shells of iron.",
           "icon": "journal/Cogwork_Dancers.png",
           "id": "cogwork-dancers",
           "label": "Cogwork Dancers",
@@ -2179,8 +2179,8 @@
         {
           "act": 1,
           "description": "Young acolyte raised in the darkest vaults, destined to ascend to the rank of Scrollreader.",
-          "hornetDescription": "In entering their domain, I freed these bugs to infest the greater vaults. They are a nuisance, and I have only myself to blame.",
           "flag": "Song Scholar Acolyte",
+          "hornetDescription": "In entering their domain, I freed these bugs to infest the greater vaults. They are a nuisance, and I have only myself to blame.",
           "icon": "journal/Vaultborn.png",
           "id": "vaultborn",
           "label": "Vaultborn",
@@ -2191,8 +2191,8 @@
         {
           "act": 1,
           "description": "Disciple of the Whispering Vaults, tasked to navigate its dim recesses to retrieve old scrolls.",
-          "hornetDescription": "An essential bug if one ever hoped to navigate that dark maze of stacks and scrolls.",
           "flag": "Lightbearer",
+          "hornetDescription": "An essential bug if one ever hoped to navigate that dark maze of stacks and scrolls.",
           "icon": "journal/Lampbearer.png",
           "id": "lampbearer",
           "label": "Lampbearer",
@@ -2203,8 +2203,8 @@
         {
           "act": 1,
           "description": "Gilded servant of the Whispering Vaults, born to read and recall the near endless scrolls of prayer.",
-          "hornetDescription": "Did they ever truly understand those inscrutable scrolls? Or is it all merely pretence, an endless act to maintain their order's station within the Citadel?",
           "flag": "Scrollkeeper",
+          "hornetDescription": "Did they ever truly understand those inscrutable scrolls? Or is it all merely pretence, an endless act to maintain their order's station within the Citadel?",
           "icon": "journal/Scrollreader.png",
           "id": "scrollreader",
           "label": "Scrollreader",
@@ -2215,8 +2215,8 @@
         {
           "act": 1,
           "description": "High caste bug, responsible for delivering sermons and leading prayer for those beyond the walls of the Whispering Vaults.",
-          "hornetDescription": "Most likely this one's true charge was to root out and condemn those not seen as sufficiently fervent.",
           "flag": "Scholar",
+          "hornetDescription": "Most likely this one's true charge was to root out and condemn those not seen as sufficiently fervent.",
           "icon": "journal/Vaultkeeper.png",
           "id": "vaultkeeper",
           "label": "Vaultkeeper",
@@ -2227,8 +2227,8 @@
         {
           "act": 1,
           "description": "Haughty thespian convinced that only dazzling performance can raise Pharloom from the throes of death.",
-          "hornetDescription": "His desire to see Pharloom saved may have been well intentioned, but he seemed quite happy for others to die upon the stage in pursuit of his goal.",
           "flag": "Trobbio",
+          "hornetDescription": "His desire to see Pharloom saved may have been well intentioned, but he seemed quite happy for others to die upon the stage in pursuit of his goal.",
           "icon": "journal/Trobbio.png",
           "id": "trobbio",
           "label": "Trobbio",
@@ -2239,8 +2239,8 @@
         {
           "act": 1,
           "description": "Depressed thespian, consumed by the melancholy of a collapsing world.",
-          "hornetDescription": "This one chose to embrace the doom to come. I shall not share such easy surrender.",
           "flag": "Tormented Trobbio",
+          "hornetDescription": "This one chose to embrace the doom to come. I shall not share such easy surrender.",
           "icon": "journal/Tormented_Trobbio.png",
           "id": "tormented-trobbio",
           "label": "Tormented Trobbio",
@@ -2251,8 +2251,8 @@
         {
           "act": 1,
           "description": "Humbled prisoner serving their sentence for sin committed within the Citadel.",
-          "hornetDescription": "All are haunted here, the jailers and the jailed. Do they realise they will never leave this place? Or how long they have stayed already?",
           "flag": "Slab Prisoner Leaper New",
+          "hornetDescription": "All are haunted here, the jailers and the jailed. Do they realise they will never leave this place? Or how long they have stayed already?",
           "icon": "journal/Penitent.png",
           "id": "penitent",
           "label": "Penitent",
@@ -2263,8 +2263,8 @@
         {
           "act": 1,
           "description": "Small bug, shackled and cowled for sin committed within the Citadel.",
-          "hornetDescription": "Their thick shroud leaves them sightless, yet it seems to matter little. They have no care for their own safety, wishing only to charge at those they sense as sinful.",
           "flag": "Slab Prisoner Fly New",
+          "hornetDescription": "Their thick shroud leaves them sightless, yet it seems to matter little. They have no care for their own safety, wishing only to charge at those they sense as sinful.",
           "icon": "journal/Puny_Penitent.png",
           "id": "puny-penitent",
           "label": "Puny Penitent",
@@ -2275,8 +2275,8 @@
         {
           "act": 1,
           "description": "Infant fly, freshly hatched. At this age the soft, blind fly is little more than a bother.",
-          "hornetDescription": "The less these gruesome bugs breed, the better.",
           "flag": "Slab Fly Small Fresh",
+          "hornetDescription": "The less these gruesome bugs breed, the better.",
           "icon": "journal/Freshfly.png",
           "id": "freshfly",
           "label": "Freshfly",
@@ -2287,8 +2287,8 @@
         {
           "act": 1,
           "description": "Sticky young fly, born and grown in service to the Slab.",
-          "hornetDescription": "Foul creatures birthed into servitude. Their plight elicits no sympathy from me.",
           "flag": "Slab Fly Small",
+          "hornetDescription": "Foul creatures birthed into servitude. Their plight elicits no sympathy from me.",
           "icon": "journal/Scabfly.png",
           "id": "scabfly",
           "label": "Scabfly",
@@ -2299,8 +2299,8 @@
         {
           "act": 1,
           "description": "Starved servant of the Slab, bearing a hooked longpin.",
-          "hornetDescription": "The smell from these jailers overwhelms my senses. I strongly doubt they have ever thought to bathe.",
           "flag": "Slab Fly Mid",
+          "hornetDescription": "The smell from these jailers overwhelms my senses. I strongly doubt they have ever thought to bathe.",
           "icon": "journal/Guardfly.png",
           "id": "guardfly",
           "label": "Guardfly",
@@ -2311,8 +2311,8 @@
         {
           "act": 1,
           "description": "Heavy, hairy jailer responsible for capturing sinners and punishing prisoners.",
-          "hornetDescription": "Disgusting both in manner and stench. I feel no remorse to see them felled.",
           "flag": "Slab Fly Large",
+          "hornetDescription": "Disgusting both in manner and stench. I feel no remorse to see them felled.",
           "icon": "journal/Wardenfly.png",
           "id": "wardenfly",
           "label": "Wardenfly",
@@ -2323,8 +2323,8 @@
         {
           "act": 1,
           "description": "Mad matriarch of the Slab rarely seen outside her warren. From her all jailers are born and bred.",
-          "hornetDescription": "With this one vanquished, I hope to have sped the end for that jail and its distasteful order.",
           "flag": "Slab Fly Broodmother",
+          "hornetDescription": "With this one vanquished, I hope to have sped the end for that jail and its distasteful order.",
           "icon": "journal/Broodmother.png",
           "id": "broodmother",
           "label": "Broodmother",
@@ -2335,8 +2335,8 @@
         {
           "act": 1,
           "description": "Gentle glider of Mount Fay. Its downy wings and cowl allow it to resist even the most cutting cold.",
-          "hornetDescription": "This one would make a perfect pet, but for the freezing temperatures it requires for comfort.",
           "flag": "Peaks Drifter",
+          "hornetDescription": "This one would make a perfect pet, but for the freezing temperatures it requires for comfort.",
           "icon": "journal/Driftlin.png",
           "id": "driftlin",
           "label": "Driftlin",
@@ -2347,8 +2347,8 @@
         {
           "act": 1,
           "description": "Flighted creature formed from coldshard. If shattered it will quickly reform.",
-          "hornetDescription": "The coldshard, even when destroyed it remembers its former shape. A remarkable material, and perhaps even more astonishing there seems life contained within it.",
           "flag": "Crystal Drifter",
+          "hornetDescription": "The coldshard, even when destroyed it remembers its former shape. A remarkable material, and perhaps even more astonishing there seems life contained within it.",
           "icon": "journal/Mnemonid.png",
           "id": "mnemonid",
           "label": "Mnemonid",
@@ -2359,8 +2359,8 @@
         {
           "act": 1,
           "description": "Huge flighted creature formed from coldshard.",
-          "hornetDescription": "This larger form carries so much weight it can barely move from its place.",
           "flag": "Crystal Drifter Giant",
+          "hornetDescription": "This larger form carries so much weight it can barely move from its place.",
           "icon": "journal/Mnemonord.png",
           "id": "mnemonord",
           "label": "Mnemonord",
@@ -2371,8 +2371,8 @@
         {
           "act": 1,
           "description": "Small construct built by Weavers past, brought to life through Silk runes threaded within.",
-          "hornetDescription": "Though the Weavers have long passed from Pharloom, this servant still performs its function.",
           "flag": "Weaver Servitor",
+          "hornetDescription": "Though the Weavers have long passed from Pharloom, this servant still performs its function.",
           "icon": "journal/Servitor_Ignim.png",
           "id": "servitor-ignim",
           "label": "Servitor Ignim",
@@ -2383,8 +2383,8 @@
         {
           "act": 1,
           "description": "Broken construct built by Weavers past, able to fire a focused beam of silklight to carve halls and chambers through ice and bone.",
-          "hornetDescription": "The servitor has been heavily damaged by time and the elements. Its actions have grown erratic. It seems no longer able to discern friend from foe.",
           "flag": "Weaver Servitor Large",
+          "hornetDescription": "The servitor has been heavily damaged by time and the elements. Its actions have grown erratic. It seems no longer able to discern friend from foe.",
           "icon": "journal/Servitor_Boran.png",
           "id": "servitor-boran",
           "label": "Servitor Boran",
@@ -2395,8 +2395,8 @@
         {
           "act": 1,
           "description": "Mindless sack filled with Plasmium. When broken the Plasmium can be consumed for its temporary benefits to health.",
-          "hornetDescription": "My unique shell can resist the darker deformations of this substance, but even I have limits...",
           "flag": "Lifeblood Fly",
+          "hornetDescription": "My unique shell can resist the darker deformations of this substance, but even I have limits...",
           "icon": "journal/Winged_Lifeseed.png",
           "id": "winged-lifeseed",
           "label": "Winged Lifeseed",
@@ -2407,8 +2407,8 @@
         {
           "act": 1,
           "description": "Mutated young worm infected with Plasmium. The new form displays potent regenerative skill.",
-          "hornetDescription": "Pharloom shall quickly learn the curse of this substance. What benefits it provides can be swiftly outweighed.",
           "flag": "Bone Worm BlueBlood",
+          "hornetDescription": "Pharloom shall quickly learn the curse of this substance. What benefits it provides can be swiftly outweighed.",
           "icon": "journal/Plasmid.png",
           "id": "plasmid",
           "label": "Plasmid",
@@ -2419,8 +2419,8 @@
         {
           "act": 1,
           "description": "Large worm mutated heavily by Plasmium. The creature has become fused to the roof of its cave, no longer able to move freely.",
-          "hornetDescription": "In my home caves, when once this substance was allowed to flourish, I saw similar aberrations. This is wonder tainted strong with revulsion.",
           "flag": "Bone Worm BlueTurret",
+          "hornetDescription": "In my home caves, when once this substance was allowed to flourish, I saw similar aberrations. This is wonder tainted strong with revulsion.",
           "icon": "journal/Plasmidas.png",
           "id": "plasmidas",
           "label": "Plasmidas",
@@ -2431,8 +2431,8 @@
         {
           "act": 1,
           "description": "Husk of an alchemist's assistant granted false life by Plasmium.",
-          "hornetDescription": "He carelessly seeded these caves with that cursed substance... His final fate seems fair reward for those efforts, yet I feel some sympathy. It is an alluring power.",
           "flag": "Blue Assistant",
+          "hornetDescription": "He carelessly seeded these caves with that cursed substance... His final fate seems fair reward for those efforts, yet I feel some sympathy. It is an alluring power.",
           "icon": "journal/Plasmified_Zango.png",
           "id": "plasmified-zango",
           "label": "Plasmified Zango",
@@ -2443,8 +2443,8 @@
         {
           "act": 1,
           "description": "Fine winged flyer that survives in flocks.",
-          "hornetDescription": "So light they can rest atop still water's surface. An elegant bug indeed.",
           "flag": "Lilypad Fly",
+          "hornetDescription": "So light they can rest atop still water's surface. An elegant bug indeed.",
           "icon": "journal/Leaf_Glider.png",
           "id": "leaf-glider",
           "label": "Leaf Glider",
@@ -2455,8 +2455,8 @@
         {
           "act": 1,
           "description": "Pointed scurrier posing as plant life.",
-          "hornetDescription": "Simple. Graceful. Another fine bug lost forever from these lands.",
           "flag": "Grass Goomba",
+          "hornetDescription": "Simple. Graceful. Another fine bug lost forever from these lands.",
           "icon": "journal/Leaf_Roller.png",
           "id": "leaf-roller",
           "label": "Leaf Roller",
@@ -2467,8 +2467,8 @@
         {
           "act": 1,
           "description": "Flighty insect that lives beside still waters.",
-          "hornetDescription": "Though generally passive, their sharp masks can cause injury if carelessly blundered into.",
           "flag": "Hornet Dragonfly",
+          "hornetDescription": "Though generally passive, their sharp masks can cause injury if carelessly blundered into.",
           "icon": "journal/Pendra.png",
           "id": "pendra",
           "label": "Pendra",
@@ -2479,8 +2479,8 @@
         {
           "act": 1,
           "description": "Heavy insect that lives near large bodies of water. Its weighty body is best avoided.",
-          "hornetDescription": "When they do not hinder my path, I find their simple motion rather pleasant.",
           "flag": "Dragonfly Large",
+          "hornetDescription": "When they do not hinder my path, I find their simple motion rather pleasant.",
           "icon": "journal/Pendragor.png",
           "id": "pendragor",
           "label": "Pendragor",
@@ -2491,8 +2491,8 @@
         {
           "act": 1,
           "description": "Predatory plant with a powerful jaw shaped to resemble a lily pad.",
-          "hornetDescription": "A snapping surprise on first encounter, though one easily avoided once aware.",
           "flag": "Lilypad Trap",
+          "hornetDescription": "A snapping surprise on first encounter, though one easily avoided once aware.",
           "icon": "journal/Nuphar.png",
           "id": "nuphar",
           "label": "Nuphar",
@@ -2503,8 +2503,8 @@
         {
           "act": 1,
           "description": "Placid native of Verdania. Its hide closely mimics the flora of its territory.",
-          "hornetDescription": "An impressive act of mimicry. To match so closely with its land, their clover caves must have sustained through generations uncounted.",
           "flag": "Cloverstag",
+          "hornetDescription": "An impressive act of mimicry. To match so closely with its land, their clover caves must have sustained through generations uncounted.",
           "icon": "journal/Cloverstag.png",
           "id": "cloverstag",
           "label": "Cloverstag",
@@ -2515,8 +2515,8 @@
         {
           "act": 1,
           "description": "Fabled first Cloverstag of Verdania's wilds. Commands the grass and leaves to aid its attack.",
-          "hornetDescription": "Myth made real in memory. The creature seemed completely at one with the flora around it. Did it ever truly exist as I have seen it?",
           "flag": "Cloverstag White",
+          "hornetDescription": "Myth made real in memory. The creature seemed completely at one with the flora around it. Did it ever truly exist as I have seen it?",
           "icon": "journal/Palestag.png",
           "id": "palestag",
           "label": "Palestag",
@@ -2527,8 +2527,8 @@
         {
           "act": 1,
           "description": "Child of Verdania, fully capable to fight despite its young age.",
-          "hornetDescription": "Fierce and fast, and defending their lands even from birth. These are children to be proud of.",
           "flag": "Grasshopper Child",
+          "hornetDescription": "Fierce and fast, and defending their lands even from birth. These are children to be proud of.",
           "icon": "journal/Kindanir.png",
           "id": "kindanir",
           "label": "Kindanir",
@@ -2539,8 +2539,8 @@
         {
           "act": 1,
           "description": "Darting warrior with sharpened forelimbs and heightened senses.",
-          "hornetDescription": "They rarely relax, always alert for potential danger, even deep in their own territory. To defeat them my focus must match their own.",
           "flag": "Grasshopper Slasher",
+          "hornetDescription": "They rarely relax, always alert for potential danger, even deep in their own territory. To defeat them my focus must match their own.",
           "icon": "journal/Verdanir.png",
           "id": "verdanir",
           "label": "Verdanir",
@@ -2551,8 +2551,8 @@
         {
           "act": 1,
           "description": "Blindingly fast, winged warrior able to launch pointed pinions from its forelimbs.",
-          "hornetDescription": "Born with many tools I would once have desired for myself. Fortunately, I have trained hard around those limits.",
           "flag": "Grasshopper Fly",
+          "hornetDescription": "Born with many tools I would once have desired for myself. Fortunately, I have trained hard around those limits.",
           "icon": "journal/Escalion.png",
           "id": "escalion",
           "label": "Escalion",
@@ -2563,8 +2563,8 @@
         {
           "act": 1,
           "description": "Dual princes of old Verdania, beloved by their subjects for their grace and for the ballet of death they delivered upon outsiders.",
-          "hornetDescription": "For one to love another so similar to themselves, is that selfless or vain?",
           "flag": "Clover Dancer",
+          "hornetDescription": "For one to love another so similar to themselves, is that selfless or vain?",
           "icon": "journal/Clover_Dancers.png",
           "id": "clover-dancers",
           "label": "Clover Dancers",
@@ -2575,8 +2575,8 @@
         {
           "act": 1,
           "description": "Shell-plated worm found only in the deepest depths. Seems to survive despite consuming no food or liquid.",
-          "hornetDescription": "A creature long familiar to me. I suspect that no matter how far I travel, if I descend deep enough they will always be there.",
           "flag": "Abyss Crawler",
+          "hornetDescription": "A creature long familiar to me. I suspect that no matter how far I travel, if I descend deep enough they will always be there.",
           "icon": "journal/Shadow_Creeper.png",
           "id": "shadow-creeper",
           "label": "Shadow Creeper",
@@ -2587,8 +2587,8 @@
         {
           "act": 1,
           "description": "Bulky worm of the deepest depths. Lives in tight crevices and uses its weighty body to batter.",
-          "hornetDescription": "These ones grow large, yet I have never observed them eating, or sleeping. They seem such simple bugs... but I suspect they are not truly our cousins.",
           "flag": "Abyss Crawler Large",
+          "hornetDescription": "These ones grow large, yet I have never observed them eating, or sleeping. They seem such simple bugs... but I suspect they are not truly our cousins.",
           "icon": "journal/Shadow_Charger.png",
           "id": "shadow-charger",
           "label": "Shadow Charger",
@@ -2599,8 +2599,8 @@
         {
           "act": 1,
           "description": "Tiny empty creature, barely a bug. Swallows its prey whole and sucks their nutrients until nothing remains.",
-          "hornetDescription": "This one disturbs me... There is something in its simplicity. Do I almost feel fear?",
           "flag": "Gloomfly",
+          "hornetDescription": "This one disturbs me... There is something in its simplicity. Do I almost feel fear?",
           "icon": "journal/Gloomsac.png",
           "id": "gloomsac",
           "label": "Gloomsac",
@@ -2611,8 +2611,8 @@
         {
           "act": 1,
           "description": "Enormous tubular beast uniquely suited to living close to the void below.",
-          "hornetDescription": "Amazingly, the creature carries the void's black liquid in its stomach, violently spraying it forth if threatened.",
           "flag": "Gloom Beast",
+          "hornetDescription": "Amazingly, the creature carries the void's black liquid in its stomach, violently spraying it forth if threatened.",
           "icon": "journal/Gargant_Gloom.png",
           "id": "gargant-gloom",
           "label": "Gargant Gloom",
@@ -2623,8 +2623,8 @@
         {
           "act": 1,
           "description": "Lashing fragments of pure darkness, shaped into sharpened tentacles.",
-          "hornetDescription": "The void that will claim all things... In the barbed forms it chooses its nature can be seen clear.",
           "flag": "Void Tendrils",
+          "hornetDescription": "The void that will claim all things... In the barbed forms it chooses its nature can be seen clear.",
           "icon": "journal/Void_Tendrils.png",
           "id": "void-tendrils",
           "label": "Void Tendrils",
@@ -2635,8 +2635,8 @@
         {
           "act": 1,
           "description": "Dense knot of husks bound tight by void soaked Silk.",
-          "hornetDescription": "Silk and shells corrupted. That void seeks now to claim this land whole. These poor shells are only the beginning.",
           "flag": "Black Thread Core",
+          "hornetDescription": "Silk and shells corrupted. That void seeks now to claim this land whole. These poor shells are only the beginning.",
           "icon": "journal/Void_Mass.png",
           "id": "void-mass",
           "label": "Void Mass",
@@ -2647,21 +2647,21 @@
         {
           "act": 1,
           "description": "Mass of old masks swollen and animated by writhing void.",
-          "hornetDescription": "A creature born of a bug's desperate hope for strength. Few possess the skill to call the void, and of those that can, none possess the means to tame it.",
           "flag": "Abyss Mass",
+          "hornetDescription": "A creature born of a bug's desperate hope for strength. Few possess the skill to call the void, and of those that can, none possess the means to tame it.",
           "icon": "journal/Summoned_Saviour.png",
           "id": "summoned-saviour",
           "label": "Summoned Saviour",
           "link": "https://hollowknight.wiki/w/Summoned_Saviour",
+          "mode": "steel",
           "required": 1,
-          "type": "journal",
-          "mode": "steel"
+          "type": "journal"
         },
         {
           "act": 1,
           "description": "False fly with a rune etched shell. A tortured mix of soul and void is caged within.",
-          "hornetDescription": "A crude construct of my father's fallen domain. Only a fool believes that void can be fashioned to do their bidding.",
           "flag": "White Palace Fly",
+          "hornetDescription": "A crude construct of my father's fallen domain. Only a fool believes that void can be fashioned to do their bidding.",
           "icon": "journal/Wingmould.png",
           "id": "wingmould",
           "label": "Wingmould",
@@ -2672,8 +2672,8 @@
         {
           "act": 1,
           "description": "Sightless burrower that reacts violently to the slightest sound.",
-          "hornetDescription": "A common enough bug, though not to be underestimated. The acuteness of their other senses more than makes up for their lack of vision.",
           "flag": "Centipede Trap",
+          "hornetDescription": "A common enough bug, though not to be underestimated. The acuteness of their other senses more than makes up for their lack of vision.",
           "icon": "journal/Garpid.png",
           "id": "garpid",
           "label": "Garpid",
@@ -2684,8 +2684,8 @@
         {
           "act": 1,
           "description": "Slow drifting bug with a heavy top shell. The bug reacts little to threats, even those that could claim its life.",
-          "hornetDescription": "The poor creature has lived a life too calm and coddled. It would not fare well in the world beyond its walls.",
           "flag": "Spike Lazy Flyer",
+          "hornetDescription": "The poor creature has lived a life too calm and coddled. It would not fare well in the world beyond its walls.",
           "icon": "journal/Imoba.png",
           "id": "imoba",
           "label": "Imoba",
@@ -2696,8 +2696,8 @@
         {
           "act": 1,
           "description": "Common crawler that lives beneath sand.",
-          "hornetDescription": "This surface dweller is free of Silk. Its nature remains its own. The monarch's influence must only have stretched below it.",
           "flag": "Surface Scuttler",
+          "hornetDescription": "This surface dweller is free of Silk. Its nature remains its own. The monarch's influence must only have stretched below it.",
           "icon": "journal/Skrill.png",
           "id": "skrill",
           "label": "Skrill",
@@ -2708,8 +2708,8 @@
         {
           "act": 1,
           "description": "Long dormant centipede, awoken and enraged by Pharloom's crumbling collapse.",
-          "hornetDescription": "A monster in the classic form of tales from youth. Its slaying was done as much by my fierce travelling companion as by myself.",
           "flag": "Giant Centipede",
+          "hornetDescription": "A monster in the classic form of tales from youth. Its slaying was done as much by my fierce travelling companion as by myself.",
           "icon": "journal/Bell_Eater.png",
           "id": "bell-eater",
           "label": "Bell Eater",
@@ -2720,8 +2720,8 @@
         {
           "act": 1,
           "description": "Oversized bug, briefly consumed by anger after its long time caged.",
-          "hornetDescription": "I would not have guessed so large and marvelous a flea existed. I am pleased it saw sense before I had to strike a killing blow.",
           "flag": "Giant Flea",
+          "hornetDescription": "I would not have guessed so large and marvelous a flea existed. I am pleased it saw sense before I had to strike a killing blow.",
           "icon": "journal/Huge_Flea.png",
           "id": "huge-flea",
           "label": "Huge Flea",
@@ -2732,8 +2732,8 @@
         {
           "act": 1,
           "description": "Warrior cartographer of a tribe from Pharloom's edge. Her skills in battle could challenge the kingdom's best.",
-          "hornetDescription": "She has lived a mere fraction of my lifetime and yet her rings prove a ferocious match. As gifted a warrior as I have ever encountered, and one I am fortunate to call a friend.",
           "flag": "Shakra",
+          "hornetDescription": "She has lived a mere fraction of my lifetime and yet her rings prove a ferocious match. As gifted a warrior as I have ever encountered, and one I am fortunate to call a friend.",
           "icon": "journal/Shakra.png",
           "id": "shakra",
           "label": "Shakra",
@@ -2744,8 +2744,8 @@
         {
           "act": 1,
           "description": "Vigorous old knight and their noble companion, working together to see their lands cut free from haunted madness.",
-          "hornetDescription": "They too seek the spectre at the Haunting's heart, though I fear that foe would pose a challenge beyond their mortal limits.",
           "flag": "Garmond_Zaza",
+          "hornetDescription": "They too seek the spectre at the Haunting's heart, though I fear that foe would pose a challenge beyond their mortal limits.",
           "icon": "journal/Garmond_&_Zaza.png",
           "id": "garmond-&-zaza",
           "label": "Garmond & Zaza",
@@ -2756,8 +2756,8 @@
         {
           "act": 1,
           "description": "Old knight consumed by black thread.",
-          "hornetDescription": "A tragic fate for a once honourable bug. Those void soaked threads... Their physical might is nothing compared to the corruption they wreak upon a soul.",
           "flag": "Garmond",
+          "hornetDescription": "A tragic fate for a once honourable bug. Those void soaked threads... Their physical might is nothing compared to the corruption they wreak upon a soul.",
           "icon": "journal/Lost_Garmond.png",
           "id": "lost-garmond",
           "label": "Lost Garmond",
@@ -2768,8 +2768,8 @@
         {
           "act": 1,
           "description": "Blade maiden of a once renown warrior sect, survived long beyond the rest of her order.",
-          "hornetDescription": "I like her. For her willingness to teach and her spirit still strong, despite a long age spent solitary... she has my respect.",
           "flag": "Pinstress Boss",
+          "hornetDescription": "I like her. For her willingness to teach and her spirit still strong, despite a long age spent solitary... she has my respect.",
           "icon": "journal/Pinstress.png",
           "id": "pinstress",
           "label": "Pinstress",
@@ -2780,8 +2780,8 @@
         {
           "act": 1,
           "description": "Crazed fanatic able to guide Pharloom's haunted Silk by music played upon it.",
-          "hornetDescription": "Her body seemed a Weaver's, but her mask had been forcibly removed, and her own Silk was bound useless by heavy pins lodged through her spine.",
           "flag": "Spinner Boss",
+          "hornetDescription": "Her body seemed a Weaver's, but her mask had been forcibly removed, and her own Silk was bound useless by heavy pins lodged through her spine.",
           "icon": "journal/Widow.png",
           "id": "widow",
           "label": "Widow",
@@ -2792,8 +2792,8 @@
         {
           "act": 1,
           "description": "Ancient Weaver condemned for a transgression lost to time.",
-          "hornetDescription": "This one's husk held a masterful talent, to weave Silk into blazing runes. Throughout my life, I have seen runes woven for many tasks. Was she the first to hone such skills?",
           "flag": "First Weaver",
+          "hornetDescription": "This one's husk held a masterful talent, to weave Silk into blazing runes. Throughout my life, I have seen runes woven for many tasks. Was she the first to hone such skills?",
           "icon": "journal/First_Sinner.png",
           "id": "first-sinner",
           "label": "First Sinner",
@@ -2804,8 +2804,8 @@
         {
           "act": 1,
           "description": "Mournful creature tasked alone to expel the Citadel's choking refuse. Their talent with a longpin is unmatched.",
-          "hornetDescription": "Though grey with age, their frayed form suggested a being strung from Silk, one who welcomed a decisive end in combat over a slow decline.",
           "flag": "Phantom",
+          "hornetDescription": "Though grey with age, their frayed form suggested a being strung from Silk, one who welcomed a decisive end in combat over a slow decline.",
           "icon": "journal/Phantom.png",
           "id": "phantom",
           "label": "Phantom",
@@ -2816,8 +2816,8 @@
         {
           "act": 1,
           "description": "Manic fencer who delights in battle.",
-          "hornetDescription": "A bug born entirely of thread. Much Silk would have been needed to see her sustained. A fragile form of life, but life nonetheless.",
           "flag": "Lace",
+          "hornetDescription": "A bug born entirely of thread. Much Silk would have been needed to see her sustained. A fragile form of life, but life nonetheless.",
           "icon": "journal/Lace.png",
           "id": "lace",
           "label": "Lace",
@@ -2828,8 +2828,8 @@
         {
           "act": 1,
           "description": "Monarch of Pharloom, and the primal source of Silk.",
-          "hornetDescription": "Heart of the Haunting, long lulled to slumber and desperate to wake. The higher being's threads stretched throughout Pharloom, snaring its bugs and driving them to madness and discord.",
           "flag": "Silk Boss",
+          "hornetDescription": "Heart of the Haunting, long lulled to slumber and desperate to wake. The higher being's threads stretched throughout Pharloom, snaring its bugs and driving them to madness and discord.",
           "icon": "journal/Grand_Mother_Silk.png",
           "id": "grand-mother-silk",
           "label": "Grand Mother Silk",
@@ -2840,8 +2840,8 @@
         {
           "act": 1,
           "description": "Silk-spun child possessed by the void.",
-          "hornetDescription": "To quell the mother's rage, and see this kingdom saved, I will claim her back. This one... the dark shall not take.",
           "flag": "Lost Lace",
+          "hornetDescription": "To quell the mother's rage, and see this kingdom saved, I will claim her back. This one... the dark shall not take.",
           "icon": "journal/Lost_Lace.png",
           "id": "lost-lace",
           "label": "Lost Lace",

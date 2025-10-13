@@ -73,8 +73,8 @@
               "required": [
                 "act",
                 "description",
-                "hornetDescription",
                 "flag",
+                "hornetDescription",
                 "icon",
                 "id",
                 "label",
