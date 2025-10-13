@@ -216,6 +216,13 @@ export function getSaveDataValue(
       return playerDataExpanded[flag] === true;
     }
 
+    case "quill": {
+      const { flag } = item;
+
+      // Always return the number, unlock is calculated later.
+      return playerDataExpanded[flag] ?? 0;
+    }
+
     // Silk Hearts, Memories etc.
     case "sceneVisited": {
       const scenes = playerData.scenesVisited;

@@ -1085,6 +1085,50 @@
       "label": "Maps"
     },
     {
+      "desc": "Writing implement for recording one's travels. Can be used to update any acquired maps.",
+      "items": [
+        {
+          "act": 1,
+          "cost": "50",
+          "description": "Writing implement for recording one's travels. Can be used to update any acquired maps. ",
+          "flag": "QuillState",
+          "icon": "completion/Quill_White.png",
+          "id": "QuillState_1",
+          "label": "Quill (White)",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "obtain": "Purchase from Shakra ",
+          "type": "quill"
+        },
+        {
+          "act": 2,
+          "cost": "Free",
+          "description": "Writing implement for recording one's travels. Can be used to update any acquired maps.",
+          "flag": "QuillState",
+          "icon": "completion/Quill_Red.png",
+          "id": "QuillState_2",
+          "label": "Quill (Red)",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "missable": true,
+          "obtain": "Take from Trobbio's desk in Act 2 if a Quill is not already owned.",
+          "type": "quill"
+        },
+        {
+          "act": 3,
+          "cost": "Free",
+          "description": "Writing implement for recording one's travels. Can be used to update any acquired maps. ",
+          "flag": "QuillState",
+          "icon": "completion/Quill_Purple.png",
+          "id": "QuillState_3",
+          "label": "Quill (Purple)",
+          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "missable": true,
+          "obtain": "Take from Trobbio's desk in Act 3 if a Quill is not already owned.",
+          "type": "quill"
+        }
+      ],
+      "label": "Quills"
+    },
+    {
       "desc": "Markers purchased from Shakra to mark key locations across Pharloom.",
       "items": [
         {

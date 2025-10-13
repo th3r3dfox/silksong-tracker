@@ -20,6 +20,9 @@
                   "enum": [1, 2, 3],
                   "type": "integer"
                 },
+                "cost": {
+                  "type": "string"
+                },
                 "description": {
                   "type": "string"
                 },
@@ -45,6 +48,9 @@
                   "description": "Whether this item can be permanently missed",
                   "type": "boolean"
                 },
+                "obtain": {
+                  "type": "string"
+                },
                 "mode": {
                   "enum": ["normal", "steel"],
                   "type": "string"
@@ -58,7 +64,7 @@
                   "type": "string"
                 },
                 "type": {
-                  "enum": ["relic", "materium", "device", "flag"],
+                  "enum": ["relic", "materium", "device", "flag","quill"],
                   "type": "string"
                 }
               },
