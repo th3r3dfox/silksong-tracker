@@ -6,6 +6,7 @@ import {
 } from "complete-common";
 import { initActsDropdown } from "./components/acts-dropdown.ts";
 import { initShowOnlyMissing } from "./components/show-only-missing.ts";
+import { initShowSpoilers } from "./components/show-spoilers.ts";
 import {
   backToTop,
   closeInfoModal,
@@ -24,7 +25,6 @@ import {
   rawSaveSearch,
   searchCounter,
   sidebarItems,
-  spoilerToggle,
   uploadOverlay,
 } from "./elements.ts";
 import { renderActiveTab, VALID_TABS } from "./render-tab.ts";
@@ -42,14 +42,8 @@ function main() {
 function initComponents() {
   initActsDropdown();
   initShowOnlyMissing();
+  initShowSpoilers();
 }
-
-spoilerToggle.addEventListener("change", () => {
-  const spoilerChecked = spoilerToggle.checked;
-  document.body.classList.toggle("spoiler-on", !spoilerChecked);
-  localStorage.setItem("showSpoilers", spoilerChecked.toString());
-  renderActiveTab();
-});
 
 // Back to top button listener.
 document.addEventListener("DOMContentLoaded", () => {
@@ -333,14 +327,6 @@ globalThis.addEventListener("DOMContentLoaded", () => {
   if (storedActiveTab !== null && includes(VALID_TABS, storedActiveTab)) {
     activeTab = storedActiveTab;
   }
-
-  // Restore "Show spoilers" state from localStorage.
-  const savedSpoilerState = localStorage.getItem("showSpoilers");
-  if (savedSpoilerState !== null) {
-    spoilerToggle.checked = savedSpoilerState === "true";
-  }
-  const spoilerChecked = spoilerToggle.checked;
-  document.body.classList.toggle("spoiler-on", !spoilerChecked);
 
   // Reset tab visibility.
   for (const sidebarItem of sidebarItems) {
