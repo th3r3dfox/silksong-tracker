@@ -8,7 +8,7 @@ export const showSpoilers = getHTMLInputElement("show-spoilers");
 export function initShowSpoilers(): void {
   showSpoilers.addEventListener("change", onChangeCheckbox);
 
-  // Restore the previous state of the checkboxe from `localStorage`.
+  // Restore the previous state of the checkbox from `localStorage`.
   const savedSpoilerState = localStorage.getItem(LOCAL_STORAGE_KEY);
   if (savedSpoilerState !== null) {
     showSpoilers.checked = savedSpoilerState === "true";
