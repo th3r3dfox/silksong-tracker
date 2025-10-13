@@ -353,7 +353,7 @@ function showGenericModal(item: Item) {
         ? ""
         : `
       <div class="info-link-wrapper">
-        <a href="${item.link}" target="_blank" class="info-link">More info →</a>
+        <a href="${item.link}" target="_blank" class="info-link">More info</a>
       </div>
     `
     }
@@ -532,7 +532,7 @@ function renderGenericGrid(
       }
     }
 
-    // If "only missing" and it's completed → don't render the card at all.
+    // If "only missing" and it's completed --> don't render the card at all.
     const showMissingOnly = showOnlyMissing.checked;
     if (showMissingOnly && isDone) {
       continue;

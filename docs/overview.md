@@ -31,7 +31,7 @@ silksong-tracker/
 
 ### File Upload
 
-1. The user uploads a `.dat` save file via the “Upload Save” button or drag-and-drop zone.
+1. The user uploads a `.dat` save file via the "Upload Save" button or drag-and-drop zone.
 2. The file is read using the File API and converted to a `Uint8Array`.
 3. The bytes are passed to the decoder, which returns a JavaScript object.
 

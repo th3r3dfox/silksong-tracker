@@ -101,7 +101,7 @@ export async function handleSaveFile(file: File | undefined): Promise<void> {
   } catch (error) {
     console.error("[save] Decode error:", error);
     showToast(
-      "⚠️ Browser permission or file access issue. Please reselect your save file.",
+      "❌ Browser permission or file access issue. Please reselect your save file.",
     );
     uploadOverlay.classList.remove("hidden");
   }
