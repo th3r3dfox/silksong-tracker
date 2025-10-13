@@ -141,14 +141,16 @@ export function updateTabProgress(): void {
         }
       }
 
-      // Counting completion.
+      // Counting completion with handling for upgrades and exclusive groups
       let obtained = 0;
       let total = 0;
 
-      const exclusiveGroups = new Set();
-      const countedGroups = new Set();
+      // Track both per-category exclusive groups and global EXCLUSIVE_GROUPS
+      const localGroups = new Map<string, boolean>();
+      const globalGroups = new Map<string, boolean>();
 
       for (const item of filteredItems) {
+        // Skip upgrade variants (e.g., forged tools)
         if (item.type === "tool" && item.upgradeOf !== undefined) {
           continue;
         }
@@ -160,21 +162,50 @@ export function updateTabProgress(): void {
 
         const unlocked = getUnlocked(item, value);
 
-        if (item.type === "tool" && item.exclusiveGroup !== undefined) {
-          exclusiveGroups.add(item.exclusiveGroup);
-          if (unlocked && !countedGroups.has(item.exclusiveGroup)) {
-            countedGroups.add(item.exclusiveGroup);
-            obtained++;
+        // Handle local exclusive groups defined in JSON
+        if (item.exclusiveGroup !== undefined) {
+          if (!localGroups.has(item.exclusiveGroup)) {
+            localGroups.set(item.exclusiveGroup, unlocked);
+            total++;
+          } else if (unlocked) {
+            localGroups.set(item.exclusiveGroup, true);
           }
-        } else {
-          obtained += unlocked ? 1 : 0;
+          continue;
         }
 
+        // Handle global EXCLUSIVE_GROUPS (e.g., Huntress Quest vs Runtfeast)
+        const group = EXCLUSIVE_GROUPS.find((arr) => arr.includes(item.flag));
+        if (group !== undefined) {
+          const groupKey = group.join("|");
+          if (!globalGroups.has(groupKey)) {
+            globalGroups.set(groupKey, unlocked);
+            total++;
+          } else if (unlocked) {
+            globalGroups.set(groupKey, true);
+          }
+          continue;
+        }
+
+        // Normal items
         total++;
+        if (unlocked) {
+          obtained++;
+        }
       }
 
-      total = total - countedGroups.size + exclusiveGroups.size;
+      // Add completed groups
+      for (const unlocked of localGroups.values()) {
+        if (unlocked) {
+          obtained++;
+        }
+      }
+      for (const unlocked of globalGroups.values()) {
+        if (unlocked) {
+          obtained++;
+        }
+      }
 
+      // Display the obtained/total counter
       const count = document.createElement("span");
       count.className = "category-count";
       count.textContent = ` ${obtained}/${total}`;
@@ -223,6 +254,13 @@ function getUnlocked(item: Item, value: unknown): boolean {
 
   if (item.type === "quill" && typeof value === "number") {
     return item.id === `QuillState_${value}` && [1, 2, 3].includes(value);
+  }
+
+  if (item.type === "journal") {
+    // Fix: count as complete if numeric progress >= required OR if value is boolean true
+    const numberValue = typeof value === "number" ? value : 0;
+    const required = item.required ?? 1;
+    return numberValue >= required || value === true;
   }
 
   return value === true || value === "collected" || value === "deposited";
