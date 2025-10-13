@@ -15,9 +15,10 @@ const TAB_TO_UPDATE_FUNCTION = {
   rawsave: updateTabRawSave,
   map: updateTabMap,
 } as const;
-export const VALID_TABS = Object.keys(TAB_TO_UPDATE_FUNCTION) as ReadonlyArray<
+export const TABS = Object.keys(TAB_TO_UPDATE_FUNCTION) as ReadonlyArray<
   keyof typeof TAB_TO_UPDATE_FUNCTION
 >;
+export type Tab = (typeof TABS)[number];
 
 export function renderActiveTab(): void {
   const activeElement = document.querySelector(".sidebar-item.is-active");
@@ -33,7 +34,7 @@ export function renderActiveTab(): void {
     activeTab,
     "Failed to get the name of the active tab from the active element.",
   );
-  if (!includes(VALID_TABS, activeTab)) {
+  if (!includes(TABS, activeTab)) {
     throw new TypeError(`The active tab was not valid: ${activeTab}`);
   }
 
