@@ -280,7 +280,7 @@ function getUnlocked(item: Item, value: unknown): boolean {
   if (item.type === "journal") {
     // Fix: count as complete if numeric progress >= required OR if value is boolean true
     const numberValue = typeof value === "number" ? value : 0;
-    const required = item.required ?? 1;
+    const { required } = item;
     return numberValue >= required || value === true;
   }
 
