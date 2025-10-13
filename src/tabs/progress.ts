@@ -379,31 +379,48 @@ function showGenericModal(item: Item) {
     <button id="modalCloseBtn" class="modal-close">✕</button>
     <img src="${iconPath}" alt="${item.label}" class="info-image">
     <h2 class="info-title">${item.label}</h2>
-    <p class="info-description">
-      ${item.description}
-    </p>
 
-    ${item.type === "level" && item.obtain !== undefined ? `<p class="info-extra"><strong>Obtained:</strong> ${item.obtain}</p>` : ""}
-    ${item.type === "level" && item.cost !== undefined ? `<p class="info-extra"><strong>Cost:</strong> ${item.cost}</p>` : ""}
+    <p class="info-description">${item.description}</p>
+
+    ${
+      item.type === "journal"
+      && typeof item.hornetDescription === "string"
+      && item.hornetDescription.trim() !== ""
+        ? `
+        <img src="${BASE_PATH}/assets/ui/divider_journal.png" alt="divider" class="journal-divider" />
+        <p class="hornet-description">${item.hornetDescription}</p>
+      `
+        : ""
+    }
+
+    ${
+      item.type === "level" && item.obtain !== undefined
+        ? `<p class="info-extra"><strong>Obtained:</strong> ${item.obtain}</p>`
+        : ""
+    }
+    ${
+      item.type === "level" && item.cost !== undefined
+        ? `<p class="info-extra"><strong>Cost:</strong> ${item.cost}</p>`
+        : ""
+    }
 
     ${
       mapSrc === undefined
         ? ""
         : `
-<div class="info-map-wrapper">
-  <div class="map-loading-overlay">
-    <span class="map-loading-text">Loading map...</span>
-  </div>
-  <iframe
-    src="${mapSrc}"
-    class="info-map-embed"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    allowfullscreen
-    onload="this.previousElementSibling.remove()">
-  </iframe>
-</div>
-
+        <div class="info-map-wrapper">
+          <div class="map-loading-overlay">
+            <span class="map-loading-text">Loading map...</span>
+          </div>
+          <iframe
+            src="${mapSrc}"
+            class="info-map-embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            onload="this.previousElementSibling.remove()">
+          </iframe>
+        </div>
       `
     }
 
@@ -411,10 +428,10 @@ function showGenericModal(item: Item) {
       item.link === ""
         ? ""
         : `
-      <div class="info-link-wrapper">
-        <a href="${item.link}" target="_blank" class="info-link">More info</a>
-      </div>
-    `
+        <div class="info-link-wrapper">
+          <a href="${item.link}" target="_blank" class="info-link">More info</a>
+        </div>
+      `
     }
   `;
 

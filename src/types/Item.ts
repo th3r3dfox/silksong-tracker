@@ -82,6 +82,7 @@ export interface ItemJournal extends ItemBase {
   readonly type: "journal";
   readonly flag: string;
   readonly required: number;
+  readonly hornetDescription?: string;
 }
 
 export interface ItemRelic extends ItemBase {
