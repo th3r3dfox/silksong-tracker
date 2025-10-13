@@ -1,4 +1,11 @@
+let mapInitialized = false;
+
 export function updateTabMap(): void {
+  if (mapInitialized) {
+    return;
+  }
+  mapInitialized = true;
+
   const img = document.querySelector<HTMLImageElement>("#worldMap");
   if (!img) {
     console.error("worldMap not found");
@@ -108,7 +115,7 @@ export function updateTabMap(): void {
     startY = e.clientY - translateY;
   });
 
-  globalThis.addEventListener("mouseup", () => {
+  document.addEventListener("mouseup", () => {
     if (!isDragging) {
       return;
     }
