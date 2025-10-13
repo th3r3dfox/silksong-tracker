@@ -6,6 +6,7 @@ import {
 } from "complete-common";
 import { initActsDropdown } from "./components/acts-dropdown.ts";
 import { initShowOnlyMissing } from "./components/show-only-missing.ts";
+import { initShowSpoilers } from "./components/show-spoilers.ts";
 import {
   backToTop,
   closeInfoModal,
@@ -41,6 +42,7 @@ function main() {
 function initComponents() {
   initActsDropdown();
   initShowOnlyMissing();
+  initShowSpoilers();
 }
 
 // Back to top button listener.
