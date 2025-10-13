@@ -119,26 +119,49 @@ export function updateTabProgress(): void {
         });
       }
 
-      // Apply exclusive groups.
+      // Apply exclusive groups before counting.
       for (const group of EXCLUSIVE_GROUPS) {
+        // Check if any quest/relic in the group is owned.
         const owned = group.find((flag) => {
-          const value = getSaveDataValue(saveData, saveDataFlags, {
+          // Try as relic
+          let value = getSaveDataValue(saveData, saveDataFlags, {
             ...BASE_DUMMY_ITEM,
             type: "relic",
             flag,
           });
-          return value === "deposited" || value === "collected";
+
+          // Try as quest if not found.
+          if (value === undefined || value === false) {
+            value = getSaveDataValue(saveData, saveDataFlags, {
+              ...BASE_DUMMY_ITEM,
+              type: "quest",
+              flag,
+            });
+          }
+
+          return (
+            value === "deposited"
+            || value === "collected"
+            || value === "completed"
+            || value === true
+          );
         });
 
-        if (owned !== undefined) {
-          filteredItems = filteredItems.filter((item) => {
-            const flag = item.type === "sceneVisited" ? undefined : item.flag;
-            if (flag === undefined) {
-              return false;
-            }
+        filteredItems = filteredItems.filter((item) => {
+          const flag = item.type === "sceneVisited" ? undefined : item.flag;
+          if (flag === undefined) {
+            return false;
+          }
+
+          // If something in the group is owned → keep only that one.
+          if (owned !== undefined) {
             return !includes(group, flag) || flag === owned;
-          });
-        }
+          }
+
+          // If nothing owned → keep only the first defined variant (default).
+          const defaultFlag = group[0];
+          return !includes(group, flag) || flag === defaultFlag;
+        });
       }
 
       // Counting completion with handling for upgrades and exclusive groups.
@@ -162,8 +185,8 @@ export function updateTabProgress(): void {
 
         const unlocked = getUnlocked(item, value);
 
-        // Handle local exclusive groups defined in JSON.
-        if (item.exclusiveGroup !== undefined) {
+        // Handle local exclusive groups defined in JSON (only valid for tools).
+        if (item.type === "tool" && item.exclusiveGroup !== undefined) {
           if (!localGroups.has(item.exclusiveGroup)) {
             localGroups.set(item.exclusiveGroup, unlocked);
             total++;
@@ -173,15 +196,13 @@ export function updateTabProgress(): void {
           continue;
         }
 
-        // Handle global EXCLUSIVE_GROUPS (e.g., Huntress Quest vs Runtfeast)
-        const group = EXCLUSIVE_GROUPS.find((arr) => arr.includes(item.flag));
-        if (group !== undefined) {
-          const groupKey = group.join("|");
-          if (!globalGroups.has(groupKey)) {
-            globalGroups.set(groupKey, unlocked);
+        // Handle local exclusive groups defined in JSON (only valid for tools).
+        if (item.type === "tool" && item.exclusiveGroup !== undefined) {
+          if (!localGroups.has(item.exclusiveGroup)) {
+            localGroups.set(item.exclusiveGroup, unlocked);
             total++;
           } else if (unlocked) {
-            globalGroups.set(groupKey, true);
+            localGroups.set(item.exclusiveGroup, true);
           }
           continue;
         }
