@@ -14,6 +14,5 @@ export function initShowOnlyMissing(): void {
 
 function onChangeCheckbox() {
   localStorage.setItem(LOCAL_STORAGE_KEY, showOnlyMissing.checked.toString());
-
   renderActiveTab();
 }
