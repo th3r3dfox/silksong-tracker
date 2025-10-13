@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: {
     json: ESLintPluginJSON,
   },
-  files: ["src/data/*.json"],
+
   language: "json/json",
 
   // https://github.com/eslint/json?tab=readme-ov-file#rules

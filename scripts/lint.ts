@@ -61,7 +61,7 @@ async function checkForIllegalCharacters() {
   }
 }
 
-async function checkJSONPropertes() {
+async function checkJSONFiles() {
   const jsonFilePaths = await getDataJSONFilePaths();
 
   const fileChecks = jsonFilePaths.map(async (jsonFilePath) => {
@@ -105,6 +105,12 @@ function checkRecursive(
         );
       }
 
+      if (key.includes("-")) {
+        throw new Error(
+          `Key "${pathString}" has a hyphen in file "${filePath}": ${key}`,
+        );
+      }
+
       if (key === "description") {
         assertString(
           val,
@@ -130,7 +136,7 @@ await lintCommands(import.meta.dirname, [
   // Use ESLint to lint the code.
   // - "--max-warnings 0" makes warnings fail, since we set all ESLint errors to warnings.
   "eslint --max-warnings 0 .",
-  "eslint --max-warnings 0 --config eslint.config.json.mjs .",
+  "eslint --max-warnings 0 --config eslint.config.json.mjs src/data/*.json",
 
   // Use Prettier to check formatting.
   // - "--log-level=warn" makes it only output errors.
@@ -145,5 +151,5 @@ await lintCommands(import.meta.dirname, [
 
   // Ensure that the JSON files adhere to certain quality standards.
   // eslint-disable-next-line unicorn/prefer-top-level-await
-  ["check JSON properties", checkJSONPropertes()],
+  ["check JSON files", checkJSONFiles()],
 ]);

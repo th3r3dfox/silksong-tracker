@@ -1,8 +1,5 @@
-// @ts-check
-
 import { defineConfig } from "vite";
-// eslint-disable-next-line import-x/extensions, @typescript-eslint/no-restricted-imports
-import { BASE_PATH } from "./src/constants";
+import { BASE_PATH } from "./src/constants.ts"; // eslint-disable-line @typescript-eslint/no-restricted-imports
 
 export default defineConfig({
   base: BASE_PATH,
