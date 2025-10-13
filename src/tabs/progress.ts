@@ -305,7 +305,7 @@ function buildDynamicTOC() {
 
 function showGenericModal(item: Item) {
   let mapSrc: string | undefined;
-  if (item.map === undefined) {
+  if (item.map === undefined || item.map === "") {
     mapSrc = undefined;
   } else if (item.map.startsWith("http")) {
     mapSrc = item.map;
