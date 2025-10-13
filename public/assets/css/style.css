@@ -2722,8 +2722,8 @@ main {
 }
 
 /* === Dropdown always above everything === */
-#act-dropdown-button,
-#act-dropdown-menu {
+#acts-dropdown-button,
+#acts-dropdown-menu {
   position: relative;
   z-index: 9999; /* Ensure dropdown is always visible */
 }
@@ -2734,7 +2734,7 @@ main {
   z-index: 3000; /* create local stacking context */
 }
 
-#act-dropdown-menu {
+#acts-dropdown-menu {
   position: absolute;
   z-index: 4000; /* above banner */
 }
@@ -2745,7 +2745,7 @@ main {
   z-index: 3000;
 }
 
-#act-dropdown-menu {
+#acts-dropdown-menu {
   position: absolute;
   z-index: 4000; /* visible above everything */
 }

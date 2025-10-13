@@ -1,5 +1,5 @@
 import { assertArray, assertIs, includes } from "complete-common";
-import { getStoredActFilter } from "../components/act-filter.ts";
+import { getStoredActFilter } from "../components/acts-dropdown.ts";
 import { BASE_PATH } from "../constants.ts";
 import bossesJSON from "../data/bosses.json" with { type: "json" };
 import completionJSON from "../data/completion.json" with { type: "json" };

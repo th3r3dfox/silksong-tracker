@@ -4,7 +4,7 @@ import {
   assertNotNull,
   includes,
 } from "complete-common";
-import { initActFilter } from "./components/act-filter.ts";
+import { initActsDropdown } from "./components/acts-dropdown.ts";
 import {
   backToTop,
   closeInfoModal,
@@ -36,7 +36,7 @@ function main() {
 }
 
 function initComponents() {
-  initActFilter();
+  initActsDropdown();
 }
 
 spoilerToggle.addEventListener("change", () => {
