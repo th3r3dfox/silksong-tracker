@@ -1,5 +1,3 @@
-// The "Acts" dropdown at the top of the page.
-
 import {
   assertArray,
   assertDefined,

@@ -7,6 +7,7 @@ import {
 import { initActsDropdown } from "./components/acts-dropdown.ts";
 import { initShowOnlyMissing } from "./components/show-only-missing.ts";
 import { initShowSpoilers } from "./components/show-spoilers.ts";
+import { initUploadSave } from "./components/upload-save.ts";
 import {
   backToTop,
   closeInfoModal,
@@ -19,7 +20,6 @@ import {
   getHTMLElements,
   infoOverlay,
   nextMatch,
-  openUploadModal,
   prevMatch,
   rawSaveOutput,
   rawSaveSearch,
@@ -43,6 +43,7 @@ function initComponents() {
   initActsDropdown();
   initShowOnlyMissing();
   initShowSpoilers();
+  initUploadSave();
 }
 
 // Back to top button listener.
@@ -66,15 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  function openUploadModalFunc() {
-    uploadOverlay.classList.remove("hidden");
-    dropzone.focus();
-  }
   function closeUploadModalFunc() {
     uploadOverlay.classList.add("hidden");
   }
 
-  openUploadModal.addEventListener("click", openUploadModalFunc);
   closeUploadModal.addEventListener("click", closeUploadModalFunc);
   uploadOverlay.addEventListener("click", (e) => {
     if (e.target === uploadOverlay) {
