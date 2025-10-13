@@ -219,6 +219,11 @@ export function getSaveDataValue(
     case "quill": {
       const { flag } = item;
 
+      // If player does not have quill, return 0.
+      if (playerDataExpanded["hasQuill"] !== true) {
+        return 0;
+      }
+
       // Always return the number, unlock is calculated later.
       return playerDataExpanded[flag] ?? 0;
     }
