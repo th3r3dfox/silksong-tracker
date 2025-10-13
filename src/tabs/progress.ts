@@ -1,5 +1,6 @@
 import { assertArray, assertIs, includes } from "complete-common";
-import { getStoredActFilter } from "../components/act-filter.ts";
+import { getStoredActFilter } from "../components/acts-dropdown.ts";
+import { showOnlyMissing } from "../components/show-only-missing.ts";
 import { BASE_PATH } from "../constants.ts";
 import bossesJSON from "../data/bosses.json" with { type: "json" };
 import completionJSON from "../data/completion.json" with { type: "json" };
@@ -13,7 +14,6 @@ import {
   getHTMLElements,
   infoContent,
   infoOverlay,
-  missingToggle,
   spoilerToggle,
   tocList,
 } from "../elements.ts";
@@ -44,7 +44,7 @@ let tocObserver: IntersectionObserver | undefined;
 
 export function updateTabProgress(): void {
   const spoilerOn = spoilerToggle.checked;
-  const showMissingOnly = missingToggle.checked;
+  const showMissingOnly = showOnlyMissing.checked;
   allProgressGrid.innerHTML = "";
 
   const allCategories: Array<{
@@ -520,7 +520,7 @@ function renderGenericGrid(
     }
 
     // If "only missing" and it's completed → don't render the card at all.
-    const showMissingOnly = missingToggle.checked;
+    const showMissingOnly = showOnlyMissing.checked;
     if (showMissingOnly && isDone) {
       continue;
     }

@@ -4,7 +4,8 @@ import {
   assertNotNull,
   includes,
 } from "complete-common";
-import { initActFilter } from "./components/act-filter.ts";
+import { initActsDropdown } from "./components/acts-dropdown.ts";
+import { initShowOnlyMissing } from "./components/show-only-missing.ts";
 import {
   backToTop,
   closeInfoModal,
@@ -16,7 +17,6 @@ import {
   getHTMLElement,
   getHTMLElements,
   infoOverlay,
-  missingToggle,
   nextMatch,
   openUploadModal,
   prevMatch,
@@ -32,11 +32,16 @@ import { getSaveData, handleSaveFile } from "./save-data.ts";
 import { showToast } from "./utils.ts";
 
 function main() {
-  initComponents();
+  // We only want to have one `DOMContentLoaded` callback so that all logic runs in a deterministic
+  // order.
+  document.addEventListener("DOMContentLoaded", () => {
+    initComponents();
+  });
 }
 
 function initComponents() {
-  initActFilter();
+  initActsDropdown();
+  initShowOnlyMissing();
 }
 
 spoilerToggle.addEventListener("change", () => {
@@ -337,9 +342,6 @@ globalThis.addEventListener("DOMContentLoaded", () => {
   const spoilerChecked = spoilerToggle.checked;
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
 
-  // Synchronize "Show only missing" state.
-  missingToggle.checked = localStorage.getItem("showMissingOnly") === "true";
-
   // Reset tab visibility.
   for (const sidebarItem of sidebarItems) {
     sidebarItem.classList.remove("is-active");
@@ -371,13 +373,6 @@ document.addEventListener("DOMContentLoaded", () => {
       infoOverlay.classList.add("hidden");
     }
   });
-});
-
-missingToggle.addEventListener("change", () => {
-  const showMissingOnly = missingToggle.checked;
-  localStorage.setItem("showMissingOnly", showMissingOnly.toString());
-
-  renderActiveTab();
 });
 
 main();

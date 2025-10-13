@@ -16,7 +16,7 @@ export function getHTMLElement(id: string): HTMLElement {
  * Helper function to get an HTML input element and throw an error if it does not exist or if it is
  * not an intput element.
  */
-function getHTMLInputElement(id: string): HTMLInputElement {
+export function getHTMLInputElement(id: string): HTMLInputElement {
   const element = getHTMLElement(id);
   assertIs(
     element,
@@ -48,7 +48,6 @@ export const dropzone = getHTMLElement("dropzone");
 export const fileInput = getHTMLInputElement("fileInput");
 export const infoOverlay = getHTMLElement("info-overlay");
 export const infoContent = getHTMLElement("info-content");
-export const missingToggle = getHTMLInputElement("missingToggle");
 export const modeBanner = getHTMLElement("modeBanner");
 export const nextMatch = getHTMLElement("nextMatch");
 export const openUploadModal = getHTMLElement("openUploadModal");
