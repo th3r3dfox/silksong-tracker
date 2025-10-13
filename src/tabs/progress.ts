@@ -141,11 +141,11 @@ export function updateTabProgress(): void {
         }
       }
 
-      // Counting completion with handling for upgrades and exclusive groups
+      // Counting completion with handling for upgrades and exclusive groups.
       let obtained = 0;
       let total = 0;
 
-      // Track both per-category exclusive groups and global EXCLUSIVE_GROUPS
+      // Track both per-category exclusive groups and global EXCLUSIVE_GROUPS.
       const localGroups = new Map<string, boolean>();
       const globalGroups = new Map<string, boolean>();
 
@@ -162,7 +162,7 @@ export function updateTabProgress(): void {
 
         const unlocked = getUnlocked(item, value);
 
-        // Handle local exclusive groups defined in JSON
+        // Handle local exclusive groups defined in JSON.
         if (item.exclusiveGroup !== undefined) {
           if (!localGroups.has(item.exclusiveGroup)) {
             localGroups.set(item.exclusiveGroup, unlocked);
@@ -205,7 +205,7 @@ export function updateTabProgress(): void {
         }
       }
 
-      // Display the obtained/total counter
+      // Display the obtained/total counter.
       const count = document.createElement("span");
       count.className = "category-count";
       count.textContent = ` ${obtained}/${total}`;
