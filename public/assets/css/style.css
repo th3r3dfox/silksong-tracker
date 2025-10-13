@@ -2903,3 +2903,32 @@ main {
   line-height: 1.4;
   text-align: center;
 }
+
+.boss {
+  position: relative;
+  overflow: visible;
+}
+
+.journal-counter {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-1);
+  pointer-events: none;
+  user-select: none;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.6),
+    inset 0 0 6px rgba(255, 255, 255, 0.08);
+  z-index: 2;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
