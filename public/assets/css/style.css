@@ -783,7 +783,7 @@ a:hover {
   gap: 8px; /* space between title and percentage */
 }
 
-.category-desc {
+.category-description {
   text-align: center; /* center the description */
   font-size: 1rem;
   color: #bbb;
@@ -1732,7 +1732,7 @@ html {
 }
 
 /* Description below title */
-#wishes-grid .category-desc {
+#wishes-grid .category-description {
   text-align: center;
   color: #bbb;
   font-size: 1rem;
@@ -1927,7 +1927,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 }
 
 /* Description below title */
-#completion-grid .category-desc {
+#completion-grid .category-description {
   text-align: center;
   color: #bbb;
   font-size: 1rem;

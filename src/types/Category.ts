@@ -6,6 +6,6 @@ import type { Item } from "./Item.ts";
  */
 export interface Category {
   label: string;
-  desc: string;
+  description: string;
   items: Item[];
 }

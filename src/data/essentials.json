@@ -2,7 +2,7 @@
   "$schema": "./essentials.schema.json",
   "categories": [
     {
-      "desc": "The Cloak is an equipment item in Hollow Knight: Silksong.",
+      "description": "The Cloak is an equipment item in Hollow Knight: Silksong.",
       "items": [
         {
           "act": 1,
@@ -43,7 +43,7 @@
       "label": "Cloaks"
     },
     {
-      "desc": "Important keys used to unlock special areas and progress in Pharloom.",
+      "description": "Important keys used to unlock special areas and progress in Pharloom.",
       "items": [
         {
           "act": 1,
@@ -160,7 +160,7 @@
       "label": "Keys"
     },
     {
-      "desc": "Special collectibles found throughout Pharloom that preserve memories of those who came before.",
+      "description": "Special collectibles found throughout Pharloom that preserve memories of those who came before.",
       "items": [
         {
           "act": 1,
@@ -383,7 +383,7 @@
       "label": "Memory Lockets"
     },
     {
-      "desc": "Special refined oils found across Pharloom, often tied to rare quests or hidden vaults.",
+      "description": "Special refined oils found across Pharloom, often tied to rare quests or hidden vaults.",
       "items": [
         {
           "act": 2,
@@ -423,7 +423,7 @@
       "label": "Pale Oils"
     },
     {
-      "desc": "Refined metals used for crafting and upgrading tools throughout Pharloom.",
+      "description": "Refined metals used for crafting and upgrading tools throughout Pharloom.",
       "items": [
         {
           "act": 1,
@@ -523,7 +523,7 @@
       "label": "Craftmetal"
     },
     {
-      "desc": "Fleas are fluffy bugs scattered throughout most of Pharloom belonging to the Flea Caravan. They can be found caged, stuck, or resting in precarious locations.",
+      "description": "Fleas are fluffy bugs scattered throughout most of Pharloom belonging to the Flea Caravan. They can be found caged, stuck, or resting in precarious locations.",
       "items": [
         {
           "act": 1,

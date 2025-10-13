@@ -57,6 +57,5 @@ export const rawSaveSearch = getHTMLInputElement("rawsave-search");
 export const rosariesValue = getHTMLElement("rosariesValue");
 export const searchCounter = getHTMLElement("searchCounter");
 export const shardsValue = getHTMLElement("shardsValue");
-export const sidebarItems = getHTMLElements(document, ".sidebar-item");
 export const tocList = getHTMLElement("toc-list");
 export const uploadOverlay = getHTMLElement("uploadOverlay");
