@@ -64,7 +64,7 @@
                   "type": "string"
                 },
                 "type": {
-                  "enum": ["relic", "materium", "device", "flag","quill"],
+                  "enum": ["relic", "materium", "device", "flag", "quill"],
                   "type": "string"
                 }
               },
