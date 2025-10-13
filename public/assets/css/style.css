@@ -2888,3 +2888,18 @@ main {
   user-select: none;
   pointer-events: none;
 }
+
+.journal-divider {
+  display: block;
+  margin: 1rem auto 0.75rem auto;
+  width: 70%;
+  opacity: 0.85;
+}
+
+.hornet-description {
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+}
