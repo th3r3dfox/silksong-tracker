@@ -119,36 +119,61 @@ export function updateTabProgress(): void {
         });
       }
 
-      // Apply exclusive groups.
+      // Apply exclusive groups before counting.
       for (const group of EXCLUSIVE_GROUPS) {
+        // Check if any quest/relic in the group is owned.
         const owned = group.find((flag) => {
-          const value = getSaveDataValue(saveData, saveDataFlags, {
+          // Try as relic
+          let value = getSaveDataValue(saveData, saveDataFlags, {
             ...BASE_DUMMY_ITEM,
             type: "relic",
             flag,
           });
-          return value === "deposited" || value === "collected";
+
+          // Try as quest if not found.
+          if (value === undefined || value === false) {
+            value = getSaveDataValue(saveData, saveDataFlags, {
+              ...BASE_DUMMY_ITEM,
+              type: "quest",
+              flag,
+            });
+          }
+
+          return (
+            value === "deposited"
+            || value === "collected"
+            || value === "completed"
+            || value === true
+          );
         });
 
-        if (owned !== undefined) {
-          filteredItems = filteredItems.filter((item) => {
-            const flag = item.type === "sceneVisited" ? undefined : item.flag;
-            if (flag === undefined) {
-              return false;
-            }
+        filteredItems = filteredItems.filter((item) => {
+          const flag = item.type === "sceneVisited" ? undefined : item.flag;
+          if (flag === undefined) {
+            return false;
+          }
+
+          // If something in the group is owned keep only that one.
+          if (owned !== undefined) {
             return !includes(group, flag) || flag === owned;
-          });
-        }
+          }
+
+          // If nothing owned keep only the first defined variant (default).
+          const defaultFlag = group[0];
+          return !includes(group, flag) || flag === defaultFlag;
+        });
       }
 
-      // Counting completion.
+      // Counting completion with handling for upgrades and exclusive groups.
       let obtained = 0;
       let total = 0;
 
-      const exclusiveGroups = new Set();
-      const countedGroups = new Set();
+      // Track both per-category exclusive groups and global EXCLUSIVE_GROUPS.
+      const localGroups = new Map<string, boolean>();
+      const globalGroups = new Map<string, boolean>();
 
       for (const item of filteredItems) {
+        // Skip upgrade variants (e.g., forged tools)
         if (item.type === "tool" && item.upgradeOf !== undefined) {
           continue;
         }
@@ -160,21 +185,48 @@ export function updateTabProgress(): void {
 
         const unlocked = getUnlocked(item, value);
 
+        // Handle local exclusive groups defined in JSON (only valid for tools).
         if (item.type === "tool" && item.exclusiveGroup !== undefined) {
-          exclusiveGroups.add(item.exclusiveGroup);
-          if (unlocked && !countedGroups.has(item.exclusiveGroup)) {
-            countedGroups.add(item.exclusiveGroup);
-            obtained++;
+          if (!localGroups.has(item.exclusiveGroup)) {
+            localGroups.set(item.exclusiveGroup, unlocked);
+            total++;
+          } else if (unlocked) {
+            localGroups.set(item.exclusiveGroup, true);
           }
-        } else {
-          obtained += unlocked ? 1 : 0;
+          continue;
         }
 
+        // Handle local exclusive groups defined in JSON (only valid for tools).
+        if (item.type === "tool" && item.exclusiveGroup !== undefined) {
+          if (!localGroups.has(item.exclusiveGroup)) {
+            localGroups.set(item.exclusiveGroup, unlocked);
+            total++;
+          } else if (unlocked) {
+            localGroups.set(item.exclusiveGroup, true);
+          }
+          continue;
+        }
+
+        // Normal items
         total++;
+        if (unlocked) {
+          obtained++;
+        }
       }
 
-      total = total - countedGroups.size + exclusiveGroups.size;
+      // Add completed groups
+      for (const unlocked of localGroups.values()) {
+        if (unlocked) {
+          obtained++;
+        }
+      }
+      for (const unlocked of globalGroups.values()) {
+        if (unlocked) {
+          obtained++;
+        }
+      }
 
+      // Display the obtained/total counter.
       const count = document.createElement("span");
       count.className = "category-count";
       count.textContent = ` ${obtained}/${total}`;
@@ -223,6 +275,13 @@ function getUnlocked(item: Item, value: unknown): boolean {
 
   if (item.type === "quill" && typeof value === "number") {
     return item.id === `QuillState_${value}` && [1, 2, 3].includes(value);
+  }
+
+  if (item.type === "journal") {
+    // Fix: count as complete if numeric progress >= required OR if value is boolean true
+    const numberValue = typeof value === "number" ? value : 0;
+    const { required } = item;
+    return numberValue >= required || value === true;
   }
 
   return value === true || value === "collected" || value === "deposited";
