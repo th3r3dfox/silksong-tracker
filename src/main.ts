@@ -2,7 +2,10 @@ import { assertNotNull } from "complete-common";
 import { initActsDropdown } from "./components/acts-dropdown.ts";
 import { initShowOnlyMissing } from "./components/show-only-missing.ts";
 import { initShowSpoilers } from "./components/show-spoilers.ts";
-import { getStoredActiveTab } from "./components/sidebar-items.ts";
+import {
+  getStoredActiveTab,
+  initSidebarItems,
+} from "./components/sidebar-items.ts";
 import { initUploadSave } from "./components/upload-save.ts";
 import {
   backToTop,
@@ -36,10 +39,14 @@ function main() {
 }
 
 function initComponents() {
+  // Top-nav
   initActsDropdown();
   initShowOnlyMissing();
   initShowSpoilers();
   initUploadSave();
+
+  // Left-nav
+  initSidebarItems();
 }
 
 // Back to top button listener.
