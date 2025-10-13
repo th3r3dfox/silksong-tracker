@@ -220,6 +220,10 @@ function getUnlocked(item: Item, value: unknown): boolean {
     return numberValue > 0;
   }
 
+  if (item.type === "quill" && typeof value === "number") {
+    return item.id === `QuillState_${value}` && [1, 2, 3].includes(value);
+  }
+
   return value === true || value === "collected" || value === "deposited";
 }
 
@@ -478,6 +482,14 @@ function renderGenericGrid(
       case "collectable": {
         const current = value === undefined ? 0 : Number(value);
         isDone = current > 0;
+        break;
+      }
+
+      case "quill": {
+        isDone =
+          typeof value === "number"
+          && item.id === `QuillState_${value}`
+          && [1, 2, 3].includes(value);
         break;
       }
 
