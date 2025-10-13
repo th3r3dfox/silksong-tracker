@@ -1,13 +1,13 @@
 export function updateTabMap(): void {
   const img = document.querySelector<HTMLImageElement>("#worldMap");
   if (!img) {
-    console.error("❌ worldMap not found");
+    console.error("worldMap not found");
     return;
   }
 
   const wrapper = img.parentElement;
   if (!(wrapper instanceof HTMLElement)) {
-    console.error("❌ Map wrapper not found or not an HTMLElement.");
+    console.error("Map wrapper not found or not an HTMLElement.");
     return;
   }
 
@@ -127,7 +127,7 @@ export function updateTabMap(): void {
     updateTransform();
   });
 
-  // Double-click → reset zoom and recenter.
+  // Double-click --> reset zoom and recenter.
   wrapper.addEventListener("dblclick", fitToScreen);
 
   wrapper.style.cursor = "grab";

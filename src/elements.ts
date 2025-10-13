@@ -50,7 +50,6 @@ export const infoOverlay = getHTMLElement("info-overlay");
 export const infoContent = getHTMLElement("info-content");
 export const modeBanner = getHTMLElement("modeBanner");
 export const nextMatch = getHTMLElement("nextMatch");
-export const openUploadModal = getHTMLElement("openUploadModal");
 export const playtimeValue = getHTMLElement("playtimeValue");
 export const prevMatch = getHTMLElement("prevMatch");
 export const rawSaveOutput = getHTMLElement("rawsave-output");

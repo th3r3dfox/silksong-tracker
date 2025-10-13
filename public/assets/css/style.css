@@ -51,7 +51,6 @@ body {
   background: var(--bg-1);
   color: var(--ink-2);
   overflow: hidden;
-  /*display: flex;           ✅ allows two-column layout */
 }
 
 body.home-active main {
@@ -301,16 +300,16 @@ a:hover {
     background 0.15s,
     box-shadow 0.15s;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  overflow: visible; /* ✅ prevents text clipping */
+  overflow: visible; /* prevents text clipping */
 }
 
 .boss .title,
 .boss div {
   text-align: center;
-  white-space: normal; /* ✅ allows long names to wrap */
-  word-break: break-word; /* ✅ forces word break if too long */
+  white-space: normal; /* allows long names to wrap */
+  word-break: break-word; /* forces word break if too long */
   line-height: 1.2em;
-  max-width: 90%; /* ✅ prevents touching edges */
+  max-width: 90%; /* prevents touching edges */
 }
 
 .boss:hover {
@@ -342,9 +341,9 @@ a:hover {
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.2;
-  white-space: normal; /* ✅ Allows line wrapping */
-  overflow: visible; /* ✅ Shows everything */
-  text-overflow: unset; /* ✅ No "..." */
+  white-space: normal; /* Allows line wrapping */
+  overflow: visible; /* Shows everything */
+  text-overflow: unset; /* No "..." */
   text-align: center;
 }
 
@@ -669,14 +668,14 @@ a:hover {
   flex: 1 1 300px;
   min-width: 280px;
   margin-bottom: 2rem;
-  padding-top: 0; /* ✅ remove space above title */
+  padding-top: 0; /* remove space above title */
 }
 
 /* The subcategory title */
 .main-section-block h3 {
   font-size: 1.2rem;
   color: var(--ink-1);
-  margin-top: 0; /* ✅ remove space above */
+  margin-top: 0; /* remove space above */
   margin-bottom: 2rem; /* small space below */
   line-height: 1.2;
 }
@@ -1022,7 +1021,7 @@ a:hover {
   font-size: 1.05em;
 }
 
-/* ✅ New staggered responsive layout */
+/* New staggered responsive layout */
 .home-grid {
   display: flex;
   flex-wrap: wrap;
@@ -1319,7 +1318,7 @@ main {
   text-decoration: underline;
 }
 
-/* ✨ Animations */
+/* Animations */
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -1520,7 +1519,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-/* ✅ Optional: borders consistent with theme */
+/* Optional: borders consistent with theme */
 input[type="checkbox"] {
   width: 16px;
   height: 16px;
@@ -1530,13 +1529,13 @@ input[type="checkbox"] {
   transition: all 0.2s ease;
 }
 
-/* ✅ When active (orange checkmark) */
+/* When active (orange checkmark) */
 input[type="checkbox"]:checked {
   background-color: var(--accent);
   border-color: var(--accent);
 }
 
-/* ✅ Hover */
+/* Hover */
 input[type="checkbox"]:hover {
   border-color: var(--accent);
   box-shadow: 0 0 4px var(--accent);
@@ -1593,7 +1592,7 @@ button,
     padding: 16px 14px;
     box-sizing: border-box;
     height: 100vh;
-    position: fixed; /* 🔒 must stay fixed even on mobile */
+    position: fixed; /* must stay fixed even on mobile */
     left: 0;
     top: 0;
     overflow-y: auto;
@@ -1605,7 +1604,7 @@ button,
     flex: 1;
     overflow-y: auto;
     height: 100vh;
-    margin-left: 220px; /* ✅ maintain right alignment */
+    margin-left: 220px; /* maintain right alignment */
   }
 
   .home-content h1 {
@@ -1847,7 +1846,7 @@ main {
   transform-origin: center;
 }
 
-/* 🌈 Active label colors */
+/* Active label colors */
 .act-1.act-label {
   color: #ffffff;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
@@ -1861,7 +1860,7 @@ main {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
-/* ⚙️ When spoiler is active → labels dimmed */
+/* When spoiler is active --> labels dimmed */
 body.spoiler-on .act-label {
   color: #bdbdbd !important;
   box-shadow: none !important;
@@ -1871,7 +1870,7 @@ body.spoiler-on .act-label {
     opacity 0.3s ease;
 }
 
-/* ✨ Soft realistic glow Hollow Knight style */
+/* Soft realistic glow Hollow Knight style */
 body.spoiler-on .boss:hover .act-label.act-1 {
   color: #ffffff;
   opacity: 1;
@@ -1974,7 +1973,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   box-shadow: 0 0 8px rgba(186, 255, 181, 0.6);
 }
 
-/* 🔧 FIX: Visible colors for completed bosses */
+/* Visible colors for completed bosses */
 .boss.done .act-label {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
@@ -2031,8 +2030,8 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 #home-section .home-content {
   overflow-y: auto;
   max-height: 100vh;
-  padding-bottom: 14vh; /* ✅ more dynamic space */
-  margin-bottom: 4vh; /* ✅ small extra buffer */
+  padding-bottom: 14vh; /* more dynamic space */
+  margin-bottom: 4vh; /* small extra buffer */
   scroll-padding-bottom: 100px; /* for scroll safety */
 }
 
@@ -2201,7 +2200,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   background: var(--bg-1);
   color: var(--ink-1);
   font-family: monospace;
-  padding: 60px 25px 25px; /* ⬅️ added padding-top to avoid overlap */
+  padding: 60px 25px 25px; /* added padding-top to avoid overlap */
   line-height: 1.4;
   font-size: 0.9rem;
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
@@ -2225,7 +2224,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   top: 0;
   z-index: 5;
   background: rgba(31, 32, 34, 0.85); /* same theme color, but translucent */
-  backdrop-filter: blur(6px); /* ✨ glass effect */
+  backdrop-filter: blur(6px); /* glass effect */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2300,7 +2299,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   background: var(--bg-1);
   color: var(--ink-1);
   font-family: monospace;
-  padding: 30px 25px; /* 🔥 sufficient space below header */
+  padding: 30px 25px; /* sufficient space below header */
   line-height: 1.4;
   font-size: 0.9rem;
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
@@ -2430,7 +2429,7 @@ mark.active-match {
   border-radius: 12px;
 }
 
-/* 🪶 Overlay above the map */
+/* Overlay above the map */
 .map-loading-overlay {
   position: absolute;
   inset: 0; /* covers entire iframe */

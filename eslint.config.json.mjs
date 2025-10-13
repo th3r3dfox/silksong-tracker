@@ -9,20 +9,23 @@
 import ESLintPluginJSON from "@eslint/json";
 import { defineConfig } from "eslint/config";
 
-export default defineConfig({
-  plugins: {
-    json: ESLintPluginJSON,
-  },
-  files: ["src/data/*.json"],
-  language: "json/json",
+export default defineConfig([
+  {
+    plugins: {
+      json: ESLintPluginJSON,
+    },
 
-  // https://github.com/eslint/json?tab=readme-ov-file#rules
-  rules: {
-    "json/no-duplicate-keys": "error",
-    "json/no-empty-keys": "error",
-    "json/no-unnormalized-keys": "error",
-    "json/no-unsafe-values": "error",
-    "json/sort-keys": "error",
-    "json/top-level-interop": "error",
+    files: ["**/*.json"],
+    language: "json/json",
+
+    // https://github.com/eslint/json?tab=readme-ov-file#rules
+    rules: {
+      "json/no-duplicate-keys": "error",
+      "json/no-empty-keys": "error",
+      "json/no-unnormalized-keys": "error",
+      "json/no-unsafe-values": "error",
+      "json/sort-keys": "error",
+      "json/top-level-interop": "error",
+    },
   },
-});
+]);
