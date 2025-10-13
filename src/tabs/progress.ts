@@ -679,6 +679,17 @@ function renderGenericGrid(
 
     div.append(img);
     div.append(title);
+
+    // Journal kill counter (n / required).
+    if (item.type === "journal") {
+      const current = typeof value === "number" ? value : 0;
+      const { required } = item;
+      const counter = document.createElement("span");
+      counter.className = "journal-counter";
+      counter.textContent = `${current}/${required}`;
+      div.append(counter);
+    }
+
     div.addEventListener("click", () => {
       showGenericModal(item);
     });
