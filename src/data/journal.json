@@ -2654,7 +2654,8 @@
           "label": "Summoned Saviour",
           "link": "https://hollowknight.wiki/w/Summoned_Saviour",
           "required": 1,
-          "type": "journal"
+          "type": "journal",
+          "mode": "steel"
         },
         {
           "act": 1,
