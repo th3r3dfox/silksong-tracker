@@ -24,7 +24,7 @@
           "label": "Drifter's Cloak",
           "link": "https://hollowknight.wiki/w/Drifter's_Cloak",
           "map": "https://cdn.wikimg.net/en/hkwiki/images/thumb/2/27/Mapshot_SS_Seamstress_01.png/200px-Mapshot_SS_Seamstress_01.png",
-          "required": 1,
+          "required": 0,
           "type": "level"
         },
         {
@@ -36,7 +36,7 @@
           "label": "Faydown Cloak",
           "link": "https://hollowknight.wiki/w/Faydown_Cloak",
           "map": "https://cdn.wikimg.net/en/hkwiki/images/thumb/7/79/Mapshot_SS_Fayforn.png/140px-Mapshot_SS_Fayforn.png",
-          "required": 1,
+          "required": 0,
           "type": "level"
         }
       ],
