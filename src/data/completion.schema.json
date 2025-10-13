@@ -20,6 +20,9 @@
                   "enum": [1, 2, 3],
                   "type": "integer"
                 },
+                "cost": {
+                  "type": "string"
+                },
                 "description": {
                   "type": "string"
                 },
@@ -49,6 +52,9 @@
                   "enum": ["normal", "steel"],
                   "type": "string"
                 },
+                "obtain": {
+                  "type": "string"
+                },
                 "relatedFlag": {
                   "description": "Related flag for constructed items",
                   "type": "string"
@@ -58,7 +64,7 @@
                   "type": "string"
                 },
                 "type": {
-                  "enum": ["relic", "materium", "device", "flag"],
+                  "enum": ["relic", "materium", "device", "flag", "quill"],
                   "type": "string"
                 }
               },

@@ -63,6 +63,11 @@ export interface ItemCollectable extends ItemBase {
   readonly flag: string;
 }
 
+export interface ItemQuill extends ItemBase {
+  readonly type: "quill";
+  readonly flag: string;
+}
+
 export interface ItemQuest extends ItemBase {
   readonly type: "quest";
   readonly flag: string;
@@ -110,6 +115,7 @@ export type Item =
   | ItemSceneVisited
   | ItemTool
   | ItemCollectable
+  | ItemQuill
   | ItemQuest
   | ItemKey
   | ItemJournal
