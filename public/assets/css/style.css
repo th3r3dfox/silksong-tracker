@@ -309,7 +309,7 @@ a:hover {
   white-space: normal; /* allows long names to wrap */
   word-break: break-word; /* forces word break if too long */
   line-height: 1.2em;
-  max-width: 90%; /* prevents touching edges */
+  max-width: 100%; /* prevents touching edges */
 }
 
 .boss:hover {

@@ -1204,42 +1204,9 @@
           "missable": true,
           "obtain": "Take from Trobbio's desk in Act 3 if a Quill is not already owned.",
           "type": "quill"
-        },
-        {
-          "act": 1,
-          "description": "When both Map and Quill are obtained together, the Quill appears in White.",
-          "flag": "QuillState",
-          "icon": "completion/Map_&_Quill_White.png",
-          "id": "QuillState_1",
-          "label": "Map and Quill (White)",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "obtain": "Purchase from Shakra.",
-          "type": "quill"
-        },
-        {
-          "act": 2,
-          "description": "When both Map and Quill are obtained together, the Quill appears in Red.",
-          "flag": "QuillState",
-          "icon": "completion/Map_&_Quill_Red.png",
-          "id": "QuillState_2",
-          "label": "Map and Quill (Red)",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "missable": true,
-          "type": "quill"
-        },
-        {
-          "act": 3,
-          "description": "When both Map and Quill are obtained together, the Quill appears in Purple.",
-          "flag": "QuillState",
-          "icon": "completion/Map_&_Quill_Purple.png",
-          "id": "QuillState_3",
-          "label": "Map and Quill (Purple)",
-          "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "missable": true,
-          "type": "quill"
         }
       ],
-      "label": "Maps and Quills"
+      "label": "Quills"
     },
     {
       "description": "Markers purchased from Shakra to mark key locations across Pharloom.",
