@@ -3,7 +3,7 @@ import { assertString, isArray, isObject } from "complete-common";
 import { z } from "zod";
 import { normalizeStringWithUnderscores } from "./utils.ts";
 
-export const objectWithSavedData = z.object({
+const objectWithSavedData = z.object({
   savedData: z.array(
     z.object({
       Data: z.record(z.string(), z.unknown()),
@@ -17,7 +17,7 @@ export const objectWithSavedData = z.object({
 export interface ObjectWithSavedData
   extends z.infer<typeof objectWithSavedData> {}
 
-export const silksongSaveSchema = z.object({
+const silksongSaveSchema = z.object({
   playerData: z
     .object({
       Collectables: objectWithSavedData,

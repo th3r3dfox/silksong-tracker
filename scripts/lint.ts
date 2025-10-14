@@ -172,6 +172,11 @@ await lintCommands(import.meta.dirname, [
   // - "--log-level=warn" makes it only output errors.
   "prettier --log-level=warn --check .",
 
+  // Use Knip to check for unused files, exports, and dependencies.
+  // - "--treat-config-hints-as-errors" - Exit with non-zero code (1) if there are any configuration
+  //   hints.
+  "knip --treat-config-hints-as-errors",
+
   // Ensure that the JSON files satisfy their schemas.
   ...CHECK_JSON_SCHEMA_COMMANDS,
 
