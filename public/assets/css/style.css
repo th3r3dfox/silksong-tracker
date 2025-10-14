@@ -2365,7 +2365,7 @@ mark.active-match {
 #back-to-top {
   position: fixed;
   bottom: 40px;
-  right: 285px;
+  right: 310px;
   display: none;
   border: none;
   background: transparent;
@@ -2374,6 +2374,8 @@ mark.active-match {
     opacity 0.3s,
     transform 0.3s;
   z-index: 1000;
+  flex-direction: column;
+  align-items: center;
 }
 
 #back-to-top:hover {
@@ -2381,7 +2383,13 @@ mark.active-match {
 }
 
 #back-to-top.show {
-  display: block;
+  display: flex;
+}
+
+#back-to-top span {
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--ink-2);
 }
 
 .info-map-wrapper {
