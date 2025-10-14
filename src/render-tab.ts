@@ -44,7 +44,7 @@ export function renderActiveTab(): void {
   // Show the TOC only when the 'allprogress' tab is active.
   tocList.style.display = activeTab === "allprogress" ? "" : "none";
 
-  // Call the update function for the selected tab
+  // Call the update function for the selected tab.
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
   func();
 
