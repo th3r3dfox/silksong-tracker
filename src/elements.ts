@@ -38,7 +38,6 @@ export function getHTMLElements(
 }
 
 export const allProgressGrid = getHTMLElement("allprogress-grid");
-export const backToTop = getHTMLElement("backToTop");
 export const closeInfoModal = getHTMLElement("closeInfoModal");
 export const closeUploadModal = getHTMLElement("closeUploadModal");
 export const completionValue = getHTMLElement("completionValue");

@@ -1,5 +1,5 @@
-import { assertNotNull } from "complete-common";
 import { initActsDropdown } from "./components/acts-dropdown.ts";
+import { initBackToTop } from "./components/back-to-top.ts";
 import { initShowOnlyMissing } from "./components/show-only-missing.ts";
 import { initShowSpoilers } from "./components/show-spoilers.ts";
 import {
@@ -8,7 +8,6 @@ import {
 } from "./components/sidebar-items.ts";
 import { initUploadSave } from "./components/upload-save.ts";
 import {
-  backToTop,
   closeInfoModal,
   closeUploadModal,
   copyRawsaveBtn,
@@ -47,27 +46,10 @@ function initComponents() {
 
   // Left-nav
   initSidebarItems();
+
+  // Other
+  initBackToTop();
 }
-
-// Back to top button listener.
-document.addEventListener("DOMContentLoaded", () => {
-  const mainElement = document.querySelector("main");
-  assertNotNull(mainElement, "Failed to get the main element.");
-
-  mainElement.addEventListener("scroll", () => {
-    const scrollPosition = mainElement.scrollTop;
-
-    backToTop.classList.toggle("show", scrollPosition > 300);
-  });
-
-  // Scroll back to top.
-  backToTop.addEventListener("click", () => {
-    mainElement.scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
-  });
-});
 
 document.addEventListener("DOMContentLoaded", () => {
   function closeUploadModalFunc() {

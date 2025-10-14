@@ -6,7 +6,7 @@ const LOCAL_STORAGE_KEY = "showSpoilers";
 export const showSpoilers = getHTMLInputElement("show-spoilers");
 
 export function initShowSpoilers(): void {
-  showSpoilers.addEventListener("change", onChangeCheckbox);
+  showSpoilers.addEventListener("change", onChange);
 
   // Restore the previous state of the checkbox from `localStorage`.
   const savedSpoilerState = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -17,7 +17,7 @@ export function initShowSpoilers(): void {
   document.body.classList.toggle("spoiler-on", !spoilerChecked);
 }
 
-function onChangeCheckbox() {
+function onChange() {
   const spoilerChecked = showSpoilers.checked;
   localStorage.setItem(LOCAL_STORAGE_KEY, spoilerChecked.toString());
   document.body.classList.toggle("spoiler-on", !spoilerChecked);

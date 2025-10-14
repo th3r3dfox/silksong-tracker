@@ -6,13 +6,13 @@ const LOCAL_STORAGE_KEY = "showOnlyMissing";
 export const showOnlyMissing = getHTMLInputElement("show-only-missing");
 
 export function initShowOnlyMissing(): void {
-  showOnlyMissing.addEventListener("change", onChangeCheckbox);
+  showOnlyMissing.addEventListener("change", onChange);
 
   // Restore the previous state of the checkbox from `localStorage`.
   showOnlyMissing.checked = localStorage.getItem(LOCAL_STORAGE_KEY) === "true";
 }
 
-function onChangeCheckbox() {
+function onChange() {
   localStorage.setItem(LOCAL_STORAGE_KEY, showOnlyMissing.checked.toString());
   renderActiveTab();
 }
