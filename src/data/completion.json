@@ -803,7 +803,7 @@
       "items": [
         {
           "act": 1,
-          "description": "In Moss Grotto, in the room above and to the left of the starting area",
+          "description": "In Moss Grotto, in the room above and to the left of the starting area.",
           "flag": "moss_berry_fruit",
           "icon": "completion/Mossberry.png",
           "id": "mossberry-1",
@@ -866,7 +866,7 @@
         },
         {
           "act": 2,
-          "description": "In the Memorium, in the room east of the bench",
+          "description": "In the Memorium, in the room east of the bench.",
           "flag": "moss_berry_fruit",
           "icon": "completion/Mossberry.png",
           "id": "mossberry-7",
