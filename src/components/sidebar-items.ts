@@ -10,7 +10,7 @@ import { renderActiveTab, TABS } from "../render-tab.ts";
 
 const LOCAL_STORAGE_KEY = "activeTab";
 
-export const sidebarItems = (() => {
+const sidebarItems = (() => {
   const htmlElements = getHTMLElements(document, ".sidebar-item");
 
   for (const htmlElement of htmlElements) {
