@@ -2362,7 +2362,7 @@ mark.active-match {
   border-radius: 30%;
 }
 
-.back-to-top {
+#back-to-top {
   position: fixed;
   bottom: 40px;
   right: 285px;
@@ -2376,11 +2376,11 @@ mark.active-match {
   z-index: 1000;
 }
 
-.back-to-top:hover {
+#back-to-top:hover {
   transform: scale(1.1);
 }
 
-.back-to-top.show {
+#back-to-top.show {
   display: block;
 }
 

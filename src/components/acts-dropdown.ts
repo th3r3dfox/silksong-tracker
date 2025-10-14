@@ -62,7 +62,7 @@ export function initActsDropdown(): void {
   // Update the filter when any checkbox changes.
   for (const checkboxInfo of checkboxInfos) {
     const { checkbox } = checkboxInfo;
-    checkbox.addEventListener("change", onChangeCheckbox);
+    checkbox.addEventListener("change", onChange);
   }
 
   // Restore the previous state of the checkboxes from `localStorage`.
@@ -73,7 +73,7 @@ export function initActsDropdown(): void {
   }
 }
 
-function onChangeCheckbox() {
+function onChange() {
   const selectedActs = checkboxInfos
     .filter((checkboxInfo) => checkboxInfo.checkbox.checked)
     .map((checkboxInfo) => checkboxInfo.act);
