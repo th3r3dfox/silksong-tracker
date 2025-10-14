@@ -879,6 +879,120 @@
       "label": "Mossberries"
     },
     {
+      "description": "Consume the Silkeater to retrieve a cocoon after falling in battle.",
+      "items": [
+        {
+          "act": 1,
+          "description": "Greymoor, in the top of the tower west of Halfway Home.",
+          "flag": "Silk Grub Large Cocoon",
+          "icon": "completion/Silkeater.png",
+          "id": "Silkeater-1",
+          "label": "Silkeater #1",
+          "link": "https://hollowknight.wiki/w/Silkeater",
+          "missable": true,
+          "scene": "Greymoor_04",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "In the eastern area of Blasted Steps, east of where Shakra appears ( This Silkeater is replaced by Steel Seer Zi in Steel Soul Mode.).",
+          "flag": "Silk Grub Large Cocoon",
+          "icon": "completion/Silkeater.png",
+          "id": "Silkeater-1",
+          "label": "Silkeater #2",
+          "link": "https://hollowknight.wiki/w/Silkeater",
+          "missable": true,
+          "scene": "Dock_14",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "Deep Docks, in the room southeast of the sauna bench.",
+          "flag": "Silk Grub Large Cocoon",
+          "icon": "completion/Silkeater.png",
+          "id": "Silkeater-1",
+          "label": "Silkeater #3",
+          "link": "https://hollowknight.wiki/w/Silkeater",
+          "missable": true,
+          "scene": "Ward_04",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "Inside the Exhaust Organ.",
+          "flag": "Silk Grub Large Cocoon",
+          "icon": "completion/Silkeater.png",
+          "id": "Silkeater-1",
+          "label": "Silkeater #4",
+          "link": "https://hollowknight.wiki/w/Silkeater",
+          "missable": true,
+          "scene": "Song_24",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "In the centre of Whiteward.",
+          "flag": "Silk Grub Large Cocoon",
+          "icon": "completion/Silkeater.png",
+          "id": "Silkeater-1",
+          "label": "Silkeater #5",
+          "link": "https://hollowknight.wiki/w/Silkeater",
+          "missable": true,
+          "scene": "Song_09b",
+          "type": "sceneBool"
+        },
+        {
+          "act": 2,
+          "description": "Choral Chambers: West of the Grand Bellway.",
+          "flag": "Silk Grub Large Cocoon",
+          "icon": "completion/Silkeater.png",
+          "id": "Silkeater-1",
+          "label": "Silkeater #6",
+          "link": "https://hollowknight.wiki/w/Silkeater",
+          "missable": true,
+          "scene": "Library_14",
+          "type": "sceneBool"
+        },
+        {
+          "act": 2,
+          "description": "Chroal Chambers: East of the Great Gourmand's dining room.",
+          "flag": "Silk Grub Large Cocoon",
+          "icon": "completion/Silkeater.png",
+          "id": "Silkeater-1",
+          "label": "Silkeater #7",
+          "link": "https://hollowknight.wiki/w/Silkeater",
+          "missable": true,
+          "scene": "Organ_01",
+          "type": "sceneBool"
+        },
+        {
+          "act": 2,
+          "description": "Whispering Vaults, in the room directly above Vaultkeeper Cardinius's lair.",
+          "flag": "Silk Grub Large Cocoon",
+          "icon": "completion/Silkeater.png",
+          "id": "Silkeater-1",
+          "label": "Silkeater #8",
+          "link": "https://hollowknight.wiki/w/Silkeater",
+          "missable": true,
+          "scene": "Tube_Hub",
+          "type": "sceneBool"
+        },
+        {
+          "act": 2,
+          "description": "The Cradle, below the Terminus.",
+          "flag": "Silk Grub Large Cocoon",
+          "icon": "completion/Silkeater.png",
+          "id": "Silkeater-1",
+          "label": "Silkeater #9",
+          "link": "https://hollowknight.wiki/w/Silkeater",
+          "missable": true,
+          "scene": "Coral_37",
+          "type": "sceneBool"
+        }
+      ],
+      "label": "Silkeater"
+    },
+    {
       "description": "Maps have to be obtained before an area will appear on the in-game map.",
       "items": [
         {
