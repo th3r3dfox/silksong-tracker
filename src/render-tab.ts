@@ -5,7 +5,7 @@ import {
   includes,
 } from "complete-common";
 import { showOnlyMissing } from "./components/show-only-missing.ts";
-import { getHTMLElements } from "./elements.ts";
+import { getHTMLElements, tocList } from "./elements.ts";
 import { updateTabMap } from "./tabs/map.ts";
 import { updateTabProgress } from "./tabs/progress.ts";
 import { updateTabRawSave } from "./tabs/raw-save.ts";
@@ -15,12 +15,14 @@ const TAB_TO_UPDATE_FUNCTION = {
   rawsave: updateTabRawSave,
   map: updateTabMap,
 } as const;
+
 export const TABS = Object.keys(TAB_TO_UPDATE_FUNCTION) as ReadonlyArray<
   keyof typeof TAB_TO_UPDATE_FUNCTION
 >;
 export type Tab = (typeof TABS)[number];
 
 export function renderActiveTab(): void {
+  // Get the currently active sidebar element.
   const activeElement = document.querySelector(".sidebar-item.is-active");
   assertNotNull(activeElement, "Failed to get the active element.");
   assertIs(
@@ -29,6 +31,7 @@ export function renderActiveTab(): void {
     "The active element was not an HTML anchor element.",
   );
 
+  // Get the active tab name.
   const activeTab = activeElement.dataset["tab"];
   assertDefined(
     activeTab,
@@ -38,9 +41,14 @@ export function renderActiveTab(): void {
     throw new TypeError(`The active tab was not valid: ${activeTab}`);
   }
 
+  // Show the TOC only when the 'allprogress' tab is active.
+  tocList.style.display = activeTab === "allprogress" ? "" : "none";
+
+  // Call the update function for the selected tab
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
   func();
 
+  // Apply missing filter when viewing the 'allprogress' tab.
   if (activeTab === "allprogress") {
     applyMissingFilter();
   }
@@ -54,7 +62,7 @@ function applyMissingFilter() {
     assertIs(
       section,
       HTMLDivElement,
-      'An element with the "main-section-block" class not was a div element.',
+      'An element with the "main-section-block" class was not a div element.',
     );
 
     let hasVisible = false;
@@ -64,7 +72,7 @@ function applyMissingFilter() {
       assertIs(
         div,
         HTMLDivElement,
-        'An element with the "boss" class not was a div element.',
+        'An element with the "boss" class was not a div element.',
       );
 
       if (showMissingOnly) {
@@ -80,7 +88,7 @@ function applyMissingFilter() {
       }
     }
 
-    // Hide the entire section if it has no visible elements.
+    // Hide the section if it has no visible elements.
     section.style.display = hasVisible ? "" : "none";
   }
 }
