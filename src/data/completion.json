@@ -799,6 +799,86 @@
       "label": "Mementos"
     },
     {
+      "description": "Sweet berries with poisonous seeds, that grow in moist environments. Initially gathered as a part of a wish, later used to trade for Rosaries and other rewards.",
+      "items": [
+        {
+          "act": 1,
+          "description": "In Moss Grotto, in the room above and to the left of the starting area",
+          "flag": "moss_berry_fruit",
+          "icon": "completion/Mossberry.png",
+          "id": "mossberry-1",
+          "label": "Mossberry #1",
+          "link": "https://hollowknight.wiki/w/Mossberry",
+          "scene": "Tut_02",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "Found in Moss Grotto: Pogo off of a nearby Mossmir to reach it.",
+          "flag": "moss_berry_fruit",
+          "icon": "completion/Mossberry.png",
+          "id": "mossberry-2",
+          "label": "Mossberry #2",
+          "link": "https://hollowknight.wiki/w/Mossberry",
+          "scene": "Tut_01b",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "Moss Grotto (Bone Bottom): Held by a flying enemy high above the settlement. Moves into a room east of here in ACT 3.",
+          "flag": "bonetownAspidBerryCollected",
+          "icon": "completion/Mossberry.png",
+          "id": "mossberry-3",
+          "label": "Mossberry #3",
+          "link": "https://hollowknight.wiki/w/Mossberry",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Moss Grotto (Mosshome): Held by a flying enemy(Aknid).",
+          "flag": "mosstownAspidBerryCollected",
+          "icon": "completion/Mossberry.png",
+          "id": "mossberry-4",
+          "label": "Mossberry #4",
+          "link": "https://hollowknight.wiki/w/Mossberry",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Moss Grotto (Bonegrave): Held by an enemy flying(Aknid) high above this area.",
+          "flag": "bonegraveAspidBerryCollected",
+          "icon": "completion/Mossberry.png",
+          "id": "mossberry-5",
+          "label": "Mossberry #5",
+          "link": "https://hollowknight.wiki/w/Mossberry",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In Weavenest Atla: Found growing from a ceiling.",
+          "flag": "moss_berry_fruit",
+          "icon": "completion/Mossberry.png",
+          "id": "mossberry-6",
+          "label": "Mossberry #6",
+          "link": "https://hollowknight.wiki/w/Mossberry",
+          "scene": "Weave_03",
+          "type": "sceneBool"
+        },
+        {
+          "act": 2,
+          "description": "In the Memorium, in the room east of the bench",
+          "flag": "moss_berry_fruit",
+          "icon": "completion/Mossberry.png",
+          "id": "mossberry-7",
+          "label": "Mossberry #7",
+          "link": "https://hollowknight.wiki/w/Mossberry",
+          "scene": "Arborium_04",
+          "type": "sceneBool"
+        }
+      ],
+      "label": "Mossberries"
+    },
+    {
       "description": "Maps have to be obtained before an area will appear on the in-game map.",
       "items": [
         {
