@@ -930,7 +930,7 @@
           "type": "sceneBool"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "In the centre of Whiteward.",
           "flag": "Silk Grub Large Cocoon",
           "icon": "completion/Silkeater.png",
