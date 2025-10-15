@@ -8,7 +8,9 @@ import completionJSON from "../data/completion.json" with { type: "json" };
 import essentialsJSON from "../data/essentials.json" with { type: "json" };
 import journalJSON from "../data/journal.json" with { type: "json" };
 import mainJSON from "../data/main.json" with { type: "json" };
+import miniBossesJSON from "../data/mini-bosses.json" with { type: "json" };
 import wishesJSON from "../data/wishes.json" with { type: "json" };
+
 import {
   allProgressGrid,
   getHTMLElement,
@@ -58,6 +60,10 @@ export function updateTabProgress(): void {
       categories: essentialsJSON.categories as Category[],
     },
     { title: "Bosses", categories: bossesJSON.categories as Category[] },
+    {
+      title: "Mini-Bosses",
+      categories: miniBossesJSON.categories as Category[],
+    },
     {
       title: "Completion",
       categories: completionJSON.categories as Category[],

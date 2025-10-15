@@ -1,0 +1,82 @@
+{
+  "$schema": "./mini-bosses.schema.json",
+  "categories": [
+    {
+      "description": "Long-Horned beast of Pharloom's lowlands. Relies on its horn to both impale and to wrench the ground beneath it, flinging dangerous debris.",
+      "items": [
+        {
+          "act": 1,
+          "description": "Far fields church (either in shopkeeper room or before opening gate might be missable).",
+          "flag": "churchRhinoKilled",
+          "icon": "mini-bosses/Rhinogrund.png",
+          "id": "Rhinogrund-1",
+          "label": "Kill #1",
+          "link": "https://hollowknight.wiki/w/Rhinogrund",
+          "type": "boss"
+        },
+        {
+          "act": 2,
+          "description": "Memorium.",
+          "flag": "Rhino",
+          "icon": "mini-bosses/Rhinogrund.png",
+          "id": "Rhinogrund-2",
+          "label": "Kill #2",
+          "link": "https://hollowknight.wiki/w/Rhinogrund",
+          "scene": "Arborium_02",
+          "type": "sceneBool"
+        },
+        {
+          "act": 3,
+          "description": "Far fields church (either in shopkeeper room or before opening gate might be missable).",
+          "flag": "Rhino",
+          "icon": "mini-bosses/Rhinogrund.png",
+          "id": "Rhinogrund-3",
+          "label": "Kill #3",
+          "link": "https://hollowknight.wiki/w/Rhinogrund",
+          "scene": "Bone_East_02b",
+          "type": "sceneBool"
+        }
+      ],
+      "label": "Rhinogrund"
+    },
+    {
+      "description": "Strong bug replete with rosaries. If angered they will whip their strings in a ceaseless onslaught.",
+      "items": [
+        {
+          "act": 1,
+          "description": "Shellwood in the room with the grave.",
+          "flag": "Rosary Pilgrim",
+          "icon": "mini-bosses/Covetous_Pilgrim.png",
+          "id": "Covetous_Pilgrim_1",
+          "label": "Kill #1",
+          "link": "https://hollowknight.wiki/w/Covetous_Pilgrim",
+          "scene": "Shellgrave",
+          "type": "sceneBool"
+        },
+        {
+          "act": 2,
+          "description": "Bilewater (after shakra leaves).",
+          "flag": "Rosary Pilgrim",
+          "icon": "mini-bosses/Covetous_Pilgrim.png",
+          "id": "Covetous_Pilgrim_2",
+          "label": "Kill #2",
+          "link": "https://hollowknight.wiki/w/Covetous_Pilgrim",
+          "scene": "Shadow_23",
+          "type": "sceneBool"
+        },
+        {
+          "act": 3,
+          "description": "Bone bottom Chapel of the Wanderer at Bonegrave.",
+          "flag": "Rosary Pilgrim",
+          "icon": "mini-bosses/Covetous_Pilgrim.png",
+          "id": "Covetous_Pilgrim_3",
+          "label": "Kill #3",
+          "link": "https://hollowknight.wiki/w/Covetous_Pilgrim",
+          "scene": "Bonegrave",
+          "type": "sceneBool"
+        }
+      ],
+      "label": "Covetous Pilgrim"
+    }
+  ]
+}
