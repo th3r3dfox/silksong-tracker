@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "categories": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "items": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "act": {
+                  "enum": [1, 2, 3],
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "flag": {
+                  "description": "The name of the save file flag used to track this boss",
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "link": {
+                  "format": "uri",
+                  "pattern": "^[^\\s%]*$",
+                  "type": "string"
+                },
+                "missable": {
+                  "description": "Whether this boss encounter can be permanently missed",
+                  "type": "boolean"
+                },
+                "mode": {
+                  "enum": ["normal", "steel"],
+                  "type": "string"
+                },
+                "required": {
+                  "description": "Required count for completion (e.g., number of kills needed)",
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "scene": {
+                  "description": "Scene identifier for location-based items",
+                  "type": "string"
+                },
+                "type": {
+                  "enum": ["boss", "journal", "sceneBool"],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "act",
+                "description",
+                "flag",
+                "icon",
+                "id",
+                "label",
+                "link",
+                "type"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": ["description", "items", "label"],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": ["$schema", "categories"],
+  "type": "object"
+}
