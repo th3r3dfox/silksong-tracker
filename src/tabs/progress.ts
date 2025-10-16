@@ -692,7 +692,11 @@ function renderGenericGrid(
       const { required } = item;
       const counter = document.createElement("span");
       counter.className = "journal-counter";
-      counter.textContent = `${current}/${required}`;
+
+      // When completed, show only the number of kills (without "/required").
+
+      counter.textContent =
+        current >= required ? `${current}` : `${current}/${required}`;
       div.append(counter);
     }
 
