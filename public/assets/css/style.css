@@ -2105,15 +2105,20 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   margin-bottom: 15px;
 }
 
-#rawsave-output {
-  background: var(--bg-3);
+#raw-save-data-output {
   color: var(--ink-1);
-  border-radius: var(--radius-sm);
-  padding: 15px;
   white-space: pre-wrap;
   word-break: break-word;
-  font-size: 0.9rem;
+  flex: 1;
+  overflow-y: auto;
+  background: var(--bg-1);
+  color: var(--ink-1);
+  font-family: monospace;
+  padding: 30px 25px; /* sufficient space below header */
   line-height: 1.4;
+  font-size: 0.9rem;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  position: relative;
 }
 
 .rawsave-header {
@@ -2145,7 +2150,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   background: #e38b48;
 }
 
-.rawsave-search {
+#raw-save-data-search {
   background: var(--bg-3);
   border: 1px solid var(--stroke);
   border-radius: var(--radius-sm);
@@ -2156,11 +2161,12 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   width: 130px;
 }
 
-.rawsave-search:focus {
+#raw-save-data-search:focus {
   outline: none;
   border-color: var(--accent);
 }
-.search-counter {
+
+#raw-save-data-search-counter {
   color: var(--ink-3);
   font-size: 0.8rem;
   min-width: 45px;
@@ -2191,20 +2197,6 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   align-items: center;
   z-index: 10;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-}
-
-/* Scrollable content section */
-.rawsave-output {
-  flex: 1;
-  overflow-y: auto;
-  background: var(--bg-1);
-  color: var(--ink-1);
-  font-family: monospace;
-  padding: 60px 25px 25px; /* added padding-top to avoid overlap */
-  line-height: 1.4;
-  font-size: 0.9rem;
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  position: relative;
 }
 
 .rawsave-container {
@@ -2250,23 +2242,6 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   gap: 8px;
 }
 
-/* Search input */
-.rawsave-search {
-  background: var(--bg-3);
-  border: 1px solid var(--stroke);
-  border-radius: var(--radius-sm);
-  padding: 5px 8px;
-  color: var(--ink-1);
-  font-family: "Inter", sans-serif;
-  font-size: 0.85rem;
-  width: 130px;
-}
-
-.rawsave-search:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-
 /* Buttons */
 .rawsave-btn {
   background: var(--accent);
@@ -2282,28 +2257,6 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 
 .rawsave-btn:hover {
   background: #e38b48;
-}
-
-/* Results counter */
-.search-counter {
-  color: var(--ink-3);
-  font-size: 0.8rem;
-  min-width: 45px;
-  text-align: center;
-}
-
-/* Scrollable content */
-#rawsave-output {
-  flex: 1;
-  overflow-y: auto;
-  background: var(--bg-1);
-  color: var(--ink-1);
-  font-family: monospace;
-  padding: 30px 25px; /* sufficient space below header */
-  line-height: 1.4;
-  font-size: 0.9rem;
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  position: relative;
 }
 
 /* Search highlighting */

@@ -10,22 +10,15 @@ import { initUploadSave } from "./components/upload-save.ts";
 import {
   closeInfoModal,
   closeUploadModal,
-  copyRawsaveBtn,
-  downloadRawsaveBtn,
   dropzone,
   fileInput,
   getHTMLElement,
   getHTMLElements,
   infoOverlay,
-  nextMatch,
-  prevMatch,
-  rawSaveOutput,
-  rawSaveSearch,
-  searchCounter,
   uploadOverlay,
 } from "./elements.ts";
 import { renderActiveTab } from "./render-tab.ts";
-import { getSaveData, handleSaveFile } from "./save-data.ts";
+import { handleSaveFile } from "./save-data.ts";
 import { showToast } from "./utils.ts";
 
 function main() {
@@ -146,111 +139,6 @@ fileInput.addEventListener("change", () => {
   // We do not have to await this since it is the last operation in the callback.
   // eslint-disable-next-line @typescript-eslint/no-floating-promises
   handleSaveFile(file);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Copy JSON
-  copyRawsaveBtn.addEventListener("click", () => {
-    const text = rawSaveOutput.textContent;
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        showToast("📋 JSON copied to clipboard!");
-      })
-      .catch(() => {
-        showToast("❌ Copy failed.");
-      });
-  });
-
-  // Download JSON
-  downloadRawsaveBtn.addEventListener("click", () => {
-    const saveData = getSaveData();
-
-    if (saveData === undefined) {
-      showToast("❌ No save loaded yet.");
-      return;
-    }
-    const saveDataString = JSON.stringify(saveData, undefined, 2);
-    const blob = new Blob([saveDataString], {
-      type: "application/json",
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "silksong-save.json";
-    a.click();
-    URL.revokeObjectURL(url);
-  });
-
-  // Navigable search
-  let currentMatch = 0;
-  let matches: number[] = [];
-
-  function scrollToMatch(index: number) {
-    const allMarks = getHTMLElements(rawSaveOutput, "mark.search-match");
-    for (const m of allMarks) {
-      m.classList.remove("active-match");
-    }
-    const lastMark = allMarks[index - 1];
-    if (lastMark !== undefined) {
-      lastMark.classList.add("active-match");
-      lastMark.scrollIntoView({
-        behavior: "instant",
-        block: "center",
-      });
-    }
-    searchCounter.textContent = `${index}/${matches.length}`;
-  }
-
-  rawSaveSearch.addEventListener("input", () => {
-    const query = rawSaveSearch.value.trim();
-    const saveData = getSaveData();
-    const jsonText = JSON.stringify(saveData ?? {}, undefined, 2);
-    rawSaveOutput.innerHTML = jsonText;
-    matches = [];
-    currentMatch = 0;
-    searchCounter.textContent = "0/0";
-    if (query === "") {
-      return;
-    }
-
-    const safeQuery = query.replaceAll(/[$()*+.?[\\\]^{|}]/g, String.raw`\$&`);
-    const regex = new RegExp(safeQuery, "gi");
-
-    let html = "";
-    let lastIndex = 0;
-    let match: RegExpExecArray | null;
-    while ((match = regex.exec(jsonText)) !== null) {
-      html += jsonText.slice(lastIndex, match.index);
-      html += `<mark class="search-match">${match[0]}</mark>`;
-      ({ lastIndex } = regex);
-      matches.push(match.index);
-    }
-    html += jsonText.slice(lastIndex);
-    rawSaveOutput.innerHTML = html;
-
-    if (matches.length > 0) {
-      currentMatch = 1;
-      scrollToMatch(currentMatch);
-    }
-    searchCounter.textContent = `${currentMatch}/${matches.length}`;
-  });
-
-  nextMatch.addEventListener("click", () => {
-    if (matches.length === 0) {
-      return;
-    }
-    currentMatch = (currentMatch % matches.length) + 1;
-    scrollToMatch(currentMatch);
-  });
-
-  prevMatch.addEventListener("click", () => {
-    if (matches.length === 0) {
-      return;
-    }
-    currentMatch = ((currentMatch - 2 + matches.length) % matches.length) + 1;
-    scrollToMatch(currentMatch);
-  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
