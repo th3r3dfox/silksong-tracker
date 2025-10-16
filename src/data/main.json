@@ -24,6 +24,7 @@
           "id": "nail1",
           "label": "Sharpened Needle",
           "link": "https://hollowknight.wiki/w/Needle",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 1,
           "type": "level"
@@ -37,6 +38,7 @@
           "id": "nail2",
           "label": "Shining Needle",
           "link": "https://hollowknight.wiki/w/Needle",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 2,
           "type": "level"
@@ -50,6 +52,7 @@
           "id": "nail3",
           "label": "Hivesteel Needle",
           "link": "https://hollowknight.wiki/w/Needle",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 3,
           "type": "level"
@@ -63,6 +66,7 @@
           "id": "nail4",
           "label": "Pale Steel Needle",
           "link": "https://hollowknight.wiki/w/Needle",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 4,
           "type": "level"
@@ -92,7 +96,7 @@
           "id": "mask-shard-2",
           "label": "Mask Shard #2",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "assets/maps/MaskShard/mask2.png",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478091",
           "scene": "Crawl_02",
           "type": "sceneBool"
         },
@@ -321,6 +325,7 @@
           "id": "spool-fragment-1",
           "label": "Spool Fragment #1",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478080",
           "scene": "Bone_11b",
           "type": "sceneBool"
         },
@@ -332,6 +337,7 @@
           "id": "spool-fragment-2",
           "label": "Spool Fragment #2",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477926",
           "scene": "Bone_East_13",
           "type": "sceneBool"
         },
@@ -343,6 +349,7 @@
           "id": "spool-fragment-3",
           "label": "Spool Fragment #3",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478263",
           "scene": "Greymoor_02",
           "type": "sceneBool"
         },
@@ -354,6 +361,7 @@
           "id": "spool-fragment-4",
           "label": "Spool Fragment #4",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478347",
           "type": "flag"
         },
         {
@@ -364,6 +372,7 @@
           "id": "spool-fragment-5",
           "label": "Spool Fragment #5",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478230",
           "scene": "Weave_11",
           "type": "sceneBool"
         },
@@ -375,6 +384,7 @@
           "id": "spool-fragment-6",
           "label": "Spool Fragment #6",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478475",
           "scene": "Peak_01",
           "type": "sceneBool"
         },
@@ -386,6 +396,7 @@
           "id": "spool-fragment-7",
           "label": "Spool Fragment #7",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478586",
           "scene": "Song_19_entrance",
           "type": "sceneBool"
         },
@@ -397,6 +408,7 @@
           "id": "spool-fragment-8",
           "label": "Spool Fragment #8",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478931",
           "scene": "Under_10",
           "type": "sceneBool"
         },
@@ -408,6 +420,7 @@
           "id": "spool-fragment-9",
           "label": "Spool Fragment #9",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478820",
           "type": "flagInt"
         },
         {
@@ -418,6 +431,7 @@
           "id": "spool-fragment-10",
           "label": "Spool Fragment #10",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479317",
           "scene": "Ward_01",
           "type": "sceneBool"
         },
@@ -429,6 +443,7 @@
           "id": "spool-fragment-11",
           "label": "Spool Fragment #11",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478618",
           "scene": "Cog_07",
           "type": "sceneBool"
         },
@@ -440,6 +455,7 @@
           "id": "spool-fragment-12",
           "label": "Spool Fragment #12",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478704",
           "scene": "Library_11b",
           "type": "sceneBool"
         },
@@ -451,6 +467,7 @@
           "id": "spool-fragment-13",
           "label": "Spool Fragment #13",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479180",
           "type": "quest"
         },
         {
@@ -461,6 +478,7 @@
           "id": "spool-fragment-14",
           "label": "Spool Fragment #14",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479249",
           "type": "flag"
         },
         {
@@ -471,6 +489,7 @@
           "id": "spool-fragment-15",
           "label": "Spool Fragment #15",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478825",
           "scene": "Dock_03c",
           "type": "sceneBool"
         },
@@ -482,6 +501,7 @@
           "id": "spool-fragment-16",
           "label": "Spool Fragment #16",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478909",
           "scene": "Hang_03_top",
           "type": "sceneBool"
         },
@@ -493,6 +513,7 @@
           "id": "spool-fragment-17",
           "label": "Spool Fragment #17",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479117",
           "scene": "Arborium_09",
           "type": "sceneBool"
         },
@@ -504,6 +525,7 @@
           "id": "spool-fragment-18",
           "label": "Spool Fragment #18",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478527",
           "type": "flag"
         }
       ],
