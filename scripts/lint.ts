@@ -23,7 +23,7 @@ const ALLOWED_UNICODE_MAP = new ReadonlyMap<string, readonly string[]>([
   ["main.ts", ["📋", "❌"]],
   ["overview.md", ["│", "├", "└", "─"]],
   ["progress.ts", ["✕", "↑"]],
-  ["raw-save.ts", ["❌"]],
+  ["raw-save.ts", ["📋", "❌"]],
   ["save-data.ts", ["✅", "❌"]],
 ]);
 

@@ -19,6 +19,7 @@ import {
 } from "./elements.ts";
 import { renderActiveTab } from "./render-tab.ts";
 import { handleSaveFile } from "./save-data.ts";
+import { initRawSaveData } from "./tabs/raw-save.ts";
 import { showToast } from "./utils.ts";
 
 function main() {
@@ -39,6 +40,9 @@ function initComponents() {
 
   // Left-nav
   initSidebarItems();
+
+  // Tabs
+  initRawSaveData();
 
   // Other
   initBackToTop();

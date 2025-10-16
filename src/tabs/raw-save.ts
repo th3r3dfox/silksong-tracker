@@ -78,7 +78,7 @@ export function initRawSaveData(): void {
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        showToast("📋 JSON copied to clipboard!");
+        showToast("📋 JSON copied to clipboard.");
       })
       .catch(() => {
         showToast("❌ Copy failed.");
@@ -111,10 +111,10 @@ function scrollToMatch(index: number) {
     mark.classList.remove("active-match");
   }
 
-  const lastMark = allMarks.at(-1);
-  if (lastMark !== undefined) {
-    lastMark.classList.add("active-match");
-    lastMark.scrollIntoView({
+  const mark = allMarks[index - 1];
+  if (mark !== undefined) {
+    mark.classList.add("active-match");
+    mark.scrollIntoView({
       behavior: "instant",
       block: "center",
     });
