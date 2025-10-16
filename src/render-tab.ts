@@ -8,11 +8,11 @@ import { showOnlyMissing } from "./components/show-only-missing.ts";
 import { getHTMLElements, tocList } from "./elements.ts";
 import { updateTabMap } from "./tabs/map.ts";
 import { updateTabProgress } from "./tabs/progress.ts";
-import { updateTabRawSave } from "./tabs/raw-save.ts";
+import { updateTabRawSaveData } from "./tabs/raw-save.ts";
 
 const TAB_TO_UPDATE_FUNCTION = {
   allprogress: updateTabProgress,
-  rawsave: updateTabRawSave,
+  rawsave: updateTabRawSaveData,
   map: updateTabMap,
 } as const;
 

@@ -125,7 +125,7 @@ function scrollToMatch(index: number) {
   rawSaveDataSearchCounter.textContent = `${index}/${matches.length}`;
 }
 
-export function updateTabRawSave(): void {
+export function updateTabRawSaveData(): void {
   const saveData = getSaveData();
 
   if (saveData === undefined) {
