@@ -55,22 +55,24 @@ export function initRawSaveData(): void {
     rawSaveDataSearchCounter.textContent = `${currentMatch}/${matches.length}`;
   });
 
-  rawSaveDataNextMatch.addEventListener("click", () => {
-    if (matches.length === 0) {
-      return;
+  rawSaveDataSearch.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      rawSaveDataNextMatch.click();
     }
+  });
 
-    currentMatch = (currentMatch % matches.length) + 1;
-    scrollToMatch(currentMatch);
+  rawSaveDataNextMatch.addEventListener("click", () => {
+    if (matches.length > 0) {
+      currentMatch = (currentMatch % matches.length) + 1;
+      scrollToMatch(currentMatch);
+    }
   });
 
   rawSaveDataPreviousMatch.addEventListener("click", () => {
-    if (matches.length === 0) {
-      return;
+    if (matches.length > 0) {
+      currentMatch = ((currentMatch - 2 + matches.length) % matches.length) + 1;
+      scrollToMatch(currentMatch);
     }
-
-    currentMatch = ((currentMatch - 2 + matches.length) % matches.length) + 1;
-    scrollToMatch(currentMatch);
   });
 
   rawSaveDataCopy.addEventListener("click", () => {
