@@ -4,7 +4,6 @@ import {
   completionValue,
   modeBanner,
   playtimeValue,
-  rawSaveOutput,
   rosariesValue,
   shardsValue,
   uploadOverlay,
@@ -63,8 +62,6 @@ export async function handleSaveFile(file: File | undefined): Promise<void> {
       uploadOverlay.classList.remove("hidden");
       return;
     }
-
-    rawSaveOutput.textContent = JSON.stringify(saveData, undefined, 2);
 
     // @ts-expect-error The save file is huge and we do not want to specify every property. Instead
     // of marking the Zod schema as loose, it is simpler to just assign the pre-validation object.
