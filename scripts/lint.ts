@@ -177,6 +177,9 @@ await lintCommands(import.meta.dirname, [
   //   hints.
   "knip --treat-config-hints-as-errors",
 
+  // Use stylelint to lint the CSS.
+  "stylelint ./public/assets/css/style.css",
+
   // Ensure that the JSON files satisfy their schemas.
   ...CHECK_JSON_SCHEMA_COMMANDS,
 
