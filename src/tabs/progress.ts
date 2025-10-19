@@ -160,6 +160,7 @@ export function updateTabProgress(): void {
           }
 
           const { flag } = item;
+          // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
           if (flag === undefined) {
             return false;
           }
@@ -517,6 +518,7 @@ function renderGenericGrid(
         }
 
         const { flag } = item;
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         if (flag === undefined) {
           return false;
         }
