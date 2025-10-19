@@ -795,7 +795,7 @@
         {
           "act": 2,
           "category": "Fleas",
-          "description": "Underworks",
+          "description": "Underworks.",
           "flag": "SavedFlea_Under_21",
           "icon": "icons/fleas.png",
           "id": "lost-flea-26",
@@ -807,7 +807,7 @@
         {
           "act": 2,
           "category": "Fleas",
-          "description": "Choral Chambers",
+          "description": "Choral Chambers.",
           "flag": "SavedFlea_Song_14",
           "icon": "icons/fleas.png",
           "id": "lost-flea-20",
@@ -855,7 +855,7 @@
         {
           "act": 1,
           "category": "Fleas",
-          "description": "The Slab",
+          "description": "The Slab.",
           "flag": "SavedFlea_Slab_Cell",
           "icon": "icons/fleas.png",
           "id": "lost-flea-15",
@@ -867,7 +867,7 @@
         {
           "act": 1,
           "category": "Fleas",
-          "description": "The Slab",
+          "description": "The Slab.",
           "flag": "SavedFlea_Slab_06",
           "icon": "icons/fleas.png",
           "id": "lost-flea-27",
