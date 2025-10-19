@@ -567,7 +567,7 @@
         {
           "act": 1,
           "category": "Fleas",
-          "description": "The Marrow. Can be reached after a few platforming from the beginning of the room",
+          "description": "The Marrow. Can be reached after a few platforming from the beginning of the room.",
           "flag": "SavedFlea_Bone_06",
           "icon": "icons/fleas.png",
           "id": "lost-flea-1",
@@ -603,7 +603,7 @@
         {
           "act": 2,
           "category": "Fleas",
-          "description": "Deep Docks",
+          "description": "Deep Docks.",
           "flag": "SavedFlea_Dock_03d",
           "icon": "icons/fleas.png",
           "id": "lost-flea-17",
