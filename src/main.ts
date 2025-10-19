@@ -14,6 +14,7 @@ import {
   fileInput,
   getHTMLElement,
   getHTMLElements,
+  infoContent,
   infoOverlay,
   uploadOverlay,
 } from "./elements.ts";
@@ -162,6 +163,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   infoOverlay.addEventListener("click", (e) => {
     if (e.target === infoOverlay) {
+      infoOverlay.classList.add("hidden");
+    }
+  });
+
+  // Close Info modal on Escape key press.
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
       infoOverlay.classList.add("hidden");
     }
   });
