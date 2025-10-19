@@ -13,6 +13,7 @@
           "id": "mossgrub",
           "label": "Mossgrub",
           "link": "https://hollowknight.wiki/w/Mossgrub",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479075",
           "required": 25,
           "type": "journal"
         },
@@ -25,6 +26,7 @@
           "id": "massive-mossgrub",
           "label": "Massive Mossgrub",
           "link": "https://hollowknight.wiki/w/Massive_Mossgrub",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480252",
           "required": 3,
           "type": "journal"
         },
@@ -37,6 +39,7 @@
           "id": "mossmir",
           "label": "Mossmir",
           "link": "https://hollowknight.wiki/w/Mossmir",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479076",
           "required": 20,
           "type": "journal"
         },
@@ -49,6 +52,7 @@
           "id": "moss-mother",
           "label": "Moss Mother",
           "link": "https://hollowknight.wiki/w/Moss_Mother",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480309",
           "required": 3,
           "type": "journal"
         },
@@ -61,6 +65,7 @@
           "id": "aknid",
           "label": "Aknid",
           "link": "https://hollowknight.wiki/w/Aknid",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479579",
           "required": 15,
           "type": "journal"
         },
@@ -73,6 +78,7 @@
           "id": "skull-scuttler",
           "label": "Skull Scuttler",
           "link": "https://hollowknight.wiki/w/Skull_Scuttler",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479543",
           "required": 35,
           "type": "journal"
         },
@@ -85,6 +91,7 @@
           "id": "skullwing",
           "label": "Skullwing",
           "link": "https://hollowknight.wiki/w/Skullwing",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479074",
           "required": 15,
           "type": "journal"
         },
@@ -97,6 +104,7 @@
           "id": "skull-brute",
           "label": "Skull Brute",
           "link": "https://hollowknight.wiki/w/Skull_Brute",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479546",
           "required": 15,
           "type": "journal"
         },
@@ -109,6 +117,7 @@
           "id": "skull-tyrant",
           "label": "Skull Tyrant",
           "link": "https://hollowknight.wiki/w/Skull_Tyrant",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480313",
           "required": 1,
           "type": "journal"
         },
@@ -121,6 +130,7 @@
           "id": "kilik",
           "label": "Kilik",
           "link": "https://hollowknight.wiki/w/Kilik",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479550",
           "required": 25,
           "type": "journal"
         },
@@ -133,6 +143,7 @@
           "id": "beastfly",
           "label": "Beastfly",
           "link": "https://hollowknight.wiki/w/Beastfly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479544",
           "required": 30,
           "type": "journal"
         },
@@ -145,6 +156,7 @@
           "id": "savage-beastfly",
           "label": "Savage Beastfly",
           "link": "https://hollowknight.wiki/w/Savage_Beastfly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480317",
           "required": 2,
           "type": "journal"
         },
@@ -157,6 +169,7 @@
           "id": "caranid",
           "label": "Caranid",
           "link": "https://hollowknight.wiki/w/Caranid",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479547",
           "required": 25,
           "type": "journal"
         },
@@ -169,6 +182,7 @@
           "id": "vicious-caranid",
           "label": "Vicious Caranid",
           "link": "https://hollowknight.wiki/w/Vicious_Caranid",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479564",
           "required": 15,
           "type": "journal"
         },
@@ -181,6 +195,7 @@
           "id": "hardbone-hopper",
           "label": "Hardbone Hopper",
           "link": "https://hollowknight.wiki/w/Hardbone_Hopper",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479555",
           "required": 20,
           "type": "journal"
         },
@@ -193,6 +208,7 @@
           "id": "hardbone-elder",
           "label": "Hardbone Elder",
           "link": "https://hollowknight.wiki/w/Hardbone_Elder",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480213",
           "required": 10,
           "type": "journal"
         },
@@ -205,6 +221,7 @@
           "id": "tarmite",
           "label": "Tarmite",
           "link": "https://hollowknight.wiki/w/Tarmite",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479058",
           "required": 10,
           "type": "journal"
         },
@@ -217,6 +234,7 @@
           "id": "mawling",
           "label": "Mawling",
           "link": "https://hollowknight.wiki/w/Mawling",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479077",
           "required": 30,
           "type": "journal"
         },
@@ -229,6 +247,7 @@
           "id": "marrowmaw",
           "label": "Marrowmaw",
           "link": "https://hollowknight.wiki/w/Marrowmaw",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478224",
           "required": 8,
           "type": "journal"
         },
@@ -241,6 +260,7 @@
           "id": "hoker",
           "label": "Hoker",
           "link": "https://hollowknight.wiki/w/Hoker",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479570",
           "required": 15,
           "type": "journal"
         },
@@ -253,6 +273,7 @@
           "id": "flintbeetle",
           "label": "Flintbeetle",
           "link": "https://hollowknight.wiki/w/Flintbeetle",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478248",
           "required": 3,
           "type": "journal"
         },
@@ -265,6 +286,7 @@
           "id": "rhinogrund",
           "label": "Rhinogrund",
           "link": "https://hollowknight.wiki/w/Rhinogrund",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480179",
           "required": 2,
           "type": "journal"
         },
@@ -277,6 +299,7 @@
           "id": "gromling",
           "label": "Gromling",
           "link": "https://hollowknight.wiki/w/Gromling",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479078",
           "required": 25,
           "type": "journal"
         },
@@ -289,6 +312,7 @@
           "id": "grom",
           "label": "Grom",
           "link": "https://hollowknight.wiki/w/Grom",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479080",
           "required": 10,
           "type": "journal"
         },
@@ -301,6 +325,7 @@
           "id": "bell-beast",
           "label": "Bell Beast",
           "link": "https://hollowknight.wiki/w/Bell_Beast",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480312",
           "required": 1,
           "type": "journal"
         },
@@ -313,6 +338,7 @@
           "id": "pilgrim-groveller",
           "label": "Pilgrim Groveller",
           "link": "https://hollowknight.wiki/w/Pilgrim_Groveller",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479571",
           "required": 35,
           "type": "journal"
         },
@@ -325,6 +351,7 @@
           "id": "pilgrim-pouncer",
           "label": "Pilgrim Pouncer",
           "link": "https://hollowknight.wiki/w/Pilgrim_Pouncer",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479551",
           "required": 35,
           "type": "journal"
         },
@@ -337,6 +364,7 @@
           "id": "pilgrim-hornfly",
           "label": "Pilgrim Hornfly",
           "link": "https://hollowknight.wiki/w/Pilgrim_Hornfly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479573",
           "required": 15,
           "type": "journal"
         },
@@ -349,6 +377,7 @@
           "id": "pilgrim-hulk",
           "label": "Pilgrim Hulk",
           "link": "https://hollowknight.wiki/w/Pilgrim_Hulk",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479574",
           "required": 10,
           "type": "journal"
         },
@@ -361,6 +390,7 @@
           "id": "pilgrim-bellbearer",
           "label": "Pilgrim Bellbearer",
           "link": "https://hollowknight.wiki/w/Pilgrim_Bellbearer",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478044",
           "required": 10,
           "type": "journal"
         },
@@ -373,6 +403,7 @@
           "id": "winged-pilgrim",
           "label": "Winged Pilgrim",
           "link": "https://hollowknight.wiki/w/Winged_Pilgrim",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479552",
           "required": 25,
           "type": "journal"
         },
@@ -385,6 +416,7 @@
           "id": "elder-pilgrim",
           "label": "Elder Pilgrim",
           "link": "https://hollowknight.wiki/w/Elder_Pilgrim",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479755",
           "required": 5,
           "type": "journal"
         },
@@ -397,6 +429,7 @@
           "id": "winged-pilgrim-bellbearer",
           "label": "Winged Pilgrim Bellbearer",
           "link": "https://hollowknight.wiki/w/Winged_Pilgrim_Bellbearer",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478301",
           "required": 10,
           "type": "journal"
         },
@@ -409,6 +442,7 @@
           "id": "pilgrim-hiker",
           "label": "Pilgrim Hiker",
           "link": "https://hollowknight.wiki/w/Pilgrim_Hiker",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479738",
           "required": 10,
           "type": "journal"
         },
@@ -421,6 +455,7 @@
           "id": "pilgrim-guide",
           "label": "Pilgrim Guide",
           "link": "https://hollowknight.wiki/w/Pilgrim_Guide",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479683",
           "required": 15,
           "type": "journal"
         },
@@ -433,6 +468,7 @@
           "id": "overgrown-pilgrim",
           "label": "Overgrown Pilgrim",
           "link": "https://hollowknight.wiki/w/Overgrown_Pilgrim",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479577",
           "required": 20,
           "type": "journal"
         },
@@ -445,6 +481,7 @@
           "id": "covetous-pilgrim",
           "label": "Covetous Pilgrim",
           "link": "https://hollowknight.wiki/w/Covetous_Pilgrim",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478300",
           "required": 2,
           "type": "journal"
         },
@@ -457,6 +494,7 @@
           "id": "snitchfly",
           "label": "Snitchfly",
           "link": "https://hollowknight.wiki/w/Snitchfly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479000",
           "required": 4,
           "type": "journal"
         },
@@ -469,6 +507,7 @@
           "id": "lavalug",
           "label": "Lavalug",
           "link": "https://hollowknight.wiki/w/Lavalug",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479565",
           "required": 12,
           "type": "journal"
         },
@@ -481,6 +520,7 @@
           "id": "lavalarga",
           "label": "Lavalarga",
           "link": "https://hollowknight.wiki/w/Lavalarga",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480236",
           "required": 8,
           "type": "journal"
         },
@@ -493,6 +533,7 @@
           "id": "smelt-shoveller",
           "label": "Smelt Shoveller",
           "link": "https://hollowknight.wiki/w/Smelt_Shoveller",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479553",
           "required": 25,
           "type": "journal"
         },
@@ -505,6 +546,7 @@
           "id": "flintstone-flyer",
           "label": "Flintstone Flyer",
           "link": "https://hollowknight.wiki/w/Flintstone_Flyer",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479554",
           "required": 25,
           "type": "journal"
         },
@@ -517,6 +559,7 @@
           "id": "flintflame-flyer",
           "label": "Flintflame Flyer",
           "link": "https://hollowknight.wiki/w/Flintflame_Flyer",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479566",
           "required": 10,
           "type": "journal"
         },
@@ -529,6 +572,7 @@
           "id": "smokerock-sifter",
           "label": "Smokerock Sifter",
           "link": "https://hollowknight.wiki/w/Smokerock_Sifter",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479567",
           "required": 10,
           "type": "journal"
         },
@@ -541,6 +585,7 @@
           "id": "deep-diver",
           "label": "Deep Diver",
           "link": "https://hollowknight.wiki/w/Deep_Diver",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480237",
           "required": 5,
           "type": "journal"
         },
@@ -553,6 +598,7 @@
           "id": "forebrothers-signis-&-gron",
           "label": "Forebrothers Signis & Gron",
           "link": "https://hollowknight.wiki/w/Forebrothers_Signis_&_Gron",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480314",
           "required": 1,
           "type": "journal"
         },
@@ -565,6 +611,7 @@
           "id": "cragglite",
           "label": "Cragglite",
           "link": "https://hollowknight.wiki/w/Cragglite",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480145",
           "required": 3,
           "type": "journal"
         },
@@ -577,6 +624,7 @@
           "id": "craggler",
           "label": "Craggler",
           "link": "https://hollowknight.wiki/w/Craggler",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478088",
           "required": 1,
           "type": "journal"
         },
@@ -589,6 +637,7 @@
           "id": "brushflit",
           "label": "Brushflit",
           "link": "https://hollowknight.wiki/w/Brushflit",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479560",
           "required": 15,
           "type": "journal"
         },
@@ -601,6 +650,7 @@
           "id": "fertid",
           "label": "Fertid",
           "link": "https://hollowknight.wiki/w/Fertid",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479561",
           "required": 25,
           "type": "journal"
         },
@@ -613,6 +663,7 @@
           "id": "flapping-fertid",
           "label": "Flapping Fertid",
           "link": "https://hollowknight.wiki/w/Flapping_Fertid",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479562",
           "required": 20,
           "type": "journal"
         },
@@ -625,6 +676,7 @@
           "id": "fourth-chorus",
           "label": "Fourth Chorus",
           "link": "https://hollowknight.wiki/w/Fourth_Chorus",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480315",
           "required": 1,
           "type": "journal"
         },
@@ -637,6 +689,7 @@
           "id": "skarrlid",
           "label": "Skarrlid",
           "link": "https://hollowknight.wiki/w/Skarrlid",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479558",
           "required": 25,
           "type": "journal"
         },
@@ -649,6 +702,7 @@
           "id": "skarrwing",
           "label": "Skarrwing",
           "link": "https://hollowknight.wiki/w/Skarrwing",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479557",
           "required": 30,
           "type": "journal"
         },
@@ -661,6 +715,7 @@
           "id": "skarr-scout",
           "label": "Skarr Scout",
           "link": "https://hollowknight.wiki/w/Skarr_Scout",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479559",
           "required": 20,
           "type": "journal"
         },
@@ -673,6 +728,7 @@
           "id": "skarr-stalker",
           "label": "Skarr Stalker",
           "link": "https://hollowknight.wiki/w/Skarr_Stalker",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479563",
           "required": 15,
           "type": "journal"
         },
@@ -685,6 +741,7 @@
           "id": "spear-skarr",
           "label": "Spear Skarr",
           "link": "https://hollowknight.wiki/w/Spear_Skarr",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479591",
           "required": 10,
           "type": "journal"
         },
@@ -697,6 +754,7 @@
           "id": "skarrgard",
           "label": "Skarrgard",
           "link": "https://hollowknight.wiki/w/Skarrgard",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477962",
           "required": 2,
           "type": "journal"
         },
@@ -709,6 +767,7 @@
           "id": "gurr-the-outcast",
           "label": "Gurr the Outcast",
           "link": "https://hollowknight.wiki/w/Gurr_the_Outcast",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480316",
           "required": 1,
           "type": "journal"
         },
@@ -721,6 +780,7 @@
           "id": "last-claw",
           "label": "Last Claw",
           "link": "https://hollowknight.wiki/w/Last_Claw",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480483",
           "required": 6,
           "type": "journal"
         },
@@ -733,6 +793,7 @@
           "id": "skarrsinger-karmelita",
           "label": "Skarrsinger Karmelita",
           "link": "https://hollowknight.wiki/w/Skarrsinger_Karmelita",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479198",
           "required": 1,
           "type": "journal"
         },
@@ -745,6 +806,7 @@
           "id": "mite",
           "label": "Mite",
           "link": "https://hollowknight.wiki/w/Mite",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479681",
           "required": 30,
           "type": "journal"
         },
@@ -757,6 +819,7 @@
           "id": "fluttermite",
           "label": "Fluttermite",
           "link": "https://hollowknight.wiki/w/Fluttermite",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478974",
           "required": 25,
           "type": "journal"
         },
@@ -769,6 +832,7 @@
           "id": "mitemother",
           "label": "Mitemother",
           "link": "https://hollowknight.wiki/w/Mitemother",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478975",
           "required": 10,
           "type": "journal"
         },
@@ -781,6 +845,7 @@
           "id": "dreg-catcher",
           "label": "Dreg Catcher",
           "link": "https://hollowknight.wiki/w/Dreg_Catcher",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479685",
           "required": 20,
           "type": "journal"
         },
@@ -793,6 +858,7 @@
           "id": "silk-snipper",
           "label": "Silk Snipper",
           "link": "https://hollowknight.wiki/w/Silk_Snipper",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478150",
           "required": 25,
           "type": "journal"
         },
@@ -805,6 +871,7 @@
           "id": "thread-raker",
           "label": "Thread Raker",
           "link": "https://hollowknight.wiki/w/Thread_Raker",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478979",
           "required": 15,
           "type": "journal"
         },
@@ -817,6 +884,7 @@
           "id": "moorwing",
           "label": "Moorwing",
           "link": "https://hollowknight.wiki/w/Moorwing",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480340",
           "required": 1,
           "type": "journal"
         },
@@ -829,6 +897,7 @@
           "id": "wisp",
           "label": "Wisp",
           "link": "https://hollowknight.wiki/w/Wisp",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480438",
           "required": 15,
           "type": "journal"
         },
@@ -841,6 +910,7 @@
           "id": "burning-bug",
           "label": "Burning Bug",
           "link": "https://hollowknight.wiki/w/Burning_Bug",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480440",
           "required": 8,
           "type": "journal"
         },
@@ -853,6 +923,7 @@
           "id": "father-of-the-flame",
           "label": "Father of the Flame",
           "link": "https://hollowknight.wiki/w/Father_of_the_Flame",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480349",
           "required": 1,
           "type": "journal"
         },
@@ -865,6 +936,7 @@
           "id": "craw",
           "label": "Craw",
           "link": "https://hollowknight.wiki/w/Craw",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479679",
           "required": 25,
           "type": "journal"
         },
@@ -877,6 +949,7 @@
           "id": "tallcraw",
           "label": "Tallcraw",
           "link": "https://hollowknight.wiki/w/Tallcraw",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479680",
           "required": 20,
           "type": "journal"
         },
@@ -889,6 +962,7 @@
           "id": "squatcraw",
           "label": "Squatcraw",
           "link": "https://hollowknight.wiki/w/Squatcraw",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479682",
           "required": 15,
           "type": "journal"
         },
@@ -901,6 +975,7 @@
           "id": "craw-juror",
           "label": "Craw Juror",
           "link": "https://hollowknight.wiki/w/Craw_Juror",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480485",
           "required": 15,
           "type": "journal"
         },
@@ -913,6 +988,7 @@
           "id": "tallcraw-juror",
           "label": "Tallcraw Juror",
           "link": "https://hollowknight.wiki/w/Tallcraw_Juror",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480486",
           "required": 10,
           "type": "journal"
         },
@@ -925,6 +1001,7 @@
           "id": "squatcraw-juror",
           "label": "Squatcraw Juror",
           "link": "https://hollowknight.wiki/w/Squatcraw_Juror",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480487",
           "required": 8,
           "type": "journal"
         },
@@ -937,6 +1014,7 @@
           "id": "crawfather",
           "label": "Crawfather",
           "link": "https://hollowknight.wiki/w/Crawfather",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480319",
           "required": 1,
           "type": "journal"
         },
@@ -949,6 +1027,7 @@
           "id": "muckmaggot",
           "label": "Muckmaggot",
           "link": "https://hollowknight.wiki/w/Muckmaggot",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480190",
           "required": 80,
           "type": "journal"
         },
@@ -961,6 +1040,7 @@
           "id": "slubberlug",
           "label": "Slubberlug",
           "link": "https://hollowknight.wiki/w/Slubberlug",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478965",
           "required": 12,
           "type": "journal"
         },
@@ -973,6 +1053,7 @@
           "id": "muckroach",
           "label": "Muckroach",
           "link": "https://hollowknight.wiki/w/Muckroach",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478264",
           "required": 20,
           "type": "journal"
         },
@@ -985,6 +1066,7 @@
           "id": "bloatroach",
           "label": "Bloatroach",
           "link": "https://hollowknight.wiki/w/Bloatroach",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478737",
           "required": 12,
           "type": "journal"
         },
@@ -997,6 +1079,7 @@
           "id": "roachcatcher",
           "label": "Roachcatcher",
           "link": "https://hollowknight.wiki/w/Roachcatcher",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478261",
           "required": 20,
           "type": "journal"
         },
@@ -1009,6 +1092,7 @@
           "id": "roachfeeder",
           "label": "Roachfeeder",
           "link": "https://hollowknight.wiki/w/Roachfeeder",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478338",
           "required": 20,
           "type": "journal"
         },
@@ -1021,6 +1105,7 @@
           "id": "roachkeeper",
           "label": "Roachkeeper",
           "link": "https://hollowknight.wiki/w/Roachkeeper",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478697",
           "required": 10,
           "type": "journal"
         },
@@ -1033,6 +1118,7 @@
           "id": "roachserver",
           "label": "Roachserver",
           "link": "https://hollowknight.wiki/w/Roachserver",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478991",
           "required": 10,
           "type": "journal"
         },
@@ -1045,6 +1131,7 @@
           "id": "disgraced-chef-lugoli",
           "label": "Disgraced Chef Lugoli",
           "link": "https://hollowknight.wiki/w/Disgraced_Chef_Lugoli",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480346",
           "required": 1,
           "type": "journal"
         },
@@ -1057,6 +1144,7 @@
           "id": "wraith",
           "label": "Wraith",
           "link": "https://hollowknight.wiki/w/Wraith",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478367",
           "required": 10,
           "type": "journal"
         },
@@ -1069,6 +1157,7 @@
           "id": "mothleaf-lagnia",
           "label": "Mothleaf Lagnia",
           "link": "https://hollowknight.wiki/w/Mothleaf_Lagnia",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478738",
           "required": 25,
           "type": "journal"
         },
@@ -1081,6 +1170,7 @@
           "id": "miremite",
           "label": "Miremite",
           "link": "https://hollowknight.wiki/w/Miremite",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478966",
           "required": 20,
           "type": "journal"
         },
@@ -1093,6 +1183,7 @@
           "id": "swamp-squit",
           "label": "Swamp Squit",
           "link": "https://hollowknight.wiki/w/Swamp_Squit",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478721",
           "required": 30,
           "type": "journal"
         },
@@ -1105,6 +1196,7 @@
           "id": "spit-squit",
           "label": "Spit Squit",
           "link": "https://hollowknight.wiki/w/Spit_Squit",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480261",
           "required": 20,
           "type": "journal"
         },
@@ -1117,6 +1209,7 @@
           "id": "stilkin",
           "label": "Stilkin",
           "link": "https://hollowknight.wiki/w/Stilkin",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480206",
           "required": 15,
           "type": "journal"
         },
@@ -1129,6 +1222,7 @@
           "id": "stilkin-trapper",
           "label": "Stilkin Trapper",
           "link": "https://hollowknight.wiki/w/Stilkin_Trapper",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480238",
           "required": 12,
           "type": "journal"
         },
@@ -1141,6 +1235,7 @@
           "id": "groal-the-great",
           "label": "Groal the Great",
           "link": "https://hollowknight.wiki/w/Groal_the_Great",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480345",
           "required": 1,
           "type": "journal"
         },
@@ -1153,6 +1248,7 @@
           "id": "barnak",
           "label": "Barnak",
           "link": "https://hollowknight.wiki/w/Barnak",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478962",
           "required": 8,
           "type": "journal"
         },
@@ -1165,6 +1261,7 @@
           "id": "ductsucker",
           "label": "Ductsucker",
           "link": "https://hollowknight.wiki/w/Ductsucker",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480211",
           "required": 6,
           "type": "journal"
         },
@@ -1177,6 +1274,7 @@
           "id": "pond-skipper",
           "label": "Pond Skipper",
           "link": "https://hollowknight.wiki/w/Pond_Skipper",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478159",
           "required": 15,
           "type": "journal"
         },
@@ -1189,6 +1287,7 @@
           "id": "pondcatcher",
           "label": "Pondcatcher",
           "link": "https://hollowknight.wiki/w/Pondcatcher",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478161",
           "required": 20,
           "type": "journal"
         },
@@ -1201,6 +1300,7 @@
           "id": "shellwood-gnat",
           "label": "Shellwood Gnat",
           "link": "https://hollowknight.wiki/w/Shellwood_Gnat",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478983",
           "required": 15,
           "type": "journal"
         },
@@ -1213,6 +1313,7 @@
           "id": "wood-wasp",
           "label": "Wood Wasp",
           "link": "https://hollowknight.wiki/w/Wood_Wasp",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478160",
           "required": 12,
           "type": "journal"
         },
@@ -1225,6 +1326,7 @@
           "id": "splinter",
           "label": "Splinter",
           "link": "https://hollowknight.wiki/w/Splinter",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478980",
           "required": 12,
           "type": "journal"
         },
@@ -1237,6 +1339,7 @@
           "id": "splinterhorn",
           "label": "Splinterhorn",
           "link": "https://hollowknight.wiki/w/Splinterhorn",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478169",
           "required": 10,
           "type": "journal"
         },
@@ -1249,6 +1352,7 @@
           "id": "splinterbark",
           "label": "Splinterbark",
           "link": "https://hollowknight.wiki/w/Splinterbark",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478186",
           "required": 10,
           "type": "journal"
         },
@@ -1261,6 +1365,7 @@
           "id": "sister-splinter",
           "label": "Sister Splinter",
           "link": "https://hollowknight.wiki/w/Sister_Splinter",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480324",
           "required": 1,
           "type": "journal"
         },
@@ -1273,6 +1378,7 @@
           "id": "phacia",
           "label": "Phacia",
           "link": "https://hollowknight.wiki/w/Phacia",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478168",
           "required": 25,
           "type": "journal"
         },
@@ -1285,6 +1391,7 @@
           "id": "pollenica",
           "label": "Pollenica",
           "link": "https://hollowknight.wiki/w/Pollenica",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478175",
           "required": 10,
           "type": "journal"
         },
@@ -1297,6 +1404,7 @@
           "id": "gahlia",
           "label": "Gahlia",
           "link": "https://hollowknight.wiki/w/Gahlia",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478181",
           "required": 20,
           "type": "journal"
         },
@@ -1309,6 +1417,7 @@
           "id": "shrine-guardian-seth",
           "label": "Shrine Guardian Seth",
           "link": "https://hollowknight.wiki/w/Shrine_Guardian_Seth",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480352",
           "required": 1,
           "type": "journal"
         },
@@ -1321,6 +1430,7 @@
           "id": "nyleth",
           "label": "Nyleth",
           "link": "https://hollowknight.wiki/w/Nyleth",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480353",
           "required": 1,
           "type": "journal"
         },
@@ -1333,6 +1443,7 @@
           "id": "furm",
           "label": "Furm",
           "link": "https://hollowknight.wiki/w/Furm",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478194",
           "required": 25,
           "type": "journal"
         },
@@ -1345,6 +1456,7 @@
           "id": "winged-furm",
           "label": "Winged Furm",
           "link": "https://hollowknight.wiki/w/Winged_Furm",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478195",
           "required": 12,
           "type": "journal"
         },
@@ -1357,6 +1469,7 @@
           "id": "pharlid",
           "label": "Pharlid",
           "link": "https://hollowknight.wiki/w/Pharlid",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479737",
           "required": 20,
           "type": "journal"
         },
@@ -1369,6 +1482,7 @@
           "id": "pharlid-diver",
           "label": "Pharlid Diver",
           "link": "https://hollowknight.wiki/w/Pharlid_Diver",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478232",
           "required": 10,
           "type": "journal"
         },
@@ -1381,6 +1495,7 @@
           "id": "shardillard",
           "label": "Shardillard",
           "link": "https://hollowknight.wiki/w/Shardillard",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480162",
           "required": 3,
           "type": "journal"
         },
@@ -1393,6 +1508,7 @@
           "id": "sandcarver",
           "label": "Sandcarver",
           "link": "https://hollowknight.wiki/w/Sandcarver",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480191",
           "required": 40,
           "type": "journal"
         },
@@ -1405,6 +1521,7 @@
           "id": "squirrm",
           "label": "Squirrm",
           "link": "https://hollowknight.wiki/w/Squirrm",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479862",
           "required": 4,
           "type": "journal"
         },
@@ -1417,6 +1534,7 @@
           "id": "judge",
           "label": "Judge",
           "link": "https://hollowknight.wiki/w/Judge",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479736",
           "required": 15,
           "type": "journal"
         },
@@ -1429,6 +1547,7 @@
           "id": "last-judge",
           "label": "Last Judge",
           "link": "https://hollowknight.wiki/w/Last_Judge",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480351",
           "required": 1,
           "type": "journal"
         },
@@ -1441,6 +1560,7 @@
           "id": "coral-furm",
           "label": "Coral Furm",
           "link": "https://hollowknight.wiki/w/Coral_Furm",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480363",
           "required": 15,
           "type": "journal"
         },
@@ -1453,6 +1573,7 @@
           "id": "driznit",
           "label": "Driznit",
           "link": "https://hollowknight.wiki/w/Driznit",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478306",
           "required": 25,
           "type": "journal"
         },
@@ -1465,6 +1586,7 @@
           "id": "driznarga",
           "label": "Driznarga",
           "link": "https://hollowknight.wiki/w/Driznarga",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480245",
           "required": 14,
           "type": "journal"
         },
@@ -1477,6 +1599,7 @@
           "id": "pokenabbin",
           "label": "Pokenabbin",
           "link": "https://hollowknight.wiki/w/Pokenabbin",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480366",
           "required": 16,
           "type": "journal"
         },
@@ -1489,6 +1612,7 @@
           "id": "conchfly",
           "label": "Conchfly",
           "link": "https://hollowknight.wiki/w/Conchfly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480369",
           "required": 8,
           "type": "journal"
         },
@@ -1501,6 +1625,7 @@
           "id": "great-conchfly",
           "label": "Great Conchfly",
           "link": "https://hollowknight.wiki/w/Great_Conchfly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480335",
           "required": 2,
           "type": "journal"
         },
@@ -1513,6 +1638,7 @@
           "id": "crustcrawler",
           "label": "Crustcrawler",
           "link": "https://hollowknight.wiki/w/Crustcrawler",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480227",
           "required": 10,
           "type": "journal"
         },
@@ -1525,6 +1651,7 @@
           "id": "crustcrag",
           "label": "Crustcrag",
           "link": "https://hollowknight.wiki/w/Crustcrag",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480243",
           "required": 6,
           "type": "journal"
         },
@@ -1537,6 +1664,7 @@
           "id": "kai",
           "label": "Kai",
           "link": "https://hollowknight.wiki/w/Kai",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480231",
           "required": 10,
           "type": "journal"
         },
@@ -1549,6 +1677,7 @@
           "id": "spinebeak-kai",
           "label": "Spinebeak Kai",
           "link": "https://hollowknight.wiki/w/Spinebeak_Kai",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480235",
           "required": 10,
           "type": "journal"
         },
@@ -1561,6 +1690,7 @@
           "id": "steelspine-kai",
           "label": "Steelspine Kai",
           "link": "https://hollowknight.wiki/w/Steelspine_Kai",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480234",
           "required": 15,
           "type": "journal"
         },
@@ -1573,6 +1703,7 @@
           "id": "yuma",
           "label": "Yuma",
           "link": "https://hollowknight.wiki/w/Yuma",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480233",
           "required": 16,
           "type": "journal"
         },
@@ -1585,6 +1716,7 @@
           "id": "yumama",
           "label": "Yumama",
           "link": "https://hollowknight.wiki/w/Yumama",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480232",
           "required": 3,
           "type": "journal"
         },
@@ -1597,6 +1729,7 @@
           "id": "karaka",
           "label": "Karaka",
           "link": "https://hollowknight.wiki/w/Karaka",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480229",
           "required": 10,
           "type": "journal"
         },
@@ -1609,6 +1742,7 @@
           "id": "kakri",
           "label": "Kakri",
           "link": "https://hollowknight.wiki/w/Kakri",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480230",
           "required": 10,
           "type": "journal"
         },
@@ -1621,6 +1755,7 @@
           "id": "yago",
           "label": "Yago",
           "link": "https://hollowknight.wiki/w/Yago",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480228",
           "required": 12,
           "type": "journal"
         },
@@ -1633,6 +1768,7 @@
           "id": "karak-gor",
           "label": "Karak Gor",
           "link": "https://hollowknight.wiki/w/Karak_Gor",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480225",
           "required": 8,
           "type": "journal"
         },
@@ -1645,6 +1781,7 @@
           "id": "alita",
           "label": "Alita",
           "link": "https://hollowknight.wiki/w/Alita",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480226",
           "required": 6,
           "type": "journal"
         },
@@ -1657,6 +1794,7 @@
           "id": "corrcrust-karaka",
           "label": "Corrcrust Karaka",
           "link": "https://hollowknight.wiki/w/Corrcrust_Karaka",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480224",
           "required": 6,
           "type": "journal"
         },
@@ -1669,6 +1807,7 @@
           "id": "crust-king-khann",
           "label": "Crust King Khann",
           "link": "https://hollowknight.wiki/w/Crust_King_Khann",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480327",
           "required": 1,
           "type": "journal"
         },
@@ -1681,6 +1820,7 @@
           "id": "watcher-at-the-edge",
           "label": "Watcher at the Edge",
           "link": "https://hollowknight.wiki/w/Watcher_at_the_Edge",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480326",
           "required": 1,
           "type": "journal"
         },
@@ -1693,6 +1833,7 @@
           "id": "voltvyrm",
           "label": "Voltvyrm",
           "link": "https://hollowknight.wiki/w/Voltvyrm",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480336",
           "required": 1,
           "type": "journal"
         },
@@ -1705,6 +1846,7 @@
           "id": "drapefly",
           "label": "Drapefly",
           "link": "https://hollowknight.wiki/w/Drapefly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479013",
           "required": 30,
           "type": "journal"
         },
@@ -1717,6 +1859,7 @@
           "id": "drapelord",
           "label": "Drapelord",
           "link": "https://hollowknight.wiki/w/Drapelord",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480263",
           "required": 4,
           "type": "journal"
         },
@@ -1729,6 +1872,7 @@
           "id": "drapemite",
           "label": "Drapemite",
           "link": "https://hollowknight.wiki/w/Drapemite",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479004",
           "required": 20,
           "type": "journal"
         },
@@ -1741,6 +1885,7 @@
           "id": "giant-drapemite",
           "label": "Giant Drapemite",
           "link": "https://hollowknight.wiki/w/Giant_Drapemite",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480005",
           "required": 6,
           "type": "journal"
         },
@@ -1753,6 +1898,7 @@
           "id": "underworker",
           "label": "Underworker",
           "link": "https://hollowknight.wiki/w/Underworker",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479512",
           "required": 15,
           "type": "journal"
         },
@@ -1765,6 +1911,7 @@
           "id": "underscrub",
           "label": "Underscrub",
           "link": "https://hollowknight.wiki/w/Underscrub",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479746",
           "required": 20,
           "type": "journal"
         },
@@ -1777,6 +1924,7 @@
           "id": "undersweep",
           "label": "Undersweep",
           "link": "https://hollowknight.wiki/w/Undersweep",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479837",
           "required": 10,
           "type": "journal"
         },
@@ -1789,6 +1937,7 @@
           "id": "underpoke",
           "label": "Underpoke",
           "link": "https://hollowknight.wiki/w/Underpoke",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479510",
           "required": 25,
           "type": "journal"
         },
@@ -1801,6 +1950,7 @@
           "id": "underloft",
           "label": "Underloft",
           "link": "https://hollowknight.wiki/w/Underloft",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479511",
           "required": 25,
           "type": "journal"
         },
@@ -1813,6 +1963,7 @@
           "id": "undercrank",
           "label": "Undercrank",
           "link": "https://hollowknight.wiki/w/Undercrank",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479836",
           "required": 4,
           "type": "journal"
         },
@@ -1825,6 +1976,7 @@
           "id": "envoy",
           "label": "Envoy",
           "link": "https://hollowknight.wiki/w/Envoy",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479897",
           "required": 20,
           "type": "journal"
         },
@@ -1837,6 +1989,7 @@
           "id": "choir-pouncer",
           "label": "Choir Pouncer",
           "link": "https://hollowknight.wiki/w/Choir_Pouncer",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479885",
           "required": 30,
           "type": "journal"
         },
@@ -1849,6 +2002,7 @@
           "id": "choir-hornhead",
           "label": "Choir Hornhead",
           "link": "https://hollowknight.wiki/w/Choir_Hornhead",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479887",
           "required": 15,
           "type": "journal"
         },
@@ -1861,6 +2015,7 @@
           "id": "choir-bellbearer",
           "label": "Choir Bellbearer",
           "link": "https://hollowknight.wiki/w/Choir_Bellbearer",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479882",
           "required": 25,
           "type": "journal"
         },
@@ -1873,6 +2028,7 @@
           "id": "choir-flyer",
           "label": "Choir Flyer",
           "link": "https://hollowknight.wiki/w/Choir_Flyer",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479886",
           "required": 20,
           "type": "journal"
         },
@@ -1885,6 +2041,7 @@
           "id": "choir-elder",
           "label": "Choir Elder",
           "link": "https://hollowknight.wiki/w/Choir_Elder",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479906",
           "required": 6,
           "type": "journal"
         },
@@ -1897,6 +2054,7 @@
           "id": "choristor",
           "label": "Choristor",
           "link": "https://hollowknight.wiki/w/Choristor",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479883",
           "required": 25,
           "type": "journal"
         },
@@ -1909,6 +2067,7 @@
           "id": "reed",
           "label": "Reed",
           "link": "https://hollowknight.wiki/w/Reed",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479880",
           "required": 30,
           "type": "journal"
         },
@@ -1921,6 +2080,7 @@
           "id": "grand-reed",
           "label": "Grand Reed",
           "link": "https://hollowknight.wiki/w/Grand_Reed",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479918",
           "required": 12,
           "type": "journal"
         },
@@ -1933,6 +2093,7 @@
           "id": "choir-clapper",
           "label": "Choir Clapper",
           "link": "https://hollowknight.wiki/w/Choir_Clapper",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480052",
           "required": 3,
           "type": "journal"
         },
@@ -1945,6 +2106,7 @@
           "id": "clawmaiden",
           "label": "Clawmaiden",
           "link": "https://hollowknight.wiki/w/Clawmaiden",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479899",
           "required": 10,
           "type": "journal"
         },
@@ -1957,6 +2119,7 @@
           "id": "memoria",
           "label": "Memoria",
           "link": "https://hollowknight.wiki/w/Memoria",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480239",
           "required": 2,
           "type": "journal"
         },
@@ -1969,6 +2132,7 @@
           "id": "minister",
           "label": "Minister",
           "link": "https://hollowknight.wiki/w/Minister",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480050",
           "required": 15,
           "type": "journal"
         },
@@ -1981,6 +2145,7 @@
           "id": "maestro",
           "label": "Maestro",
           "link": "https://hollowknight.wiki/w/Maestro",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480049",
           "required": 6,
           "type": "journal"
         },
@@ -1993,6 +2158,7 @@
           "id": "second-sentinel",
           "label": "Second Sentinel",
           "link": "https://hollowknight.wiki/w/Second_Sentinel",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480348",
           "required": 1,
           "type": "journal"
         },
@@ -2005,6 +2171,7 @@
           "id": "dreg-husk",
           "label": "Dreg Husk",
           "link": "https://hollowknight.wiki/w/Dreg_Husk",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480036",
           "required": 8,
           "type": "journal"
         },
@@ -2017,6 +2184,7 @@
           "id": "dregwheel",
           "label": "Dregwheel",
           "link": "https://hollowknight.wiki/w/Dregwheel",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480043",
           "required": 8,
           "type": "journal"
         },
@@ -2029,6 +2197,7 @@
           "id": "surgeon",
           "label": "Surgeon",
           "link": "https://hollowknight.wiki/w/Surgeon",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480409",
           "required": 3,
           "type": "journal"
         },
@@ -2041,6 +2210,7 @@
           "id": "mortician",
           "label": "Mortician",
           "link": "https://hollowknight.wiki/w/Mortician",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480040",
           "required": 10,
           "type": "journal"
         },
@@ -2053,6 +2223,7 @@
           "id": "the-unravelled",
           "label": "The Unravelled",
           "link": "https://hollowknight.wiki/w/The_Unravelled",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480354",
           "required": 1,
           "type": "journal"
         },
@@ -2065,6 +2236,7 @@
           "id": "cogwork-underfly",
           "label": "Cogwork Underfly",
           "link": "https://hollowknight.wiki/w/Cogwork_Underfly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480021",
           "required": 25,
           "type": "journal"
         },
@@ -2077,6 +2249,7 @@
           "id": "cogwork-hauler",
           "label": "Cogwork Hauler",
           "link": "https://hollowknight.wiki/w/Cogwork_Hauler",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480022",
           "required": 12,
           "type": "journal"
         },
@@ -2089,6 +2262,7 @@
           "id": "cogwork-crawler",
           "label": "Cogwork Crawler",
           "link": "https://hollowknight.wiki/w/Cogwork_Crawler",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479962",
           "required": 15,
           "type": "journal"
         },
@@ -2101,6 +2275,7 @@
           "id": "cogworker",
           "label": "Cogworker",
           "link": "https://hollowknight.wiki/w/Cogworker",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479938",
           "required": 15,
           "type": "journal"
         },
@@ -2113,6 +2288,7 @@
           "id": "cogwork-spine",
           "label": "Cogwork Spine",
           "link": "https://hollowknight.wiki/w/Cogwork_Spine",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479963",
           "required": 10,
           "type": "journal"
         },
@@ -2125,6 +2301,7 @@
           "id": "cogwork-choirbug",
           "label": "Cogwork Choirbug",
           "link": "https://hollowknight.wiki/w/Cogwork_Choirbug",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479961",
           "required": 20,
           "type": "journal"
         },
@@ -2137,6 +2314,7 @@
           "id": "cogwork-cleanser",
           "label": "Cogwork Cleanser",
           "link": "https://hollowknight.wiki/w/Cogwork_Cleanser",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479968",
           "required": 12,
           "type": "journal"
         },
@@ -2149,6 +2327,7 @@
           "id": "cogwork-defender",
           "label": "Cogwork Defender",
           "link": "https://hollowknight.wiki/w/Cogwork_Defender",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479982",
           "required": 8,
           "type": "journal"
         },
@@ -2161,6 +2340,7 @@
           "id": "cogwork-clapper",
           "label": "Cogwork Clapper",
           "link": "https://hollowknight.wiki/w/Cogwork_Clapper",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479971",
           "required": 1,
           "type": "journal"
         },
@@ -2173,6 +2353,7 @@
           "id": "cogwork-dancers",
           "label": "Cogwork Dancers",
           "link": "https://hollowknight.wiki/w/Cogwork_Dancers",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480347",
           "required": 1,
           "type": "journal"
         },
@@ -2185,6 +2366,7 @@
           "id": "vaultborn",
           "label": "Vaultborn",
           "link": "https://hollowknight.wiki/w/Vaultborn",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480008",
           "required": 20,
           "type": "journal"
         },
@@ -2197,6 +2379,7 @@
           "id": "lampbearer",
           "label": "Lampbearer",
           "link": "https://hollowknight.wiki/w/Lampbearer",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479994",
           "required": 20,
           "type": "journal"
         },
@@ -2209,6 +2392,7 @@
           "id": "scrollreader",
           "label": "Scrollreader",
           "link": "https://hollowknight.wiki/w/Scrollreader",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479991",
           "required": 15,
           "type": "journal"
         },
@@ -2221,6 +2405,7 @@
           "id": "vaultkeeper",
           "label": "Vaultkeeper",
           "link": "https://hollowknight.wiki/w/Vaultkeeper",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479999",
           "required": 10,
           "type": "journal"
         },
@@ -2233,6 +2418,7 @@
           "id": "trobbio",
           "label": "Trobbio",
           "link": "https://hollowknight.wiki/w/Trobbio",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480343",
           "required": 1,
           "type": "journal"
         },
@@ -2245,6 +2431,7 @@
           "id": "tormented-trobbio",
           "label": "Tormented Trobbio",
           "link": "https://hollowknight.wiki/w/Tormented_Trobbio",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480344",
           "required": 1,
           "type": "journal"
         },
@@ -2257,6 +2444,7 @@
           "id": "penitent",
           "label": "Penitent",
           "link": "https://hollowknight.wiki/w/Penitent",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479005",
           "required": 8,
           "type": "journal"
         },
@@ -2269,6 +2457,7 @@
           "id": "puny-penitent",
           "label": "Puny Penitent",
           "link": "https://hollowknight.wiki/w/Puny_Penitent",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479006",
           "required": 6,
           "type": "journal"
         },
@@ -2281,6 +2470,7 @@
           "id": "freshfly",
           "label": "Freshfly",
           "link": "https://hollowknight.wiki/w/Freshfly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480479",
           "required": 20,
           "type": "journal"
         },
@@ -2293,6 +2483,7 @@
           "id": "scabfly",
           "label": "Scabfly",
           "link": "https://hollowknight.wiki/w/Scabfly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479008",
           "required": 15,
           "type": "journal"
         },
@@ -2305,6 +2496,7 @@
           "id": "guardfly",
           "label": "Guardfly",
           "link": "https://hollowknight.wiki/w/Guardfly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479007",
           "required": 10,
           "type": "journal"
         },
@@ -2317,6 +2509,7 @@
           "id": "wardenfly",
           "label": "Wardenfly",
           "link": "https://hollowknight.wiki/w/Wardenfly",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479011",
           "required": 8,
           "type": "journal"
         },
@@ -2329,6 +2522,7 @@
           "id": "broodmother",
           "label": "Broodmother",
           "link": "https://hollowknight.wiki/w/Broodmother",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480338",
           "required": 1,
           "type": "journal"
         },
@@ -2341,6 +2535,7 @@
           "id": "driftlin",
           "label": "Driftlin",
           "link": "https://hollowknight.wiki/w/Driftlin",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479036",
           "required": 20,
           "type": "journal"
         },
@@ -2353,6 +2548,7 @@
           "id": "mnemonid",
           "label": "Mnemonid",
           "link": "https://hollowknight.wiki/w/Mnemonid",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479043",
           "required": 10,
           "type": "journal"
         },
@@ -2365,6 +2561,7 @@
           "id": "mnemonord",
           "label": "Mnemonord",
           "link": "https://hollowknight.wiki/w/Mnemonord",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480198",
           "required": 3,
           "type": "journal"
         },
@@ -2377,6 +2574,7 @@
           "id": "servitor-ignim",
           "label": "Servitor Ignim",
           "link": "https://hollowknight.wiki/w/Servitor_Ignim",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478215",
           "required": 8,
           "type": "journal"
         },
@@ -2389,6 +2587,7 @@
           "id": "servitor-boran",
           "label": "Servitor Boran",
           "link": "https://hollowknight.wiki/w/Servitor_Boran",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479041",
           "required": 5,
           "type": "journal"
         },
@@ -2401,6 +2600,7 @@
           "id": "winged-lifeseed",
           "label": "Winged Lifeseed",
           "link": "https://hollowknight.wiki/w/Winged_Lifeseed",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479858",
           "required": 8,
           "type": "journal"
         },
@@ -2413,6 +2613,7 @@
           "id": "plasmid",
           "label": "Plasmid",
           "link": "https://hollowknight.wiki/w/Plasmid",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480146",
           "required": 15,
           "type": "journal"
         },
@@ -2425,6 +2626,7 @@
           "id": "plasmidas",
           "label": "Plasmidas",
           "link": "https://hollowknight.wiki/w/Plasmidas",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480331",
           "required": 6,
           "type": "journal"
         },
@@ -2437,6 +2639,7 @@
           "id": "plasmified-zango",
           "label": "Plasmified Zango",
           "link": "https://hollowknight.wiki/w/Plasmified_Zango",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479273",
           "required": 1,
           "type": "journal"
         },
@@ -2449,6 +2652,7 @@
           "id": "leaf-glider",
           "label": "Leaf Glider",
           "link": "https://hollowknight.wiki/w/Leaf_Glider",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
           "required": 12,
           "type": "journal"
         },
@@ -2461,6 +2665,7 @@
           "id": "leaf-roller",
           "label": "Leaf Roller",
           "link": "https://hollowknight.wiki/w/Leaf_Roller",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480218",
           "required": 10,
           "type": "journal"
         },
@@ -2473,6 +2678,7 @@
           "id": "pendra",
           "label": "Pendra",
           "link": "https://hollowknight.wiki/w/Pendra",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480217",
           "required": 10,
           "type": "journal"
         },
@@ -2485,6 +2691,7 @@
           "id": "pendragor",
           "label": "Pendragor",
           "link": "https://hollowknight.wiki/w/Pendragor",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480223",
           "required": 10,
           "type": "journal"
         },
@@ -2497,6 +2704,7 @@
           "id": "nuphar",
           "label": "Nuphar",
           "link": "https://hollowknight.wiki/w/Nuphar",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480481",
           "required": 6,
           "type": "journal"
         },
@@ -2509,6 +2717,7 @@
           "id": "cloverstag",
           "label": "Cloverstag",
           "link": "https://hollowknight.wiki/w/Cloverstag",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480222",
           "required": 10,
           "type": "journal"
         },
@@ -2521,6 +2730,7 @@
           "id": "palestag",
           "label": "Palestag",
           "link": "https://hollowknight.wiki/w/Palestag",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480221",
           "required": 1,
           "type": "journal"
         },
@@ -2533,6 +2743,7 @@
           "id": "kindanir",
           "label": "Kindanir",
           "link": "https://hollowknight.wiki/w/Kindanir",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480321",
           "required": 10,
           "type": "journal"
         },
@@ -2545,6 +2756,7 @@
           "id": "verdanir",
           "label": "Verdanir",
           "link": "https://hollowknight.wiki/w/Verdanir",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480215",
           "required": 10,
           "type": "journal"
         },
@@ -2557,6 +2769,7 @@
           "id": "escalion",
           "label": "Escalion",
           "link": "https://hollowknight.wiki/w/Escalion",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480219",
           "required": 10,
           "type": "journal"
         },
@@ -2569,6 +2782,7 @@
           "id": "clover-dancers",
           "label": "Clover Dancers",
           "link": "https://hollowknight.wiki/w/Clover_Dancers",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480220",
           "required": 1,
           "type": "journal"
         },
@@ -2581,6 +2795,7 @@
           "id": "shadow-creeper",
           "label": "Shadow Creeper",
           "link": "https://hollowknight.wiki/w/Shadow_Creeper",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480322",
           "required": 16,
           "type": "journal"
         },
@@ -2593,6 +2808,7 @@
           "id": "shadow-charger",
           "label": "Shadow Charger",
           "link": "https://hollowknight.wiki/w/Shadow_Charger",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480134",
           "required": 6,
           "type": "journal"
         },
@@ -2605,6 +2821,7 @@
           "id": "gloomsac",
           "label": "Gloomsac",
           "link": "https://hollowknight.wiki/w/Gloomsac",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480135",
           "required": 15,
           "type": "journal"
         },
@@ -2617,6 +2834,7 @@
           "id": "gargant-gloom",
           "label": "Gargant Gloom",
           "link": "https://hollowknight.wiki/w/Gargant_Gloom",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480133",
           "required": 4,
           "type": "journal"
         },
@@ -2629,6 +2847,7 @@
           "id": "void-tendrils",
           "label": "Void Tendrils",
           "link": "https://hollowknight.wiki/w/Void_Tendrils",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480132",
           "required": 1,
           "type": "journal"
         },
@@ -2641,6 +2860,7 @@
           "id": "void-mass",
           "label": "Void Mass",
           "link": "https://hollowknight.wiki/w/Void_Mass",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479744",
           "required": 8,
           "type": "journal"
         },
@@ -2653,6 +2873,7 @@
           "id": "summoned-saviour",
           "label": "Summoned Saviour",
           "link": "https://hollowknight.wiki/w/Summoned_Saviour",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480418",
           "mode": "steel",
           "required": 1,
           "type": "journal"
@@ -2666,6 +2887,7 @@
           "id": "wingmould",
           "label": "Wingmould",
           "link": "https://hollowknight.wiki/w/Wingmould",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480310",
           "required": 10,
           "type": "journal"
         },
@@ -2678,6 +2900,7 @@
           "id": "garpid",
           "label": "Garpid",
           "link": "https://hollowknight.wiki/w/Garpid",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480415",
           "required": 30,
           "type": "journal"
         },
@@ -2690,6 +2913,7 @@
           "id": "imoba",
           "label": "Imoba",
           "link": "https://hollowknight.wiki/w/Imoba",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479626",
           "required": 4,
           "type": "journal"
         },
@@ -2702,6 +2926,7 @@
           "id": "skrill",
           "label": "Skrill",
           "link": "https://hollowknight.wiki/w/Skrill",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479627",
           "required": 10,
           "type": "journal"
         },
@@ -2714,6 +2939,7 @@
           "id": "bell-eater",
           "label": "Bell Eater",
           "link": "https://hollowknight.wiki/w/Bell_Eater",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480350",
           "required": 1,
           "type": "journal"
         },
@@ -2726,6 +2952,7 @@
           "id": "huge-flea",
           "label": "Huge Flea",
           "link": "https://hollowknight.wiki/w/Huge_Flea",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479122",
           "required": 1,
           "type": "journal"
         },
@@ -2738,6 +2965,7 @@
           "id": "shakra",
           "label": "Shakra",
           "link": "https://hollowknight.wiki/w/Shakra",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479822",
           "required": 1,
           "type": "journal"
         },
@@ -2750,6 +2978,7 @@
           "id": "garmond-&-zaza",
           "label": "Garmond & Zaza",
           "link": "https://hollowknight.wiki/w/Garmond_&_Zaza",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479361",
           "required": 1,
           "type": "journal"
         },
@@ -2762,6 +2991,7 @@
           "id": "lost-garmond",
           "label": "Lost Garmond",
           "link": "https://hollowknight.wiki/w/Lost_Garmond",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480325",
           "required": 1,
           "type": "journal"
         },
@@ -2774,6 +3004,7 @@
           "id": "pinstress",
           "label": "Pinstress",
           "link": "https://hollowknight.wiki/w/Pinstress",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480337",
           "required": 1,
           "type": "journal"
         },
@@ -2786,6 +3017,7 @@
           "id": "widow",
           "label": "Widow",
           "link": "https://hollowknight.wiki/w/Widow",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480323",
           "required": 1,
           "type": "journal"
         },
@@ -2798,6 +3030,7 @@
           "id": "first-sinner",
           "label": "First Sinner",
           "link": "https://hollowknight.wiki/w/First_Sinner",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480339",
           "required": 1,
           "type": "journal"
         },
@@ -2810,6 +3043,7 @@
           "id": "phantom",
           "label": "Phantom",
           "link": "https://hollowknight.wiki/w/Phantom",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480356",
           "required": 1,
           "type": "journal"
         },
@@ -2822,6 +3056,7 @@
           "id": "lace",
           "label": "Lace",
           "link": "https://hollowknight.wiki/w/Lace",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480355",
           "required": 2,
           "type": "journal"
         },
@@ -2834,6 +3069,7 @@
           "id": "grand-mother-silk",
           "label": "Grand Mother Silk",
           "link": "https://hollowknight.wiki/w/Grand_Mother_Silk",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480342",
           "required": 1,
           "type": "journal"
         },
@@ -2846,6 +3082,7 @@
           "id": "lost-lace",
           "label": "Lost Lace",
           "link": "https://hollowknight.wiki/w/Lost_Lace",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480341",
           "required": 1,
           "type": "journal"
         }
