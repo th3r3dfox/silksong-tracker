@@ -2873,8 +2873,8 @@
           "id": "summoned-saviour",
           "label": "Summoned Saviour",
           "link": "https://hollowknight.wiki/w/Summoned_Saviour",
-          "mode": "steel",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480418",
+          "mode": "steel",
           "required": 1,
           "type": "journal"
         },
