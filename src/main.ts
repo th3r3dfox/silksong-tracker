@@ -14,7 +14,6 @@ import {
   fileInput,
   getHTMLElement,
   getHTMLElements,
-  infoContent,
   infoOverlay,
   uploadOverlay,
 } from "./elements.ts";
