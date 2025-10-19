@@ -165,6 +165,13 @@ document.addEventListener("DOMContentLoaded", () => {
       infoOverlay.classList.add("hidden");
     }
   });
+
+  // Close Info modal on Escape key press.
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      infoOverlay.classList.add("hidden");
+    }
+  });
 });
 
 main();
