@@ -50,6 +50,10 @@
                   "pattern": "^[^\\s%]*$",
                   "type": "string"
                 },
+                "map": {
+                  "description": "Map location or URL",
+                  "type": "string"
+                },
                 "missable": {
                   "description": "Whether this entry can be permanently missed",
                   "type": "boolean"
