@@ -154,17 +154,21 @@ export function updateTabProgress(): void {
         });
 
         filteredItems = filteredItems.filter((item) => {
-          const flag = item.type === "sceneVisited" ? undefined : item.flag;
+          // Skip this filtering entirely for sceneVisited types.
+          if (item.type === "sceneVisited") {
+            return true;
+          }
+
+          const { flag } = item;
+          // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
           if (flag === undefined) {
             return false;
           }
 
-          // If something in the group is owned keep only that one.
           if (owned !== undefined) {
             return !includes(group, flag) || flag === owned;
           }
 
-          // If nothing owned keep only the first defined variant (default).
           const defaultFlag = group[0];
           return !includes(group, flag) || flag === defaultFlag;
         });
@@ -508,7 +512,13 @@ function renderGenericGrid(
 
     if (owned !== undefined) {
       items = items.filter((item) => {
-        const flag = item.type === "sceneVisited" ? undefined : item.flag;
+        // Skip filtering entirely for sceneVisited items.
+        if (item.type === "sceneVisited") {
+          return true;
+        }
+
+        const { flag } = item;
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         if (flag === undefined) {
           return false;
         }
