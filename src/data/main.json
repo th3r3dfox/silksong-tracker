@@ -541,6 +541,7 @@
           "id": "silk-heart-1",
           "label": "Silk Heart #1",
           "link": "https://hollowknight.wiki/w/Silk_Heart",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477879",
           "scene": "Memory_Silk_Heart_BellBeast",
           "type": "sceneVisited"
         },
@@ -551,6 +552,7 @@
           "id": "silk-heart-2",
           "label": "Silk Heart #2",
           "link": "https://hollowknight.wiki/w/Silk_Heart",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479082",
           "scene": "Memory_Silk_Heart_WardBoss",
           "type": "sceneVisited"
         },
@@ -561,6 +563,7 @@
           "id": "silk-heart-3",
           "label": "Silk Heart #3",
           "link": "https://hollowknight.wiki/w/Silk_Heart",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479089",
           "scene": "Memory_Silk_Heart_LaceTower",
           "type": "sceneVisited"
         }
@@ -578,6 +581,7 @@
           "id": "everbloom",
           "label": "Everbloom",
           "link": "https://hollowknight.wiki/w/Everbloom",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479387",
           "type": "collectable"
         },
         {
@@ -588,6 +592,7 @@
           "id": "bind-eva",
           "label": "Bind Eva",
           "link": "https://hollowknight.wiki/w/Eva",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478228",
           "type": "flag"
         }
       ],
@@ -614,6 +619,7 @@
           "id": "crest-reaper",
           "label": "Reaper Crest",
           "link": "https://hollowknight.wiki/w/Reaper_Crest",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478156",
           "type": "tool"
         },
         {
@@ -624,6 +630,7 @@
           "id": "crest-wanderer",
           "label": "Wanderer Crest",
           "link": "https://hollowknight.wiki/w/Wanderer_Crest",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478240",
           "type": "tool"
         },
         {
@@ -634,6 +641,7 @@
           "id": "crest-beast",
           "label": "Beast Crest",
           "link": "https://hollowknight.wiki/w/Beast_Crest",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478020",
           "type": "tool"
         },
         {
@@ -644,6 +652,7 @@
           "id": "crest-witch",
           "label": "Witch Crest",
           "link": "https://hollowknight.wiki/w/Witch_Crest",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478815",
           "type": "tool"
         },
         {
@@ -654,6 +663,7 @@
           "id": "crest-architect",
           "label": "Architect Crest",
           "link": "https://hollowknight.wiki/w/Architect_Crest",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478745",
           "type": "tool"
         },
         {
@@ -664,6 +674,7 @@
           "id": "crest-shaman",
           "label": "Shaman Crest",
           "link": "https://hollowknight.wiki/w/Shaman_Crest",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479384",
           "type": "tool"
         }
       ],
@@ -680,6 +691,7 @@
           "id": "silkspear",
           "label": "Silkspear",
           "link": "https://hollowknight.wiki/w/Silkspear",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477871",
           "type": "tool"
         },
         {
@@ -690,6 +702,7 @@
           "id": "thread-storm",
           "label": "Thread Storm",
           "link": "https://hollowknight.wiki/w/Thread_Sphere",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478061",
           "type": "tool"
         },
         {
@@ -700,6 +713,7 @@
           "id": "cross-stitch",
           "label": "Cross Stitch",
           "link": "https://hollowknight.wiki/w/Cross_Stitch",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478371",
           "type": "tool"
         },
         {
@@ -710,6 +724,7 @@
           "id": "sharpdart",
           "label": "Sharpdart",
           "link": "https://hollowknight.wiki/w/Sharpdart",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479079",
           "type": "tool"
         },
         {
@@ -720,6 +735,7 @@
           "id": "rune-rage",
           "label": "Rune Rage",
           "link": "https://hollowknight.wiki/w/Rune_Rage",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479025",
           "type": "tool"
         },
         {
@@ -730,6 +746,7 @@
           "id": "pale-nails",
           "label": "Pale Nails",
           "link": "https://hollowknight.wiki/w/Pale_Nails",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479606",
           "type": "tool"
         }
       ],
@@ -757,6 +774,7 @@
           "id": "tool-pouch-1",
           "label": "Expanded Tool Pouch #1",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477946",
           "required": 1,
           "type": "level"
         },
@@ -768,6 +786,7 @@
           "id": "tool-pouch-2",
           "label": "Large Tool Pouch #2",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478252",
           "required": 2,
           "type": "level"
         },
@@ -779,6 +798,7 @@
           "id": "tool-pouch-3",
           "label": "Huge Tool Pouch #3",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479167",
           "required": 3,
           "type": "level"
         },
@@ -790,6 +810,7 @@
           "id": "tool-pouch-4",
           "label": "Max Tool Pouch #4",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479436",
           "required": 4,
           "type": "level"
         }
@@ -818,6 +839,7 @@
           "id": "crafting-kit-1",
           "label": "Expanded Crafting Kit #1",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477919",
           "required": 1,
           "type": "flag"
         },
@@ -829,6 +851,7 @@
           "id": "crafting-kit-2",
           "label": "Large Crafting Kit #2",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478348",
           "required": 2,
           "type": "quest"
         },
@@ -840,6 +863,7 @@
           "id": "crafting-kit-3",
           "label": "Huge Crafting Kit #3",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478728",
           "required": 3,
           "type": "flag"
         },
@@ -851,6 +875,7 @@
           "id": "crafting-kit-4",
           "label": "Max Crafting Kit #4",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478533",
           "required": 4,
           "type": "flag"
         }
@@ -868,6 +893,7 @@
           "id": "ability-swift-step",
           "label": "Swift Step",
           "link": "https://hollowknight.wiki/w/Swift_Step",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477915",
           "type": "flag"
         },
         {
@@ -878,6 +904,7 @@
           "id": "ability-cling-grip",
           "label": "Cling Grip",
           "link": "https://hollowknight.wiki/w/Cling_Grip",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478189",
           "type": "flag"
         },
         {
@@ -888,16 +915,18 @@
           "id": "ability-needolin",
           "label": "Needolin",
           "link": "https://hollowknight.wiki/w/Needolin",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478199",
           "type": "flag"
         },
         {
           "act": 2,
           "description": "Advanced Weaver talent. Throw the Silk-strung needle like a harpoon and charge towards it.",
-          "flag": "hasQuill",
+          "flag": "hasHarpoonDash",
           "icon": "icons/Clawline.png",
           "id": "ability-clawline",
           "label": "Clawline",
           "link": "https://hollowknight.wiki/w/Clawline",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478714",
           "type": "flag"
         },
         {
@@ -908,6 +937,7 @@
           "id": "ability-silk-soar",
           "label": "Silk Soar",
           "link": "https://hollowknight.wiki/w/Silk_Soar",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479288",
           "type": "flag"
         },
         {
@@ -918,6 +948,7 @@
           "id": "ability-needle-strike",
           "label": "Needle Strike",
           "link": "https://hollowknight.wiki/w/Needle_Strike",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478510",
           "type": "flag"
         }
       ],
@@ -934,7 +965,7 @@
           "id": "red-straight-pin",
           "label": "Straight Pin",
           "link": "https://hollowknight.wiki/w/Straight_Pin",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477899",
           "type": "tool"
         },
         {
@@ -945,7 +976,7 @@
           "id": "red-threefold-pin",
           "label": "Threefold Pin",
           "link": "https://hollowknight.wiki/w/Threefold_Pin",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478058",
           "type": "tool"
         },
         {
@@ -956,7 +987,7 @@
           "id": "red-sting-shard",
           "label": "Sting Shard",
           "link": "https://hollowknight.wiki/w/Sting_Shard",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477917",
           "type": "tool"
         },
         {
@@ -967,18 +998,18 @@
           "id": "red-tacks",
           "label": "Tacks",
           "link": "https://hollowknight.wiki/w/Tacks",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478365",
           "type": "tool"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Reward for completing the Trail's End wish.",
           "flag": "Shakra Ring",
           "icon": "icons/Throwing_Ring.png",
           "id": "red-throwing-ring",
           "label": "Throwing Ring",
           "link": "https://hollowknight.wiki/w/Throwing_Ring",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479242",
           "type": "tool"
         },
         {
@@ -989,7 +1020,7 @@
           "id": "red-longpin",
           "label": "Longpin",
           "link": "https://hollowknight.wiki/w/Longpin",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478158",
           "type": "tool"
         },
         {
@@ -1000,7 +1031,7 @@
           "id": "red-curveclaw",
           "label": "Curveclaw",
           "link": "https://hollowknight.wiki/w/Curveclaw",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478604",
           "type": "tool"
         },
         {
@@ -1011,7 +1042,7 @@
           "id": "red-curveclaw-upgrade",
           "label": "Curvesickle",
           "link": "https://hollowknight.wiki/w/Curvesickle",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479675",
           "type": "tool",
           "upgradeOf": "red-curveclaw"
         },
@@ -1023,7 +1054,7 @@
           "id": "red-pimpillo",
           "label": "Pimpillo",
           "link": "https://hollowknight.wiki/w/Pimpillo",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478964",
           "type": "tool"
         },
         {
@@ -1035,7 +1066,7 @@
           "id": "red-silkshot-architect",
           "label": "Silkshot (Architect)",
           "link": "https://hollowknight.wiki/w/Silkshot",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478732",
           "type": "tool"
         },
         {
@@ -1047,7 +1078,7 @@
           "id": "red-silkshot-forge",
           "label": "Silkshot (Forge)",
           "link": "https://hollowknight.wiki/w/Silkshot",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479364",
           "type": "tool"
         },
         {
@@ -1059,7 +1090,7 @@
           "id": "red-silkshot-weaver",
           "label": "Silkshot (Weaver)",
           "link": "https://hollowknight.wiki/w/Silkshot",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479497",
           "type": "tool"
         },
         {
@@ -1070,7 +1101,7 @@
           "id": "red-conchcutter",
           "label": "Conchcutter",
           "link": "https://hollowknight.wiki/w/Conchcutter",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479230",
           "type": "tool"
         },
         {
@@ -1081,7 +1112,7 @@
           "id": "red-delvers-drill",
           "label": "Delver's Drill",
           "link": "https://hollowknight.wiki/w/Delver's_Drill",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478577",
           "type": "tool"
         },
         {
@@ -1092,7 +1123,7 @@
           "id": "red-cogwork-wheel",
           "label": "Cogwork Wheel",
           "link": "https://hollowknight.wiki/w/Cogwork_Wheel",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478725",
           "type": "tool"
         },
         {
@@ -1103,7 +1134,7 @@
           "id": "red-voltvessels",
           "label": "Voltvessels",
           "link": "https://hollowknight.wiki/w/Voltvessels",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479121",
           "type": "tool"
         },
         {
@@ -1114,7 +1145,7 @@
           "id": "red-cogfly",
           "label": "CogFly",
           "link": "https://hollowknight.wiki/w/Cogfly",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478903",
           "type": "tool"
         },
         {
@@ -1125,7 +1156,7 @@
           "id": "red-rosary-cannon",
           "label": "Rosary Cannon",
           "link": "https://hollowknight.wiki/w/Rosary_Cannon",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478937",
           "type": "tool"
         },
         {
@@ -1136,7 +1167,7 @@
           "id": "red-flintslate",
           "label": "Flintslate",
           "link": "https://hollowknight.wiki/w/Flintslate",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477986",
           "type": "tool"
         },
         {
@@ -1147,7 +1178,7 @@
           "id": "red-plasmium-phial",
           "label": "Plasmium Phial",
           "link": "https://hollowknight.wiki/w/Plasmium_Phial",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478496",
           "type": "tool"
         },
         {
@@ -1158,7 +1189,7 @@
           "id": "red-flea-brew",
           "label": "Flea Brew",
           "link": "https://hollowknight.wiki/w/Flea_Brew",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478025",
           "type": "tool"
         }
       ],
@@ -1175,7 +1206,7 @@
           "id": "blue-druids-eye",
           "label": "Druid's Eye",
           "link": "https://hollowknight.wiki/w/Druid's_Eye",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478255",
           "type": "tool"
         },
         {
@@ -1186,7 +1217,7 @@
           "id": "blue-druids-eye",
           "label": "Druid's Eyes",
           "link": "https://hollowknight.wiki/w/Druid's_Eyes",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480493",
           "type": "tool",
           "upgradeOf": "blue-druids-eye"
         },
@@ -1198,7 +1229,7 @@
           "id": "blue-magma-bell",
           "label": "Magma Bell",
           "link": "https://hollowknight.wiki/w/Magma_Bell",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477918",
           "type": "tool"
         },
         {
@@ -1209,7 +1240,7 @@
           "id": "blue-warding-bell",
           "label": "Warding Bell",
           "link": "https://hollowknight.wiki/w/Warding_Bell",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477935",
           "type": "tool"
         },
         {
@@ -1220,7 +1251,7 @@
           "id": "blue-pollip-pouch",
           "label": "Pollip Pouch",
           "link": "https://hollowknight.wiki/w/Pollip_Pouch",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478294",
           "type": "tool"
         },
         {
@@ -1231,7 +1262,7 @@
           "id": "blue-fractured-mask",
           "label": "Fractured Mask",
           "link": "https://hollowknight.wiki/w/Fractured_Mask",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478607",
           "type": "tool"
         },
         {
@@ -1242,7 +1273,7 @@
           "id": "blue-multibinder",
           "label": "Multibinder",
           "link": "https://hollowknight.wiki/w/Multibinder",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478203",
           "type": "tool"
         },
         {
@@ -1253,7 +1284,7 @@
           "id": "blue-weavelight",
           "label": "Weavelight",
           "link": "https://hollowknight.wiki/w/Weavelight",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479070",
           "type": "tool"
         },
         {
@@ -1264,7 +1295,7 @@
           "id": "blue-sawtooth-circlet",
           "label": "Sawtooth Circlet",
           "link": "https://hollowknight.wiki/w/Sawtooth_Circlet",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478726",
           "type": "tool"
         },
         {
@@ -1275,7 +1306,7 @@
           "id": "blue-injector-band",
           "label": "Injector Band",
           "link": "https://hollowknight.wiki/w/Injector_Band",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479182",
           "type": "tool"
         },
         {
@@ -1286,7 +1317,7 @@
           "id": "blue-spool-extender",
           "label": "Spool Extender",
           "link": "https://hollowknight.wiki/w/Spool_Extender",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478881",
           "type": "tool"
         },
         {
@@ -1297,7 +1328,7 @@
           "id": "blue-reserve-bind",
           "label": "Reserve Bind",
           "link": "https://hollowknight.wiki/w/Reserve_Bind",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479254",
           "type": "tool"
         },
         {
@@ -1308,7 +1339,7 @@
           "id": "blue-claw-mirror",
           "label": "Claw Mirror",
           "link": "https://hollowknight.wiki/w/Claw_Mirror",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478691",
           "type": "tool"
         },
         {
@@ -1319,7 +1350,7 @@
           "id": "blue-memory-crystal",
           "label": "Memory Crystal",
           "link": "https://hollowknight.wiki/w/Memory_Crystal",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478947",
           "type": "tool"
         },
         {
@@ -1330,7 +1361,7 @@
           "id": "blue-snitch-pick",
           "label": "Snitch Pick",
           "link": "https://hollowknight.wiki/w/Snitch_Pick",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479201",
           "type": "tool"
         },
         {
@@ -1341,7 +1372,7 @@
           "id": "blue-volt-filament",
           "label": "Volt Filament",
           "link": "https://hollowknight.wiki/w/Volt_Filament",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479224",
           "type": "tool"
         },
         {
@@ -1352,7 +1383,7 @@
           "id": "blue-quick-sling",
           "label": "Quick Sling",
           "link": "https://hollowknight.wiki/w/Quick_Sling",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478848",
           "type": "tool"
         },
         {
@@ -1363,7 +1394,7 @@
           "id": "blue-wreath-of-purity",
           "label": "Wreath of Purity",
           "link": "https://hollowknight.wiki/w/Wreath_of_Purity",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479133",
           "type": "tool"
         },
         {
@@ -1374,7 +1405,7 @@
           "id": "blue-longclaw",
           "label": "Longclaw",
           "link": "https://hollowknight.wiki/w/Longclaw",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479240",
           "type": "tool"
         },
         {
@@ -1385,7 +1416,7 @@
           "id": "blue-wispfire-lantern",
           "label": "Wispfire Lantern",
           "link": "https://hollowknight.wiki/w/Wispfire_Lantern",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479156",
           "type": "tool"
         },
         {
@@ -1396,7 +1427,7 @@
           "id": "blue-egg-of-flealia",
           "label": "Egg of Flealia",
           "link": "https://hollowknight.wiki/w/Egg_of_Flealia",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479439",
           "type": "tool"
         },
         {
@@ -1407,7 +1438,7 @@
           "id": "blue-pin-badge",
           "label": "Pin Badge",
           "link": "https://hollowknight.wiki/w/Pin_Badge",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479466",
           "type": "tool"
         }
       ],
@@ -1424,7 +1455,7 @@
           "id": "yellow-compass",
           "label": "Compass",
           "link": "https://hollowknight.wiki/w/Compass",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477851",
           "type": "tool"
         },
         {
@@ -1435,7 +1466,7 @@
           "id": "yellow-shard-pendant",
           "label": "Shard Pendant",
           "link": "https://hollowknight.wiki/w/Shard_Pendant",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477848",
           "type": "tool"
         },
         {
@@ -1446,7 +1477,7 @@
           "id": "yellow-magnetite-brooch",
           "label": "Magnetite Brooch",
           "link": "https://hollowknight.wiki/w/Magnetite_Brooch",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477841",
           "type": "tool"
         },
         {
@@ -1457,7 +1488,7 @@
           "id": "yellow-weighted-belt",
           "label": "Weighted Belt",
           "link": "https://hollowknight.wiki/w/Weighted_Belt",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477946",
           "type": "tool"
         },
         {
@@ -1468,7 +1499,7 @@
           "id": "yellow-barbed-bracelet",
           "label": "Barbed Bracelet",
           "link": "https://hollowknight.wiki/w/Barbed_Bracelet",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478341",
           "type": "tool"
         },
         {
@@ -1479,7 +1510,7 @@
           "id": "yellow-dead-bugs-purse",
           "label": "Dead Bug's Purse",
           "link": "https://hollowknight.wiki/w/Dead_Bug's_Purse",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479081",
           "mode": "normal",
           "type": "tool"
         },
@@ -1491,7 +1522,7 @@
           "id": "yellow-shell-satchel",
           "label": "Shell Satchel",
           "link": "https://hollowknight.wiki/w/Shell_Satchel",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479996",
           "mode": "steel",
           "type": "tool"
         },
@@ -1503,7 +1534,7 @@
           "id": "yellow-magnetite-dice",
           "label": "Magnetite Dice",
           "link": "https://hollowknight.wiki/w/Magnetite_Dice",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479309",
           "type": "tool"
         },
         {
@@ -1514,7 +1545,7 @@
           "id": "yellow-scuttlebrace",
           "label": "Scuttlebrace",
           "link": "https://hollowknight.wiki/w/Scuttlebrace",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478727",
           "type": "tool"
         },
         {
@@ -1525,7 +1556,7 @@
           "id": "yellow-ascendants-grip",
           "label": "Ascendant's Grip",
           "link": "https://hollowknight.wiki/w/Ascendant's_Grip",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478878",
           "type": "tool"
         },
         {
@@ -1536,7 +1567,7 @@
           "id": "yellow-spider-strings",
           "label": "Spider Strings",
           "link": "https://hollowknight.wiki/w/Spider_Strings",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479248",
           "type": "tool"
         },
         {
@@ -1547,7 +1578,7 @@
           "id": "yellow-silkspeed-anklets",
           "label": "Silkspeed Anklets",
           "link": "https://hollowknight.wiki/w/Silkspeed_Anklets",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478216",
           "type": "tool"
         },
         {
@@ -1558,7 +1589,7 @@
           "id": "yellow-thiefs-mark",
           "label": "Thief's Mark",
           "link": "https://hollowknight.wiki/w/Thief's_Mark",
-          "map": "",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478525",
           "type": "tool"
         }
       ],
