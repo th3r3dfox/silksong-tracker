@@ -51,3 +51,5 @@ export const rosariesValue = getHTMLElement("rosariesValue");
 export const shardsValue = getHTMLElement("shardsValue");
 export const tocList = getHTMLElement("toc-list");
 export const uploadOverlay = getHTMLElement("uploadOverlay");
+export const mapActSelector = getHTMLElement("map-act-select");
+export const worldMap = getHTMLElement("worldMap");

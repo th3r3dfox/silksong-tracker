@@ -71,6 +71,9 @@ function onClick(pointerEvent: PointerEvent) {
     throw new Error(`The selected tab was not valid: ${selectedTab}`);
   }
 
+  // Show/hide TOC as needed.
+  toggleTocVisibility(selectedTab);
+
   const activeSectionID = `${selectedTab}-section`;
   const activeSection = getHTMLElement(activeSectionID);
   activeSection.classList.remove("hidden");
@@ -92,4 +95,13 @@ export function getStoredActiveTab(): Tab {
   const firstTab = TABS[0];
   assertDefined(firstTab, "Failed to get the first tab.");
   return firstTab;
+}
+
+export function toggleTocVisibility(selectedTab: Tab): void {
+  const isMapOrRawSave = ["map", "rawsave"].includes(selectedTab);
+  const tocContainer = getHTMLElement("toc");
+  const mainElement = getHTMLElement("main");
+
+  tocContainer.classList.toggle("hidden", isMapOrRawSave);
+  mainElement.style.marginRight = isMapOrRawSave ? "0px" : "310px";
 }

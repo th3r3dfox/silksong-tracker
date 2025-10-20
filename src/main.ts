@@ -5,6 +5,7 @@ import { initShowSpoilers } from "./components/show-spoilers.ts";
 import {
   getStoredActiveTab,
   initSidebarItems,
+  toggleTocVisibility,
 } from "./components/sidebar-items.ts";
 import { initUploadSave } from "./components/upload-save.ts";
 import {
@@ -15,7 +16,9 @@ import {
   getHTMLElement,
   getHTMLElements,
   infoOverlay,
+  mapActSelector,
   uploadOverlay,
+  worldMap,
 } from "./elements.ts";
 import { renderActiveTab } from "./render-tab.ts";
 import { handleSaveFile } from "./save-data.ts";
@@ -85,20 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const select = document.querySelector<HTMLSelectElement>("#map-act-select");
-  const img = document.querySelector<HTMLImageElement>("#worldMap");
-  if (!select || !img) {
-    return;
-  }
-  select.addEventListener(
-    "change",
-    function onMapSelectChange(this: HTMLSelectElement) {
-      img.src = this.value;
-      img.alt = `Pharloom Map - Act ${this.selectedIndex === 1 ? "3" : "2"}`;
-      img.id = "worldMap";
-    },
-  );
-
   dropzone.addEventListener("drop", (dragEvent) => {
     const { dataTransfer } = dragEvent;
     if (dataTransfer === null) {
@@ -112,6 +101,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     handleSaveFile(firstFile);
   });
+
+  // Map Act Selector.
+  const img = worldMap as HTMLImageElement;
+  if (!(mapActSelector instanceof HTMLSelectElement)) {
+    return;
+  }
+  mapActSelector.addEventListener(
+    "change",
+    function onMapSelectChange(this: HTMLSelectElement) {
+      img.src = this.value;
+      img.alt = `Pharloom Map - Act ${this.selectedIndex === 0 ? "2" : "3"}`;
+      img.id = "worldMap";
+    },
+  );
 
   const paths: Record<string, string> = {
     windows: String.raw`%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
@@ -171,6 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const activeSection = getHTMLElement(`${activeTab}-section`);
   activeSection.classList.remove("hidden");
 
+  toggleTocVisibility(activeTab);
   // Info Modal
   closeInfoModal.addEventListener("click", () => {
     infoOverlay.classList.add("hidden");
