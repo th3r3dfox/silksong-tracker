@@ -199,10 +199,27 @@
 
         <section id="map-section" class="tab hidden">
           <h2>World Map</h2>
+          <div class="map-controls">
+            <label for="map-act-select">Select Map:</label>
+            <select id="map-act-select" aria-label="Select map act">
+              <option
+                value=" /silksong-tracker/assets/ui/labelled_map_act2.png"
+                selected
+              >
+                Act 2
+              </option>
+              <option
+                value=" /silksong-tracker/assets/ui/labelled_map_act3.png"
+              >
+                Act 3
+              </option>
+            </select>
+          </div>
+
           <div class="map-wrapper">
             <img
-              src="/assets/ui/mappa_full.png"
-              alt="Mappa completa di Pharloom"
+              src="/assets/ui/labelled_map_act2.png"
+              alt="Pharloom Map - Act 2"
               id="worldMap"
             />
           </div>

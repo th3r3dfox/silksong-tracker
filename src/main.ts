@@ -84,6 +84,21 @@ document.addEventListener("DOMContentLoaded", () => {
       dropzone.classList.remove("dragover");
     });
   }
+
+  const select = document.querySelector<HTMLSelectElement>("#map-act-select");
+  const img = document.querySelector<HTMLImageElement>("#worldMap");
+  if (!select || !img) {
+    return;
+  }
+  select.addEventListener(
+    "change",
+    function onMapSelectChange(this: HTMLSelectElement) {
+      img.src = this.value;
+      img.alt = `Pharloom Map - Act ${this.selectedIndex === 1 ? "3" : "2"}`;
+      img.id = "worldMap";
+    },
+  );
+
   dropzone.addEventListener("drop", (dragEvent) => {
     const { dataTransfer } = dragEvent;
     if (dataTransfer === null) {

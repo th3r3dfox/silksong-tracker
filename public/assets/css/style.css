@@ -2834,7 +2834,7 @@ main {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 253px);
   cursor: grab;
   background-color: #000;
 }
@@ -2892,4 +2892,13 @@ main {
   z-index: 2;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
+}
+
+.map-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 20px;
 }
