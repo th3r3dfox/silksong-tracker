@@ -61,10 +61,10 @@ export function updateTabMap(): void {
       const scaleY = rect.height / naturalHeight;
 
       // Slightly smaller so it fits comfortably.
-      scale = Math.min(scaleX, scaleY) * 0.9;
+      scale = Math.min(scaleX, scaleY) * 1.25;
       minScale = scale;
-      translateX = 0;
-      translateY = 0;
+      translateX = 20;
+      translateY = 60;
       updateTransform();
     }
   };

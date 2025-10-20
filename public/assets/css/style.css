@@ -2437,11 +2437,6 @@ mark.active-match {
   z-index: 100;
 }
 
-/* Reserve horizontal space for the TOC */
-main {
-  margin-right: 310px;
-}
-
 #allprogress-grid {
   padding-right: 1.5rem;
 }
@@ -2834,7 +2829,7 @@ main {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 205px);
   cursor: grab;
   background-color: #000;
 }
@@ -2845,9 +2840,11 @@ main {
   left: 50%;
   transform-origin: center center;
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 0.05s linear;
+  transition: transform 0.3s ease-in-out;
   user-select: none;
   pointer-events: none;
+  will-change: transform;
+  image-rendering: optimizeSpeed;
 }
 
 .journal-divider {
@@ -2892,4 +2889,41 @@ main {
   z-index: 2;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
+}
+
+.map-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.map-controls select {
+  font-family: "TrajanPro", serif;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  padding: 0.1rem;
+  width: 80px;
+  background: var(--bg-2);
+  color: var(--ink-2);
+  cursor: pointer;
+  padding: 0.3rem;
+  font-weight: bold;
+}
+
+.map-controls select option {
+  color: var(--ink-2);
+  font-family: "TrajanPro", serif;
+  font-size: 0.9rem;
+  background: var(--bg-2);
+  font-weight: bold;
+}
+
+#map-act-select:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  color: var(--accent);
 }
