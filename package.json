@@ -27,10 +27,11 @@
     "@types/crypto-js": "4.2.2",
     "ajv-cli": "5.0.0",
     "ajv-formats": "3.0.1",
-    "complete-lint": "4.2.6",
+    "complete-lint": "4.2.7",
     "complete-node": "12.2.1",
     "globby": "15.0.0",
+    "stylelint": "16.25.0",
     "tsx": "4.20.6",
-    "vite": "7.1.9"
+    "vite": "7.1.10"
   }
 }

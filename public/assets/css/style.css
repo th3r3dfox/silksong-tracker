@@ -80,17 +80,17 @@ body.home-active main {
 }
 
 .topbar {
-  height: 48px;
-  background: #202122;
-  border-bottom: 1px solid var(--stroke);
-  padding: 0 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03);
+  height: 44px;
+  padding: 0 14px;
+  background: #18191b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
+  position: relative;
 }
 
 .topbar-right {
@@ -232,14 +232,6 @@ a:hover {
    TOPBAR: INPUT AND BUTTONS
 -------------------*/
 
-.topbar {
-  height: 44px;
-  padding: 0 14px;
-  background: #18191b;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
-}
-
 .topbar .btn-primary {
   font-size: 0.85rem;
   padding: 6px 12px;
@@ -293,14 +285,15 @@ a:hover {
   border-radius: 12px;
   padding: 14px;
   text-align: center;
-  position: relative; /* REQUIRED for spoiler overlay */
   transition:
     transform 0.08s,
     border-color 0.15s,
     background 0.15s,
     box-shadow 0.15s;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  overflow: visible; /* prevents text clipping */
+  margin-top: 26px; /* space for badge above */
+  position: relative;
+  overflow: visible;
 }
 
 .boss .title,
@@ -1809,12 +1802,6 @@ main {
   opacity: 0.9;
 }
 
-/* --- Act visual indicator --- */
-.boss {
-  position: relative;
-  margin-top: 26px; /* space for badge above */
-}
-
 .act-label {
   position: absolute;
   top: -18px;
@@ -2058,10 +2045,13 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 }
 
 #modeBanner.steel {
-  color: #9aa7b1;
+  background: #1a1b1c;
+  border: 1px solid #6e7680;
+  color: #ccd5db;
   text-shadow:
     0 0 6px #ccd5db,
     0 0 12px #596066;
+  animation: modeBannerBlinkSteel 1.2s infinite alternate;
 }
 
 #modeBanner .mode-icon {
@@ -2270,10 +2260,6 @@ mark.search-match {
 mark.active-match {
   background: #ffd966;
   color: #000;
-}
-
-.boss {
-  position: relative;
 }
 
 .missable-icon {
@@ -2572,17 +2558,6 @@ main {
   padding-top: var(--topbar-height);
 }
 
-/* === MODE BANNER  === */
-
-/* Optional: Steel mode variant (grayish tone) */
-#modeBanner.steel {
-  background: #202124;
-  color: #ccd5db;
-  text-shadow:
-    0 0 6px #ccd5db,
-    0 0 12px #596066;
-}
-
 /* === DROPDOWN MULTISELECT === */
 .dropdown {
   position: relative;
@@ -2744,13 +2719,6 @@ main {
   border-radius: 30%;
 }
 
-.boss {
-  position: relative;
-}
-.topbar {
-  position: relative;
-}
-
 #modeBanner {
   position: absolute;
   top: 9px;
@@ -2772,16 +2740,6 @@ main {
   width: auto;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
   animation: modeBannerBlink 1.2s infinite alternate;
-}
-
-#modeBanner.steel {
-  background: #1a1b1c;
-  border: 1px solid #6e7680;
-  color: #ccd5db;
-  text-shadow:
-    0 0 6px #ccd5db,
-    0 0 12px #596066;
-  animation: modeBannerBlinkSteel 1.2s infinite alternate;
 }
 
 @keyframes modeBannerBlink {
@@ -2860,11 +2818,6 @@ main {
   font-size: 0.9rem;
   line-height: 1.4;
   text-align: center;
-}
-
-.boss {
-  position: relative;
-  overflow: visible;
 }
 
 .journal-counter {
