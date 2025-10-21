@@ -1107,7 +1107,7 @@
           "type": "flag"
         },
         {
-          "act": 2,
+          "act": 3,
           "description": "Obtained from an abandoned camp.",
           "flag": "HasCloverMap",
           "icon": "completion/Verdania_Map.png",
