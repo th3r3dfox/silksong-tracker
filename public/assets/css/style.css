@@ -2905,25 +2905,20 @@ main {
   font-family: "TrajanPro", serif;
   font-size: 0.9rem;
   border-radius: 4px;
-  padding: 0.1rem;
   width: 80px;
-  background: var(--bg-2);
+  background: var(--accent);
   color: var(--ink-2);
   cursor: pointer;
   padding: 0.3rem;
   font-weight: bold;
+  border: 1px solid var(--accent);
+  outline: none;
 }
 
 .map-controls select option {
-  color: var(--ink-2);
+  background-color: #fff;
+  color: #000;
   font-family: "TrajanPro", serif;
   font-size: 0.9rem;
-  background: var(--bg-2);
   font-weight: bold;
-}
-
-#map-act-select:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--accent);
-  color: var(--accent);
 }
