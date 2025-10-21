@@ -691,7 +691,7 @@
           "flag": "CaravanLechReturnedToCaravan",
           "icon": "icons/Kratt.png",
           "id": "lost-flea-29",
-          "label": "Kratt #11",
+          "label": "Lost Flea #11 (Kratt)",
           "link": "https://hollowknight.wiki/w/Flea",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478271",
           "type": "flag"
@@ -907,7 +907,7 @@
           "flag": "MetTroupeHunterWild",
           "icon": "icons/Vog.png",
           "id": "lost-flea-30",
-          "label": "Vog #29",
+          "label": "Lost Flea #29 (Vog)",
           "link": "https://hollowknight.wiki/w/Flea",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479138",
           "type": "flag"
