@@ -2,7 +2,7 @@
   "$schema": "./completion.schema.json",
   "categories": [
     {
-      "description": "Items that can be traded to certain NPCs for Rosaries or other services.",
+      "description": "Items that can be traded to Relic Seeker Scrounge for Rosaries.",
       "items": [
         {
           "act": 1,
@@ -1107,7 +1107,7 @@
           "type": "flag"
         },
         {
-          "act": 2,
+          "act": 3,
           "description": "Obtained from an abandoned camp.",
           "flag": "HasCloverMap",
           "icon": "completion/Verdania_Map.png",
