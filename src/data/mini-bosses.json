@@ -479,28 +479,6 @@
         },
         {
           "act": 3,
-          "description": "Sinner's Road.",
-          "flag": "Black_Thread_Core",
-          "icon": "mini-bosses/Void_Mass.png",
-          "id": "Void_Mass_37",
-          "label": "Kill #37",
-          "link": "https://hollowknight.wiki/w/Void_Mass",
-          "scene": "Dust_11",
-          "type": "sceneBool"
-        },
-        {
-          "act": 3,
-          "description": "Sinner's Road.",
-          "flag": "Black_Thread_Core (1)",
-          "icon": "mini-bosses/Void_Mass.png",
-          "id": "Void_Mass_38",
-          "label": "Kill #38",
-          "link": "https://hollowknight.wiki/w/Void_Mass",
-          "scene": "Dust_11",
-          "type": "sceneBool"
-        },
-        {
-          "act": 3,
           "description": "Deep Docks.",
           "flag": "Black_Thread_Core",
           "icon": "mini-bosses/Void_Mass.png",
