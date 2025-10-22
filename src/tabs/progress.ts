@@ -30,7 +30,7 @@ import type { Item } from "../types/Item.ts";
 import { getIconPath } from "../utils.ts";
 
 const EXCLUSIVE_GROUPS = [
-  ["Heart Flower", "Heart Coral", "Heart Hunter", "Clover Heart"],
+  ["Flower Heart", "Coral Heart", "Hunter Heart", "Clover Heart"],
   ["Huntress Quest", "Huntress Quest Runt"], // Broodfest / Runtfeast
 ] as const;
 
