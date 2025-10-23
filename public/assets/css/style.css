@@ -54,6 +54,9 @@ body {
   background: var(--bg-1);
   color: var(--ink-2);
   overflow: hidden;
+  cursor:
+    url("../misc/Cursor_32px.png") 8 8,
+    auto;
 }
 
 body.home-active main {
@@ -384,13 +387,14 @@ a:hover {
    MODAL & OVERLAY
 -------------------*/
 .overlay {
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 999;
+  align-items: center;
+  transition: opacity 0.25s ease;
 }
 
 .overlay.hidden {
@@ -617,16 +621,6 @@ a:hover {
   padding-bottom: 14vh; /* more dynamic space */
   margin-bottom: 4vh; /* small extra buffer */
   scroll-padding-bottom: 100px; /* for scroll safety */
-}
-
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
 }
 
 #info-overlay {
@@ -1498,6 +1492,11 @@ main a:hover,
   text-align: center;
   width: 100%;
   margin-bottom: 0.3rem;
+  background: var(--bg-3);
+  color: var(--ink-2);
+  border-radius: 10px;
+  padding: 1px 6px;
+  font-size: 0.8em;
 }
 
 #main-section .category-title .category-label {
@@ -1515,23 +1514,10 @@ main a:hover,
   vertical-align: baseline;
 }
 
-/* percentage pill */
-#main-section .category-title {
-  background: var(--bg-3);
-  color: var(--ink-2);
-  border-radius: 10px;
-  padding: 1px 6px;
-  font-size: 0.8em;
-}
-
 /* --- Custom checkboxes --- */
 input[type="checkbox"] {
   accent-color: var(--accent);
   cursor: pointer;
-}
-
-/* Optional: borders consistent with theme */
-input[type="checkbox"] {
   width: 16px;
   height: 16px;
   border-radius: 3px;
@@ -1550,14 +1536,6 @@ input[type="checkbox"]:checked {
 input[type="checkbox"]:hover {
   border-color: var(--accent);
   box-shadow: 0 0 4px var(--accent);
-}
-
-/* --- Custom cursor --- */
-html,
-body {
-  cursor:
-    url("../misc/Cursor_32px.png") 8 8,
-    auto;
 }
 
 /* When hovering over links or buttons */
@@ -1625,15 +1603,6 @@ button,
 
 html {
   font-display: swap;
-}
-
-.overlay {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.25s ease;
 }
 
 .overlay:not(.hidden) {
