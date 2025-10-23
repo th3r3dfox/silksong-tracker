@@ -1558,18 +1558,9 @@ main::-webkit-scrollbar-thumb:hover {
   z-index: 5;
 }
 
-/* Light hover */
-.act-label:hover {
-  transform: translate(-50%, 0) scale(1.05);
-  transform-origin: center;
-}
-
 /*  Disable any hover or glow effects on ACT labels */
 .act-label,
-.act-label:hover,
-.boss.done .act-label:hover,
-.boss.unlocked .act-label:hover,
-.boss.locked .act-label:hover {
+.act-label:hover {
   transform: translate(-50%, 0) !important;
   filter: none !important;
   opacity: 1 !important;
@@ -1611,6 +1602,18 @@ body.spoiler-on .act-label {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
   opacity: 1;
+}
+
+.boss.done .act-label:hover,
+.boss.unlocked .act-label:hover,
+.boss.locked .act-label:hover {
+  transform: translate(-50%, 0) !important;
+  filter: none !important;
+  opacity: 1 !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transition: none !important;
 }
 
 /* Active label colors */
