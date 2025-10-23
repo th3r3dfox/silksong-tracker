@@ -5,7 +5,6 @@ import { showToast } from "../utils.ts";
 
 const rawSaveDataCopy = getHTMLElement("raw-save-data-copy");
 const rawSaveJsonDataDownload = getHTMLElement("raw-save-json-data-download");
-const rawSaveDatDataDownload = getHTMLElement("raw-save-dat-data-download");
 const rawSaveDataOutput = getHTMLElement("raw-save-data-output");
 
 let editor: monaco.editor.IStandaloneCodeEditor | null;
@@ -66,34 +65,6 @@ export function initRawSaveData(): void {
     a.href = url;
     a.download = "silksong-save.json";
     a.click();
-    URL.revokeObjectURL(url);
-  });
-
-  // TODO: add encoding for .dat download
-  rawSaveDatDataDownload.addEventListener("click", () => {
-    const saveData = getSaveData();
-    if (saveData === undefined) {
-      showToast("❌ No save loaded yet.");
-      return;
-    }
-
-    const saveDataString = JSON.stringify(
-      JSON.parse(saveData as unknown as string),
-      undefined,
-      2,
-    );
-
-    const blob = new Blob([saveDataString], {
-      type: "application/octet-stream",
-    });
-
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "user_1.dat";
-    document.body.append(a);
-    a.click();
-    a.remove();
     URL.revokeObjectURL(url);
   });
 }
