@@ -14,9 +14,24 @@
   font-style: normal;
 }
 
+main {
+  padding: 24px;
+  height: calc(100vh - 44px);
+  overflow-y: auto;
+  box-sizing: border-box;
+  background: var(--bg-1);
+  min-height: calc(100vh - 44px);
+  color: var(--ink-2);
+  z-index: 3;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #111;
+  padding-top: var(--topbar-height);
+}
+
 /* ------------------
    THEME TOKENS
 -------------------*/
+
 :root {
   --bg-1: #0f0f10;
   --bg-2: #171819;
@@ -45,6 +60,7 @@
 /* ------------------
    BASE
 -------------------*/
+
 html,
 body {
   margin: 0;
@@ -66,6 +82,7 @@ body.home-active main {
 /* ------------------
    LAYOUT
 -------------------*/
+
 .sidebar {
   width: 220px;
   background: var(--bg-2);
@@ -105,20 +122,6 @@ body.home-active main {
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
-}
-
-main {
-  padding: 24px;
-  height: calc(100vh - 44px);
-  overflow-y: auto;
-  box-sizing: border-box;
-  background: var(--bg-1);
-  min-height: calc(100vh - 44px);
-  color: var(--ink-2);
-  z-index: 3;
-  scrollbar-width: thin;
-  scrollbar-color: #555 #111;
-  padding-top: var(--topbar-height);
 }
 
 .section {
@@ -177,6 +180,17 @@ main {
   font-size: 18px;
 }
 
+/* When hovering over links or buttons */
+a,
+button,
+.btn-primary,
+.sidebar-item,
+.icon-btn {
+  cursor:
+    url("../misc/Cursor_32px.png") 8 8,
+    pointer;
+}
+
 .icon-btn:hover {
   background: rgba(197, 106, 45, 0.15);
   border-color: var(--accent);
@@ -224,6 +238,7 @@ main {
 /* ------------------
    SIDEBAR: MENU ITEMS
 -------------------*/
+
 .sidebar-item {
   display: flex;
   align-items: center;
@@ -260,9 +275,104 @@ a {
     text-shadow 0.2s ease;
 }
 
+.info-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main a,
+.home-section-block a,
+.home-credits a,
+.info-link {
+  color: var(--accent) !important;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
 a:hover {
   color: #e69b50; /* brighter for hover */
   text-shadow: 0 0 8px rgba(197, 106, 45, 0.4);
+}
+
+.home-credits a {
+  color: #8ab4f8;
+  text-decoration: none;
+}
+
+.home-section-block a {
+  color: #8ab4f8;
+  text-decoration: none;
+}
+
+/* --- LINK COLOR OVERRIDES --- */
+/* Override global link styles so TOC colors stay consistent */
+.toc-category > a,
+.toc-item a {
+  color: var(--ink-2) !important;
+  text-shadow: none !important;
+}
+
+/* --- SUBITEM LINKS --- */
+.toc-item a {
+  display: block;
+  padding: 0.25rem 0.6rem;
+  color: var(--ink-3); /* lighter gray for inactive state */
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+/* --- CATEGORY HEADER LINK --- */
+.toc-category > a {
+  display: block;
+  cursor: pointer;
+  color: var(--ink-2); /* neutral gray by default */
+  font-family: "TrajanPro", serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 0.5rem;
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+.info-map-link a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+main a:hover,
+.home-section-block a:hover,
+.home-credits a:hover,
+.info-link:hover {
+  color: #e69b50 !important;
+  text-shadow: 0 0 8px rgba(197, 106, 45, 0.4);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: #a95b22; /* deeper version */
+  box-shadow: 0 0 12px rgba(197, 106, 45, 0.4);
 }
 
 /* ------------------
@@ -292,26 +402,10 @@ a:hover {
   border-radius: 6px;
 }
 
-.btn-primary {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition:
-    background 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.btn-primary:hover {
-  background: #a95b22; /* deeper version */
-  box-shadow: 0 0 12px rgba(197, 106, 45, 0.4);
-}
-
 /* ------------------
    GRID & CARDS
 -------------------*/
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -340,7 +434,7 @@ a:hover {
 .boss div {
   text-align: center;
   white-space: normal; /* allows long names to wrap */
-  word-break: break-word; /* forces word break if too long */
+  overflow-wrap: break-word;
   line-height: 1.2em;
   max-width: 100%; /* prevents touching edges */
 }
@@ -388,6 +482,7 @@ a:hover {
 /* ------------------
    MODAL & OVERLAY
 -------------------*/
+
 .overlay {
   background: rgba(0, 0, 0, 0.7);
   z-index: 999;
@@ -445,6 +540,7 @@ a:hover {
 /* ------------------
    DROPZONE
 -------------------*/
+
 .dropzone {
   border: 2px dashed #444;
   border-radius: 12px;
@@ -466,9 +562,15 @@ a:hover {
   color: #dbe5ff;
 }
 
+.muted {
+  font-size: 0.9em;
+  opacity: 0.6;
+}
+
 /* ------------------
    HELP / PILLS
 -------------------*/
+
 .help {
   margin-top: 18px;
 }
@@ -565,6 +667,24 @@ a:hover {
   backdrop-filter: blur(0px);
 }
 
+.home-content {
+  color: #ddd;
+  padding-bottom: 12vh;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10vh 2rem 14vh;
+  text-align: center;
+}
+
+.home-content h1 {
+  font-size: 2.4em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
 #home-section {
   position: fixed; /* stays fixed on screen */
   inset: 0; /* covers entire screen */
@@ -645,14 +765,6 @@ a:hover {
   font-size: 1rem;
   margin-bottom: 16px;
   line-height: 1.4;
-}
-
-.info-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: bold;
 }
 
 .info-extra {
@@ -850,24 +962,6 @@ a:hover {
   opacity: 0.9;
 }
 
-.home-content {
-  color: #ddd;
-  padding-bottom: 12vh;
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10vh 2rem 14vh;
-  text-align: center;
-}
-
-.home-content h1 {
-  font-size: 2.4em;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
 .intro {
   max-width: 800px;
   margin: 0 auto 40px auto;
@@ -926,12 +1020,11 @@ a:hover {
   opacity: 0.9;
 }
 
-.home-credits a {
-  color: #8ab4f8;
-  text-decoration: none;
+.home-credits a:hover {
+  text-decoration: underline;
 }
 
-.home-credits a:hover {
+.home-section-block a:hover {
   text-decoration: underline;
 }
 
@@ -993,6 +1086,7 @@ a:hover {
 /* ------------------
    TAB LAYER FIX
 -------------------*/
+
 .tab {
   position: relative;
   z-index: 2; /* above home background */
@@ -1037,15 +1131,6 @@ a:hover {
   margin: 10px 0 14px;
 }
 
-.home-section-block a {
-  color: #8ab4f8;
-  text-decoration: none;
-}
-
-.home-section-block a:hover {
-  text-decoration: underline;
-}
-
 .tribute {
   margin-top: 60px;
   animation-delay: 0.6s;
@@ -1069,11 +1154,6 @@ a:hover {
 .tribute p {
   max-width: 700px;
   margin: 0.5rem auto;
-}
-
-.muted {
-  font-size: 0.9em;
-  opacity: 0.6;
 }
 
 /* ------------------
@@ -1127,6 +1207,12 @@ a:hover {
   animation-delay: 0.3s;
 }
 
+.grid i {
+  margin-right: 6px;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
 .home-section-block h2 i {
   opacity: 0.8;
   color: var(--accent);
@@ -1160,25 +1246,6 @@ a:hover {
 
 .cinematic-right {
   transform: translateY(30px);
-}
-
-main a,
-.home-section-block a,
-.home-credits a,
-.info-link {
-  color: var(--accent) !important;
-  text-decoration: none;
-  transition:
-    color 0.2s ease,
-    text-shadow 0.2s ease;
-}
-
-main a:hover,
-.home-section-block a:hover,
-.home-credits a:hover,
-.info-link:hover {
-  color: #e69b50 !important;
-  text-shadow: 0 0 8px rgba(197, 106, 45, 0.4);
 }
 
 .category-title {
@@ -1244,17 +1311,6 @@ input[type="checkbox"]:hover {
   box-shadow: 0 0 4px var(--accent);
 }
 
-/* When hovering over links or buttons */
-a,
-button,
-.btn-primary,
-.sidebar-item,
-.icon-btn {
-  cursor:
-    url("../misc/Cursor_32px.png") 8 8,
-    pointer;
-}
-
 /* --- FIX HOME LAYOUT ON SMALL SCREENS --- */
 @media (max-width: 1400px) {
   .main-wrapper {
@@ -1269,7 +1325,7 @@ button,
     font-size: 2.3rem;
     line-height: 1.3;
     text-align: center;
-    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .home-section-block {
@@ -1354,6 +1410,7 @@ html {
 /* ------------------
    WISHES - clean and consistent layout
 -------------------*/
+
 #wishes-grid {
   display: flex;
   flex-direction: column; /* stack categories vertically */
@@ -1432,9 +1489,39 @@ main::-webkit-scrollbar-thumb:hover {
   gap: 6px;
 }
 
+.dropdown-menu label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-2);
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu label:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ink-1);
+}
+
 #act-filter label {
   font-weight: 600;
   color: var(--ink-2);
+}
+
+.map-controls select {
+  font-family: "TrajanPro", serif;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  width: 80px;
+  background: var(--accent);
+  color: var(--ink-2);
+  cursor: pointer;
+  padding: 0.3rem;
+  font-weight: bold;
+  border: 1px solid var(--accent);
+  outline: none;
 }
 
 #act-filter select {
@@ -1444,12 +1531,6 @@ main::-webkit-scrollbar-thumb:hover {
   border-radius: var(--radius-sm);
   padding: 4px 8px;
   font-family: inherit;
-}
-
-.grid i {
-  margin-right: 6px;
-  font-size: 0.9em;
-  opacity: 0.9;
 }
 
 .act-label {
@@ -1483,6 +1564,55 @@ main::-webkit-scrollbar-thumb:hover {
   transform-origin: center;
 }
 
+/*  Disable any hover or glow effects on ACT labels */
+.act-label,
+.act-label:hover,
+.boss.done .act-label:hover,
+.boss.unlocked .act-label:hover,
+.boss.locked .act-label:hover {
+  transform: translate(-50%, 0) !important;
+  filter: none !important;
+  opacity: 1 !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+/* When spoiler is active --> labels dimmed */
+body.spoiler-on .act-label {
+  color: #bdbdbd !important;
+  box-shadow: none !important;
+  opacity: 0.6;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.boss.locked .act-label {
+  color: #666 !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+  opacity: 0.6;
+}
+
+.boss.unlocked .act-label {
+  color: #ccc;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  opacity: 0.9;
+}
+
+/* --- Dynamic coloring for boss state --- */
+.boss.done .act-label {
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
 /* Active label colors */
 .act-1.act-label {
   color: #ffffff;
@@ -1499,14 +1629,19 @@ main::-webkit-scrollbar-thumb:hover {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
-/* When spoiler is active --> labels dimmed */
-body.spoiler-on .act-label {
-  color: #bdbdbd !important;
-  box-shadow: none !important;
-  opacity: 0.6;
-  transition:
-    color 0.3s ease,
-    opacity 0.3s ease;
+.boss.done .act-label.act-1 {
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.boss.done .act-label.act-2 {
+  color: #a4e3ff;
+  box-shadow: 0 0 8px rgba(164, 227, 255, 0.6);
+}
+
+.boss.done .act-label.act-3 {
+  color: #9fff9f;
+  box-shadow: 0 0 8px rgba(159, 255, 159, 0.6);
 }
 
 /* Soft realistic glow Hollow Knight style */
@@ -1537,6 +1672,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 /* ------------------
    COMPLETION - consistent layout
 -------------------*/
+
 #completion-grid {
   display: flex;
   flex-direction: column;
@@ -1584,63 +1720,10 @@ body.spoiler-on .boss:hover .act-label.act-3 {
   justify-content: center;
 }
 
-/* --- Dynamic coloring for boss state --- */
-.boss.done .act-label {
-  color: #ffffff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  opacity: 1;
-}
-
-.boss.unlocked .act-label {
-  color: #ccc;
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
-  opacity: 0.9;
-}
-
-.boss.locked .act-label {
-  color: #666 !important;
-  background: rgba(0, 0, 0, 0.4) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  box-shadow: none !important;
-  opacity: 0.6;
-}
-
-.boss.done .act-label.act-1 {
-  color: #ffffff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-}
-
-.boss.done .act-label.act-2 {
-  color: #a4e3ff;
-  box-shadow: 0 0 8px rgba(164, 227, 255, 0.6);
-}
-
-.boss.done .act-label.act-3 {
-  color: #9fff9f;
-  box-shadow: 0 0 8px rgba(159, 255, 159, 0.6);
-}
-
-/*  Disable any hover or glow effects on ACT labels */
-.act-label,
-.act-label:hover,
-.boss.done .act-label:hover,
-.boss.unlocked .act-label:hover,
-.boss.locked .act-label:hover {
-  transform: translate(-50%, 0) !important;
-  filter: none !important;
-  opacity: 1 !important;
-  color: #ffffff !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  transition: none !important;
-}
-
 /* ------------------
    GENERIC HIDDEN UTILITY
 -------------------*/
+
 .hidden {
   display: none !important;
 }
@@ -1693,7 +1776,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 #raw-save-data-output {
   color: var(--ink-1);
   white-space: pre-wrap;
-  word-break: break-word;
+  overflow-wrap: break-word;
   flex: 1;
   overflow-y: auto;
   background: var(--bg-1);
@@ -1921,11 +2004,6 @@ mark.active-match {
   font-size: 0.9rem;
 }
 
-.info-map-link a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
 .info-map-link a:hover {
   text-decoration: underline;
 }
@@ -1999,21 +2077,6 @@ mark.active-match {
   margin-bottom: 1.25rem;
 }
 
-/* --- CATEGORY HEADER LINK --- */
-.toc-category > a {
-  display: block;
-  cursor: pointer;
-  color: var(--ink-2); /* neutral gray by default */
-  font-family: "TrajanPro", serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  padding: 0.3rem 0.5rem;
-  transition:
-    color 0.25s ease,
-    text-shadow 0.25s ease;
-}
-
 .toc-category > a:hover {
   color: var(--ink-1); /* bright white on hover */
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
@@ -2040,19 +2103,6 @@ mark.active-match {
 /* Hide sublist when closed */
 .toc-sublist.hidden {
   display: none;
-}
-
-/* --- SUBITEM LINKS --- */
-.toc-item a {
-  display: block;
-  padding: 0.25rem 0.6rem;
-  color: var(--ink-3); /* lighter gray for inactive state */
-  text-decoration: none;
-  font-size: 0.9rem;
-  border-radius: 6px;
-  transition:
-    color 0.25s ease,
-    background 0.25s ease;
 }
 
 .toc-item a:hover {
@@ -2094,14 +2144,6 @@ mark.active-match {
 
 .toc-container::-webkit-scrollbar-thumb:hover {
   background-color: rgba(255, 153, 51, 0.5);
-}
-
-/* --- LINK COLOR OVERRIDES --- */
-/* Override global link styles so TOC colors stay consistent */
-.toc-category > a,
-.toc-item a {
-  color: var(--ink-2) !important;
-  text-shadow: none !important;
 }
 
 .toc-category > a:hover,
@@ -2163,22 +2205,6 @@ mark.active-match {
 
 .dropdown-menu.hidden {
   display: none;
-}
-
-.dropdown-menu label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--ink-2);
-  padding: 6px 12px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.dropdown-menu label:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--ink-1);
 }
 
 .dropdown-menu input[type="checkbox"] {
@@ -2393,20 +2419,6 @@ mark.active-match {
   gap: 10px;
   padding-bottom: 20px;
   font-weight: bold;
-}
-
-.map-controls select {
-  font-family: "TrajanPro", serif;
-  font-size: 0.9rem;
-  border-radius: 4px;
-  width: 80px;
-  background: var(--accent);
-  color: var(--ink-2);
-  cursor: pointer;
-  padding: 0.3rem;
-  font-weight: bold;
-  border: 1px solid var(--accent);
-  outline: none;
 }
 
 .map-controls select option {
