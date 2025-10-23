@@ -1856,14 +1856,14 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 /* Search highlighting */
-mark.search-match {
+.search-match {
   background: #ffcb6b4d;
   color: var(--ink-1);
   border-radius: 3px;
   padding: 0 2px;
 }
 
-mark.active-match {
+.active-match {
   background: #ffd966;
   color: #000;
 }
@@ -2404,7 +2404,6 @@ mark.active-match {
     inset 0 0 6px rgba(255, 255, 255, 0.08);
   z-index: 2;
   backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
 }
 
 .map-controls {

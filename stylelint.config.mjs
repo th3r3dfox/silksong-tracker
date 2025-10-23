@@ -86,7 +86,6 @@ export default {
     "length-zero-no-unit": true,
     "media-feature-name-no-vendor-prefix": true,
     "property-no-vendor-prefix": true,
-    "selector-no-qualifying-type": true,
     "selector-no-vendor-prefix": true,
     "value-no-vendor-prefix": true,
 
