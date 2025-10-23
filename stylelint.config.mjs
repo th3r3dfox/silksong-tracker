@@ -81,7 +81,14 @@ export default {
     // -------------------
 
     // Allowed, disallowed & required
-    // TODO
+    "at-rule-no-vendor-prefix": true,
+    "function-url-no-scheme-relative": true,
+    "length-zero-no-unit": true,
+    "media-feature-name-no-vendor-prefix": true,
+    "property-no-vendor-prefix": true,
+    "selector-no-qualifying-type": true,
+    "selector-no-vendor-prefix": true,
+    "value-no-vendor-prefix": true,
 
     // Case
     // TODO

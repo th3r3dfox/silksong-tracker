@@ -75,7 +75,7 @@ body {
     auto;
 }
 
-body.home-active main {
+.home-active main {
   overflow: hidden; /* block scroll only in home */
 }
 
@@ -623,7 +623,7 @@ main a:hover,
 
 .boss.locked:hover::after {
   background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(0);
 }
 
 .tab.hidden {
@@ -661,7 +661,7 @@ main a:hover,
 
 .boss.hovering::after {
   background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(0);
 }
 
 .home-content {
@@ -1565,7 +1565,7 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 /* When spoiler is active --> labels dimmed */
-body.spoiler-on .act-label {
+.spoiler-on .act-label {
   color: #bdbdbd !important;
   box-shadow: none !important;
   opacity: 0.6;
@@ -1642,7 +1642,7 @@ body.spoiler-on .act-label {
 }
 
 /* Soft realistic glow Hollow Knight style */
-body.spoiler-on .boss:hover .act-label.act-1 {
+.spoiler-on .boss:hover .act-label.act-1 {
   color: #ffffff;
   opacity: 1;
   text-shadow:
@@ -1650,7 +1650,7 @@ body.spoiler-on .boss:hover .act-label.act-1 {
     0 0 12px rgba(255, 255, 255, 0.4);
 }
 
-body.spoiler-on .boss:hover .act-label.act-2 {
+.spoiler-on .boss:hover .act-label.act-2 {
   color: #ffffff;
   opacity: 1;
   text-shadow:
@@ -1658,7 +1658,7 @@ body.spoiler-on .boss:hover .act-label.act-2 {
     0 0 12px rgba(255, 255, 255, 0.5);
 }
 
-body.spoiler-on .boss:hover .act-label.act-3 {
+.spoiler-on .boss:hover .act-label.act-3 {
   color: #ffffff;
   opacity: 1;
   text-shadow:
@@ -2079,7 +2079,7 @@ mark.active-match {
 }
 
 .toc-category.open > a,
-.toc-category > a.active {
+.toc-category > .active {
   color: #e3b47b; /* soft amber highlight */
   text-shadow: 0 0 6px rgba(227, 180, 123, 0.3);
 }
@@ -2106,7 +2106,7 @@ mark.active-match {
   background: rgba(255, 153, 51, 0.05);
 }
 
-.toc-item a.active {
+.toc-item .active {
   color: var(--accent);
   background: rgba(197, 100, 50, 0.1);
 }
@@ -2148,8 +2148,8 @@ mark.active-match {
 }
 
 .toc-category.open > a,
-.toc-category > a.active,
-.toc-item a.active {
+.toc-category > .active,
+.toc-item .active {
   color: #e3b47b !important;
   text-shadow: 0 0 6px rgba(227, 180, 123, 0.3) !important;
 }
