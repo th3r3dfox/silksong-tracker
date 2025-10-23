@@ -73,6 +73,10 @@
                     "sceneBool"
                   ],
                   "type": "string"
+                },
+                "unobtainable": {
+                  "description": "Whether this item cannot be obtained in the current save file",
+                  "type": "boolean"
                 }
               },
               "required": [
