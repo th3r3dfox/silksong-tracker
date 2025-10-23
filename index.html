@@ -173,28 +173,20 @@
             <div class="rawsave-header">
               <h2>Raw Save Data</h2>
               <div class="rawsave-actions">
-                <input
-                  type="text"
-                  id="raw-save-data-search"
-                  placeholder="Search..."
-                />
-                <span id="raw-save-data-search-counter">0/0</span>
-                <button id="raw-save-data-previous-match" class="rawsave-btn">
-                  ◀
-                </button>
-                <button id="raw-save-data-next-match" class="rawsave-btn">
-                  ▶
-                </button>
                 <button id="raw-save-data-copy" class="rawsave-btn">
                   Copy
                 </button>
-                <button id="raw-save-data-download" class="rawsave-btn">
-                  Download
+                <button id="raw-save-json-data-download" class="rawsave-btn">
+                  Download JSON
+                </button>
+                <!-- TODO: Enable .dat download -->
+                <button id="raw-save-dat-data-download" class="rawsave-btn">
+                  Download DAT File
                 </button>
               </div>
             </div>
 
-            <pre id="raw-save-data-output">No save loaded.</pre>
+            <pre id="raw-save-data-output"></pre>
           </div>
         </section>
 

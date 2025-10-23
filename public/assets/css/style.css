@@ -1778,7 +1778,6 @@ main::-webkit-scrollbar-thumb:hover {
   background: var(--bg-1);
   color: var(--ink-1);
   font-family: monospace;
-  padding: 30px 25px; /* sufficient space below header */
   line-height: 1.4;
   font-size: 0.9rem;
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);

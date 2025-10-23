@@ -20,6 +20,7 @@
   "dependencies": {
     "complete-common": "2.8.0",
     "crypto-js": "4.2.0",
+    "monaco-editor": "0.54.0",
     "zod": "4.1.12"
   },
   "devDependencies": {

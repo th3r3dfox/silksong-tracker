@@ -1,82 +1,45 @@
-import {
-  getHTMLElement,
-  getHTMLElements,
-  getHTMLInputElement,
-} from "../elements.ts";
+import * as monaco from "monaco-editor";
+import { getHTMLElement } from "../elements.ts";
 import { getSaveData } from "../save-data.ts";
 import { showToast } from "../utils.ts";
 
-const rawSaveDataSearch = getHTMLInputElement("raw-save-data-search");
-const rawSaveDataSearchCounter = getHTMLElement("raw-save-data-search-counter");
-const rawSaveDataPreviousMatch = getHTMLElement("raw-save-data-previous-match");
-const rawSaveDataNextMatch = getHTMLElement("raw-save-data-next-match");
 const rawSaveDataCopy = getHTMLElement("raw-save-data-copy");
-const rawSaveDataDownload = getHTMLElement("raw-save-data-download");
+const rawSaveJsonDataDownload = getHTMLElement("raw-save-json-data-download");
+const rawSaveDatDataDownload = getHTMLElement("raw-save-dat-data-download");
 const rawSaveDataOutput = getHTMLElement("raw-save-data-output");
 
-let matches: number[] = [];
-let currentMatch = 0;
+let editor: monaco.editor.IStandaloneCodeEditor | null;
 
 export function initRawSaveData(): void {
-  rawSaveDataSearch.addEventListener("input", () => {
-    const saveData = getSaveData();
-    const jsonText = JSON.stringify(saveData ?? {}, undefined, 2);
-    rawSaveDataOutput.innerHTML = jsonText;
-
-    matches = [];
-    currentMatch = 0;
-
-    rawSaveDataSearchCounter.textContent = "0/0";
-
-    const query = rawSaveDataSearch.value.trim();
-    if (query === "") {
-      return;
-    }
-
-    const safeQuery = query.replaceAll(/[$()*+.?[\\\]^{|}]/g, String.raw`\$&`);
-    const regex = new RegExp(safeQuery, "gi");
-
-    let html = "";
-    let lastIndex = 0;
-    let match: RegExpExecArray | null;
-    while ((match = regex.exec(jsonText)) !== null) {
-      html += jsonText.slice(lastIndex, match.index);
-      html += `<mark class="search-match">${match[0]}</mark>`;
-      ({ lastIndex } = regex);
-      matches.push(match.index);
-    }
-    html += jsonText.slice(lastIndex);
-    rawSaveDataOutput.innerHTML = html;
-
-    if (matches.length > 0) {
-      currentMatch = 1;
-      scrollToMatch(currentMatch);
-    }
-    rawSaveDataSearchCounter.textContent = `${currentMatch}/${matches.length}`;
+  // Initialize Monaco Editor
+  editor = monaco.editor.create(rawSaveDataOutput, {
+    value: "",
+    language: "javascript", // using javascript for JSON syntax highlighting - for some reason folding doesn't work with json
+    minimap: { enabled: false },
+    theme: "vs-dark",
+    fontSize: 14,
+    lineNumbers: "on",
+    renderWhitespace: "selection",
+    formatOnPaste: true,
+    formatOnType: false,
+    wordWrap: "on",
+    bracketPairColorization: { enabled: true },
+    folding: true,
+    foldingHighlight: true,
+    showFoldingControls: "always",
+    matchBrackets: "always",
+    contextmenu: true,
+    readOnly: true,
+    find: {
+      addExtraSpaceOnTop: false,
+      autoFindInSelection: "never",
+      seedSearchStringFromSelection: "always",
+    },
   });
 
-  rawSaveDataSearch.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      rawSaveDataNextMatch.click();
-    }
-  });
-
-  rawSaveDataNextMatch.addEventListener("click", () => {
-    if (matches.length > 0) {
-      currentMatch = (currentMatch % matches.length) + 1;
-      scrollToMatch(currentMatch);
-    }
-  });
-
-  rawSaveDataPreviousMatch.addEventListener("click", () => {
-    if (matches.length > 0) {
-      currentMatch = ((currentMatch - 2 + matches.length) % matches.length) + 1;
-      scrollToMatch(currentMatch);
-    }
-  });
-
+  // Copy JSON to clipboard.
   rawSaveDataCopy.addEventListener("click", () => {
-    const text = rawSaveDataOutput.textContent;
+    const text = editor?.getValue() ?? "";
     navigator.clipboard
       .writeText(text)
       .then(() => {
@@ -87,9 +50,9 @@ export function initRawSaveData(): void {
       });
   });
 
-  rawSaveDataDownload.addEventListener("click", () => {
+  // Download JSON file
+  rawSaveJsonDataDownload.addEventListener("click", () => {
     const saveData = getSaveData();
-
     if (saveData === undefined) {
       showToast("❌ No save loaded yet.");
       return;
@@ -105,38 +68,47 @@ export function initRawSaveData(): void {
     a.click();
     URL.revokeObjectURL(url);
   });
-}
 
-function scrollToMatch(index: number) {
-  const allMarks = getHTMLElements(rawSaveDataOutput, "mark.search-match");
-  for (const mark of allMarks) {
-    mark.classList.remove("active-match");
-  }
+  // TODO: add encoding for .dat download
+  rawSaveDatDataDownload.addEventListener("click", () => {
+    const saveData = getSaveData();
+    if (saveData === undefined) {
+      showToast("❌ No save loaded yet.");
+      return;
+    }
 
-  const mark = allMarks[index - 1];
-  if (mark !== undefined) {
-    mark.classList.add("active-match");
-    mark.scrollIntoView({
-      behavior: "instant",
-      block: "center",
+    const saveDataString = JSON.stringify(
+      JSON.parse(saveData as unknown as string),
+      undefined,
+      2,
+    );
+
+    const blob = new Blob([saveDataString], {
+      type: "application/octet-stream",
     });
-  }
 
-  rawSaveDataSearchCounter.textContent = `${index}/${matches.length}`;
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "user_1.dat";
+    document.body.append(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
 }
 
 export function updateTabRawSaveData(): void {
   const saveData = getSaveData();
-
   if (saveData === undefined) {
-    rawSaveDataOutput.textContent = "No save file loaded.";
+    editor?.setValue("No save file loaded.");
     return;
   }
-
   try {
-    rawSaveDataOutput.textContent = JSON.stringify(saveData, undefined, 2);
+    const jsonText = JSON.stringify(saveData, undefined, 2);
+    editor?.setValue(jsonText);
   } catch (error) {
-    rawSaveDataOutput.textContent = `❌ Failed to display raw save: ${error}`;
+    editor?.setValue(`❌ Failed to display raw save: ${error}`);
     console.error(error);
   }
 }
