@@ -41,6 +41,10 @@
                   "pattern": "^[^\\s%]*$",
                   "type": "string"
                 },
+                "map": {
+                  "description": "Map area name where this miniboss is located",
+                  "type": "string"
+                },
                 "missable": {
                   "description": "Whether this boss encounter can be permanently missed",
                   "type": "boolean"
