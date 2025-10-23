@@ -80,7 +80,7 @@ export default {
     // Enforce conventions
     // -------------------
 
-    // Allowed, disallowed & required
+    // Allowed, disallowed & required (not all rules are enabled here)
     "at-rule-no-vendor-prefix": true,
     "function-url-no-scheme-relative": true,
     "length-zero-no-unit": true,
@@ -90,7 +90,9 @@ export default {
     "value-no-vendor-prefix": true,
 
     // Case
-    // TODO
+    "function-name-case": true,
+    "selector-type-case": true,
+    "value-keyword-case": true,
 
     // Empty lines
     // TODO
