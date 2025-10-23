@@ -30,7 +30,7 @@ main {
 
 /* ------------------
    THEME TOKENS
--------------------*/
+------------------- */
 
 :root {
   --bg-1: #0f0f10;
@@ -59,7 +59,7 @@ main {
 
 /* ------------------
    BASE
--------------------*/
+------------------- */
 
 html,
 body {
@@ -81,7 +81,7 @@ body {
 
 /* ------------------
    LAYOUT
--------------------*/
+------------------- */
 
 .sidebar {
   width: 220px;
@@ -132,7 +132,7 @@ body {
 
 /* ------------------
    SIDEBAR: HEADER
--------------------*/
+------------------- */
 .sidebar-header {
   display: flex;
   align-items: center;
@@ -160,7 +160,7 @@ body {
 
 /* ------------------
    SIDEBAR: QUICK ACTIONS (horizontal icons)
--------------------*/
+------------------- */
 
 .icon-btn {
   width: 100%;
@@ -228,13 +228,13 @@ button,
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
-  margin: 20px 0 10px 0;
+  margin: 20px 0 10px;
   font-weight: 600;
 }
 
 /* ------------------
    SIDEBAR: MENU ITEMS
--------------------*/
+------------------- */
 
 .sidebar-item {
   display: flex;
@@ -374,7 +374,7 @@ main a:hover,
 
 /* ------------------
    TOPBAR: INPUT AND BUTTONS
--------------------*/
+------------------- */
 
 .topbar .btn-primary {
   font-size: 0.85rem;
@@ -401,7 +401,7 @@ main a:hover,
 
 /* ------------------
    GRID & CARDS
--------------------*/
+------------------- */
 
 .grid {
   display: grid;
@@ -478,7 +478,7 @@ main a:hover,
 
 /* ------------------
    MODAL & OVERLAY
--------------------*/
+------------------- */
 
 .overlay {
   background: rgba(0, 0, 0, 0.7);
@@ -536,7 +536,7 @@ main a:hover,
 
 /* ------------------
    DROPZONE
--------------------*/
+------------------- */
 
 .dropzone {
   border: 2px dashed #444;
@@ -566,20 +566,20 @@ main a:hover,
 
 /* ------------------
    HELP / PILLS
--------------------*/
+------------------- */
 
 .help {
   margin-top: 18px;
 }
 
 .help h4 {
-  margin: 0 0 4px 0;
+  margin: 0 0 4px;
   color: #fff;
 }
 
 .help .muted {
   color: #a3a3a3;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
 }
 
 .platforms {
@@ -959,7 +959,7 @@ main a:hover,
 
 .intro {
   max-width: 800px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 40px;
   font-size: 1.05em;
 }
 
@@ -1039,7 +1039,7 @@ main a:hover,
 
 /* ------------------
    HOME SECTION
--------------------*/
+------------------- */
 
 /* Responsive mobile - everything in column */
 @media (max-width: 900px) {
@@ -1080,7 +1080,7 @@ main a:hover,
 
 /* ------------------
    TAB LAYER FIX
--------------------*/
+------------------- */
 
 .tab {
   position: relative;
@@ -1096,7 +1096,7 @@ main a:hover,
 
 /* ------------------
    HOME REWORKED
--------------------*/
+------------------- */
 
 .home-section-block h2 {
   color: #fff;
@@ -1152,7 +1152,7 @@ main a:hover,
 
 /* ------------------
    HOME CINEMATIC
--------------------*/
+------------------- */
 
 .home-content.cinematic {
   position: relative;
@@ -1403,7 +1403,7 @@ html {
 
 /* ------------------
    WISHES - clean and consistent layout
--------------------*/
+------------------- */
 
 #wishes-grid {
   display: flex;
@@ -1668,7 +1668,7 @@ main::-webkit-scrollbar-thumb:hover {
 
 /* ------------------
    COMPLETION - consistent layout
--------------------*/
+------------------- */
 
 #completion-grid {
   display: flex;
@@ -1719,7 +1719,7 @@ main::-webkit-scrollbar-thumb:hover {
 
 /* ------------------
    GENERIC HIDDEN UTILITY
--------------------*/
+------------------- */
 
 .hidden {
   display: none !important;
@@ -2370,7 +2370,7 @@ main::-webkit-scrollbar-thumb:hover {
 
 .journal-divider {
   display: block;
-  margin: 1rem auto 0.75rem auto;
+  margin: 1rem auto 0.75rem;
   width: 70%;
   opacity: 0.85;
 }
