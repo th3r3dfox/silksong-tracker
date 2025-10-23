@@ -2322,6 +2322,7 @@ mark.active-match {
   border: 2px solid #c70404;
   padding: 10px;
   text-align: center;
+  text-decoration: line-through;
 }
 
 .unobtainable-icon {
