@@ -638,6 +638,17 @@ function renderGenericGrid(
       div.append(warn);
     }
 
+    if (item.unobtainable === true && value !== undefined && !isDone) {
+      const unob = document.createElement("span");
+      unob.className = "unobtainable-icon";
+      unob.title =
+        "Unobtainable item - cannot be acquired in current save file";
+      unob.textContent = "🔒";
+      div.append(unob);
+
+      div.classList.add("unobtainable");
+    }
+
     if (item.type === "tool" && item.upgradeOf !== undefined) {
       const upg = document.createElement("span");
       upg.className = "upgrade-icon";

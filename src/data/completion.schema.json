@@ -48,6 +48,10 @@
                   "description": "Whether this item can be permanently missed",
                   "type": "boolean"
                 },
+                "unobtainable": {
+                  "description": "Whether this item cannot be obtained in the current save file",
+                  "type": "boolean"
+                },
                 "mode": {
                   "enum": ["normal", "steel"],
                   "type": "string"

@@ -2315,6 +2315,54 @@ mark.active-match {
   border-radius: 30%;
 }
 
+.unobtainable {
+  position: relative;
+  opacity: 0.4;
+  color: #333;
+  border: 2px solid #c70404;
+  padding: 10px;
+  text-align: center;
+}
+
+.unobtainable-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "TrajanPro", serif;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #ff6b6b;
+  opacity: 0.95;
+  cursor: help;
+  line-height: 1;
+  z-index: 3;
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.7),
+    0 0 8px rgba(255, 107, 107, 0.4),
+    0 0 4px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 0.18s cubic-bezier(0.4, 1.6, 0.6, 1),
+    filter 0.18s cubic-bezier(0.4, 1.6, 0.6, 1),
+    box-shadow 0.18s cubic-bezier(0.4, 1.6, 0.6, 1);
+}
+
+.unobtainable-icon:hover {
+  transform: scale(1.18);
+  filter: brightness(1.25) drop-shadow(0 0 2px #ff6b6bcc);
+  box-shadow: 0 0 2px 1px #ff6b6b55;
+  text-shadow:
+    0 0 1px #ff6b6bcc,
+    0 0 2px #fff2,
+    0 0 1px #000a;
+  background: rgba(255, 107, 107, 0.08);
+  border-radius: 30%;
+}
+
 #back-to-top {
   position: fixed;
   bottom: 40px;
