@@ -1291,8 +1291,8 @@
           "id": "QuillState_1",
           "label": "Quill (White)",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "unobtainable": true,
           "obtain": "Purchase from Shakra.",
+          "unobtainable": true,
           "type": "quill"
         },
         {
@@ -1304,8 +1304,8 @@
           "id": "QuillState_2",
           "label": "Quill (Red)",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "unobtainable": true,
           "obtain": "Take from Trobbio's desk in Act 2 if a Quill is not already owned.",
+          "unobtainable": true,
           "type": "quill"
         },
         {
@@ -1317,8 +1317,8 @@
           "id": "QuillState_3",
           "label": "Quill (Purple)",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
-          "unobtainable": true,
           "obtain": "Take from Trobbio's desk in Act 3 if a Quill is not already owned.",
+          "unobtainable": true,
           "type": "quill"
         }
       ],
