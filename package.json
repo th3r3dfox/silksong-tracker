@@ -14,6 +14,7 @@
     "build": "vite build",
     "format": "eslint --fix . && prettier --write .",
     "lint": "tsx ./scripts/lint.ts",
+    "lint-css": "npx stylelint ./public/assets/css/style.css",
     "preview": "vite preview",
     "start": "vite dev"
   },
