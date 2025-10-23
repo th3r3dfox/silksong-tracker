@@ -81,30 +81,41 @@ export default {
     // -------------------
 
     // Allowed, disallowed & required
-    // TODO
+    // - Only some rules in this category are enabled.
+    "at-rule-no-vendor-prefix": true,
+    "function-url-no-scheme-relative": true,
+    "length-zero-no-unit": true,
+    "media-feature-name-no-vendor-prefix": true,
+    "property-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": true,
+    "value-no-vendor-prefix": true,
 
     // Case
-    // TODO
+    // - All rules in this category are omitted.
 
     // Empty lines
-    // TODO
+    // - All rules in this category are omitted.
 
     // Max & min.
-    // TODO
+    "declaration-block-single-line-max-declarations": 0,
 
     // Notation
-    // TODO
+    // - All rules in this category are omitted.
 
     // Pattern
-    // TODO
+    // - All rules in this category are omitted.
 
     // Quotes
-    // TODO
+    "font-family-name-quotes": "always-unless-keyword",
+    "function-url-quotes": "always",
+    "selector-attribute-quotes": "always",
 
     // Redundant
-    // TODO
+    "block-no-redundant-nested-style-rules": true,
+    "declaration-block-no-redundant-longhand-properties": true,
+    "shorthand-property-no-redundant-values": true,
 
     // Whitespace inside
-    // TODO
+    "comment-whitespace-inside": "always",
   },
 };

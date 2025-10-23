@@ -30,7 +30,7 @@ main {
 
 /* ------------------
    THEME TOKENS
--------------------*/
+------------------- */
 
 :root {
   --bg-1: #0f0f10;
@@ -59,7 +59,7 @@ main {
 
 /* ------------------
    BASE
--------------------*/
+------------------- */
 
 html,
 body {
@@ -75,13 +75,13 @@ body {
     auto;
 }
 
-body.home-active main {
+.home-active main {
   overflow: hidden; /* block scroll only in home */
 }
 
 /* ------------------
    LAYOUT
--------------------*/
+------------------- */
 
 .sidebar {
   width: 220px;
@@ -132,7 +132,7 @@ body.home-active main {
 
 /* ------------------
    SIDEBAR: HEADER
--------------------*/
+------------------- */
 .sidebar-header {
   display: flex;
   align-items: center;
@@ -160,7 +160,7 @@ body.home-active main {
 
 /* ------------------
    SIDEBAR: QUICK ACTIONS (horizontal icons)
--------------------*/
+------------------- */
 
 .icon-btn {
   width: 100%;
@@ -228,13 +228,13 @@ button,
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
-  margin: 20px 0 10px 0;
+  margin: 20px 0 10px;
   font-weight: 600;
 }
 
 /* ------------------
    SIDEBAR: MENU ITEMS
--------------------*/
+------------------- */
 
 .sidebar-item {
   display: flex;
@@ -374,7 +374,7 @@ main a:hover,
 
 /* ------------------
    TOPBAR: INPUT AND BUTTONS
--------------------*/
+------------------- */
 
 .topbar .btn-primary {
   font-size: 0.85rem;
@@ -401,7 +401,7 @@ main a:hover,
 
 /* ------------------
    GRID & CARDS
--------------------*/
+------------------- */
 
 .grid {
   display: grid;
@@ -478,7 +478,7 @@ main a:hover,
 
 /* ------------------
    MODAL & OVERLAY
--------------------*/
+------------------- */
 
 .overlay {
   background: rgba(0, 0, 0, 0.7);
@@ -536,7 +536,7 @@ main a:hover,
 
 /* ------------------
    DROPZONE
--------------------*/
+------------------- */
 
 .dropzone {
   border: 2px dashed #444;
@@ -566,20 +566,20 @@ main a:hover,
 
 /* ------------------
    HELP / PILLS
--------------------*/
+------------------- */
 
 .help {
   margin-top: 18px;
 }
 
 .help h4 {
-  margin: 0 0 4px 0;
+  margin: 0 0 4px;
   color: #fff;
 }
 
 .help .muted {
   color: #a3a3a3;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
 }
 
 .platforms {
@@ -623,7 +623,7 @@ main a:hover,
 
 .boss.locked:hover::after {
   background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(0);
 }
 
 .tab.hidden {
@@ -661,7 +661,7 @@ main a:hover,
 
 .boss.hovering::after {
   background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(0);
 }
 
 .home-content {
@@ -959,7 +959,7 @@ main a:hover,
 
 .intro {
   max-width: 800px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 40px;
   font-size: 1.05em;
 }
 
@@ -1039,7 +1039,7 @@ main a:hover,
 
 /* ------------------
    HOME SECTION
--------------------*/
+------------------- */
 
 /* Responsive mobile - everything in column */
 @media (max-width: 900px) {
@@ -1080,7 +1080,7 @@ main a:hover,
 
 /* ------------------
    TAB LAYER FIX
--------------------*/
+------------------- */
 
 .tab {
   position: relative;
@@ -1096,7 +1096,7 @@ main a:hover,
 
 /* ------------------
    HOME REWORKED
--------------------*/
+------------------- */
 
 .home-section-block h2 {
   color: #fff;
@@ -1152,7 +1152,7 @@ main a:hover,
 
 /* ------------------
    HOME CINEMATIC
--------------------*/
+------------------- */
 
 .home-content.cinematic {
   position: relative;
@@ -1403,7 +1403,7 @@ html {
 
 /* ------------------
    WISHES - clean and consistent layout
--------------------*/
+------------------- */
 
 #wishes-grid {
   display: flex;
@@ -1565,7 +1565,7 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 /* When spoiler is active --> labels dimmed */
-body.spoiler-on .act-label {
+.spoiler-on .act-label {
   color: #bdbdbd !important;
   box-shadow: none !important;
   opacity: 0.6;
@@ -1642,7 +1642,7 @@ body.spoiler-on .act-label {
 }
 
 /* Soft realistic glow Hollow Knight style */
-body.spoiler-on .boss:hover .act-label.act-1 {
+.spoiler-on .boss:hover .act-label.act-1 {
   color: #ffffff;
   opacity: 1;
   text-shadow:
@@ -1650,7 +1650,7 @@ body.spoiler-on .boss:hover .act-label.act-1 {
     0 0 12px rgba(255, 255, 255, 0.4);
 }
 
-body.spoiler-on .boss:hover .act-label.act-2 {
+.spoiler-on .boss:hover .act-label.act-2 {
   color: #ffffff;
   opacity: 1;
   text-shadow:
@@ -1658,7 +1658,7 @@ body.spoiler-on .boss:hover .act-label.act-2 {
     0 0 12px rgba(255, 255, 255, 0.5);
 }
 
-body.spoiler-on .boss:hover .act-label.act-3 {
+.spoiler-on .boss:hover .act-label.act-3 {
   color: #ffffff;
   opacity: 1;
   text-shadow:
@@ -1668,7 +1668,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 
 /* ------------------
    COMPLETION - consistent layout
--------------------*/
+------------------- */
 
 #completion-grid {
   display: flex;
@@ -1719,7 +1719,7 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 
 /* ------------------
    GENERIC HIDDEN UTILITY
--------------------*/
+------------------- */
 
 .hidden {
   display: none !important;
@@ -1856,14 +1856,14 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 }
 
 /* Search highlighting */
-mark.search-match {
+.search-match {
   background: #ffcb6b4d;
   color: var(--ink-1);
   border-radius: 3px;
   padding: 0 2px;
 }
 
-mark.active-match {
+.active-match {
   background: #ffd966;
   color: #000;
 }
@@ -2079,7 +2079,7 @@ mark.active-match {
 }
 
 .toc-category.open > a,
-.toc-category > a.active {
+.toc-category > .active {
   color: #e3b47b; /* soft amber highlight */
   text-shadow: 0 0 6px rgba(227, 180, 123, 0.3);
 }
@@ -2106,7 +2106,7 @@ mark.active-match {
   background: rgba(255, 153, 51, 0.05);
 }
 
-.toc-item a.active {
+.toc-item .active {
   color: var(--accent);
   background: rgba(197, 100, 50, 0.1);
 }
@@ -2148,8 +2148,8 @@ mark.active-match {
 }
 
 .toc-category.open > a,
-.toc-category > a.active,
-.toc-item a.active {
+.toc-category > .active,
+.toc-item .active {
   color: #e3b47b !important;
   text-shadow: 0 0 6px rgba(227, 180, 123, 0.3) !important;
 }
@@ -2370,7 +2370,7 @@ mark.active-match {
 
 .journal-divider {
   display: block;
-  margin: 1rem auto 0.75rem auto;
+  margin: 1rem auto 0.75rem;
   width: 70%;
   opacity: 0.85;
 }
@@ -2404,7 +2404,6 @@ mark.active-match {
     inset 0 0 6px rgba(255, 255, 255, 0.08);
   z-index: 2;
   backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
 }
 
 .map-controls {
