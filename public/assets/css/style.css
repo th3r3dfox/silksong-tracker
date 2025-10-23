@@ -219,9 +219,6 @@ button,
 }
 
 .sidebar-title {
-  margin-top: 6px;
-  margin-bottom: 8px;
-  padding-bottom: 2px;
   font-family: "TrajanPro", serif;
   font-size: 0.9rem;
   color: var(--accent);
@@ -669,7 +666,6 @@ main a:hover,
 
 .home-content {
   color: #ddd;
-  padding-bottom: 12vh;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -783,7 +779,6 @@ main a:hover,
 
 /* The subcategory title */
 .main-section-block h3 {
-  margin-top: 0; /* remove space above */
   line-height: 1.2;
   color: var(--ink-1);
   margin: 0 0 10px;
@@ -1132,7 +1127,6 @@ main a:hover,
 }
 
 .tribute {
-  margin-top: 60px;
   animation-delay: 0.6s;
   grid-column: 1 / -1;
   text-align: center;
@@ -1777,7 +1771,6 @@ body.spoiler-on .boss:hover .act-label.act-3 {
 }
 
 #raw-save-data-output {
-  color: var(--ink-1);
   white-space: pre-wrap;
   overflow-wrap: break-word;
   flex: 1;
