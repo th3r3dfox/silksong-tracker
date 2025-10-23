@@ -58,6 +58,10 @@
                   "description": "Scene identifier for location-based items",
                   "type": "string"
                 },
+                "map": {
+                  "description": "Map area name where this miniboss is located",
+                  "type": "string"
+                },
                 "type": {
                   "enum": ["boss", "journal", "sceneBool"],
                   "type": "string"

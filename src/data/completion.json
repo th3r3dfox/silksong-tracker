@@ -1237,7 +1237,7 @@
           "type": "flag"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Obtained from a map machine.",
           "flag": "HasHangMap",
           "icon": "completion/High_Halls_Map.png",
@@ -1257,7 +1257,7 @@
           "type": "flag"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Obtained from a map machine.",
           "flag": "HasSongGateMap",
           "icon": "completion/Choral_Chambers_Map.png",
@@ -1267,7 +1267,7 @@
           "type": "flag"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Obtained from a map machine.",
           "flag": "HasWardMap",
           "icon": "completion/Whiteward_Map.png",
