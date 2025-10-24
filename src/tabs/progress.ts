@@ -1,4 +1,4 @@
-import { assertArray, assertIs, includes } from "complete-common";
+import { assertArray } from "complete-common";
 import { getStoredActFilter } from "../components/acts-dropdown.ts";
 import { showOnlyMissing } from "../components/show-only-missing.ts";
 import { showSpoilers } from "../components/show-spoilers.ts";
@@ -29,9 +29,18 @@ import type { Category } from "../types/Category.ts";
 import type { Item } from "../types/Item.ts";
 import { getIconPath } from "../utils.ts";
 
-const EXCLUSIVE_GROUPS = [
-  ["Flower Heart", "Coral Heart", "Hunter Heart", "Clover Heart"],
-  ["Huntress Quest", "Huntress Quest Runt"], // Broodfest / Runtfeast
+type HeartId = "flower-heart" | "coral-heart" | "hunter-heart" | "clover-heart";
+
+const HEART_MEMENTO_IDS = [
+  "flower-heart",
+  "coral-heart",
+  "hunter-heart",
+  "clover-heart",
+] as const;
+
+// (Broodfest/Runtfeast)
+const EXCLUSIVE_QUEST_FLAGS = [
+  ["Huntress Quest", "Huntress Quest Runt"],
 ] as const;
 
 const BASE_DUMMY_ITEM = {
@@ -41,6 +50,16 @@ const BASE_DUMMY_ITEM = {
   label: "",
   link: "",
 } as const;
+
+function isHeartId(id: string): id is HeartId {
+  return (HEART_MEMENTO_IDS as readonly string[]).includes(id);
+}
+
+function isQuestFlag(
+  flag: string,
+): flag is "Huntress Quest" | "Huntress Quest Runt" {
+  return ["Huntress Quest", "Huntress Quest Runt"].includes(flag);
+}
 
 let tocObserver: IntersectionObserver | undefined;
 let isManualScroll = false; // prevent observer interference
@@ -103,87 +122,101 @@ export function updateTabProgress(): void {
 
       const saveData = getSaveData();
       const saveDataFlags = getSaveDataFlags();
+
       if (showMissingOnly && saveData !== undefined) {
         filteredItems = filteredItems.filter((item) => {
           const value = getSaveDataValue(saveData, saveDataFlags, item);
-
           if (item.type === "collectable") {
-            const numberValue = typeof value === "number" ? value : 0;
-            return numberValue === 0;
+            return (typeof value === "number" ? value : 0) === 0;
           }
-
           if (item.type === "level") {
-            const numberValue = typeof value === "number" ? value : 0;
-            return numberValue < item.required;
+            return (typeof value === "number" ? value : 0) < item.required;
           }
-
           if (item.type === "quest") {
             return value !== "completed" && value !== true;
           }
-
           return value !== true;
         });
       }
 
-      // Apply exclusive groups before counting.
-      for (const group of EXCLUSIVE_GROUPS) {
-        // Check if any quest/relic in the group is owned.
-        const owned = group.find((flag) => {
-          // Try as relic
-          let value = getSaveDataValue(saveData, saveDataFlags, {
-            ...BASE_DUMMY_ITEM,
-            type: "relic",
-            flag,
-          });
+      if (saveData !== undefined) {
+        const ownedHeart = filteredItems.find((item) => {
+          if (!isHeartId(item.id)) {
+            return false;
+          }
 
-          // Try as quest if not found.
-          if (value === undefined || value === false) {
-            value = getSaveDataValue(saveData, saveDataFlags, {
+          if (item.type !== "relic") {
+            return false;
+          }
+          const value = getSaveDataValue(saveData, saveDataFlags, item);
+          return (
+            value === true
+            || value === "collected"
+            || value === "deposited"
+            || value === "completed"
+          );
+        });
+
+        if (ownedHeart) {
+          filteredItems = filteredItems.filter((item) => {
+            if (!isHeartId(item.id)) {
+              return true;
+            }
+
+            return item.id === ownedHeart.id;
+          });
+        } else {
+          const defaultId = HEART_MEMENTO_IDS[0];
+          filteredItems = filteredItems.filter((item) => {
+            if (!isHeartId(item.id)) {
+              return true;
+            }
+            return item.id === defaultId;
+          });
+        }
+
+        // (Broodfest / Runtfeast).
+        for (const group of EXCLUSIVE_QUEST_FLAGS) {
+          const ownedFlag = group.find((flag) => {
+            const value = getSaveDataValue(saveData, saveDataFlags, {
               ...BASE_DUMMY_ITEM,
               type: "quest",
               flag,
             });
-          }
+            return value === true || value === "completed";
+          });
 
-          return (
-            value === "deposited"
-            || value === "collected"
-            || value === "completed"
-            || value === true
-          );
-        });
-
-        filteredItems = filteredItems.filter((item) => {
-          // Skip this filtering entirely for sceneVisited types.
-          if (item.type === "sceneVisited") {
+          filteredItems = filteredItems.filter((item) => {
+            if (item.type === "sceneVisited") {
+              return true;
+            }
+            if (item.flag === "") {
+              return true;
+            }
+            if (item.type === "materium") {
+              return true;
+            }
+            if (ownedFlag !== undefined) {
+              return !(
+                isQuestFlag(item.flag)
+                && group.includes(item.flag)
+                && item.flag !== ownedFlag
+              );
+            }
+            const defaultFlag = group[0];
+            if (isQuestFlag(item.flag)) {
+              return !group.includes(item.flag) || item.flag === defaultFlag;
+            }
             return true;
-          }
-
-          const { flag } = item;
-          // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-          if (flag === undefined) {
-            return false;
-          }
-
-          if (owned !== undefined) {
-            return !includes(group, flag) || flag === owned;
-          }
-
-          const defaultFlag = group[0];
-          return !includes(group, flag) || flag === defaultFlag;
-        });
+          });
+        }
       }
 
-      // Counting completion with handling for upgrades and exclusive groups.
       let obtained = 0;
       let total = 0;
-
-      // Track both per-category exclusive groups and global EXCLUSIVE_GROUPS.
       const localGroups = new Map<string, boolean>();
-      const globalGroups = new Map<string, boolean>();
 
       for (const item of filteredItems) {
-        // Skip upgrade variants (e.g., forged tools)
         if (item.type === "tool" && item.upgradeOf !== undefined) {
           continue;
         }
@@ -195,7 +228,6 @@ export function updateTabProgress(): void {
 
         const unlocked = getUnlocked(item, value);
 
-        // Handle local exclusive groups defined in JSON (only valid for tools).
         if (item.type === "tool" && item.exclusiveGroup !== undefined) {
           if (!localGroups.has(item.exclusiveGroup)) {
             localGroups.set(item.exclusiveGroup, unlocked);
@@ -206,37 +238,18 @@ export function updateTabProgress(): void {
           continue;
         }
 
-        // Handle local exclusive groups defined in JSON (only valid for tools).
-        if (item.type === "tool" && item.exclusiveGroup !== undefined) {
-          if (!localGroups.has(item.exclusiveGroup)) {
-            localGroups.set(item.exclusiveGroup, unlocked);
-            total++;
-          } else if (unlocked) {
-            localGroups.set(item.exclusiveGroup, true);
-          }
-          continue;
-        }
-
-        // Normal items
         total++;
         if (unlocked) {
           obtained++;
         }
       }
 
-      // Add completed groups
       for (const unlocked of localGroups.values()) {
         if (unlocked) {
           obtained++;
         }
       }
-      for (const unlocked of globalGroups.values()) {
-        if (unlocked) {
-          obtained++;
-        }
-      }
 
-      // Display the obtained/total counter.
       const count = document.createElement("span");
       count.className = "category-count";
       count.textContent = ` ${obtained}/${total}`;
@@ -263,7 +276,6 @@ export function updateTabProgress(): void {
     }
   }
 
-  // Build TOC once after all categories are rendered.
   buildDynamicTOC();
   initScrollSpy();
 }
@@ -483,49 +495,71 @@ function renderGenericGrid(
     );
   });
 
-  // Apply mutually exclusive groups (global, relic + quest).
-  for (const group of EXCLUSIVE_GROUPS) {
-    const owned = group.find((flag) => {
-      // Try first as relic.
-      let value = getSaveDataValue(saveData, saveDataFlags, {
-        ...BASE_DUMMY_ITEM,
-        type: "relic",
-        flag,
-      });
+  // ------------------------------------------------------------------
+  // APPLY EXCLUSIVE GROUPS (same logic as updateTabProgress)
+  // ------------------------------------------------------------------
+  if (saveData !== undefined) {
+    const ownedHeart = items.find((item) => {
+      if (!isHeartId(item.id)) {
+        return false;
+      }
+      if (item.type !== "relic") {
+        return false;
+      }
 
-      // If not a valid relic, try as quest.
-      if (value === undefined || value === false) {
-        value = getSaveDataValue(saveData, saveDataFlags, {
+      const value = getSaveDataValue(saveData, saveDataFlags, item);
+      return (
+        value === true
+        || value === "collected"
+        || value === "deposited"
+        || value === "completed"
+      );
+    });
+
+    if (ownedHeart) {
+      items = items.filter(
+        (item) => !isHeartId(item.id) || item.id === ownedHeart.id,
+      );
+    } else {
+      const defaultId = HEART_MEMENTO_IDS[0];
+      items = items.filter(
+        (item) => !isHeartId(item.id) || item.id === defaultId,
+      );
+    }
+
+    // (Broodfest / Runtfeast)
+    const QUEST_EXCLUSIVE_FLAGS = [
+      ["Huntress Quest", "Huntress Quest Runt"],
+    ] as const;
+
+    for (const group of QUEST_EXCLUSIVE_FLAGS) {
+      const ownedFlag = group.find((flag) => {
+        const value = getSaveDataValue(saveData, saveDataFlags, {
           ...BASE_DUMMY_ITEM,
           type: "quest",
           flag,
         });
-      }
-
-      return (
-        value === "deposited"
-        || value === "collected"
-        || value === "completed"
-        || value === true
-      );
-    });
-
-    if (owned !== undefined) {
-      items = items.filter((item) => {
-        // Skip filtering entirely for sceneVisited items.
-        if (item.type === "sceneVisited") {
-          return true;
-        }
-
-        const { flag } = item;
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-        if (flag === undefined) {
-          return false;
-        }
-        return !includes(group, flag) || flag === owned;
+        return value === true || value === "completed";
       });
+
+      if (ownedFlag !== undefined) {
+        items = items.filter((item) => {
+          if (item.type === "sceneVisited") {
+            return true;
+          }
+          if (item.flag === "") {
+            return true;
+          }
+          if (item.type === "materium") {
+            return true;
+          }
+          return !isQuestFlag(item.flag) || item.flag === ownedFlag;
+        });
+      }
     }
   }
+
+  // RENDERING
 
   let renderedCount = 0;
 
@@ -598,12 +632,7 @@ function renderGenericGrid(
         break;
       }
 
-      case "materium": {
-        isDone = value === "deposited";
-        isAccepted = value === "collected";
-        break;
-      }
-
+      case "materium":
       case "device": {
         isDone = value === "deposited";
         isAccepted = value === "collected";
@@ -624,12 +653,13 @@ function renderGenericGrid(
       }
     }
 
-    // If "only missing" and it's completed --> don't render the card at all.
+    // Hide done items if "Only Missing" is checked.
     const showMissingOnly = showOnlyMissing.checked;
     if (showMissingOnly && isDone) {
       continue;
     }
 
+    // Missable / unobtainable / upgrade markers.
     if (item.missable === true) {
       const warn = document.createElement("span");
       warn.className = "missable-icon";
@@ -645,7 +675,6 @@ function renderGenericGrid(
         "Unobtainable item - cannot be acquired in current save file";
       unob.textContent = "🔒";
       div.append(unob);
-
       div.classList.add("unobtainable");
     }
 
@@ -657,24 +686,16 @@ function renderGenericGrid(
       div.append(upg);
     }
 
-    // Image and state management.
+    // Image & state
     const iconPath = getIconPath(item);
     const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
 
     if (isDone) {
       img.src = iconPath;
       div.classList.add("done");
-
-      // if the item is done, hide missable icon
       const missableIcon = div.querySelector(".missable-icon");
       if (missableIcon !== null) {
-        assertIs(
-          missableIcon,
-          HTMLSpanElement,
-          'An element with the "missable-icon" class was not a span element.',
-        );
-
-        missableIcon.style.display = "none";
+        (missableIcon as HTMLElement).style.display = "none";
       }
     } else if (isAccepted) {
       img.src = iconPath;
@@ -685,7 +706,6 @@ function renderGenericGrid(
     } else {
       img.src = lockedPath;
       div.classList.add("locked");
-
       div.addEventListener("mouseenter", () => {
         img.src = iconPath;
       });
@@ -713,9 +733,6 @@ function renderGenericGrid(
       const { required } = item;
       const counter = document.createElement("span");
       counter.className = "journal-counter";
-
-      // When completed, show only the number of kills (without "/required").
-
       counter.textContent =
         current >= required ? `${current}` : `${current}/${required}`;
       div.append(counter);
