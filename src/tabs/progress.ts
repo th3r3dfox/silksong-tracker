@@ -697,13 +697,13 @@ function matchMode(item: Item) {
     return true;
   }
 
-  // BEFORE loading a save -> show all.
+  // BEFORE loading a save > show all.
   const saveData = getSaveData();
   if (saveData === undefined) {
     return true;
   }
 
-  // AFTER loading -> match mode.
+  // AFTER loading > match mode.
   const saveDataMode = getSaveDataMode();
   return mode === saveDataMode;
 }
