@@ -519,7 +519,7 @@
         {
           "act": 3,
           "description": "Sinner's Road.",
-          "flag": "silkFarmAbyssCoresCleared ",
+          "flag": "silkFarmAbyssCoresCleared",
           "icon": "mini-bosses/Void_Mass.png",
           "id": "Void_Mass_37",
           "label": "Kill #37",
@@ -531,7 +531,7 @@
         {
           "act": 3,
           "description": "Sinner's Road.",
-          "flag": "silkFarmAbyssCoresCleared ",
+          "flag": "silkFarmAbyssCoresCleared",
           "icon": "mini-bosses/Void_Mass.png",
           "id": "Void_Mass_38",
           "label": "Kill #38",
