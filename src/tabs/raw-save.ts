@@ -1,5 +1,4 @@
-import loader from "@monaco-editor/loader";
-import type * as monaco from "monaco-editor"; // For type definitions only
+import * as monaco from "monaco-editor"; // For type definitions only
 import { getHTMLElement } from "../elements.ts";
 import { getSaveData } from "../save-data.ts";
 import { showToast } from "../utils.ts";
@@ -10,11 +9,10 @@ const rawSaveDataOutput = getHTMLElement("raw-save-data-output");
 
 let editor: monaco.editor.IStandaloneCodeEditor | null;
 
-export async function initRawSaveData(): Promise<void> {
+export function initRawSaveData(): void {
   // Initialize Monaco Editor
 
-  const monacoInstance = await loader.init();
-  editor = monacoInstance.editor.create(rawSaveDataOutput, {
+  editor = monaco.editor.create(rawSaveDataOutput, {
     value: "",
     language: "javascript", // using javascript for JSON syntax highlighting - for some reason folding doesn't work with json
     minimap: { enabled: false },

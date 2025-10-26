@@ -18,7 +18,6 @@
     "start": "vite dev"
   },
   "dependencies": {
-    "@monaco-editor/loader": "1.6.1",
     "complete-common": "2.8.0",
     "crypto-js": "4.2.0",
     "monaco-editor": "0.54.0",
