@@ -888,19 +888,6 @@
       "items": [
         {
           "act": 1,
-          "description": "In the eastern area of Blasted Steps, east of where Shakra appears ( This Silkeater is replaced by Steel Seer Zi in Steel Soul Mode.).",
-          "flag": "Silk Grub Large Cocoon",
-          "icon": "completion/Silkeater.png",
-          "id": "Silkeater-0",
-          "label": "Silkeater #0",
-          "link": "https://hollowknight.wiki/w/Silkeater",
-          "missable": true,
-          "mode": "normal",
-          "scene": "Coral_37",
-          "type": "sceneBool"
-        },
-        {
-          "act": 1,
           "description": "Greymoor, in the top of the tower west of Halfway Home.",
           "flag": "Silk Grub Large Cocoon",
           "icon": "completion/Silkeater.png",
@@ -993,6 +980,19 @@
           "link": "https://hollowknight.wiki/w/Silkeater",
           "missable": true,
           "scene": "Tube_Hub",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "In the eastern area of Blasted Steps, east of where Shakra appears ( This Silkeater is replaced by Steel Seer Zi in Steel Soul Mode.).",
+          "flag": "Silk Grub Large Cocoon",
+          "icon": "completion/Silkeater.png",
+          "id": "Silkeater-9",
+          "label": "Silkeater #9",
+          "link": "https://hollowknight.wiki/w/Silkeater",
+          "missable": true,
+          "mode": "normal",
+          "scene": "Coral_37",
           "type": "sceneBool"
         }
       ],
