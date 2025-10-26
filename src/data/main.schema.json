@@ -81,13 +81,13 @@
                   ],
                   "type": "string"
                 },
-                "upgradeOf": {
-                  "description": "ID of the base item this one upgrades",
-                  "type": "string"
-                },
                 "unobtainable": {
                   "description": "Whether this item cannot be obtained in the current save file",
                   "type": "boolean"
+                },
+                "upgradeOf": {
+                  "description": "ID of the base item this one upgrades",
+                  "type": "string"
                 }
               },
               "required": [
