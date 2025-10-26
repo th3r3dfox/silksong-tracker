@@ -282,17 +282,22 @@ function buildDynamicTOC() {
       currentSubList.append(subLi);
     }
   }
+
+  if (document.querySelector(".toc-legend")) {
+    return;
+  }
+
   // Append legend block at the bottom of the TOC.
   const legendBlock = document.createElement("div");
   legendBlock.className = "toc-legend";
   legendBlock.innerHTML = `
-  <div class="legend-title">Legend</div>
-  <ul class="legend-list">
-    <li><i class="fa-solid fa-arrow-up"></i> Upgrade of another tool</li>
-    <li><i class="fa-solid fa-code-branch"></i> Mutually exclusive item</li>
-    <li><span class="legend-missable">!</span> Missable item</li>
-  </ul>
-`;
+    <div class="legend-title">Legend</div>
+    <ul class="legend-list">
+      <li><i class="fa-solid fa-arrow-up"></i> Upgrade of another tool</li>
+      <li><i class="fa-solid fa-code-branch"></i> Mutually exclusive item</li>
+      <li><span class="legend-missable">!</span> Missable item</li>
+    </ul>
+  `;
   tocList.parentElement?.append(legendBlock);
 }
 
