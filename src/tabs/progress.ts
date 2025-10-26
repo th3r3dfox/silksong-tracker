@@ -94,6 +94,11 @@ export function updateTabProgress(): void {
       if (showMissingOnly && saveData !== undefined) {
         filteredItems = filteredItems.filter((item) => {
           const value = getSaveDataValue(saveData, saveDataFlags, item);
+
+          if (item.unobtainable === true && typeof item.group === "string") {
+            return true;
+          }
+
           if (item.type === "collectable") {
             return (typeof value === "number" ? value : 0) === 0;
           }
