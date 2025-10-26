@@ -583,21 +583,25 @@
           "act": 2,
           "description": "Use tools to acquire organs of various types so Huntress may feed her brood.",
           "flag": "Huntress Quest",
+          "group": "broodfeast",
           "icon": "quest/Hunt_Wishes.png",
           "id": "broodfeast",
           "label": "Broodfeast",
           "link": "https://hollowknight.wiki/w/Broodfeast",
-          "type": "quest"
+          "type": "quest",
+          "unobtainable": true
         },
         {
           "act": 3,
           "description": "Use tools to acquire organs of various types so Runt may feed.",
           "flag": "Huntress Quest Runt",
+          "group": "broodfeast",
           "icon": "quest/Hunt_Wishes.png",
           "id": "runtfeast",
           "label": "Runtfeast",
           "link": "https://hollowknight.wiki/w/Runtfeast",
-          "type": "quest"
+          "type": "quest",
+          "unobtainable": true
         },
         {
           "act": 3,

@@ -1641,6 +1641,15 @@ main::-webkit-scrollbar-thumb:hover {
   box-shadow: 0 0 8px rgba(159, 255, 159, 0.6);
 }
 
+.boss.unobtainable {
+  box-shadow: 0 0 8px #d22;
+  border-color: #d22;
+}
+
+.boss.unobtainable.done {
+  box-shadow: 0 0 8px #d22;
+}
+
 /* Soft realistic glow Hollow Knight style */
 .spoiler-on .boss:hover .act-label.act-1 {
   color: #ffffff;
@@ -1929,7 +1938,7 @@ main::-webkit-scrollbar-thumb:hover {
   font-family: "TrajanPro", serif;
   font-weight: bold;
   font-size: 1.4em;
-  color: #ff6b6b;
+  color: var(--accent);
   opacity: 0.95;
   cursor: help;
   line-height: 1;
@@ -2013,6 +2022,64 @@ main::-webkit-scrollbar-thumb:hover {
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   margin-top: 1.5rem;
+  text-align: center;
+}
+
+.toc-legend {
+  position: sticky;
+  bottom: 1.5rem; /* distanza dal fondo della finestra */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.4) 60%,
+    transparent
+  );
+  backdrop-filter: blur(2px);
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--ink-1);
+  opacity: 0.95;
+  font-family: "TrajanPro", serif;
+  letter-spacing: 0.02em;
+  z-index: 2;
+}
+
+.legend-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+.legend-list {
+  list-style: none;
+  padding-left: 0.3rem;
+  margin: 0;
+}
+
+.legend-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+  gap: 0.5rem;
+}
+
+.legend-list i {
+  color: var(--accent);
+  width: 1.2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.legend-missable {
+  color: #e6614c;
+  font-weight: bold;
+  width: 1.2rem;
   text-align: center;
 }
 

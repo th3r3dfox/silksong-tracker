@@ -29,38 +29,6 @@ import type { Category } from "../types/Category.ts";
 import type { Item } from "../types/Item.ts";
 import { getIconPath } from "../utils.ts";
 
-type HeartId = "flower-heart" | "coral-heart" | "hunter-heart" | "clover-heart";
-
-const HEART_MEMENTO_IDS = [
-  "flower-heart",
-  "coral-heart",
-  "hunter-heart",
-  "clover-heart",
-] as const;
-
-// (Broodfest/Runtfeast)
-const EXCLUSIVE_QUEST_FLAGS = [
-  ["Huntress Quest", "Huntress Quest Runt"],
-] as const;
-
-const BASE_DUMMY_ITEM = {
-  act: 1,
-  icon: "",
-  id: "",
-  label: "",
-  link: "",
-} as const;
-
-function isHeartId(id: string): id is HeartId {
-  return (HEART_MEMENTO_IDS as readonly string[]).includes(id);
-}
-
-function isQuestFlag(
-  flag: string,
-): flag is "Huntress Quest" | "Huntress Quest Runt" {
-  return ["Huntress Quest", "Huntress Quest Runt"].includes(flag);
-}
-
 let tocObserver: IntersectionObserver | undefined;
 let isManualScroll = false; // prevent observer interference
 
@@ -139,112 +107,43 @@ export function updateTabProgress(): void {
         });
       }
 
-      if (saveData !== undefined) {
-        const ownedHeart = filteredItems.find((item) => {
-          if (!isHeartId(item.id)) {
-            return false;
-          }
-
-          if (item.type !== "relic") {
-            return false;
-          }
-          const value = getSaveDataValue(saveData, saveDataFlags, item);
-          return (
-            value === true
-            || value === "collected"
-            || value === "deposited"
-            || value === "completed"
-          );
-        });
-
-        if (ownedHeart) {
-          filteredItems = filteredItems.filter((item) => {
-            if (!isHeartId(item.id)) {
-              return true;
-            }
-
-            return item.id === ownedHeart.id;
-          });
-        } else {
-          const defaultId = HEART_MEMENTO_IDS[0];
-          filteredItems = filteredItems.filter((item) => {
-            if (!isHeartId(item.id)) {
-              return true;
-            }
-            return item.id === defaultId;
-          });
-        }
-
-        // (Broodfest / Runtfeast).
-        for (const group of EXCLUSIVE_QUEST_FLAGS) {
-          const ownedFlag = group.find((flag) => {
-            const value = getSaveDataValue(saveData, saveDataFlags, {
-              ...BASE_DUMMY_ITEM,
-              type: "quest",
-              flag,
-            });
-            return value === true || value === "completed";
-          });
-
-          filteredItems = filteredItems.filter((item) => {
-            if (item.type === "sceneVisited") {
-              return true;
-            }
-            if (item.flag === "") {
-              return true;
-            }
-            if (item.type === "materium") {
-              return true;
-            }
-            if (ownedFlag !== undefined) {
-              return !(
-                isQuestFlag(item.flag)
-                && group.includes(item.flag)
-                && item.flag !== ownedFlag
-              );
-            }
-            const defaultFlag = group[0];
-            if (isQuestFlag(item.flag)) {
-              return !group.includes(item.flag) || item.flag === defaultFlag;
-            }
-            return true;
-          });
-        }
-      }
-
       let obtained = 0;
       let total = 0;
-      const localGroups = new Map<string, boolean>();
 
       for (const item of filteredItems) {
-        if (item.type === "tool" && item.upgradeOf !== undefined) {
-          continue;
-        }
-
         const value =
           saveData === undefined
             ? false
             : getSaveDataValue(saveData, saveDataFlags, item);
-
         const unlocked = getUnlocked(item, value);
 
-        if (item.type === "tool" && item.exclusiveGroup !== undefined) {
-          if (!localGroups.has(item.exclusiveGroup)) {
-            localGroups.set(item.exclusiveGroup, unlocked);
-            total++;
-          } else if (unlocked) {
-            localGroups.set(item.exclusiveGroup, true);
-          }
+        // Skip counting upgrade variants separately.
+        if (item.type === "tool" && item.upgradeOf !== undefined) {
+          continue;
+        }
+
+        // If no save file is loaded, count all items without applying any group logic.
+        if (saveData === undefined) {
+          total++;
+          continue;
+        }
+
+        // If the item is unobtainable, exclude it from the total count.
+        if (
+          item.unobtainable === true
+          && typeof item.group === "string"
+          && item.group.trim() !== ""
+          && filteredItems.some(
+            (i) =>
+              i.group === item.group
+              && getUnlocked(i, getSaveDataValue(saveData, saveDataFlags, i)),
+          )
+          && !unlocked
+        ) {
           continue;
         }
 
         total++;
-        if (unlocked) {
-          obtained++;
-        }
-      }
-
-      for (const unlocked of localGroups.values()) {
         if (unlocked) {
           obtained++;
         }
@@ -383,6 +282,18 @@ function buildDynamicTOC() {
       currentSubList.append(subLi);
     }
   }
+  // Append legend block at the bottom of the TOC.
+  const legendBlock = document.createElement("div");
+  legendBlock.className = "toc-legend";
+  legendBlock.innerHTML = `
+  <div class="legend-title">Legend</div>
+  <ul class="legend-list">
+    <li><i class="fa-solid fa-arrow-up"></i> Upgrade of another tool</li>
+    <li><i class="fa-solid fa-code-branch"></i> Mutually exclusive item</li>
+    <li><span class="legend-missable">!</span> Missable item</li>
+  </ul>
+`;
+  tocList.parentElement?.append(legendBlock);
 }
 
 function showGenericModal(item: Item) {
@@ -483,117 +394,51 @@ function renderGenericGrid(
   const saveData = getSaveData();
   const saveDataFlags = getSaveDataFlags();
 
-  // Silkshot variants (only one card visible).
-  const silkVariants = ["WebShot Architect", "WebShot Forge", "WebShot Weaver"];
-  const unlockedSilkVariant = silkVariants.find((silkVariant) => {
-    if (saveData === undefined) {
-      return false;
-    }
-
-    return saveData.playerData.Tools.savedData.some(
-      (tool) => tool.Name === silkVariant && tool.Data["IsUnlocked"] === true,
-    );
-  });
-
-  // ------------------------------------------------------------------
-  // APPLY EXCLUSIVE GROUPS (same logic as updateTabProgress)
-  // ------------------------------------------------------------------
-  if (saveData !== undefined) {
-    const ownedHeart = items.find((item) => {
-      if (!isHeartId(item.id)) {
-        return false;
-      }
-      if (item.type !== "relic") {
-        return false;
-      }
-
-      const value = getSaveDataValue(saveData, saveDataFlags, item);
-      return (
-        value === true
-        || value === "collected"
-        || value === "deposited"
-        || value === "completed"
-      );
-    });
-
-    if (ownedHeart) {
-      items = items.filter(
-        (item) => !isHeartId(item.id) || item.id === ownedHeart.id,
-      );
-    } else {
-      const defaultId = HEART_MEMENTO_IDS[0];
-      items = items.filter(
-        (item) => !isHeartId(item.id) || item.id === defaultId,
-      );
-    }
-
-    // (Broodfest / Runtfeast)
-    const QUEST_EXCLUSIVE_FLAGS = [
-      ["Huntress Quest", "Huntress Quest Runt"],
-    ] as const;
-
-    for (const group of QUEST_EXCLUSIVE_FLAGS) {
-      const ownedFlag = group.find((flag) => {
-        const value = getSaveDataValue(saveData, saveDataFlags, {
-          ...BASE_DUMMY_ITEM,
-          type: "quest",
-          flag,
-        });
-        return value === true || value === "completed";
-      });
-
-      if (ownedFlag !== undefined) {
-        items = items.filter((item) => {
-          if (item.type === "sceneVisited") {
-            return true;
-          }
-          if (item.flag === "") {
-            return true;
-          }
-          if (item.type === "materium") {
-            return true;
-          }
-          return !isQuestFlag(item.flag) || item.flag === ownedFlag;
-        });
-      }
+  const obtainedGroups = new Set<string>();
+  for (const i of items) {
+    const v = getSaveDataValue(saveData, saveDataFlags, i);
+    if (
+      typeof i.group === "string"
+      && i.group.trim() !== ""
+      && getUnlocked(i, v)
+    ) {
+      obtainedGroups.add(i.group);
     }
   }
-
-  // RENDERING
 
   let renderedCount = 0;
 
   for (const item of items) {
     const flag = item.type === "sceneVisited" ? undefined : item.flag;
 
-    // Silkshot --> show only 1 variant.
-    if (flag !== undefined && silkVariants.includes(flag)) {
-      if (unlockedSilkVariant !== undefined && flag !== unlockedSilkVariant) {
-        continue;
-      }
-      if (unlockedSilkVariant === undefined && flag !== "WebShot Architect") {
-        continue;
-      }
-    }
-
     const div = document.createElement("div");
     div.className = "boss";
+
+    // Upgrade marker (only for tools that are upgrades of other ones).
+    if (item.type === "tool" && item.upgradeOf !== undefined) {
+      const upgradeIcon = document.createElement("span");
+      upgradeIcon.className = "upgrade-icon";
+      upgradeIcon.title = "Upgrade of another tool";
+      upgradeIcon.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+      div.append(upgradeIcon);
+    }
 
     // Act label (ACT I / II / III).
     const romanActs = { 1: "I", 2: "II", 3: "III" };
     const actLabel = document.createElement("span");
     actLabel.className = `act-label act-${item.act}`;
-    const romanAct = romanActs[item.act];
-    actLabel.textContent = `ACT ${romanAct}`;
+    actLabel.textContent = `ACT ${romanActs[item.act]}`;
     div.append(actLabel);
 
     div.id = `${containerElement.id}-${item.id}`;
     div.dataset["flag"] = flag;
+    if (typeof item.group === "string" && item.group.trim() !== "") {
+      div.dataset["group"] = item.group;
+    }
 
     const img = document.createElement("img");
     img.alt = item.label;
 
-    // Value from save file (quest can now return "completed" or "accepted").
     const value = getSaveDataValue(saveData, saveDataFlags, item);
 
     let isDone: boolean;
@@ -601,13 +446,13 @@ function renderGenericGrid(
 
     switch (item.type) {
       case "level": {
-        const current = value === undefined ? 0 : Number(value);
+        const current = Number.isFinite(Number(value)) ? Number(value) : 0;
         isDone = current >= item.required;
         break;
       }
 
       case "collectable": {
-        const current = value === undefined ? 0 : Number(value);
+        const current = Number.isFinite(Number(value)) ? Number(value) : 0;
         isDone = current > 0;
         break;
       }
@@ -626,12 +471,7 @@ function renderGenericGrid(
         break;
       }
 
-      case "relic": {
-        isDone = value === "deposited";
-        isAccepted = value === "collected";
-        break;
-      }
-
+      case "relic":
       case "materium":
       case "device": {
         isDone = value === "deposited";
@@ -640,7 +480,7 @@ function renderGenericGrid(
       }
 
       case "journal": {
-        const current = typeof value === "number" ? value : 0;
+        const current = Number.isFinite(Number(value)) ? Number(value) : 0;
         const { required } = item;
         isDone = current >= required;
         isAccepted = current > 0 && current < required;
@@ -653,13 +493,32 @@ function renderGenericGrid(
       }
     }
 
+    // Unobtainable icon
+    if (item.unobtainable === true) {
+      const unob = document.createElement("span");
+      unob.className = "missable-icon unobtainable-icon";
+      unob.title =
+        "Mutually exclusive item — only one of these can be obtained";
+      unob.innerHTML = '<i class="fa-solid fa-code-branch"></i>';
+      div.append(unob);
+    }
+
+    if (
+      saveData !== undefined
+      && item.unobtainable === true
+      && typeof item.group === "string"
+      && obtainedGroups.has(item.group)
+      && !isDone
+    ) {
+      div.classList.add("unobtainable", "done");
+    }
+
     // Hide done items if "Only Missing" is checked.
-    const showMissingOnly = showOnlyMissing.checked;
-    if (showMissingOnly && isDone) {
+    if (showOnlyMissing.checked && isDone) {
       continue;
     }
 
-    // Missable / unobtainable / upgrade markers.
+    // Missable icon
     if (item.missable === true) {
       const warn = document.createElement("span");
       warn.className = "missable-icon";
@@ -668,73 +527,54 @@ function renderGenericGrid(
       div.append(warn);
     }
 
-    if (item.unobtainable === true && value !== undefined && !isDone) {
-      const unob = document.createElement("span");
-      unob.className = "unobtainable-icon";
-      unob.title =
-        "Unobtainable item - cannot be acquired in current save file";
-      unob.textContent = "🔒";
-      div.append(unob);
-      div.classList.add("unobtainable");
-    }
-
-    if (item.type === "tool" && item.upgradeOf !== undefined) {
-      const upg = document.createElement("span");
-      upg.className = "upgrade-icon";
-      upg.title = "Upgraded item";
-      upg.textContent = "↑";
-      div.append(upg);
-    }
-
-    // Image & state
+    // Icon handling
     const iconPath = getIconPath(item);
     const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
 
     if (isDone) {
       img.src = iconPath;
       div.classList.add("done");
-      const missableIcon = div.querySelector(".missable-icon");
-      if (missableIcon !== null) {
-        (missableIcon as HTMLElement).style.display = "none";
-      }
     } else if (isAccepted) {
       img.src = iconPath;
       div.classList.add("accepted");
+    } else if (item.unobtainable === true && saveData !== undefined) {
+      img.src = iconPath;
+      div.classList.add("unobtainable");
     } else if (spoilerOn) {
       img.src = iconPath;
       div.classList.add("unlocked");
     } else {
       img.src = lockedPath;
       div.classList.add("locked");
+
       div.addEventListener("mouseenter", () => {
         img.src = iconPath;
+        div.classList.remove("locked");
       });
+
       div.addEventListener("mouseleave", () => {
         img.src = lockedPath;
+
+        // eslint-disable-next-line no-void
+        void img.offsetWidth;
+
+        div.classList.add("locked");
       });
     }
 
-    // Title + modal
+    // Title
     const title = document.createElement("div");
     title.className = "title";
-    title.textContent =
-      flag !== undefined
-      && silkVariants.includes(flag)
-      && unlockedSilkVariant === undefined
-        ? "Silkshot"
-        : item.label;
+    title.textContent = item.label;
+    div.append(img, title);
 
-    div.append(img);
-    div.append(title);
-
-    // Journal kill counter (n / required).
+    // Journal counter
     if (item.type === "journal") {
-      const current = typeof value === "number" ? value : 0;
-      const { required } = item;
+      const current = Number.isFinite(Number(value)) ? Number(value) : 0;
       const counter = document.createElement("span");
       counter.className = "journal-counter";
       counter.textContent =
-        current >= required ? `${current}` : `${current}/${required}`;
+        current >= item.required ? `${current}` : `${current}/${item.required}`;
       div.append(counter);
     }
 

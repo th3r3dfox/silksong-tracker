@@ -518,6 +518,30 @@
         },
         {
           "act": 3,
+          "description": "Sinner's Road.",
+          "flag": "silkFarmAbyssCoresCleared ",
+          "icon": "mini-bosses/Void_Mass.png",
+          "id": "Void_Mass_37",
+          "label": "Kill #37",
+          "link": "https://hollowknight.wiki/w/Void_Mass",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480469",
+          "mode": "normal",
+          "type": "flag"
+        },
+        {
+          "act": 3,
+          "description": "Sinner's Road.",
+          "flag": "silkFarmAbyssCoresCleared ",
+          "icon": "mini-bosses/Void_Mass.png",
+          "id": "Void_Mass_38",
+          "label": "Kill #38",
+          "link": "https://hollowknight.wiki/w/Void_Mass",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480469",
+          "mode": "normal",
+          "type": "flag"
+        },
+        {
+          "act": 3,
           "description": "Deep Docks.",
           "flag": "Black_Thread_Core",
           "icon": "mini-bosses/Void_Mass.png",

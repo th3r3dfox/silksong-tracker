@@ -11,6 +11,7 @@ interface ItemBase {
   readonly map?: string;
   readonly missable?: boolean;
   readonly unobtainable?: boolean;
+  readonly group?: string;
   readonly mode?: Mode;
   readonly description?: string;
   readonly category?: string;
