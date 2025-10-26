@@ -27,6 +27,10 @@
                   "description": "The name of the save file flag used to track this wish",
                   "type": "string"
                 },
+                "group": {
+                  "description": "Identifier for mutually exclusive item groups (e.g. 'Silkshot', 'Quill', etc.)",
+                  "type": "string"
+                },
                 "icon": {
                   "type": "string"
                 },
@@ -57,6 +61,10 @@
                 "type": {
                   "enum": ["quest", "journal"],
                   "type": "string"
+                },
+                "unobtainable": {
+                  "description": "Whether this item cannot be obtained in the current save file",
+                  "type": "boolean"
                 }
               },
               "required": [
