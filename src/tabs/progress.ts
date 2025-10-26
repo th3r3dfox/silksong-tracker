@@ -667,7 +667,7 @@ function initScrollSpy() {
 
     targetElement.scrollIntoView({ behavior: "instant" });
 
-    // Re-enable observer slightly after scroll completes.
+    // Reenable observer slightly after scroll completes.
     setTimeout(() => {
       isManualScroll = false;
     }, 800); // adjust if your scroll is slower/faster
