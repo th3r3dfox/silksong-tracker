@@ -1821,6 +1821,14 @@ main::-webkit-scrollbar-thumb:hover {
   background: #e38b48;
 }
 
+.rawsave-btn .disabled {
+  background: var(--bg-3);
+  color: red;
+  border: 1px solid var(--stroke-soft);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 #raw-save-data-search {
   background: var(--bg-3);
   border: 1px solid var(--stroke);

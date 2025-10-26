@@ -15,6 +15,12 @@ export function initRawSaveData(): void {
   // Copy JSON to clipboard.
   rawSaveDataCopy.addEventListener("click", () => {
     const text = editor?.getValue() ?? "";
+    const saveData = getSaveData();
+    if (saveData === undefined) {
+      showToast("❌ No save loaded yet.");
+      return;
+    }
+
     navigator.clipboard
       .writeText(text)
       .then(() => {
@@ -56,7 +62,7 @@ async function ensureEditorInitialized() {
       const monacoInstance = await loader.init();
       editor = monacoInstance.editor.create(rawSaveDataOutput, {
         value: "",
-        language: "javascript",
+        language: "javascript", // using javascript for JSON syntax highlighting - for some reason folding doesn't work with json
         minimap: { enabled: false },
         theme: "vs-dark",
         fontSize: 14,
