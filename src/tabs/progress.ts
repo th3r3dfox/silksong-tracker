@@ -497,8 +497,7 @@ function renderGenericGrid(
     if (item.unobtainable === true) {
       const unob = document.createElement("span");
       unob.className = "missable-icon unobtainable-icon";
-      unob.title =
-        "Mutually exclusive item  only one of these can be obtained";
+      unob.title = "Mutually exclusive item  only one of these can be obtained";
       unob.innerHTML = '<i class="fa-solid fa-code-branch"></i>';
       div.append(unob);
     }
