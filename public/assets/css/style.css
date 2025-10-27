@@ -1794,7 +1794,6 @@ main::-webkit-scrollbar-thumb:hover {
   background: var(--bg-1);
   color: var(--ink-1);
   font-family: monospace;
-  padding: 30px 25px; /* sufficient space below header */
   line-height: 1.4;
   font-size: 0.9rem;
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
@@ -1836,6 +1835,14 @@ main::-webkit-scrollbar-thumb:hover {
 
 .rawsave-btn:hover {
   background: #e38b48;
+}
+
+.rawsave-btn .disabled {
+  background: var(--bg-3);
+  color: red;
+  border: 1px solid var(--stroke-soft);
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 #raw-save-data-search {
