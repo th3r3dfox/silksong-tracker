@@ -755,45 +755,50 @@
           "act": 3,
           "description": "Awarded after defeating Nyleth in Shellwood. (This is missable since you can only get one heart-related memento.)",
           "flag": "Flower Heart",
+          "group": "BossHeart",
           "icon": "completion/Heart_Flower.png",
           "id": "flower-heart",
           "label": "Pollen Heart",
           "link": "https://hollowknight.wiki/w/Pollen_Heart",
-          "missable": true,
-          "type": "relic"
+
+          "type": "relic",
+          "unobtainable": true
         },
         {
           "act": 3,
           "description": "Awarded after defeating Crust King Khann in Coral Tower. (This is missable since you can only get one heart-related memento per save file.)",
           "flag": "Coral Heart",
+          "group": "BossHeart",
           "icon": "completion/Heart_Coral.png",
           "id": "coral-heart",
           "label": "Encrusted Heart",
           "link": "https://hollowknight.wiki/w/Encrusted_Heart",
-          "missable": true,
-          "type": "relic"
+          "type": "relic",
+          "unobtainable": true
         },
         {
           "act": 3,
           "description": "Awarded after defeating Skarrsinger Karmelita in Far Fields. (This is missable since you can only get one heart-related memento per save file.)",
           "flag": "Hunter Heart",
+          "group": "BossHeart",
           "icon": "completion/Heart_Hunter.png",
           "id": "hunter-heart",
           "label": "Hunter's Heart",
           "link": "https://hollowknight.wiki/w/Hunter's_Heart",
-          "missable": true,
-          "type": "relic"
+          "type": "relic",
+          "unobtainable": true
         },
         {
           "act": 3,
           "description": "Awarded after defeating the Clover Dancers in Lost Verdania. (This is missable since you can only get one heart-related memento per save file.)",
           "flag": "Clover Heart",
+          "group": "BossHeart",
           "icon": "completion/Heart_Clover.png",
           "id": "clover-heart",
           "label": "Conjoined Heart",
           "link": "https://hollowknight.wiki/w/Conjoined_Heart",
-          "missable": true,
-          "type": "relic"
+          "type": "relic",
+          "unobtainable": true
         }
       ],
       "label": "Mementos"
@@ -881,19 +886,6 @@
     {
       "description": "Consume the Silkeater to retrieve a cocoon after falling in battle.",
       "items": [
-        {
-          "act": 1,
-          "description": "In the eastern area of Blasted Steps, east of where Shakra appears ( This Silkeater is replaced by Steel Seer Zi in Steel Soul Mode.).",
-          "flag": "Silk Grub Large Cocoon",
-          "icon": "completion/Silkeater.png",
-          "id": "Silkeater-0",
-          "label": "Silkeater #0",
-          "link": "https://hollowknight.wiki/w/Silkeater",
-          "missable": true,
-          "mode": "normal",
-          "scene": "Coral_37",
-          "type": "sceneBool"
-        },
         {
           "act": 1,
           "description": "Greymoor, in the top of the tower west of Halfway Home.",
@@ -988,6 +980,19 @@
           "link": "https://hollowknight.wiki/w/Silkeater",
           "missable": true,
           "scene": "Tube_Hub",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "In the eastern area of Blasted Steps, east of where Shakra appears ( This Silkeater is replaced by Steel Seer Zi in Steel Soul Mode.).",
+          "flag": "Silk Grub Large Cocoon",
+          "icon": "completion/Silkeater.png",
+          "id": "Silkeater-9",
+          "label": "Silkeater #9",
+          "link": "https://hollowknight.wiki/w/Silkeater",
+          "missable": true,
+          "mode": "normal",
+          "scene": "Coral_37",
           "type": "sceneBool"
         }
       ],
@@ -1287,6 +1292,7 @@
           "cost": "50",
           "description": "Writing implement for recording one's travels. Can be used to update any acquired maps.",
           "flag": "QuillState",
+          "group": "quills",
           "icon": "completion/Quill_White.png",
           "id": "QuillState_1",
           "label": "Quill (White)",
@@ -1300,6 +1306,7 @@
           "cost": "Free",
           "description": "Writing implement for recording one's travels. Can be used to update any acquired maps.",
           "flag": "QuillState",
+          "group": "quills",
           "icon": "completion/Quill_Red.png",
           "id": "QuillState_2",
           "label": "Quill (Red)",
@@ -1313,6 +1320,7 @@
           "cost": "Free",
           "description": "Writing implement for recording one's travels. Can be used to update any acquired maps.",
           "flag": "QuillState",
+          "group": "quills",
           "icon": "completion/Quill_Purple.png",
           "id": "QuillState_3",
           "label": "Quill (Purple)",

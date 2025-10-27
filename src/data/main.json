@@ -1060,38 +1060,41 @@
         {
           "act": 2,
           "description": "Obtained by repairing the Ruined Tool found in Weavenest Murglin. Repairing at Twelfth Architect for 140 Rosaries and 1 Craftmetal provides this variant.",
-          "exclusiveGroup": "bomb-variant",
           "flag": "WebShot Architect",
+          "group": "Silkshot",
           "icon": "icons/Silkshot_Architect.png",
           "id": "red-silkshot-architect",
           "label": "Silkshot (Architect)",
           "link": "https://hollowknight.wiki/w/Silkshot",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478732",
-          "type": "tool"
+          "type": "tool",
+          "unobtainable": true
         },
         {
           "act": 2,
           "description": "Obtained by repairing the Ruined Tool found in Weavenest Murglin. Repairing at Forge Daughter for 240 Rosaries and 1 Craftmetal provides this variant.",
-          "exclusiveGroup": "bomb-variant",
           "flag": "WebShot Forge",
+          "group": "Silkshot",
           "icon": "icons/Silkshot_Forge.png",
           "id": "red-silkshot-forge",
           "label": "Silkshot (Forge)",
           "link": "https://hollowknight.wiki/w/Silkshot",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479364",
-          "type": "tool"
+          "type": "tool",
+          "unobtainable": true
         },
         {
           "act": 2,
           "description": "Obtained by repairing the Ruined Tool found in Weavenest Murglin. Repairing at a room near the peak of Mount Fay for 1 Craftmetal provides this variant.",
-          "exclusiveGroup": "bomb-variant",
           "flag": "WebShot Weaver",
+          "group": "Silkshot",
           "icon": "icons/Silkshot_Weaver.png",
           "id": "red-silkshot-weaver",
           "label": "Silkshot (Weaver)",
           "link": "https://hollowknight.wiki/w/Silkshot",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479497",
-          "type": "tool"
+          "type": "tool",
+          "unobtainable": true
         },
         {
           "act": 2,

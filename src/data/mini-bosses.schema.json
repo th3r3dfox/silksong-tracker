@@ -63,7 +63,7 @@
                   "type": "string"
                 },
                 "type": {
-                  "enum": ["boss", "journal", "sceneBool"],
+                  "enum": ["boss", "journal", "sceneBool", "flag"],
                   "type": "string"
                 }
               },
