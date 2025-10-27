@@ -19,7 +19,7 @@ const REPO_ROOT = path.resolve(import.meta.dirname, "..");
  * allowed to have non-ASCII characters.
  */
 const ALLOWED_UNICODE_MAP = new ReadonlyMap<string, readonly string[]>([
-  ["index.html", ["✕"]],
+  ["index.html", ["◀", "▶", "✕"]],
   ["main.ts", ["📋", "❌"]],
   ["overview.md", ["│", "├", "└", "─"]],
   ["progress.ts", ["✕", "↑", "🔒"]],
