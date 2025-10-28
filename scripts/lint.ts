@@ -49,7 +49,7 @@ const CHECK_JSON_SCHEMA_COMMANDS: readonly string[] = await (async () => {
 })();
 
 async function checkForIllegalCharacters() {
-  const ignoredExtensions = ["otf", "png", "svg", "ttf", "woff2"];
+  const ignoredExtensions = ["otf", "png", "svg", "ttf", "woff2", "dll"];
   const ignoredExtensionsGlob = ignoredExtensions.map(
     (extension) => `**/*.${extension}`,
   );
