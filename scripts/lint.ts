@@ -25,6 +25,7 @@ const ALLOWED_UNICODE_MAP = new ReadonlyMap<string, readonly string[]>([
   ["progress.ts", ["✕", "↑", "🔒"]],
   ["raw-save.ts", ["📋", "❌"]],
   ["save-data.ts", ["✅", "❌"]],
+  ["WhatDidIPickUp.cs", ["’"]],
 ]);
 
 async function getDataJSONFilePaths(): Promise<readonly string[]> {
