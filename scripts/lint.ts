@@ -25,6 +25,7 @@ const ALLOWED_UNICODE_MAP = new ReadonlyMap<string, readonly string[]>([
   ["progress.ts", ["✕", "↑", "🔒"]],
   ["raw-save.ts", ["📋", "❌"]],
   ["save-data.ts", ["✅", "❌"]],
+  ["WhatDidIPickUp.cs", ["’"]],
 ]);
 
 async function getDataJSONFilePaths(): Promise<readonly string[]> {
@@ -49,7 +50,7 @@ const CHECK_JSON_SCHEMA_COMMANDS: readonly string[] = await (async () => {
 })();
 
 async function checkForIllegalCharacters() {
-  const ignoredExtensions = ["otf", "png", "svg", "ttf", "woff2"];
+  const ignoredExtensions = ["otf", "png", "svg", "ttf", "woff2", "dll"];
   const ignoredExtensionsGlob = ignoredExtensions.map(
     (extension) => `**/*.${extension}`,
   );
