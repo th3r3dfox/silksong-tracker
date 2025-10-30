@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scenes Data Schema",
+  "description": "Schema for defining all playable scenes and their visit status tracking, including icons, maps, and wiki links.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "Display name for this group of scenes (e.g., area name)."
+          },
+          "description": {
+            "type": "string",
+            "description": "Short description of the area or scene group."
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "act": {
+                  "type": "integer",
+                  "enum": [1, 2, 3]
+                },
+                "id": {
+                  "type": "string",
+                  "description": "Unique identifier for the scene item."
+                },
+                "label": {
+                  "type": "string",
+                  "description": "Display name for the scene."
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Optional tooltip or context for the scene."
+                },
+                "scene": {
+                  "type": "string",
+                  "description": "Internal scene name as used in the save data (e.g. Tut_01, Bonetown)."
+                },
+                "type": {
+                  "type": "string",
+                  "const": "sceneVisited",
+                  "description": "Defines this entry as a scene visited type."
+                },
+                "icon": {
+                  "type": "string",
+                  "description": "Optional custom icon path."
+                },
+                "link": {
+                  "type": "string",
+                  "description": "Optional wiki or info link."
+                },
+                "map": {
+                  "type": "string",
+                  "description": "Optional map embed path or URL."
+                },
+                "mode": {
+                  "type": "string",
+                  "enum": ["normal", "steel"],
+                  "description": "Optional. Specifies the game mode this scene belongs to (e.g., normal or steel)."
+                }
+              },
+              "required": ["id", "label", "scene", "type", "act"]
+            }
+          }
+        },
+        "required": ["label", "description", "items"]
+      }
+    }
+  },
+  "required": ["categories"]
+}
