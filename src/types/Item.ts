@@ -77,7 +77,8 @@ interface ItemQuest extends ItemBase {
 
 interface ItemKey extends ItemBase {
   readonly type: "key";
-  readonly flag: string;
+  readonly flag?: string;
+  readonly flags?: readonly string[];
 }
 
 interface ItemJournal extends ItemBase {
@@ -110,6 +111,45 @@ interface ItemBoss extends ItemBase {
   readonly flag: string;
 }
 
+interface FlagCheck {
+  readonly type: "flag";
+  readonly flag: string;
+}
+
+interface FlagIntCheck {
+  readonly type: "flagInt";
+  readonly flag: string;
+}
+
+interface SceneBoolCheck {
+  readonly type: "sceneBool";
+  readonly scene: string;
+  readonly flag: string;
+}
+
+interface SceneVisitedCheck {
+  readonly type: "sceneVisited";
+  readonly scene: string;
+}
+
+interface LevelCheck {
+  readonly type: "level";
+  readonly flag: string;
+  readonly required: number;
+}
+
+type ItemCheck =
+  | FlagCheck
+  | FlagIntCheck
+  | SceneBoolCheck
+  | SceneVisitedCheck
+  | LevelCheck;
+
+interface ItemAnyOf extends ItemBase {
+  readonly type: "anyOf";
+  readonly anyOf: readonly ItemCheck[];
+}
+
 export type Item =
   | ItemFlag
   | ItemFlagInt
@@ -125,4 +165,5 @@ export type Item =
   | ItemRelic
   | ItemMaterium
   | ItemDevice
-  | ItemBoss;
+  | ItemBoss
+  | ItemAnyOf;

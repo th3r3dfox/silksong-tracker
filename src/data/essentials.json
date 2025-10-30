@@ -101,7 +101,7 @@
         {
           "act": 2,
           "description": "Found at the far right edge of Songclave.",
-          "flag": "collectedWardKey",
+          "flags": ["collectedWardKey", "MerchantEnclaveWardKey"],
           "icon": "icons/White_Key.png",
           "id": "key-white",
           "label": "White Key",
