@@ -355,5 +355,9 @@ export function getSaveDataValue(
 
       return results;
     }
+
+    case "flagAnyOf": {
+      return item.flags.map((flag) => playerDataExpanded[flag]);
+    }
   }
 }

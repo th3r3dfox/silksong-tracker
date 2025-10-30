@@ -108,7 +108,7 @@ export function updateTabProgress(): void {
           if (item.type === "quest") {
             return value !== "completed" && value !== true;
           }
-          if (item.type === "anyOf") {
+          if (item.type === "anyOf" || item.type === "flagAnyOf") {
             return !getUnlocked(item, value);
           }
           return value !== true;
@@ -239,6 +239,11 @@ function getUnlocked(item: Item, value: unknown): boolean {
 
       return evaluateCheck();
     });
+  }
+
+  if (item.type === "flagAnyOf") {
+    const flagResults = value as unknown[];
+    return flagResults.some(Boolean);
   }
 
   return value === true || value === "collected" || value === "deposited";
@@ -451,7 +456,9 @@ function renderGenericGrid(
 
   for (const item of items) {
     const flag =
-      item.type === "sceneVisited" || item.type === "anyOf"
+      item.type === "sceneVisited"
+      || item.type === "anyOf"
+      || item.type === "flagAnyOf"
         ? undefined
         : item.flag;
 
@@ -560,6 +567,12 @@ function renderGenericGrid(
 
           return evaluateCheck();
         });
+        break;
+      }
+
+      case "flagAnyOf": {
+        const flagResults = value as unknown[];
+        isDone = flagResults.some(Boolean);
         break;
       }
 
