@@ -100,14 +100,23 @@
         },
         {
           "act": 2,
+          "anyOf": [
+            {
+              "flag": "collectedWardKey",
+              "type": "flag"
+            },
+            {
+              "flag": "MerchantEnclaveWardKey",
+              "type": "flag"
+            }
+          ],
           "description": "Found at the far right edge of Songclave.",
-          "flag": "collectedWardKey",
           "icon": "icons/White_Key.png",
           "id": "key-white",
           "label": "White Key",
           "link": "https://hollowknight.wiki/w/White_Key",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478599",
-          "type": "key"
+          "type": "anyOf"
         },
         {
           "act": 2,

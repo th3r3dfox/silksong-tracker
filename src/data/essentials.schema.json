@@ -20,6 +20,85 @@
                   "enum": [1, 2, 3],
                   "type": "integer"
                 },
+                "anyOf": {
+                  "description": "Array of checks for anyOf type items - if ANY check passes, item is obtained",
+                  "items": {
+                    "allOf": [
+                      {
+                        "if": {
+                          "properties": {
+                            "type": { "enum": ["flag", "flagInt", "level"] }
+                          }
+                        },
+                        "then": {
+                          "required": ["flag"]
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "type": { "enum": ["sceneBool", "sceneVisited"] }
+                          }
+                        },
+                        "then": {
+                          "required": ["scene"]
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": { "type": { "const": "sceneBool" } }
+                        },
+                        "then": {
+                          "required": ["flag"]
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": { "type": { "const": "flagInt" } }
+                        },
+                        "then": {
+                          "required": ["required"]
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": { "type": { "const": "level" } }
+                        },
+                        "then": {
+                          "required": ["required"]
+                        }
+                      }
+                    ],
+                    "properties": {
+                      "flag": {
+                        "description": "Save file flag name for flag/flagInt/level checks",
+                        "type": "string"
+                      },
+                      "required": {
+                        "description": "Required value for flagInt/level checks",
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "scene": {
+                        "description": "Scene name for sceneBool/sceneVisited checks",
+                        "type": "string"
+                      },
+                      "type": {
+                        "enum": [
+                          "flag",
+                          "flagInt",
+                          "level",
+                          "sceneBool",
+                          "sceneVisited"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": ["type"],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
                 "category": {
                   "description": "Category grouping for items",
                   "type": "string"
@@ -59,24 +138,47 @@
                 },
                 "type": {
                   "enum": [
-                    "level",
+                    "anyOf",
                     "flag",
+                    "flagInt",
                     "key",
+                    "level",
                     "quest",
-                    "sceneBool",
-                    "flagInt"
+                    "sceneBool"
                   ],
                   "type": "string"
                 }
               },
-              "required": [
-                "act",
-                "flag",
-                "icon",
-                "id",
-                "label",
-                "link",
-                "type"
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "type": { "const": "anyOf" }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "act",
+                      "anyOf",
+                      "icon",
+                      "id",
+                      "label",
+                      "link",
+                      "type"
+                    ]
+                  },
+                  "else": {
+                    "required": [
+                      "act",
+                      "flag",
+                      "icon",
+                      "id",
+                      "label",
+                      "link",
+                      "type"
+                    ]
+                  }
+                }
               ],
               "type": "object"
             },
