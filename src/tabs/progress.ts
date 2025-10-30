@@ -214,7 +214,7 @@ function getUnlocked(item: Item, value: unknown): boolean {
   }
 
   if (item.type === "anyOf") {
-    const anyOfResults = value as unknown[];
+    const anyOfResults: unknown[] = Array.isArray(value) ? value : [];
     return item.anyOf.some((check, index) => {
       const someValue = anyOfResults[index];
 
@@ -541,8 +541,7 @@ function renderGenericGrid(
       }
 
       case "anyOf": {
-        const anyOfResults = value as unknown[];
-
+        const anyOfResults: unknown[] = Array.isArray(value) ? value : [];
         isDone = item.anyOf.some((check, index) => {
           const someValue = anyOfResults[index];
 
