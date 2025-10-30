@@ -107,7 +107,7 @@
           "label": "White Key",
           "link": "https://hollowknight.wiki/w/White_Key",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478599",
-          "type": "flagAnyOf"
+          "type": "key"
         },
         {
           "act": 2,

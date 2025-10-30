@@ -17,31 +17,21 @@
               "additionalProperties": false,
               "allOf": [
                 {
+                  "required": ["act", "icon", "id", "label", "link", "type"]
+                },
+                {
                   "else": {
-                    "required": [
-                      "act",
-                      "flag",
-                      "icon",
-                      "id",
-                      "label",
-                      "link",
-                      "type"
-                    ]
+                    "required": ["flag"]
                   },
                   "if": {
                     "properties": {
-                      "type": { "const": "flagAnyOf" }
+                      "type": { "const": "key" }
                     }
                   },
                   "then": {
-                    "required": [
-                      "act",
-                      "flags",
-                      "icon",
-                      "id",
-                      "label",
-                      "link",
-                      "type"
+                    "anyOf": [
+                      { "required": ["flag"] },
+                      { "required": ["flags"] }
                     ]
                   }
                 }
@@ -63,7 +53,7 @@
                   "type": "string"
                 },
                 "flags": {
-                  "description": "Array of flag names for flagAnyOf type items - if ANY flag is true, item is obtained",
+                  "description": "Array of flag names for key type items with multiple acquisition paths - if ANY flag is true, item is obtained",
                   "items": {
                     "type": "string"
                   },
@@ -98,7 +88,6 @@
                 },
                 "type": {
                   "enum": [
-                    "flagAnyOf",
                     "flag",
                     "flagInt",
                     "key",

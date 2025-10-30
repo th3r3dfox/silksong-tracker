@@ -108,7 +108,7 @@ export function updateTabProgress(): void {
           if (item.type === "quest") {
             return value !== "completed" && value !== true;
           }
-          if (item.type === "anyOf" || item.type === "flagAnyOf") {
+          if (item.type === "anyOf") {
             return !getUnlocked(item, value);
           }
           return value !== true;
@@ -241,9 +241,8 @@ function getUnlocked(item: Item, value: unknown): boolean {
     });
   }
 
-  if (item.type === "flagAnyOf") {
-    const flagResults = value as unknown[];
-    return flagResults.some(Boolean);
+  if (item.type === "key") {
+    return value === true;
   }
 
   return value === true || value === "collected" || value === "deposited";
@@ -455,12 +454,15 @@ function renderGenericGrid(
   let renderedCount = 0;
 
   for (const item of items) {
-    const flag =
-      item.type === "sceneVisited"
-      || item.type === "anyOf"
-      || item.type === "flagAnyOf"
-        ? undefined
-        : item.flag;
+    let flag: string | undefined;
+    if (item.type === "sceneVisited" || item.type === "anyOf") {
+      flag = undefined;
+    } else if (item.type === "key" && "flags" in item && item.flags) {
+      flag = item.flags.join("|");
+    } else {
+      const { flag: itemFlag } = item;
+      flag = itemFlag;
+    }
 
     const div = document.createElement("div");
     div.className = "boss";
@@ -570,9 +572,8 @@ function renderGenericGrid(
         break;
       }
 
-      case "flagAnyOf": {
-        const flagResults = value as unknown[];
-        isDone = flagResults.some(Boolean);
+      case "key": {
+        isDone = value === true;
         break;
       }
 

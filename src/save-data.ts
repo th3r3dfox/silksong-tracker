@@ -208,8 +208,13 @@ export function getSaveDataValue(
     }
 
     case "key": {
+      if ("flags" in item && item.flags) {
+        return item.flags.some((flag) => playerDataExpanded[flag] === true);
+      }
       const { flag } = item;
-
+      if (typeof flag !== "string" || flag === "") {
+        return false;
+      }
       return playerDataExpanded[flag] === true;
     }
 
@@ -354,10 +359,6 @@ export function getSaveDataValue(
       }
 
       return results;
-    }
-
-    case "flagAnyOf": {
-      return item.flags.map((flag) => playerDataExpanded[flag]);
     }
   }
 }

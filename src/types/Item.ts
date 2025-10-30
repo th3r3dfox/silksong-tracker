@@ -77,7 +77,8 @@ interface ItemQuest extends ItemBase {
 
 interface ItemKey extends ItemBase {
   readonly type: "key";
-  readonly flag: string;
+  readonly flag?: string;
+  readonly flags?: readonly string[];
 }
 
 interface ItemJournal extends ItemBase {
@@ -149,11 +150,6 @@ interface ItemAnyOf extends ItemBase {
   readonly anyOf: readonly ItemCheck[];
 }
 
-interface ItemFlagAnyOf extends ItemBase {
-  readonly type: "flagAnyOf";
-  readonly flags: readonly string[];
-}
-
 export type Item =
   | ItemFlag
   | ItemFlagInt
@@ -170,5 +166,4 @@ export type Item =
   | ItemMaterium
   | ItemDevice
   | ItemBoss
-  | ItemAnyOf
-  | ItemFlagAnyOf;
+  | ItemAnyOf;
