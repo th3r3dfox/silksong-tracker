@@ -2,11 +2,11 @@
   "$schema": "./scenes.schema.json",
   "categories": [
     {
-      "description": "",
+      "description": ".",
       "items": [
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Tut_01.png",
           "id": "scene-tut-01",
           "label": "Moss Grotto #1",
@@ -17,7 +17,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Tut_02.png",
           "id": "scene-tut-02",
           "label": "Moss Grotto #2",
@@ -28,7 +28,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Tut_01b.png",
           "id": "scene-tut-01b",
           "label": "Moss Grotto #3",
@@ -39,7 +39,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Tut_03.png",
           "id": "scene-tut-03",
           "label": "Moss Grotto #4",
@@ -50,7 +50,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Tut_04.png",
           "id": "scene-tut-04",
           "label": "Moss Grotto #5",
@@ -61,7 +61,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Tut_05.png",
           "id": "scene-tut-05",
           "label": "Moss Grotto #6",
@@ -72,7 +72,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Memory_Red.png",
           "id": "scene-memory-red",
           "label": "Memory Red #7",
@@ -85,11 +85,11 @@
       "label": "Moss Grotto"
     },
     {
-      "description": "",
+      "description": ".",
       "items": [
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Bonetown.png",
           "id": "scene-bonetown",
           "label": "Bone Bottom #1",
@@ -100,7 +100,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Bonegrave.png",
           "id": "scene-bonegrave",
           "label": "Bone Bottom #2",
@@ -111,8 +111,7 @@
         },
         {
           "act": 1,
-          "description": "",
-
+          "description": ".",
           "icon": "scenes/Chapel_wanderer.png",
           "id": "scene-chapel-wanderer",
           "label": "chapel wanderer #3",
@@ -123,8 +122,7 @@
         },
         {
           "act": 1,
-          "description": "",
-
+          "description": ".",
           "icon": "scenes/Bone_01b.png",
           "id": "scene-bone-01b",
           "label": "Bone Bottom #4",
@@ -135,7 +133,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Bone_11b.png",
           "id": "scene-bone-11b",
           "label": "Bone Bottom #5",
@@ -146,7 +144,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Bone_11.png",
           "id": "scene-bone-11",
           "label": "Bone Bottom #6",
@@ -157,7 +155,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Mosstown_01.png",
           "id": "scene-mosstown-01",
           "label": "Bone Bottom #7",
@@ -168,7 +166,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Mosstown_02.png",
           "id": "scene-mosstown-02",
           "label": "Bone Bottom #8",
@@ -179,7 +177,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Bone_05b.png",
           "id": "scene-bone-05b",
           "label": "Bone Bottom #9",
@@ -190,7 +188,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Mosstown_02c.png",
           "id": "scene-mosstown-02c",
           "label": "Bone Bottom #10",
@@ -201,7 +199,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
           "icon": "scenes/Aspid_01.png",
           "id": "scene-aspid-01",
           "label": "Bone Bottom #11",
@@ -212,7 +210,7 @@
         },
         {
           "act": 1,
-          "description": "",
+          "description": ".",
 
           "icon": "scenes/Bone_steel_servant.png",
           "id": "scene-bone-steel-servant",

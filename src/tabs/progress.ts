@@ -248,7 +248,8 @@ function getUnlocked(item: Item, value: unknown): boolean {
   }
 
   if (item.type === "sceneVisited") {
-    const visitedScenes = getSaveData()?.playerData?.scenesVisited || [];
+    const visitedScenes = getSaveData()?.playerData.scenesVisited ?? [];
+
     return Array.isArray(visitedScenes) && visitedScenes.includes(item.scene);
   }
 
@@ -584,7 +585,7 @@ function renderGenericGrid(
       }
 
       case "sceneVisited": {
-        const visitedScenes = saveData?.playerData?.scenesVisited || [];
+        const visitedScenes = getSaveData()?.playerData.scenesVisited ?? [];
         isDone =
           Array.isArray(visitedScenes) && visitedScenes.includes(item.scene);
         break;
