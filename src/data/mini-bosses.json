@@ -705,7 +705,7 @@
         {
           "act": 1,
           "description": "The Marrow: At the highest point in The Marrow, attached to the top left wall. Only appears after beating Lace in the Cradle.",
-          "flag": "Shell Fossil Mimic AppearVarian",
+          "flag": "Shell Fossil Mimic AppearVariant",
           "icon": "mini-bosses/Shardillard.png",
           "id": "Shardillard_4",
           "label": "Kill #4",

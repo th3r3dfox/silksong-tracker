@@ -389,6 +389,11 @@ function showGenericModal(item: Item) {
         ? `<p class="info-extra"><strong>Cost:</strong> ${item.cost}</p>`
         : ""
     }
+    ${
+      item.type === "collectable" && item.use !== undefined
+        ? `<p class="info-extra"><strong>Use:</strong> ${item.use}</p>`
+        : ""
+    }
 
     ${
       mapSrc === undefined
