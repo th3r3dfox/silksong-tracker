@@ -110,6 +110,45 @@ interface ItemBoss extends ItemBase {
   readonly flag: string;
 }
 
+interface CheckFlag {
+  readonly type: "flag";
+  readonly flag: string;
+}
+
+interface CheckFlagInt {
+  readonly type: "flagInt";
+  readonly flag: string;
+}
+
+interface CheckSceneBool {
+  readonly type: "sceneBool";
+  readonly scene: string;
+  readonly flag: string;
+}
+
+interface CheckSceneVisited {
+  readonly type: "sceneVisited";
+  readonly scene: string;
+}
+
+interface CheckLevel {
+  readonly type: "level";
+  readonly flag: string;
+  readonly required: number;
+}
+
+type ItemCheck =
+  | CheckFlag
+  | CheckFlagInt
+  | CheckSceneBool
+  | CheckSceneVisited
+  | CheckLevel;
+
+interface ItemAnyOf extends ItemBase {
+  readonly type: "anyOf";
+  readonly anyOf: readonly ItemCheck[];
+}
+
 export type Item =
   | ItemFlag
   | ItemFlagInt
@@ -125,4 +164,5 @@ export type Item =
   | ItemRelic
   | ItemMaterium
   | ItemDevice
-  | ItemBoss;
+  | ItemBoss
+  | ItemAnyOf;

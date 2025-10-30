@@ -108,6 +108,9 @@ export function updateTabProgress(): void {
           if (item.type === "quest") {
             return value !== "completed" && value !== true;
           }
+          if (item.type === "anyOf") {
+            return !getUnlocked(item, value);
+          }
           return value !== true;
         });
       }
@@ -208,6 +211,34 @@ function getUnlocked(item: Item, value: unknown): boolean {
     const numberValue = typeof value === "number" ? value : 0;
     const { required } = item;
     return numberValue >= required || value === true;
+  }
+
+  if (item.type === "anyOf") {
+    const anyOfResults = value as unknown[];
+    return item.anyOf.some((check, index) => {
+      const someValue = anyOfResults[index];
+
+      const evaluateCheck = (): boolean => {
+        switch (check.type) {
+          case "flag":
+          case "sceneBool":
+          case "sceneVisited": {
+            return someValue === true;
+          }
+
+          case "flagInt": {
+            return typeof someValue === "number" ? someValue >= 1 : false;
+          }
+
+          case "level": {
+            const current = typeof someValue === "number" ? someValue : 0;
+            return current >= check.required;
+          }
+        }
+      };
+
+      return evaluateCheck();
+    });
   }
 
   return value === true || value === "collected" || value === "deposited";
@@ -419,7 +450,10 @@ function renderGenericGrid(
   let renderedCount = 0;
 
   for (const item of items) {
-    const flag = item.type === "sceneVisited" ? undefined : item.flag;
+    const flag =
+      item.type === "sceneVisited" || item.type === "anyOf"
+        ? undefined
+        : item.flag;
 
     const div = document.createElement("div");
     div.className = "boss";
@@ -494,6 +528,38 @@ function renderGenericGrid(
         const { required } = item;
         isDone = current >= required;
         isAccepted = current > 0 && current < required;
+        break;
+      }
+
+      case "anyOf": {
+        const anyOfResults = value as unknown[];
+
+        isDone = item.anyOf.some((check, index) => {
+          const someValue = anyOfResults[index];
+
+          const evaluateCheck = (): boolean => {
+            switch (check.type) {
+              case "flag":
+              case "sceneBool":
+              case "sceneVisited": {
+                return someValue === true;
+              }
+
+              case "flagInt": {
+                return typeof someValue === "number" ? someValue >= 1 : false;
+              }
+
+              case "level": {
+                const current = Number.isFinite(Number(someValue))
+                  ? Number(someValue)
+                  : 0;
+                return current >= check.required;
+              }
+            }
+          };
+
+          return evaluateCheck();
+        });
         break;
       }
 

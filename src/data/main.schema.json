@@ -20,6 +20,75 @@
                   "enum": [1, 2, 3],
                   "type": "integer"
                 },
+                "anyOf": {
+                  "description": "Array of checks for anyOf type items - if ANY check passes, item is obtained",
+                  "items": {
+                    "allOf": [
+                      {
+                        "if": {
+                          "properties": {
+                            "type": { "enum": ["flag", "flagInt", "level"] }
+                          }
+                        },
+                        "then": {
+                          "required": ["flag"]
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": {
+                            "type": { "enum": ["sceneBool", "sceneVisited"] }
+                          }
+                        },
+                        "then": {
+                          "required": ["scene"]
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": { "type": { "const": "sceneBool" } }
+                        },
+                        "then": {
+                          "required": ["flag"]
+                        }
+                      },
+                      {
+                        "if": {
+                          "properties": { "type": { "const": "level" } }
+                        },
+                        "then": {
+                          "required": ["required"]
+                        }
+                      }
+                    ],
+                    "properties": {
+                      "flag": {
+                        "type": "string"
+                      },
+                      "required": {
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "scene": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "enum": [
+                          "flag",
+                          "flagInt",
+                          "level",
+                          "sceneBool",
+                          "sceneVisited"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": ["type"],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
                 "cost": {
                   "type": "string"
                 },
@@ -70,14 +139,15 @@
                 },
                 "type": {
                   "enum": [
-                    "level",
-                    "flag",
-                    "sceneBool",
-                    "quest",
-                    "tool",
                     "collectable",
+                    "flag",
+                    "flagInt",
+                    "level",
+                    "anyOf",
+                    "quest",
+                    "sceneBool",
                     "sceneVisited",
-                    "flagInt"
+                    "tool"
                   ],
                   "type": "string"
                 },

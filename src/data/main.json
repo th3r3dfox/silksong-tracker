@@ -761,7 +761,7 @@
           "flag": "ToolPouchUpgrades",
           "icon": "icons/Tool_Pouch.png",
           "id": "tool-pouch-0",
-          "label": "Base Tool Pouch #0",
+          "label": "Base Tool Pouch",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
           "required": 0,
           "type": "level"
@@ -769,50 +769,58 @@
         {
           "act": 1,
           "description": "Bought from Mort in Far Fields for 220 Rosaries (Act 1/2) or from Grindle in Blasted Steps (Act 3).",
-          "flag": "ToolPouchUpgrades",
+          "flag": "PurchasedPilgrimsRestToolPouch",
           "icon": "icons/Tool_Pouch.png",
           "id": "tool-pouch-1",
-          "label": "Expanded Tool Pouch #1",
+          "label": "Tool Pouch Upgrade #1",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477946",
-          "required": 1,
-          "type": "level"
+          "type": "flag"
         },
         {
           "act": 1,
+          "anyOf": [
+            {
+              "flag": "pinGalleriesCompleted",
+              "required": 1,
+              "type": "level"
+            },
+            {
+              "flag": "Ladybug Craft Pickup",
+              "scene": "Bone_12",
+              "type": "sceneBool"
+            }
+          ],
           "description": "Reward from Loddie in The Marrow for beating his first challenge (Act 1/2) / Found in Loddie's former location (Act 3).",
-          "flag": "ToolPouchUpgrades",
           "icon": "icons/Tool_Pouch.png",
           "id": "tool-pouch-2",
-          "label": "Large Tool Pouch #2",
+          "label": "Tool Pouch Upgrade #2",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478252",
-          "required": 2,
-          "type": "level"
+          "type": "anyOf"
         },
         {
           "act": 2,
           "description": "Reward for completing Nuu's Wish: Bugs of Pharloom.",
-          "flag": "ToolPouchUpgrades",
+          "flag": "Journal",
           "icon": "icons/Tool_Pouch.png",
           "id": "tool-pouch-3",
-          "label": "Huge Tool Pouch #3",
+          "label": "Tool Pouch Upgrade #3",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479167",
-          "required": 3,
-          "type": "level"
+          "type": "quest"
         },
         {
           "act": 2,
           "description": "Reward from Mooshka after helping the Flea Caravan move to Putrified Ducts.",
-          "flag": "ToolPouchUpgrades",
+          "flag": "Caravan Troupe Leader Fleatopia NPC",
           "icon": "icons/Tool_Pouch.png",
           "id": "tool-pouch-4",
-          "label": "Max Tool Pouch #4",
+          "label": "Tool Pouch Upgrade #4",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479436",
-          "required": 4,
-          "type": "level"
+          "scene": "Aqueduct_05",
+          "type": "sceneBool"
         }
       ],
       "label": "Tool Pouch Upgrades"
@@ -826,7 +834,7 @@
           "flag": "ToolKitUpgrades",
           "icon": "icons/Crafting_Kit.png",
           "id": "crafting-kit-0",
-          "label": "Base Crafting Kit #0",
+          "label": "Base Crafting Kit",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
           "required": 0,
           "type": "level"
@@ -837,7 +845,7 @@
           "flag": "PurchasedForgeToolKit",
           "icon": "icons/Crafting_Kit.png",
           "id": "crafting-kit-1",
-          "label": "Expanded Crafting Kit #1",
+          "label": "Crafting Kit Upgrade #1",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477919",
           "required": 1,
@@ -849,7 +857,7 @@
           "flag": "Crow Feathers Pre",
           "icon": "icons/Crafting_Kit.png",
           "id": "crafting-kit-2",
-          "label": "Large Crafting Kit #2",
+          "label": "Crafting Kit Upgrade #2",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478348",
           "required": 2,
@@ -861,7 +869,7 @@
           "flag": "PurchasedArchitectToolKit",
           "icon": "icons/Crafting_Kit.png",
           "id": "crafting-kit-3",
-          "label": "Huge Crafting Kit #3",
+          "label": "Crafting Kit Upgrade #3",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478728",
           "required": 3,
@@ -873,7 +881,7 @@
           "flag": "purchasedGrindleToolKit",
           "icon": "icons/Crafting_Kit.png",
           "id": "crafting-kit-4",
-          "label": "Max Crafting Kit #4",
+          "label": "Crafting Kit Upgrade #4",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478533",
           "required": 4,

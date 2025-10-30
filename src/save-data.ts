@@ -336,5 +336,24 @@ export function getSaveDataValue(
       // Boss items are simple boolean flags.
       return playerDataExpanded[flag];
     }
+
+    case "anyOf": {
+      const results: unknown[] = [];
+
+      for (const check of item.anyOf) {
+        const mockItem = {
+          ...item,
+          type: check.type,
+          flag: "flag" in check ? check.flag : undefined,
+          scene: "scene" in check ? check.scene : undefined,
+          required: "required" in check ? check.required : undefined,
+        } as Item;
+
+        const checkResult = getSaveDataValue(saveData, saveDataFlags, mockItem);
+        results.push(checkResult);
+      }
+
+      return results;
+    }
   }
 }
