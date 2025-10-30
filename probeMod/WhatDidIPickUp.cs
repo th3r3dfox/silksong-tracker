@@ -1,27 +1,62 @@
+using BepInEx;
+using BepInEx.Configuration;
+using BepInEx.Logging;
+using HarmonyLib;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
 
+[BepInPlugin("com.brickoyster.whatdidipickup", "WhatDidIPickUp", "1.0.0")]
 public class WhatDidIPickUp : BaseUnityPlugin
 {
-    private ConfigEntry<KeyCode> _toggleKey;
+    // Keybinds
+    private ConfigEntry<KeyCode> _printJournalEntries;
+    private ConfigEntry<KeyCode> _saveRestorePoint;
 
+    // Logger
     internal static ManualLogSource logger;
-    internal static bool printFetch;
 
-    // Example: List to save various dictionaries
-    internal static Dictionary<string, bool> saveState;
+    // Game data
+    private List<EnemyJournalRecord> _allEnemies;
+    internal static Dictionary<string, bool> persistentBools;
+    internal static Dictionary<string, int> persistentInts;
 
-    private List<EnemyJournalRecord> _allEnemies = new List<EnemyJournalRecord>();
+    // Control vars
+    internal static List<string> ignoredBools;
+    internal static List<string> ignoredInts;
+    internal static bool isManualRestore;
 
     private void Awake()
     {
+        _printJournalEntries = base.Config.Bind("General", "Print Journal", KeyCode.Equals, "Key to dump all journal entries to console.");
+        _saveRestorePoint = base.Config.Bind("General", "Save Restore Point", KeyCode.JoystickButton0, "Key to save a restore point.");
+
         logger = Logger;
-        printFetch = true;
-        saveState = new Dictionary<string, bool>();
+
+        persistentBools = new Dictionary<string, bool>();
+        persistentInts = new Dictionary<string, int>();
+        _allEnemies = new List<EnemyJournalRecord>();
+
+        ignoredBools = new List<string>() { "hasKilled", "disablePause", "disableInventory", "atBench", "isInvincible", };
+        ignoredInts = new List<string>() { "previousDarkness", "currentInvPane", };
+        isManualRestore = false;
 
         Harmony.CreateAndPatchAll(typeof(WhatDidIPickUp), null);
         logger.LogInfo("Plugin loaded and initialized.");
-        _toggleKey = base.Config.Bind("General", "ToggleKey", KeyCode.BackQuote, "Key to dump enemies.");
     }
 
+    // Force save restore point
+    private void SaveRestorePoint()
+    {
+        isManualRestore = true;
+
+        // Create restore point
+        GameManager.instance.CreateRestorePoint(AutoSaveName.NONE);
+    }
+
+
+    // Dump all journal enemies to console
     private void GetAllEnemies()
     {
         _allEnemies = EnemyJournalManager.GetAllEnemies();
@@ -30,7 +65,7 @@ public class WhatDidIPickUp : BaseUnityPlugin
         {
             int kills = allEnemy.KillsRequired;
             string onlysteel = "";
-            if ( allEnemy.name.Equals("Abyss Mass") )
+            if (allEnemy.name.Equals("Abyss Mass"))
             {
                 onlysteel = "\n  \"mode\": \"steel\",";
             }
@@ -41,9 +76,9 @@ public class WhatDidIPickUp : BaseUnityPlugin
                 $"\n  \"flag\": \"{allEnemy.name}\"," +
                 $"\n  \"hornetDescription\": \"{allEnemy.Notes.ToString().Replace("’", "\'")}\"," +
                 $"\n  \"icon\": \"journal/{allEnemy.DisplayName.ToString().Replace(" ", "_")}.png\"," +
-                $"\n  \"id\": \"{allEnemy.DisplayName.ToString().ToLower().Replace(" ","-")}\"," +
+                $"\n  \"id\": \"{allEnemy.DisplayName.ToString().ToLower().Replace(" ", "-")}\"," +
                 $"\n  \"label\": \"{allEnemy.DisplayName}\"," +
-                $"\n  \"link\": \"https://hollowknight.wiki/w/{allEnemy.DisplayName.ToString().Replace(" ","_")}\"," +
+                $"\n  \"link\": \"https://hollowknight.wiki/w/{allEnemy.DisplayName.ToString().Replace(" ", "_")}\"," +
                 $"{onlysteel}" +
                 $"\n  \"required\": {allEnemy.KillsRequired}," +
                 $"\n  \"type\": \"journal\"" +
@@ -53,40 +88,101 @@ public class WhatDidIPickUp : BaseUnityPlugin
 
     private void Update()
     {
-        if (Input.GetKeyDown(_toggleKey.Value)) { GetAllEnemies(); }
+        if (Input.GetKeyDown(_printJournalEntries.Value)) { StartCoroutine("GetAllEnemies"); }
+        if (Input.GetKeyDown(_saveRestorePoint.Value)) { StartCoroutine("SaveRestorePoint"); }
     }
 
-    private static void saveSaveState(ref PersistentItemData<bool> newItemData)
+    // Track persistent bools
+    private static void savePersistentBools(ref PersistentItemData<bool> newItemData)
     {
         var key = newItemData.SceneName + "_" + newItemData.ID;
-        if (saveState.ContainsKey(key))
+        if (persistentBools.ContainsKey(key))
         {
-            saveState[key] = newItemData.Value;
+            persistentBools[key] = newItemData.Value;
         }
         else
         {
-            saveState.Add(key, newItemData.Value);
+            persistentBools.Add(key, newItemData.Value);
         }
     }
 
-    // Track states
     [HarmonyPostfix]
     [HarmonyPatch(typeof(PersistentBoolItem), "TryGetValue")]
-    private static void PostTryGetValue(PersistentBoolItem __instance, ref PersistentItemData<bool> newItemData)
+    private static void PostTryGetBool(PersistentBoolItem __instance, ref PersistentItemData<bool> newItemData)
     {
-        if (printFetch) { logger.LogInfo("Fetching"); printFetch = false; }
-        saveSaveState(ref newItemData);
+        savePersistentBools(ref newItemData);
     }
 
-    // Print chanfged states
     [HarmonyPostfix]
     [HarmonyPatch(typeof(PersistentBoolItem), "SaveValue")]
-    private static void PostSaveValue(PersistentBoolItem __instance, PersistentItemData<bool> newItemData)
+    private static void PostSaveBool(PersistentBoolItem __instance, PersistentItemData<bool> newItemData)
     {
         var key = newItemData.SceneName + "_" + newItemData.ID;
-        if (saveState.ContainsKey(key) && saveState[key] == newItemData.Value) { return; }
-        logger.LogInfo("\nState changed for " + key);
-        saveSaveState(ref newItemData);
+        if (persistentBools.ContainsKey(key) && persistentBools[key] == newItemData.Value) { return; }
+        logger.LogInfo($"\nPersistent Bool changed: [{newItemData.SceneName}][{newItemData.ID}] = {newItemData.Value}");
+        savePersistentBools(ref newItemData);
+    }
+
+    // Track persistent ints
+    private static void savePersistentInts(ref PersistentItemData<int> newItemData)
+    {
+        var key = newItemData.SceneName + "_" + newItemData.ID;
+        if (persistentInts.ContainsKey(key))
+        {
+            persistentInts[key] = newItemData.Value;
+        }
+        else
+        {
+            persistentInts.Add(key, newItemData.Value);
+        }
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(PersistentIntItem), "TryGetValue")]
+    private static void PostTryGetInt(PersistentIntItem __instance, ref PersistentItemData<int> newItemData)
+    {
+        savePersistentInts(ref newItemData);
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(PersistentIntItem), "SaveValue")]
+    private static void PostSaveInt(PersistentIntItem __instance, PersistentItemData<int> newItemData)
+    {
+        var key = newItemData.SceneName + "_" + newItemData.ID;
+        if (persistentInts.ContainsKey(key) && persistentInts[key] == newItemData.Value) { return; }
+        logger.LogInfo($"\nPersistent Int changed: [{newItemData.SceneName}][{newItemData.ID}] = {newItemData.Value}");
+        savePersistentInts(ref newItemData);
+    }
+
+    // Print player data changes
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(PlayerData), "SetBool")]
+    private static void PostSetBool(PlayerData __instance, string boolName, bool value)
+    {
+        if (ignoredBools.Contains(boolName)) { return; }
+        logger.LogInfo($"\nPlayerData SetBool: {boolName} = {value}");
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(PlayerData), "SetInt")]
+    private static void PostSetInt(PlayerData __instance, string intName, int value)
+    {
+        if (ignoredInts.Contains(intName)) { return; }
+        logger.LogInfo($"\nPlayerData SetInt: {intName} = {value}");
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(PlayerData), "SetFloat")]
+    private static void PostSetFloat(PlayerData __instance, string floatName, float value)
+    {
+        logger.LogInfo($"\nPlayerData SetFloat: {floatName} = {value}");
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(PlayerData), "SetString")]
+    private static void PostSetString(PlayerData __instance, string stringName, string value)
+    {
+        logger.LogInfo($"\nPlayerData SetString: {stringName} = {value}");
     }
 
     // Print quest info
@@ -97,38 +193,50 @@ public class WhatDidIPickUp : BaseUnityPlugin
         logger.LogInfo("\nQuest accepted: " + quest.DisplayName + "(" + quest.name + ").");
     }
 
-    // Print player data changes
-    [HarmonyPostfix]
-    [HarmonyPatch(typeof(PlayerData), "SetBool")]
-    private static void PostSetBool(PlayerData __instance, string boolName, bool value)
+    // rename manual restore points
+    [HarmonyPrefix]
+    [HarmonyPatch(typeof(GameManager), "DoSaveRestorePoint")]
+    private static bool DoSaveRestorePoint(GameManager __instance, int saveSlot, AutoSaveName autoSaveName, SaveGameData saveData, Action<bool> callback)
     {
-        if (boolName == "hasKilled") { return; }
-        if (boolName == "disablePause") { return; }
-        if (boolName == "disableInventory") { return; }
-        if (boolName == "atBench") { return; }
-        logger.LogInfo($"\nPlayerData.SetBool called: {boolName} = {value}");
-    }
+        if (isManualRestore)
+        {
+            string path = Application.persistentDataPath;
+            string saveDir = "";
+            // Try to find a directory whose name is all digits (typical save folder)
+            foreach (var dir in Directory.EnumerateDirectories(path))
+            {
+                var name = Path.GetFileName(dir);
+                if (string.IsNullOrEmpty(name)) continue;
 
-    [HarmonyPostfix]
-    [HarmonyPatch(typeof(PlayerData), "SetInt")]
-    private static void PostSetInt(PlayerData __instance, string intName, int value)
-    {
-        if (intName == "previousDarkness") { return; }
-        if (intName == "currentInvPane") { return; }
-        logger.LogInfo($"\nPlayerData.SetInt called: {intName} = {value}");
-    }
+                bool allDigits = true;
+                for (int i = 0; i < name.Length; i++)
+                {
+                    if (!char.IsDigit(name[i])) { allDigits = false; break; }
+                }
 
-    [HarmonyPostfix]
-    [HarmonyPatch(typeof(PlayerData), "SetFloat")]
-    private static void PostSetFloat(PlayerData __instance, string floatName, float value)
-    {
-        logger.LogInfo($"\nPlayerData.SetFloat called: {floatName} = {value}");
-    }
+                if (allDigits) { saveDir = name; break; }
+            }
+            string RestoreDir = $"Restore_Points{saveSlot}";
+            // Try to find number of .dat files
+            int lastRestore = 0;
+            foreach (var dir in Directory.EnumerateFiles($"{path}/{saveDir}/{RestoreDir}"))
+            {
+                var name = Path.GetFileName(dir);
+                if (string.IsNullOrEmpty(name)) continue;
 
-    [HarmonyPostfix]
-    [HarmonyPatch(typeof(PlayerData), "SetString")]
-    private static void PostSetString(PlayerData __instance, string stringName, string value)
-    {
-        logger.LogInfo($"\nPlayerData.SetString called: {stringName} = {value}");
+                if (name.EndsWith(".dat")) { lastRestore += 1; }
+            }
+
+            RestorePointData restorePointData = new RestorePointData(saveData, autoSaveName);
+            restorePointData.SetVersion();
+            restorePointData.SetDateString();
+            string jsonData = SaveDataUtility.SerializeSaveData(restorePointData);
+            byte[] bytesForSaveJson = __instance.GetBytesForSaveJson(jsonData);
+            Platform.Current.CreateSaveRestorePoint(saveSlot, $"UserRestorePoint_{lastRestore}", true, bytesForSaveJson, callback);
+            logger.LogInfo($"\nManual restore point created: UserRestorePoint_{lastRestore} in slot {saveSlot}.");
+            isManualRestore = false;
+            return false; // Skip original method
+        }
+        return true;
     }
 }
