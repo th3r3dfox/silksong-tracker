@@ -32,6 +32,10 @@
                   "type": "integer",
                   "enum": [1, 2, 3]
                 },
+                "icon": {
+                  "type": "string",
+                  "description": "Optional custom icon path."
+                },
                 "id": {
                   "type": "string",
                   "description": "Unique identifier for the scene item."
@@ -52,10 +56,6 @@
                   "type": "string",
                   "const": "sceneVisited",
                   "description": "Defines this entry as a scene visited type."
-                },
-                "icon": {
-                  "type": "string",
-                  "description": "Optional custom icon path."
                 },
                 "link": {
                   "type": "string",
