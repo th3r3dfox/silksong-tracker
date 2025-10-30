@@ -695,7 +695,7 @@
           "description": "Sands of Karak: Near the Eastmost bench of the zone, go left, drop down and look for a suspicious-looking Shell Shard cache.",
           "flag": "Shell Fossil Mimic",
           "icon": "mini-bosses/Shardillard.png",
-          "id":  "Shardillard_3",
+          "id": "Shardillard_3",
           "label": "Kill #3",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479213",
