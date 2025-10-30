@@ -158,7 +158,7 @@
         },
         {
           "act": 3,
-          "description": "Far Fields.",
+          "description": "Deep Docks.",
           "flag": "Black_Thread_Core",
           "icon": "mini-bosses/Void_Mass.png",
           "id": "Void_Mass_7",
