@@ -15,6 +15,37 @@
           "items": {
             "items": {
               "additionalProperties": false,
+              "allOf": [
+                {
+                  "else": {
+                    "required": [
+                      "act",
+                      "flag",
+                      "icon",
+                      "id",
+                      "label",
+                      "link",
+                      "type"
+                    ]
+                  },
+                  "if": {
+                    "properties": {
+                      "type": { "const": "anyOf" }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "act",
+                      "anyOf",
+                      "icon",
+                      "id",
+                      "label",
+                      "link",
+                      "type"
+                    ]
+                  }
+                }
+              ],
               "properties": {
                 "act": {
                   "enum": [1, 2, 3],
@@ -149,37 +180,6 @@
                   "type": "string"
                 }
               },
-              "allOf": [
-                {
-                  "if": {
-                    "properties": {
-                      "type": { "const": "anyOf" }
-                    }
-                  },
-                  "then": {
-                    "required": [
-                      "act",
-                      "anyOf",
-                      "icon",
-                      "id",
-                      "label",
-                      "link",
-                      "type"
-                    ]
-                  },
-                  "else": {
-                    "required": [
-                      "act",
-                      "flag",
-                      "icon",
-                      "id",
-                      "label",
-                      "link",
-                      "type"
-                    ]
-                  }
-                }
-              ],
               "type": "object"
             },
             "type": "array"
