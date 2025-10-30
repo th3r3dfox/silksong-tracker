@@ -662,6 +662,84 @@
         }
       ],
       "label": "Void Masses"
+    },
+    {
+      "description": "Devious ambusher that poses as a fossil.",
+      "items": [
+        {
+          "act": 1,
+          "description": "Deep Docks: Hanging under a floating platform in the long hall room beneath the Swift Step room.",
+          "flag": "Shell Fossil Mimic",
+          "icon": "mini-bosses/Shardillard.png",
+          "id": "Shardillard_1",
+          "label": "Kill #1",
+          "link": "https://hollowknight.wiki/w/Shardillard#Location",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480168",
+          "scene": "Bone_East_03",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "Greymoor: the secret tunnel beneath the entrance to Styx's room.",
+          "flag": "Shell Fossil Mimic",
+          "icon": "mini-bosses/Shardillard.png",
+          "id": "Shardillard_2",
+          "label": "Kill #2",
+          "link": "https://hollowknight.wiki/w/Shardillard#Location",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479496",
+          "scene": "Greymoor_17",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "Sands of Karak: Near the Eastmost bench of the zone, go left, drop down and look for a suspicious-looking Shell Shard cache.",
+          "flag": "Shell Fossil Mimic",
+          "icon": "mini-bosses/Shardillard.png",
+          "id":  "Shardillard_3",
+          "label": "Kill #3",
+          "link": "https://hollowknight.wiki/w/Shardillard#Location",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479213",
+          "scene": "Coral_38",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "The Marrow: At the highest point in The Marrow, attached to the top left wall. Only appears after beating Lace in the Cradle.",
+          "flag": "Shell Fossil Mimic AppearVarian",
+          "icon": "mini-bosses/Shardillard.png",
+          "id": "Shardillard_4",
+          "label": "Kill #4",
+          "link": "https://hollowknight.wiki/w/Shardillard#Location",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480162",
+          "scene": "Bone_06",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "The Marrow: In the long room to the right of the Bellway bench, to the left of a magnetite platform.",
+          "flag": "Shell Fossil Mimic",
+          "icon": "mini-bosses/Shardillard.png",
+          "id": "Shardillard_5",
+          "label": "Kill #5",
+          "link": "https://hollowknight.wiki/w/Shardillard#Location",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480160",
+          "scene": "Bone_14",
+          "type": "sceneBool"
+        },
+        {
+          "act": 1,
+          "description": "Far Fields: On the upper side of a spinal bone platform. If the spinal bone is broken go straight up. Otherwise, it is accessible by coming around top, from the direction of the Weavenest to the right.",
+          "flag": "Shell Fossil Mimic",
+          "icon": "mini-bosses/Shardillard.png",
+          "id": "Shardillard_6",
+          "label": "Kill #5",
+          "link": "https://hollowknight.wiki/w/Shardillard#Location",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479731",
+          "scene": "Bone_East_14",
+          "type": "sceneBool"
+        }
+      ],
+      "label": "Shardillard"
     }
   ]
 }
