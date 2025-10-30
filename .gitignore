@@ -151,3 +151,18 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# ------------------------------
+# Custom Silksong Tracker rules
+# ------------------------------
+
+# Windows system files
+desktop.ini
+Thumbs.db
+
+# macOS metadata
+.DS_Store
+
+# Ignore local build artifacts
+/public/assets/scenes/desktop.ini
+/public/assets/scenes/*.tmp

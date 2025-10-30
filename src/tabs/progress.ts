@@ -9,6 +9,7 @@ import essentialsJSON from "../data/essentials.json" with { type: "json" };
 import journalJSON from "../data/journal.json" with { type: "json" };
 import mainJSON from "../data/main.json" with { type: "json" };
 import miniBossesJSON from "../data/mini-bosses.json" with { type: "json" };
+import scenesJSON from "../data/scenes.json" with { type: "json" };
 import wishesJSON from "../data/wishes.json" with { type: "json" };
 
 import {
@@ -57,6 +58,7 @@ export function updateTabProgress(): void {
     },
     { title: "Wishes", categories: wishesJSON.categories as Category[] },
     { title: "Journal", categories: journalJSON.categories as Category[] },
+    { title: "Scenes", categories: scenesJSON.categories as Category[] },
   ];
 
   // Render all categories.
@@ -245,6 +247,12 @@ function getUnlocked(item: Item, value: unknown): boolean {
     return value === true;
   }
 
+  if (item.type === "sceneVisited") {
+    const visitedScenes = getSaveData()?.playerData.scenesVisited ?? [];
+
+    return Array.isArray(visitedScenes) && visitedScenes.includes(item.scene);
+  }
+
   return value === true || value === "collected" || value === "deposited";
 }
 
@@ -379,6 +387,11 @@ function showGenericModal(item: Item) {
     ${
       item.type === "level" && item.cost !== undefined
         ? `<p class="info-extra"><strong>Cost:</strong> ${item.cost}</p>`
+        : ""
+    }
+    ${
+      item.type === "collectable" && item.use !== undefined
+        ? `<p class="info-extra"><strong>Use:</strong> ${item.use}</p>`
         : ""
     }
 
@@ -573,6 +586,13 @@ function renderGenericGrid(
 
       case "key": {
         isDone = value === true;
+        break;
+      }
+
+      case "sceneVisited": {
+        const visitedScenes = getSaveData()?.playerData.scenesVisited ?? [];
+        isDone =
+          Array.isArray(visitedScenes) && visitedScenes.includes(item.scene);
         break;
       }
 

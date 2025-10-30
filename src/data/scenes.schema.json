@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "description": "Schema for defining all playable scenes and their visit status tracking, including icons, maps, and wiki links.",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "categories": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "description": {
+            "description": "Short description of the area or scene group.",
+            "type": "string"
+          },
+          "items": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "act": {
+                  "enum": [1, 2, 3],
+                  "type": "integer"
+                },
+                "description": {
+                  "description": "Optional tooltip or context for the scene.",
+                  "type": "string"
+                },
+                "icon": {
+                  "description": "Optional custom icon path.",
+                  "type": "string"
+                },
+                "id": {
+                  "description": "Unique identifier for the scene item.",
+                  "type": "string"
+                },
+                "label": {
+                  "description": "Display name for the scene.",
+                  "type": "string"
+                },
+                "link": {
+                  "description": "Optional wiki or info link.",
+                  "type": "string"
+                },
+                "map": {
+                  "description": "Optional map embed path or URL.",
+                  "type": "string"
+                },
+                "mode": {
+                  "description": "Optional. Specifies the game mode this scene belongs to (e.g., normal or steel).",
+                  "enum": ["normal", "steel"],
+                  "type": "string"
+                },
+                "scene": {
+                  "description": "Internal scene name as used in the save data (e.g. Tut_01, Bonetown).",
+                  "type": "string"
+                },
+                "type": {
+                  "const": "sceneVisited",
+                  "description": "Defines this entry as a scene visited type.",
+                  "type": "string"
+                }
+              },
+              "required": ["act", "id", "label", "scene", "type"],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "label": {
+            "description": "Display name for this group of scenes (e.g., area name).",
+            "type": "string"
+          }
+        },
+        "required": ["description", "items", "label"],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": ["categories"],
+  "title": "Scenes Data Schema",
+  "type": "object"
+}

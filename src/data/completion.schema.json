@@ -48,6 +48,10 @@
                   "pattern": "^[^\\s%]*$",
                   "type": "string"
                 },
+                "map": {
+                  "description": "Map area name where this miniboss is located",
+                  "type": "string"
+                },
                 "missable": {
                   "description": "Whether this item can be permanently missed",
                   "type": "boolean"
@@ -74,13 +78,18 @@
                     "device",
                     "flag",
                     "quill",
-                    "sceneBool"
+                    "sceneBool",
+                    "collectable"
                   ],
                   "type": "string"
                 },
                 "unobtainable": {
                   "description": "Whether this item cannot be obtained in the current save file",
                   "type": "boolean"
+                },
+                "use": {
+                  "description": "Breakable items",
+                  "type": "string"
                 }
               },
               "required": [
