@@ -3,11 +3,9 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 [BepInPlugin("com.brickoyster.whatdidipickup", "WhatDidIPickUp", "1.0.0")]
 public class WhatDidIPickUp : BaseUnityPlugin
@@ -27,7 +25,6 @@ public class WhatDidIPickUp : BaseUnityPlugin
     // Control vars
     internal static List<string> ignoredBools;
     internal static List<string> ignoredInts;
-    internal static int lastRestore;
     internal static bool isManualRestore;
 
     private void Awake()
@@ -43,7 +40,6 @@ public class WhatDidIPickUp : BaseUnityPlugin
 
         ignoredBools = new List<string>() { "hasKilled", "disablePause", "disableInventory", "atBench", "isInvincible", };
         ignoredInts = new List<string>() { "previousDarkness", "currentInvPane", };
-        lastRestore = -1;
         isManualRestore = false;
 
         Harmony.CreateAndPatchAll(typeof(WhatDidIPickUp), null);
@@ -54,7 +50,6 @@ public class WhatDidIPickUp : BaseUnityPlugin
     private void SaveRestorePoint()
     {
         isManualRestore = true;
-        lastRestore += 1;
 
         // Create restore point
         GameManager.instance.CreateRestorePoint(AutoSaveName.NONE);
@@ -205,13 +200,41 @@ public class WhatDidIPickUp : BaseUnityPlugin
     {
         if (isManualRestore)
         {
-            logger.LogInfo($"Creating \"Restorepoint_{lastRestore}\" restore point ({autoSaveName.ToString()})");
+            string path = Application.persistentDataPath;
+            string saveDir = "";
+            // Try to find a directory whose name is all digits (typical save folder)
+            foreach (var dir in Directory.EnumerateDirectories(path))
+            {
+                var name = Path.GetFileName(dir);
+                if (string.IsNullOrEmpty(name)) continue;
+
+                bool allDigits = true;
+                for (int i = 0; i < name.Length; i++)
+                {
+                    if (!char.IsDigit(name[i])) { allDigits = false; break; }
+                }
+
+                if (allDigits) { saveDir = name; break; }
+            }
+            string RestoreDir = $"Restore_Points{saveSlot}";
+            // Try to find number of .dat files
+            int lastRestore = 0;
+            foreach (var dir in Directory.EnumerateFiles($"{path}/{saveDir}/{RestoreDir}"))
+            {
+                var name = Path.GetFileName(dir);
+                if (string.IsNullOrEmpty(name)) continue;
+
+                if (name.EndsWith(".dat")) { lastRestore += 1; }
+            }
+
             RestorePointData restorePointData = new RestorePointData(saveData, autoSaveName);
             restorePointData.SetVersion();
             restorePointData.SetDateString();
             string jsonData = SaveDataUtility.SerializeSaveData(restorePointData);
             byte[] bytesForSaveJson = __instance.GetBytesForSaveJson(jsonData);
             Platform.Current.CreateSaveRestorePoint(saveSlot, $"UserRestorePoint_{lastRestore}", true, bytesForSaveJson, callback);
+            logger.LogInfo($"\nManual restore point created: UserRestorePoint_{lastRestore} in slot {saveSlot}.");
+            isManualRestore = false;
             return false; // Skip original method
         }
         return true;
