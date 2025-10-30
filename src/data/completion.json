@@ -999,6 +999,24 @@
       "label": "Silkeater"
     },
     {
+      "description": "Small sculpture, inexpertly but painstakingly crafted as a symbol of enduring friendship.",
+      "items": [
+        {
+          "act": 1,
+          "description": "Gifted to Hornet by Flick the Fixer after completing every Wish from the Bone Bottom Wishwall.",
+          "flag": "Fixer Idol",
+          "icon": "completion/Hornet_Statuette.png",
+          "id": "hornet-statuette",
+          "label": "Hornet Statuette",
+          "link": "https://hollowknight.wiki/w/Hornet_Statuette",
+          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479144",
+          "type": "collectable",
+          "use": "Can be used from the inventory to gain 60 shell shards."
+        }
+      ],
+      "label": "Hornet Statuette"
+    },
+    {
       "description": "Maps have to be obtained before an area will appear on the in-game map.",
       "items": [
         {

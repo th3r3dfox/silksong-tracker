@@ -63,6 +63,7 @@ interface ItemTool extends ItemBase {
 interface ItemCollectable extends ItemBase {
   readonly type: "collectable";
   readonly flag: string;
+  readonly use?: string;
 }
 
 interface ItemQuill extends ItemBase {
