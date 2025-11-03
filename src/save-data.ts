@@ -1,4 +1,4 @@
-import { assertObject, isObject } from "complete-common";
+import { assertObject, isArray, isObject } from "complete-common";
 import { BASE_PATH } from "./constants.ts";
 import {
   completionValue,
@@ -113,8 +113,9 @@ export function getSaveDataValue(
     return undefined;
   }
 
-  const { playerData } = saveData;
+  const { playerData, sceneData } = saveData;
   const playerDataExpanded: Record<string, unknown> = playerData;
+  const sceneDataExpanded: Record<string, unknown> = sceneData;
 
   const { type } = item;
 
@@ -205,6 +206,23 @@ export function getSaveDataValue(
       }
 
       return false;
+    }
+
+    case "sceneInt": {
+      const { scene, flag } = item;
+
+      const normalizedScene = normalizeStringWithUnderscores(scene);
+      const normalizedFlag = normalizeStringWithUnderscores(flag);
+
+      const sceneFlags = saveDataFlags[normalizedScene];
+      if (isObject(sceneFlags)) {
+        const value = sceneFlags[normalizedFlag];
+        if (value === true) {
+          return checkSceneValue(sceneDataExpanded, scene);
+        }
+      }
+
+      return 0;
     }
 
     case "key": {
@@ -361,4 +379,30 @@ export function getSaveDataValue(
       return results;
     }
   }
+}
+
+function checkSceneValue(sceneDataExpanded: unknown, scene: string): boolean {
+  const { persistentInts } = sceneDataExpanded as {
+    persistentInts: unknown;
+  };
+
+  if (!isObject(persistentInts)) {
+    return false;
+  }
+
+  const { serializedList } = persistentInts as {
+    serializedList: unknown;
+  };
+
+  if (!isArray(serializedList)) {
+    return false;
+  }
+
+  const element = serializedList.find(
+    (e: unknown): e is { SceneName: string; Value: boolean } =>
+      isObject(e)
+      && e["SceneName"] === scene
+      && typeof e["Value"] === "boolean",
+  );
+  return element ? element.Value : false;
 }
