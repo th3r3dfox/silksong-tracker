@@ -676,7 +676,7 @@
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480168",
           "scene": "Bone_East_03",
-          "type": "sceneBool"
+          "type": "sceneInt"
         },
         {
           "act": 1,
@@ -688,7 +688,7 @@
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479496",
           "scene": "Greymoor_17",
-          "type": "sceneBool"
+          "type": "sceneInt"
         },
         {
           "act": 2,
@@ -700,7 +700,7 @@
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479213",
           "scene": "Coral_38",
-          "type": "sceneBool"
+          "type": "sceneInt"
         },
         {
           "act": 1,
@@ -712,7 +712,7 @@
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480162",
           "scene": "Bone_06",
-          "type": "sceneBool"
+          "type": "sceneInt"
         },
         {
           "act": 1,
@@ -724,7 +724,7 @@
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480160",
           "scene": "Bone_14",
-          "type": "sceneBool"
+          "type": "sceneInt"
         },
         {
           "act": 1,
@@ -736,7 +736,7 @@
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479731",
           "scene": "Bone_East_14",
-          "type": "sceneBool"
+          "type": "sceneInt"
         }
       ],
       "label": "Shardillard"

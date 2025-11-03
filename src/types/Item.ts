@@ -45,6 +45,12 @@ interface ItemSceneBool extends ItemBase {
   readonly scene: string;
 }
 
+interface ItemSceneInt extends ItemBase {
+  readonly type: "sceneInt";
+  readonly flag: string;
+  readonly scene: string;
+}
+
 interface ItemSceneVisited extends ItemBase {
   readonly type: "sceneVisited";
   readonly scene: string;
@@ -128,6 +134,12 @@ interface SceneBoolCheck {
   readonly flag: string;
 }
 
+interface SceneIntCheck {
+  readonly type: "sceneInt";
+  readonly scene: string;
+  readonly flag: string;
+}
+
 interface SceneVisitedCheck {
   readonly type: "sceneVisited";
   readonly scene: string;
@@ -143,6 +155,7 @@ type ItemCheck =
   | FlagCheck
   | FlagIntCheck
   | SceneBoolCheck
+  | SceneIntCheck
   | SceneVisitedCheck
   | LevelCheck;
 
@@ -156,6 +169,7 @@ export type Item =
   | ItemFlagInt
   | ItemLevel
   | ItemSceneBool
+  | ItemSceneInt
   | ItemSceneVisited
   | ItemTool
   | ItemCollectable
