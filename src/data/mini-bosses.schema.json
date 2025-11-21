@@ -55,7 +55,7 @@
                 },
                 "required": {
                   "description": "Required count for completion (e.g., number of kills needed)",
-                  "minimum": 1,
+                  "minimum": -1,
                   "type": "integer"
                 },
                 "scene": {
@@ -63,7 +63,7 @@
                   "type": "string"
                 },
                 "type": {
-                  "enum": ["boss", "journal", "sceneBool", "sceneInt", "flag"],
+                  "enum": ["boss", "journal", "sceneBool", "flag"],
                   "type": "string"
                 }
               },

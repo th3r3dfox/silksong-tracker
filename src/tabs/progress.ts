@@ -224,7 +224,6 @@ function getUnlocked(item: Item, value: unknown): boolean {
         switch (check.type) {
           case "flag":
           case "sceneBool":
-          case "sceneInt":
           case "sceneVisited": {
             return someValue === true;
           }
@@ -563,7 +562,6 @@ function renderGenericGrid(
             switch (check.type) {
               case "flag":
               case "sceneBool":
-              case "sceneInt":
               case "sceneVisited": {
                 return someValue === true;
               }

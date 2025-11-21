@@ -675,8 +675,9 @@
           "label": "Kill #1",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480168",
+          "required": -1,
           "scene": "Bone_East_03",
-          "type": "sceneInt"
+          "type": "sceneBool"
         },
         {
           "act": 1,
@@ -687,8 +688,9 @@
           "label": "Kill #2",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479496",
+          "required": -1,
           "scene": "Greymoor_17",
-          "type": "sceneInt"
+          "type": "sceneBool"
         },
         {
           "act": 2,
@@ -699,8 +701,9 @@
           "label": "Kill #3",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479213",
+          "required": -1,
           "scene": "Coral_38",
-          "type": "sceneInt"
+          "type": "sceneBool"
         },
         {
           "act": 1,
@@ -711,8 +714,9 @@
           "label": "Kill #4",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480162",
+          "required": -1,
           "scene": "Bone_06",
-          "type": "sceneInt"
+          "type": "sceneBool"
         },
         {
           "act": 1,
@@ -723,8 +727,9 @@
           "label": "Kill #5",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480160",
+          "required": -1,
           "scene": "Bone_14",
-          "type": "sceneInt"
+          "type": "sceneBool"
         },
         {
           "act": 1,
@@ -735,8 +740,9 @@
           "label": "Kill #6",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479731",
+          "required": -1,
           "scene": "Bone_East_14",
-          "type": "sceneInt"
+          "type": "sceneBool"
         }
       ],
       "label": "Shardillard"
