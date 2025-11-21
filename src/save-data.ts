@@ -377,29 +377,24 @@ function checkSceneValue(
   sceneDataExpanded: unknown,
   scene: string,
   flag: string,
-): number {
-  const { persistentInts } = sceneDataExpanded as {
-    persistentInts: unknown;
-  };
+): number | undefined {
+  const { persistentInts } = sceneDataExpanded as { persistentInts: unknown };
 
   if (!isObject(persistentInts)) {
-    return 30;
+    return undefined;
   }
-
-  const { serializedList } = persistentInts as {
-    serializedList: unknown;
-  };
-
+  const { serializedList } = persistentInts as { serializedList: unknown };
   if (!isArray(serializedList)) {
-    return 30;
+    return undefined;
   }
 
   const element = serializedList.find(
-    (e: unknown): e is { SceneName: string; Value: number } =>
+    (e: unknown): e is { SceneName: string; Value: number; ID: string } =>
       isObject(e)
       && e["SceneName"] === scene
       && typeof e["Value"] === "number"
       && e["ID"] === flag,
   );
-  return element ? element.Value : 30;
+
+  return element ? element.Value : undefined;
 }
