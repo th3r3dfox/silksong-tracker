@@ -192,7 +192,7 @@ export function getSaveDataValue(
 
     // Mask Shards, Heart Pieces etc.
     case "sceneBool": {
-      const { scene, flag } = item;
+      const { scene, flag, required } = item;
 
       const normalizedScene = normalizeStringWithUnderscores(scene);
       const normalizedFlag = normalizeStringWithUnderscores(flag);
@@ -200,29 +200,21 @@ export function getSaveDataValue(
       const sceneFlags = saveDataFlags[normalizedScene];
       if (isObject(sceneFlags)) {
         const value = sceneFlags[normalizedFlag];
+
+        if (
+          flag === "Shell Fossil Mimic"
+          || flag === "Shell Fossil Mimic AppearVariant"
+        ) {
+          const sceneValue = checkSceneValue(sceneDataExpanded, scene, flag);
+          return required === sceneValue;
+        }
+
         if (value !== undefined) {
           return value;
         }
       }
 
       return false;
-    }
-
-    case "sceneInt": {
-      const { scene, flag } = item;
-
-      const normalizedScene = normalizeStringWithUnderscores(scene);
-      const normalizedFlag = normalizeStringWithUnderscores(flag);
-
-      const sceneFlags = saveDataFlags[normalizedScene];
-      if (isObject(sceneFlags)) {
-        const value = sceneFlags[normalizedFlag];
-        if (value === true) {
-          return checkSceneValue(sceneDataExpanded, scene);
-        }
-      }
-
-      return 0;
     }
 
     case "key": {
@@ -381,13 +373,17 @@ export function getSaveDataValue(
   }
 }
 
-function checkSceneValue(sceneDataExpanded: unknown, scene: string): boolean {
+function checkSceneValue(
+  sceneDataExpanded: unknown,
+  scene: string,
+  flag: string,
+): number {
   const { persistentInts } = sceneDataExpanded as {
     persistentInts: unknown;
   };
 
   if (!isObject(persistentInts)) {
-    return false;
+    return 30;
   }
 
   const { serializedList } = persistentInts as {
@@ -395,14 +391,15 @@ function checkSceneValue(sceneDataExpanded: unknown, scene: string): boolean {
   };
 
   if (!isArray(serializedList)) {
-    return false;
+    return 30;
   }
 
   const element = serializedList.find(
-    (e: unknown): e is { SceneName: string; Value: boolean } =>
+    (e: unknown): e is { SceneName: string; Value: number } =>
       isObject(e)
       && e["SceneName"] === scene
-      && typeof e["Value"] === "boolean",
+      && typeof e["Value"] === "number"
+      && e["ID"] === flag,
   );
-  return element ? element.Value : false;
+  return element ? element.Value : 30;
 }
