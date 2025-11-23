@@ -47,15 +47,28 @@
                   "type": "string"
                 },
                 "mapViewer": {
-                  "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "src": { "type": "string" },
-                    "x": { "type": "number", "minimum": 0, "maximum": 1 },
-                    "y": { "type": "number", "minimum": 0, "maximum": 1 },
-                    "zoom": { "type": "number", "minimum": 0.1 }
+                    "src": {
+                      "type": "string"
+                    },
+                    "x": {
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "y": {
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "zoom": {
+                      "minimum": 0.1,
+                      "type": "number"
+                    }
                   },
-                  "required": ["src", "x", "y"]
+                  "required": ["src", "x", "y"],
+                  "type": "object"
                 },
 
                 "mode": {
