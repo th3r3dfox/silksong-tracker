@@ -410,7 +410,7 @@ function showGenericModal(item: Item) {
     }
 
 ${(() => {
-  if (!item.mapViewer && !mapSrc) {
+  if (item.mapViewer === undefined && (mapSrc === undefined || mapSrc === "")) {
     return "";
   }
 
