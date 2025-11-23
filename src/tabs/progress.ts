@@ -350,6 +350,19 @@ function buildDynamicTOC() {
   tocList.parentElement?.append(legendBlock);
 }
 
+function resolveMapImageSrc(src: string): string {
+  const clean = src.trim();
+  if (clean === "") {
+    return "";
+  }
+
+  if (clean.startsWith("http") || clean.startsWith("/")) {
+    return clean;
+  }
+
+  return `${BASE_PATH}/${clean}`;
+}
+
 function showGenericModal(item: Item) {
   let mapSrc: string | undefined;
   if (item.map === undefined || item.map === "") {
@@ -396,25 +409,46 @@ function showGenericModal(item: Item) {
         : ""
     }
 
-    ${
-      mapSrc === undefined
-        ? ""
-        : `
-        <div class="info-map-wrapper">
-          <div class="map-loading-overlay">
-            <span class="map-loading-text">Loading map...</span>
-          </div>
-          <iframe
-            src="${mapSrc}"
-            class="info-map-embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen
-            onload="this.previousElementSibling.remove()">
-          </iframe>
-        </div>
-      `
-    }
+${(() => {
+  if (!item.mapViewer && !mapSrc) {
+    return "";
+  }
+
+  if (item.mapViewer) {
+    return `
+  <div class="info-map-wrapper">
+    <div class="custom-map-viewer" id="custom-map-${item.id}">
+      <div class="custom-map-inner" id="custom-map-inner-${item.id}">
+        <img
+          src="${resolveMapImageSrc(item.mapViewer.src)}"
+          class="custom-map-image"
+          id="custom-map-img-${item.id}"
+          draggable="false"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+`;
+  }
+
+  return `
+    <div class="info-map-wrapper">
+      <div class="map-loading-overlay">
+        <span class="map-loading-text">Loading map...</span>
+      </div>
+      <iframe
+        src="${mapSrc}"
+        class="info-map-embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+        onload="this.previousElementSibling.remove()">
+      </iframe>
+    </div>
+  `;
+})()}
+
 
     ${
       item.link === ""
@@ -428,6 +462,105 @@ function showGenericModal(item: Item) {
   `;
 
   infoOverlay.classList.remove("hidden");
+
+  if (item.mapViewer) {
+    const viewer = document.querySelector<HTMLElement>(
+      `#custom-map-${item.id}`,
+    );
+    const inner = document.querySelector<HTMLElement>(
+      `#custom-map-inner-${item.id}`,
+    );
+    const img = document.querySelector<HTMLImageElement>(
+      `#custom-map-img-${item.id}`,
+    );
+
+    if (viewer && inner && img) {
+      const { x, y } = item.mapViewer;
+      let scale = item.mapViewer.zoom ?? 1;
+      let tx = 0;
+      let ty = 0;
+
+      const applyTransform = () => {
+        inner.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+      };
+
+      const centerOnXY = () => {
+        const w = img.naturalWidth;
+        const h = img.naturalHeight;
+        const px = w * x;
+        const py = h * y;
+        const cx = viewer.clientWidth / 2;
+        const cy = viewer.clientHeight / 2;
+        tx = cx - px * scale;
+        ty = cy - py * scale;
+        applyTransform();
+      };
+
+      let dragging = false;
+      let lastX = 0;
+      let lastY = 0;
+
+      viewer.addEventListener("pointerdown", (e) => {
+        dragging = true;
+        lastX = e.clientX;
+        lastY = e.clientY;
+        viewer.setPointerCapture(e.pointerId);
+      });
+
+      viewer.addEventListener("pointermove", (e) => {
+        if (!dragging) {
+          return;
+        }
+        const dx = e.clientX - lastX;
+        const dy = e.clientY - lastY;
+        lastX = e.clientX;
+        lastY = e.clientY;
+        tx += dx;
+        ty += dy;
+        applyTransform();
+      });
+
+      viewer.addEventListener("pointerup", (e) => {
+        dragging = false;
+        viewer.releasePointerCapture(e.pointerId);
+      });
+
+      viewer.addEventListener("pointercancel", (e) => {
+        dragging = false;
+        viewer.releasePointerCapture(e.pointerId);
+      });
+
+      viewer.addEventListener(
+        "wheel",
+        (e) => {
+          e.preventDefault();
+          const rect = viewer.getBoundingClientRect();
+          const mouseX = e.clientX - rect.left;
+          const mouseY = e.clientY - rect.top;
+          const imgX = (mouseX - tx) / scale;
+          const imgY = (mouseY - ty) / scale;
+          const zoomFactor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
+          const newScale = Math.min(6, Math.max(0.4, scale * zoomFactor));
+          scale = newScale;
+          tx = mouseX - imgX * scale;
+          ty = mouseY - imgY * scale;
+          applyTransform();
+        },
+        { passive: false },
+      );
+
+      const onReady = () => {
+        applyTransform();
+        centerOnXY();
+      };
+
+      if (img.complete && img.naturalWidth > 0) {
+        onReady();
+      } else {
+        img.addEventListener("load", onReady, { once: true });
+      }
+    }
+  }
 
   // Attach listener to the *newly created* close button.
   const modalCloseBtn = document.querySelector("#modalCloseBtn");

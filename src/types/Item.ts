@@ -9,6 +9,14 @@ interface ItemBase {
   readonly link: string;
 
   readonly map?: string;
+
+  readonly mapViewer?: {
+    readonly src: string; // path immagine
+    readonly x: number; // 0..1
+    readonly y: number; // 0..1
+    readonly zoom?: number; // opzionale
+  };
+
   readonly missable?: boolean;
   readonly unobtainable?: boolean;
   readonly group?: string;
