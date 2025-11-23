@@ -6,7 +6,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Tut_01",
+          "description": "Tut_01 .",
           "icon": "scenes/mossgrotto/Tut_01.png",
           "id": "scene-tut-01",
           "label": "Moss Grotto #1",
@@ -22,7 +22,7 @@
         },
         {
           "act": 1,
-          "description": "Tut_02",
+          "description": "Tut_02 .",
           "icon": "scenes/mossgrotto/Tut_02.png",
           "id": "scene-tut-02",
           "label": "Moss Grotto #2",
@@ -38,7 +38,7 @@
         },
         {
           "act": 1,
-          "description": "Tut_01b",
+          "description": "Tut_01b .",
           "icon": "scenes/mossgrotto/Tut_01b.png",
           "id": "scene-tut-01b",
           "label": "Moss Grotto #3",
@@ -54,7 +54,7 @@
         },
         {
           "act": 1,
-          "description": "Tut_03",
+          "description": "Tut_03 .",
           "icon": "scenes/mossgrotto/Tut_03.png",
           "id": "scene-tut-03",
           "label": "Moss Grotto #4",
@@ -70,7 +70,7 @@
         },
         {
           "act": 1,
-          "description": "Tut_04",
+          "description": "Tut_04 .",
           "icon": "scenes/mossgrotto/Tut_03.png",
           "id": "scene-tut-04",
           "label": "Moss Grotto #5",
@@ -86,7 +86,7 @@
         },
         {
           "act": 1,
-          "description": "Tut_05",
+          "description": "Tut_05 .",
           "icon": "scenes/mossgrotto/Tut_03.png",
           "id": "scene-tut-05",
           "label": "Moss Grotto #6",
@@ -102,7 +102,7 @@
         },
         {
           "act": 1,
-          "description": "Memory_Red",
+          "description": "Memory_Red .",
           "icon": "scenes/mossgrotto/Tut_03.png",
           "id": "scene-memory-red",
           "label": "Memory Red #7",
@@ -124,7 +124,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Bonetown",
+          "description": "Bonetown .",
           "icon": "scenes/bonetown/Bonetown.png",
           "id": "scene-bonetown",
           "label": "Bone Bottom #1",
@@ -140,7 +140,7 @@
         },
         {
           "act": 1,
-          "description": "Bellway_01",
+          "description": "Bellway_01 .",
           "icon": "scenes/bonetown/Bonetown.png",
           "id": "scene-bonetown-station",
           "label": "Bellway #2",
@@ -156,7 +156,7 @@
         },
         {
           "act": 1,
-          "description": "Bonegrave",
+          "description": "Bonegrave .",
           "icon": "scenes/bonetown/Bonegrave.png",
           "id": "scene-bonegrave",
           "label": "Bone Bottom #3",
@@ -172,7 +172,7 @@
         },
         {
           "act": 1,
-          "description": "Chapel_Wanderer",
+          "description": "Chapel_Wanderer .",
           "icon": "scenes/bonetown/Bonegrave.png",
           "id": "scene-chapel-wanderer",
           "label": "chapel wanderer #4",
@@ -188,7 +188,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_01b",
+          "description": "Bone_01b .",
           "icon": "scenes/bonetown/Bone_01b.png",
           "id": "scene-bone-01b",
           "label": "Bone Bottom #5",
@@ -204,7 +204,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_11b",
+          "description": "Bone_11b .",
           "icon": "scenes/bonetown/Bone_11b.png",
           "id": "scene-bone-11b",
           "label": "Bone Bottom #6",
@@ -220,7 +220,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_11",
+          "description": "Bone_11 .",
           "icon": "scenes/bonetown/Bone_11.png",
           "id": "scene-bone-11",
           "label": "Bone Bottom #7",
@@ -236,7 +236,7 @@
         },
         {
           "act": 1,
-          "description": "Mosstown_01",
+          "description": "Mosstown_01 .",
           "icon": "scenes/bonetown/Mosstown_01.png",
           "id": "scene-mosstown-01",
           "label": "Bone Bottom #8",
@@ -252,7 +252,7 @@
         },
         {
           "act": 1,
-          "description": "Mosstown_02",
+          "description": "Mosstown_02 .",
           "icon": "scenes/bonetown/Mosstown_02.png",
           "id": "scene-mosstown-02",
           "label": "Bone Bottom #9",
@@ -268,7 +268,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_05b",
+          "description": "Bone_05b .",
           "icon": "scenes/bonetown/Bone_05b.png",
           "id": "scene-bone-05b",
           "label": "Bone Bottom #10",
@@ -284,7 +284,7 @@
         },
         {
           "act": 1,
-          "description": "Mosstown_02c",
+          "description": "Mosstown_02c .",
           "icon": "scenes/bonetown/Mosstown_02c.png",
           "id": "scene-mosstown-02c",
           "label": "Bone Bottom #11",
@@ -300,7 +300,7 @@
         },
         {
           "act": 1,
-          "description": "Aspid_01",
+          "description": "Aspid_01 .",
           "icon": "scenes/bonetown/Aspid_01.png",
           "id": "scene-aspid-01",
           "label": "Bone Bottom #12",
@@ -316,8 +316,7 @@
         },
         {
           "act": 1,
-          "description": ".",
-
+          "description": "Bone_Steel_Servant .",
           "icon": "scenes/bonetown/Bone_steel_servant.png",
           "id": "scene-bone-steel-servant",
           "label": "Bone Bottom #13",
@@ -340,7 +339,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Bone_01",
+          "description": "Bone_01 .",
           "icon": "scenes/marrow/Bone_01.png",
           "id": "scene-bone-01",
           "label": "The Marrow #1",
@@ -356,7 +355,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_01c",
+          "description": "Bone_01c .",
           "icon": "scenes/marrow/Bone_01c.png",
           "id": "scene-bone-01c",
           "label": "The Marrow #2",
@@ -372,7 +371,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_02",
+          "description": "Bone_02 .",
           "icon": "scenes/marrow/Bone_02.png",
           "id": "scene-bone-02",
           "label": "The Marrow #3",
@@ -388,7 +387,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_16",
+          "description": "Bone_16 .",
           "icon": "scenes/marrow/Bone_16.png",
           "id": "scene-bone-16",
           "label": "The Marrow #4",
@@ -404,7 +403,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_09",
+          "description": "Bone_09 .",
           "icon": "scenes/marrow/Bone_09.png",
           "id": "scene-bone-09",
           "label": "The Marrow #5",
@@ -420,7 +419,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_04",
+          "description": "Bone_04 .",
           "icon": "scenes/marrow/Bone_04.png",
           "id": "scene-bone-04",
           "label": "The Marrow #6",
@@ -436,7 +435,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_05",
+          "description": "Bone_05 .",
           "icon": "scenes/marrow/Bone_05.png",
           "id": "scene-bone-05",
           "label": "The Marrow #7",
@@ -452,7 +451,7 @@
         },
         {
           "act": 1,
-          "description": "Memory_Silk_Heart_BellBeast",
+          "description": "Memory_Silk_Heart_BellBeast .",
           "icon": "scenes/marrow/Bone_05.png",
           "id": "scene-memory-bellbeast",
           "label": "The Marrow #8",
@@ -468,7 +467,7 @@
         },
         {
           "act": 1,
-          "description": "Bellshrine",
+          "description": "Bellshrine .",
           "icon": "scenes/marrow/Bellshrine.png",
           "id": "scene-bone-bellshrine",
           "label": "The Marrow #9",
@@ -484,7 +483,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_03",
+          "description": "Bone_03 .",
           "icon": "scenes/marrow/Bone_03.png",
           "id": "scene-bone-03",
           "label": "The Marrow #10",
@@ -500,7 +499,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_17",
+          "description": "Bone_17 .",
           "icon": "scenes/marrow/Bone_17.png",
           "id": "scene-bone-17",
           "label": "The Marrow #11",
@@ -516,7 +515,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_10",
+          "description": "Bone_10 .",
           "icon": "scenes/marrow/Bone_10.png",
           "id": "scene-bone-10",
           "label": "The Marrow #12",
@@ -532,7 +531,7 @@
         },
         {
           "act": 1,
-          "description": "Room_Caravan_Spa",
+          "description": "Room_Caravan_Spa .",
           "icon": "scenes/marrow/Bone_10.png",
           "id": "scene-bone-caravan",
           "label": "The Marrow #13",
@@ -548,7 +547,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_15",
+          "description": "Bone_15 .",
           "icon": "scenes/marrow/Bone_15.png",
           "id": "scene-bone-15",
           "label": "The Marrow #14",
@@ -564,7 +563,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_14",
+          "description": "Bone_14 .",
           "icon": "scenes/marrow/Bone_14.png",
           "id": "scene-bone-14",
           "label": "The Marrow #15",
@@ -580,7 +579,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_07",
+          "description": "Bone_07 .",
           "icon": "scenes/marrow/Bone_07.png",
           "id": "scene-bone-07",
           "label": "The Marrow #15",
@@ -596,7 +595,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_19",
+          "description": "Bone_19 .",
           "icon": "scenes/marrow/Bone_19.png",
           "id": "scene-bone-19",
           "label": "The Marrow #16",
@@ -612,7 +611,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_08",
+          "description": "Bone_08 .",
           "icon": "scenes/marrow/Bone_08.png",
           "id": "scene-bone-08",
           "label": "The Marrow #17",
@@ -628,7 +627,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_12",
+          "description": "Bone_12 .",
           "icon": "scenes/marrow/Bone_08.png",
           "id": "scene-bone-12",
           "label": "The Marrow #18",
@@ -644,7 +643,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_06",
+          "description": "Bone_06 .",
           "icon": "scenes/marrow/Bone_06.png",
           "id": "scene-bone-06",
           "label": "The Marrow #19",
@@ -660,7 +659,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_18",
+          "description": "Bone_18 .",
           "icon": "scenes/marrow/Bone_18.png",
           "id": "scene-bone-18",
           "label": "The Marrow #20",
@@ -676,7 +675,7 @@
         },
         {
           "act": 1,
-          "description": "Weave_05b",
+          "description": "Weave_05b .",
           "icon": "scenes/marrow/Weave_05b.png",
           "id": "scene-bone-atlas",
           "label": "The Marrow #21",
@@ -698,7 +697,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Dock_08",
+          "description": "Dock_08 .",
           "icon": "scenes/deepdocks/Dock_08.png",
           "id": "scene-dock-08",
           "label": "Deep Docks #1",
@@ -714,7 +713,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_01",
+          "description": "Dock_01 .",
           "icon": "scenes/deepdocks/Dock_01.png",
           "id": "scene-dock-01",
           "label": "Deep Docks #2",
@@ -730,7 +729,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_05",
+          "description": "Bone_East_05 .",
           "icon": "scenes/deepdocks/Bone_East_05.png",
           "id": "scene-dock-boneeast05",
           "label": "Deep Docks #3",
@@ -746,7 +745,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_04b",
+          "description": "Bone_East_04b .",
           "icon": "scenes/deepdocks/Bone_East_04b.png",
           "id": "scene-dock-boneeast04b",
           "label": "Deep Docks #4",
@@ -762,7 +761,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_04",
+          "description": "Bone_East_04 .",
           "icon": "scenes/deepdocks/Bone_East_04.png",
           "id": "scene-dock-boneeast04",
           "label": "Deep Docks #5",
@@ -778,7 +777,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_04c",
+          "description": "Bone_East_04c .",
           "icon": "scenes/deepdocks/Bone_East_04c.png",
           "id": "scene-dock-boneeast04c",
           "label": "Deep Docks #6",
@@ -794,7 +793,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_01",
+          "description": "Bone_East_01 .",
           "icon": "scenes/deepdocks/Bone_East_01.png",
           "id": "scene-dock-boneeast01",
           "label": "Deep Docks #7",
@@ -810,7 +809,7 @@
         },
         {
           "act": 1,
-          "description": "Bellway_02",
+          "description": "Bellway_02 .",
           "icon": "scenes/deepdocks/Bellway_02.png",
           "id": "scene-dock-boneeast04b",
           "label": "Bellway #8",
@@ -826,7 +825,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_16",
+          "description": "Dock_16 .",
           "icon": "scenes/deepdocks/Dock_16.png",
           "id": "scene-dock-16",
           "label": "Deep Docks #9",
@@ -842,7 +841,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_05",
+          "description": "Dock_05 .",
           "icon": "scenes/deepdocks/Dock_05.png",
           "id": "scene-dock-05",
           "label": "Deep Docks #10",
@@ -858,7 +857,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_03",
+          "description": "Bone_East_03 .",
           "icon": "scenes/deepdocks/Bone_East_03.png",
           "id": "scene-dock-boneeast03",
           "label": "Deep Docks #11",
@@ -874,7 +873,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_12",
+          "description": "Bone_East_12 .",
           "icon": "scenes/deepdocks/Bone_East_12.png",
           "id": "scene-dock-boneeast12",
           "label": "Deep Docks #12",
@@ -890,7 +889,7 @@
         },
         {
           "act": 1,
-          "description": "Bellshrine_05",
+          "description": "Bellshrine_05 .",
           "icon": "scenes/deepdocks/Bellshrine_05.png",
           "id": "scene-dock-bellshrine05",
           "label": "Deep Docks #13",
@@ -906,7 +905,7 @@
         },
         {
           "act": 1,
-          "description": "Room_Forge",
+          "description": "Room_Forge .",
           "icon": "scenes/deepdocks/Room_Forge.png",
           "id": "scene-dock-forge",
           "label": "Deep Docks #14",
@@ -922,7 +921,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_04",
+          "description": "Dock_04 .",
           "icon": "scenes/deepdocks/Dock_04.png",
           "id": "scene-dock-04",
           "label": "Deep Docks #15",
@@ -938,7 +937,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_13",
+          "description": "Bone_East_13 .",
           "icon": "scenes/deepdocks/Bone_East_13.png",
           "id": "scene-dock-Boneeast13",
           "label": "Deep Docks #16",
@@ -954,7 +953,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_06_Church",
+          "description": "Dock_06_Church .",
           "icon": "scenes/deepdocks/Dock_06_Church.png",
           "id": "scene-dock-dock06church",
           "label": "Deep Docks #17",
@@ -970,7 +969,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_10",
+          "description": "Dock_10 .",
           "icon": "scenes/deepdocks/Dock_10.png",
           "id": "scene-dock-dock10",
           "label": "Deep Docks #18",
@@ -986,7 +985,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_15",
+          "description": "Dock_15 .",
           "icon": "scenes/deepdocks/Dock_15.png",
           "id": "scene-dock-dock15",
           "label": "Deep Docks #19",
@@ -1002,7 +1001,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_13",
+          "description": "Dock_13 .",
           "icon": "scenes/deepdocks/Dock_13.png",
           "id": "scene-dock-dock13",
           "label": "Deep Docks #20",
@@ -1018,7 +1017,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_14",
+          "description": "Dock_14 .",
           "icon": "scenes/deepdocks/Dock_14.png",
           "id": "scene-dock-dock14",
           "label": "Deep Docks #21",
@@ -1034,7 +1033,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_11",
+          "description": "Dock_11 .",
           "icon": "scenes/deepdocks/Dock_11.png",
           "id": "scene-dock-dock11",
           "label": "Deep Docks #22",
@@ -1050,7 +1049,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_12",
+          "description": "Dock_12 .",
           "icon": "scenes/deepdocks/Dock_12.png",
           "id": "scene-dock-dock12",
           "label": "Deep Docks #23",
@@ -1066,7 +1065,7 @@
         },
         {
           "act": 1,
-          "description": "Room_Diving_Bell",
+          "description": "Room_Diving_Bell .",
           "icon": "scenes/deepdocks/Dock_12.png",
           "id": "scene-dock-divingbell",
           "label": "Deep Docks #24",
@@ -1082,7 +1081,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_02",
+          "description": "Dock_02 .",
           "icon": "scenes/deepdocks/Dock_02.png",
           "id": "scene-dock-dock02",
           "label": "Deep Docks #25",
@@ -1098,7 +1097,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_09",
+          "description": "Dock_09 .",
           "icon": "scenes/deepdocks/Dock_09.png",
           "id": "scene-dock-dock09",
           "label": "Deep Docks #26",
@@ -1114,7 +1113,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_02b",
+          "description": "Dock_02b .",
           "icon": "scenes/deepdocks/Dock_02b.png",
           "id": "scene-dock-dock02b",
           "label": "Deep Docks #27",
@@ -1130,7 +1129,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_03",
+          "description": "Dock_03 .",
           "icon": "scenes/deepdocks/Dock_03.png",
           "id": "scene-dock-dock03",
           "label": "Deep Docks #28",
@@ -1146,7 +1145,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_03d",
+          "description": "Dock_03d .",
           "icon": "scenes/deepdocks/Dock_03d.png",
           "id": "scene-dock-dock03d",
           "label": "Deep Docks #29",
@@ -1162,7 +1161,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_03c",
+          "description": "Dock_03c .",
           "icon": "scenes/deepdocks/Dock_03c.png",
           "id": "scene-dock-dock03c",
           "label": "Deep Docks #30",
@@ -1184,7 +1183,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Bone_East_02",
+          "description": "Bone_East_02 .",
           "icon": "scenes/farfields/Bone_East_02.png",
           "id": "scene-farfields-02",
           "label": "Far Fields #1",
@@ -1200,7 +1199,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_02b",
+          "description": "Bone_East_02b .",
           "icon": "scenes/farfields/Bone_East_02b.png",
           "id": "scene-farfields-02b",
           "label": "Far Fields #2",
@@ -1216,7 +1215,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_16",
+          "description": "Bone_East_16 .",
           "icon": "scenes/farfields/Bone_East_16.png",
           "id": "scene-farfields-16",
           "label": "Far Fields #3",
@@ -1232,7 +1231,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_17b",
+          "description": "Bone_East_17b .",
           "icon": "scenes/farfields/Bone_East_17b.png",
           "id": "scene-farfields-17b",
           "label": "Far Fields #4",
@@ -1248,7 +1247,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_17",
+          "description": "Bone_East_17 .",
           "icon": "scenes/farfields/Bone_East_17.png",
           "id": "scene-farfields-17",
           "label": "Far Fields #5",
@@ -1264,7 +1263,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_15",
+          "description": "Bone_East_15 .",
           "icon": "scenes/farfields/Bone_East_15.png",
           "id": "scene-farfields-15",
           "label": "Far Fields #6",
@@ -1280,7 +1279,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_07",
+          "description": "Bone_East_07 .",
           "icon": "scenes/farfields/Bone_East_07.png",
           "id": "scene-farfields-07",
           "label": "Far Fields #7",
@@ -1296,7 +1295,7 @@
         },
         {
           "act": 1,
-          "description": "Dock_03b",
+          "description": "Dock_03b .",
           "icon": "scenes/farfields/Dock_03b.png",
           "id": "scene-farfields-dock03b",
           "label": "Far Fields #8",
@@ -1312,7 +1311,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_21",
+          "description": "Bone_East_21 .",
           "icon": "scenes/farfields/Bone_East_21.png",
           "id": "scene-farfields-21",
           "label": "Far Fields #9",
@@ -1328,7 +1327,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_08",
+          "description": "Bone_East_08 .",
           "icon": "scenes/farfields/Bone_East_08.png",
           "id": "scene-farfields-08",
           "label": "Far Fields #10",
@@ -1344,7 +1343,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_09",
+          "description": "Bone_East_09 .",
           "icon": "scenes/farfields/Bone_East_09.png",
           "id": "scene-farfields-09",
           "label": "Far Fields #11",
@@ -1360,7 +1359,7 @@
         },
         {
           "act": 1,
-          "description": ".",
+          "description": ". .",
           "icon": "scenes/farfields/Bone_East_09.png",
           "id": "scene-farfields-umnrella",
           "label": "Far Fields #12",
@@ -1376,7 +1375,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_14",
+          "description": "Bone_East_14 .",
           "icon": "scenes/farfields/Bone_East_14.png",
           "id": "scene-farfields-14",
           "label": "Far Fields #13",
@@ -1392,7 +1391,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_14b",
+          "description": "Bone_East_14b .",
           "icon": "scenes/farfields/Bone_East_14b.png",
           "id": "scene-farfields-14b",
           "label": "Far Fields #14",
@@ -1408,7 +1407,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_LavaChallenge",
+          "description": "Bone_East_LavaChallenge .",
           "icon": "scenes/farfields/Bone_East_14b_lava_room.png",
           "id": "scene-farfields-lavachallenge",
           "label": "Far Fields #15",
@@ -1424,7 +1423,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_Weavehome",
+          "description": "Bone_East_Weavehome .",
           "icon": "scenes/farfields/Bone_East_Weavehome.png",
           "id": "scene-farfields-weave",
           "label": "Far Fields #16",
@@ -1440,7 +1439,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_20",
+          "description": "Bone_East_20 .",
           "icon": "scenes/farfields/Bone_East_20.png",
           "id": "scene-farfields-20",
           "label": "Far Fields #17",
@@ -1456,7 +1455,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_09b",
+          "description": "Bone_East_09b .",
           "icon": "scenes/farfields/Bone_East_09b.png",
           "id": "scene-farfields-09b",
           "label": "Far Fields #18",
@@ -1472,7 +1471,7 @@
         },
         {
           "act": 1,
-          "description": "Bellway_03",
+          "description": "Bellway_03 .",
           "icon": "scenes/farfields/Bellway_03.png",
           "id": "scene-farfields-bellway",
           "label": "Bellway #19",
@@ -1488,7 +1487,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_22",
+          "description": "Bone_East_22 .",
           "icon": "scenes/farfields/Bone_East_22.png",
           "id": "scene-farfields-22",
           "label": "Far Fields #20",
@@ -1504,7 +1503,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_10_Church",
+          "description": "Bone_East_10_Church .",
           "icon": "scenes/farfields/Bone_East_10_Church.png",
           "id": "scene-farfields-church10",
           "label": "Far Fields #21",
@@ -1520,7 +1519,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_10",
+          "description": "Bone_East_10 .",
           "icon": "scenes/farfields/Bone_East_10.png",
           "id": "scene-farfields-10",
           "label": "Far Fields #22",
@@ -1536,7 +1535,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_10_Room",
+          "description": "Bone_East_10_Room .",
           "icon": "scenes/farfields/Bone_East_10_Room.png",
           "id": "scene-farfields-10room",
           "label": "Far Fields #23",
@@ -1552,7 +1551,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_18c",
+          "description": "Bone_East_18c .",
           "icon": "scenes/farfields/Bone_East_18c.png",
           "id": "scene-farfields-18c",
           "label": "Far Fields #24",
@@ -1568,7 +1567,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_18",
+          "description": "Bone_East_18 .",
           "icon": "scenes/farfields/Bone_East_18.png",
           "id": "scene-farfields-18",
           "label": "Far Fields #25",
@@ -1584,7 +1583,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_18b",
+          "description": "Bone_East_18b .",
           "icon": "scenes/farfields/Bone_East_18b.png",
           "id": "scene-farfields-18b",
           "label": "Far Fields #26",
@@ -1600,7 +1599,7 @@
         },
         {
           "act": 1,
-          "description": "Sprintmaster_Cave",
+          "description": "Sprintmaster_Cave .",
           "icon": "scenes/farfields/Sprintmaster_Cave.png",
           "id": "scene-farfields-sprintmaster",
           "label": "SprintMaster Cave #27",
@@ -1616,7 +1615,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_26",
+          "description": "Bone_East_26 .",
           "icon": "scenes/farfields/Bone_East_26.png",
           "id": "scene-farfields-26",
           "label": "Far Fields #28",
@@ -1632,7 +1631,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_27",
+          "description": "Bone_East_27 .",
           "icon": "scenes/farfields/Bone_East_27.png",
           "id": "scene-farfields-27",
           "label": "Far Fields #29",
@@ -1648,7 +1647,7 @@
         },
         {
           "act": 1,
-          "description": "Memory_Ant_Queen",
+          "description": "Memory_Ant_Queen .",
           "icon": "scenes/farfields/Ant_Queen.png",
           "id": "scene-farfields-memoryantqueen",
           "label": "Far Fields #30",
@@ -1664,7 +1663,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_Queen",
+          "description": "Ant_Queen .",
           "icon": "scenes/farfields/Ant_Queen.png",
           "id": "scene-farfields-antqueen",
           "label": "Far Fields #31",
@@ -1680,7 +1679,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_25",
+          "description": "Bone_East_25 .",
           "icon": "scenes/farfields/Bone_East_25.png",
           "id": "scene-farfields-25",
           "label": "Far Fields #32",
@@ -1696,7 +1695,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_24",
+          "description": "Bone_East_24 .",
           "icon": "scenes/farfields/Bone_East_24.png",
           "id": "scene-farfields-24",
           "label": "Far Fields #33",
@@ -1712,7 +1711,7 @@
         },
         {
           "act": 1,
-          "description": "Bone_East_11",
+          "description": "Bone_East_11 .",
           "icon": "scenes/farfields/Bone_East_11.png",
           "id": "scene-farfields-11",
           "label": "Far Fields #34",
@@ -1734,7 +1733,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Ant_02",
+          "description": "Ant_02 .",
           "icon": "scenes/huntersmarch/Ant_02.png",
           "id": "scene-huntersmarch-02",
           "label": "Hunter's March #1",
@@ -1750,7 +1749,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_03",
+          "description": "Ant_03 .",
           "icon": "scenes/huntersmarch/Ant_03.png",
           "id": "scene-huntersmarch-03",
           "label": "Hunter's March #2",
@@ -1766,7 +1765,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_04_left",
+          "description": "Ant_04_left .",
           "icon": "scenes/huntersmarch/Ant_04_left.png",
           "id": "scene-huntersmarch-04left",
           "label": "Hunter's March #3",
@@ -1782,7 +1781,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_04_mid",
+          "description": "Ant_04_mid .",
           "icon": "scenes/huntersmarch/Ant_04_mid.png",
           "id": "scene-huntersmarch-04mid",
           "label": "Hunter's March #4",
@@ -1798,7 +1797,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_04",
+          "description": "Ant_04 .",
           "icon": "scenes/huntersmarch/Ant_04.png",
           "id": "scene-huntersmarch-04",
           "label": "Hunter's March #5",
@@ -1814,7 +1813,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_14",
+          "description": "Ant_14 .",
           "icon": "scenes/huntersmarch/Ant_14.png",
           "id": "scene-huntersmarch-14",
           "label": "Hunter's March #6",
@@ -1830,7 +1829,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_05b",
+          "description": "Ant_05b .",
           "icon": "scenes/huntersmarch/Ant_05b.png",
           "id": "scene-huntersmarch-05b",
           "label": "Hunter's March #7",
@@ -1846,7 +1845,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_20",
+          "description": "Ant_20 .",
           "icon": "scenes/huntersmarch/Ant_20.png",
           "id": "scene-huntersmarch-20",
           "label": "Hunter's March #8",
@@ -1862,7 +1861,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_19",
+          "description": "Ant_19 .",
           "icon": "scenes/huntersmarch/Ant_19.png",
           "id": "scene-huntersmarch-19",
           "label": "Hunter's March #9",
@@ -1878,7 +1877,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_17",
+          "description": "Ant_17 .",
           "icon": "scenes/huntersmarch/Ant_17.png",
           "id": "scene-huntersmarch-17",
           "label": "Hunter's March #10",
@@ -1894,7 +1893,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_Merchant",
+          "description": "Ant_Merchant .",
           "icon": "scenes/huntersmarch/Ant_Merchant.png",
           "id": "scene-huntersmarch-merchant",
           "label": "Hunter's March #11",
@@ -1910,7 +1909,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_21",
+          "description": "Ant_21 .",
           "icon": "scenes/huntersmarch/Ant_21.png",
           "id": "scene-huntersmarch-21",
           "label": "Hunter's March #12",
@@ -1926,7 +1925,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_05c",
+          "description": "Ant_05c .",
           "icon": "scenes/huntersmarch/Ant_05c.png",
           "id": "scene-huntersmarch-05c",
           "label": "Hunter's March #13",
@@ -1942,7 +1941,7 @@
         },
         {
           "act": 1,
-          "description": "Ant_09",
+          "description": "Ant_09 .",
           "icon": "scenes/huntersmarch/Ant_09.png",
           "id": "scene-huntersmarch-09",
           "label": "Hunter's March #14",
@@ -1964,7 +1963,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Weave_04",
+          "description": "Weave_04 .",
           "icon": "scenes/weavenestatla/Weave_04.png",
           "id": "scene-Weave-04",
           "label": "Weavenest Atla #1",
@@ -1980,7 +1979,7 @@
         },
         {
           "act": 1,
-          "description": "Weave_02",
+          "description": "Weave_02 .",
           "icon": "scenes/weavenestatla/Weave_02.png",
           "id": "scene-Weave-02",
           "label": "Weavenest Atla #2",
@@ -1996,7 +1995,7 @@
         },
         {
           "act": 1,
-          "description": "Weave_12",
+          "description": "Weave_12 .",
           "icon": "scenes/weavenestatla/Weave_12.png",
           "id": "scene-Weave-12",
           "label": "Weavenest Atla #3",
@@ -2012,7 +2011,7 @@
         },
         {
           "act": 1,
-          "description": "Weave_13",
+          "description": "Weave_13 .",
           "icon": "scenes/weavenestatla/Weave_13.png",
           "id": "scene-Weave-13",
           "label": "Weavenest Atla #4",
@@ -2028,7 +2027,7 @@
         },
         {
           "act": 1,
-          "description": "Weave_08",
+          "description": "Weave_08 .",
           "icon": "scenes/weavenestatla/Weave_08.png",
           "id": "scene-Weave-08",
           "label": "Weavenest Atla #5",
@@ -2044,7 +2043,7 @@
         },
         {
           "act": 1,
-          "description": "Weave_10",
+          "description": "Weave_10 .",
           "icon": "scenes/weavenestatla/Weave_10.png",
           "id": "scene-Weave-10",
           "label": "Weavenest Atla #6",
@@ -2060,7 +2059,7 @@
         },
         {
           "act": 1,
-          "description": "Weave_07",
+          "description": "Weave_07 .",
           "icon": "scenes/weavenestatla/Weave_07.png",
           "id": "scene-Weave-07",
           "label": "Weavenest Atla #7",
@@ -2076,7 +2075,7 @@
         },
         {
           "act": 1,
-          "description": "Weave_03",
+          "description": "Weave_03 .",
           "icon": "scenes/weavenestatla/Weave_03.png",
           "id": "scene-Weave-03",
           "label": "Weavenest Atla #8",
@@ -2092,7 +2091,7 @@
         },
         {
           "act": 1,
-          "description": "Weave_11",
+          "description": "Weave_11 .",
           "icon": "scenes/weavenestatla/Weave_11.png",
           "id": "scene-Weave-11",
           "label": "Weavenest Atla #9",
@@ -2108,7 +2107,7 @@
         },
         {
           "act": 1,
-          "description": "Weave_14",
+          "description": "Weave_14 .",
           "icon": "scenes/weavenestatla/Weave_14.png",
           "id": "scene-Weave-14",
           "label": "Weavenest Atla #10",
@@ -2130,7 +2129,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Crawl_04",
+          "description": "Crawl_04 .",
           "icon": "scenes/wormways/Crawl_04.png",
           "id": "scene-wormways-04",
           "label": "Wormways #1",
@@ -2146,7 +2145,7 @@
         },
         {
           "act": 1,
-          "description": "Crawl_02",
+          "description": "Crawl_02 .",
           "icon": "scenes/wormways/Crawl_02.png",
           "id": "scene-wormways-02",
           "label": "Wormways #2",
@@ -2162,7 +2161,7 @@
         },
         {
           "act": 1,
-          "description": "Crawl_06",
+          "description": "Crawl_06 .",
           "icon": "scenes/wormways/Crawl_06.png",
           "id": "scene-wormways-06",
           "label": "Wormways #3",
@@ -2178,7 +2177,7 @@
         },
         {
           "act": 1,
-          "description": "Crawl_01",
+          "description": "Crawl_01 .",
           "icon": "scenes/wormways/Crawl_01.png",
           "id": "scene-wormways-01",
           "label": "Wormways #4",
@@ -2194,7 +2193,7 @@
         },
         {
           "act": 1,
-          "description": "Crawl_03",
+          "description": "Crawl_03 .",
           "icon": "scenes/wormways/Crawl_03.png",
           "id": "scene-wormways-03",
           "label": "Wormways #6",
@@ -2210,7 +2209,7 @@
         },
         {
           "act": 1,
-          "description": "Crawl_08",
+          "description": "Crawl_08 .",
           "icon": "scenes/wormways/Crawl_08.png",
           "id": "scene-wormways-08",
           "label": "Wormways #7",
@@ -2226,7 +2225,7 @@
         },
         {
           "act": 1,
-          "description": "Crawl_05",
+          "description": "Crawl_05 .",
           "icon": "scenes/wormways/Crawl_05.png",
           "id": "scene-wormways-05",
           "label": "Wormways #8",
@@ -2242,7 +2241,7 @@
         },
         {
           "act": 1,
-          "description": "Crawl_03b",
+          "description": "Crawl_03b .",
           "icon": "scenes/wormways/Crawl_03b.png",
           "id": "scene-wormways-03b",
           "label": "Wormways #9",
@@ -2258,7 +2257,7 @@
         },
         {
           "act": 1,
-          "description": "Crawl_07",
+          "description": "Crawl_07 .",
           "icon": "scenes/wormways/Crawl_07.png",
           "id": "scene-wormways-07",
           "label": "Wormways #10",
@@ -2274,7 +2273,7 @@
         },
         {
           "act": 1,
-          "description": "Crawl_09",
+          "description": "Crawl_09 .",
           "icon": "scenes/wormways/Crawl_09.png",
           "id": "scene-wormways-09",
           "label": "Wormways #11",
@@ -2290,8 +2289,8 @@
         },
         {
           "act": 1,
-          "description": "Crawl_10",
-          "icon": "scenes/wormways/Crawl_10.png",
+          "description": "Crawl_10 .",
+          "icon": "scenes/wormways/.png",
           "id": "scene-wormways-10",
           "label": "Wormways #12",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
