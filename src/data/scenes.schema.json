@@ -46,6 +46,31 @@
                   "description": "Optional map embed path or URL.",
                   "type": "string"
                 },
+                "mapViewer": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "src": {
+                      "type": "string"
+                    },
+                    "x": {
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "y": {
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "zoom": {
+                      "minimum": 0.1,
+                      "type": "number"
+                    }
+                  },
+                  "required": ["src", "x", "y"],
+                  "type": "object"
+                },
+
                 "mode": {
                   "description": "Optional. Specifies the game mode this scene belongs to (e.g., normal or steel).",
                   "enum": ["normal", "steel"],

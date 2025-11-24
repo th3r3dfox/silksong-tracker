@@ -9,6 +9,14 @@ interface ItemBase {
   readonly link: string;
 
   readonly map?: string;
+
+  readonly mapViewer?: {
+    readonly src: string; // path immagine
+    readonly x: number; // 0..1
+    readonly y: number; // 0..1
+    readonly zoom?: number; // opzionale
+  };
+
   readonly missable?: boolean;
   readonly unobtainable?: boolean;
   readonly group?: string;
@@ -43,12 +51,7 @@ interface ItemSceneBool extends ItemBase {
   readonly type: "sceneBool";
   readonly flag: string;
   readonly scene: string;
-}
-
-interface ItemSceneInt extends ItemBase {
-  readonly type: "sceneInt";
-  readonly flag: string;
-  readonly scene: string;
+  readonly required: number;
 }
 
 interface ItemSceneVisited extends ItemBase {
@@ -134,12 +137,6 @@ interface SceneBoolCheck {
   readonly flag: string;
 }
 
-interface SceneIntCheck {
-  readonly type: "sceneInt";
-  readonly scene: string;
-  readonly flag: string;
-}
-
 interface SceneVisitedCheck {
   readonly type: "sceneVisited";
   readonly scene: string;
@@ -155,7 +152,6 @@ type ItemCheck =
   | FlagCheck
   | FlagIntCheck
   | SceneBoolCheck
-  | SceneIntCheck
   | SceneVisitedCheck
   | LevelCheck;
 
@@ -169,7 +165,6 @@ export type Item =
   | ItemFlagInt
   | ItemLevel
   | ItemSceneBool
-  | ItemSceneInt
   | ItemSceneVisited
   | ItemTool
   | ItemCollectable

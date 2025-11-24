@@ -6,100 +6,113 @@
       "items": [
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Tut_01.png",
+          "description": "Tut_01 .",
+          "icon": "scenes/mossgrotto/Tut_01.png",
           "id": "scene-tut-01",
           "label": "Moss Grotto #1",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.215,
+            "y": 0.75,
+            "zoom": 2.0
+          },
           "scene": "Tut_01",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Tut_02.png",
+          "description": "Tut_02 .",
+          "icon": "scenes/mossgrotto/Tut_02.png",
           "id": "scene-tut-02",
           "label": "Moss Grotto #2",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.184,
+            "y": 0.765,
+            "zoom": 2.0
+          },
           "scene": "Tut_02",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Tut_01b.png",
+          "description": "Tut_01b .",
+          "icon": "scenes/mossgrotto/Tut_01b.png",
           "id": "scene-tut-01b",
           "label": "Moss Grotto #3",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.234,
+            "y": 0.75,
+            "zoom": 2.0
+          },
           "scene": "Tut_01b",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Tut_03.png",
+          "description": "Tut_03 .",
+          "icon": "scenes/mossgrotto/Tut_03.png",
           "id": "scene-tut-03",
           "label": "Moss Grotto #4",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.185,
+            "y": 0.73,
+            "zoom": 2.0
+          },
           "scene": "Tut_03",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Tut_04.png",
+          "description": "Tut_04 .",
+          "icon": "scenes/mossgrotto/Tut_03.png",
           "id": "scene-tut-04",
           "label": "Moss Grotto #5",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.17,
+            "y": 0.73,
+            "zoom": 2.0
+          },
           "scene": "Tut_04",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Tut_05.png",
+          "description": "Tut_05 .",
+          "icon": "scenes/mossgrotto/Tut_03.png",
           "id": "scene-tut-05",
           "label": "Moss Grotto #6",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.17,
+            "y": 0.73,
+            "zoom": 2.0
+          },
           "scene": "Tut_05",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Tut_01_left_room.png",
-          "id": "scene-tut-01-left",
-          "label": "Moss Grotto #7",
-          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
-          "scene": "Tut_01_chest",
-          "type": "sceneVisited"
-        },
-        {
-          "act": 1,
-          "description": ".",
-          "icon": "scenes/Tut_01_top.png",
-          "id": "scene-tut-01-top",
-          "label": "Moss Grotto #8",
-          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
-          "scene": "Tut_01_top",
-          "type": "sceneVisited"
-        },
-        {
-          "act": 1,
-          "description": ".",
-          "icon": "scenes/Memory_Red.png",
+          "description": "Memory_Red .",
+          "icon": "scenes/mossgrotto/Tut_03.png",
           "id": "scene-memory-red",
-          "label": "Memory Red #9",
+          "label": "Memory Red #7",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.17,
+            "y": 0.73,
+            "zoom": 2.0
+          },
           "scene": "Memory_Red",
           "type": "sceneVisited"
         }
@@ -111,195 +124,2187 @@
       "items": [
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Bonetown.png",
+          "description": "Bonetown .",
+          "icon": "scenes/bonetown/Bonetown.png",
           "id": "scene-bonetown",
           "label": "Bone Bottom #1",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.216,
+            "y": 0.711,
+            "zoom": 2.0
+          },
           "scene": "Bonetown",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Bellway_01.png",
+          "description": "Bellway_01 .",
+          "icon": "scenes/bonetown/Bonetown.png",
           "id": "scene-bonetown-station",
           "label": "Bellway #2",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.245,
+            "y": 0.722,
+            "zoom": 2.0
+          },
           "scene": "Bellway_01",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Bonetown_top_right.png",
-          "id": "scene-bonetown-top-right",
+          "description": "Bonegrave .",
+          "icon": "scenes/bonetown/Bonegrave.png",
+          "id": "scene-bonegrave",
           "label": "Bone Bottom #3",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
-          "scene": "Bonetown_top_right",
-          "type": "sceneVisited"
-        },
-        {
-          "act": 1,
-          "description": ".",
-          "icon": "scenes/Bonetown_top_left.png",
-          "id": "scene-bonetown-top-left",
-          "label": "Bone Bottom #4",
-          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
-          "scene": "Bonetown_top_left",
-          "type": "sceneVisited"
-        },
-        {
-          "act": 1,
-          "description": ".",
-          "icon": "scenes/Bonegrave.png",
-          "id": "scene-bonegrave",
-          "label": "Bone Bottom #5",
-          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.141,
+            "y": 0.718,
+            "zoom": 2.0
+          },
           "scene": "Bonegrave",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Bonegrave_Gate.png",
-          "id": "scene-bonegrave-gate",
-          "label": "Bone Bottom #6",
-          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
-          "scene": "Bonegrave_Gate",
-          "type": "sceneVisited"
-        },
-        {
-          "act": 1,
-          "description": ".",
-          "icon": "scenes/Bonegrave_top_one_way.png",
-          "id": "scene-bonegrave-top",
-          "label": "Bone Bottom #7",
-          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
-          "scene": "Bonegrave_top",
-          "type": "sceneVisited"
-        },
-        {
-          "act": 1,
-          "description": ".",
-          "icon": "scenes/Chapel_wanderer.png",
+          "description": "Chapel_Wanderer .",
+          "icon": "scenes/bonetown/Bonegrave.png",
           "id": "scene-chapel-wanderer",
-          "label": "chapel wanderer #8",
+          "label": "chapel wanderer #4",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.118,
+            "y": 0.728,
+            "zoom": 2.0
+          },
           "scene": "Chapel_Wanderer",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Bone_01b.png",
+          "description": "Bone_01b .",
+          "icon": "scenes/bonetown/Bone_01b.png",
           "id": "scene-bone-01b",
-          "label": "Bone Bottom #9",
+          "label": "Bone Bottom #5",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.269,
+            "y": 0.697,
+            "zoom": 2.0
+          },
           "scene": "Bone_01b",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Bone_11b.png",
+          "description": "Bone_11b .",
+          "icon": "scenes/bonetown/Bone_11b.png",
           "id": "scene-bone-11b",
-          "label": "Bone Bottom #10",
+          "label": "Bone Bottom #6",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.254,
+            "y": 0.69,
+            "zoom": 2.0
+          },
           "scene": "Bone_11b",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Bone_11.png",
+          "description": "Bone_11 .",
+          "icon": "scenes/bonetown/Bone_11.png",
           "id": "scene-bone-11",
-          "label": "Bone Bottom #11",
+          "label": "Bone Bottom #7",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.243,
+            "y": 0.681,
+            "zoom": 2.0
+          },
           "scene": "Bone_11",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Mosstown_01.png",
+          "description": "Mosstown_01 .",
+          "icon": "scenes/bonetown/Mosstown_01.png",
           "id": "scene-mosstown-01",
-          "label": "Bone Bottom #12",
+          "label": "Bone Bottom #8",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.245,
+            "y": 0.669,
+            "zoom": 2.0
+          },
           "scene": "Mosstown_01",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Mosstown_02.png",
+          "description": "Mosstown_02 .",
+          "icon": "scenes/bonetown/Mosstown_02.png",
           "id": "scene-mosstown-02",
-          "label": "Bone Bottom #13",
+          "label": "Bone Bottom #9",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.25,
+            "y": 0.654,
+            "zoom": 2.0
+          },
           "scene": "Mosstown_02",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Bone_05b.png",
+          "description": "Bone_05b .",
+          "icon": "scenes/bonetown/Bone_05b.png",
           "id": "scene-bone-05b",
-          "label": "Bone Bottom #14",
+          "label": "Bone Bottom #10",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.272,
+            "y": 0.664,
+            "zoom": 2.0
+          },
           "scene": "Bone_05b",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Mosstown_02c.png",
+          "description": "Mosstown_02c .",
+          "icon": "scenes/bonetown/Mosstown_02c.png",
           "id": "scene-mosstown-02c",
-          "label": "Bone Bottom #15",
+          "label": "Bone Bottom #11",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.284,
+            "y": 0.658,
+            "zoom": 2.0
+          },
           "scene": "Mosstown_02c",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-          "icon": "scenes/Aspid_01.png",
+          "description": "Aspid_01 .",
+          "icon": "scenes/bonetown/Aspid_01.png",
           "id": "scene-aspid-01",
-          "label": "Bone Bottom #16",
+          "label": "Bone Bottom #12",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.215,
+            "y": 0.673,
+            "zoom": 2.0
+          },
           "scene": "Aspid_01",
           "type": "sceneVisited"
         },
         {
           "act": 1,
-          "description": ".",
-
-          "icon": "scenes/Bone_steel_servant.png",
+          "description": "Bone_Steel_Servant .",
+          "icon": "scenes/bonetown/Bone_steel_servant.png",
           "id": "scene-bone-steel-servant",
-          "label": "Bone Bottom #17",
+          "label": "Bone Bottom #13",
           "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.081,
+            "y": 0.736,
+            "zoom": 2.0
+          },
           "mode": "steel",
           "scene": "Bone_Steel_Servant",
           "type": "sceneVisited"
         }
       ],
       "label": "Bone Bottom"
+    },
+    {
+      "description": ".",
+      "items": [
+        {
+          "act": 1,
+          "description": "Bone_01 .",
+          "icon": "scenes/marrow/Bone_01.png",
+          "id": "scene-bone-01",
+          "label": "The Marrow #1",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.285,
+            "y": 0.708,
+            "zoom": 2.0
+          },
+          "scene": "Bone_01",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_01c .",
+          "icon": "scenes/marrow/Bone_01c.png",
+          "id": "scene-bone-01c",
+          "label": "The Marrow #2",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.319,
+            "y": 0.71,
+            "zoom": 2.0
+          },
+          "scene": "Bone_01c",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_02 .",
+          "icon": "scenes/marrow/Bone_02.png",
+          "id": "scene-bone-02",
+          "label": "The Marrow #3",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.351,
+            "y": 0.717,
+            "zoom": 2.0
+          },
+          "scene": "Bone_02",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_16 .",
+          "icon": "scenes/marrow/Bone_16.png",
+          "id": "scene-bone-16",
+          "label": "The Marrow #4",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.397,
+            "y": 0.709,
+            "zoom": 2.0
+          },
+          "scene": "Bone_16",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_09 .",
+          "icon": "scenes/marrow/Bone_09.png",
+          "id": "scene-bone-09",
+          "label": "The Marrow #5",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.439,
+            "y": 0.716,
+            "zoom": 2.0
+          },
+          "scene": "Bone_09",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_04 .",
+          "icon": "scenes/marrow/Bone_04.png",
+          "id": "scene-bone-04",
+          "label": "The Marrow #6",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.296,
+            "y": 0.68,
+            "zoom": 2.0
+          },
+          "scene": "Bone_04",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_05 .",
+          "icon": "scenes/marrow/Bone_05.png",
+          "id": "scene-bone-05",
+          "label": "The Marrow #7",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.296,
+            "y": 0.67,
+            "zoom": 2.0
+          },
+          "scene": "Bone_05",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Memory_Silk_Heart_BellBeast .",
+          "icon": "scenes/marrow/Bone_05.png",
+          "id": "scene-memory-bellbeast",
+          "label": "The Marrow #8",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.304,
+            "y": 0.67,
+            "zoom": 2.0
+          },
+          "scene": "Memory_Silk_Heart_BellBeast",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bellshrine .",
+          "icon": "scenes/marrow/Bellshrine.png",
+          "id": "scene-bone-bellshrine",
+          "label": "The Marrow #9",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.328,
+            "y": 0.669,
+            "zoom": 2.0
+          },
+          "scene": "Bellshrine",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_03 .",
+          "icon": "scenes/marrow/Bone_03.png",
+          "id": "scene-bone-03",
+          "label": "The Marrow #10",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.34,
+            "y": 0.667,
+            "zoom": 2.0
+          },
+          "scene": "Bone_03",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_17 .",
+          "icon": "scenes/marrow/Bone_17.png",
+          "id": "scene-bone-17",
+          "label": "The Marrow #11",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.328,
+            "y": 0.692,
+            "zoom": 2.0
+          },
+          "scene": "Bone_17",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_10 .",
+          "icon": "scenes/marrow/Bone_10.png",
+          "id": "scene-bone-10",
+          "label": "The Marrow #12",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.362,
+            "y": 0.699,
+            "zoom": 2.0
+          },
+          "scene": "Bone_10",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Room_Caravan_Spa .",
+          "icon": "scenes/marrow/Bone_10.png",
+          "id": "scene-bone-caravan",
+          "label": "The Marrow #13",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.359,
+            "y": 0.7,
+            "zoom": 2.0
+          },
+          "scene": "Room_Caravan_Spa",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_15 .",
+          "icon": "scenes/marrow/Bone_15.png",
+          "id": "scene-bone-15",
+          "label": "The Marrow #14",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.392,
+            "y": 0.694,
+            "zoom": 2.0
+          },
+          "scene": "Bone_15",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_14 .",
+          "icon": "scenes/marrow/Bone_14.png",
+          "id": "scene-bone-14",
+          "label": "The Marrow #15",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.372,
+            "y": 0.672,
+            "zoom": 2.0
+          },
+          "scene": "Bone_14",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_07 .",
+          "icon": "scenes/marrow/Bone_07.png",
+          "id": "scene-bone-07",
+          "label": "The Marrow #15",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.402,
+            "y": 0.669,
+            "zoom": 2.0
+          },
+          "scene": "Bone_07",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_19 .",
+          "icon": "scenes/marrow/Bone_19.png",
+          "id": "scene-bone-19",
+          "label": "The Marrow #16",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.39,
+            "y": 0.649,
+            "zoom": 2.0
+          },
+          "scene": "Bone_19",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_08 .",
+          "icon": "scenes/marrow/Bone_08.png",
+          "id": "scene-bone-08",
+          "label": "The Marrow #17",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.42,
+            "y": 0.687,
+            "zoom": 2.0
+          },
+          "scene": "Bone_08",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_12 .",
+          "icon": "scenes/marrow/Bone_08.png",
+          "id": "scene-bone-12",
+          "label": "The Marrow #18",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.425,
+            "y": 0.695,
+            "zoom": 2.0
+          },
+          "scene": "Bone_12",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_06 .",
+          "icon": "scenes/marrow/Bone_06.png",
+          "id": "scene-bone-06",
+          "label": "The Marrow #19",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.326,
+            "y": 0.645,
+            "zoom": 2.0
+          },
+          "scene": "Bone_06",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_18 .",
+          "icon": "scenes/marrow/Bone_18.png",
+          "id": "scene-bone-18",
+          "label": "The Marrow #20",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.347,
+            "y": 0.649,
+            "zoom": 2.0
+          },
+          "scene": "Bone_18",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Weave_05b .",
+          "icon": "scenes/marrow/Weave_05b.png",
+          "id": "scene-bone-atlas",
+          "label": "The Marrow #21",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.342,
+            "y": 0.763,
+            "zoom": 2.0
+          },
+          "scene": "Weave_05b",
+          "type": "sceneVisited"
+        }
+      ],
+      "label": "The Marrow"
+    },
+    {
+      "description": ".",
+      "items": [
+        {
+          "act": 1,
+          "description": "Dock_08 .",
+          "icon": "scenes/deepdocks/Dock_08.png",
+          "id": "scene-dock-08",
+          "label": "Deep Docks #1",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.488,
+            "y": 0.72,
+            "zoom": 2.0
+          },
+          "scene": "Dock_08",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_01 .",
+          "icon": "scenes/deepdocks/Dock_01.png",
+          "id": "scene-dock-01",
+          "label": "Deep Docks #2",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.504,
+            "y": 0.707,
+            "zoom": 2.0
+          },
+          "scene": "Dock_01",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_05 .",
+          "icon": "scenes/deepdocks/Bone_East_05.png",
+          "id": "scene-dock-boneeast05",
+          "label": "Deep Docks #3",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.528,
+            "y": 0.695,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_05",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_04b .",
+          "icon": "scenes/deepdocks/Bone_East_04b.png",
+          "id": "scene-dock-boneeast04b",
+          "label": "Deep Docks #4",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.573,
+            "y": 0.686,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_04b",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_04 .",
+          "icon": "scenes/deepdocks/Bone_East_04.png",
+          "id": "scene-dock-boneeast04",
+          "label": "Deep Docks #5",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.586,
+            "y": 0.69,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_04",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_04c .",
+          "icon": "scenes/deepdocks/Bone_East_04c.png",
+          "id": "scene-dock-boneeast04c",
+          "label": "Deep Docks #6",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.603,
+            "y": 0.683,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_04c",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_01 .",
+          "icon": "scenes/deepdocks/Bone_East_01.png",
+          "id": "scene-dock-boneeast01",
+          "label": "Deep Docks #7",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.515,
+            "y": 0.72,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_01",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bellway_02 .",
+          "icon": "scenes/deepdocks/Bellway_02.png",
+          "id": "scene-dock-boneeast04b",
+          "label": "Bellway #8",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.499,
+            "y": 0.736,
+            "zoom": 2.0
+          },
+          "scene": "Bellway_02",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_16 .",
+          "icon": "scenes/deepdocks/Dock_16.png",
+          "id": "scene-dock-16",
+          "label": "Deep Docks #9",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.476,
+            "y": 0.734,
+            "zoom": 2.0
+          },
+          "scene": "Dock_16",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_05 .",
+          "icon": "scenes/deepdocks/Dock_05.png",
+          "id": "scene-dock-05",
+          "label": "Deep Docks #10",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.527,
+            "y": 0.72,
+            "zoom": 2.0
+          },
+          "scene": "Dock_05",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_03 .",
+          "icon": "scenes/deepdocks/Bone_East_03.png",
+          "id": "scene-dock-boneeast03",
+          "label": "Deep Docks #11",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.551,
+            "y": 0.711,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_03",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_12 .",
+          "icon": "scenes/deepdocks/Bone_East_12.png",
+          "id": "scene-dock-boneeast12",
+          "label": "Deep Docks #12",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.548,
+            "y": 0.727,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_12",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bellshrine_05 .",
+          "icon": "scenes/deepdocks/Bellshrine_05.png",
+          "id": "scene-dock-bellshrine05",
+          "label": "Deep Docks #13",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.576,
+            "y": 0.727,
+            "zoom": 2.0
+          },
+          "scene": "Bellshrine_05",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Room_Forge .",
+          "icon": "scenes/deepdocks/Room_Forge.png",
+          "id": "scene-dock-forge",
+          "label": "Deep Docks #14",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.533,
+            "y": 0.748,
+            "zoom": 2.0
+          },
+          "scene": "Room_Forge",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_04 .",
+          "icon": "scenes/deepdocks/Dock_04.png",
+          "id": "scene-dock-04",
+          "label": "Deep Docks #15",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.516,
+            "y": 0.769,
+            "zoom": 2.0
+          },
+          "scene": "Dock_04",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_13 .",
+          "icon": "scenes/deepdocks/Bone_East_13.png",
+          "id": "scene-dock-Boneeast13",
+          "label": "Deep Docks #16",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.539,
+            "y": 0.766,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_13",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_06_Church .",
+          "icon": "scenes/deepdocks/Dock_06_Church.png",
+          "id": "scene-dock-dock06church",
+          "label": "Deep Docks #17",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.5,
+            "y": 0.786,
+            "zoom": 2.0
+          },
+          "scene": "Dock_06_Church",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_10 .",
+          "icon": "scenes/deepdocks/Dock_10.png",
+          "id": "scene-dock-dock10",
+          "label": "Deep Docks #18",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.525,
+            "y": 0.787,
+            "zoom": 2.0
+          },
+          "scene": "Dock_10",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_15 .",
+          "icon": "scenes/deepdocks/Dock_15.png",
+          "id": "scene-dock-dock15",
+          "label": "Deep Docks #19",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.535,
+            "y": 0.794,
+            "zoom": 2.0
+          },
+          "scene": "Dock_15",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_13 .",
+          "icon": "scenes/deepdocks/Dock_13.png",
+          "id": "scene-dock-dock13",
+          "label": "Deep Docks #20",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.526,
+            "y": 0.802,
+            "zoom": 2.0
+          },
+          "scene": "Dock_13",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_14 .",
+          "icon": "scenes/deepdocks/Dock_14.png",
+          "id": "scene-dock-dock14",
+          "label": "Deep Docks #21",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.544,
+            "y": 0.794,
+            "zoom": 2.0
+          },
+          "scene": "Dock_14",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_11 .",
+          "icon": "scenes/deepdocks/Dock_11.png",
+          "id": "scene-dock-dock11",
+          "label": "Deep Docks #22",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.559,
+            "y": 0.812,
+            "zoom": 2.0
+          },
+          "scene": "Dock_11",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_12 .",
+          "icon": "scenes/deepdocks/Dock_12.png",
+          "id": "scene-dock-dock12",
+          "label": "Deep Docks #23",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.591,
+            "y": 0.803,
+            "zoom": 2.0
+          },
+          "scene": "Dock_12",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Room_Diving_Bell .",
+          "icon": "scenes/deepdocks/Dock_12.png",
+          "id": "scene-dock-divingbell",
+          "label": "Deep Docks #24",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.592,
+            "y": 0.808,
+            "zoom": 2.0
+          },
+          "scene": "Room_Diving_Bell",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_02 .",
+          "icon": "scenes/deepdocks/Dock_02.png",
+          "id": "scene-dock-dock02",
+          "label": "Deep Docks #25",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.58,
+            "y": 0.764,
+            "zoom": 2.0
+          },
+          "scene": "Dock_02",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_09 .",
+          "icon": "scenes/deepdocks/Dock_09.png",
+          "id": "scene-dock-dock09",
+          "label": "Deep Docks #26",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.55,
+            "y": 0.784,
+            "zoom": 2.0
+          },
+          "scene": "Dock_09",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_02b .",
+          "icon": "scenes/deepdocks/Dock_02b.png",
+          "id": "scene-dock-dock02b",
+          "label": "Deep Docks #27",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.617,
+            "y": 0.761,
+            "zoom": 2.0
+          },
+          "scene": "Dock_02b",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_03 .",
+          "icon": "scenes/deepdocks/Dock_03.png",
+          "id": "scene-dock-dock03",
+          "label": "Deep Docks #28",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.648,
+            "y": 0.747,
+            "zoom": 2.0
+          },
+          "scene": "Dock_03",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_03d .",
+          "icon": "scenes/deepdocks/Dock_03d.png",
+          "id": "scene-dock-dock03d",
+          "label": "Deep Docks #29",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.642,
+            "y": 0.758,
+            "zoom": 2.0
+          },
+          "scene": "Dock_03d",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_03c .",
+          "icon": "scenes/deepdocks/Dock_03c.png",
+          "id": "scene-dock-dock03c",
+          "label": "Deep Docks #30",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.646,
+            "y": 0.775,
+            "zoom": 2.0
+          },
+          "scene": "Dock_03c",
+          "type": "sceneVisited"
+        }
+      ],
+      "label": "Deep Docks"
+    },
+    {
+      "description": ".",
+      "items": [
+        {
+          "act": 1,
+          "description": "Bone_East_02 .",
+          "icon": "scenes/farfields/Bone_East_02.png",
+          "id": "scene-farfields-02",
+          "label": "Far Fields #1",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.603,
+            "y": 0.725,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_02",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_02b .",
+          "icon": "scenes/farfields/Bone_East_02b.png",
+          "id": "scene-farfields-02b",
+          "label": "Far Fields #2",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.651,
+            "y": 0.726,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_02b",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_16 .",
+          "icon": "scenes/farfields/Bone_East_16.png",
+          "id": "scene-farfields-16",
+          "label": "Far Fields #3",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.634,
+            "y": 0.714,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_16",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_17b .",
+          "icon": "scenes/farfields/Bone_East_17b.png",
+          "id": "scene-farfields-17b",
+          "label": "Far Fields #4",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.655,
+            "y": 0.704,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_17b",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_17 .",
+          "icon": "scenes/farfields/Bone_East_17.png",
+          "id": "scene-farfields-17",
+          "label": "Far Fields #5",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.655,
+            "y": 0.686,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_17",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_15 .",
+          "icon": "scenes/farfields/Bone_East_15.png",
+          "id": "scene-farfields-15",
+          "label": "Far Fields #6",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.62,
+            "y": 0.696,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_15",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_07 .",
+          "icon": "scenes/farfields/Bone_East_07.png",
+          "id": "scene-farfields-07",
+          "label": "Far Fields #7",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.683,
+            "y": 0.71,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_07",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Dock_03b .",
+          "icon": "scenes/farfields/Dock_03b.png",
+          "id": "scene-farfields-dock03b",
+          "label": "Far Fields #8",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.671,
+            "y": 0.744,
+            "zoom": 2.0
+          },
+          "scene": "Dock_03b",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_21 .",
+          "icon": "scenes/farfields/Bone_East_21.png",
+          "id": "scene-farfields-21",
+          "label": "Far Fields #9",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.695,
+            "y": 0.733,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_21",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_08 .",
+          "icon": "scenes/farfields/Bone_East_08.png",
+          "id": "scene-farfields-08",
+          "label": "Far Fields #10",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.712,
+            "y": 0.75,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_08",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_09 .",
+          "icon": "scenes/farfields/Bone_East_09.png",
+          "id": "scene-farfields-09",
+          "label": "Far Fields #11",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.749,
+            "y": 0.741,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_09",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": ". .",
+          "icon": "scenes/farfields/Bone_East_09.png",
+          "id": "scene-farfields-umnrella",
+          "label": "Far Fields #12",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.749,
+            "y": 0.744,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_Umbrella",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_14 .",
+          "icon": "scenes/farfields/Bone_East_14.png",
+          "id": "scene-farfields-14",
+          "label": "Far Fields #13",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.783,
+            "y": 0.754,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_14",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_14b .",
+          "icon": "scenes/farfields/Bone_East_14b.png",
+          "id": "scene-farfields-14b",
+          "label": "Far Fields #14",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.832,
+            "y": 0.754,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_14b",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_LavaChallenge .",
+          "icon": "scenes/farfields/Bone_East_14b_lava_room.png",
+          "id": "scene-farfields-lavachallenge",
+          "label": "Far Fields #15",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.821,
+            "y": 0.75,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_LavaChallenge",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_Weavehome .",
+          "icon": "scenes/farfields/Bone_East_Weavehome.png",
+          "id": "scene-farfields-weave",
+          "label": "Far Fields #16",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.873,
+            "y": 0.757,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_Weavehome",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_20 .",
+          "icon": "scenes/farfields/Bone_East_20.png",
+          "id": "scene-farfields-20",
+          "label": "Far Fields #17",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.721,
+            "y": 0.73,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_20",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_09b .",
+          "icon": "scenes/farfields/Bone_East_09b.png",
+          "id": "scene-farfields-09b",
+          "label": "Far Fields #18",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.751,
+            "y": 0.714,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_09b",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bellway_03 .",
+          "icon": "scenes/farfields/Bellway_03.png",
+          "id": "scene-farfields-bellway",
+          "label": "Bellway #19",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.708,
+            "y": 0.719,
+            "zoom": 2.0
+          },
+          "scene": "Bellway_03",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_22 .",
+          "icon": "scenes/farfields/Bone_East_22.png",
+          "id": "scene-farfields-22",
+          "label": "Far Fields #20",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.701,
+            "y": 0.7,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_22",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_10_Church .",
+          "icon": "scenes/farfields/Bone_East_10_Church.png",
+          "id": "scene-farfields-church10",
+          "label": "Far Fields #21",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.736,
+            "y": 0.678,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_10_Church",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_10 .",
+          "icon": "scenes/farfields/Bone_East_10.png",
+          "id": "scene-farfields-10",
+          "label": "Far Fields #22",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.71,
+            "y": 0.675,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_10",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_10_Room .",
+          "icon": "scenes/farfields/Bone_East_10_Room.png",
+          "id": "scene-farfields-10room",
+          "label": "Far Fields #23",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.71,
+            "y": 0.68,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_10_Room",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_18c .",
+          "icon": "scenes/farfields/Bone_East_18c.png",
+          "id": "scene-farfields-18c",
+          "label": "Far Fields #24",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.736,
+            "y": 0.67,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_18c",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_18 .",
+          "icon": "scenes/farfields/Bone_East_18.png",
+          "id": "scene-farfields-18",
+          "label": "Far Fields #25",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.762,
+            "y": 0.668,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_18",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_18b .",
+          "icon": "scenes/farfields/Bone_East_18b.png",
+          "id": "scene-farfields-18b",
+          "label": "Far Fields #26",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.802,
+            "y": 0.668,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_18b",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Sprintmaster_Cave .",
+          "icon": "scenes/farfields/Sprintmaster_Cave.png",
+          "id": "scene-farfields-sprintmaster",
+          "label": "SprintMaster Cave #27",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.878,
+            "y": 0.664,
+            "zoom": 2.0
+          },
+          "scene": "Sprintmaster_Cave",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_26 .",
+          "icon": "scenes/farfields/Bone_East_26.png",
+          "id": "scene-farfields-26",
+          "label": "Far Fields #28",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.799,
+            "y": 0.648,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_26",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_27 .",
+          "icon": "scenes/farfields/Bone_East_27.png",
+          "id": "scene-farfields-27",
+          "label": "Far Fields #29",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.777,
+            "y": 0.627,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_27",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Memory_Ant_Queen .",
+          "icon": "scenes/farfields/Ant_Queen.png",
+          "id": "scene-farfields-memoryantqueen",
+          "label": "Far Fields #30",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.801,
+            "y": 0.635,
+            "zoom": 2.0
+          },
+          "scene": "Memory_Ant_Queen",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_Queen .",
+          "icon": "scenes/farfields/Ant_Queen.png",
+          "id": "scene-farfields-antqueen",
+          "label": "Far Fields #31",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.801,
+            "y": 0.635,
+            "zoom": 2.0
+          },
+          "scene": "Ant_Queen",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_25 .",
+          "icon": "scenes/farfields/Bone_East_25.png",
+          "id": "scene-farfields-25",
+          "label": "Far Fields #32",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.813,
+            "y": 0.633,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_25",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_24 .",
+          "icon": "scenes/farfields/Bone_East_24.png",
+          "id": "scene-farfields-24",
+          "label": "Far Fields #33",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.727,
+            "y": 0.636,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_24",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Bone_East_11 .",
+          "icon": "scenes/farfields/Bone_East_11.png",
+          "id": "scene-farfields-11",
+          "label": "Far Fields #34",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.684,
+            "y": 0.649,
+            "zoom": 2.0
+          },
+          "scene": "Bone_East_11",
+          "type": "sceneVisited"
+        }
+      ],
+      "label": "Far Fields"
+    },
+    {
+      "description": ".",
+      "items": [
+        {
+          "act": 1,
+          "description": "Ant_02 .",
+          "icon": "scenes/huntersmarch/Ant_02.png",
+          "id": "scene-huntersmarch-02",
+          "label": "Hunter's March #1",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.445,
+            "y": 0.683,
+            "zoom": 2.0
+          },
+          "scene": "Ant_02",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_03 .",
+          "icon": "scenes/huntersmarch/Ant_03.png",
+          "id": "scene-huntersmarch-03",
+          "label": "Hunter's March #2",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.473,
+            "y": 0.676,
+            "zoom": 2.0
+          },
+          "scene": "Ant_03",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_04_left .",
+          "icon": "scenes/huntersmarch/Ant_04_left.png",
+          "id": "scene-huntersmarch-04left",
+          "label": "Hunter's March #3",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.5,
+            "y": 0.664,
+            "zoom": 2.0
+          },
+          "scene": "Ant_04_left",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_04_mid .",
+          "icon": "scenes/huntersmarch/Ant_04_mid.png",
+          "id": "scene-huntersmarch-04mid",
+          "label": "Hunter's March #4",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.538,
+            "y": 0.664,
+            "zoom": 2.0
+          },
+          "scene": "Ant_04_mid",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_04 .",
+          "icon": "scenes/huntersmarch/Ant_04.png",
+          "id": "scene-huntersmarch-04",
+          "label": "Hunter's March #5",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.567,
+            "y": 0.666,
+            "zoom": 2.0
+          },
+          "scene": "Ant_04",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_14 .",
+          "icon": "scenes/huntersmarch/Ant_14.png",
+          "id": "scene-huntersmarch-14",
+          "label": "Hunter's March #6",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.598,
+            "y": 0.656,
+            "zoom": 2.0
+          },
+          "scene": "Ant_14",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_05b .",
+          "icon": "scenes/huntersmarch/Ant_05b.png",
+          "id": "scene-huntersmarch-05b",
+          "label": "Hunter's March #7",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.579,
+            "y": 0.674,
+            "zoom": 2.0
+          },
+          "scene": "Ant_05b",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_20 .",
+          "icon": "scenes/huntersmarch/Ant_20.png",
+          "id": "scene-huntersmarch-20",
+          "label": "Hunter's March #8",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.623,
+            "y": 0.672,
+            "zoom": 2.0
+          },
+          "scene": "Ant_20",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_19 .",
+          "icon": "scenes/huntersmarch/Ant_19.png",
+          "id": "scene-huntersmarch-19",
+          "label": "Hunter's March #9",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.653,
+            "y": 0.663,
+            "zoom": 2.0
+          },
+          "scene": "Ant_19",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_17 .",
+          "icon": "scenes/huntersmarch/Ant_17.png",
+          "id": "scene-huntersmarch-17",
+          "label": "Hunter's March #10",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.586,
+            "y": 0.648,
+            "zoom": 2.0
+          },
+          "scene": "Ant_17",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_Merchant .",
+          "icon": "scenes/huntersmarch/Ant_Merchant.png",
+          "id": "scene-huntersmarch-merchant",
+          "label": "Hunter's March #11",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.57,
+            "y": 0.638,
+            "zoom": 2.0
+          },
+          "scene": "Ant_Merchant",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_21 .",
+          "icon": "scenes/huntersmarch/Ant_21.png",
+          "id": "scene-huntersmarch-21",
+          "label": "Hunter's March #12",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.586,
+            "y": 0.628,
+            "zoom": 2.0
+          },
+          "scene": "Ant_21",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_05c .",
+          "icon": "scenes/huntersmarch/Ant_05c.png",
+          "id": "scene-huntersmarch-05c",
+          "label": "Hunter's March #13",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.614,
+            "y": 0.649,
+            "zoom": 2.0
+          },
+          "scene": "Ant_05c",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Ant_09 .",
+          "icon": "scenes/huntersmarch/Ant_09.png",
+          "id": "scene-huntersmarch-09",
+          "label": "Hunter's March #14",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.65,
+            "y": 0.64,
+            "zoom": 2.0
+          },
+          "scene": "Ant_09",
+          "type": "sceneVisited"
+        }
+      ],
+      "label": "Hunter's March"
+    },
+    {
+      "description": ".",
+      "items": [
+        {
+          "act": 1,
+          "description": "Weave_04 .",
+          "icon": "scenes/weavenestatla/Weave_04.png",
+          "id": "scene-Weave-04",
+          "label": "Weavenest Atla #1",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.263,
+            "y": 0.75,
+            "zoom": 2.0
+          },
+          "scene": "Weave_04",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Weave_02 .",
+          "icon": "scenes/weavenestatla/Weave_02.png",
+          "id": "scene-Weave-02",
+          "label": "Weavenest Atla #2",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.282,
+            "y": 0.764,
+            "zoom": 2.0
+          },
+          "scene": "Weave_02",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Weave_12 .",
+          "icon": "scenes/weavenestatla/Weave_12.png",
+          "id": "scene-Weave-12",
+          "label": "Weavenest Atla #3",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.297,
+            "y": 0.75,
+            "zoom": 2.0
+          },
+          "scene": "Weave_12",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Weave_13 .",
+          "icon": "scenes/weavenestatla/Weave_13.png",
+          "id": "scene-Weave-13",
+          "label": "Weavenest Atla #4",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.298,
+            "y": 0.755,
+            "zoom": 2.0
+          },
+          "scene": "Weave_13",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Weave_08 .",
+          "icon": "scenes/weavenestatla/Weave_08.png",
+          "id": "scene-Weave-08",
+          "label": "Weavenest Atla #5",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.312,
+            "y": 0.757,
+            "zoom": 2.0
+          },
+          "scene": "Weave_08",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Weave_10 .",
+          "icon": "scenes/weavenestatla/Weave_10.png",
+          "id": "scene-Weave-10",
+          "label": "Weavenest Atla #6",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.298,
+            "y": 0.785,
+            "zoom": 2.0
+          },
+          "scene": "Weave_10",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Weave_07 .",
+          "icon": "scenes/weavenestatla/Weave_07.png",
+          "id": "scene-Weave-07",
+          "label": "Weavenest Atla #7",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.266,
+            "y": 0.778,
+            "zoom": 2.0
+          },
+          "scene": "Weave_07",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Weave_03 .",
+          "icon": "scenes/weavenestatla/Weave_03.png",
+          "id": "scene-Weave-03",
+          "label": "Weavenest Atla #8",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.218,
+            "y": 0.78,
+            "zoom": 2.0
+          },
+          "scene": "Weave_03",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Weave_11 .",
+          "icon": "scenes/weavenestatla/Weave_11.png",
+          "id": "scene-Weave-11",
+          "label": "Weavenest Atla #9",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.258,
+            "y": 0.769,
+            "zoom": 2.0
+          },
+          "scene": "Weave_11",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Weave_14 .",
+          "icon": "scenes/weavenestatla/Weave_14.png",
+          "id": "scene-Weave-14",
+          "label": "Weavenest Atla #10",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.269,
+            "y": 0.759,
+            "zoom": 2.0
+          },
+          "scene": "Weave_14",
+          "type": "sceneVisited"
+        }
+      ],
+      "label": "Weavenest Atla"
+    },
+    {
+      "description": ".",
+      "items": [
+        {
+          "act": 1,
+          "description": "Crawl_04 .",
+          "icon": "scenes/wormways/Crawl_04.png",
+          "id": "scene-wormways-04",
+          "label": "Wormways #1",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.178,
+            "y": 0.673,
+            "zoom": 2.0
+          },
+          "scene": "Crawl_04",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Crawl_02 .",
+          "icon": "scenes/wormways/Crawl_02.png",
+          "id": "scene-wormways-02",
+          "label": "Wormways #2",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.153,
+            "y": 0.661,
+            "zoom": 2.0
+          },
+          "scene": "Crawl_02",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Crawl_06 .",
+          "icon": "scenes/wormways/Crawl_06.png",
+          "id": "scene-wormways-06",
+          "label": "Wormways #3",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.173,
+            "y": 0.664,
+            "zoom": 2.0
+          },
+          "scene": "Crawl_06",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Crawl_01 .",
+          "icon": "scenes/wormways/Crawl_01.png",
+          "id": "scene-wormways-01",
+          "label": "Wormways #4",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.173,
+            "y": 0.643,
+            "zoom": 2.0
+          },
+          "scene": "Crawl_01",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Crawl_03 .",
+          "icon": "scenes/wormways/Crawl_03.png",
+          "id": "scene-wormways-03",
+          "label": "Wormways #6",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.137,
+            "y": 0.654,
+            "zoom": 2.0
+          },
+          "scene": "Crawl_03",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Crawl_08 .",
+          "icon": "scenes/wormways/Crawl_08.png",
+          "id": "scene-wormways-08",
+          "label": "Wormways #7",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.133,
+            "y": 0.631,
+            "zoom": 2.0
+          },
+          "scene": "Crawl_08",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Crawl_05 .",
+          "icon": "scenes/wormways/Crawl_05.png",
+          "id": "scene-wormways-05",
+          "label": "Wormways #8",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.066,
+            "y": 0.66,
+            "zoom": 2.0
+          },
+          "scene": "Crawl_05",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Crawl_03b .",
+          "icon": "scenes/wormways/Crawl_03b.png",
+          "id": "scene-wormways-03b",
+          "label": "Wormways #9",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.13,
+            "y": 0.671,
+            "zoom": 2.0
+          },
+          "scene": "Crawl_03b",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Crawl_07 .",
+          "icon": "scenes/wormways/Crawl_07.png",
+          "id": "scene-wormways-07",
+          "label": "Wormways #10",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.132,
+            "y": 0.683,
+            "zoom": 2.0
+          },
+          "scene": "Crawl_07",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Crawl_09 .",
+          "icon": "scenes/wormways/Crawl_09.png",
+          "id": "scene-wormways-09",
+          "label": "Wormways #11",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.107,
+            "y": 0.687,
+            "zoom": 2.0
+          },
+          "scene": "Crawl_09",
+          "type": "sceneVisited"
+        },
+        {
+          "act": 1,
+          "description": "Crawl_10 .",
+          "icon": "scenes/wormways/.png",
+          "id": "scene-wormways-10",
+          "label": "Wormways #12",
+          "link": "https://hollowknight.wiki/w/Hollow_Knight_Wiki",
+          "mapViewer": {
+            "src": "assets/ui/scene's_name_map.png",
+            "x": 0.083,
+            "y": 0.687,
+            "zoom": 2.0
+          },
+          "scene": "Crawl_10",
+          "type": "sceneVisited"
+        }
+      ],
+      "label": "Wormways"
     }
   ]
 }
