@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const paths: Record<string, string> = {
     windows: String.raw`%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
-    mac: "~/Library/Application Support/com.teamcherry.hollowsilksong",
+    mac: "~/Library/Application Support/unity.Team-Cherry.Silksong",
     linux: "~/.config/unity3d/Team Cherry/Hollow Knight Silksong",
     steam: String.raw`%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
   };
