@@ -79,7 +79,12 @@ export async function handleSaveFile(file: File | undefined): Promise<void> {
     rosariesValue.textContent = saveData.playerData.geo.toString();
     shardsValue.textContent = saveData.playerData.ShellShards.toString();
 
-    const isSteelSoul = saveData.playerData.permadeathMode === 1;
+    // Checks for:
+    // 1 = Standard Steel Soul
+    // 2 = Dead Steel Soul
+    // 3 = Bugged Steel Soul
+    // "On" / "Dead" = String variants
+    const isSteelSoul = ([1, 2, 3, "On", "Dead"] as (string | number | undefined)[]).includes(saveData.playerData.permadeathMode);
 
     // Save mode globally (after declaration).
     currentLoadedSaveDataMode = isSteelSoul ? "steel" : "normal";
