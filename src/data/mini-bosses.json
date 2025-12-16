@@ -647,18 +647,6 @@
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480469",
           "mode": "normal",
           "type": "flag"
-        },
-        {
-          "act": 3,
-          "description": "Sinner's Road.",
-          "flag": "silkFarmAbyssCoresCleared",
-          "icon": "mini-bosses/Void_Mass.png",
-          "id": "Void_Mass_48",
-          "label": "Kill #48",
-          "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480469",
-          "mode": "normal",
-          "type": "flag"
         }
       ],
       "label": "Void Masses"
