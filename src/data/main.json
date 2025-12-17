@@ -239,8 +239,8 @@
             "y": 0.269,
             "zoom": 2.0
           },
-          "showOnMap": true,
           "scene": "Song_09",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -257,8 +257,8 @@
             "y": 0.306,
             "zoom": 2.0
           },
-          "showOnMap": true,
           "scene": "Library_05",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
