@@ -1028,7 +1028,9 @@ function renderWorldMapPins() {
   const overlay = document.querySelector<HTMLDivElement>("#mapPinsOverlay");
 
   const searchInput = document.querySelector<HTMLInputElement>("#map-search");
-
+  if (searchInput) {
+    searchInput.addEventListener("input", renderWorldMapPins);
+  }
   if (!img || !overlay) {
     return;
   }

@@ -2598,6 +2598,7 @@ main::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
   pointer-events: auto;
   z-index: 10;
+  object-fit: contain;
   transition: transform 0.1s ease;
 }
 
