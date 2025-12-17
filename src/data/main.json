@@ -2421,9 +2421,9 @@
             "y": 0.628,
             "zoom": 2.0
           },
+          "mode": "normal",
           "showOnMap": true,
 
-          "mode": "normal",
           "type": "tool"
         },
         {
@@ -2441,9 +2441,9 @@
             "y": 0.628,
             "zoom": 2.0
           },
+          "mode": "steel",
           "showOnMap": true,
 
-          "mode": "steel",
           "type": "tool"
         },
         {
