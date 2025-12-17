@@ -1411,19 +1411,25 @@ html {
   margin-bottom: 6px;
 }
 
-/* ------------------
-   WISHES - clean and consistent layout
-------------------- */
+.map-sidebar h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--stroke-soft);
+}
 
 #wishes-grid {
   display: flex;
-  flex-direction: column; /* stack categories vertically */
-  gap: 60px; /* space between Main / Wayfarer / Gather */
+  flex-direction: column;
+  gap: 60px;
   align-items: stretch;
   width: 100%;
 }
 
-/* Ogni gruppo principale */
 #wishes-grid .main-section-block {
   flex: 1 1 auto;
   background: none;
@@ -1432,7 +1438,6 @@ html {
   text-align: center;
 }
 
-/* Titolo e conteggio */
 #wishes-grid .main-section-block h3 {
   text-align: center;
   font-size: 1.6rem;
@@ -1445,7 +1450,6 @@ html {
   gap: 8px;
 }
 
-/* Description below title */
 #wishes-grid .category-description {
   text-align: center;
   color: #bbb;
@@ -1454,7 +1458,6 @@ html {
   margin: 0 auto 1.5rem;
 }
 
-/* Griglia interna delle card */
 #wishes-grid .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -1462,9 +1465,6 @@ html {
   justify-content: center;
 }
 
-/* Le card usano lo stile .boss globale - niente override */
-
-/* Dark scrollbar per main */
 main::-webkit-scrollbar {
   width: 10px;
 }
@@ -1483,7 +1483,7 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 .boss.accepted {
-  border: 2px solid #f1c40f; /* golden yellow */
+  border: 2px solid #f1c40f;
   box-shadow: 0 0 6px rgba(241, 196, 15, 0.5);
 }
 
@@ -1502,6 +1502,13 @@ main::-webkit-scrollbar-thumb:hover {
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+.filter-group label {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .dropdown-menu label:hover {
@@ -2004,6 +2011,15 @@ main::-webkit-scrollbar-thumb:hover {
 
 #back-to-top.show {
   display: flex;
+}
+
+.filter-item span {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+
+.filter-item:hover span {
+  color: var(--ink-1);
 }
 
 #back-to-top span {
@@ -2622,17 +2638,6 @@ main::-webkit-scrollbar-thumb:hover {
   scrollbar-color: var(--stroke) var(--bg-2);
 }
 
-.map-sidebar h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--stroke-soft);
-}
-
 .filter-controls {
   display: flex;
   gap: 8px;
@@ -2654,13 +2659,6 @@ main::-webkit-scrollbar-thumb:hover {
   background-color: var(--stroke);
   color: var(--ink-1);
   border-color: var(--ink-3);
-}
-
-.filter-group label {
-  display: block;
-  margin: 8px 0;
-  cursor: pointer;
-  font-size: 14px;
 }
 
 .filter-group input {
@@ -2689,15 +2687,6 @@ main::-webkit-scrollbar-thumb:hover {
 
 .filter-item:hover {
   background-color: var(--bg-3);
-}
-
-.filter-item span {
-  font-size: 0.9rem;
-  color: var(--ink-2);
-}
-
-.filter-item:hover span {
-  color: var(--ink-1);
 }
 
 .search-container {
