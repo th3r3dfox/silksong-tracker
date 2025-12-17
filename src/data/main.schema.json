@@ -85,6 +85,10 @@
                   "description": "Map location or URL",
                   "type": "string"
                 },
+                "mapCategory": {
+                  "description": "Category identifier for map filtering",
+                  "type": "string"
+                },
                 "mapViewer": {
                   "properties": {
                     "src": {

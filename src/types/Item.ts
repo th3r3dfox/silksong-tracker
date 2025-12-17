@@ -11,12 +11,12 @@ interface ItemBase {
   readonly map?: string;
 
   readonly showOnMap?: boolean;
-
+  readonly mapCategory?: string;
   readonly mapViewer?: {
-    readonly src: string; // path immagine
-    readonly x: number; // 0..1
-    readonly y: number; // 0..1
-    readonly zoom?: number; // opzionale
+    readonly src: string;
+    readonly x: number;
+    readonly y: number;
+    readonly zoom?: number;
   };
 
   readonly missable?: boolean;

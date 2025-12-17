@@ -1026,6 +1026,9 @@ function collectAllItems(): readonly Item[] {
 function renderWorldMapPins() {
   const img = document.querySelector<HTMLImageElement>("#worldMap");
   const overlay = document.querySelector<HTMLDivElement>("#mapPinsOverlay");
+
+  const searchInput = document.querySelector<HTMLInputElement>("#map-search");
+
   if (!img || !overlay) {
     return;
   }
@@ -1035,15 +1038,38 @@ function renderWorldMapPins() {
   const currentSrc = img.getAttribute("src") ?? "";
   const currentResolved = resolveMapImageSrc(currentSrc);
 
-  const items = collectAllItems();
+  const searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : "";
 
+  const items = collectAllItems();
   const saveData = getSaveData();
   const saveDataFlags = getSaveDataFlags();
+  const activeFilters = new Set<string>();
+
+  // eslint-disable-next-line unicorn/prefer-spread
+  const nodes = Array.from(
+    document.querySelectorAll<HTMLInputElement>("#map-filters input:checked"),
+  );
+
+  for (const el of nodes) {
+    const val = el.dataset["category"];
+    if (typeof val === "string") {
+      activeFilters.add(val);
+    }
+  }
 
   for (const item of items) {
-    if (item.showOnMap !== true) {
+    if (
+      item.showOnMap !== true
+      || typeof item.mapCategory !== "string"
+      || !activeFilters.has(item.mapCategory)
+    ) {
       continue;
     }
+
+    if (searchTerm !== "" && !item.label.toLowerCase().includes(searchTerm)) {
+      continue;
+    }
+
     if (!item.mapViewer) {
       continue;
     }
@@ -1084,8 +1110,54 @@ function renderWorldMapPins() {
   }
 }
 
+function formatLabel(slug: string): string {
+  return slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function generateFilterCheckboxes() {
+  const container = document.querySelector<HTMLElement>("#map-filters");
+  if (!container) {
+    return;
+  }
+
+  container.innerHTML = "";
+
+  const allItems = collectAllItems();
+  const uniqueCategories = new Set<string>();
+
+  for (const item of allItems) {
+    if (
+      typeof item.mapCategory === "string"
+      && item.mapCategory.trim() !== ""
+    ) {
+      uniqueCategories.add(item.mapCategory);
+    }
+  }
+
+  const categoriesList = [...uniqueCategories];
+
+  for (const category of categoriesList) {
+    const label = document.createElement("label");
+    label.className = "filter-item";
+
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.dataset["category"] = category;
+    input.checked = true;
+
+    const span = document.createElement("span");
+    span.textContent = formatLabel(category);
+
+    label.append(input, span);
+    container.append(label);
+  }
+}
 export function initWorldMapPins(): void {
   initWorldMapListeners();
+
   const select = document.querySelector<HTMLSelectElement>("#map-act-select");
   const img = document.querySelector<HTMLImageElement>("#worldMap");
   const overlay = document.querySelector<HTMLDivElement>("#mapPinsOverlay");
@@ -1095,17 +1167,40 @@ export function initWorldMapPins(): void {
     return;
   }
 
+  generateFilterCheckboxes();
+
   if (pinsToggle) {
     const applyPinsVisibility = () => {
       overlay.classList.toggle("hidden", !pinsToggle.checked);
     };
-
-    pinsToggle.addEventListener("change", () => {
-      applyPinsVisibility();
-    });
-
+    pinsToggle.addEventListener("change", applyPinsVisibility);
     applyPinsVisibility();
   }
+
+  // eslint-disable-next-line unicorn/prefer-spread
+  const categoryFilters = Array.from(
+    document.querySelectorAll<HTMLInputElement>("#map-filters input"),
+  );
+
+  for (const input of categoryFilters) {
+    input.addEventListener("change", () => {
+      renderWorldMapPins();
+    });
+  }
+
+  document.querySelector("#hide-all-filters")?.addEventListener("click", () => {
+    for (const categoryFilter of categoryFilters) {
+      categoryFilter.checked = false;
+    }
+    renderWorldMapPins();
+  });
+
+  document.querySelector("#show-all-filters")?.addEventListener("click", () => {
+    for (const categoryFilter of categoryFilters) {
+      categoryFilter.checked = true;
+    }
+    renderWorldMapPins();
+  });
 
   const setMapFromSelect = () => {
     const v = select.value.trim();
@@ -1115,10 +1210,22 @@ export function initWorldMapPins(): void {
 
   select.addEventListener("change", () => {
     setMapFromSelect();
-    img.addEventListener("load", renderWorldMapPins, { once: true });
+    img.addEventListener(
+      "load",
+      () => {
+        renderWorldMapPins();
+      },
+      { once: true },
+    );
   });
 
-  img.addEventListener("load", renderWorldMapPins);
+  img.addEventListener("load", () => {
+    renderWorldMapPins();
+  });
 
-  renderWorldMapPins();
+  if (img.complete) {
+    renderWorldMapPins();
+  } else {
+    setMapFromSelect();
+  }
 }
