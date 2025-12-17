@@ -10,6 +10,8 @@ interface ItemBase {
 
   readonly map?: string;
 
+  readonly showOnMap?: boolean;
+
   readonly mapViewer?: {
     readonly src: string; // path immagine
     readonly x: number; // 0..1

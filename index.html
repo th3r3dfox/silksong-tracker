@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Silksong Tracker</title>
     <link rel="icon" type="image/png" href="/assets/misc/favicon.png" />
-    <link rel="preload" href="/assets/ui/labelled_map_act2.png" as="image" />
+    <link rel="preload" href="/assets/ui/labelled_map_act3.png" as="image" />
     <!-- <base href="https://th3r3dfox.github.io/silksong-tracker/"> -->
 
     <!-- Social Preview -->
@@ -191,29 +191,31 @@
           <div class="map-controls">
             <label for="map-act-select">Select Map:</label>
             <select id="map-act-select" aria-label="Select map act">
-              <option
-                value=" /silksong-tracker/assets/ui/labelled_map_act2.png"
-                selected
-              >
-                Act 2
-              </option>
-              <option
-                value=" /silksong-tracker/assets/ui/labelled_map_act3.png"
-              >
+              <option value="/silksong-tracker/assets/ui/labelled_map_act3.png">
                 Act 3
               </option>
-              <option value=" /silksong-tracker/assets/ui/scene's_name_map.png">
+              <option value="/silksong-tracker/assets/ui/scene's_name_map.png">
                 Room's Name
               </option>
             </select>
+
+            <label class="toggle">
+              <input type="checkbox" id="show-map-pins" checked />
+              Show pins
+            </label>
           </div>
 
           <div class="map-wrapper">
-            <img
-              src="/assets/ui/labelled_map_act2.png"
-              alt="Pharloom Map - Act 2"
-              id="worldMap"
-            />
+            <div id="worldMapStage">
+              <div id="worldMapInner" class="world-map-inner">
+                <img
+                  id="worldMap"
+                  src="/assets/ui/labelled_map_act3.png"
+                  draggable="false"
+                />
+                <div id="mapPinsOverlay"></div>
+              </div>
+            </div>
           </div>
         </section>
 

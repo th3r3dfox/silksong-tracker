@@ -21,46 +21,7 @@
                   "type": "integer"
                 },
                 "anyOf": {
-                  "description": "Array of checks for anyOf type items - if ANY check passes, item is obtained",
                   "items": {
-                    "allOf": [
-                      {
-                        "if": {
-                          "properties": {
-                            "type": { "enum": ["flag", "flagInt", "level"] }
-                          }
-                        },
-                        "then": {
-                          "required": ["flag"]
-                        }
-                      },
-                      {
-                        "if": {
-                          "properties": {
-                            "type": { "enum": ["sceneBool", "sceneVisited"] }
-                          }
-                        },
-                        "then": {
-                          "required": ["scene"]
-                        }
-                      },
-                      {
-                        "if": {
-                          "properties": { "type": { "const": "sceneBool" } }
-                        },
-                        "then": {
-                          "required": ["flag"]
-                        }
-                      },
-                      {
-                        "if": {
-                          "properties": { "type": { "const": "level" } }
-                        },
-                        "then": {
-                          "required": ["required"]
-                        }
-                      }
-                    ],
                     "properties": {
                       "flag": {
                         "type": "string"
@@ -103,6 +64,9 @@
                   "description": "Identifier for mutually exclusive item groups (e.g. 'Silkshot', 'Quill', etc.)",
                   "type": "string"
                 },
+                "hornetDescription": {
+                  "type": "string"
+                },
                 "icon": {
                   "type": "string"
                 },
@@ -121,6 +85,27 @@
                   "description": "Map location or URL",
                   "type": "string"
                 },
+                "mapViewer": {
+                  "properties": {
+                    "src": {
+                      "type": "string"
+                    },
+                    "x": {
+                      "type": "number"
+                    },
+                    "y": {
+                      "type": "number"
+                    },
+                    "zoom": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["src", "x", "y"],
+                  "type": "object"
+                },
+                "missable": {
+                  "type": "boolean"
+                },
                 "mode": {
                   "enum": ["normal", "steel"],
                   "type": "string"
@@ -137,6 +122,9 @@
                   "description": "Scene identifier for location-based items",
                   "type": "string"
                 },
+                "showOnMap": {
+                  "type": "boolean"
+                },
                 "type": {
                   "enum": [
                     "collectable",
@@ -147,7 +135,13 @@
                     "quest",
                     "sceneBool",
                     "sceneVisited",
-                    "tool"
+                    "tool",
+                    "journal",
+                    "relic",
+                    "materium",
+                    "device",
+                    "quill",
+                    "key"
                   ],
                   "type": "string"
                 },
@@ -157,6 +151,9 @@
                 },
                 "upgradeOf": {
                   "description": "ID of the base item this one upgrades",
+                  "type": "string"
+                },
+                "use": {
                   "type": "string"
                 }
               },

@@ -24,9 +24,15 @@
           "id": "nail1",
           "label": "Sharpened Needle",
           "link": "https://hollowknight.wiki/w/Needle",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.436,
+            "y": 0.6,
+            "zoom": 2.0
+          },
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 1,
+          "showOnMap": true,
           "type": "level"
         },
         {
@@ -38,9 +44,15 @@
           "id": "nail2",
           "label": "Shining Needle",
           "link": "https://hollowknight.wiki/w/Needle",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.436,
+            "y": 0.6,
+            "zoom": 2.0
+          },
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 2,
+          "showOnMap": true,
           "type": "level"
         },
         {
@@ -52,9 +64,15 @@
           "id": "nail3",
           "label": "Hivesteel Needle",
           "link": "https://hollowknight.wiki/w/Needle",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.436,
+            "y": 0.6,
+            "zoom": 2.0
+          },
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 3,
+          "showOnMap": true,
           "type": "level"
         },
         {
@@ -66,9 +84,15 @@
           "id": "nail4",
           "label": "Pale Steel Needle",
           "link": "https://hollowknight.wiki/w/Needle",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.436,
+            "y": 0.6,
+            "zoom": 2.0
+          },
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 4,
+          "showOnMap": true,
           "type": "level"
         }
       ],
@@ -85,7 +109,13 @@
           "id": "mask-shard-1",
           "label": "Mask Shard #1",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477840",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.242,
+            "y": 0.72,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -96,8 +126,14 @@
           "id": "mask-shard-2",
           "label": "Mask Shard #2",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478091",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.156,
+            "y": 0.68,
+            "zoom": 2.0
+          },
           "scene": "Crawl_02",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -108,8 +144,14 @@
           "id": "mask-shard-3",
           "label": "Mask Shard #3",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477901",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.475,
+            "y": 0.715,
+            "zoom": 2.0
+          },
           "scene": "Dock_08",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -120,8 +162,14 @@
           "id": "mask-shard-4",
           "label": "Mask Shard #4",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477975",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.723,
+            "y": 0.732,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_20",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -132,8 +180,14 @@
           "id": "mask-shard-5",
           "label": "Mask Shard #5",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478177",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.347,
+            "y": 0.564,
+            "zoom": 2.0
+          },
           "scene": "Shellwood_14",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -144,8 +198,14 @@
           "id": "mask-shard-6",
           "label": "Mask Shard #6",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478233",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.338,
+            "y": 0.758,
+            "zoom": 2.0
+          },
           "scene": "Weave_05b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -156,7 +216,13 @@
           "id": "mask-shard-7",
           "label": "Mask Shard #7",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478879",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.614,
+            "y": 0.254,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -167,8 +233,14 @@
           "id": "mask-shard-8",
           "label": "Mask Shard #8",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478615",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.465,
+            "y": 0.269,
+            "zoom": 2.0
+          },
           "scene": "Song_09",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -179,8 +251,14 @@
           "id": "mask-shard-9",
           "label": "Mask Shard #9",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478671",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.636,
+            "y": 0.306,
+            "zoom": 2.0
+          },
           "scene": "Library_05",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -191,7 +269,13 @@
           "id": "mask-shard-10",
           "label": "Mask Shard #10",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478800",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.425,
+            "y": 0.588,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         },
         {
@@ -202,8 +286,14 @@
           "id": "mask-shard-11",
           "label": "Mask Shard #11",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478841",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.823,
+            "y": 0.748,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_LavaChallenge",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -214,8 +304,14 @@
           "id": "mask-shard-12",
           "label": "Mask Shard #12",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479038",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.069,
+            "y": 0.288,
+            "zoom": 2.0
+          },
           "scene": "Peak_04c",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -226,8 +322,14 @@
           "id": "mask-shard-13",
           "label": "Mask Shard #13",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479001",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.295,
+            "y": 0.228,
+            "zoom": 2.0
+          },
           "scene": "Slab_17",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -238,8 +340,14 @@
           "id": "mask-shard-14",
           "label": "Mask Shard #14",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478849",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.84,
+            "y": 0.359,
+            "zoom": 2.0
+          },
           "scene": "Shadow_13",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -250,8 +358,14 @@
           "id": "mask-shard-15",
           "label": "Mask Shard #15",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479151",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.595,
+            "y": 0.492,
+            "zoom": 2.0
+          },
           "scene": "Wisp_07",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -262,8 +376,14 @@
           "id": "mask-shard-16",
           "label": "Mask Shard #16",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478498",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.129,
+            "y": 0.515,
+            "zoom": 2.0
+          },
           "scene": "Coral_19b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -274,8 +394,14 @@
           "id": "mask-shard-17",
           "label": "Mask Shard #17",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479460",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.194,
+            "y": 0.23,
+            "zoom": 2.0
+          },
           "scene": "Peak_06",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -286,7 +412,13 @@
           "id": "mask-shard-18",
           "label": "Mask Shard #18",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479194",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.878,
+            "y": 0.662,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         },
         {
@@ -297,7 +429,13 @@
           "id": "mask-shard-19",
           "label": "Mask Shard #19",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479449",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.413,
+            "y": 0.576,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         },
         {
@@ -308,7 +446,13 @@
           "id": "mask-shard-20",
           "label": "Mask Shard #20",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479447",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.416,
+            "y": 0.592,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         }
       ],
