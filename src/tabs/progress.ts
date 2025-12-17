@@ -28,12 +28,12 @@ import {
 } from "../save-data.ts";
 import type { Category } from "../types/Category.ts";
 import type { Item } from "../types/Item.ts";
-import { getIconPath } from "../utils.ts";
 
 let tocObserver: IntersectionObserver | undefined;
 let isManualScroll = false; // prevent observer interference
 
 export function updateTabProgress(): void {
+  initProgressListeners();
   const spoilerOn = showSpoilers.checked;
   const showMissingOnly = showOnlyMissing.checked;
   allProgressGrid.innerHTML = "";
@@ -58,7 +58,7 @@ export function updateTabProgress(): void {
     },
     { title: "Wishes", categories: wishesJSON.categories as Category[] },
     { title: "Journal", categories: journalJSON.categories as Category[] },
-    { title: "Scenes", categories: scenesJSON.categories as Category[] },
+    { title: "Rooms", categories: scenesJSON.categories as Category[] },
   ];
 
   // Render all categories.
@@ -187,6 +187,32 @@ export function updateTabProgress(): void {
 
   buildDynamicTOC();
   initScrollSpy();
+}
+
+let progressListenerRegistered = false;
+
+export function initProgressListeners(): void {
+  if (progressListenerRegistered) {
+    return;
+  }
+  progressListenerRegistered = true;
+
+  globalThis.addEventListener("save-data-changed", () => {
+    updateTabProgress();
+  });
+}
+
+let mapListenerRegistered = false;
+
+export function initWorldMapListeners(): void {
+  if (mapListenerRegistered) {
+    return;
+  }
+  mapListenerRegistered = true;
+
+  globalThis.addEventListener("save-data-changed", () => {
+    renderWorldMapPins();
+  });
 }
 
 function getUnlocked(item: Item, value: unknown): boolean {
@@ -349,6 +375,23 @@ function buildDynamicTOC() {
   tocList.parentElement?.append(legendBlock);
 }
 
+function resolveIconSrc(icon: string | undefined): string {
+  const clean = (icon ?? "").trim();
+  if (clean === "") {
+    return "";
+  }
+
+  if (clean.startsWith("http") || clean.startsWith("/")) {
+    return clean;
+  }
+
+  if (clean.startsWith("assets/")) {
+    return `${BASE_PATH}/${clean}`;
+  }
+
+  return `${BASE_PATH}/assets/${clean}`;
+}
+
 function resolveMapImageSrc(src: string): string {
   const clean = src.trim();
   if (clean === "") {
@@ -362,7 +405,7 @@ function resolveMapImageSrc(src: string): string {
   return `${BASE_PATH}/${clean}`;
 }
 
-function showGenericModal(item: Item) {
+export function showGenericModal(item: Item): void {
   let mapSrc: string | undefined;
   if (item.map === undefined || item.map === "") {
     mapSrc = undefined;
@@ -372,11 +415,11 @@ function showGenericModal(item: Item) {
     mapSrc = `${BASE_PATH}/${item.map}`;
   }
 
-  const iconPath = getIconPath(item);
+  const pinIconSrc = resolveIconSrc(item.icon);
 
   infoContent.innerHTML = `
     <button id="modalCloseBtn" class="modal-close">✕</button>
-    <img src="${iconPath}" alt="${item.label}" class="info-image">
+    <img src="${pinIconSrc}" alt="${item.label}" class="info-image">
     <h2 class="info-title">${item.label}</h2>
 
     <p class="info-description">${item.description}</p>
@@ -414,6 +457,19 @@ ${(() => {
   }
 
   if (item.mapViewer) {
+    const pinHtml =
+      item.showOnMap === true
+        ? `
+        <img
+          src="${pinIconSrc}"
+  class="custom-map-pin"
+          style="left:${item.mapViewer.x * 100}%; top:${item.mapViewer.y * 100}%;"
+          alt=""
+          draggable="false"
+        />
+      `
+        : "";
+
     return `
   <div class="info-map-wrapper">
     <div class="custom-map-viewer" id="custom-map-${item.id}">
@@ -425,6 +481,7 @@ ${(() => {
           draggable="false"
           loading="lazy"
         />
+        ${pinHtml}
       </div>
     </div>
   </div>
@@ -480,20 +537,43 @@ ${(() => {
       let ty = 0;
 
       const applyTransform = () => {
-        inner.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+        inner.style.transform = `translate(-50%, -50%) translate3d(${tx}px, ${ty}px, 0) scale(${scale})`;
       };
 
       const centerOnXY = () => {
-        const w = img.naturalWidth;
-        const h = img.naturalHeight;
-        const px = w * x;
-        const py = h * y;
-        const cx = viewer.clientWidth / 2;
-        const cy = viewer.clientHeight / 2;
-        tx = cx - px * scale;
-        ty = cy - py * scale;
+        if (img.naturalWidth === 0 || viewer.clientWidth === 0) {
+          return;
+        }
+
+        tx = (img.naturalWidth * scale) / 2 - img.naturalWidth * x * scale;
+        ty = (img.naturalHeight * scale) / 2 - img.naturalHeight * y * scale;
+
         applyTransform();
       };
+
+      viewer.addEventListener(
+        "wheel",
+        (e) => {
+          e.preventDefault();
+          const rect = viewer.getBoundingClientRect();
+
+          const mouseX = e.clientX - rect.left - rect.width / 2;
+          const mouseY = e.clientY - rect.top - rect.height / 2;
+
+          const prevScale = scale;
+          const factor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
+          const newScale = Math.min(6, Math.max(0.2, scale * factor));
+
+          if (newScale !== prevScale) {
+            const actualFactor = newScale / prevScale;
+            tx = mouseX - (mouseX - tx) * actualFactor;
+            ty = mouseY - (mouseY - ty) * actualFactor;
+            scale = newScale;
+          }
+          applyTransform();
+        },
+        { passive: false },
+      );
 
       let dragging = false;
       let lastX = 0;
@@ -510,47 +590,26 @@ ${(() => {
         if (!dragging) {
           return;
         }
-        const dx = e.clientX - lastX;
-        const dy = e.clientY - lastY;
+        tx += e.clientX - lastX;
+        ty += e.clientY - lastY;
         lastX = e.clientX;
         lastY = e.clientY;
-        tx += dx;
-        ty += dy;
         applyTransform();
       });
 
-      viewer.addEventListener("pointerup", (e) => {
+      const stopDrag = (e: PointerEvent) => {
         dragging = false;
-        viewer.releasePointerCapture(e.pointerId);
-      });
-
-      viewer.addEventListener("pointercancel", (e) => {
-        dragging = false;
-        viewer.releasePointerCapture(e.pointerId);
-      });
-
-      viewer.addEventListener(
-        "wheel",
-        (e) => {
-          e.preventDefault();
-          const rect = viewer.getBoundingClientRect();
-          const mouseX = e.clientX - rect.left;
-          const mouseY = e.clientY - rect.top;
-          const imgX = (mouseX - tx) / scale;
-          const imgY = (mouseY - ty) / scale;
-          const zoomFactor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
-          const newScale = Math.min(6, Math.max(0.4, scale * zoomFactor));
-          scale = newScale;
-          tx = mouseX - imgX * scale;
-          ty = mouseY - imgY * scale;
-          applyTransform();
-        },
-        { passive: false },
-      );
+        try {
+          viewer.releasePointerCapture(e.pointerId);
+        } catch {
+          /* ignore */
+        }
+      };
+      viewer.addEventListener("pointerup", stopDrag);
+      viewer.addEventListener("pointercancel", stopDrag);
 
       const onReady = () => {
-        applyTransform();
-        centerOnXY();
+        setTimeout(centerOnXY, 10);
       };
 
       if (img.complete && img.naturalWidth > 0) {
@@ -769,7 +828,7 @@ function renderGenericGrid(
     }
 
     // Icon handling
-    const iconPath = getIconPath(item);
+    const iconPath = resolveIconSrc(item.icon);
     const lockedPath = `${BASE_PATH}/assets/icons/locked.png`;
 
     if (isDone) {
@@ -947,4 +1006,119 @@ function matchMode(item: Item) {
   // AFTER loading > match mode.
   const saveDataMode = getSaveDataMode();
   return mode === saveDataMode;
+}
+
+function collectAllItems(): readonly Item[] {
+  const categories = [
+    ...(mainJSON.categories as Category[]),
+    ...(essentialsJSON.categories as Category[]),
+    ...(bossesJSON.categories as Category[]),
+    ...(miniBossesJSON.categories as Category[]),
+    ...(completionJSON.categories as Category[]),
+    ...(wishesJSON.categories as Category[]),
+    ...(journalJSON.categories as Category[]),
+    ...(scenesJSON.categories as Category[]),
+  ];
+
+  return categories.flatMap((c) => c.items);
+}
+
+function renderWorldMapPins() {
+  const img = document.querySelector<HTMLImageElement>("#worldMap");
+  const overlay = document.querySelector<HTMLDivElement>("#mapPinsOverlay");
+  if (!img || !overlay) {
+    return;
+  }
+
+  overlay.innerHTML = "";
+
+  const currentSrc = img.getAttribute("src") ?? "";
+  const currentResolved = resolveMapImageSrc(currentSrc);
+
+  const items = collectAllItems();
+
+  const saveData = getSaveData();
+  const saveDataFlags = getSaveDataFlags();
+
+  for (const item of items) {
+    if (item.showOnMap !== true) {
+      continue;
+    }
+    if (!item.mapViewer) {
+      continue;
+    }
+
+    const itemMapResolved = resolveMapImageSrc(item.mapViewer.src);
+    if (itemMapResolved !== currentResolved) {
+      continue;
+    }
+
+    const pinSrc = resolveIconSrc(item.icon);
+    if (pinSrc === "") {
+      continue;
+    }
+
+    const pin = document.createElement("img");
+    pin.className = "map-pin";
+    pin.src = pinSrc;
+    pin.alt = "";
+    pin.draggable = false;
+    pin.style.left = `${item.mapViewer.x * 100}%`;
+    pin.style.top = `${item.mapViewer.y * 100}%`;
+
+    if (saveData !== undefined) {
+      const value = getSaveDataValue(saveData, saveDataFlags, item);
+      const unlocked = getUnlocked(item, value);
+      if (unlocked) {
+        pin.classList.add("obtained");
+      }
+    }
+
+    pin.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      showGenericModal(item);
+    });
+
+    overlay.append(pin);
+  }
+}
+
+export function initWorldMapPins(): void {
+  initWorldMapListeners();
+  const select = document.querySelector<HTMLSelectElement>("#map-act-select");
+  const img = document.querySelector<HTMLImageElement>("#worldMap");
+  const overlay = document.querySelector<HTMLDivElement>("#mapPinsOverlay");
+  const pinsToggle = document.querySelector<HTMLInputElement>("#show-map-pins");
+
+  if (!select || !img || !overlay) {
+    return;
+  }
+
+  if (pinsToggle) {
+    const applyPinsVisibility = () => {
+      overlay.classList.toggle("hidden", !pinsToggle.checked);
+    };
+
+    pinsToggle.addEventListener("change", () => {
+      applyPinsVisibility();
+    });
+
+    applyPinsVisibility();
+  }
+
+  const setMapFromSelect = () => {
+    const v = select.value.trim();
+    img.src =
+      v.startsWith("http") || v.startsWith("/") ? v : resolveMapImageSrc(v);
+  };
+
+  select.addEventListener("change", () => {
+    setMapFromSelect();
+    img.addEventListener("load", renderWorldMapPins, { once: true });
+  });
+
+  img.addEventListener("load", renderWorldMapPins);
+
+  renderWorldMapPins();
 }

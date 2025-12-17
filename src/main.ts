@@ -22,8 +22,11 @@ import {
 } from "./elements.ts";
 import { renderActiveTab } from "./render-tab.ts";
 import { handleSaveFile } from "./save-data.ts";
+import { initWorldMapPins } from "./tabs/progress.ts";
 import { initRawSaveData } from "./tabs/raw-save.ts";
 import { showToast } from "./utils.ts";
+
+initWorldMapPins();
 
 function main() {
   // We only want to have one `DOMContentLoaded` callback so that all logic runs in a deterministic

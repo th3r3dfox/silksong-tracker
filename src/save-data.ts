@@ -67,6 +67,7 @@ export async function handleSaveFile(file: File | undefined): Promise<void> {
     // of marking the Zod schema as loose, it is simpler to just assign the pre-validation object.
     currentLoadedSaveData = saveDataRaw;
     currentLoadedSaveDataFlags = getSaveFileFlags(saveDataRaw);
+    globalThis.dispatchEvent(new Event("save-data-changed"));
 
     // Update UI statistics.
     completionValue.textContent = `${saveData.playerData.completionPercentage}%`;
@@ -96,6 +97,7 @@ export async function handleSaveFile(file: File | undefined): Promise<void> {
     modeBanner.classList.toggle("steel", isSteelSoul);
 
     renderActiveTab();
+    globalThis.dispatchEvent(new Event("save-data-changed"));
 
     showToast("✅ Save file loaded successfully!");
     uploadOverlay.classList.add("hidden");
