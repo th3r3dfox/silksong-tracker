@@ -99,8 +99,9 @@
       <!-- Progress -->
       <div class="sidebar-section">
         <a href="#" class="sidebar-item" data-tab="allprogress">Progress</a>
+        <a href="#" class="sidebar-item" data-tab="map">Interactive Map</a>
         <a href="#" class="sidebar-item" data-tab="rawsave">Raw Save Data</a>
-        <a href="#" class="sidebar-item" data-tab="map">Map</a>
+
         <!-- add other items here -->
       </div>
     </aside>
@@ -187,7 +188,7 @@
         </section>
 
         <section id="map-section" class="tab hidden">
-          <h2>World Map</h2>
+          <h2>Interactive Map</h2>
           <div class="map-controls">
             <label for="map-act-select">Select Map:</label>
             <select id="map-act-select" aria-label="Select map act">
@@ -198,11 +199,6 @@
                 Room's Name
               </option>
             </select>
-
-            <label class="toggle">
-              <input type="checkbox" id="show-map-pins" checked />
-              Show pins
-            </label>
           </div>
 
           <div class="map-wrapper">
@@ -216,6 +212,26 @@
                 <div id="mapPinsOverlay"></div>
               </div>
             </div>
+          </div>
+
+          <div class="map-sidebar">
+            <h3>Map Filters</h3>
+
+            <div class="search-container">
+              <input
+                type="text"
+                id="map-search"
+                placeholder="Search item..."
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="filter-controls">
+              <button id="show-all-filters" class="btn-small">Show All</button>
+              <button id="hide-all-filters" class="btn-small">Hide All</button>
+            </div>
+
+            <div id="map-filters" class="filter-list"></div>
           </div>
         </section>
 

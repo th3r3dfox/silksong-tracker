@@ -1411,19 +1411,25 @@ html {
   margin-bottom: 6px;
 }
 
-/* ------------------
-   WISHES - clean and consistent layout
-------------------- */
+.map-sidebar h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--stroke-soft);
+}
 
 #wishes-grid {
   display: flex;
-  flex-direction: column; /* stack categories vertically */
-  gap: 60px; /* space between Main / Wayfarer / Gather */
+  flex-direction: column;
+  gap: 60px;
   align-items: stretch;
   width: 100%;
 }
 
-/* Ogni gruppo principale */
 #wishes-grid .main-section-block {
   flex: 1 1 auto;
   background: none;
@@ -1432,7 +1438,6 @@ html {
   text-align: center;
 }
 
-/* Titolo e conteggio */
 #wishes-grid .main-section-block h3 {
   text-align: center;
   font-size: 1.6rem;
@@ -1445,7 +1450,6 @@ html {
   gap: 8px;
 }
 
-/* Description below title */
 #wishes-grid .category-description {
   text-align: center;
   color: #bbb;
@@ -1454,7 +1458,6 @@ html {
   margin: 0 auto 1.5rem;
 }
 
-/* Griglia interna delle card */
 #wishes-grid .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -1462,9 +1465,6 @@ html {
   justify-content: center;
 }
 
-/* Le card usano lo stile .boss globale - niente override */
-
-/* Dark scrollbar per main */
 main::-webkit-scrollbar {
   width: 10px;
 }
@@ -1483,7 +1483,7 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 .boss.accepted {
-  border: 2px solid #f1c40f; /* golden yellow */
+  border: 2px solid #f1c40f;
   box-shadow: 0 0 6px rgba(241, 196, 15, 0.5);
 }
 
@@ -1502,6 +1502,13 @@ main::-webkit-scrollbar-thumb:hover {
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+.filter-group label {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .dropdown-menu label:hover {
@@ -2006,6 +2013,15 @@ main::-webkit-scrollbar-thumb:hover {
   display: flex;
 }
 
+.filter-item span {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+
+.filter-item:hover span {
+  color: var(--ink-1);
+}
+
 #back-to-top span {
   font-family: inherit;
   font-size: 0.9rem;
@@ -2457,7 +2473,8 @@ main::-webkit-scrollbar-thumb:hover {
 
 #worldMap {
   display: block;
-  max-width: none;
+  flex-shrink: 0;
+
   user-select: none;
   -webkit-user-drag: none;
   pointer-events: none;
@@ -2553,7 +2570,6 @@ main::-webkit-scrollbar-thumb:hover {
   pointer-events: none;
 }
 
-/* style.css */
 .custom-map-pin {
   position: absolute;
   transform: translate(-50%, -100%);
@@ -2561,37 +2577,28 @@ main::-webkit-scrollbar-thumb:hover {
   height: 22px;
   pointer-events: none;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
-
-  /* AGGIUNGI QUESTE DUE RIGHE */
   object-fit: contain;
   object-position: bottom center;
 }
 
 #mapPinsOverlay {
   position: absolute;
-  inset: 0;
-  pointer-events: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .map-pin {
   position: absolute;
-  transform: translate(-50%, -100%) scale(1.15);
-  width: 24px;
-  height: 24px;
-
-  pointer-events: auto;
+  width: 42px;
+  height: 42px;
+  transform: translate(-50%, -50%);
   cursor: pointer;
-
-  object-fit: contain;
-  object-position: center;
-
-  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.9))
-    drop-shadow(0 2px 6px rgba(0, 0, 0, 0.85));
-
-  transition:
-    opacity 0.15s ease,
-    filter 0.15s ease,
-    transform 0.15s ease;
+  pointer-events: auto;
+  z-index: 10;
+  transition: transform 0.1s ease;
 }
 
 .map-pin.obtained {
@@ -2601,4 +2608,110 @@ main::-webkit-scrollbar-thumb:hover {
 
 #mapPinsOverlay.hidden {
   display: none;
+}
+
+.map-sidebar {
+  position: absolute;
+  top: -8px;
+
+  left: auto;
+  right: -5px;
+
+  z-index: 1000;
+
+  width: 300px;
+  max-height: 80vh;
+
+  background-color: var(--bg-2);
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+  padding: 16px;
+  color: var(--ink-1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stroke) var(--bg-2);
+}
+
+.filter-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-small {
+  flex: 1;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  border: 1px solid var(--stroke);
+  background-color: var(--bg-3);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-small:hover {
+  background-color: var(--stroke);
+  color: var(--ink-1);
+  border-color: var(--ink-3);
+}
+
+.filter-group input {
+  margin-right: 10px;
+  accent-color: var(--accent);
+}
+
+#map-filters {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 2px 10px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  user-select: none;
+}
+
+.filter-item:hover {
+  background-color: var(--bg-3);
+}
+
+.search-container {
+  margin-bottom: 8px;
+}
+
+#map-search {
+  width: 100%;
+  padding: 8px 1px;
+  background-color: var(--bg-3);
+  border: 1px solid var(--stroke);
+  border-radius: 4px;
+  color: var(--ink-1);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+
+  outline: none;
+}
+
+#map-search::placeholder {
+  color: var(--ink-3);
+  font-style: italic;
+}
+
+#map-search:focus {
+  border-color: var(--accent);
+  background-color: var(--bg-1);
 }
