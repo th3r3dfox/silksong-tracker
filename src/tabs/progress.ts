@@ -191,7 +191,7 @@ export function updateTabProgress(): void {
 
 let progressListenerRegistered = false;
 
-export function initProgressListeners(): void {
+function initProgressListeners() {
   if (progressListenerRegistered) {
     return;
   }
@@ -204,7 +204,7 @@ export function initProgressListeners(): void {
 
 let mapListenerRegistered = false;
 
-export function initWorldMapListeners(): void {
+function initWorldMapListeners() {
   if (mapListenerRegistered) {
     return;
   }
@@ -405,7 +405,7 @@ function resolveMapImageSrc(src: string): string {
   return `${BASE_PATH}/${clean}`;
 }
 
-export function showGenericModal(item: Item): void {
+function showGenericModal(item: Item) {
   let mapSrc: string | undefined;
   if (item.map === undefined || item.map === "") {
     mapSrc = undefined;
