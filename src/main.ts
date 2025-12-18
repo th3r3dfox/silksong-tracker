@@ -37,7 +37,7 @@ function main() {
     renderActiveTab();
 
     if (loadedFromUrl) {
-      showToast("🔗 Build caricata dal link condiviso!");
+      showToast("Build loaded from shared link!");
     }
   });
 }
