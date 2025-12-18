@@ -61,7 +61,7 @@ export function updateTabProgress(): void {
     { title: "Rooms", categories: scenesJSON.categories as Category[] },
   ];
 
-  // Render all categories.
+  // Render all categories. ✅ CICLO ESTERNO: Definisce 'categories'
   for (const { title, categories } of allCategories) {
     assertArray(
       categories,
@@ -75,6 +75,7 @@ export function updateTabProgress(): void {
     categoryHeader.style.marginBottom = "1rem";
     allProgressGrid.append(categoryHeader);
 
+    // ✅ CICLO INTERNO: Itera sulle singole categorie
     for (const category of categories) {
       const section = document.createElement("div");
       section.className = "main-section-block";
@@ -85,22 +86,51 @@ export function updateTabProgress(): void {
 
       const { items } = category;
 
-      const actFilter = getStoredActFilter();
-      let filteredItems = items.filter(
-        (item) => actFilter.includes(item.act) && matchMode(item),
-      );
-
       const saveData = getSaveData();
       const saveDataFlags = getSaveDataFlags();
 
+      // 1. Calcoliamo quali gruppi (es. Grimm Troupe, Quills) hai già sbloccato
+      const obtainedGroups = new Set<string>();
+      if (saveData !== undefined) {
+        for (const i of items) {
+          if (typeof i.group === "string" && i.group !== "") {
+            const v = getSaveDataValue(saveData, saveDataFlags, i);
+            if (getUnlocked(i, v)) {
+              obtainedGroups.add(i.group);
+            }
+          }
+        }
+      }
+
+      const actFilter = getStoredActFilter();
+
+      // Filtro iniziale per ATTO e MODALITÀ
+      let filteredItems = items.filter(
+        (item: Item) => actFilter.includes(item.act) && matchMode(item),
+      );
+
+      // Filtro "Show Only Missing"
       if (showMissingOnly && saveData !== undefined) {
-        filteredItems = filteredItems.filter((item) => {
+        filteredItems = filteredItems.filter((item: Item) => {
           const value = getSaveDataValue(saveData, saveDataFlags, item);
 
+          // A. Se possiedi già l'oggetto, nascondilo (non è missing)
+          if (getUnlocked(item, value)) {
+            return false;
+          }
+
+          // B. FIX: Se è un oggetto a scelta multipla (unobtainable)...
           if (item.unobtainable === true && typeof item.group === "string") {
+            // ...e hai già preso un altro oggetto dello stesso gruppo, nascondilo! (Significa che
+            // questo è ormai irraggiungibile)
+            if (obtainedGroups.has(item.group)) {
+              return false;
+            }
+            // Se invece non hai preso nessuno dei due, mostralo (è ancora ottenibile)
             return true;
           }
 
+          // C. Logica standard per gli altri oggetti
           if (item.type === "collectable") {
             return (typeof value === "number" ? value : 0) === 0;
           }
@@ -117,6 +147,7 @@ export function updateTabProgress(): void {
         });
       }
 
+      // Calcolo contatori (Obtained / Total)
       let obtained = 0;
       let total = 0;
 
@@ -1229,4 +1260,124 @@ export function initWorldMapPins(): void {
   } else {
     setMapFromSelect();
   }
+}
+
+function setupMapPanZoom() {
+  // 1. Usiamo gli ID esistenti nel tuo HTML
+  const container = document.querySelector<HTMLElement>("#worldMapInner");
+  const img = document.querySelector<HTMLElement>("#worldMap");
+  const overlay = document.querySelector<HTMLElement>("#mapPinsOverlay");
+
+  if (!container || !img || !overlay) {
+    return;
+  }
+
+  // 2. Applichiamo via script gli stili necessari (così non tocchi CSS/HTML) Container: deve
+  //    nascondere l'overflow e gestire il touch
+  container.style.overflow = "hidden";
+  container.style.position = "relative";
+  container.style.cursor = "grab";
+  container.style.touchAction = "none"; // Blocca lo scroll pagina su mobile
+
+  // Immagine: posizionamento assoluto per muoversi liberamente
+  img.style.position = "absolute";
+  img.style.top = "0px";
+  img.style.left = "0px";
+  img.style.transformOrigin = "0 0";
+  img.draggable = false; // Disabilita il ghost drag nativo
+
+  // Overlay: deve seguire l'immagine ma non bloccare i click di trascinamento
+  overlay.style.position = "absolute";
+  overlay.style.top = "0px";
+  overlay.style.left = "0px";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.pointerEvents = "none"; // Lascia passare i click al container sotto
+  overlay.style.transformOrigin = "0 0";
+
+  // Variabili di stato
+  let scale = 1;
+  let tx = 0;
+  let ty = 0;
+
+  let dragging = false;
+  let lastX = 0;
+  let lastY = 0;
+
+  const applyTransform = () => {
+    const transformCSS = `translate3d(${tx}px, ${ty}px, 0) scale(${scale})`;
+    img.style.transform = transformCSS;
+    overlay.style.transform = transformCSS;
+  };
+
+  // --- PANNING (Trascinamento) ---
+  container.addEventListener("pointerdown", (e) => {
+    // Importante: permette di trascinare ignorando il comportamento standard
+    e.preventDefault();
+    dragging = true;
+    lastX = e.clientX;
+    lastY = e.clientY;
+    container.setPointerCapture(e.pointerId);
+    container.style.cursor = "grabbing";
+  });
+
+  container.addEventListener("pointermove", (e) => {
+    if (!dragging) {
+      return;
+    }
+    e.preventDefault();
+
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+
+    tx += dx;
+    ty += dy;
+
+    lastX = e.clientX;
+    lastY = e.clientY;
+
+    applyTransform();
+  });
+
+  const stopDrag = (e: PointerEvent) => {
+    dragging = false;
+    try {
+      container.releasePointerCapture(e.pointerId);
+    } catch {
+      /* ignore */
+    }
+    container.style.cursor = "grab";
+  };
+
+  container.addEventListener("pointerup", stopDrag);
+  container.addEventListener("pointercancel", stopDrag);
+  container.addEventListener("pointerleave", stopDrag);
+
+  // --- ZOOM (Rotellina) ---
+  container.addEventListener(
+    "wheel",
+    (e) => {
+      e.preventDefault();
+
+      const rect = container.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      // Calcola il punto sotto il mouse prima dello zoom
+      const mapX = (mouseX - tx) / scale;
+      const mapY = (mouseY - ty) / scale;
+
+      // Limiti zoom
+      const factor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
+      const newScale = Math.min(8, Math.max(0.5, scale * factor));
+
+      // Aggiusta la posizione per zoomare verso il cursore
+      tx = mouseX - mapX * newScale;
+      ty = mouseY - mapY * newScale;
+      scale = newScale;
+
+      applyTransform();
+    },
+    { passive: false },
+  );
 }
