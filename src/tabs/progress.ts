@@ -61,7 +61,6 @@ export function updateTabProgress(): void {
     { title: "Rooms", categories: scenesJSON.categories as Category[] },
   ];
 
-  // Render all categories.
   for (const { title, categories } of allCategories) {
     assertArray(
       categories,
@@ -85,19 +84,40 @@ export function updateTabProgress(): void {
 
       const { items } = category;
 
-      const actFilter = getStoredActFilter();
-      let filteredItems = items.filter(
-        (item) => actFilter.includes(item.act) && matchMode(item),
-      );
-
       const saveData = getSaveData();
       const saveDataFlags = getSaveDataFlags();
 
+      const obtainedGroups = new Set<string>();
+      if (saveData !== undefined) {
+        for (const i of items) {
+          if (typeof i.group === "string" && i.group !== "") {
+            const v = getSaveDataValue(saveData, saveDataFlags, i);
+            if (getUnlocked(i, v)) {
+              obtainedGroups.add(i.group);
+            }
+          }
+        }
+      }
+
+      const actFilter = getStoredActFilter();
+
+      let filteredItems = items.filter(
+        (item: Item) => actFilter.includes(item.act) && matchMode(item),
+      );
+
       if (showMissingOnly && saveData !== undefined) {
-        filteredItems = filteredItems.filter((item) => {
+        filteredItems = filteredItems.filter((item: Item) => {
           const value = getSaveDataValue(saveData, saveDataFlags, item);
 
+          if (getUnlocked(item, value)) {
+            return false;
+          }
+
           if (item.unobtainable === true && typeof item.group === "string") {
+            if (obtainedGroups.has(item.group)) {
+              return false;
+            }
+
             return true;
           }
 
@@ -127,18 +147,15 @@ export function updateTabProgress(): void {
             : getSaveDataValue(saveData, saveDataFlags, item);
         const unlocked = getUnlocked(item, value);
 
-        // Skip counting upgrade variants separately.
         if (item.type === "tool" && item.upgradeOf !== undefined) {
           continue;
         }
 
-        // If no save file is loaded, count all items without applying any group logic.
         if (saveData === undefined) {
           total++;
           continue;
         }
 
-        // If the item is unobtainable, exclude it from the total count.
         if (
           item.unobtainable === true
           && typeof item.group === "string"
