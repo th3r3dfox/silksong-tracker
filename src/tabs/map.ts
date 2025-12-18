@@ -16,6 +16,16 @@ export function updateTabMap(): void {
     return;
   }
 
+  img.draggable = false;
+  img.style.userSelect = "none";
+  img.addEventListener("dragstart", (e) => {
+    e.preventDefault();
+    return false;
+  });
+
+  wrapper.style.userSelect = "none";
+  wrapper.style.touchAction = "none";
+
   const applyTransform = () => {
     stage.style.transform = `translate(-50%, -50%) translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`;
   };
@@ -89,7 +99,6 @@ export function updateTabMap(): void {
     { passive: false },
   );
 
-  // Dragging
   let dragging = false;
   let lastX = 0;
   let lastY = 0;
@@ -98,16 +107,19 @@ export function updateTabMap(): void {
     if (e.button !== 0 || (e.target as HTMLElement).closest(".map-pin")) {
       return;
     }
+    e.preventDefault();
     dragging = true;
     lastX = e.clientX;
     lastY = e.clientY;
     wrapper.setPointerCapture(e.pointerId);
+    wrapper.style.cursor = "grabbing";
   });
 
   wrapper.addEventListener("pointermove", (e) => {
     if (!dragging) {
       return;
     }
+    e.preventDefault();
     translateX += e.clientX - lastX;
     translateY += e.clientY - lastY;
     lastX = e.clientX;
@@ -116,11 +128,19 @@ export function updateTabMap(): void {
     applyTransform();
   });
 
-  const stopDrag = () => {
+  const stopDrag = (e: PointerEvent) => {
     dragging = false;
+    try {
+      wrapper.releasePointerCapture(e.pointerId);
+    } catch {
+      /* empty */
+    }
+    wrapper.style.cursor = "";
   };
+
   wrapper.addEventListener("pointerup", stopDrag);
   wrapper.addEventListener("pointercancel", stopDrag);
+  wrapper.addEventListener("pointerleave", stopDrag);
 
   if (img.complete) {
     fitToScreen();

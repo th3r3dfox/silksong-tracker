@@ -23,7 +23,7 @@ import {
   worldMap,
 } from "./elements.ts";
 import { renderActiveTab } from "./render-tab.ts";
-import { clearAllData, handleSaveFile, loadFromUrl } from "./save-data.ts";
+import { clearAllData, handleSaveFile } from "./save-data.ts";
 import { initWorldMapPins } from "./tabs/progress.ts";
 import { initRawSaveData } from "./tabs/raw-save.ts";
 import { showToast } from "./utils.ts";
@@ -44,13 +44,7 @@ function main() {
   document.addEventListener("DOMContentLoaded", () => {
     initComponents();
 
-    const loadedFromUrl = loadFromUrl();
-
     renderActiveTab();
-
-    if (loadedFromUrl) {
-      showToast("Build loaded from shared link!");
-    }
   });
 }
 
