@@ -1217,6 +1217,19 @@ main a:hover,
   font-size: 0.9rem;
 }
 
+.upgrade-icon i,
+.missable-icon i,
+.unobtainable-icon i {
+  display: block !important;
+  font-size: 13px !important;
+  color: inherit;
+  line-height: 1 !important;
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  transform: translateY(-0.5px);
+}
+
 .home-section-block h2 i {
   opacity: 0.8;
   color: var(--accent);
@@ -2005,6 +2018,11 @@ main::-webkit-scrollbar-thumb:hover {
   align-items: center;
 }
 
+.grid-item span {
+  display: block;
+  min-height: 1.2em;
+}
+
 #back-to-top:hover {
   transform: scale(1.1);
 }
@@ -2103,7 +2121,7 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 .legend-missable {
-  color: #e6614c;
+  color: var(--accent);
   font-weight: bold;
   width: 1.2rem;
   text-align: center;
@@ -2158,7 +2176,17 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 #allprogress-grid {
+  min-height: 100vh;
+  contain-intrinsic-size: 0 1000px;
   padding-right: 1.5rem;
+}
+
+.grid-item {
+  display: inline-block;
+  vertical-align: top;
+
+  min-height: 80px;
+  aspect-ratio: 1 / 1;
 }
 
 /* --- MAIN CATEGORY TITLES --- */
@@ -2346,13 +2374,17 @@ main::-webkit-scrollbar-thumb:hover {
   align-items: center;
   justify-content: center;
   font-family: "TrajanPro", serif;
+  margin-left: 3px;
+  margin-top: 2px;
   font-weight: bold;
   font-size: 1.2em;
   color: var(--accent);
   opacity: 0.95;
   cursor: help;
-  line-height: 1;
+  line-height: 0;
+  padding: 0;
   z-index: 3;
+  transform: translate(2px, 2px);
   text-shadow:
     0 0 6px rgba(0, 0, 0, 0.7),
     0 0 8px rgba(224, 123, 49, 0.4),
@@ -2361,6 +2393,7 @@ main::-webkit-scrollbar-thumb:hover {
     transform 0.18s cubic-bezier(0.4, 1.6, 0.6, 1),
     filter 0.18s cubic-bezier(0.4, 1.6, 0.6, 1),
     box-shadow 0.18s cubic-bezier(0.4, 1.6, 0.6, 1);
+  transform-origin: center center;
 }
 
 .upgrade-icon:hover {
@@ -2715,4 +2748,27 @@ main::-webkit-scrollbar-thumb:hover {
 #map-search:focus {
   border-color: var(--accent);
   background-color: var(--bg-1);
+}
+
+.btn-reset {
+  background: rgba(255, 77, 77, 0.1);
+  color: #ff4d4d;
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: "TrajanPro", serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-reset:hover {
+  background: #ff4d4d;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.4);
 }

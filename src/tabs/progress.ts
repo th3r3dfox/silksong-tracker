@@ -506,7 +506,6 @@ ${(() => {
   `;
 })()}
 
-
     ${
       item.link === ""
         ? ""
@@ -1243,7 +1242,6 @@ export function copyShareLink(): void {
 
   for (const item of items) {
     const val = getSaveDataValue(saveData, saveDataFlags, item);
-
     if (
       val === true
       || val === "deposited"
@@ -1256,35 +1254,37 @@ export function copyShareLink(): void {
     }
   }
 
-  if (!foundAny && !saveData) {
-    showToast("No data to save! Load a file or unlock something.");
+  if (!foundAny) {
+    showToast("No data to share! Try loading a save first.");
     return;
   }
 
   try {
     const jsonStr = JSON.stringify(simpleState);
 
-    const bytes = new TextEncoder().encode(jsonStr);
-    const binaryString = Array.from(bytes, (byte) =>
-      String.fromCodePoint(byte),
-    ).join("");
-    const base64 = btoa(binaryString);
+    const compressed = globalThis.pako.deflate(jsonStr);
 
-    const newUrl = `${globalThis.location.pathname}?d=${base64}`;
+    const binary = String.fromCodePoint(...new Uint8Array(compressed));
 
+    const base64 = btoa(binary)
+      .replaceAll("+", "-")
+      .replaceAll("/", "_")
+      .replace(/=+$/, "");
+
+    const newUrl = `${globalThis.location.origin}${globalThis.location.pathname}?d=${base64}`;
     globalThis.history.pushState({ path: newUrl }, "", newUrl);
 
     navigator.clipboard
-      .writeText(globalThis.location.href)
+      .writeText(newUrl)
       .then(() => {
-        showToast("Link copied! Share it with a friend.");
+        showToast("Link copied to clipboard!");
       })
       .catch((error: unknown) => {
-        console.error("Copy error:", error);
-        showToast("Unable to copy link automatically.");
+        console.error("Clipboard error:", error);
+        showToast("Failed to copy link.");
       });
-  } catch (error) {
-    console.error(error);
-    showToast("Error generating the link.");
+  } catch (error: unknown) {
+    console.error("Compression error:", error);
+    showToast("Error generating share link.");
   }
 }
