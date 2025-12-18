@@ -1009,7 +1009,7 @@ function matchMode(item: Item) {
   return mode === saveDataMode;
 }
 
-export function collectAllItems(): readonly Item[] {
+function collectAllItems(): readonly Item[] {
   const categories = [
     ...(mainJSON.categories as Category[]),
     ...(essentialsJSON.categories as Category[]),
