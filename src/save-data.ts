@@ -20,6 +20,8 @@ import {
   showToast,
 } from "./utils.ts";
 
+let currentUrlData: Record<string, unknown> | undefined;
+
 let currentLoadedSaveData: SilksongSave | undefined;
 let currentLoadedSaveDataMode: Mode = "normal";
 let currentLoadedSaveDataFlags: Record<string, unknown> | undefined;
@@ -110,11 +112,56 @@ export async function handleSaveFile(file: File | undefined): Promise<void> {
   }
 }
 
+export function loadFromUrl(): boolean {
+  const params = new URLSearchParams(globalThis.location.search);
+  const dataCode = params.get("d");
+
+  if (dataCode === null || dataCode === "") {
+    return false;
+  }
+
+  try {
+    const binaryString = atob(dataCode);
+
+    const bytes = Uint8Array.from(binaryString, (c) => c.codePointAt(0) ?? 0);
+
+    const jsonStr = new TextDecoder().decode(bytes);
+
+    currentUrlData = JSON.parse(jsonStr) as Record<string, unknown>;
+
+    console.log("Build loaded from URL:", currentUrlData);
+
+    globalThis.dispatchEvent(new Event("save-data-changed"));
+    return true;
+  } catch (error) {
+    console.error("Invalid Build URL", error);
+    return false;
+  }
+}
+
 export function getSaveDataValue(
   saveData: SilksongSave | undefined,
   saveDataFlags: Record<string, unknown> | undefined,
   item: Item,
 ): unknown {
+  if (currentUrlData !== undefined) {
+    const val = currentUrlData[item.id];
+
+    if (val !== undefined) {
+      return val;
+    }
+
+    if (
+      item.type === "level"
+      || item.type === "collectable"
+      || item.type === "journal"
+      || item.type === "quill"
+    ) {
+      return 0;
+    }
+    return false;
+  }
+
   if (saveData === undefined || saveDataFlags === undefined) {
     return undefined;
   }
