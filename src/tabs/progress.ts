@@ -11,6 +11,7 @@ import mainJSON from "../data/main.json" with { type: "json" };
 import miniBossesJSON from "../data/mini-bosses.json" with { type: "json" };
 import scenesJSON from "../data/scenes.json" with { type: "json" };
 import wishesJSON from "../data/wishes.json" with { type: "json" };
+import { showToast } from "../utils.ts";
 
 import {
   allProgressGrid,
@@ -1008,7 +1009,7 @@ function matchMode(item: Item) {
   return mode === saveDataMode;
 }
 
-function collectAllItems(): readonly Item[] {
+export function collectAllItems(): readonly Item[] {
   const categories = [
     ...(mainJSON.categories as Category[]),
     ...(essentialsJSON.categories as Category[]),
@@ -1229,5 +1230,61 @@ export function initWorldMapPins(): void {
     renderWorldMapPins();
   } else {
     setMapFromSelect();
+  }
+}
+
+export function copyShareLink(): void {
+  const saveData = getSaveData();
+  const saveDataFlags = getSaveDataFlags();
+  const items = collectAllItems();
+
+  const simpleState: Record<string, unknown> = {};
+  let foundAny = false;
+
+  for (const item of items) {
+    const val = getSaveDataValue(saveData, saveDataFlags, item);
+
+    if (
+      val === true
+      || val === "deposited"
+      || val === "completed"
+      || val === "collected"
+      || (typeof val === "number" && val > 0)
+    ) {
+      simpleState[item.id] = val;
+      foundAny = true;
+    }
+  }
+
+  if (!foundAny && !saveData) {
+    showToast("No data to save! Load a file or unlock something.");
+    return;
+  }
+
+  try {
+    const jsonStr = JSON.stringify(simpleState);
+
+    const bytes = new TextEncoder().encode(jsonStr);
+    const binaryString = Array.from(bytes, (byte) =>
+      String.fromCodePoint(byte),
+    ).join("");
+    const base64 = btoa(binaryString);
+
+    const newUrl = `${globalThis.location.pathname}?d=${base64}`;
+
+    globalThis.history.pushState({ path: newUrl }, "", newUrl);
+
+    navigator.clipboard
+      .writeText(globalThis.location.href)
+      .then(() => {
+        showToast("Link copied! Share it with a friend.");
+      })
+      .catch((error: unknown) => {
+        console.error("Copy error:", error);
+        showToast("Unable to copy link automatically.");
+      });
+  } catch (error) {
+    console.error(error);
+    showToast("Error generating the link.");
   }
 }

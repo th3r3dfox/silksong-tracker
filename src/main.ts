@@ -21,19 +21,24 @@ import {
   worldMap,
 } from "./elements.ts";
 import { renderActiveTab } from "./render-tab.ts";
-import { handleSaveFile } from "./save-data.ts";
-import { initWorldMapPins } from "./tabs/progress.ts";
+import { handleSaveFile, loadFromUrl } from "./save-data.ts";
+import { copyShareLink, initWorldMapPins } from "./tabs/progress.ts";
 import { initRawSaveData } from "./tabs/raw-save.ts";
 import { showToast } from "./utils.ts";
 
 initWorldMapPins();
 
 function main() {
-  // We only want to have one `DOMContentLoaded` callback so that all logic runs in a deterministic
-  // order.
   document.addEventListener("DOMContentLoaded", () => {
     initComponents();
+
+    const loadedFromUrl = loadFromUrl();
+
     renderActiveTab();
+
+    if (loadedFromUrl) {
+      showToast("🔗 Build caricata dal link condiviso!");
+    }
   });
 }
 
@@ -52,6 +57,13 @@ function initComponents() {
 
   // Other
   initBackToTop();
+
+  const shareBtn = document.querySelector("#share-build-btn");
+  if (shareBtn) {
+    shareBtn.addEventListener("click", () => {
+      copyShareLink();
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -100,24 +112,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const { files } = dataTransfer;
     const firstFile = files[0];
 
-    // We do not have to await this since it is the last operation in the callback.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     handleSaveFile(firstFile);
   });
 
   // Map Act Selector.
   const img = worldMap as HTMLImageElement;
-  if (!(mapActSelector instanceof HTMLSelectElement)) {
-    return;
+  if (mapActSelector instanceof HTMLSelectElement) {
+    mapActSelector.addEventListener(
+      "change",
+      function onMapSelectChange(this: HTMLSelectElement) {
+        img.src = this.value;
+        img.alt = `Pharloom Map - Act ${this.selectedIndex === 0 ? "2" : "3"}`;
+        img.id = "worldMap";
+      },
+    );
   }
-  mapActSelector.addEventListener(
-    "change",
-    function onMapSelectChange(this: HTMLSelectElement) {
-      img.src = this.value;
-      img.alt = `Pharloom Map - Act ${this.selectedIndex === 0 ? "2" : "3"}`;
-      img.id = "worldMap";
-    },
-  );
 
   const paths: Record<string, string> = {
     windows: String.raw`%USERPROFILE%\AppData\LocalLow\Team Cherry\Hollow Knight Silksong`,
@@ -160,8 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 fileInput.addEventListener("change", () => {
   const file = fileInput.files?.[0];
-
-  // We do not have to await this since it is the last operation in the callback.
   // eslint-disable-next-line @typescript-eslint/no-floating-promises
   handleSaveFile(file);
 });
@@ -172,13 +180,12 @@ document.addEventListener("DOMContentLoaded", () => {
     section.classList.add("hidden");
   }
 
-  // Activate saved tab.
   const activeTab = getStoredActiveTab();
   const activeSection = getHTMLElement(`${activeTab}-section`);
   activeSection.classList.remove("hidden");
 
   toggleTocVisibility(activeTab);
-  // Info Modal
+
   closeInfoModal.addEventListener("click", () => {
     infoOverlay.classList.add("hidden");
   });
@@ -188,7 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Close Info modal on Escape key press.
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       infoOverlay.classList.add("hidden");
