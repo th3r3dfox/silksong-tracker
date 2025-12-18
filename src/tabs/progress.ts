@@ -11,7 +11,6 @@ import mainJSON from "../data/main.json" with { type: "json" };
 import miniBossesJSON from "../data/mini-bosses.json" with { type: "json" };
 import scenesJSON from "../data/scenes.json" with { type: "json" };
 import wishesJSON from "../data/wishes.json" with { type: "json" };
-import { showToast } from "../utils.ts";
 
 import {
   allProgressGrid,
@@ -1229,62 +1228,5 @@ export function initWorldMapPins(): void {
     renderWorldMapPins();
   } else {
     setMapFromSelect();
-  }
-}
-
-export function copyShareLink(): void {
-  const saveData = getSaveData();
-  const saveDataFlags = getSaveDataFlags();
-  const items = collectAllItems();
-
-  const simpleState: Record<string, unknown> = {};
-  let foundAny = false;
-
-  for (const item of items) {
-    const val = getSaveDataValue(saveData, saveDataFlags, item);
-    if (
-      val === true
-      || val === "deposited"
-      || val === "completed"
-      || val === "collected"
-      || (typeof val === "number" && val > 0)
-    ) {
-      simpleState[item.id] = val;
-      foundAny = true;
-    }
-  }
-
-  if (!foundAny) {
-    showToast("No data to share! Try loading a save first.");
-    return;
-  }
-
-  try {
-    const jsonStr = JSON.stringify(simpleState);
-
-    const compressed = globalThis.pako.deflate(jsonStr);
-
-    const binary = String.fromCodePoint(...new Uint8Array(compressed));
-
-    const base64 = btoa(binary)
-      .replaceAll("+", "-")
-      .replaceAll("/", "_")
-      .replace(/=+$/, "");
-
-    const newUrl = `${globalThis.location.origin}${globalThis.location.pathname}?d=${base64}`;
-    globalThis.history.pushState({ path: newUrl }, "", newUrl);
-
-    navigator.clipboard
-      .writeText(newUrl)
-      .then(() => {
-        showToast("Link copied to clipboard!");
-      })
-      .catch((error: unknown) => {
-        console.error("Clipboard error:", error);
-        showToast("Failed to copy link.");
-      });
-  } catch (error: unknown) {
-    console.error("Compression error:", error);
-    showToast("Error generating share link.");
   }
 }

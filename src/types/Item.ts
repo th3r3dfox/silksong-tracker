@@ -25,6 +25,8 @@ interface ItemBase {
   readonly mode?: Mode;
   readonly description?: string;
   readonly category?: string;
+
+  unlockedFromUrl?: boolean;
 }
 
 /** Item tracked by a simple flag. */
