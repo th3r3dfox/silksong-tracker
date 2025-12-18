@@ -24,7 +24,7 @@ import {
 } from "./elements.ts";
 import { renderActiveTab } from "./render-tab.ts";
 import { clearAllData, handleSaveFile, loadFromUrl } from "./save-data.ts";
-import { copyShareLink, initWorldMapPins } from "./tabs/progress.ts";
+import { initWorldMapPins } from "./tabs/progress.ts";
 import { initRawSaveData } from "./tabs/raw-save.ts";
 import { showToast } from "./utils.ts";
 
@@ -69,13 +69,6 @@ function initComponents() {
 
   // Other
   initBackToTop();
-
-  const shareBtn = document.querySelector("#share-build-btn");
-  if (shareBtn) {
-    shareBtn.addEventListener("click", () => {
-      copyShareLink();
-    });
-  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
