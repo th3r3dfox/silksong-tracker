@@ -1217,6 +1217,19 @@ main a:hover,
   font-size: 0.9rem;
 }
 
+.upgrade-icon i,
+.missable-icon i,
+.unobtainable-icon i {
+  display: block !important;
+  font-size: 13px !important;
+  color: inherit;
+  line-height: 1 !important;
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  transform: translateY(-0.5px);
+}
+
 .home-section-block h2 i {
   opacity: 0.8;
   color: var(--accent);
@@ -2005,6 +2018,11 @@ main::-webkit-scrollbar-thumb:hover {
   align-items: center;
 }
 
+.grid-item span {
+  display: block;
+  min-height: 1.2em;
+}
+
 #back-to-top:hover {
   transform: scale(1.1);
 }
@@ -2171,10 +2189,6 @@ main::-webkit-scrollbar-thumb:hover {
   aspect-ratio: 1 / 1;
 }
 
-.grid-item span {
-  display: block;
-  min-height: 1.2em;
-}
 /* --- MAIN CATEGORY TITLES --- */
 .toc-category {
   margin-bottom: 1.25rem;
@@ -2380,19 +2394,6 @@ main::-webkit-scrollbar-thumb:hover {
     filter 0.18s cubic-bezier(0.4, 1.6, 0.6, 1),
     box-shadow 0.18s cubic-bezier(0.4, 1.6, 0.6, 1);
   transform-origin: center center;
-}
-
-.upgrade-icon i,
-.missable-icon i,
-.unobtainable-icon i {
-  display: block !important;
-  font-size: 13px !important;
-  color: inherit;
-  line-height: 1 !important;
-  margin: 0 !important;
-  width: auto !important;
-  height: auto !important;
-  transform: translateY(-0.5px);
 }
 
 .upgrade-icon:hover {
