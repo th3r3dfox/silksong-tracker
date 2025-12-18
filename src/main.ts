@@ -9,6 +9,7 @@ import {
 } from "./components/sidebar-items.ts";
 import { initUploadSave } from "./components/upload-save.ts";
 import {
+  clearDataBtn,
   closeInfoModal,
   closeUploadModal,
   dropzone,
@@ -16,17 +17,28 @@ import {
   getHTMLElement,
   getHTMLElements,
   infoOverlay,
+  logoLink,
   mapActSelector,
   uploadOverlay,
   worldMap,
 } from "./elements.ts";
 import { renderActiveTab } from "./render-tab.ts";
-import { handleSaveFile, loadFromUrl } from "./save-data.ts";
+import { clearAllData, handleSaveFile, loadFromUrl } from "./save-data.ts";
 import { copyShareLink, initWorldMapPins } from "./tabs/progress.ts";
 import { initRawSaveData } from "./tabs/raw-save.ts";
 import { showToast } from "./utils.ts";
 
 initWorldMapPins();
+
+logoLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  clearAllData();
+});
+
+clearDataBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  clearAllData();
+});
 
 function main() {
   document.addEventListener("DOMContentLoaded", () => {

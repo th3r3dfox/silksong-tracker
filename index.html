@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="it">
   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
     <link
       rel="preload"
       href="/assets/fontawesome/css/all.min.css"
@@ -37,16 +38,22 @@
   </head>
   <body>
     <aside class="sidebar">
-      <div class="sidebar-header">
-        <img
-          src="/assets/misc/favicon.png"
-          class="logo-icon"
-          width="64"
-          height="64"
-          alt="Silksong Tracker Logo"
-        />
-        <div class="app-name">silksong Tracker</div>
-      </div>
+      <a
+        href="/"
+        id="logo-link"
+        style="text-decoration: none; color: inherit; cursor: pointer"
+      >
+        <div class="sidebar-header">
+          <img
+            src="/assets/misc/favicon.png"
+            class="logo-icon"
+            width="64"
+            height="64"
+            alt="Silksong Tracker Logo"
+          />
+          <div class="app-name">silksong Tracker</div>
+        </div>
+      </a>
 
       <!-- Actions: horizontal icons -->
 
@@ -101,7 +108,6 @@
         <a href="#" class="sidebar-item" data-tab="allprogress">Progress</a>
         <a href="#" class="sidebar-item" data-tab="map">Interactive Map</a>
         <a href="#" class="sidebar-item" data-tab="rawsave">Raw Save Data</a>
-
         <!-- add other items here -->
       </div>
     </aside>
@@ -110,15 +116,10 @@
       <header class="topbar">
         <div id="modeBanner"></div>
 
-        <div class="topbar-right">
-          <button
-            id="share-build-btn"
-            class="btn-primary"
-            style="margin-right: 10px"
-            title="Copia link per condividere"
-          >
-            <i class="fa-solid fa-link"></i> Share
-          </button>
+<div class="topbar-right">
+
+
+
 
           <!--  Act Filter -->
           <div id="act-filter" class="dropdown">
@@ -142,6 +143,19 @@
           >
           <button id="upload-save" class="btn-primary">Upload save</button>
           <input type="file" id="fileInput" hidden />
+
+                  <div class="topbar-right">
+          <button
+            id="share-build-btn"
+            class="btn-primary"
+            style="margin-right: 10px"
+            title="Copy link to share"
+          >Share
+          </button>
+
+          <button id="clearDataBtn" class="btn-reset" title="Reset all data">
+      <i class="fa-solid fa-trash-can"></i> Reset
+    </button>
         </div>
       </header>
 
