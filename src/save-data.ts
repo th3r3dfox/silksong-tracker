@@ -20,16 +20,6 @@ import {
   showToast,
 } from "./utils.ts";
 
-declare global {
-  // eslint-disable-next-line vars-on-top
-  var pako: {
-    inflate: (data: Uint8Array, options: { to: "string" }) => string;
-    deflate: (data: string) => Uint8Array;
-  };
-}
-
-let currentUrlData: Record<string, unknown> | undefined;
-
 let currentLoadedSaveData: SilksongSave | undefined;
 let currentLoadedSaveDataMode: Mode = "normal";
 let currentLoadedSaveDataFlags: Record<string, unknown> | undefined;
@@ -116,65 +106,11 @@ export async function handleSaveFile(file: File | undefined): Promise<void> {
   }
 }
 
-export function loadFromUrl(): boolean {
-  const params = new URLSearchParams(globalThis.location.search);
-  let dataCode = params.get("d");
-
-  if (dataCode === null || dataCode === "") {
-    return false;
-  }
-
-  try {
-    dataCode = dataCode.replaceAll("-", "+").replaceAll("_", "/");
-    while (dataCode.length % 4 !== 0) {
-      dataCode += "=";
-    }
-
-    const binaryString = atob(dataCode);
-    const bytes = new Uint8Array(binaryString.length);
-    for (let i = 0; i < binaryString.length; i++) {
-      bytes[i] = binaryString.codePointAt(i) ?? 0;
-    }
-
-    const decompressed = globalThis.pako.inflate(bytes, { to: "string" });
-
-    currentUrlData = JSON.parse(decompressed) as Record<string, unknown>;
-
-    console.log("Build loaded from URL:", currentUrlData);
-
-    globalThis.dispatchEvent(new Event("save-data-changed"));
-    showToast("Build loaded from shared link!");
-
-    return true;
-  } catch (error: unknown) {
-    console.error("Invalid Build URL:", error);
-    return false;
-  }
-}
-
 export function getSaveDataValue(
   saveData: SilksongSave | undefined,
   saveDataFlags: Record<string, unknown> | undefined,
   item: Item,
 ): unknown {
-  if (currentUrlData !== undefined) {
-    const val = currentUrlData[item.id];
-
-    if (val !== undefined) {
-      return val;
-    }
-
-    if (
-      item.type === "level"
-      || item.type === "collectable"
-      || item.type === "journal"
-      || item.type === "quill"
-    ) {
-      return 0;
-    }
-    return false;
-  }
-
   if (saveData === undefined || saveDataFlags === undefined) {
     return undefined;
   }
@@ -466,9 +402,9 @@ function checkSceneValue(
 }
 
 export function clearAllData(): void {
-  currentUrlData = undefined;
   currentLoadedSaveData = undefined;
   currentLoadedSaveDataFlags = undefined;
+  currentLoadedSaveDataMode = "normal";
 
   const cleanUrl = globalThis.location.origin + globalThis.location.pathname;
   globalThis.history.pushState({}, "", cleanUrl);
@@ -479,6 +415,11 @@ export function clearAllData(): void {
   playtimeValue.textContent = "0h 00m";
   rosariesValue.textContent = "0";
   shardsValue.textContent = "0";
+
+  const fileInput = document.querySelector<HTMLInputElement>("#fileInput");
+  if (fileInput) {
+    fileInput.value = "";
+  }
 
   globalThis.dispatchEvent(new Event("save-data-changed"));
 
