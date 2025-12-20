@@ -12,6 +12,7 @@
           "id": "nail0",
           "label": "Base Needle",
           "link": "https://hollowknight.wiki/w/Needle",
+          "mapCategory": "needle-upgrades",
           "required": 0,
           "type": "level"
         },
@@ -24,9 +25,16 @@
           "id": "nail1",
           "label": "Sharpened Needle",
           "link": "https://hollowknight.wiki/w/Needle",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
+          "mapCategory": "needle-upgrades",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.436,
+            "y": 0.6,
+            "zoom": 2.0
+          },
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 1,
+          "showOnMap": true,
           "type": "level"
         },
         {
@@ -38,9 +46,16 @@
           "id": "nail2",
           "label": "Shining Needle",
           "link": "https://hollowknight.wiki/w/Needle",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
+          "mapCategory": "needle-upgrades",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.436,
+            "y": 0.6,
+            "zoom": 2.0
+          },
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 2,
+          "showOnMap": true,
           "type": "level"
         },
         {
@@ -52,9 +67,16 @@
           "id": "nail3",
           "label": "Hivesteel Needle",
           "link": "https://hollowknight.wiki/w/Needle",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
+          "mapCategory": "needle-upgrades",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.436,
+            "y": 0.6,
+            "zoom": 2.0
+          },
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 3,
+          "showOnMap": true,
           "type": "level"
         },
         {
@@ -66,9 +88,16 @@
           "id": "nail4",
           "label": "Pale Steel Needle",
           "link": "https://hollowknight.wiki/w/Needle",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478210",
+          "mapCategory": "needle-upgrades",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.436,
+            "y": 0.6,
+            "zoom": 2.0
+          },
           "obtain": "The Needle can be upgraded by Pinmaster Plinney",
           "required": 4,
+          "showOnMap": true,
           "type": "level"
         }
       ],
@@ -85,7 +114,14 @@
           "id": "mask-shard-1",
           "label": "Mask Shard #1",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477840",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.242,
+            "y": 0.72,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -96,8 +132,15 @@
           "id": "mask-shard-2",
           "label": "Mask Shard #2",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478091",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.156,
+            "y": 0.68,
+            "zoom": 2.0
+          },
           "scene": "Crawl_02",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -108,8 +151,15 @@
           "id": "mask-shard-3",
           "label": "Mask Shard #3",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477901",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.475,
+            "y": 0.715,
+            "zoom": 2.0
+          },
           "scene": "Dock_08",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -120,8 +170,15 @@
           "id": "mask-shard-4",
           "label": "Mask Shard #4",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477975",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.723,
+            "y": 0.732,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_20",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -132,8 +189,15 @@
           "id": "mask-shard-5",
           "label": "Mask Shard #5",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478177",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.347,
+            "y": 0.564,
+            "zoom": 2.0
+          },
           "scene": "Shellwood_14",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -144,8 +208,15 @@
           "id": "mask-shard-6",
           "label": "Mask Shard #6",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478233",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.338,
+            "y": 0.758,
+            "zoom": 2.0
+          },
           "scene": "Weave_05b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -156,7 +227,14 @@
           "id": "mask-shard-7",
           "label": "Mask Shard #7",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478879",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.614,
+            "y": 0.254,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -167,8 +245,15 @@
           "id": "mask-shard-8",
           "label": "Mask Shard #8",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478615",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.465,
+            "y": 0.269,
+            "zoom": 2.0
+          },
           "scene": "Song_09",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -179,8 +264,15 @@
           "id": "mask-shard-9",
           "label": "Mask Shard #9",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478671",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.636,
+            "y": 0.306,
+            "zoom": 2.0
+          },
           "scene": "Library_05",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -191,7 +283,14 @@
           "id": "mask-shard-10",
           "label": "Mask Shard #10",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478800",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.425,
+            "y": 0.588,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         },
         {
@@ -202,8 +301,15 @@
           "id": "mask-shard-11",
           "label": "Mask Shard #11",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478841",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.823,
+            "y": 0.748,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_LavaChallenge",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -214,8 +320,15 @@
           "id": "mask-shard-12",
           "label": "Mask Shard #12",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479038",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.069,
+            "y": 0.288,
+            "zoom": 2.0
+          },
           "scene": "Peak_04c",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -226,8 +339,15 @@
           "id": "mask-shard-13",
           "label": "Mask Shard #13",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479001",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.295,
+            "y": 0.228,
+            "zoom": 2.0
+          },
           "scene": "Slab_17",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -238,8 +358,15 @@
           "id": "mask-shard-14",
           "label": "Mask Shard #14",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478849",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.84,
+            "y": 0.359,
+            "zoom": 2.0
+          },
           "scene": "Shadow_13",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -250,8 +377,15 @@
           "id": "mask-shard-15",
           "label": "Mask Shard #15",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479151",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.595,
+            "y": 0.492,
+            "zoom": 2.0
+          },
           "scene": "Wisp_07",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -262,8 +396,15 @@
           "id": "mask-shard-16",
           "label": "Mask Shard #16",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478498",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.129,
+            "y": 0.515,
+            "zoom": 2.0
+          },
           "scene": "Coral_19b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -274,8 +415,15 @@
           "id": "mask-shard-17",
           "label": "Mask Shard #17",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479460",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.194,
+            "y": 0.23,
+            "zoom": 2.0
+          },
           "scene": "Peak_06",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -286,7 +434,14 @@
           "id": "mask-shard-18",
           "label": "Mask Shard #18",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479194",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.878,
+            "y": 0.662,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         },
         {
@@ -297,7 +452,14 @@
           "id": "mask-shard-19",
           "label": "Mask Shard #19",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479449",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.413,
+            "y": 0.576,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         },
         {
@@ -308,7 +470,14 @@
           "id": "mask-shard-20",
           "label": "Mask Shard #20",
           "link": "https://hollowknight.wiki/w/Mask_Shard_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479447",
+          "mapCategory": "mask-shards",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.416,
+            "y": 0.592,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         }
       ],
@@ -325,8 +494,15 @@
           "id": "spool-fragment-1",
           "label": "Spool Fragment #1",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478080",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.259,
+            "y": 0.69,
+            "zoom": 2.0
+          },
           "scene": "Bone_11b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -337,8 +513,15 @@
           "id": "spool-fragment-2",
           "label": "Spool Fragment #2",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477926",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.532,
+            "y": 0.764,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_13",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -349,8 +532,15 @@
           "id": "spool-fragment-3",
           "label": "Spool Fragment #3",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478263",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.708,
+            "y": 0.524,
+            "zoom": 2.0
+          },
           "scene": "Greymoor_02",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -361,7 +551,14 @@
           "id": "spool-fragment-4",
           "label": "Spool Fragment #4",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478347",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.428,
+            "y": 0.6,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -372,8 +569,15 @@
           "id": "spool-fragment-5",
           "label": "Spool Fragment #5",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478230",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.245,
+            "y": 0.767,
+            "zoom": 2.0
+          },
           "scene": "Weave_11",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -384,8 +588,15 @@
           "id": "spool-fragment-6",
           "label": "Spool Fragment #6",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478475",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.244,
+            "y": 0.281,
+            "zoom": 2.0
+          },
           "scene": "Peak_01",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -396,8 +607,15 @@
           "id": "spool-fragment-7",
           "label": "Spool Fragment #7",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478586",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.33,
+            "y": 0.392,
+            "zoom": 2.0
+          },
           "scene": "Song_19_entrance",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -408,8 +626,15 @@
           "id": "spool-fragment-8",
           "label": "Spool Fragment #8",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478931",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.475,
+            "y": 0.448,
+            "zoom": 2.0
+          },
           "scene": "Under_10",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -420,7 +645,14 @@
           "id": "spool-fragment-9",
           "label": "Spool Fragment #9",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478820",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.276,
+            "y": 0.428,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flagInt"
         },
         {
@@ -431,8 +663,15 @@
           "id": "spool-fragment-10",
           "label": "Spool Fragment #10",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479317",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.475,
+            "y": 0.381,
+            "zoom": 2.0
+          },
           "scene": "Ward_01",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -443,8 +682,15 @@
           "id": "spool-fragment-11",
           "label": "Spool Fragment #11",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478618",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.539,
+            "y": 0.314,
+            "zoom": 2.0
+          },
           "scene": "Cog_07",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -455,8 +701,15 @@
           "id": "spool-fragment-12",
           "label": "Spool Fragment #12",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478704",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.566,
+            "y": 0.453,
+            "zoom": 2.0
+          },
           "scene": "Library_11b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -467,7 +720,14 @@
           "id": "spool-fragment-13",
           "label": "Spool Fragment #13",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479180",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.519,
+            "y": 0.367,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         },
         {
@@ -478,7 +738,14 @@
           "id": "spool-fragment-14",
           "label": "Spool Fragment #14",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479249",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.609,
+            "y": 0.244,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -489,8 +756,15 @@
           "id": "spool-fragment-15",
           "label": "Spool Fragment #15",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478825",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.669,
+            "y": 0.762,
+            "zoom": 2.0
+          },
           "scene": "Dock_03c",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -501,8 +775,15 @@
           "id": "spool-fragment-16",
           "label": "Spool Fragment #16",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478909",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.432,
+            "y": 0.144,
+            "zoom": 2.0
+          },
           "scene": "Hang_03_top",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -513,8 +794,15 @@
           "id": "spool-fragment-17",
           "label": "Spool Fragment #17",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479117",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.53,
+            "y": 0.227,
+            "zoom": 2.0
+          },
           "scene": "Arborium_09",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -525,7 +813,14 @@
           "id": "spool-fragment-18",
           "label": "Spool Fragment #18",
           "link": "https://hollowknight.wiki/w/Spool_Fragment",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478527",
+          "mapCategory": "spool-fragments",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.165,
+            "y": 0.438,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         }
       ],
@@ -541,8 +836,15 @@
           "id": "silk-heart-1",
           "label": "Silk Heart #1",
           "link": "https://hollowknight.wiki/w/Silk_Heart",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477879",
+          "mapCategory": "silk-hearts",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.295,
+            "y": 0.67,
+            "zoom": 2.0
+          },
           "scene": "Memory_Silk_Heart_BellBeast",
+          "showOnMap": true,
           "type": "sceneVisited"
         },
         {
@@ -552,8 +854,15 @@
           "id": "silk-heart-2",
           "label": "Silk Heart #2",
           "link": "https://hollowknight.wiki/w/Silk_Heart",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479082",
+          "mapCategory": "silk-hearts",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.432,
+            "y": 0.392,
+            "zoom": 2.0
+          },
           "scene": "Memory_Silk_Heart_WardBoss",
+          "showOnMap": true,
           "type": "sceneVisited"
         },
         {
@@ -563,8 +872,15 @@
           "id": "silk-heart-3",
           "label": "Silk Heart #3",
           "link": "https://hollowknight.wiki/w/Silk_Heart",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479089",
+          "mapCategory": "silk-hearts",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.504,
+            "y": 0.129,
+            "zoom": 2.0
+          },
           "scene": "Memory_Silk_Heart_LaceTower",
+          "showOnMap": true,
           "type": "sceneVisited"
         }
       ],
@@ -581,7 +897,14 @@
           "id": "everbloom",
           "label": "Everbloom",
           "link": "https://hollowknight.wiki/w/Everbloom",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479387",
+          "mapCategory": "miscellaneous",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.162,
+            "y": 0.735,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "collectable"
         },
         {
@@ -592,7 +915,14 @@
           "id": "bind-eva",
           "label": "Bind Eva",
           "link": "https://hollowknight.wiki/w/Eva",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478228",
+          "mapCategory": "miscellaneous",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.302,
+            "y": 0.784,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         }
       ],
@@ -609,6 +939,8 @@
           "id": "crest-hunter",
           "label": "Hunter Crest",
           "link": "https://hollowknight.wiki/w/Hunter_Crest",
+          "mapCategory": "crests",
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -619,7 +951,14 @@
           "id": "crest-reaper",
           "label": "Reaper Crest",
           "link": "https://hollowknight.wiki/w/Reaper_Crest",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478156",
+          "mapCategory": "crests",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.482,
+            "y": 0.575,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -630,7 +969,14 @@
           "id": "crest-wanderer",
           "label": "Wanderer Crest",
           "link": "https://hollowknight.wiki/w/Wanderer_Crest",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478240",
+          "mapCategory": "crests",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.119,
+            "y": 0.727,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -641,7 +987,14 @@
           "id": "crest-beast",
           "label": "Beast Crest",
           "link": "https://hollowknight.wiki/w/Beast_Crest",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478020",
+          "mapCategory": "crests",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.654,
+            "y": 0.661,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -652,7 +1005,14 @@
           "id": "crest-witch",
           "label": "Witch Crest",
           "link": "https://hollowknight.wiki/w/Witch_Crest",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478815",
+          "mapCategory": "crests",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.47,
+            "y": 0.553,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -663,7 +1023,14 @@
           "id": "crest-architect",
           "label": "Architect Crest",
           "link": "https://hollowknight.wiki/w/Architect_Crest",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478745",
+          "mapCategory": "crests",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.515,
+            "y": 0.406,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -674,7 +1041,14 @@
           "id": "crest-shaman",
           "label": "Shaman Crest",
           "link": "https://hollowknight.wiki/w/Shaman_Crest",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479384",
+          "mapCategory": "crests",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.17,
+            "y": 0.742,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         }
       ],
@@ -691,7 +1065,14 @@
           "id": "silkspear",
           "label": "Silkspear",
           "link": "https://hollowknight.wiki/w/Silkspear",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477871",
+          "mapCategory": "silk-skills",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.252,
+            "y": 0.652,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -702,7 +1083,14 @@
           "id": "thread-storm",
           "label": "Thread Storm",
           "link": "https://hollowknight.wiki/w/Thread_Sphere",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478061",
+          "mapCategory": "silk-skills",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.768,
+            "y": 0.514,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -713,7 +1101,14 @@
           "id": "cross-stitch",
           "label": "Cross Stitch",
           "link": "https://hollowknight.wiki/w/Cross_Stitch",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478371",
+          "mapCategory": "silk-skills",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.637,
+            "y": 0.444,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -724,7 +1119,14 @@
           "id": "sharpdart",
           "label": "Sharpdart",
           "link": "https://hollowknight.wiki/w/Sharpdart",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479079",
+          "mapCategory": "silk-skills",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.035,
+            "y": 0.662,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -735,7 +1137,14 @@
           "id": "rune-rage",
           "label": "Rune Rage",
           "link": "https://hollowknight.wiki/w/Rune_Rage",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479025",
+          "mapCategory": "silk-skills",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.305,
+            "y": 0.339,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -746,7 +1155,14 @@
           "id": "pale-nails",
           "label": "Pale Nails",
           "link": "https://hollowknight.wiki/w/Pale_Nails",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479606",
+          "mapCategory": "silk-skills",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.506,
+            "y": 0.053,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         }
       ],
@@ -763,6 +1179,7 @@
           "id": "tool-pouch-0",
           "label": "Base Tool Pouch",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
+          "mapCategory": "tool-pouch",
           "required": 0,
           "type": "level"
         },
@@ -774,7 +1191,14 @@
           "id": "tool-pouch-1",
           "label": "Tool Pouch Upgrade #1",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477946",
+          "mapCategory": "tool-pouch",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.709,
+            "y": 0.678,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -796,7 +1220,14 @@
           "id": "tool-pouch-2",
           "label": "Tool Pouch Upgrade #2",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478252",
+          "mapCategory": "tool-pouch",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.426,
+            "y": 0.695,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "anyOf"
         },
         {
@@ -807,7 +1238,14 @@
           "id": "tool-pouch-3",
           "label": "Tool Pouch Upgrade #3",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479167",
+          "mapCategory": "tool-pouch",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.588,
+            "y": 0.558,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         },
         {
@@ -818,8 +1256,15 @@
           "id": "tool-pouch-4",
           "label": "Tool Pouch Upgrade #4",
           "link": "https://hollowknight.wiki/w/Tool_Pouch",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479436",
+          "mapCategory": "tool-pouch",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.86,
+            "y": 0.269,
+            "zoom": 2.0
+          },
           "scene": "Aqueduct_05",
+          "showOnMap": true,
           "type": "sceneBool"
         }
       ],
@@ -836,6 +1281,7 @@
           "id": "crafting-kit-0",
           "label": "Base Crafting Kit",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
+          "mapCategory": "crafting-kit",
           "required": 0,
           "type": "level"
         },
@@ -847,8 +1293,14 @@
           "id": "crafting-kit-1",
           "label": "Crafting Kit Upgrade #1",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477919",
-          "required": 1,
+          "mapCategory": "crafting-kit",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.556,
+            "y": 0.743,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -859,8 +1311,14 @@
           "id": "crafting-kit-2",
           "label": "Crafting Kit Upgrade #2",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478348",
-          "required": 2,
+          "mapCategory": "crafting-kit",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.419,
+            "y": 0.578,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         },
         {
@@ -871,8 +1329,14 @@
           "id": "crafting-kit-3",
           "label": "Crafting Kit Upgrade #3",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478728",
-          "required": 3,
+          "mapCategory": "crafting-kit",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.53,
+            "y": 0.405,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -883,8 +1347,14 @@
           "id": "crafting-kit-4",
           "label": "Crafting Kit Upgrade #4",
           "link": "https://hollowknight.wiki/w/Crafting_Kit",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478533",
-          "required": 4,
+          "mapCategory": "crafting-kit",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.16,
+            "y": 0.437,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         }
       ],
@@ -901,7 +1371,14 @@
           "id": "ability-swift-step",
           "label": "Swift Step",
           "link": "https://hollowknight.wiki/w/Swift_Step",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477915",
+          "mapCategory": "ability",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.541,
+            "y": 0.696,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -912,7 +1389,14 @@
           "id": "ability-cling-grip",
           "label": "Cling Grip",
           "link": "https://hollowknight.wiki/w/Cling_Grip",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478189",
+          "mapCategory": "ability",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.323,
+            "y": 0.531,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -923,7 +1407,14 @@
           "id": "ability-needolin",
           "label": "Needolin",
           "link": "https://hollowknight.wiki/w/Needolin",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478199",
+          "mapCategory": "ability",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.439,
+            "y": 0.573,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -934,7 +1425,14 @@
           "id": "ability-clawline",
           "label": "Clawline",
           "link": "https://hollowknight.wiki/w/Clawline",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478714",
+          "mapCategory": "ability",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.515,
+            "y": 0.433,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -945,7 +1443,14 @@
           "id": "ability-silk-soar",
           "label": "Silk Soar",
           "link": "https://hollowknight.wiki/w/Silk_Soar",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479288",
+          "mapCategory": "ability",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.57,
+            "y": 0.945,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -956,7 +1461,14 @@
           "id": "ability-needle-strike",
           "label": "Needle Strike",
           "link": "https://hollowknight.wiki/w/Needle_Strike",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478510",
+          "mapCategory": "ability",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.107,
+            "y": 0.486,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         }
       ],
@@ -973,18 +1485,32 @@
           "id": "red-straight-pin",
           "label": "Straight Pin",
           "link": "https://hollowknight.wiki/w/Straight_Pin",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477899",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.431,
+            "y": 0.691,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
           "act": 1,
-          "description": "Located in Greymoor at Craw Lake. The tool is in a small room at the top right of the cavern, guarded by a Tallcraw.",
+          "description": "Located in Greymoor at Craw Lake. In the Secret Room, entered by walking through the wall.",
           "flag": "Tri Pin",
           "icon": "icons/Threefold_Pin.png",
           "id": "red-threefold-pin",
           "label": "Threefold Pin",
           "link": "https://hollowknight.wiki/w/Threefold_Pin",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478058",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.779,
+            "y": 0.536,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -995,7 +1521,14 @@
           "id": "red-sting-shard",
           "label": "Sting Shard",
           "link": "https://hollowknight.wiki/w/Sting_Shard",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477917",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.561,
+            "y": 0.743,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "tool"
         },
         {
@@ -1006,7 +1539,15 @@
           "id": "red-tacks",
           "label": "Tacks",
           "link": "https://hollowknight.wiki/w/Tacks",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478365",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.687,
+            "y": 0.489,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1017,7 +1558,15 @@
           "id": "red-throwing-ring",
           "label": "Throwing Ring",
           "link": "https://hollowknight.wiki/w/Throwing_Ring",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479242",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.905,
+            "y": 0.292,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1028,7 +1577,15 @@
           "id": "red-longpin",
           "label": "Longpin",
           "link": "https://hollowknight.wiki/w/Longpin",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478158",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.405,
+            "y": 0.593,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1039,7 +1596,15 @@
           "id": "red-curveclaw",
           "label": "Curveclaw",
           "link": "https://hollowknight.wiki/w/Curveclaw",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478604",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.556,
+            "y": 0.638,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1050,7 +1615,15 @@
           "id": "red-curveclaw-upgrade",
           "label": "Curvesickle",
           "link": "https://hollowknight.wiki/w/Curvesickle",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479675",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.702,
+            "y": 0.7,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool",
           "upgradeOf": "red-curveclaw"
         },
@@ -1062,7 +1635,15 @@
           "id": "red-pimpillo",
           "label": "Pimpillo",
           "link": "https://hollowknight.wiki/w/Pimpillo",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478964",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.474,
+            "y": 0.532,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1074,7 +1655,15 @@
           "id": "red-silkshot-architect",
           "label": "Silkshot (Architect)",
           "link": "https://hollowknight.wiki/w/Silkshot",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478732",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.535,
+            "y": 0.402,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool",
           "unobtainable": true
         },
@@ -1087,7 +1676,15 @@
           "id": "red-silkshot-forge",
           "label": "Silkshot (Forge)",
           "link": "https://hollowknight.wiki/w/Silkshot",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479364",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.55,
+            "y": 0.741,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool",
           "unobtainable": true
         },
@@ -1100,7 +1697,15 @@
           "id": "red-silkshot-weaver",
           "label": "Silkshot (Weaver)",
           "link": "https://hollowknight.wiki/w/Silkshot",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479497",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.227,
+            "y": 0.143,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool",
           "unobtainable": true
         },
@@ -1112,7 +1717,15 @@
           "id": "red-conchcutter",
           "label": "Conchcutter",
           "link": "https://hollowknight.wiki/w/Conchcutter",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479230",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.095,
+            "y": 0.351,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1123,7 +1736,15 @@
           "id": "red-delvers-drill",
           "label": "Delver's Drill",
           "link": "https://hollowknight.wiki/w/Delver's_Drill",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478577",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.409,
+            "y": 0.495,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1134,7 +1755,15 @@
           "id": "red-cogwork-wheel",
           "label": "Cogwork Wheel",
           "link": "https://hollowknight.wiki/w/Cogwork_Wheel",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478725",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.53,
+            "y": 0.392,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1145,7 +1774,15 @@
           "id": "red-voltvessels",
           "label": "Voltvessels",
           "link": "https://hollowknight.wiki/w/Voltvessels",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479121",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.594,
+            "y": 0.189,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1156,7 +1793,15 @@
           "id": "red-cogfly",
           "label": "CogFly",
           "link": "https://hollowknight.wiki/w/Cogfly",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478903",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.452,
+            "y": 0.194,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1167,7 +1812,15 @@
           "id": "red-rosary-cannon",
           "label": "Rosary Cannon",
           "link": "https://hollowknight.wiki/w/Rosary_Cannon",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478937",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.454,
+            "y": 0.235,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1178,7 +1831,15 @@
           "id": "red-flintslate",
           "label": "Flintslate",
           "link": "https://hollowknight.wiki/w/Flintslate",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477986",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.612,
+            "y": 0.742,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1189,7 +1850,15 @@
           "id": "red-plasmium-phial",
           "label": "Plasmium Phial",
           "link": "https://hollowknight.wiki/w/Plasmium_Phial",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478496",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.133,
+            "y": 0.63,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1200,7 +1869,15 @@
           "id": "red-flea-brew",
           "label": "Flea Brew",
           "link": "https://hollowknight.wiki/w/Flea_Brew",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478025",
+          "mapCategory": "red-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.486,
+            "y": 0.6,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         }
       ],
@@ -1217,7 +1894,15 @@
           "id": "blue-druids-eye",
           "label": "Druid's Eye",
           "link": "https://hollowknight.wiki/w/Druid's_Eye",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478255",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.288,
+            "y": 0.651,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1228,7 +1913,15 @@
           "id": "blue-druids-eye",
           "label": "Druid's Eyes",
           "link": "https://hollowknight.wiki/w/Druid's_Eyes",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480493",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.294,
+            "y": 0.655,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool",
           "upgradeOf": "blue-druids-eye"
         },
@@ -1240,7 +1933,15 @@
           "id": "blue-magma-bell",
           "label": "Magma Bell",
           "link": "https://hollowknight.wiki/w/Magma_Bell",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477918",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.566,
+            "y": 0.744,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1251,7 +1952,15 @@
           "id": "blue-warding-bell",
           "label": "Warding Bell",
           "link": "https://hollowknight.wiki/w/Warding_Bell",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477935",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.673,
+            "y": 0.741,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1262,7 +1971,15 @@
           "id": "blue-pollip-pouch",
           "label": "Pollip Pouch",
           "link": "https://hollowknight.wiki/w/Pollip_Pouch",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478294",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.327,
+            "y": 0.58,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1273,7 +1990,15 @@
           "id": "blue-fractured-mask",
           "label": "Fractured Mask",
           "link": "https://hollowknight.wiki/w/Fractured_Mask",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478607",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.558,
+            "y": 0.638,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1284,7 +2009,15 @@
           "id": "blue-multibinder",
           "label": "Multibinder",
           "link": "https://hollowknight.wiki/w/Multibinder",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478203",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.606,
+            "y": 0.255,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1295,7 +2028,15 @@
           "id": "blue-weavelight",
           "label": "Weavelight",
           "link": "https://hollowknight.wiki/w/Weavelight",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479070",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.178,
+            "y": 0.778,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1306,7 +2047,15 @@
           "id": "blue-sawtooth-circlet",
           "label": "Sawtooth Circlet",
           "link": "https://hollowknight.wiki/w/Sawtooth_Circlet",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478726",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.536,
+            "y": 0.404,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1317,7 +2066,15 @@
           "id": "blue-injector-band",
           "label": "Injector Band",
           "link": "https://hollowknight.wiki/w/Injector_Band",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479182",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.512,
+            "y": 0.368,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1328,7 +2085,15 @@
           "id": "blue-spool-extender",
           "label": "Spool Extender",
           "link": "https://hollowknight.wiki/w/Spool_Extender",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478881",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.622,
+            "y": 0.252,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1339,7 +2104,15 @@
           "id": "blue-reserve-bind",
           "label": "Reserve Bind",
           "link": "https://hollowknight.wiki/w/Reserve_Bind",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479254",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.484,
+            "y": 0.226,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1350,7 +2123,15 @@
           "id": "blue-claw-mirror",
           "label": "Claw Mirror",
           "link": "https://hollowknight.wiki/w/Claw_Mirror",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478691",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.574,
+            "y": 0.33,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1361,7 +2142,15 @@
           "id": "blue-memory-crystal",
           "label": "Memory Crystal",
           "link": "https://hollowknight.wiki/w/Memory_Crystal",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478947",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.114,
+            "y": 0.306,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1372,7 +2161,15 @@
           "id": "blue-snitch-pick",
           "label": "Snitch Pick",
           "link": "https://hollowknight.wiki/w/Snitch_Pick",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479201",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.156,
+            "y": 0.442,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1383,7 +2180,15 @@
           "id": "blue-volt-filament",
           "label": "Volt Filament",
           "link": "https://hollowknight.wiki/w/Volt_Filament",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479224",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.179,
+            "y": 0.333,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1394,7 +2199,15 @@
           "id": "blue-quick-sling",
           "label": "Quick Sling",
           "link": "https://hollowknight.wiki/w/Quick_Sling",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478848",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.752,
+            "y": 0.356,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1405,7 +2218,15 @@
           "id": "blue-wreath-of-purity",
           "label": "Wreath of Purity",
           "link": "https://hollowknight.wiki/w/Wreath_of_Purity",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479133",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.803,
+            "y": 0.251,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1416,7 +2237,15 @@
           "id": "blue-longclaw",
           "label": "Longclaw",
           "link": "https://hollowknight.wiki/w/Longclaw",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479240",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.71,
+            "y": 0.269,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1427,7 +2256,15 @@
           "id": "blue-wispfire-lantern",
           "label": "Wispfire Lantern",
           "link": "https://hollowknight.wiki/w/Wispfire_Lantern",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479156",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.423,
+            "y": 0.493,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1438,7 +2275,15 @@
           "id": "blue-egg-of-flealia",
           "label": "Egg of Flealia",
           "link": "https://hollowknight.wiki/w/Egg_of_Flealia",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479439",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.85,
+            "y": 0.266,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1449,7 +2294,15 @@
           "id": "blue-pin-badge",
           "label": "Pin Badge",
           "link": "https://hollowknight.wiki/w/Pin_Badge",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479466",
+          "mapCategory": "blue-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.227,
+            "y": 0.184,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         }
       ],
@@ -1466,7 +2319,15 @@
           "id": "yellow-compass",
           "label": "Compass",
           "link": "https://hollowknight.wiki/w/Compass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477851",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.28,
+            "y": 0.679,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1477,7 +2338,15 @@
           "id": "yellow-shard-pendant",
           "label": "Shard Pendant",
           "link": "https://hollowknight.wiki/w/Shard_Pendant",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477848",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.329,
+            "y": 0.692,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1488,7 +2357,15 @@
           "id": "yellow-magnetite-brooch",
           "label": "Magnetite Brooch",
           "link": "https://hollowknight.wiki/w/Magnetite_Brooch",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477841",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.249,
+            "y": 0.717,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1499,7 +2376,15 @@
           "id": "yellow-weighted-belt",
           "label": "Weighted Belt",
           "link": "https://hollowknight.wiki/w/Weighted_Belt",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477946",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.716,
+            "y": 0.674,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1510,7 +2395,15 @@
           "id": "yellow-barbed-bracelet",
           "label": "Barbed Bracelet",
           "link": "https://hollowknight.wiki/w/Barbed_Bracelet",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478341",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.695,
+            "y": 0.541,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1521,8 +2414,16 @@
           "id": "yellow-dead-bugs-purse",
           "label": "Dead Bug's Purse",
           "link": "https://hollowknight.wiki/w/Dead_Bug's_Purse",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479081",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.176,
+            "y": 0.628,
+            "zoom": 2.0
+          },
           "mode": "normal",
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1533,8 +2434,16 @@
           "id": "yellow-shell-satchel",
           "label": "Shell Satchel",
           "link": "https://hollowknight.wiki/w/Shell_Satchel",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479996",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.176,
+            "y": 0.628,
+            "zoom": 2.0
+          },
           "mode": "steel",
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1545,7 +2454,15 @@
           "id": "yellow-magnetite-dice",
           "label": "Magnetite Dice",
           "link": "https://hollowknight.wiki/w/Magnetite_Dice",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479309",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.128,
+            "y": 0.464,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1556,7 +2473,15 @@
           "id": "yellow-scuttlebrace",
           "label": "Scuttlebrace",
           "link": "https://hollowknight.wiki/w/Scuttlebrace",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478727",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.53,
+            "y": 0.391,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1567,7 +2492,15 @@
           "id": "yellow-ascendants-grip",
           "label": "Ascendant's Grip",
           "link": "https://hollowknight.wiki/w/Ascendant's_Grip",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478878",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.613,
+            "y": 0.241,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1578,7 +2511,15 @@
           "id": "yellow-spider-strings",
           "label": "Spider Strings",
           "link": "https://hollowknight.wiki/w/Spider_Strings",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479248",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.619,
+            "y": 0.242,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1589,7 +2530,15 @@
           "id": "yellow-silkspeed-anklets",
           "label": "Silkspeed Anklets",
           "link": "https://hollowknight.wiki/w/Silkspeed_Anklets",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478216",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.89,
+            "y": 0.758,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         },
         {
@@ -1600,7 +2549,15 @@
           "id": "yellow-thiefs-mark",
           "label": "Thief's Mark",
           "link": "https://hollowknight.wiki/w/Thief's_Mark",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478525",
+          "mapCategory": "yellow-tools",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.171,
+            "y": 0.435,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+
           "type": "tool"
         }
       ],

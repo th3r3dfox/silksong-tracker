@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Silksong Tracker</title>
     <link rel="icon" type="image/png" href="/assets/misc/favicon.png" />
-    <link rel="preload" href="/assets/ui/labelled_map_act2.png" as="image" />
+    <link rel="preload" href="/assets/ui/labelled_map_act3.png" as="image" />
     <!-- <base href="https://th3r3dfox.github.io/silksong-tracker/"> -->
 
     <!-- Social Preview -->
@@ -37,16 +37,22 @@
   </head>
   <body>
     <aside class="sidebar">
-      <div class="sidebar-header">
-        <img
-          src="/assets/misc/favicon.png"
-          class="logo-icon"
-          width="64"
-          height="64"
-          alt="Silksong Tracker Logo"
-        />
-        <div class="app-name">silksong Tracker</div>
-      </div>
+      <a
+        href="/"
+        id="logo-link"
+        style="text-decoration: none; color: inherit; cursor: pointer"
+      >
+        <div class="sidebar-header">
+          <img
+            src="/assets/misc/favicon.png"
+            class="logo-icon"
+            width="64"
+            height="64"
+            alt="Silksong Tracker Logo"
+          />
+          <div class="app-name">silksong Tracker</div>
+        </div>
+      </a>
 
       <!-- Actions: horizontal icons -->
 
@@ -99,8 +105,8 @@
       <!-- Progress -->
       <div class="sidebar-section">
         <a href="#" class="sidebar-item" data-tab="allprogress">Progress</a>
+        <a href="#" class="sidebar-item" data-tab="map">Interactive Map</a>
         <a href="#" class="sidebar-item" data-tab="rawsave">Raw Save Data</a>
-        <a href="#" class="sidebar-item" data-tab="map">Map</a>
         <!-- add other items here -->
       </div>
     </aside>
@@ -132,6 +138,10 @@
           >
           <button id="upload-save" class="btn-primary">Upload save</button>
           <input type="file" id="fileInput" hidden />
+
+          <button id="clearDataBtn" class="btn-reset" title="Reset all data">
+            <i class="fa-solid fa-trash-can"></i> Reset
+          </button>
         </div>
       </header>
 
@@ -187,33 +197,50 @@
         </section>
 
         <section id="map-section" class="tab hidden">
-          <h2>World Map</h2>
+          <h2>Interactive Map</h2>
           <div class="map-controls">
             <label for="map-act-select">Select Map:</label>
             <select id="map-act-select" aria-label="Select map act">
-              <option
-                value=" /silksong-tracker/assets/ui/labelled_map_act2.png"
-                selected
-              >
-                Act 2
-              </option>
-              <option
-                value=" /silksong-tracker/assets/ui/labelled_map_act3.png"
-              >
+              <option value="/silksong-tracker/assets/ui/labelled_map_act3.png">
                 Act 3
               </option>
-              <option value=" /silksong-tracker/assets/ui/scene's_name_map.png">
+              <option value="/silksong-tracker/assets/ui/scene's_name_map.png">
                 Room's Name
               </option>
             </select>
           </div>
 
           <div class="map-wrapper">
-            <img
-              src="/assets/ui/labelled_map_act2.png"
-              alt="Pharloom Map - Act 2"
-              id="worldMap"
-            />
+            <div id="worldMapStage">
+              <div id="worldMapInner" class="world-map-inner">
+                <img
+                  id="worldMap"
+                  src="/assets/ui/labelled_map_act3.png"
+                  draggable="false"
+                />
+                <div id="mapPinsOverlay"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-sidebar">
+            <h3>Map Filters</h3>
+
+            <div class="search-container">
+              <input
+                type="text"
+                id="map-search"
+                placeholder="Search item..."
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="filter-controls">
+              <button id="show-all-filters" class="btn-small">Show All</button>
+              <button id="hide-all-filters" class="btn-small">Hide All</button>
+            </div>
+
+            <div id="map-filters" class="filter-list"></div>
           </div>
         </section>
 

@@ -39,10 +39,13 @@ export function getSaveDataFlags(): Record<string, unknown> | undefined {
 export async function handleSaveFile(file: File | undefined): Promise<void> {
   try {
     if (file === undefined) {
-      showToast("❌ No file selected.");
+      showToast("No file selected.");
       uploadOverlay.classList.remove("hidden");
       return;
     }
+
+    const scrollContainer = document.querySelector("main");
+    const currentScroll = scrollContainer ? scrollContainer.scrollTop : 0;
 
     const buffer = await file.arrayBuffer();
     const isJSON = file.name.toLowerCase().endsWith(".json");
@@ -58,33 +61,27 @@ export async function handleSaveFile(file: File | undefined): Promise<void> {
 
     const saveData = await parseSilksongSave(saveDataRaw);
     if (saveData === undefined) {
-      showToast("❌ Invalid or corrupted save file");
+      showToast("Invalid or corrupted save file");
       uploadOverlay.classList.remove("hidden");
       return;
     }
 
-    // @ts-expect-error The save file is huge and we do not want to specify every property. Instead
-    // of marking the Zod schema as loose, it is simpler to just assign the pre-validation object.
-    currentLoadedSaveData = saveDataRaw;
+    currentLoadedSaveData = saveDataRaw as unknown as SilksongSave;
     currentLoadedSaveDataFlags = getSaveFileFlags(saveDataRaw);
 
-    // Update UI statistics.
     completionValue.textContent = `${saveData.playerData.completionPercentage}%`;
-
     const seconds = saveData.playerData.playTime;
     const hours = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60);
     playtimeValue.textContent = `${hours}h ${mins}m`;
-
     rosariesValue.textContent = saveData.playerData.geo.toString();
     shardsValue.textContent = saveData.playerData.ShellShards.toString();
 
-    const isSteelSoul = saveData.playerData.permadeathMode === 1;
-
-    // Save mode globally (after declaration).
+    const isSteelSoul = (
+      [1, 2, 3, "On", "Dead"] as Array<string | number | undefined>
+    ).includes(saveData.playerData.permadeathMode);
     currentLoadedSaveDataMode = isSteelSoul ? "steel" : "normal";
 
-    // Show visual banner.
     modeBanner.innerHTML = isSteelSoul
       ? `<img src="${BASE_PATH}/assets/icons/Steel_Soul_Icon.png" alt="Steel Soul" class="mode-icon"> STEEL SOUL SAVE LOADED`
       : "NORMAL SAVE LOADED";
@@ -92,14 +89,19 @@ export async function handleSaveFile(file: File | undefined): Promise<void> {
     modeBanner.classList.toggle("steel", isSteelSoul);
 
     renderActiveTab();
+    globalThis.dispatchEvent(new Event("save-data-changed"));
 
-    showToast("✅ Save file loaded successfully!");
+    if (scrollContainer) {
+      requestAnimationFrame(() => {
+        scrollContainer.scrollTop = currentScroll;
+      });
+    }
+
+    showToast("Save file loaded successfully!");
     uploadOverlay.classList.add("hidden");
   } catch (error) {
     console.error("[save] Decode error:", error);
-    showToast(
-      "❌ Browser permission or file access issue. Please reselect your save file.",
-    );
+    showToast("Error processing save file.");
     uploadOverlay.classList.remove("hidden");
   }
 }
@@ -397,4 +399,35 @@ function checkSceneValue(
   );
 
   return element ? element.Value : undefined;
+}
+
+export function clearAllData(): void {
+  currentLoadedSaveData = undefined;
+  currentLoadedSaveDataFlags = undefined;
+  currentLoadedSaveDataMode = "normal";
+
+  const cleanUrl = globalThis.location.origin + globalThis.location.pathname;
+  globalThis.history.pushState({}, "", cleanUrl);
+
+  modeBanner.classList.add("hidden");
+  modeBanner.innerHTML = "";
+  completionValue.textContent = "0%";
+  playtimeValue.textContent = "0h 00m";
+  rosariesValue.textContent = "0";
+  shardsValue.textContent = "0";
+
+  const fileInput = document.querySelector<HTMLInputElement>("#fileInput");
+  if (fileInput) {
+    fileInput.value = "";
+  }
+
+  globalThis.dispatchEvent(new Event("save-data-changed"));
+
+  try {
+    renderActiveTab();
+  } catch (error) {
+    console.warn("Reset render executed on current tab", error);
+  }
+
+  showToast("Data cleared.");
 }

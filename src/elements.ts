@@ -53,3 +53,5 @@ export const tocList = getHTMLElement("toc-list");
 export const uploadOverlay = getHTMLElement("uploadOverlay");
 export const mapActSelector = getHTMLElement("map-act-select");
 export const worldMap = getHTMLElement("worldMap");
+export const logoLink = getHTMLElement("logo-link") as HTMLAnchorElement;
+export const clearDataBtn = getHTMLElement("clearDataBtn") as HTMLAnchorElement;

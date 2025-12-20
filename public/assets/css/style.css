@@ -744,10 +744,13 @@ main a:hover,
   font-family: "TrajanPro-Regular", serif;
 }
 
+/* style.css */
 #info-content .info-image {
   max-width: 72px;
+  max-height: 120px; /* Aggiungi un limite di altezza */
   margin: 0 auto 18px;
   display: block;
+  object-fit: contain; /* Mantiene le proporzioni */
 }
 
 #info-content .info-title {
@@ -1214,6 +1217,19 @@ main a:hover,
   font-size: 0.9rem;
 }
 
+.upgrade-icon i,
+.missable-icon i,
+.unobtainable-icon i {
+  display: block !important;
+  font-size: 13px !important;
+  color: inherit;
+  line-height: 1 !important;
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  transform: translateY(-0.5px);
+}
+
 .home-section-block h2 i {
   opacity: 0.8;
   color: var(--accent);
@@ -1408,19 +1424,25 @@ html {
   margin-bottom: 6px;
 }
 
-/* ------------------
-   WISHES - clean and consistent layout
-------------------- */
+.map-sidebar h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--stroke-soft);
+}
 
 #wishes-grid {
   display: flex;
-  flex-direction: column; /* stack categories vertically */
-  gap: 60px; /* space between Main / Wayfarer / Gather */
+  flex-direction: column;
+  gap: 60px;
   align-items: stretch;
   width: 100%;
 }
 
-/* Ogni gruppo principale */
 #wishes-grid .main-section-block {
   flex: 1 1 auto;
   background: none;
@@ -1429,7 +1451,6 @@ html {
   text-align: center;
 }
 
-/* Titolo e conteggio */
 #wishes-grid .main-section-block h3 {
   text-align: center;
   font-size: 1.6rem;
@@ -1442,7 +1463,6 @@ html {
   gap: 8px;
 }
 
-/* Description below title */
 #wishes-grid .category-description {
   text-align: center;
   color: #bbb;
@@ -1451,7 +1471,6 @@ html {
   margin: 0 auto 1.5rem;
 }
 
-/* Griglia interna delle card */
 #wishes-grid .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -1459,9 +1478,6 @@ html {
   justify-content: center;
 }
 
-/* Le card usano lo stile .boss globale - niente override */
-
-/* Dark scrollbar per main */
 main::-webkit-scrollbar {
   width: 10px;
 }
@@ -1480,7 +1496,7 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 .boss.accepted {
-  border: 2px solid #f1c40f; /* golden yellow */
+  border: 2px solid #f1c40f;
   box-shadow: 0 0 6px rgba(241, 196, 15, 0.5);
 }
 
@@ -1499,6 +1515,13 @@ main::-webkit-scrollbar-thumb:hover {
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+.filter-group label {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .dropdown-menu label:hover {
@@ -1995,12 +2018,26 @@ main::-webkit-scrollbar-thumb:hover {
   align-items: center;
 }
 
+.grid-item span {
+  display: block;
+  min-height: 1.2em;
+}
+
 #back-to-top:hover {
   transform: scale(1.1);
 }
 
 #back-to-top.show {
   display: flex;
+}
+
+.filter-item span {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+
+.filter-item:hover span {
+  color: var(--ink-1);
 }
 
 #back-to-top span {
@@ -2084,7 +2121,7 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 .legend-missable {
-  color: #e6614c;
+  color: var(--accent);
   font-weight: bold;
   width: 1.2rem;
   text-align: center;
@@ -2139,7 +2176,17 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 #allprogress-grid {
+  min-height: 100vh;
+  contain-intrinsic-size: 0 1000px;
   padding-right: 1.5rem;
+}
+
+.grid-item {
+  display: inline-block;
+  vertical-align: top;
+
+  min-height: 80px;
+  aspect-ratio: 1 / 1;
 }
 
 /* --- MAIN CATEGORY TITLES --- */
@@ -2327,13 +2374,17 @@ main::-webkit-scrollbar-thumb:hover {
   align-items: center;
   justify-content: center;
   font-family: "TrajanPro", serif;
+  margin-left: 3px;
+  margin-top: 2px;
   font-weight: bold;
   font-size: 1.2em;
   color: var(--accent);
   opacity: 0.95;
   cursor: help;
-  line-height: 1;
+  line-height: 0;
+  padding: 0;
   z-index: 3;
+  transform: translate(2px, 2px);
   text-shadow:
     0 0 6px rgba(0, 0, 0, 0.7),
     0 0 8px rgba(224, 123, 49, 0.4),
@@ -2342,6 +2393,7 @@ main::-webkit-scrollbar-thumb:hover {
     transform 0.18s cubic-bezier(0.4, 1.6, 0.6, 1),
     filter 0.18s cubic-bezier(0.4, 1.6, 0.6, 1),
     box-shadow 0.18s cubic-bezier(0.4, 1.6, 0.6, 1);
+  transform-origin: center center;
 }
 
 .upgrade-icon:hover {
@@ -2425,21 +2477,40 @@ main::-webkit-scrollbar-thumb:hover {
   overflow: hidden;
   width: 100%;
   height: calc(100vh - 205px);
+  background: #000;
   cursor: grab;
-  background-color: #000;
+  touch-action: none;
 }
 
-.map-wrapper img {
+#worldMapInner {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+}
+
+#worldMapStage {
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform-origin: center center;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 0.3s ease-in-out;
-  user-select: none;
-  pointer-events: none;
   will-change: transform;
-  image-rendering: optimizeSpeed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-wrapper:active {
+  cursor: grabbing;
+}
+
+#worldMap {
+  display: block;
+  flex-shrink: 0;
+
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 .journal-divider {
@@ -2515,10 +2586,13 @@ main::-webkit-scrollbar-thumb:hover {
 
 .custom-map-inner {
   position: absolute;
-  left: 0;
-  top: 0;
-  transform-origin: 0 0;
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
   will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-map-image {
@@ -2527,4 +2601,174 @@ main::-webkit-scrollbar-thumb:hover {
   user-select: none;
   -webkit-user-drag: none;
   pointer-events: none;
+}
+
+.custom-map-pin {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+#mapPinsOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.map-pin {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 10;
+  object-fit: contain;
+  transition: transform 0.1s ease;
+}
+
+.map-pin.obtained {
+  opacity: 0.35;
+  filter: grayscale(1) contrast(0.9);
+}
+
+#mapPinsOverlay.hidden {
+  display: none;
+}
+
+.map-sidebar {
+  position: absolute;
+  top: -8px;
+
+  left: auto;
+  right: -5px;
+
+  z-index: 1000;
+
+  width: 300px;
+  max-height: 80vh;
+
+  background-color: var(--bg-2);
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+  padding: 16px;
+  color: var(--ink-1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stroke) var(--bg-2);
+}
+
+.filter-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-small {
+  flex: 1;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  border: 1px solid var(--stroke);
+  background-color: var(--bg-3);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-small:hover {
+  background-color: var(--stroke);
+  color: var(--ink-1);
+  border-color: var(--ink-3);
+}
+
+.filter-group input {
+  margin-right: 10px;
+  accent-color: var(--accent);
+}
+
+#map-filters {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 2px 10px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  user-select: none;
+}
+
+.filter-item:hover {
+  background-color: var(--bg-3);
+}
+
+.search-container {
+  margin-bottom: 8px;
+}
+
+#map-search {
+  width: 100%;
+  padding: 8px 1px;
+  background-color: var(--bg-3);
+  border: 1px solid var(--stroke);
+  border-radius: 4px;
+  color: var(--ink-1);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+
+  outline: none;
+}
+
+#map-search::placeholder {
+  color: var(--ink-3);
+  font-style: italic;
+}
+
+#map-search:focus {
+  border-color: var(--accent);
+  background-color: var(--bg-1);
+}
+
+.btn-reset {
+  background: rgba(255, 77, 77, 0.1);
+  color: #ff4d4d;
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: "TrajanPro", serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-reset:hover {
+  background: #ff4d4d;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.4);
 }

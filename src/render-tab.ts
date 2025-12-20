@@ -46,6 +46,16 @@ export function renderActiveTab(): void {
 
   // Call the update function for the selected tab.
   const func = TAB_TO_UPDATE_FUNCTION[activeTab];
+
+  if (activeTab === "map") {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        updateTabMap();
+      });
+    });
+    return;
+  }
+
   const result = func();
 
   // Handle promise if the function returns one.

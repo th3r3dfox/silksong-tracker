@@ -38,8 +38,8 @@ const silksongSaveSchema = z.object({
       geo: z.int(),
       permadeathMode: z
         .union([
-          z.union([z.literal(0), z.literal(1), z.literal(2)]), // num
-          z.union([z.literal("Off")]), // string
+          z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]), // num
+          z.union([z.literal("Off"), z.literal("On"), z.literal("Dead")]), // string
         ])
         .optional(),
       playTime: z.number(),
