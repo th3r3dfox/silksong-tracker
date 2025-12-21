@@ -12,7 +12,14 @@
           "id": "Rhinogrund-1",
           "label": "Kill #1",
           "link": "https://hollowknight.wiki/w/Rhinogrund",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480179",
+          "mapCategory": "rhinogrund",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.73,
+            "y": 0.678,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -23,8 +30,15 @@
           "id": "Rhinogrund-2",
           "label": "Kill #2",
           "link": "https://hollowknight.wiki/w/Rhinogrund",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480193",
+          "mapCategory": "rhinogrund",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.572,
+            "y": 0.223,
+            "zoom": 2.0
+          },
           "scene": "Arborium_02",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -35,8 +49,15 @@
           "id": "Rhinogrund-3",
           "label": "Kill #3",
           "link": "https://hollowknight.wiki/w/Rhinogrund",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479820",
+          "mapCategory": "rhinogrund",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.645,
+            "y": 0.724,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_02b",
+          "showOnMap": true,
           "type": "sceneBool"
         }
       ],
@@ -53,7 +74,15 @@
           "id": "Covetous_Pilgrim_1",
           "label": "Kill #1",
           "link": "https://hollowknight.wiki/w/Covetous_Pilgrim",
+          "mapCategory": "covetous-Pilgrim",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.273,
+            "y": 0.587,
+            "zoom": 2.0
+          },
           "scene": "Shellgrave",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -64,7 +93,15 @@
           "id": "Covetous_Pilgrim_2",
           "label": "Kill #2",
           "link": "https://hollowknight.wiki/w/Covetous_Pilgrim",
+          "mapCategory": "covetous-Pilgrim",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.751,
+            "y": 0.409,
+            "zoom": 2.0
+          },
           "scene": "Shadow_23",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -75,7 +112,15 @@
           "id": "Covetous_Pilgrim_3",
           "label": "Kill #3",
           "link": "https://hollowknight.wiki/w/Covetous_Pilgrim",
+          "mapCategory": "covetous-Pilgrim",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.126,
+            "y": 0.726,
+            "zoom": 2.0
+          },
           "scene": "Bonegrave",
+          "showOnMap": true,
           "type": "sceneBool"
         }
       ],
@@ -92,8 +137,15 @@
           "id": "Void_Mass_1",
           "label": "Kill #1",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480158",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.334,
+            "y": 0.71,
+            "zoom": 2.0
+          },
           "scene": "Bone_02",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -104,8 +156,15 @@
           "id": "Void_Mass_2",
           "label": "Kill #2",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479997",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.28,
+            "y": 0.683,
+            "zoom": 2.0
+          },
           "scene": "Bone_04",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -116,8 +175,15 @@
           "id": "Void_Mass_3",
           "label": "Kill #3",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479821",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.268,
+            "y": 0.65,
+            "zoom": 2.0
+          },
           "scene": "Mosstown_02",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -128,8 +194,15 @@
           "id": "Void_Mass_4",
           "label": "Kill #4",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479620",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.406,
+            "y": 0.661,
+            "zoom": 2.0
+          },
           "scene": "Bone_07",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -140,8 +213,15 @@
           "id": "Void_Mass_5",
           "label": "Kill #5",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479534",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.456,
+            "y": 0.712,
+            "zoom": 2.0
+          },
           "scene": "Bone_09",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -152,8 +232,15 @@
           "id": "Void_Mass_6",
           "label": "Kill #6",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479536",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.558,
+            "y": 0.696,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_05",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -164,8 +251,15 @@
           "id": "Void_Mass_7",
           "label": "Kill #7",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480157",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.58,
+            "y": 0.707,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_03",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -176,8 +270,15 @@
           "id": "Void_Mass_8",
           "label": "Kill #8",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479535",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.576,
+            "y": 0.673,
+            "zoom": 2.0
+          },
           "scene": "Ant_05b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -188,8 +289,15 @@
           "id": "Void_Mass_9",
           "label": "Kill #9",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479533",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.495,
+            "y": 0.663,
+            "zoom": 2.0
+          },
           "scene": "Ant_04_left",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -200,8 +308,15 @@
           "id": "Void_Mass_10",
           "label": "Kill #10",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479532",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.714,
+            "y": 0.524,
+            "zoom": 2.0
+          },
           "scene": "Greymoor_02",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -212,8 +327,15 @@
           "id": "Void_Mass_11",
           "label": "Kill #11",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479541",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.507,
+            "y": 0.59,
+            "zoom": 2.0
+          },
           "scene": "Greymoor_07",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -224,8 +346,15 @@
           "id": "Void_Mass_12",
           "label": "Kill #12",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480266",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.537,
+            "y": 0.597,
+            "zoom": 2.0
+          },
           "scene": "Greymoor_16",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -236,8 +365,15 @@
           "id": "Void_Mass_13",
           "label": "Kill #13",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479910",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.349,
+            "y": 0.578,
+            "zoom": 2.0
+          },
           "scene": "Shellwood_02",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -248,8 +384,15 @@
           "id": "Void_Mass_14",
           "label": "Kill #14",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479656",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.251,
+            "y": 0.598,
+            "zoom": 2.0
+          },
           "scene": "Shellwood_04b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -260,8 +403,15 @@
           "id": "Void_Mass_15",
           "label": "Kill #15",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480137",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.37,
+            "y": 0.579,
+            "zoom": 2.0
+          },
           "scene": "Shellwood_01b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -272,8 +422,15 @@
           "id": "Void_Mass_16",
           "label": "Kill #16",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480197",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.353,
+            "y": 0.506,
+            "zoom": 2.0
+          },
           "scene": "Shellwood_26",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -284,8 +441,15 @@
           "id": "Void_Mass_17",
           "label": "Kill #17",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480161",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.391,
+            "y": 0.561,
+            "zoom": 2.0
+          },
           "scene": "Shellwood_15",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -296,8 +460,15 @@
           "id": "Void_Mass_18",
           "label": "Kill #18",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479540",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.534,
+            "y": 0.526,
+            "zoom": 2.0
+          },
           "scene": "Greymoor_11",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -308,8 +479,15 @@
           "id": "Void_Mass_19",
           "label": "Kill #19",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480267",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.628,
+            "y": 0.551,
+            "zoom": 2.0
+          },
           "scene": "Greymoor_12",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -320,8 +498,15 @@
           "id": "Void_Mass_20",
           "label": "Kill #20",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480623",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.684,
+            "y": 0.523,
+            "zoom": 2.0
+          },
           "scene": "Dust_03",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -332,8 +517,15 @@
           "id": "Void_Mass_21",
           "label": "Kill #21",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480172",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.652,
+            "y": 0.685,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_17",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -344,8 +536,15 @@
           "id": "Void_Mass_22",
           "label": "Kill #22",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479732",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.227,
+            "y": 0.505,
+            "zoom": 2.0
+          },
           "scene": "Coral_12",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -356,8 +555,15 @@
           "id": "Void_Mass_23",
           "label": "Kill #23",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479818",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.253,
+            "y": 0.438,
+            "zoom": 2.0
+          },
           "scene": "Coral_32",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -368,8 +574,15 @@
           "id": "Void_Mass_24",
           "label": "Kill #24",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479745",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.379,
+            "y": 0.463,
+            "zoom": 2.0
+          },
           "scene": "Under_02",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -380,8 +593,15 @@
           "id": "Void_Mass_25",
           "label": "Kill #25",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479838",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.463,
+            "y": 0.441,
+            "zoom": 2.0
+          },
           "scene": "Under_05",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -392,8 +612,15 @@
           "id": "Void_Mass_26",
           "label": "Kill #26",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479851",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.353,
+            "y": 0.373,
+            "zoom": 2.0
+          },
           "scene": "Song_01",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -404,8 +631,15 @@
           "id": "Void_Mass_27",
           "label": "Kill #27",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479457",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.46,
+            "y": 0.334,
+            "zoom": 2.0
+          },
           "scene": "Song_05",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -416,8 +650,15 @@
           "id": "Void_Mass_28",
           "label": "Kill #28",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479519",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.415,
+            "y": 0.271,
+            "zoom": 2.0
+          },
           "scene": "Song_15",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -428,8 +669,15 @@
           "id": "Void_Mass_29",
           "label": "Kill #29",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479581",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.368,
+            "y": 0.319,
+            "zoom": 2.0
+          },
           "scene": "Song_04",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -440,8 +688,15 @@
           "id": "Void_Mass_30",
           "label": "Kill #30",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479538",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.411,
+            "y": 0.251,
+            "zoom": 2.0
+          },
           "scene": "Song_17",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -452,8 +707,15 @@
           "id": "Void_Mass_31",
           "label": "Kill #31",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479459",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.474,
+            "y": 0.323,
+            "zoom": 2.0
+          },
           "scene": "Song_27",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -464,8 +726,15 @@
           "id": "Void_Mass_32",
           "label": "Kill #32",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479584",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.616,
+            "y": 0.293,
+            "zoom": 2.0
+          },
           "scene": "Library_04",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -476,8 +745,15 @@
           "id": "Void_Mass_33",
           "label": "Kill #33",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479531",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.629,
+            "y": 0.314,
+            "zoom": 2.0
+          },
           "scene": "Library_04",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -488,8 +764,15 @@
           "id": "Void_Mass_34",
           "label": "Kill #34",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479520",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.512,
+            "y": 0.301,
+            "zoom": 2.0
+          },
           "scene": "Cog_04",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -500,8 +783,15 @@
           "id": "Void_Mass_35",
           "label": "Kill #35",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479956",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.52,
+            "y": 0.428,
+            "zoom": 2.0
+          },
           "scene": "Under_18",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -512,8 +802,15 @@
           "id": "Void_Mass_36",
           "label": "Kill #36",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480825",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.748,
+            "y": 0.467,
+            "zoom": 2.0
+          },
           "scene": "Shadow_05",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -524,8 +821,15 @@
           "id": "Void_Mass_37",
           "label": "Kill #37",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480823",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.64,
+            "y": 0.774,
+            "zoom": 2.0
+          },
           "scene": "Dock_03c",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -536,8 +840,15 @@
           "id": "Void_Mass_38",
           "label": "Kill #38",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479658",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.649,
+            "y": 0.318,
+            "zoom": 2.0
+          },
           "scene": "Library_06",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -548,8 +859,15 @@
           "id": "Void_Mass_39",
           "label": "Kill #39",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479539",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.43,
+            "y": 0.212,
+            "zoom": 2.0
+          },
           "scene": "Hang_03",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -560,8 +878,15 @@
           "id": "Void_Mass_40",
           "label": "Kill #40",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479674",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.452,
+            "y": 0.173,
+            "zoom": 2.0
+          },
           "scene": "Hang_13",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -572,8 +897,15 @@
           "id": "Void_Mass_41",
           "label": "Kill #41",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480255",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.218,
+            "y": 0.779,
+            "zoom": 2.0
+          },
           "scene": "Weave_03",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -584,8 +916,15 @@
           "id": "Void_Mass_42",
           "label": "Kill #42",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479458",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.515,
+            "y": 0.768,
+            "zoom": 2.0
+          },
           "scene": "Dock_04",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -596,8 +935,15 @@
           "id": "Void_Mass_43",
           "label": "Kill #43",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479734",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.305,
+            "y": 0.481,
+            "zoom": 2.0
+          },
           "scene": "Under_27",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -608,8 +954,15 @@
           "id": "Void_Mass_44",
           "label": "Kill #44",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479455",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.165,
+            "y": 0.494,
+            "zoom": 2.0
+          },
           "scene": "Coral_11",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -620,8 +973,15 @@
           "id": "Void_Mass_45",
           "label": "Kill #45",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479583",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.802,
+            "y": 0.647,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_26",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -632,8 +992,15 @@
           "id": "Void_Mass_46",
           "label": "Kill #46",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479537",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.669,
+            "y": 0.725,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_02b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -644,8 +1011,15 @@
           "id": "Void_Mass_47",
           "label": "Kill #47",
           "link": "https://hollowknight.wiki/w/Void_Mass",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480469",
+          "mapCategory": "void-masses",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.746,
+            "y": 0.508,
+            "zoom": 2.0
+          },
           "mode": "normal",
+          "showOnMap": true,
           "type": "flag"
         }
       ],
@@ -662,9 +1036,16 @@
           "id": "Shardillard_1",
           "label": "Kill #1",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480168",
+          "mapCategory": "shardillard",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.569,
+            "y": 0.709,
+            "zoom": 2.0
+          },
           "required": -1,
           "scene": "Bone_East_03",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -675,9 +1056,16 @@
           "id": "Shardillard_2",
           "label": "Kill #2",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479496",
+          "mapCategory": "shardillard",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.734,
+            "y": 0.533,
+            "zoom": 2.0
+          },
           "required": -1,
           "scene": "Greymoor_17",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -688,9 +1076,16 @@
           "id": "Shardillard_3",
           "label": "Kill #3",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479213",
+          "mapCategory": "shardillard",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.261,
+            "y": 0.403,
+            "zoom": 2.0
+          },
           "required": -1,
           "scene": "Coral_38",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -701,9 +1096,16 @@
           "id": "Shardillard_4",
           "label": "Kill #4",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480162",
+          "mapCategory": "shardillard",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.319,
+            "y": 0.64,
+            "zoom": 2.0
+          },
           "required": -1,
           "scene": "Bone_06",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -714,9 +1116,16 @@
           "id": "Shardillard_5",
           "label": "Kill #5",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480160",
+          "mapCategory": "shardillard",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.378,
+            "y": 0.669,
+            "zoom": 2.0
+          },
           "required": -1,
           "scene": "Bone_14",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -727,9 +1136,16 @@
           "id": "Shardillard_6",
           "label": "Kill #6",
           "link": "https://hollowknight.wiki/w/Shardillard#Location",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479731",
+          "mapCategory": "shardillard",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.796,
+            "y": 0.736,
+            "zoom": 2.0
+          },
           "required": -1,
           "scene": "Bone_East_14",
+          "showOnMap": true,
           "type": "sceneBool"
         }
       ],

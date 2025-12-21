@@ -45,6 +45,28 @@
                   "description": "Map area name where this miniboss is located",
                   "type": "string"
                 },
+                "mapCategory": {
+                  "description": "Category identifier for map filtering",
+                  "type": "string"
+                },
+                "mapViewer": {
+                  "properties": {
+                    "src": {
+                      "type": "string"
+                    },
+                    "x": {
+                      "type": "number"
+                    },
+                    "y": {
+                      "type": "number"
+                    },
+                    "zoom": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["src", "x", "y"],
+                  "type": "object"
+                },
                 "missable": {
                   "description": "Whether this boss encounter can be permanently missed",
                   "type": "boolean"
@@ -61,6 +83,9 @@
                 "scene": {
                   "description": "Scene identifier for location-based items",
                   "type": "string"
+                },
+                "showOnMap": {
+                  "type": "boolean"
                 },
                 "type": {
                   "enum": ["boss", "journal", "sceneBool", "flag"],
