@@ -22,7 +22,14 @@
           "id": "ability-drifters-cloak",
           "label": "Drifter's Cloak",
           "link": "https://hollowknight.wiki/w/Drifter's_Cloak",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477971",
+          "mapCategory": "cloaks",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.752,
+            "y": 0.743,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -33,7 +40,14 @@
           "id": "ability-faydown-cloak",
           "label": "Faydown Cloak",
           "link": "https://hollowknight.wiki/w/Faydown_Cloak",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479103",
+          "mapCategory": "cloaks",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.233,
+            "y": 0.127,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         }
       ],
@@ -50,7 +64,14 @@
           "id": "key-simple-1",
           "label": "Simple Key #1",
           "link": "https://hollowknight.wiki/w/Simple_Key_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477839",
+          "mapCategory": "keys",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.243,
+            "y": 0.711,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "key"
         },
         {
@@ -61,7 +82,14 @@
           "id": "key-simple-2",
           "label": "Simple Key #2",
           "link": "https://hollowknight.wiki/w/Simple_Key_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478280",
+          "mapCategory": "keys",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.714,
+            "y": 0.442,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "key"
         },
         {
@@ -72,7 +100,14 @@
           "id": "key-simple-3",
           "label": "Simple Key #3",
           "link": "https://hollowknight.wiki/w/Simple_Key_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478880",
+          "mapCategory": "keys",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.627,
+            "y": 0.244,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "key"
         },
         {
@@ -83,8 +118,15 @@
           "id": "key-simple-4",
           "label": "Simple Key #4",
           "link": "https://hollowknight.wiki/w/Simple_Key_(Silksong)",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479215",
+          "mapCategory": "keys",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.294,
+            "y": 0.389,
+            "zoom": 2.0
+          },
           "scene": "Bellshrine_Coral",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -95,7 +137,14 @@
           "id": "key-gate",
           "label": "Diving Bell Key",
           "link": "https://hollowknight.wiki/w/Diving_Bell_Key#Trivia",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479279",
+          "mapCategory": "keys",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.592,
+            "y": 0.797,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "key"
         },
         {
@@ -106,7 +155,14 @@
           "id": "key-white",
           "label": "White Key",
           "link": "https://hollowknight.wiki/w/White_Key",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478599",
+          "mapCategory": "keys",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.628,
+            "y": 0.256,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "key"
         },
         {
@@ -117,7 +173,14 @@
           "id": "key-surgeon",
           "label": "Surgeon's Key",
           "link": "https://hollowknight.wiki/w/Surgeon's_Key",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478923",
+          "mapCategory": "keys",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.524,
+            "y": 0.358,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "key"
         },
         {
@@ -128,7 +191,14 @@
           "id": "key-apostate",
           "label": "Key of Apostate",
           "link": "https://hollowknight.wiki/w/Key_of_Apostate",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478963",
+          "mapCategory": "keys",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.688,
+            "y": 0.262,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "key"
         },
         {
@@ -139,7 +209,14 @@
           "id": "key-indolent",
           "label": "Key of Indolent",
           "link": "https://hollowknight.wiki/w/Key_of_Indolent",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478467",
+          "mapCategory": "keys",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.259,
+            "y": 0.274,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "key"
         },
         {
@@ -150,7 +227,14 @@
           "id": "key-heretic",
           "label": "Key of Heretic",
           "link": "https://hollowknight.wiki/w/Key_of_Heretic",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478474",
+          "mapCategory": "keys",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.257,
+            "y": 0.244,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "key"
         },
         {
@@ -161,7 +245,14 @@
           "id": "key-architect",
           "label": "Architect's Key",
           "link": "https://hollowknight.wiki/w/Architect's_Key",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478729",
+          "mapCategory": "keys",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.522,
+            "y": 0.396,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "key"
         }
       ],
@@ -178,8 +269,15 @@
           "id": "memory-locket-1",
           "label": "Memory Locket 1",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478246",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.355,
+            "y": 0.643,
+            "zoom": 2.0
+          },
           "scene": "Bone_18",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -190,8 +288,15 @@
           "id": "memory-locket-2",
           "label": "Memory Locket 2",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478017",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.643,
+            "y": 0.673,
+            "zoom": 2.0
+          },
           "scene": "Ant_20",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -202,7 +307,14 @@
           "id": "memory-locket-3",
           "label": "Memory Locket 3",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477953",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.705,
+            "y": 0.668,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -213,8 +325,15 @@
           "id": "memory-locket-4",
           "label": "Memory Locket 4",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478035",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.551,
+            "y": 0.595,
+            "zoom": 2.0
+          },
           "scene": "Greymoor_16",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -225,7 +344,14 @@
           "id": "memory-locket-5",
           "label": "Memory Locket 5",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478222",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.257,
+            "y": 0.736,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         },
         {
@@ -236,7 +362,14 @@
           "id": "memory-locket-6",
           "label": "Memory Locket 6",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478204",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.441,
+            "y": 0.602,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -247,8 +380,15 @@
           "id": "memory-locket-7",
           "label": "Memory Locket 7",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478502",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.192,
+            "y": 0.522,
+            "zoom": 2.0
+          },
           "scene": "Coral_02",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -259,8 +399,15 @@
           "id": "memory-locket-8",
           "label": "Memory Locket 8",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478493",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.12,
+            "y": 0.695,
+            "zoom": 2.0
+          },
           "scene": "Crawl_09",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -271,8 +418,15 @@
           "id": "memory-locket-9",
           "label": "Memory Locket 9",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478787",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.645,
+            "y": 0.406,
+            "zoom": 2.0
+          },
           "scene": "Shadow_20",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -283,8 +437,15 @@
           "id": "memory-locket-10",
           "label": "Memory Locket 10",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478372",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.58,
+            "y": 0.342,
+            "zoom": 2.0
+          },
           "scene": "Bellway_City",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -295,8 +456,15 @@
           "id": "memory-locket-11",
           "label": "Memory Locket 11",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478571",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.432,
+            "y": 0.413,
+            "zoom": 2.0
+          },
           "scene": "Under_08",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -307,8 +475,15 @@
           "id": "memory-locket-12",
           "label": "Memory Locket 12",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478836",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.525,
+            "y": 0.822,
+            "zoom": 2.0
+          },
           "scene": "Dock_13",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -319,8 +494,15 @@
           "id": "memory-locket-13",
           "label": "Memory Locket 13",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478676",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.662,
+            "y": 0.289,
+            "zoom": 2.0
+          },
           "scene": "Library_08",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -331,8 +513,15 @@
           "id": "memory-locket-14",
           "label": "Memory Locket 14",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479204",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.108,
+            "y": 0.421,
+            "zoom": 2.0
+          },
           "scene": "Coral_23",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -343,8 +532,15 @@
           "id": "memory-locket-15",
           "label": "Memory Locket 15",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478039",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.584,
+            "y": 0.568,
+            "zoom": 2.0
+          },
           "scene": "Halfway_01",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -355,8 +551,15 @@
           "id": "memory-locket-16",
           "label": "Memory Locket 16",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479110",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.552,
+            "y": 0.214,
+            "zoom": 2.0
+          },
           "scene": "Arborium_05",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -367,8 +570,15 @@
           "id": "memory-locket-17",
           "label": "Memory Locket 17",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479017",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.293,
+            "y": 0.307,
+            "zoom": 2.0
+          },
           "scene": "Slab_Cell_Quiet",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -379,8 +589,15 @@
           "id": "memory-locket-18",
           "label": "Memory Locket 18",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478851",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.809,
+            "y": 0.345,
+            "zoom": 2.0
+          },
           "scene": "Shadow_27",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -391,8 +608,15 @@
           "id": "memory-locket-19",
           "label": "Memory Locket 19",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478212",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.435,
+            "y": 0.585,
+            "zoom": 2.0
+          },
           "scene": "Belltown",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -403,8 +627,15 @@
           "id": "memory-locket-20",
           "label": "Memory Locket 20",
           "link": "https://hollowknight.wiki/w/Memory_Locket",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479196",
+          "mapCategory": "memory-lockets",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.827,
+            "y": 0.635,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_25",
+          "showOnMap": true,
           "type": "sceneBool"
         }
       ],
@@ -422,8 +653,15 @@
           "id": "pale-oil-vaults",
           "label": "Vaults Pale Oil",
           "link": "https://hollowknight.wiki/w/Pale_Oil",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478668",
+          "mapCategory": "pale-oils",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.561,
+            "y": 0.289,
+            "zoom": 2.0
+          },
           "scene": "Library_03",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -435,7 +673,14 @@
           "id": "pale-oil-citadel",
           "label": "Citadel Pale Oil",
           "link": "https://hollowknight.wiki/w/Pale_Oil",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479233",
+          "mapCategory": "pale-oils",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.482,
+            "y": 0.291,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         },
         {
@@ -447,7 +692,14 @@
           "id": "pale-oil-flea-games",
           "label": "Flea Games Pale Oil",
           "link": "https://hollowknight.wiki/w/Pale_Oil",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479582",
+          "mapCategory": "pale-oils",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.858,
+            "y": 0.259,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "quest"
         }
       ],
@@ -465,7 +717,14 @@
           "id": "craftmetal-bonebottom",
           "label": "Craftmetal #1",
           "link": "https://hollowknight.wiki/w/Craftmetal",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477838",
+          "mapCategory": "craftmetals",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.235,
+            "y": 0.715,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -477,8 +736,15 @@
           "id": "craftmetal-bone-07",
           "label": "Craftmetal #2",
           "link": "https://hollowknight.wiki/w/Craftmetal",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477894",
+          "mapCategory": "craftmetals",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.398,
+            "y": 0.683,
+            "zoom": 2.0
+          },
           "scene": "Bone_07",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -490,8 +756,15 @@
           "id": "craftmetal-dock-03",
           "label": "Craftmetal #3",
           "link": "https://hollowknight.wiki/w/Craftmetal",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477937",
+          "mapCategory": "craftmetals",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.631,
+            "y": 0.752,
+            "zoom": 2.0
+          },
           "scene": "Dock_03",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -503,8 +776,15 @@
           "id": "craftmetal-coral-32",
           "label": "Craftmetal #4",
           "link": "https://hollowknight.wiki/w/Craftmetal",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478541",
+          "mapCategory": "craftmetals",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.251,
+            "y": 0.46,
+            "zoom": 2.0
+          },
           "scene": "Coral_32",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -516,7 +796,14 @@
           "id": "craftmetal-merchant-enclave",
           "label": "Craftmetal #5",
           "link": "https://hollowknight.wiki/w/Craftmetal",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479250",
+          "mapCategory": "craftmetals",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.605,
+            "y": 0.265,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -528,8 +815,15 @@
           "id": "craftmetal-wisp-05",
           "label": "Craftmetal #6",
           "link": "https://hollowknight.wiki/w/Craftmetal",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479157",
+          "mapCategory": "craftmetals",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.491,
+            "y": 0.473,
+            "zoom": 2.0
+          },
           "scene": "Wisp_05",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -541,8 +835,15 @@
           "id": "craftmetal-under-19b",
           "label": "Craftmetal #7",
           "link": "https://hollowknight.wiki/w/Craftmetal",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478711",
+          "mapCategory": "craftmetals",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.51,
+            "y": 0.448,
+            "zoom": 2.0
+          },
           "scene": "Under_19b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -554,8 +855,15 @@
           "id": "craftmetal-aqueduct-05",
           "label": "Craftmetal #8",
           "link": "https://hollowknight.wiki/w/Craftmetal",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479139",
+          "mapCategory": "craftmetals",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.92,
+            "y": 0.269,
+            "zoom": 2.0
+          },
           "scene": "Aqueduct_05",
+          "showOnMap": true,
           "type": "sceneBool"
         }
       ],
@@ -573,7 +881,14 @@
           "id": "lost-flea-1",
           "label": "Lost Flea #1",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477890",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.336,
+            "y": 0.639,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -585,7 +900,14 @@
           "id": "lost-flea-2",
           "label": "Lost Flea #2",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477907",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.481,
+            "y": 0.731,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -597,7 +919,14 @@
           "id": "lost-flea-3",
           "label": "Lost Flea #3",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477916",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.52,
+            "y": 0.688,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -609,7 +938,14 @@
           "id": "lost-flea-17",
           "label": "Lost Flea #4",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478437",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.656,
+            "y": 0.758,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -621,7 +957,14 @@
           "id": "lost-flea-5",
           "label": "Lost Flea #5",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477999",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.478,
+            "y": 0.66,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -633,7 +976,14 @@
           "id": "lost-flea-4",
           "label": "Lost Flea #6",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477940",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.667,
+            "y": 0.706,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -645,7 +995,14 @@
           "id": "lost-flea-9",
           "label": "Lost Flea #7",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478219",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.745,
+            "y": 0.679,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -657,7 +1014,14 @@
           "id": "lost-flea-14",
           "label": "Lost Flea #8",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478450",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.18,
+            "y": 0.657,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -669,7 +1033,14 @@
           "id": "lost-flea-6",
           "label": "Lost Flea #9",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478145",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.783,
+            "y": 0.556,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -681,7 +1052,14 @@
           "id": "lost-flea-7",
           "label": "Lost Flea #10",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478287",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.52,
+            "y": 0.54,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -693,7 +1071,14 @@
           "id": "lost-flea-29",
           "label": "Lost Flea #11 (Kratt)",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478271",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.632,
+            "y": 0.54,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -705,7 +1090,14 @@
           "id": "lost-flea-13",
           "label": "Lost Flea #12",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478193",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.419,
+            "y": 0.531,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -717,7 +1109,14 @@
           "id": "lost-flea-8",
           "label": "Lost Flea #13",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478176",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.309,
+            "y": 0.582,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -729,7 +1128,14 @@
           "id": "lost-flea-10",
           "label": "Lost Flea #14",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478386",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.176,
+            "y": 0.413,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -741,7 +1147,14 @@
           "id": "lost-flea-11",
           "label": "Lost Flea #15",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478360",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.729,
+            "y": 0.49,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -753,7 +1166,14 @@
           "id": "lost-flea-16",
           "label": "Lost Flea #16",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478443",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.775,
+            "y": 0.443,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -765,7 +1185,14 @@
           "id": "lost-flea-12",
           "label": "Lost Flea #17",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478378",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.61,
+            "y": 0.436,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -777,7 +1204,14 @@
           "id": "lost-flea-27",
           "label": "Lost Flea #18",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478408",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.8,
+            "y": 0.31,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -789,7 +1223,14 @@
           "id": "lost-flea-18",
           "label": "Lost Flea #19",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478419",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.419,
+            "y": 0.461,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -801,7 +1242,14 @@
           "id": "lost-flea-26",
           "label": "Lost Flea #20",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478420",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.471,
+            "y": 0.456,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -813,7 +1261,14 @@
           "id": "lost-flea-20",
           "label": "Lost Flea #21",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478398",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.424,
+            "y": 0.285,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -825,7 +1280,14 @@
           "id": "lost-flea-24",
           "label": "Lost Flea #22",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478416",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.444,
+            "y": 0.26,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -837,7 +1299,14 @@
           "id": "lost-flea-19",
           "label": "Lost Flea #23",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478404",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.67,
+            "y": 0.241,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -849,7 +1318,14 @@
           "id": "lost-flea-28",
           "label": "Lost Flea #24 (Huge Flea)",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478413",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.559,
+            "y": 0.17,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -861,7 +1337,14 @@
           "id": "lost-flea-15",
           "label": "Lost Flea #25",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478393",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.26,
+            "y": 0.283,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -873,7 +1356,14 @@
           "id": "lost-flea-27",
           "label": "Lost Flea #26",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478392",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.274,
+            "y": 0.324,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -885,7 +1375,14 @@
           "id": "lost-flea-22",
           "label": "Lost Flea #27",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478380",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.146,
+            "y": 0.238,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -897,7 +1394,14 @@
           "id": "lost-flea-21",
           "label": "Lost Flea #28",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478385",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.193,
+            "y": 0.395,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -909,7 +1413,14 @@
           "id": "lost-flea-30",
           "label": "Lost Flea #29 (Vog)",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479138",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.758,
+            "y": 0.213,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -921,7 +1432,14 @@
           "id": "lost-flea-25",
           "label": "Lost Flea #30",
           "link": "https://hollowknight.wiki/w/Flea",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478402",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.607,
+            "y": 0.28,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         }
       ],
