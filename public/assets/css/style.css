@@ -2409,9 +2409,9 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 #modeBanner {
-  position: absolute;
-  top: 9px;
-  left: 14px;
+  position: relative;
+  top: auto;
+  left: auto;
   background: #181715;
   border: 2px solid #8a6a3a;
   color: #d7b98a;
@@ -2456,6 +2456,33 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 #modeBanner:empty {
+  display: none;
+}
+
+.mode-banner-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 9px;
+  left: 14px;
+  height: fit-content;
+}
+
+#saveDateValue {
+  background: #181715;
+  color: #b8997a;
+  font-family: "TrajanPro", serif;
+  font-size: 12px;
+  font-weight: normal;
+  z-index: -1;
+  white-space: nowrap;
+  pointer-events: none;
+  display: inline-block;
+  width: auto;
+}
+
+#saveDateValue.hidden {
   display: none;
 }
 

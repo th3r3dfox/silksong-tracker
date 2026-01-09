@@ -46,6 +46,7 @@ export const fileInput = getHTMLInputElement("fileInput");
 export const infoOverlay = getHTMLElement("info-overlay");
 export const infoContent = getHTMLElement("info-content");
 export const modeBanner = getHTMLElement("modeBanner");
+export const saveDateValue = getHTMLElement("saveDateValue");
 export const playtimeValue = getHTMLElement("playtimeValue");
 export const rosariesValue = getHTMLElement("rosariesValue");
 export const shardsValue = getHTMLElement("shardsValue");
