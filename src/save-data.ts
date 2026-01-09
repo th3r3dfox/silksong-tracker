@@ -441,7 +441,8 @@ function processSaveData(
   rosariesValue.textContent = saveData.playerData.geo.toString();
   shardsValue.textContent = saveData.playerData.ShellShards.toString();
 
-  const isSteelSoul = ([1, 2, 3, "On", "Dead"] as Array<string | number | undefined>
+  const isSteelSoul = (
+    [1, 2, 3, "On", "Dead"] as Array<string | number | undefined>
   ).includes(saveData.playerData.permadeathMode);
   currentLoadedSaveDataMode = isSteelSoul ? "steel" : "normal";
 
