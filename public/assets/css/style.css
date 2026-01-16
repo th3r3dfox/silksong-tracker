@@ -45,6 +45,13 @@ main {
   --stroke-soft: #242527;
   --accent: #c56a2d;
 
+  --plasmium: #59ebff;
+  --plasmium-border: #18426b;
+  --plasmium-highlight: #7ad6f6;
+  --plasmium-highlight-2: #90e4ff;
+  --plasmium-lowlight: #3b9ac1;
+  --plasmium-glow: #d8faff;
+
   --radius-lg: 12px;
   --radius-sm: 10px;
 
@@ -356,20 +363,26 @@ main a:hover,
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: #fff;
-  border: none;
+  cursor: pointer;
+  background: var(--plasmium-highlight);
+  border: 1px solid var(--plasmium-border);
+  color: var(--plasmium-border);
   padding: 8px 14px;
   border-radius: 8px;
   font-weight: 600;
+  box-shadow:
+    0 0 6px 2px var(--plasmium-glow),
+    inset -4px -4px 3px 0px var(--plasmium-lowlight);
   transition:
     background 0.25s ease,
     box-shadow 0.25s ease;
 }
 
 .btn-primary:hover {
-  background: #a95b22; /* deeper version */
-  box-shadow: 0 0 12px rgba(197, 106, 45, 0.4);
+  background: var(--plasmium-highlight-2);
+  box-shadow:
+    0 0 12px 4px var(--plasmium-glow),
+    inset -2px -2px 3px 0px var(--plasmium-lowlight);
 }
 
 /* ------------------
