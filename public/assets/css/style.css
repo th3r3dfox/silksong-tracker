@@ -2469,21 +2469,30 @@ main::-webkit-scrollbar-thumb:hover {
   height: fit-content;
 }
 
-#saveDateValue {
+#saveDateContainer {
   background: #181715;
   color: #b8997a;
-  font-family: "TrajanPro", serif;
-  font-size: 12px;
-  font-weight: normal;
-  z-index: -1;
+  z-index: 1;
   white-space: nowrap;
-  pointer-events: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   width: auto;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  gap: 4px;
 }
 
-#saveDateValue.hidden {
+#saveDateValue {
+  font-size: 11px;
+}
+
+#saveDateContainer.hidden {
   display: none;
+}
+.steel + #saveDateContainer {
+  color: #ccd5dbce;
 }
 
 .category-header {

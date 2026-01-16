@@ -5,6 +5,7 @@ import {
   modeBanner,
   playtimeValue,
   rosariesValue,
+  saveDateContainer,
   saveDateValue,
   shardsValue,
   uploadOverlay,
@@ -392,7 +393,7 @@ export function clearAllData(): void {
 
   modeBanner.classList.add("hidden");
   modeBanner.innerHTML = "";
-  saveDateValue.classList.add("hidden");
+  saveDateContainer.classList.add("hidden");
   saveDateValue.textContent = "";
   completionValue.textContent = "0%";
   playtimeValue.textContent = "0h 00m";
@@ -441,8 +442,7 @@ function processSaveData(
   rosariesValue.textContent = saveData.playerData.geo.toString();
   shardsValue.textContent = saveData.playerData.ShellShards.toString();
 
-  const isSteelSoul = ([1, 2, 3, "On", "Dead"] as Array<string | number | undefined>
-  ).includes(saveData.playerData.permadeathMode);
+  const isSteelSoul = ([1, 2, 3, "On", "Dead"] as Array<string | number | undefined>).includes(saveData.playerData.permadeathMode);
   currentLoadedSaveDataMode = isSteelSoul ? "steel" : "normal";
 
   modeBanner.innerHTML = isSteelSoul
@@ -452,8 +452,13 @@ function processSaveData(
   modeBanner.classList.toggle("steel", isSteelSoul);
 
   const saveDate = saveData.playerData.date;
-  saveDateValue.textContent = `save date: ${saveDate}`;
-  saveDateValue.classList.remove("hidden");
+  const formattedSaveDate = new Date(saveDate).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  })
+  saveDateValue.textContent = formattedSaveDate;
+  saveDateContainer.classList.remove("hidden");
 
   renderActiveTab();
   globalThis.dispatchEvent(new Event("save-data-changed"));
