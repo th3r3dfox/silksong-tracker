@@ -683,7 +683,7 @@
       "items": [
         {
           "act": 3,
-          "description": "Given by the Hunter upon mastering his trials.",
+          "description": "Given by Nuu after completing most of the entries in the Hunter's Journal.",
           "flag": "Hunter Memento",
           "icon": "completion/Memento_Hunters.png",
           "id": "memento-hunter",
@@ -693,7 +693,7 @@
         },
         {
           "act": 3,
-          "description": "Received from Grey after completing her personal quest.",
+          "description": "Dropped by Watcher at the Edge after defeating them in combat.",
           "flag": "Grey Memento",
           "icon": "completion/Memento_Grey.png",
           "id": "memento-grey",
@@ -723,7 +723,7 @@
         },
         {
           "act": 3,
-          "description": "A keepsake found upon aiding Craw, a relic of quiet gratitude.",
+          "description": "Awarded after defeating Crawfather in the Court of Craws.",
           "flag": "Crowman Memento",
           "icon": "completion/Memento_Craw.png",
           "id": "memento-craw",
@@ -743,7 +743,7 @@
         },
         {
           "act": 3,
-          "description": "Awarded by Garmond - a symbol of perseverance through peril.",
+          "description": "Found at the far east corner of the Nameless Town.",
           "flag": "Memento Surface",
           "icon": "completion/Memento_Surface.png",
           "id": "memento-surface",
