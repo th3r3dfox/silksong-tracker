@@ -2181,7 +2181,6 @@
           "id": "misc-materium",
           "label": "Materium",
           "link": "https://hollowknight.wiki/w/Materium",
-          "relatedFlag": "ConstructedMaterium",
           "mapCategory": "needle",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
@@ -2189,6 +2188,7 @@
             "y": 0.0,
             "zoom": 2.0
           },
+          "relatedFlag": "ConstructedMaterium",
           "scene": "Arborium_07",
           "showOnMap": true,
           "type": "device"
@@ -2201,7 +2201,6 @@
           "id": "misc-farsight",
           "label": "Farsight",
           "link": "https://hollowknight.wiki/w/Farsight",
-          "relatedFlag": "ConstructedFarsight",
           "mapCategory": "needle",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
@@ -2209,6 +2208,7 @@
             "y": 0.0,
             "zoom": 2.0
           },
+          "relatedFlag": "ConstructedFarsight",
           "scene": "Abyss_08",
           "showOnMap": true,
           "type": "device"
