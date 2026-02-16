@@ -5,8 +5,6 @@ import {
   modeBanner,
   playtimeValue,
   rosariesValue,
-  saveDateContainer,
-  saveDateValue,
   shardsValue,
   uploadOverlay,
 } from "./elements.ts";
@@ -21,8 +19,6 @@ import {
   normalizeStringWithUnderscores,
   showToast,
 } from "./utils.ts";
-
-const LOCAL_STORAGE_SAVE_KEY = "silksong-tracker-save-data";
 
 let currentLoadedSaveData: SilksongSave | undefined;
 let currentLoadedSaveDataMode: Mode = "normal";
@@ -70,8 +66,30 @@ export async function handleSaveFile(file: File | undefined): Promise<void> {
       return;
     }
 
-    saveToLocalStorage(saveDataRaw);
-    processSaveData(saveDataRaw as unknown as SilksongSave, saveData);
+    currentLoadedSaveData = saveDataRaw as unknown as SilksongSave;
+    currentLoadedSaveDataFlags = getSaveFileFlags(saveDataRaw);
+
+    completionValue.textContent = `${saveData.playerData.completionPercentage}%`;
+    const seconds = saveData.playerData.playTime;
+    const hours = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    playtimeValue.textContent = `${hours}h ${mins}m`;
+    rosariesValue.textContent = saveData.playerData.geo.toString();
+    shardsValue.textContent = saveData.playerData.ShellShards.toString();
+
+    const isSteelSoul = (
+      [1, 2, 3, "On", "Dead"] as Array<string | number | undefined>
+    ).includes(saveData.playerData.permadeathMode);
+    currentLoadedSaveDataMode = isSteelSoul ? "steel" : "normal";
+
+    modeBanner.innerHTML = isSteelSoul
+      ? `<img src="${BASE_PATH}/assets/icons/Steel_Soul_Icon.png" alt="Steel Soul" class="mode-icon"> STEEL SOUL SAVE LOADED`
+      : "NORMAL SAVE LOADED";
+    modeBanner.classList.remove("hidden");
+    modeBanner.classList.toggle("steel", isSteelSoul);
+
+    renderActiveTab();
+    globalThis.dispatchEvent(new Event("save-data-changed"));
 
     if (scrollContainer) {
       requestAnimationFrame(() => {
@@ -393,14 +411,10 @@ export function clearAllData(): void {
 
   modeBanner.classList.add("hidden");
   modeBanner.innerHTML = "";
-  saveDateContainer.classList.add("hidden");
-  saveDateValue.textContent = "";
   completionValue.textContent = "0%";
   playtimeValue.textContent = "0h 00m";
   rosariesValue.textContent = "0";
   shardsValue.textContent = "0";
-
-  localStorage.removeItem(LOCAL_STORAGE_SAVE_KEY);
 
   const fileInput = document.querySelector<HTMLInputElement>("#fileInput");
   if (fileInput) {
@@ -416,86 +430,4 @@ export function clearAllData(): void {
   }
 
   showToast("Data cleared.");
-}
-
-function saveToLocalStorage(saveDataRaw: unknown) {
-  try {
-    const saveDataString = JSON.stringify(saveDataRaw);
-    localStorage.setItem(LOCAL_STORAGE_SAVE_KEY, saveDataString);
-  } catch (error) {
-    console.error("Failed to save to localStorage:", error);
-  }
-}
-
-function processSaveData(
-  saveDataRaw: SilksongSave,
-  saveData: Exclude<Awaited<ReturnType<typeof parseSilksongSave>>, undefined>,
-) {
-  currentLoadedSaveData = saveDataRaw;
-  currentLoadedSaveDataFlags = getSaveFileFlags(saveDataRaw);
-
-  completionValue.textContent = `${saveData.playerData.completionPercentage}%`;
-  const seconds = saveData.playerData.playTime;
-  const hours = Math.floor(seconds / 3600);
-  const mins = Math.floor((seconds % 3600) / 60);
-  playtimeValue.textContent = `${hours}h ${mins}m`;
-  rosariesValue.textContent = saveData.playerData.geo.toString();
-  shardsValue.textContent = saveData.playerData.ShellShards.toString();
-
-  const isSteelSoul = (
-    [1, 2, 3, "On", "Dead"] as Array<string | number | undefined>
-  ).includes(saveData.playerData.permadeathMode);
-  currentLoadedSaveDataMode = isSteelSoul ? "steel" : "normal";
-
-  modeBanner.innerHTML = isSteelSoul
-    ? `<img src="${BASE_PATH}/assets/icons/Steel_Soul_Icon.png" alt="Steel Soul" class="mode-icon"> STEEL SOUL SAVE LOADED`
-    : "NORMAL SAVE LOADED";
-  modeBanner.classList.remove("hidden");
-  modeBanner.classList.toggle("steel", isSteelSoul);
-
-  const saveDate = saveData.playerData.date;
-  const formattedSaveDate = new Date(saveDate).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-  saveDateValue.textContent = formattedSaveDate;
-  saveDateContainer.classList.remove("hidden");
-
-  renderActiveTab();
-  globalThis.dispatchEvent(new Event("save-data-changed"));
-}
-
-function loadFromLocalStorage(): unknown {
-  try {
-    const saveDataString = localStorage.getItem(LOCAL_STORAGE_SAVE_KEY);
-    if (saveDataString === null) {
-      return undefined;
-    }
-    return JSON.parse(saveDataString);
-  } catch (error) {
-    console.error("Failed to load from localStorage:", error);
-    return undefined;
-  }
-}
-
-export async function loadSavedDataOnMount(): Promise<void> {
-  const savedData = loadFromLocalStorage();
-  if (savedData === undefined) {
-    return;
-  }
-
-  try {
-    assertObject(savedData, "Invalid saved data in localStorage.");
-
-    const saveData = await parseSilksongSave(savedData);
-    if (saveData === undefined) {
-      console.warn("Failed to parse saved data from localStorage");
-      return;
-    }
-
-    processSaveData(savedData as unknown as SilksongSave, saveData);
-  } catch (error) {
-    console.error("Error loading saved data from localStorage:", error);
-  }
 }
