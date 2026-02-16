@@ -45,6 +45,13 @@ main {
   --stroke-soft: #242527;
   --accent: #c56a2d;
 
+  --plasmium: #59ebff;
+  --plasmium-border: #18426b;
+  --plasmium-highlight: #7ad6f6;
+  --plasmium-highlight-2: #90e4ff;
+  --plasmium-lowlight: #3b9ac1;
+  --plasmium-glow: #d8faff;
+
   --radius-lg: 12px;
   --radius-sm: 10px;
 
@@ -356,20 +363,26 @@ main a:hover,
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: #fff;
-  border: none;
+  cursor: pointer;
+  background: var(--plasmium-highlight);
+  border: 1px solid var(--plasmium-border);
+  color: var(--plasmium-border);
   padding: 8px 14px;
   border-radius: 8px;
   font-weight: 600;
+  box-shadow:
+    0 0 6px 2px var(--plasmium-glow),
+    inset -4px -4px 3px 0px var(--plasmium-lowlight);
   transition:
     background 0.25s ease,
     box-shadow 0.25s ease;
 }
 
 .btn-primary:hover {
-  background: #a95b22; /* deeper version */
-  box-shadow: 0 0 12px rgba(197, 106, 45, 0.4);
+  background: var(--plasmium-highlight-2);
+  box-shadow:
+    0 0 12px 4px var(--plasmium-glow),
+    inset -2px -2px 3px 0px var(--plasmium-lowlight);
 }
 
 /* ------------------
@@ -2409,9 +2422,9 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 #modeBanner {
-  position: absolute;
-  top: 9px;
-  left: 14px;
+  position: relative;
+  top: auto;
+  left: auto;
   background: #181715;
   border: 2px solid #8a6a3a;
   color: #d7b98a;
@@ -2457,6 +2470,42 @@ main::-webkit-scrollbar-thumb:hover {
 
 #modeBanner:empty {
   display: none;
+}
+
+.mode-banner-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 9px;
+  left: 14px;
+  height: fit-content;
+}
+
+#saveDateContainer {
+  background: #181715;
+  color: #b8997a;
+  z-index: 1;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  gap: 4px;
+}
+
+#saveDateValue {
+  font-size: 11px;
+}
+
+#saveDateContainer.hidden {
+  display: none;
+}
+.steel + #saveDateContainer {
+  color: #ccd5dbce;
 }
 
 .category-header {
