@@ -442,7 +442,9 @@ function processSaveData(
   rosariesValue.textContent = saveData.playerData.geo.toString();
   shardsValue.textContent = saveData.playerData.ShellShards.toString();
 
-  const isSteelSoul = ([1, 2, 3, "On", "Dead"] as Array<string | number | undefined>).includes(saveData.playerData.permadeathMode);
+  const isSteelSoul = (
+    [1, 2, 3, "On", "Dead"] as Array<string | number | undefined>
+  ).includes(saveData.playerData.permadeathMode);
   currentLoadedSaveDataMode = isSteelSoul ? "steel" : "normal";
 
   modeBanner.innerHTML = isSteelSoul
@@ -456,7 +458,7 @@ function processSaveData(
     year: "numeric",
     month: "short",
     day: "numeric",
-  })
+  });
   saveDateValue.textContent = formattedSaveDate;
   saveDateContainer.classList.remove("hidden");
 
