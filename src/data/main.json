@@ -1906,7 +1906,7 @@
           "type": "tool"
         },
         {
-          "act": 3,
+          "act": 2,
           "description": "Bring 4 additional Mossberries to Moss Druid after completing the Berry Picking wish. Replaces the Druid's Eye.",
           "flag": "Mosscreep Tool 2",
           "icon": "icons/Druid's_Eyes.png",
