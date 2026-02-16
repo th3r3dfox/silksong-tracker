@@ -1205,7 +1205,6 @@
           "id": "Silkeater-1",
           "label": "Silkeater #1",
           "link": "https://hollowknight.wiki/w/Silkeater",
-          "missable": true,
           "mapCategory": "silkeater",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
@@ -1213,6 +1212,7 @@
             "y": 0.516,
             "zoom": 2.0
           },
+          "missable": true,
           "scene": "Greymoor_04",
           "showOnMap": true,
           "type": "sceneBool"
@@ -1225,7 +1225,6 @@
           "id": "Silkeater-2",
           "label": "Silkeater #2",
           "link": "https://hollowknight.wiki/w/Silkeater",
-          "missable": true,
           "mapCategory": "silkeater",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
@@ -1233,6 +1232,7 @@
             "y": 0.793,
             "zoom": 2.0
           },
+          "missable": true,
           "scene": "Dock_14",
           "showOnMap": true,
           "type": "sceneBool"
@@ -1245,7 +1245,6 @@
           "id": "Silkeater-3",
           "label": "Silkeater #3",
           "link": "https://hollowknight.wiki/w/Silkeater",
-          "missable": true,
           "mapCategory": "silkeater",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
@@ -1253,6 +1252,7 @@
             "y": 0.447,
             "zoom": 2.0
           },
+          "missable": true,
           "scene": "Organ_01",
           "showOnMap": true,
           "type": "sceneBool"
@@ -1265,7 +1265,6 @@
           "id": "Silkeater-4",
           "label": "Silkeater #4",
           "link": "https://hollowknight.wiki/w/Silkeater",
-          "missable": true,
           "mapCategory": "silkeater",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
@@ -1273,6 +1272,7 @@
             "y": 0.354,
             "zoom": 2.0
           },
+          "missable": true,
           "scene": "Ward_04",
           "showOnMap": true,
           "type": "sceneBool"
@@ -1285,7 +1285,6 @@
           "id": "Silkeater-5",
           "label": "Silkeater #5",
           "link": "https://hollowknight.wiki/w/Silkeater",
-          "missable": true,
           "mapCategory": "silkeater",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
@@ -1293,6 +1292,7 @@
             "y": 0.35,
             "zoom": 2.0
           },
+          "missable": true,
           "scene": "Song_24",
           "showOnMap": true,
           "type": "sceneBool"
@@ -1305,7 +1305,6 @@
           "id": "Silkeater-6",
           "label": "Silkeater #6",
           "link": "https://hollowknight.wiki/w/Silkeater",
-          "missable": true,
           "mapCategory": "silkeater",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
@@ -1313,6 +1312,7 @@
             "y": 0.292,
             "zoom": 2.0
           },
+          "missable": true,
           "scene": "Song_09b",
           "showOnMap": true,
           "type": "sceneBool"
@@ -1325,7 +1325,6 @@
           "id": "Silkeater-7",
           "label": "Silkeater #7",
           "link": "https://hollowknight.wiki/w/Silkeater",
-          "missable": true,
           "mapCategory": "silkeater",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
@@ -1333,6 +1332,7 @@
             "y": 0.285,
             "zoom": 2.0
           },
+          "missable": true,
           "scene": "Library_14",
           "showOnMap": true,
           "type": "sceneBool"
@@ -1345,7 +1345,6 @@
           "id": "Silkeater-8",
           "label": "Silkeater #8",
           "link": "https://hollowknight.wiki/w/Silkeater",
-          "missable": true,
           "mapCategory": "silkeater",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
@@ -1353,6 +1352,7 @@
             "y": 0.135,
             "zoom": 2.0
           },
+          "missable": true,
           "scene": "Tube_Hub",
           "showOnMap": true,
           "type": "sceneBool"
@@ -1365,8 +1365,6 @@
           "id": "Silkeater-9",
           "label": "Silkeater #9",
           "link": "https://hollowknight.wiki/w/Silkeater",
-          "missable": true,
-          "mode": "normal",
           "mapCategory": "silkeater",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
@@ -1374,6 +1372,8 @@
             "y": 0.507,
             "zoom": 2.0
           },
+          "missable": true,
+          "mode": "normal",
           "scene": "Coral_37",
           "showOnMap": true,
           "type": "sceneBool"
