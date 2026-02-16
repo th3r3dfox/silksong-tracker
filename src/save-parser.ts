@@ -36,7 +36,6 @@ const silksongSaveSchema = z.object({
       MateriumCollected: objectWithSavedData,
       MementosDeposited: objectWithSavedData,
       geo: z.int(),
-      date: z.string(),
       permadeathMode: z
         .union([
           z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]), // num

@@ -12,7 +12,15 @@
           "id": "choral-commandment-1",
           "label": "Choral Commandment 1",
           "link": "https://hollowknight.wiki/w/Choral_Commandment",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.221,
+            "y": 0.659,
+            "zoom": 2.0
+          },
           "scene": "Mosshome",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -23,7 +31,15 @@
           "id": "choral-commandment-2",
           "label": "Choral Commandment 2",
           "link": "https://hollowknight.wiki/w/Choral_Commandment",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.434,
+            "y": 0.362,
+            "zoom": 2.0
+          },
           "scene": "Whiteward",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -34,7 +50,15 @@
           "id": "choral-commandment-3",
           "label": "Choral Commandment 3",
           "link": "https://hollowknight.wiki/w/Choral_Commandment",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.524,
+            "y": 0.35,
+            "zoom": 2.0
+          },
           "scene": "Whiteward",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -45,7 +69,15 @@
           "id": "choral-commandment-4",
           "label": "Choral Commandment 4",
           "link": "https://hollowknight.wiki/w/Choral_Commandment",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.617,
+            "y": 0.255,
+            "zoom": 2.0
+          },
           "scene": "Songclave",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -56,7 +88,15 @@
           "id": "weaver-effigy-1",
           "label": "Weaver Effigy 1",
           "link": "https://hollowknight.wiki/w/Weaver_Effigy",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.204,
+            "y": 0.696,
+            "zoom": 2.0
+          },
           "scene": "Bonetown_upper_room",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -67,7 +107,15 @@
           "id": "weaver-effigy-2",
           "label": "Weaver Effigy 2",
           "link": "https://hollowknight.wiki/w/Weaver_Effigy",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.393,
+            "y": 0.615,
+            "zoom": 2.0
+          },
           "scene": "Shellwood_Witch_Tunnel",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -78,7 +126,15 @@
           "id": "weaver-effigy-3",
           "label": "Weaver Effigy 3",
           "link": "https://hollowknight.wiki/w/Weaver_Effigy",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.315,
+            "y": 0.345,
+            "zoom": 2.0
+          },
           "scene": "Slab_Bottom",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -89,7 +145,15 @@
           "id": "bone-scroll-1",
           "label": "Bone Scroll 1",
           "link": "https://hollowknight.wiki/w/Bone_Scroll",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.647,
+            "y": 0.581,
+            "zoom": 2.0
+          },
           "scene": "Greymoor_flooded_corridor",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -100,7 +164,15 @@
           "id": "bone-scroll-2",
           "label": "Bone Scroll 2",
           "link": "https://hollowknight.wiki/w/Bone_Scroll",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.777,
+            "y": 0.75,
+            "zoom": 2.0
+          },
           "scene": "Bone_East_14",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -111,7 +183,15 @@
           "id": "bone-scroll-3",
           "label": "Bone Scroll 3",
           "link": "https://hollowknight.wiki/w/Bone_Scroll",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.371,
+            "y": 0.448,
+            "zoom": 2.0
+          },
           "scene": "Understore_Map_Room",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -122,7 +202,15 @@
           "id": "bone-scroll-4",
           "label": "Bone Scroll 4",
           "link": "https://hollowknight.wiki/w/Bone_Scroll",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.54,
+            "y": 0.468,
+            "zoom": 2.0
+          },
           "scene": "Wisp_Top",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -133,7 +221,15 @@
           "id": "rune-harp-1",
           "label": "Rune Harp 1",
           "link": "https://hollowknight.wiki/w/Rune_Harp",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.31,
+            "y": 0.75,
+            "zoom": 2.0
+          },
           "scene": "Weave_08",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -144,7 +240,15 @@
           "id": "rune-harp-2",
           "label": "Rune Harp 2",
           "link": "https://hollowknight.wiki/w/Rune_Harp",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.87,
+            "y": 0.768,
+            "zoom": 2.0
+          },
           "scene": "Sprint_Challenge",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -155,7 +259,15 @@
           "id": "rune-harp-3",
           "label": "Rune Harp 3",
           "link": "https://hollowknight.wiki/w/Rune_Harp",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.409,
+            "y": 0.237,
+            "zoom": 2.0
+          },
           "scene": "Conductor",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -166,7 +278,15 @@
           "id": "arcane-egg",
           "label": "Arcane Egg",
           "link": "https://hollowknight.wiki/w/Arcane_Egg_(Silksong)",
+          "mapCategory": "relics",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.475,
+            "y": 0.916,
+            "zoom": 2.0
+          },
           "scene": "Abyss_Middle",
+          "showOnMap": true,
           "type": "relic"
         }
       ],
@@ -183,6 +303,14 @@
           "id": "psalm-cylinder-grindle",
           "label": "Psalm Cylinder - Grindle",
           "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "mapCategory": "cylinder",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.164,
+            "y": 0.438,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -193,6 +321,14 @@
           "id": "psalm-cylinder-vaultkeeper",
           "label": "Psalm Cylinder - Vaultkeeper Cardinius Lair",
           "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "mapCategory": "cylinder",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.657,
+            "y": 0.289,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -203,7 +339,15 @@
           "id": "psalm-cylinder-vaults",
           "label": "Psalm Cylinder - Whispering Vaults",
           "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "mapCategory": "cylinder",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.639,
+            "y": 0.273,
+            "zoom": 2.0
+          },
           "scene": "Library_Roof",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -214,7 +358,15 @@
           "id": "psalm-cylinder-high-halls",
           "label": "Psalm Cylinder - High Halls",
           "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "mapCategory": "cylinder",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.457,
+            "y": 0.213,
+            "zoom": 2.0
+          },
           "scene": "Hang",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -225,7 +377,15 @@
           "id": "psalm-cylinder-underworks",
           "label": "Psalm Cylinder - Underworks",
           "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "mapCategory": "cylinder",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.43,
+            "y": 0.405,
+            "zoom": 2.0
+          },
           "scene": "Ward",
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -236,6 +396,14 @@
           "id": "sacred-cylinder",
           "label": "Sacred Cylinder",
           "link": "https://hollowknight.wiki/w/Psalm_Cylinder",
+          "mapCategory": "cylinder",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.637,
+            "y": 0.347,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic"
         }
       ],
@@ -689,6 +857,14 @@
           "id": "memento-hunter",
           "label": "Hunter's Memento",
           "link": "https://hollowknight.wiki/w/Hunter's_Memento",
+          "mapCategory": "memento",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.588,
+            "y": 0.561,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -699,6 +875,14 @@
           "id": "memento-grey",
           "label": "Grey Memento",
           "link": "https://hollowknight.wiki/w/Grey_Memento",
+          "mapCategory": "memento",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.083,
+            "y": 0.407,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -709,6 +893,14 @@
           "id": "memento-guardian",
           "label": "Guardian's Memento",
           "link": "https://hollowknight.wiki/w/Guardian's_Memento",
+          "mapCategory": "memento",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.852,
+            "y": 0.267,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -719,6 +911,14 @@
           "id": "memento-sprintmaster",
           "label": "Sprintmaster Memento",
           "link": "https://hollowknight.wiki/w/Sprintmaster_Memento",
+          "mapCategory": "memento",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.878,
+            "y": 0.662,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -729,6 +929,14 @@
           "id": "memento-craw",
           "label": "Craw Memento",
           "link": "https://hollowknight.wiki/w/Craw_Memento",
+          "mapCategory": "memento",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.776,
+            "y": 0.59,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -739,6 +947,14 @@
           "id": "memento-heros",
           "label": "Hero's Memento",
           "link": "https://hollowknight.wiki/w/Hero's_Memento",
+          "mapCategory": "memento",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.132,
+            "y": 0.458,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -749,6 +965,14 @@
           "id": "memento-surface",
           "label": "Surface Memento",
           "link": "https://hollowknight.wiki/w/Surface_Memento",
+          "mapCategory": "memento",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.507,
+            "y": 0.028,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic"
         },
         {
@@ -760,7 +984,14 @@
           "id": "flower-heart",
           "label": "Pollen Heart",
           "link": "https://hollowknight.wiki/w/Pollen_Heart",
-
+          "mapCategory": "memento",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.257,
+            "y": 0.479,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic",
           "unobtainable": true
         },
@@ -773,6 +1004,14 @@
           "id": "coral-heart",
           "label": "Encrusted Heart",
           "link": "https://hollowknight.wiki/w/Encrusted_Heart",
+          "mapCategory": "memento",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.095,
+            "y": 0.34,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic",
           "unobtainable": true
         },
@@ -785,6 +1024,14 @@
           "id": "hunter-heart",
           "label": "Hunter's Heart",
           "link": "https://hollowknight.wiki/w/Hunter's_Heart",
+          "mapCategory": "memento",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.797,
+            "y": 0.627,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic",
           "unobtainable": true
         },
@@ -797,6 +1044,14 @@
           "id": "clover-heart",
           "label": "Conjoined Heart",
           "link": "https://hollowknight.wiki/w/Conjoined_Heart",
+          "mapCategory": "memento",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.886,
+            "y": 0.51,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "relic",
           "unobtainable": true
         }
@@ -814,7 +1069,15 @@
           "id": "mossberry-1",
           "label": "Mossberry #1",
           "link": "https://hollowknight.wiki/w/Mossberry",
+          "mapCategory": "mossberry",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.195,
+            "y": 0.757,
+            "zoom": 2.0
+          },
           "scene": "Tut_02",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -825,7 +1088,15 @@
           "id": "mossberry-2",
           "label": "Mossberry #2",
           "link": "https://hollowknight.wiki/w/Mossberry",
+          "mapCategory": "mossberry",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.229,
+            "y": 0.739,
+            "zoom": 2.0
+          },
           "scene": "Tut_01b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -836,6 +1107,14 @@
           "id": "mossberry-3",
           "label": "Mossberry #3",
           "link": "https://hollowknight.wiki/w/Mossberry",
+          "mapCategory": "mossberry",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.242,
+            "y": 0.699,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -846,6 +1125,14 @@
           "id": "mossberry-4",
           "label": "Mossberry #4",
           "link": "https://hollowknight.wiki/w/Mossberry",
+          "mapCategory": "mossberry",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.283,
+            "y": 0.664,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -856,6 +1143,14 @@
           "id": "mossberry-5",
           "label": "Mossberry #5",
           "link": "https://hollowknight.wiki/w/Mossberry",
+          "mapCategory": "mossberry",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.132,
+            "y": 0.715,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -866,7 +1161,15 @@
           "id": "mossberry-6",
           "label": "Mossberry #6",
           "link": "https://hollowknight.wiki/w/Mossberry",
+          "mapCategory": "mossberry",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.219,
+            "y": 0.78,
+            "zoom": 2.0
+          },
           "scene": "Weave_03",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -877,7 +1180,15 @@
           "id": "mossberry-7",
           "label": "Mossberry #7",
           "link": "https://hollowknight.wiki/w/Mossberry",
+          "mapCategory": "mossberry",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.573,
+            "y": 0.234,
+            "zoom": 2.0
+          },
           "scene": "Arborium_04",
+          "showOnMap": true,
           "type": "sceneBool"
         }
       ],
@@ -895,7 +1206,15 @@
           "label": "Silkeater #1",
           "link": "https://hollowknight.wiki/w/Silkeater",
           "missable": true,
+          "mapCategory": "silkeater",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.565,
+            "y": 0.516,
+            "zoom": 2.0
+          },
           "scene": "Greymoor_04",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -907,7 +1226,15 @@
           "label": "Silkeater #2",
           "link": "https://hollowknight.wiki/w/Silkeater",
           "missable": true,
+          "mapCategory": "silkeater",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.544,
+            "y": 0.793,
+            "zoom": 2.0
+          },
           "scene": "Dock_14",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -919,7 +1246,15 @@
           "label": "Silkeater #3",
           "link": "https://hollowknight.wiki/w/Silkeater",
           "missable": true,
+          "mapCategory": "silkeater",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.637,
+            "y": 0.447,
+            "zoom": 2.0
+          },
           "scene": "Organ_01",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -931,7 +1266,15 @@
           "label": "Silkeater #4",
           "link": "https://hollowknight.wiki/w/Silkeater",
           "missable": true,
+          "mapCategory": "silkeater",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.496,
+            "y": 0.354,
+            "zoom": 2.0
+          },
           "scene": "Ward_04",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -943,7 +1286,15 @@
           "label": "Silkeater #5",
           "link": "https://hollowknight.wiki/w/Silkeater",
           "missable": true,
+          "mapCategory": "silkeater",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.541,
+            "y": 0.35,
+            "zoom": 2.0
+          },
           "scene": "Song_24",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -955,7 +1306,15 @@
           "label": "Silkeater #6",
           "link": "https://hollowknight.wiki/w/Silkeater",
           "missable": true,
+          "mapCategory": "silkeater",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.492,
+            "y": 0.292,
+            "zoom": 2.0
+          },
           "scene": "Song_09b",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -967,7 +1326,15 @@
           "label": "Silkeater #7",
           "link": "https://hollowknight.wiki/w/Silkeater",
           "missable": true,
+          "mapCategory": "silkeater",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.645,
+            "y": 0.285,
+            "zoom": 2.0
+          },
           "scene": "Library_14",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -979,7 +1346,15 @@
           "label": "Silkeater #8",
           "link": "https://hollowknight.wiki/w/Silkeater",
           "missable": true,
+          "mapCategory": "silkeater",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.523,
+            "y": 0.135,
+            "zoom": 2.0
+          },
           "scene": "Tube_Hub",
+          "showOnMap": true,
           "type": "sceneBool"
         },
         {
@@ -992,7 +1367,15 @@
           "link": "https://hollowknight.wiki/w/Silkeater",
           "missable": true,
           "mode": "normal",
+          "mapCategory": "silkeater",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.255,
+            "y": 0.507,
+            "zoom": 2.0
+          },
           "scene": "Coral_37",
+          "showOnMap": true,
           "type": "sceneBool"
         }
       ],
@@ -1009,7 +1392,14 @@
           "id": "hornet-statuette",
           "label": "Hornet Statuette",
           "link": "https://hollowknight.wiki/w/Hornet_Statuette",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479144",
+          "mapCategory": "hornet-statuette",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.249,
+            "y": 0.708,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "collectable",
           "use": "Can be used from the inventory to gain 60 shell shards."
         }
@@ -1087,6 +1477,14 @@
           "id": "map-citadelunderstore",
           "label": "Underworks Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1107,6 +1505,14 @@
           "id": "map-slab",
           "label": "Slab Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1137,6 +1543,14 @@
           "id": "map-clover",
           "label": "Verdania Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1147,6 +1561,14 @@
           "id": "map-abyss",
           "label": "Abyss Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1157,6 +1579,14 @@
           "id": "map-cog",
           "label": "Cogwork Core Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1167,6 +1597,14 @@
           "id": "map-library",
           "label": "Whispering Vaults Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1177,6 +1615,14 @@
           "id": "map-cradle",
           "label": "Cradle Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1187,6 +1633,14 @@
           "id": "map-arborium",
           "label": "Memorium Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1197,6 +1651,14 @@
           "id": "map-aqueduct",
           "label": "Putrefied Ducts Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1207,6 +1669,14 @@
           "id": "map-weavehome",
           "label": "Weavenest Atla Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1267,6 +1737,14 @@
           "id": "map-hang",
           "label": "High Halls Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1277,6 +1755,14 @@
           "id": "map-halls",
           "label": "Choral Chambers Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1287,6 +1773,14 @@
           "id": "map-songgate",
           "label": "Grand Gate Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1297,6 +1791,14 @@
           "id": "map-ward",
           "label": "Whiteward Map",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
+          "mapCategory": "maps",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "flag"
         }
       ],
@@ -1316,6 +1818,7 @@
           "label": "Quill (White)",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
           "obtain": "Purchase from Shakra.",
+          "showOnMap": true,
           "type": "quill",
           "unobtainable": true
         },
@@ -1330,6 +1833,7 @@
           "label": "Quill (Red)",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
           "obtain": "Take from Trobbio's desk in Act 2 if a Quill is not already owned.",
+          "showOnMap": true,
           "type": "quill",
           "unobtainable": true
         },
@@ -1344,6 +1848,7 @@
           "label": "Quill (Purple)",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Maps",
           "obtain": "Take from Trobbio's desk in Act 3 if a Quill is not already owned.",
+          "showOnMap": true,
           "type": "quill",
           "unobtainable": true
         }
@@ -1361,6 +1866,7 @@
           "id": "pin-bench",
           "label": "Bench Pin",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1371,6 +1877,7 @@
           "id": "pin-shop",
           "label": "Vendor Pins",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1381,6 +1888,7 @@
           "id": "pin-stag",
           "label": "Bellway Pins",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1391,6 +1899,7 @@
           "id": "pin-tube",
           "label": "Ventrica Pins",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Pins",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1401,6 +1910,7 @@
           "id": "marker-shell",
           "label": "Shell Marker",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1411,6 +1921,7 @@
           "id": "marker-ring",
           "label": "Ring Marker",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1421,6 +1932,7 @@
           "id": "marker-hunt",
           "label": "Hunt Marker",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1431,6 +1943,7 @@
           "id": "marker-dark",
           "label": "Dark Marker",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1441,6 +1954,7 @@
           "id": "marker-bronze",
           "label": "Bronze Marker",
           "link": "https://hollowknight.wiki/w/Map_and_Quill_(Silksong)#Markers",
+          "showOnMap": true,
           "type": "flag"
         }
       ],
@@ -1457,6 +1971,7 @@
           "id": "station-bellbeast",
           "label": "Bone Bottom Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1467,6 +1982,7 @@
           "id": "station-docks",
           "label": "Deep Docks Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1477,6 +1993,7 @@
           "id": "station-boneforest-east",
           "label": "Far Fields Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1487,6 +2004,7 @@
           "id": "station-greymoor",
           "label": "Greymoor Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1497,6 +2015,7 @@
           "id": "station-belltown",
           "label": "Bellhart Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1507,6 +2026,7 @@
           "id": "station-coraltower",
           "label": "Blasted Steps Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1517,6 +2037,7 @@
           "id": "station-city",
           "label": "Grand Bellway Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1527,6 +2048,7 @@
           "id": "station-peak",
           "label": "The Slab Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1537,6 +2059,7 @@
           "id": "station-shellwood",
           "label": "Shellwood Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1547,6 +2070,7 @@
           "id": "station-shadow",
           "label": "Bilewater Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1557,6 +2081,7 @@
           "id": "station-aqueduct",
           "label": "Putrefied Ducts Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1567,6 +2092,7 @@
           "id": "station-marrow",
           "label": "The Marrow Station",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         }
       ],
@@ -1583,6 +2109,7 @@
           "id": "tube-song",
           "label": "Terminus Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1593,6 +2120,7 @@
           "id": "tube-under",
           "label": "Underworks Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1603,6 +2131,7 @@
           "id": "tube-citybellway",
           "label": "Grand Bellway Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1613,6 +2142,7 @@
           "id": "tube-hang",
           "label": "Choral Chambers Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1623,6 +2153,7 @@
           "id": "tube-enclave",
           "label": "First Shrine Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         },
         {
@@ -1633,6 +2164,7 @@
           "id": "tube-arborium",
           "label": "Memorium Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
           "type": "flag"
         }
       ],
@@ -1650,7 +2182,15 @@
           "label": "Materium",
           "link": "https://hollowknight.wiki/w/Materium",
           "relatedFlag": "ConstructedMaterium",
+          "mapCategory": "needle",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
           "scene": "Arborium_07",
+          "showOnMap": true,
           "type": "device"
         },
         {
@@ -1662,7 +2202,15 @@
           "label": "Farsight",
           "link": "https://hollowknight.wiki/w/Farsight",
           "relatedFlag": "ConstructedFarsight",
+          "mapCategory": "needle",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.0,
+            "y": 0.0,
+            "zoom": 2.0
+          },
           "scene": "Abyss_08",
+          "showOnMap": true,
           "type": "device"
         }
       ],

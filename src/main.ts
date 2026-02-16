@@ -23,11 +23,7 @@ import {
   worldMap,
 } from "./elements.ts";
 import { renderActiveTab } from "./render-tab.ts";
-import {
-  clearAllData,
-  handleSaveFile,
-  loadSavedDataOnMount,
-} from "./save-data.ts";
+import { clearAllData, handleSaveFile } from "./save-data.ts";
 import { initWorldMapPins } from "./tabs/progress.ts";
 import { initRawSaveData } from "./tabs/raw-save.ts";
 import { showToast } from "./utils.ts";
@@ -36,7 +32,7 @@ initWorldMapPins();
 
 logoLink.addEventListener("click", (e) => {
   e.preventDefault();
-  // clearAllData();
+  clearAllData();
 });
 
 clearDataBtn.addEventListener("click", (e) => {
@@ -67,9 +63,6 @@ function initComponents() {
 
   // Other
   initBackToTop();
-  loadSavedDataOnMount().catch((error: unknown) => {
-    console.error("Failed to load saved data:", error);
-  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
