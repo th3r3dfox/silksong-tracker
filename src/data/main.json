@@ -652,8 +652,9 @@
             "y": 0.428,
             "zoom": 2.0
           },
+          "required": 3,
           "showOnMap": true,
-          "type": "flagInt"
+          "type": "level"
         },
         {
           "act": 2,
