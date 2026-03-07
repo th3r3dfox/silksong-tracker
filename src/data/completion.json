@@ -1805,6 +1805,562 @@
       "label": "Maps"
     },
     {
+      "description": "Benches are checkpoints throughout Pharloom that Hornet can sit on to perform several actions.",
+      "items": [
+        {
+          "act": 1,
+          "description": "Bench inside the Ruined Chapel.",
+          "flag": "",
+          "icon": "benches/Ruined_Chapel.png",
+          "id": "bench-#1",
+          "label": "Ruined Chapel",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Bench located in Bone Bottom.",
+          "flag": "",
+          "icon": "benches/Bone_Bottom.png",
+          "id": "bench-#2",
+          "label": "Bone Bottom",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Bench located in The Marrow.",
+          "flag": "",
+          "icon": "benches/Bone_Bottom.png",
+          "id": "bench-#3",
+          "label": "The Marrow",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Repaired Bench in Bone Bottom.",
+          "flag": "",
+          "icon": "benches/Bone_Bottom_Repaired.png",
+          "id": "bench-#4",
+          "label": "Repaired Bone Bottom",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Toll Bench found across Pharloom.",
+          "flag": "",
+          "icon": "benches/Toll.png",
+          "id": "bench-#5",
+          "label": "Toll Bench",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "At the Flea Caravan.",
+          "flag": "",
+          "icon": "benches/Caravan.png",
+          "id": "bench-#6",
+          "label": "Flea Caravan",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Nearby Sprintmaster Swift.",
+          "flag": "",
+          "icon": "benches/Sprintmaster.png",
+          "id": "bench-#6",
+          "label": "Sprintmaster",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Nearby Alchemist Zylotol.",
+          "flag": "",
+          "icon": "benches/Zylotol.png",
+          "id": "bench-#7",
+          "label": "Alchemist Zylotol",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In Mosshome.",
+          "flag": "",
+          "icon": "benches/Mosshome.png",
+          "id": "bench-#8",
+          "label": "Mosshome",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Jail Bench in The Marrow.",
+          "flag": "",
+          "icon": "benches/Jail.png",
+          "id": "bench-#9",
+          "label": "Marrow Jail",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Jail Bench in The Slab.",
+          "flag": "",
+          "icon": "benches/Jail.png",
+          "id": "bench-#10",
+          "label": "Slab Jail",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Snowy Bench in The Slab.",
+          "flag": "",
+          "icon": "benches/Jail_Snow.png",
+          "id": "bench-#11",
+          "label": "Snowy Slab Jail",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Nearby Loddie.",
+          "flag": "",
+          "icon": "benches/Jail_Ladybug.png",
+          "id": "bench-#12",
+          "label": "Jail Loddie",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Skarr Bench in Hunter's March.",
+          "flag": "",
+          "icon": "benches/Ant.png",
+          "id": "bench-#13",
+          "label": "Skarr Hunter's March",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Skarr Bench in Far Fields.",
+          "flag": "",
+          "icon": "benches/Ant.png",
+          "id": "bench-#14",
+          "label": "Skarr Far Fields",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In Deep Docks.",
+          "flag": "",
+          "icon": "benches/Deep_Docks.png",
+          "id": "bench-#15",
+          "label": "Deep Docks",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In the Deep Docks sauna.",
+          "flag": "",
+          "icon": "benches/Sauna.png",
+          "id": "bench-#16",
+          "label": "Deep Docks Sauna",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Inside Seamstress Hut.",
+          "flag": "",
+          "icon": "benches/Umbrella.png",
+          "id": "bench-#17",
+          "label": "Seamstress Hut",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Inside Pilgrim's Rest.",
+          "flag": "",
+          "icon": "benches/Pilgrims_Rest.png",
+          "id": "bench-#18",
+          "label": "Pilgrim's Rest",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Inside Halfway Home.",
+          "flag": "",
+          "icon": "benches/Halfway_Home.png",
+          "id": "bench-#19",
+          "label": "Halfway Home",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Bench in Bellhart.",
+          "flag": "",
+          "icon": "benches/Bellhart.png",
+          "id": "bench-#20",
+          "label": "Bellhart",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Bed inside Hornet's Bellhome.",
+          "flag": "",
+          "icon": "benches/Bellhome.png",
+          "id": "bench-#21",
+          "label": "Hornet's Bellhome",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In Shellwood.",
+          "flag": "",
+          "icon": "benches/Shellwood.png",
+          "id": "bench-#22",
+          "label": "Shellwood",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Inside various Weavenest areas.",
+          "flag": "",
+          "icon": "benches/Weavenest.png",
+          "id": "bench-#23",
+          "label": "Weavenest",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Mossy Bench in Weavenest Atla.",
+          "flag": "",
+          "icon": "benches/Weavenest_Moss.png",
+          "id": "bench-#24",
+          "label": "Weavenest Atla Mossy",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Nearby Styx.",
+          "flag": "",
+          "icon": "benches/Styx.png",
+          "id": "bench-#25",
+          "label": "Styx",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Toll Bench throughout the Underworks.",
+          "flag": "",
+          "icon": "benches/Toll_Underworks.png",
+          "id": "bench-#26",
+          "label": "Toll Underworks",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Near the Twelfth Architect.",
+          "flag": "",
+          "icon": "benches/Architect.png",
+          "id": "bench-#27",
+          "label": "Twelfth Architect",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In the Terminus.",
+          "flag": "",
+          "icon": "benches/Terminus.png",
+          "id": "bench-#28",
+          "label": "Terminus",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Throughout Choral Chambers.",
+          "flag": "",
+          "icon": "benches/Choral_Chambers.png",
+          "id": "bench-#29",
+          "label": "Choral Chambers",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Covered Bench in Choral Chambers.",
+          "flag": "",
+          "icon": "benches/Choral_Chambers_Cloth.png",
+          "id": "bench-#30",
+          "label": "Choral Chambers Cloth",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Outside Songclave.",
+          "flag": "",
+          "icon": "benches/Songclave.png",
+          "id": "bench-#31",
+          "label": "Songclave",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Outside Songclave in Act 3.",
+          "flag": "",
+          "icon": "benches/Songclave_Broken.png",
+          "id": "bench-#32",
+          "label": "Songclave Broken Chair",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Throughout Whispering Vaults.",
+          "flag": "",
+          "icon": "benches/Whispering_Vaults.png",
+          "id": "bench-#33",
+          "label": "Whispering Vaults",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Southwest Choral Chambers.",
+          "flag": "",
+          "icon": "benches/High_Halls.png",
+          "id": "bench-#34",
+          "label": "High Halls",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In the Memorium.",
+          "flag": "",
+          "icon": "benches/Memorium.png",
+          "id": "bench-#35",
+          "label": "Memorium",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Retractable Bench in Cogwork Core.",
+          "flag": "",
+          "icon": "benches/Cog_Retractor.png",
+          "id": "bench-#36",
+          "label": "Cogwork Core Retractor",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In Whiteward.",
+          "flag": "",
+          "icon": "benches/Whiteward.png",
+          "id": "bench-#37",
+          "label": "Whiteward",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Next to Shakra in Greymoor.",
+          "flag": "",
+          "icon": "benches/Tent_Greymoor.png",
+          "id": "bench-#38",
+          "label": "Shakra's Tent",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Next to Shakra in Mount Fay.",
+          "flag": "",
+          "icon": "benches/Tent_Mount_Fay.png",
+          "id": "bench-#39",
+          "label": "Shakra's Mount Fay Tent",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In Mount Fay.",
+          "flag": "",
+          "icon": "benches/Mount_Fay.png",
+          "id": "bench-#40",
+          "label": "Mount Fay",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In the Wisp Thicket.",
+          "flag": "",
+          "icon": "benches/Wisp_Thicket.png",
+          "id": "bench-#41",
+          "label": "Wisp Thicket",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In the Exhaust Organ.",
+          "flag": "",
+          "icon": "benches/Organ.png",
+          "id": "bench-#42",
+          "label": "Exhaust Organ",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In Bilewater.",
+          "flag": "",
+          "icon": "benches/Bilewater.png",
+          "id": "bench-#43",
+          "label": "Bilewater",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In Bilehaven.",
+          "flag": "",
+          "icon": "benches/Bilehaven.png",
+          "id": "bench-#44",
+          "label": "Bilehaven",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Next to the Huntress.",
+          "flag": "",
+          "icon": "benches/Huntress.png",
+          "id": "bench-#45",
+          "label": "Huntress",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "By Huntress's corpse in Act 3.",
+          "flag": "",
+          "icon": "benches/Huntress_Broken.png",
+          "id": "bench-#46",
+          "label": "Huntress Broken",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Next to the Pinstress.",
+          "flag": "",
+          "icon": "benches/Pinstress.png",
+          "id": "bench-#47",
+          "label": "Pinstress",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In Sands of Karak.",
+          "flag": "",
+          "icon": "benches/Coral.png",
+          "id": "bench-#48",
+          "label": "Sands of Karak",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "Inside the Coral Tower.",
+          "flag": "",
+          "icon": "benches/Coral_Tower.png",
+          "id": "bench-#49",
+          "label": "Coral Tower",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In the Cradle.",
+          "flag": "",
+          "icon": "benches/Cradle.png",
+          "id": "bench-#50",
+          "label": "Cradle",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In the Diving Bell.",
+          "flag": "",
+          "icon": "benches/Diving_Bell.png",
+          "id": "bench-#51",
+          "label": "Diving Bell",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In the ruined Diving Bell.",
+          "flag": "",
+          "icon": "benches/Diving_Bell_Broken.png",
+          "id": "bench-#52",
+          "label": "Diving Bell Broken",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In Verdania.",
+          "flag": "",
+          "icon": "benches/Verdania.png",
+          "id": "bench-#53",
+          "label": "Verdania",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        },
+        {
+          "act": 1,
+          "description": "In the Ruined Chapel.",
+          "flag": "",
+          "icon": "benches/Shaman.png",
+          "id": "bench-#54",
+          "label": "Shaman Ruined Chapel",
+          "link": "https://hollowknight.wiki/w/Bench_(Silksong)",
+          "type": "flag"
+        }
+      ],
+      "label": "Benches"
+    },
+    {
       "description": "Writing implement for recording one's travels. Can be used to update any acquired maps.",
       "items": [
         {
