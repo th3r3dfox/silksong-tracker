@@ -12,7 +12,14 @@
           "id": "bell_beast",
           "label": "Bell Beast",
           "link": "https://hollowknight.wiki/w/Bell_Beast",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477879",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.288,
+            "y": 0.67,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -23,7 +30,14 @@
           "id": "bell_eater",
           "label": "Bell Eater",
           "link": "https://hollowknight.wiki/w/Bell_Eater",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479264",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.573,
+            "y": 0.37,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -34,7 +48,14 @@
           "id": "broodmother",
           "label": "Broodmother",
           "link": "https://hollowknight.wiki/w/Broodmother",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479255",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.258,
+            "y": 0.242,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -45,7 +66,14 @@
           "id": "cogwork_dancers",
           "label": "Cogwork Dancers",
           "link": "https://hollowknight.wiki/w/Cogwork_Dancers",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478606",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.505,
+            "y": 0.251,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -56,7 +84,14 @@
           "id": "crawfather",
           "label": "Crawfather",
           "link": "https://hollowknight.wiki/w/Crawfather",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480319",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.774,
+            "y": 0.595,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -67,7 +102,14 @@
           "id": "khann",
           "label": "Crust King Khann",
           "link": "https://hollowknight.wiki/w/Crust_King_Khann",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479392",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.095,
+            "y": 0.331,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -78,7 +120,14 @@
           "id": "lugoli",
           "label": "Disgraced Chef Lugoli",
           "link": "https://hollowknight.wiki/w/Disgraced_Chef_Lugoli",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478992",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.705,
+            "y": 0.498,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -89,7 +138,14 @@
           "id": "father_flame",
           "label": "Father of the Flame",
           "link": "https://hollowknight.wiki/w/Father_of_the_Flame",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479155",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.423,
+            "y": 0.496,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -100,7 +156,14 @@
           "id": "first_sinner",
           "label": "First Sinner",
           "link": "https://hollowknight.wiki/w/First_Sinner",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479023",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.305,
+            "y": 0.337,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -111,7 +174,14 @@
           "id": "forebrothers",
           "label": "Forebrothers Signis & Gron",
           "link": "https://hollowknight.wiki/w/Forebrothers_Signis_&_Gron",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478831",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.551,
+            "y": 0.785,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -122,7 +192,14 @@
           "id": "fourth_chorus",
           "label": "Fourth Chorus",
           "link": "https://hollowknight.wiki/w/Fourth_Chorus",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=477978",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.715,
+            "y": 0.752,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -133,9 +210,16 @@
           "id": "garmond_zaza",
           "label": "Garmond and Zaza",
           "link": "https://hollowknight.wiki/w/Garmond_and_Zaza",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479361",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.659,
+            "y": 0.272,
+            "zoom": 2.0
+          },
           "missable": true,
           "required": 1,
+          "showOnMap": true,
           "type": "journal"
         },
         {
@@ -146,8 +230,15 @@
           "id": "grand_mother_silk",
           "label": "Grand Mother Silk",
           "link": "https://hollowknight.wiki/w/Grand_Mother_Silk",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479099",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.503,
+            "y": 0.061,
+            "zoom": 2.0
+          },
           "required": 1,
+          "showOnMap": true,
           "type": "journal"
         },
         {
@@ -158,7 +249,14 @@
           "id": "great_conchflies",
           "label": "Great Conchflies",
           "link": "https://hollowknight.wiki/w/Great_Conchflies",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478506",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.168,
+            "y": 0.496,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -169,7 +267,14 @@
           "id": "groal_the_great",
           "label": "Groal the Great",
           "link": "https://hollowknight.wiki/w/Groal_the_Great",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478861",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.757,
+            "y": 0.295,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -180,7 +285,14 @@
           "id": "gurr_outcast",
           "label": "Gurr the Outcast",
           "link": "https://hollowknight.wiki/w/Gurr_the_Outcast",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479467",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.833,
+            "y": 0.7,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -191,7 +303,14 @@
           "id": "lace",
           "label": "Lace",
           "link": "https://hollowknight.wiki/w/Lace",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=476915",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.549,
+            "y": 0.729,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -202,7 +321,14 @@
           "id": "last_judge",
           "label": "Last Judge",
           "link": "https://hollowknight.wiki/w/Last_Judge",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478545",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.279,
+            "y": 0.43,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -213,7 +339,14 @@
           "id": "moorwing",
           "label": "Moorwing",
           "link": "https://hollowknight.wiki/w/Moorwing",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478453",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.492,
+            "y": 0.603,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -224,7 +357,14 @@
           "id": "moss_mother",
           "label": "Moss Mother",
           "link": "https://hollowknight.wiki/w/Moss_Mother",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=476904",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.181,
+            "y": 0.731,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -235,7 +375,14 @@
           "id": "nyleth",
           "label": "Nyleth",
           "link": "https://hollowknight.wiki/w/Nyleth",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479404",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.257,
+            "y": 0.481,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -246,8 +393,15 @@
           "id": "palestag",
           "label": "Palestag",
           "link": "https://hollowknight.wiki/w/Palestag",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479408",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.858,
+            "y": 0.51,
+            "zoom": 2.0
+          },
           "missable": true,
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -258,7 +412,14 @@
           "id": "phantom",
           "label": "Phantom",
           "link": "https://hollowknight.wiki/w/Phantom",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478370",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.637,
+            "y": 0.445,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -269,7 +430,14 @@
           "id": "pinstress",
           "label": "Pinstress",
           "link": "https://hollowknight.wiki/w/Pinstress",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479464",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.228,
+            "y": 0.19,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -280,8 +448,15 @@
           "id": "plasmified_zango",
           "label": "Plasmified Zango",
           "link": "https://hollowknight.wiki/w/Plasmified_Zango",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479273",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.086,
+            "y": 0.687,
+            "zoom": 2.0
+          },
           "required": 1,
+          "showOnMap": true,
           "type": "journal"
         },
         {
@@ -292,7 +467,14 @@
           "id": "savage_beastfly",
           "label": "Savage Beastfly",
           "link": "https://hollowknight.wiki/w/Savage_Beastfly",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478019",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.654,
+            "y": 0.663,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -303,7 +485,14 @@
           "id": "second_sentinel",
           "label": "Second Sentinel",
           "link": "https://hollowknight.wiki/w/Second_Sentinel",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479253",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.484,
+            "y": 0.228,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -314,9 +503,16 @@
           "id": "shakra",
           "label": "Shakra",
           "link": "https://hollowknight.wiki/w/Shakra",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479822",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.48,
+            "y": 0.604,
+            "zoom": 2.0
+          },
           "missable": true,
           "required": 1,
+          "showOnMap": true,
           "type": "journal"
         },
         {
@@ -327,7 +523,14 @@
           "id": "seth",
           "label": "Shrine Guardian Seth",
           "link": "https://hollowknight.wiki/w/Shrine_Guardian_Seth",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480352",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.277,
+            "y": 0.481,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -338,7 +541,14 @@
           "id": "sister_splinter",
           "label": "Sister Splinter",
           "link": "https://hollowknight.wiki/w/Sister_Splinter",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478137",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.343,
+            "y": 0.537,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -349,7 +559,14 @@
           "id": "karmelita",
           "label": "Skarrsinger Karmelita",
           "link": "https://hollowknight.wiki/w/Skarrsinger_Karmelita",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479198",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.801,
+            "y": 0.635,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -360,7 +577,14 @@
           "id": "skull_tyrant",
           "label": "Skull Tyrant",
           "link": "https://hollowknight.wiki/w/Skull_Tyrant",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478136",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.403,
+            "y": 0.696,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -371,9 +595,16 @@
           "id": "summoned_saviour",
           "label": "Summoned Saviour",
           "link": "https://hollowknight.wiki/w/Summoned_Saviour",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479740",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.07,
+            "y": 0.737,
+            "zoom": 2.0
+          },
           "mode": "steel",
           "required": 1,
+          "showOnMap": true,
           "type": "journal"
         },
         {
@@ -384,7 +615,14 @@
           "id": "the_unravelled",
           "label": "The Unravelled",
           "link": "https://hollowknight.wiki/w/The_Unravelled",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478926",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.436,
+            "y": 0.393,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -395,7 +633,14 @@
           "id": "trobbio",
           "label": "Trobbio",
           "link": "https://hollowknight.wiki/w/Trobbio",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480343",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.581,
+            "y": 0.332,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -406,7 +651,14 @@
           "id": "voltvyrm",
           "label": "Voltvyrm",
           "link": "https://hollowknight.wiki/w/Voltvyrm",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479223",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.179,
+            "y": 0.342,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -417,7 +669,14 @@
           "id": "watcher_edge",
           "label": "Watcher at the Edge",
           "link": "https://hollowknight.wiki/w/Watcher_at_the_Edge",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479494",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.084,
+            "y": 0.41,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -428,7 +687,14 @@
           "id": "widow",
           "label": "Widow",
           "link": "https://hollowknight.wiki/w/Widow",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=478138",
+          "mapCategory": "boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.433,
+            "y": 0.577,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         }
       ],
@@ -445,7 +711,14 @@
           "id": "clover_dancers",
           "label": "Clover Dancers",
           "link": "https://hollowknight.wiki/w/Clover_Dancers",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479427",
+          "mapCategory": "variants-boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.884,
+            "y": 0.51,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -456,7 +729,14 @@
           "id": "lost_garmond",
           "label": "Lost Garmond",
           "link": "https://hollowknight.wiki/w/Lost_Garmond",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479452",
+          "mapCategory": "variants-boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.131,
+            "y": 0.466,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -467,8 +747,15 @@
           "id": "lost_lace",
           "label": "Lost Lace",
           "link": "https://hollowknight.wiki/w/Lost_Lace",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479471",
+          "mapCategory": "variants-boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.507,
+            "y": 0.948,
+            "zoom": 2.0
+          },
           "required": 1,
+          "showOnMap": true,
           "type": "journal"
         },
         {
@@ -479,7 +766,14 @@
           "id": "raging_conchfly",
           "label": "Raging Conchfly",
           "link": "https://hollowknight.wiki/w/Raging_Conchfly",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479227",
+          "mapCategory": "variants-boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.121,
+            "y": 0.354,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         },
         {
@@ -490,7 +784,14 @@
           "id": "tormented_trobbio",
           "label": "Tormented Trobbio",
           "link": "https://hollowknight.wiki/w/Tormented_Trobbio",
-          "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479377",
+          "mapCategory": "variants-boss",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.581,
+            "y": 0.331,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
           "type": "boss"
         }
       ],

@@ -78,6 +78,28 @@
                   "description": "Map URL",
                   "type": "string"
                 },
+                "mapCategory": {
+                  "description": "Category identifier for map filtering",
+                  "type": "string"
+                },
+                "mapViewer": {
+                  "properties": {
+                    "src": {
+                      "type": "string"
+                    },
+                    "x": {
+                      "type": "number"
+                    },
+                    "y": {
+                      "type": "number"
+                    },
+                    "zoom": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["src", "x", "y"],
+                  "type": "object"
+                },
                 "required": {
                   "description": "Number of required items (for type 'flagInt')",
                   "type": "integer"
@@ -85,6 +107,9 @@
                 "scene": {
                   "description": "Scene identifier for location-based items",
                   "type": "string"
+                },
+                "showOnMap": {
+                  "type": "boolean"
                 },
                 "type": {
                   "enum": [

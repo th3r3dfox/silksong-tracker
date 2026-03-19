@@ -45,6 +45,28 @@
                   "description": "Map location or URL",
                   "type": "string"
                 },
+                "mapCategory": {
+                  "description": "Category identifier for map filtering",
+                  "type": "string"
+                },
+                "mapViewer": {
+                  "properties": {
+                    "src": {
+                      "type": "string"
+                    },
+                    "x": {
+                      "type": "number"
+                    },
+                    "y": {
+                      "type": "number"
+                    },
+                    "zoom": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["src", "x", "y"],
+                  "type": "object"
+                },
                 "missable": {
                   "description": "Whether this boss encounter can be permanently missed",
                   "type": "boolean"
@@ -57,6 +79,9 @@
                   "description": "Required count for completion (e.g., number of kills needed)",
                   "minimum": 1,
                   "type": "integer"
+                },
+                "showOnMap": {
+                  "type": "boolean"
                 },
                 "type": {
                   "enum": ["boss", "journal"],
