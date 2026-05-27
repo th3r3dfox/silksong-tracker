@@ -2122,17 +2122,6 @@
         {
           "act": 2,
           "description": "Unlocked after paying Rosaries.",
-          "flag": "UnlockedSongTube",
-          "icon": "completion/Tubeways(ventrica)Map.png",
-          "id": "tube-song",
-          "label": "Choral Chambers Tube",
-          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "showOnMap": true,
-          "type": "flag"
-        },
-        {
-          "act": 2,
-          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedUnderTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-under",
@@ -2155,10 +2144,10 @@
         {
           "act": 2,
           "description": "Unlocked after paying Rosaries.",
-          "flag": "UnlockedHangTube",
+          "flag": "UnlockedSongTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
-          "id": "tube-hang",
-          "label": "High Halls Tube",
+          "id": "tube-song",
+          "label": "Choral Chambers Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
           "showOnMap": true,
           "type": "flag"
@@ -2170,6 +2159,17 @@
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-enclave",
           "label": "First Shrine Tube",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
+          "type": "flag"
+        },
+        {
+          "act": 2,
+          "description": "Unlocked after paying Rosaries.",
+          "flag": "UnlockedHangTube",
+          "icon": "completion/Tubeways(ventrica)Map.png",
+          "id": "tube-hang",
+          "label": "High Halls Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
           "showOnMap": true,
           "type": "flag"
