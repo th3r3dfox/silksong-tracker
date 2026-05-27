@@ -2125,7 +2125,7 @@
           "flag": "UnlockedSongTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-song",
-          "label": "Terminus Tube",
+          "label": "Choral Chambers Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
           "showOnMap": true,
           "type": "flag"
@@ -2158,7 +2158,7 @@
           "flag": "UnlockedHangTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-hang",
-          "label": "Choral Chambers Tube",
+          "label": "High Halls Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
           "showOnMap": true,
           "type": "flag"
