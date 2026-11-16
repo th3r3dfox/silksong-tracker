@@ -119,7 +119,7 @@
           "type": "relic"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Bottom right of the Slab. Found on a corpse.",
           "flag": "Weaver Totem Slab_Bottom",
           "icon": "completion/Weaver_Effigy.png",
@@ -296,7 +296,7 @@
       "description": "They are cylinders inscribed with recordings, which may be heard by bringing them to Vaultkeeper Cardinius.",
       "items": [
         {
-          "act": 1,
+          "act": 2,
           "description": "Sold by Grindle for 240 Rosaries (Blasted Steps).",
           "flag": "Psalm Cylinder Grindle",
           "icon": "completion/Psalm_Cylinder.png",
@@ -1218,7 +1218,7 @@
           "type": "sceneBool"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Deep Docks, in the room southeast of the sauna bench.",
           "flag": "Silk Grub Large Cocoon",
           "icon": "completion/Silkeater.png",
@@ -1338,7 +1338,7 @@
           "type": "sceneBool"
         },
         {
-          "act": 2,
+          "act": 1,
           "description": "The Cradle, below the Terminus.",
           "flag": "Silk Grub Large Cocoon",
           "icon": "completion/Silkeater.png",
@@ -1516,7 +1516,7 @@
           "type": "flag"
         },
         {
-          "act": 2,
+          "act": 1,
           "description": "Purchased from Shakra. The jagged crest looming over all of Pharloom. Its whipping winds and bitter cold would pierce the strongest shell.",
           "flag": "HasPeakMap",
           "icon": "completion/Mount_Fay_Map.png",
@@ -1910,7 +1910,7 @@
           "type": "flag"
         },
         {
-          "act": 2,
+          "act": 1,
           "description": "Purchased from Shakra. Marks the mysterious transport tubes of Pharloom.",
           "flag": "hasPinTube",
           "icon": "completion/Ventrica_Pins.png",
@@ -2048,7 +2048,7 @@
           "type": "flag"
         },
         {
-          "act": 2,
+          "act": 1,
           "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedCityStation",
           "icon": "completion/Bellways.png",
@@ -2122,17 +2122,6 @@
         {
           "act": 2,
           "description": "Unlocked after paying Rosaries.",
-          "flag": "UnlockedSongTube",
-          "icon": "completion/Tubeways(ventrica)Map.png",
-          "id": "tube-song",
-          "label": "Terminus Tube",
-          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
-          "showOnMap": true,
-          "type": "flag"
-        },
-        {
-          "act": 2,
-          "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedUnderTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-under",
@@ -2142,7 +2131,7 @@
           "type": "flag"
         },
         {
-          "act": 2,
+          "act": 1,
           "description": "Unlocked after paying Rosaries.",
           "flag": "UnlockedCityBellwayTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
@@ -2155,9 +2144,9 @@
         {
           "act": 2,
           "description": "Unlocked after paying Rosaries.",
-          "flag": "UnlockedHangTube",
+          "flag": "UnlockedSongTube",
           "icon": "completion/Tubeways(ventrica)Map.png",
-          "id": "tube-hang",
+          "id": "tube-song",
           "label": "Choral Chambers Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
           "showOnMap": true,
@@ -2170,6 +2159,17 @@
           "icon": "completion/Tubeways(ventrica)Map.png",
           "id": "tube-enclave",
           "label": "First Shrine Tube",
+          "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
+          "showOnMap": true,
+          "type": "flag"
+        },
+        {
+          "act": 2,
+          "description": "Unlocked after paying Rosaries.",
+          "flag": "UnlockedHangTube",
+          "icon": "completion/Tubeways(ventrica)Map.png",
+          "id": "tube-hang",
+          "label": "High Halls Tube",
           "link": "https://hollowknight.wiki/w/Fast_Travel_(Silksong)",
           "showOnMap": true,
           "type": "flag"

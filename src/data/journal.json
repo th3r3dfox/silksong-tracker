@@ -18,7 +18,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Unnaturally overgrown Mossgrub, bred within the Citadel's Memorium.",
           "flag": "MossBone Crawler Fat",
           "hornetDescription": "So close to a perfect furred form... If only they'd been able to breed out the spines.",
@@ -200,7 +200,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Tall creature with sharp senses. Defends its herd with powerful legs and a sharp-tipped mask.",
           "flag": "Bone Hopper Giant",
           "hornetDescription": "There is surprising strength hidden in their thin, elegant limbs. It would be a pleasure to ride upon it...",
@@ -213,7 +213,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Flying bone mite that lives near magma. Roasts its prey by spitting scorching tar.",
           "flag": "Bone Spitter",
           "hornetDescription": "Its sticky spit would no doubt make a useful crafting material if moulded fresh. Unfortunately, I cannot stop to experiment.",
@@ -512,7 +512,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Fully grown mollusc able to unleash a gushing torrent of burning fluid from its back.",
           "flag": "Tar Slug Huge",
           "hornetDescription": "To survive while storing so much searing fluid within... Before I would have believed it impossible, but Pharloom is home to many marvels.",
@@ -590,7 +590,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Elder overseers of the Deep Docks, responsible for the oversight and punishment of lesser workers.",
           "flag": "Dock Guard Thrower",
           "hornetDescription": "Lost in the madness of the Haunting, they still commanded the endless excavation of their caves.",
@@ -759,7 +759,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Huge, yet stealthy Skarr. An expert trapper and master of the undergrowth.",
           "flag": "Bone Hunter Trapper",
           "hornetDescription": "His tracks and traps... It should have been obvious from the start, this old hunter sought to draw me in. But what reason drove him to test himself so brutally? That answer I suspect I shall never know.",
@@ -772,7 +772,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Elite former hunter acting as the final line of defence before their mother.",
           "flag": "Bone Hunter Chief",
           "hornetDescription": "Their skill once saw them chosen, and I can plainly see why. They would have lived and trained only for this duty.",
@@ -785,7 +785,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Song queen of the Skarr and their most talented warrior.",
           "flag": "Hunter Queen",
           "hornetDescription": "This graceful ruler once possessed skill to rival my own. At her youthful peak, her voice united all Skarr in her service.",
@@ -889,7 +889,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Short-lived sprite born of flickering flame.",
           "flag": "Wisp",
           "hornetDescription": "To live only a single, bright moment... What would one feel? Is it glorious, or only despair? Or could it be both, mixed equal?",
@@ -902,7 +902,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Many-legged insect fanatically obsessed with flame.",
           "flag": "Farmer Wisp",
           "hornetDescription": "These ones somehow learnt to call and guide the scorching Wisps that share their thicket. Whether through dominance or reverence is unclear.",
@@ -915,7 +915,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Totem and god, built and worshipped by the Burning Bugs.",
           "flag": "Wisp Pyre Effigy",
           "hornetDescription": "The remains of an aged bug were housed at the pyre's heart. The structure suggested they wished for immolation. If so, I have seen their wish granted.",
@@ -967,7 +967,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Screeching scavenger dyed black in mourning at their land's collapse.",
           "flag": "Crowman Juror Tiny",
           "hornetDescription": "Weak, afraid, and aware of the imminent end. I understand their desperation, but my death will not prevent the coming fall.",
@@ -980,7 +980,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Elder crawbug serving in a sacred ceremony.",
           "flag": "Crowman Juror",
           "hornetDescription": "Curiosity saw me answer their summons, but I shall not allow them to stall me long. I must work fast to fix my grand mistake.",
@@ -993,7 +993,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Short elder crawbug eagerly serving in their court.",
           "flag": "Crowman Dagger Juror",
           "hornetDescription": "They seek to slay their only chance at survival. Alas, any words would fall useless. I have only my blade to offer response.",
@@ -1006,7 +1006,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Lord and justice of Pharloom's craws. Delivers death to condemned bugs with his steel-plated beak.",
           "flag": "Crawfather",
           "hornetDescription": "Did he recognise my part played in this land's void-strung state? If so, perhaps his judgment was not unfair. To these bugs I have brought much destruction.",
@@ -1032,7 +1032,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Younger form of a Muckroach. Attacks prey by leaping from the water and snapping with its flexible jaws.",
           "flag": "Dustroach Pollywog",
           "hornetDescription": "These creatures look to have been bred deliberately in watery pens. If they are food to be, their scent suggests they must taste vile.",
@@ -1058,7 +1058,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Obese offshoot of Muckroaches, born of the Citadel's exhaust smog. The winged roach's sagging stomach is filled with sizzling bile.",
           "flag": "Bloat Roach",
           "hornetDescription": "Its form is absurd... Surely it should not be able to hold itself in the air? The noxious gases in its stomach must provide its levity.",
@@ -1110,7 +1110,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Brutish cook responsible for dicing Muckroach meat into edible portions.",
           "flag": "Roachkeeper Chef Tiny",
           "hornetDescription": "Could their actions be called skill? I see only a crude mangling of meat. Yet I wonder, before the Haunting snared their minds was it any different?",
@@ -1123,7 +1123,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Once exulted chef, exiled from the Citadel for repeated culinary crimes.",
           "flag": "Roachkeeper Chef",
           "hornetDescription": "Returned to their home caves, this chef continued to devise delicacies too repulsive for any bug still sane.",
@@ -1149,7 +1149,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "A rare, calmer bug of Bilewater, survives its hazardous surroundings by hiding as a plant.",
           "flag": "Swamp Drifter",
           "hornetDescription": "This one is pretty, but not as soft as first it seems. The plant it mimics is flaked and coarse, and the bug's coat shares similar texture.",
@@ -1188,7 +1188,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Hovering pest with a hollowed proboscis able to spit gobs of sizzling bile.",
           "flag": "Swamp Mosquito Skinny",
           "hornetDescription": "To subsist on the sickly water in this fetid environment it spits out the most toxic elements. Over generations, this former survival technique has turned into an effective hunting tool.",
@@ -1214,7 +1214,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Trap setting bug carrying a pouch of sharpened long-stakes.",
           "flag": "Swamp Muckman Tall",
           "hornetDescription": "More bother than the bug themself are the countless traps they have already laid throughout their caves.",
@@ -1227,7 +1227,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Chief and chaplain of the Stilkin, forever raging against the Citadel that chokes their caves and sees them suffer.",
           "flag": "Swamp Shaman",
           "hornetDescription": "This one's strength was much enhanced by stolen soul. They are not the first who tried to hoard it, or to mould it towards such violent ends.",
@@ -1240,7 +1240,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Toothy growth that lives on cave roofs. Wraps wayward bugs with its long tongue and drags them up to be consumed.",
           "flag": "Swamp Barnacle",
           "hornetDescription": "Hiding its tongue amongst fronds so similar... There is impressive style to this one's trickery.",
@@ -1253,7 +1253,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Suction creature surviving on the thick slime that coats its caves.",
           "flag": "Swamp Ductsucker",
           "hornetDescription": "This mindless bug seems to sense only through its tendrils, yet despite that simplicity it still poses a serious threat.",
@@ -1409,7 +1409,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Eternal defender of Shellwood Shrine. His pin and cymbal show many marks of their use.",
           "flag": "Seth",
           "hornetDescription": "He offered fair warning and challenge, a duel in the purest sense. I admire his honour, and his skill.",
@@ -1422,7 +1422,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Ancient heart of Shellwood, connected to all its living things.",
           "flag": "Flower Queen",
           "hornetDescription": "Her presence would once have maintained the wood's fragile order, allowing the safe passage of bugs across its branches.",
@@ -1552,7 +1552,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Dark-furred bug protecting itself with a spiked coral nut.",
           "flag": "Coral Spike Goomba",
           "hornetDescription": "Its fur is thick and silky. Sadly, lost to its Haunting, I shall never safely be able to touch it.",
@@ -1578,7 +1578,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Large male Driznit, ferocious and territorial. Fires its heavy coral mask at intruders.",
           "flag": "Coral Conch Shooter Heavy",
           "hornetDescription": "A fine shot with its sharp mask. Its aggression has no ill effect on its aim.",
@@ -1591,7 +1591,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Drifting creature with a wide coral mask and hard proboscis to stab its prey.",
           "flag": "Coral Conch Stabber",
           "hornetDescription": "Passively waits for prey to blunder into its path. A technique that should not necessarily be derided. Whatever is effective is best.",
@@ -1604,7 +1604,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Small bug that crafts a shell of sharpened coral. Spins its shell at rapid speed to cut through crust and bone.",
           "flag": "Coral Conch Driller",
           "hornetDescription": "The way it darts in and out of the ground has an almost playful quality to it. An amusing and effective way to ambush prey.",
@@ -1630,7 +1630,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Soft-shelled scrambler encased in coral.",
           "flag": "Coral Goombas",
           "hornetDescription": "Hidden amongst their tower's matching crust, these smaller bugs would have survived and thrived.",
@@ -1643,7 +1643,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Coral hulk with a dense shell, bred to immense size by the Citadel's Memorium.",
           "flag": "Coral Goomba Large",
           "hornetDescription": "Nature distorted... This bug was born tiny and mild. The Citadel deformed it in futile hope it may sustain.",
@@ -1656,7 +1656,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Plump, plentiful drifter of a coral past.",
           "flag": "Coral Swimmer Fat",
           "hornetDescription": "They once teemed around their tower, in numbers immense. It is a rare chance to witness such a bountiful display of life.",
@@ -1669,7 +1669,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Steel horned floater, able to defend itself and its companions.",
           "flag": "Poke Swimmer",
           "hornetDescription": "A critical member of the larger flock. Without them present the Kai would be fast driven to extinction by larger predators.",
@@ -1682,7 +1682,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Toughened Kai capable of extending sharp spikes from within its shellsack.",
           "flag": "Spike Swimmer",
           "hornetDescription": "Seeming soft, but hiding a sharp surprise. Any larger predator attempting a bite would learn a pointed and painful lesson.",
@@ -1695,7 +1695,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Gelatinous coral drifter of simple mind and placid demeanour.",
           "flag": "Coral Swimmer Small",
           "hornetDescription": "A creature at its most basic. This one is no threat to me, or any other.",
@@ -1708,7 +1708,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Large, gelatinous drifter. Chases away threats by hurling its bulk around.",
           "flag": "Coral Big Jellyfish",
           "hornetDescription": "When defeated, it splits into many smaller forms. Yet another remarkable creature of this land before the monarch.",
@@ -1721,7 +1721,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Staunch and skilled bladebug of a once flourishing land lost to time.",
           "flag": "Coral Warrior",
           "hornetDescription": "The core member of a powerful order, trained fearless and faithful. Theirs was a kingdom of warriors, one built upon their blades.",
@@ -1734,7 +1734,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Lithe, winged scouts frequently paired with their heavier brethren.",
           "flag": "Coral Flyer",
           "hornetDescription": "Its training resembles my own, favouring fast strikes and rapid movement. Once a hunter, perhaps?",
@@ -1747,7 +1747,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Wide-masked aerial attacker trained to act as support for its grounded companions while remaining at range.",
           "flag": "Coral Flyer Throw",
           "hornetDescription": "Not a frontline force, but in my assault upon their tower all emerge to see me stilled.",
@@ -1760,7 +1760,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Heavy, hard-shelled charger relying on weight and strength.",
           "flag": "Coral Brawler",
           "hornetDescription": "Far tougher for being matched inside their encrusted domain. They must have lived their whole lives within their tower, to command it so.",
@@ -1773,7 +1773,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Leaping hunter of a bygone age. The swiftest of their sect, deftly skilled with spinning foreblades.",
           "flag": "Coral Hunter",
           "hornetDescription": "In contests of speed against strength, I have seen the swift more often triumphant, a lesson I have taken to my own heart.",
@@ -1786,7 +1786,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Overgrown elder, able to spawn burning bubbles from within its coral-cased shell.",
           "flag": "Coral Bubble Brute",
           "hornetDescription": "This bug's fusion with the crust-growth... It seems intentional, though I imagine the union is far from comfortable.",
@@ -1799,7 +1799,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Hardened warrior lord of a bygone age, able to command the coral crust to his bidding.",
           "flag": "Coral King",
           "hornetDescription": "For his stern stewardship his legions seemed utterly loyal. For less combative bugs his would have been a hard rule.",
@@ -1812,7 +1812,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Old warrior guarding the border of their domain, stiffened by time and awoken by song.",
           "flag": "Coral Warrior Grey",
           "hornetDescription": "They held long at their vigil, far beyond the age of their brethren, yet still when roused they swung their blade with remarkable ease.",
@@ -1825,7 +1825,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Coiled nest of charged worms. Assaults intruders with bolts of crackling electricity.",
           "flag": "Zap Core Enemy",
           "hornetDescription": "Barely a bug, and possessing only basic thought, yet instinct alone proved enough to turn it deadly.",
@@ -1851,7 +1851,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Elder Drapefly grown big from age and consumption. Its heavy body allows it to hit much harder than its younger companions.",
           "flag": "Citadel Bat Large",
           "hornetDescription": "Greed will always see some bugs swell above their kin.",
@@ -1877,7 +1877,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Full-sized mite of the Citadel cloaked in an old curtain.",
           "flag": "Understore Mite Giant",
           "hornetDescription": "Few creatures of that Silk stricken place would find nourishment enough to grow so large.",
@@ -1890,7 +1890,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Feeble servant of the Underworks with a long twistpin and hard shell.",
           "flag": "Understore Small",
           "hornetDescription": "With all the refuse collapsing throughout their domain, the worker's stiff shell would be essential if they held any hope to survive.",
@@ -1903,7 +1903,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Drained yet dedicated labourer, wielding a coarse steel brush.",
           "flag": "Pilgrim 03 Understore",
           "hornetDescription": "That they ever hoped to keep their domain clean... What futility.",
@@ -1916,7 +1916,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Uses their steel-bristled pin to scrub the soot from vents and pipes.",
           "flag": "Pilgrim Staff Understore",
           "hornetDescription": "Their sharp cleaning implement is as filthy as the rest of the place. They only layer grime on grime.",
@@ -1929,7 +1929,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Drained worker on the verge of collapse. Consumed by the Haunting, they continue to work far beyond their mortal limits.",
           "flag": "Understore Poker",
           "hornetDescription": "They toiled incessantly for the Citadel, their shells bent and greyed, and now the kingdom's curse means not even death can relieve them.",
@@ -1942,7 +1942,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Exhausted bug, grown sickly from the smog of the Underworks. The worker's twistpins, once tools of repair, now serve as spun projectiles.",
           "flag": "Understore Thrower",
           "hornetDescription": "The cost of so much grandeur... Did I peer closely enough into the foundations of my own kingdom?",
@@ -1955,7 +1955,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Heavy, hard-shelled worker, forever repairing the Citadel's crumbling Underworks.",
           "flag": "Understore Heavy",
           "hornetDescription": "There seem no ranks in their domain, yet this one has risen above the rest. A station likely gained through intimidation and thuggery.",
@@ -1968,7 +1968,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Guide and ofttimes leader within the Citadel's Choir.",
           "flag": "Song Pilgrim 01",
           "hornetDescription": "Bugs like these crossed the caves to bring me to Pharloom. I cut down many before my capture. Then I had thought them minded and cunning. Now I can see the singular will that haunts them all.",
@@ -1981,7 +1981,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Agile bug, and one of few hardy pilgrims to have reached the Citadel.",
           "flag": "Pilgrim 01 Song",
           "hornetDescription": "Once one of Pharloom's favoured bugs, and yet their domain and their shells would have been the first to fall to the Haunting.",
@@ -1994,7 +1994,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Full-grown former pilgrim serving the Citadel.",
           "flag": "Pilgrim 02 Song",
           "hornetDescription": "Did this one grow large thanks to the Citadel's excess, or was its formidable size the reason it ever survived to reach this place?",
@@ -2007,7 +2007,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Winged devout of the Citadel, carrying a brace of gilded bells.",
           "flag": "Pilgrim 03 Song",
           "hornetDescription": "Pharloom proves often the effectiveness of bells as weapons. Never before had I considered them as such.",
@@ -2020,7 +2020,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Aerial bug of the Citadel, unarmed but for its short horn.",
           "flag": "Pilgrim 04 Song",
           "hornetDescription": "For this bug to have survived Pharloom's climb it must have teamed with stouter companions. I cannot imagine it succeeding alone.",
@@ -2033,7 +2033,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Aged former pilgrim. Uses their wings to position above threats and crush them under their large shell.",
           "flag": "Pilgrim Stomper Song",
           "hornetDescription": "Time allowed their shell to grow thick, all the better for battering their targets.",
@@ -2046,7 +2046,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Disciple of the Choir, elevated above other pilgrims, and forced to cowl their face forever more.",
           "flag": "Song Pilgrim 03",
           "hornetDescription": "Their use of a pin shows hard training. Their use of Silk, unfurled from a spool held close, shows skill far beyond standard bugs.",
@@ -2059,7 +2059,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Disciple of the Choir, charged to maintain its perfect order, by sharp pin if necessary.",
           "flag": "Song Reed",
           "hornetDescription": "A form well suited for combat, lithe and fast. No surprise it seems to rank so high amongst its cult.",
@@ -2072,7 +2072,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "High standing insect of the Choir, bearing a bow. This elite Reed has been trained and fed beyond its smaller fellows.",
           "flag": "Song Reed Grand",
           "hornetDescription": "This bug bears a spool of Silk, which they flail to attack. Though somewhat crude, theirs is a technique much reminiscent of Weavers. I wonder who taught them such a use?",
@@ -2085,7 +2085,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Mighty percussive disciple of the Choir, wielding a mallet and a Silk spool to wrap and enhance their attacks.",
           "flag": "Song Heavy Sentry",
           "hornetDescription": "There is no finesse in its use of Silk. It consumes its slim supply only to amplify its force.",
@@ -2098,7 +2098,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Puppet servant of the Citadel, suspended on strings of Silk. An early form of automaton, requiring extensive Silk to maintain its service.",
           "flag": "Song Handmaiden",
           "hornetDescription": "If given a chance, this one will steal Silk from any significant source, including my own shell.",
@@ -2111,7 +2111,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Learned disciple of the Choir charged to maintain the Citadel's Memorium.",
           "flag": "Arborium Keeper",
           "hornetDescription": "From the outset, theirs was a hopeless task. Those wild lands could never be replicated within a space so artificial.",
@@ -2124,7 +2124,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Gold ranked disciple of the Choir and direct servant to the Citadel's Conductors.",
           "flag": "Song Administrator",
           "hornetDescription": "The lethality of these bugs is unexpected. Their bodies were never built for combat. The Haunting has altered their nature dramatically.",
@@ -2137,7 +2137,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Choir commander of the High Halls, able to summon and command cogflies at a flick of their baton.",
           "flag": "Song Pilgrim Maestro",
           "hornetDescription": "Once they summoned song from their subjects. Now they rise only to command an end to those unstrung.",
@@ -2150,7 +2150,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Cogwork knight of Pharloom, once protector of its pilgrims, and master of the scissor blade.",
           "flag": "Song Knight",
           "hornetDescription": "The talent and intelligence of this construct goes far beyond others I have witnessed. They seem less built as a tool to serve than an attempt at life itself.",
@@ -2163,7 +2163,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Remains of a Citadel bug possessed by Silk dregs. The husk will lash out wildly with the many sharp pins caught inside its thread.",
           "flag": "Song Threaded Husk",
           "hornetDescription": "There is old anguish bound upon these threads, the result of countless cruel procedures.",
@@ -2176,7 +2176,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Shell of a small bug possessed by Silk dregs. The husk will stretch its Silk to form a crude, crushing wheel.",
           "flag": "Song Threaded Husk Spin",
           "hornetDescription": "Living Silk commanding a dead shell... An affront to nature, and one all too common across Pharloom.",
@@ -2189,7 +2189,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Cruel physician of Whiteward, responsible for operations and modifications on the Citadel's bugs.",
           "flag": "Song Pilgrim 02",
           "hornetDescription": "Their procedures with Silk may have prolonged life within the Citadel, but they unknowingly gifted many minds to the monarch.",
@@ -2202,7 +2202,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Altered servant of the Citadel's Whiteward, responsible for the cremation of husks and the recycling of Silk from their shells.",
           "flag": "Song Creeper",
           "hornetDescription": "It lies low to the ground, perhaps out of reverence for its task, but can spring up suddenly to attack. Its shear makes for a deadly weapon with surprising reach.",
@@ -2215,7 +2215,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Tormented will of countless husks made manifest in a pit of Silk dregs.",
           "flag": "Conductor Boss",
           "hornetDescription": "The souls of so many bugs, obsessed with Silk, consumed by it. Their pain shall forever remain in that pit. Even I do not possess strength enough to cleanse it.",
@@ -2228,7 +2228,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Small automaton built to work, without complaint, in the scorching heat of the Underworks' Cauldron.",
           "flag": "Understore Automaton",
           "hornetDescription": "It is no wonder these constructs were cast. No mortal bug would last long inside that scorching place. Even my shell struggles to withstand its heat.",
@@ -2241,7 +2241,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Small automaton with a shielded shell, intended to carry loads of dangerous flintflame.",
           "flag": "Understore Automaton EX",
           "hornetDescription": "Born and built only to work until time stiffens its limbs. Perhaps it is mercy this construct knows nothing of the freedom it lacks.",
@@ -2254,7 +2254,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Automaton built in the shape of a scuttling bug. Its back contains retractable pins, intended to cut song cylinders free of any obstruction.",
           "flag": "Song Automaton Goomba",
           "hornetDescription": "Its form is certainly based on bugs found outside the Citadel. In my own craftwork, I too often look to nature for inspiration.",
@@ -2267,7 +2267,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Flighted automaton, responsible for repairing and extending the Core.",
           "flag": "Song Automaton Fly",
           "hornetDescription": "More effective an opponent than would be guessed. The precarity of its winding domain can make even its simple assault a challenge.",
@@ -2280,7 +2280,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Spherical, winged automaton housing many sharp spikes.",
           "flag": "Song Automaton Fly Spike",
           "hornetDescription": "I cannot decipher its function to the greater Core. Is it built for defence? If so, its passivity seems far from optimal.",
@@ -2293,7 +2293,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Bug forged of iron, rotor and cog. The automaton works tirelessly to maintain the Core that houses it.",
           "flag": "Song Automaton 01",
           "hornetDescription": "Its core is filled with fine mechanisms, but that alone should not produce such a convincing mimic of life. Silk must also be used to animate this artifice, though exactly how I am not sure.",
@@ -2306,7 +2306,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Steam shooting automaton, forged to clean the Cogwork Core and keep it free of infestation.",
           "flag": "Song Automaton 02",
           "hornetDescription": "An inspired use of steam. I must remember its construction when designing future tools.",
@@ -2319,7 +2319,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Cogwork construct forged primarily for the Core's protection. Bears a shield and poke-pin, and possesses a lethal understanding of their use.",
           "flag": "Song Automaton Shield",
           "hornetDescription": "It has no true mind, and yet fights effectively, adjusting its strategy to my movements. Where exactly are its thoughts written?",
@@ -2332,7 +2332,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Rare automaton intended to perform the ringing of bells and cymbals in the depths of the Core.",
           "flag": "Song Automaton Ball",
           "hornetDescription": "I have not yet seen the bell this automaton is designed to ring, nor do I ever wish to hear it. Such a clamour would no doubt be unpleasant to experience.",
@@ -2345,7 +2345,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Automatons of impeccable construction, welcoming entrants to their chamber with a display of deadly dance.",
           "flag": "Clockwork Dancer",
           "hornetDescription": "Two cogwork bugs, and yet the soul seemed singular? A sad, yet masterful imitation of life, imbued inside shells of iron.",
@@ -2358,7 +2358,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Young acolyte raised in the darkest vaults, destined to ascend to the rank of Scrollreader.",
           "flag": "Song Scholar Acolyte",
           "hornetDescription": "In entering their domain, I freed these bugs to infest the greater vaults. They are a nuisance, and I have only myself to blame.",
@@ -2371,7 +2371,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Disciple of the Whispering Vaults, tasked to navigate its dim recesses to retrieve old scrolls.",
           "flag": "Lightbearer",
           "hornetDescription": "An essential bug if one ever hoped to navigate that dark maze of stacks and scrolls.",
@@ -2384,7 +2384,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Gilded servant of the Whispering Vaults, born to read and recall the near endless scrolls of prayer.",
           "flag": "Scrollkeeper",
           "hornetDescription": "Did they ever truly understand those inscrutable scrolls? Or is it all merely pretence, an endless act to maintain their order's station within the Citadel?",
@@ -2397,7 +2397,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "High caste bug, responsible for delivering sermons and leading prayer for those beyond the walls of the Whispering Vaults.",
           "flag": "Scholar",
           "hornetDescription": "Most likely this one's true charge was to root out and condemn those not seen as sufficiently fervent.",
@@ -2410,7 +2410,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Haughty thespian convinced that only dazzling performance can raise Pharloom from the throes of death.",
           "flag": "Trobbio",
           "hornetDescription": "His desire to see Pharloom saved may have been well intentioned, but he seemed quite happy for others to die upon the stage in pursuit of his goal.",
@@ -2423,7 +2423,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Depressed thespian, consumed by the melancholy of a collapsing world.",
           "flag": "Tormented Trobbio",
           "hornetDescription": "This one chose to embrace the doom to come. I shall not share such easy surrender.",
@@ -2462,7 +2462,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Infant fly, freshly hatched. At this age the soft, blind fly is little more than a bother.",
           "flag": "Slab Fly Small Fresh",
           "hornetDescription": "The less these gruesome bugs breed, the better.",
@@ -2514,7 +2514,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Mad matriarch of the Slab rarely seen outside her warren. From her all jailers are born and bred.",
           "flag": "Slab Fly Broodmother",
           "hornetDescription": "With this one vanquished, I hope to have sped the end for that jail and its distasteful order.",
@@ -2553,7 +2553,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Huge flighted creature formed from coldshard.",
           "flag": "Crystal Drifter Giant",
           "hornetDescription": "This larger form carries so much weight it can barely move from its place.",
@@ -2579,7 +2579,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Broken construct built by Weavers past, able to fire a focused beam of silklight to carve halls and chambers through ice and bone.",
           "flag": "Weaver Servitor Large",
           "hornetDescription": "The servitor has been heavily damaged by time and the elements. Its actions have grown erratic. It seems no longer able to discern friend from foe.",
@@ -2605,7 +2605,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Mutated young worm infected with Plasmium. The new form displays potent regenerative skill.",
           "flag": "Bone Worm BlueBlood",
           "hornetDescription": "Pharloom shall quickly learn the curse of this substance. What benefits it provides can be swiftly outweighed.",
@@ -2618,7 +2618,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Large worm mutated heavily by Plasmium. The creature has become fused to the roof of its cave, no longer able to move freely.",
           "flag": "Bone Worm BlueTurret",
           "hornetDescription": "In my home caves, when once this substance was allowed to flourish, I saw similar aberrations. This is wonder tainted strong with revulsion.",
@@ -2631,7 +2631,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Husk of an alchemist's assistant granted false life by Plasmium.",
           "flag": "Blue Assistant",
           "hornetDescription": "He carelessly seeded these caves with that cursed substance... His final fate seems fair reward for those efforts, yet I feel some sympathy. It is an alluring power.",
@@ -2644,7 +2644,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Fine winged flyer that survives in flocks.",
           "flag": "Lilypad Fly",
           "hornetDescription": "So light they can rest atop still water's surface. An elegant bug indeed.",
@@ -2657,7 +2657,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Pointed scurrier posing as plant life.",
           "flag": "Grass Goomba",
           "hornetDescription": "Simple. Graceful. Another fine bug lost forever from these lands.",
@@ -2670,7 +2670,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Flighty insect that lives beside still waters.",
           "flag": "Hornet Dragonfly",
           "hornetDescription": "Though generally passive, their sharp masks can cause injury if carelessly blundered into.",
@@ -2683,7 +2683,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Heavy insect that lives near large bodies of water. Its weighty body is best avoided.",
           "flag": "Dragonfly Large",
           "hornetDescription": "When they do not hinder my path, I find their simple motion rather pleasant.",
@@ -2696,7 +2696,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Predatory plant with a powerful jaw shaped to resemble a lily pad.",
           "flag": "Lilypad Trap",
           "hornetDescription": "A snapping surprise on first encounter, though one easily avoided once aware.",
@@ -2709,7 +2709,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Placid native of Verdania. Its hide closely mimics the flora of its territory.",
           "flag": "Cloverstag",
           "hornetDescription": "An impressive act of mimicry. To match so closely with its land, their clover caves must have sustained through generations uncounted.",
@@ -2722,7 +2722,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Fabled first Cloverstag of Verdania's wilds. Commands the grass and leaves to aid its attack.",
           "flag": "Cloverstag White",
           "hornetDescription": "Myth made real in memory. The creature seemed completely at one with the flora around it. Did it ever truly exist as I have seen it?",
@@ -2735,7 +2735,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Child of Verdania, fully capable to fight despite its young age.",
           "flag": "Grasshopper Child",
           "hornetDescription": "Fierce and fast, and defending their lands even from birth. These are children to be proud of.",
@@ -2748,7 +2748,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Darting warrior with sharpened forelimbs and heightened senses.",
           "flag": "Grasshopper Slasher",
           "hornetDescription": "They rarely relax, always alert for potential danger, even deep in their own territory. To defeat them my focus must match their own.",
@@ -2761,7 +2761,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Blindingly fast, winged warrior able to launch pointed pinions from its forelimbs.",
           "flag": "Grasshopper Fly",
           "hornetDescription": "Born with many tools I would once have desired for myself. Fortunately, I have trained hard around those limits.",
@@ -2774,7 +2774,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Dual princes of old Verdania, beloved by their subjects for their grace and for the ballet of death they delivered upon outsiders.",
           "flag": "Clover Dancer",
           "hornetDescription": "For one to love another so similar to themselves, is that selfless or vain?",
@@ -2787,7 +2787,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Shell-plated worm found only in the deepest depths. Seems to survive despite consuming no food or liquid.",
           "flag": "Abyss Crawler",
           "hornetDescription": "A creature long familiar to me. I suspect that no matter how far I travel, if I descend deep enough they will always be there.",
@@ -2800,7 +2800,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Bulky worm of the deepest depths. Lives in tight crevices and uses its weighty body to batter.",
           "flag": "Abyss Crawler Large",
           "hornetDescription": "These ones grow large, yet I have never observed them eating, or sleeping. They seem such simple bugs... but I suspect they are not truly our cousins.",
@@ -2813,7 +2813,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Tiny empty creature, barely a bug. Swallows its prey whole and sucks their nutrients until nothing remains.",
           "flag": "Gloomfly",
           "hornetDescription": "This one disturbs me... There is something in its simplicity. Do I almost feel fear?",
@@ -2826,7 +2826,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Enormous tubular beast uniquely suited to living close to the void below.",
           "flag": "Gloom Beast",
           "hornetDescription": "Amazingly, the creature carries the void's black liquid in its stomach, violently spraying it forth if threatened.",
@@ -2839,20 +2839,20 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Lashing fragments of pure darkness, shaped into sharpened tentacles.",
           "flag": "Void Tendrils",
           "hornetDescription": "The void that will claim all things... In the barbed forms it chooses its nature can be seen clear.",
           "icon": "journal/Void_Tendrils.png",
           "id": "void-tendrils",
           "label": "Void Tendrils",
-          "link": "https://hollowknight.wiki/w/Void_Tendrils",
+          "link": "https://hollowknight.wiki/w/Void_Tendrils_(Silksong)",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=479744",
           "required": 1,
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Dense knot of husks bound tight by void soaked Silk.",
           "flag": "Black Thread Core",
           "hornetDescription": "Silk and shells corrupted. That void seeks now to claim this land whole. These poor shells are only the beginning.",
@@ -2865,7 +2865,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Mass of old masks swollen and animated by writhing void.",
           "flag": "Abyss Mass",
           "hornetDescription": "A creature born of a bug's desperate hope for strength. Few possess the skill to call the void, and of those that can, none possess the means to tame it.",
@@ -2879,20 +2879,20 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "False fly with a rune etched shell. A tortured mix of soul and void is caged within.",
           "flag": "White Palace Fly",
           "hornetDescription": "A crude construct of my father's fallen domain. Only a fool believes that void can be fashioned to do their bidding.",
           "icon": "journal/Wingmould.png",
           "id": "wingmould",
           "label": "Wingmould",
-          "link": "https://hollowknight.wiki/w/Wingmould",
+          "link": "https://hollowknight.wiki/w/Wingmould_(Silksong)",
           "map": "https://mapgenie.io/hollow-knight-silksong/maps/pharloom?locationIds=480415",
           "required": 10,
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Sightless burrower that reacts violently to the slightest sound.",
           "flag": "Centipede Trap",
           "hornetDescription": "A common enough bug, though not to be underestimated. The acuteness of their other senses more than makes up for their lack of vision.",
@@ -2905,7 +2905,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Slow drifting bug with a heavy top shell. The bug reacts little to threats, even those that could claim its life.",
           "flag": "Spike Lazy Flyer",
           "hornetDescription": "The poor creature has lived a life too calm and coddled. It would not fare well in the world beyond its walls.",
@@ -2918,7 +2918,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Common crawler that lives beneath sand.",
           "flag": "Surface Scuttler",
           "hornetDescription": "This surface dweller is free of Silk. Its nature remains its own. The monarch's influence must only have stretched below it.",
@@ -2931,7 +2931,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Long dormant centipede, awoken and enraged by Pharloom's crumbling collapse.",
           "flag": "Giant Centipede",
           "hornetDescription": "A monster in the classic form of tales from youth. Its slaying was done as much by my fierce travelling companion as by myself.",
@@ -2944,7 +2944,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Oversized bug, briefly consumed by anger after its long time caged.",
           "flag": "Giant Flea",
           "hornetDescription": "I would not have guessed so large and marvelous a flea existed. I am pleased it saw sense before I had to strike a killing blow.",
@@ -2957,7 +2957,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Warrior cartographer of a tribe from Pharloom's edge. Her skills in battle could challenge the kingdom's best.",
           "flag": "Shakra",
           "hornetDescription": "She has lived a mere fraction of my lifetime and yet her rings prove a ferocious match. As gifted a warrior as I have ever encountered, and one I am fortunate to call a friend.",
@@ -2970,7 +2970,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Vigorous old knight and their noble companion, working together to see their lands cut free from haunted madness.",
           "flag": "Garmond_Zaza",
           "hornetDescription": "They too seek the spectre at the Haunting's heart, though I fear that foe would pose a challenge beyond their mortal limits.",
@@ -2983,7 +2983,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Old knight consumed by black thread.",
           "flag": "Garmond",
           "hornetDescription": "A tragic fate for a once honourable bug. Those void soaked threads... Their physical might is nothing compared to the corruption they wreak upon a soul.",
@@ -2996,7 +2996,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Blade maiden of a once renown warrior sect, survived long beyond the rest of her order.",
           "flag": "Pinstress Boss",
           "hornetDescription": "I like her. For her willingness to teach and her spirit still strong, despite a long age spent solitary... she has my respect.",
@@ -3022,7 +3022,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Ancient Weaver condemned for a transgression lost to time.",
           "flag": "First Weaver",
           "hornetDescription": "This one's husk held a masterful talent, to weave Silk into blazing runes. Throughout my life, I have seen runes woven for many tasks. Was she the first to hone such skills?",
@@ -3061,7 +3061,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Monarch of Pharloom, and the primal source of Silk.",
           "flag": "Silk Boss",
           "hornetDescription": "Heart of the Haunting, long lulled to slumber and desperate to wake. The higher being's threads stretched throughout Pharloom, snaring its bugs and driving them to madness and discord.",
@@ -3074,7 +3074,7 @@
           "type": "journal"
         },
         {
-          "act": 1,
+          "act": 3,
           "description": "Silk-spun child possessed by the void.",
           "flag": "Lost Lace",
           "hornetDescription": "To quell the mother's rage, and see this kingdom saved, I will claim her back. This one... the dark shall not take.",

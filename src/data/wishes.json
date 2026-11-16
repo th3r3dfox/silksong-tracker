@@ -524,7 +524,7 @@
           "icon": "quest/Hunt_Wishes.png",
           "id": "volatile-flintbeetles",
           "label": "Volatile Flintbeetles",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Hunt_Wishes",
+          "link": "https://hollowknight.wiki/w/Volatile_Flintbeetles",
           "missable": true,
           "type": "quest"
         },
@@ -535,7 +535,7 @@
           "icon": "quest/Hunt_Wishes.png",
           "id": "crawbug-clearing-pre",
           "label": "Crawbug Clearing #1",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Hunt_Wishes",
+          "link": "https://hollowknight.wiki/w/Crawbug_Clearing",
           "type": "quest"
         },
         {
@@ -545,7 +545,7 @@
           "icon": "quest/Hunt_Wishes.png",
           "id": "crawbug-clearing",
           "label": "Crawbug Clearing #2",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Hunt_Wishes",
+          "link": "https://hollowknight.wiki/w/Crawbug_Clearing",
           "type": "quest"
         },
         {
@@ -626,7 +626,7 @@
           "icon": "quest/Grand_Hunt_Quest_Icon.png",
           "id": "the-terrible-tyrant",
           "label": "The Terrible Tyrant",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Grand_Hunt_Wishes",
+          "link": "https://hollowknight.wiki/w/The_Terrible_Tyrant",
           "missable": true,
           "type": "quest"
         },
@@ -637,7 +637,7 @@
           "icon": "quest/Grand_Hunt_Quest_Icon.png",
           "id": "savage-beastfly",
           "label": "Savage Beastfly",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Grand_Hunt_Wishes",
+          "link": "https://hollowknight.wiki/w/Savage_Beastfly_(Wish)",
           "type": "quest"
         },
         {
@@ -647,7 +647,7 @@
           "icon": "quest/Grand_Hunt_Quest_Icon.png",
           "id": "the-wailing-mother",
           "label": "The Wailing Mother",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Grand_Hunt_Wishes",
+          "link": "https://hollowknight.wiki/w/The_Wailing_Mother",
           "type": "quest"
         },
         {
@@ -693,7 +693,7 @@
           "icon": "quest/donate.png",
           "id": "restoration-of-bellhart",
           "label": "Restoration of Bellhart",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Donate_Wishes",
+          "link": "https://hollowknight.wiki/w/Restoration_of_Bellhart",
           "type": "quest"
         },
         {
@@ -703,7 +703,7 @@
           "icon": "quest/donate.png",
           "id": "an-icon-of-hope",
           "label": "An Icon of Hope",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Donate_Wishes",
+          "link": "https://hollowknight.wiki/w/An_Icon_of_Hope",
           "missable": true,
           "type": "quest"
         },
@@ -714,7 +714,7 @@
           "icon": "quest/donate.png",
           "id": "bellharts-glory",
           "label": "Bellhart's Glory",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Donate_Wishes",
+          "link": "https://hollowknight.wiki/w/Bellhart's_Glory",
           "type": "quest"
         },
         {
@@ -724,7 +724,7 @@
           "icon": "quest/donate.png",
           "id": "building-up-songclave",
           "label": "Building Up Songclave",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Donate_Wishes",
+          "link": "https://hollowknight.wiki/w/Building_Up_Songclave",
           "type": "quest"
         },
         {
@@ -734,7 +734,7 @@
           "icon": "quest/donate.png",
           "id": "strengthening-songclave",
           "label": "Strengthening Songclave",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Donate_Wishes",
+          "link": "https://hollowknight.wiki/w/Strengthening_Songclave",
           "type": "quest"
         }
       ],
@@ -744,35 +744,35 @@
       "description": "Deliver rare and precious items to recipients across Pharloom.",
       "items": [
         {
-          "act": 1,
+          "act": 2,
           "description": "Deliver supplies to the fixer Flick in Bone Bottom.",
           "flag": "Courier Delivery Bonebottom",
           "icon": "quest/Delivery.png",
           "id": "delivery-bonebottom",
           "label": "Bone Bottom Supplies",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
+          "link": "https://hollowknight.wiki/w/Bone_Bottom_Supplies",
           "missable": true,
           "type": "quest"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Deliver supplies to Mort in Pilgrim's Rest.",
           "flag": "Courier Delivery Pilgrims Rest",
           "icon": "quest/Delivery.png",
           "id": "delivery-pilgrim-rest",
           "label": "Pilgrim's Rest Supplies",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
+          "link": "https://hollowknight.wiki/w/Pilgrim's_Rest_Supplies",
           "missable": true,
           "type": "quest"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Deliver the Queen's Egg to Styx of Sinner's Road.",
           "flag": "Courier Delivery Dustpens Slave",
           "icon": "quest/Delivery.png",
           "id": "queens-egg",
           "label": "Queen's Egg",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
+          "link": "https://hollowknight.wiki/w/Queen's_Egg_(Wish)",
           "mode": "normal",
           "type": "quest"
         },
@@ -783,7 +783,7 @@
           "icon": "quest/Delivery.png",
           "id": "delivery-songclade-supplies",
           "label": "Songclave Supplies",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
+          "link": "https://hollowknight.wiki/w/Songclave_Supplies",
           "type": "quest"
         },
         {
@@ -793,7 +793,7 @@
           "icon": "quest/Delivery.png",
           "id": "delivery-songclade-supplies",
           "label": "Fleatopia Supplies",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
+          "link": "https://hollowknight.wiki/w/Fleatopia_Supplies",
           "type": "quest"
         },
         {
@@ -803,7 +803,7 @@
           "icon": "quest/Delivery.png",
           "id": "liquid-lacquer",
           "label": "Liquid Lacquer",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
+          "link": "https://hollowknight.wiki/w/Liquid_Lacquer_(Wish)",
           "type": "quest"
         },
         {
@@ -813,7 +813,7 @@
           "icon": "quest/Delivery.png",
           "id": "survivor-supplies",
           "label": "Survivor's Camp Supplies",
-          "link": "https://hollowknight.wiki/w/Category:Wishes#Delivery_Wishes",
+          "link": "https://hollowknight.wiki/w/Survivor's_Camp_Supplies",
           "type": "quest"
         }
       ],

@@ -430,7 +430,7 @@
           "type": "sceneBool"
         },
         {
-          "act": 2,
+          "act": 1,
           "description": "Above the Grand Bellway, accessed from Exhaust Organ.",
           "flag": "Collectable Item Pickup",
           "icon": "icons/Memory_Locket.png",
@@ -1196,7 +1196,7 @@
           "type": "flag"
         },
         {
-          "act": 1,
+          "act": 2,
           "category": "Fleas",
           "description": "Bilewater. Located above of the secret bench room in Bilewater.",
           "flag": "SavedFlea_Shadow_10",
@@ -1293,30 +1293,11 @@
         {
           "act": 2,
           "category": "Fleas",
-          "description": "Choral Chambers.",
-          "flag": "SavedFlea_Library_09",
-          "icon": "icons/fleas.png",
-          "id": "lost-flea-19",
-          "label": "Lost Flea #23",
-          "link": "https://hollowknight.wiki/w/Flea",
-          "mapCategory": "fleas",
-          "mapViewer": {
-            "src": "assets/ui/labelled_map_act3.png",
-            "x": 0.67,
-            "y": 0.241,
-            "zoom": 2.0
-          },
-          "showOnMap": true,
-          "type": "flag"
-        },
-        {
-          "act": 2,
-          "category": "Fleas",
           "description": "Memorium. Huge Flea fight. Must be defeated after being freed.",
           "flag": "tamedGiantFlea",
           "icon": "icons/Huge_Flea.png",
           "id": "lost-flea-28",
-          "label": "Lost Flea #24 (Huge Flea)",
+          "label": "Lost Flea #23 (Huge Flea)",
           "link": "https://hollowknight.wiki/w/Flea",
           "mapCategory": "fleas",
           "mapViewer": {
@@ -1335,7 +1316,7 @@
           "flag": "SavedFlea_Slab_Cell",
           "icon": "icons/fleas.png",
           "id": "lost-flea-15",
-          "label": "Lost Flea #25",
+          "label": "Lost Flea #24",
           "link": "https://hollowknight.wiki/w/Flea",
           "mapCategory": "fleas",
           "mapViewer": {
@@ -1348,13 +1329,13 @@
           "type": "flag"
         },
         {
-          "act": 1,
+          "act": 2,
           "category": "Fleas",
           "description": "The Slab.",
           "flag": "SavedFlea_Slab_06",
           "icon": "icons/fleas.png",
           "id": "lost-flea-27",
-          "label": "Lost Flea #26",
+          "label": "Lost Flea #25",
           "link": "https://hollowknight.wiki/w/Flea",
           "mapCategory": "fleas",
           "mapViewer": {
@@ -1373,7 +1354,7 @@
           "flag": "SavedFlea_Peak_05c",
           "icon": "icons/fleas.png",
           "id": "lost-flea-22",
-          "label": "Lost Flea #27",
+          "label": "Lost Flea #26",
           "link": "https://hollowknight.wiki/w/Flea",
           "mapCategory": "fleas",
           "mapViewer": {
@@ -1392,7 +1373,7 @@
           "flag": "SavedFlea_Coral_24",
           "icon": "icons/fleas.png",
           "id": "lost-flea-21",
-          "label": "Lost Flea #28",
+          "label": "Lost Flea #27",
           "link": "https://hollowknight.wiki/w/Flea",
           "mapCategory": "fleas",
           "mapViewer": {
@@ -1411,13 +1392,32 @@
           "flag": "MetTroupeHunterWild",
           "icon": "icons/Vog.png",
           "id": "lost-flea-30",
-          "label": "Lost Flea #29 (Vog)",
+          "label": "Lost Flea #28 (Vog)",
           "link": "https://hollowknight.wiki/w/Flea",
           "mapCategory": "fleas",
           "mapViewer": {
             "src": "assets/ui/labelled_map_act3.png",
             "x": 0.758,
             "y": 0.213,
+            "zoom": 2.0
+          },
+          "showOnMap": true,
+          "type": "flag"
+        },
+        {
+          "act": 2,
+          "category": "Fleas",
+          "description": "Choral Chambers.",
+          "flag": "SavedFlea_Library_09",
+          "icon": "icons/fleas.png",
+          "id": "lost-flea-19",
+          "label": "Lost Flea #29",
+          "link": "https://hollowknight.wiki/w/Flea",
+          "mapCategory": "fleas",
+          "mapViewer": {
+            "src": "assets/ui/labelled_map_act3.png",
+            "x": 0.67,
+            "y": 0.241,
             "zoom": 2.0
           },
           "showOnMap": true,

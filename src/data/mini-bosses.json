@@ -6,7 +6,7 @@
       "items": [
         {
           "act": 1,
-          "description": "Far fields church (either in shopkeeper room or before opening gate might be missable).",
+          "description": "Far Fields church (either in shopkeeper room or before opening gate might be missable).",
           "flag": "churchRhinoKilled",
           "icon": "mini-bosses/Rhinogrund.png",
           "id": "Rhinogrund-1",
@@ -19,6 +19,7 @@
             "y": 0.678,
             "zoom": 2.0
           },
+          "missable": true,
           "showOnMap": true,
           "type": "boss"
         },
@@ -43,7 +44,7 @@
         },
         {
           "act": 3,
-          "description": "Far fields church (either in shopkeeper room or before opening gate might be missable).",
+          "description": "Far Fields (act 3).",
           "flag": "Rhino",
           "icon": "mini-bosses/Rhinogrund.png",
           "id": "Rhinogrund-3",
@@ -1089,7 +1090,7 @@
           "type": "sceneBool"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "The Marrow: At the highest point in The Marrow, attached to the top left wall. Only appears after beating Lace in the Cradle.",
           "flag": "Shell Fossil Mimic AppearVariant",
           "icon": "mini-bosses/Shardillard.png",
@@ -1109,7 +1110,7 @@
           "type": "sceneBool"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "The Marrow: In the long room to the right of the Bellway bench, to the left of a magnetite platform.",
           "flag": "Shell Fossil Mimic",
           "icon": "mini-bosses/Shardillard.png",
@@ -1129,7 +1130,7 @@
           "type": "sceneBool"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Far Fields: On the upper side of a spinal bone platform. If the spinal bone is broken go straight up. Otherwise, it is accessible by coming around top, from the direction of the Weavenest to the right.",
           "flag": "Shell Fossil Mimic",
           "icon": "mini-bosses/Shardillard.png",

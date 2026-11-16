@@ -1232,7 +1232,7 @@
           "type": "anyOf"
         },
         {
-          "act": 2,
+          "act": 1,
           "description": "Reward for completing Nuu's Wish: Bugs of Pharloom.",
           "flag": "Journal",
           "icon": "icons/Tool_Pouch.png",
@@ -1669,7 +1669,7 @@
           "unobtainable": true
         },
         {
-          "act": 2,
+          "act": 1,
           "description": "Obtained by repairing the Ruined Tool found in Weavenest Murglin. Repairing at Forge Daughter for 240 Rosaries and 1 Craftmetal provides this variant.",
           "flag": "WebShot Forge",
           "group": "Silkshot",
@@ -2543,7 +2543,7 @@
           "type": "tool"
         },
         {
-          "act": 1,
+          "act": 2,
           "description": "Purchased from Grindle for 350 Rosaries.",
           "flag": "Thief Charm",
           "icon": "icons/Thiefs_Mark.png",
